@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/site-icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/site-icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/site-icon.jpg">
+  <link rel="mask-icon" href="/images/site-icon.jpg" color="#222">
+  <meta name="google-site-verification" content="bbrDOoVIlRq8ILDaV3dOe1EQ8RE8RSQBrNnrdfTplCE">
+  <meta name="baidu-site-verification" content="q9emFHNSuh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" integrity="sha256-no0c5ccDODBwp+9hSmV5VvPpKwHCpbVzXHexIkupM6U=" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js" integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;www.aloha.org.cn&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:true,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;width&quot;:320},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:true,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;utterances&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:true,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;utterances&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="原文：http:&#x2F;&#x2F;www.linusakesson.net&#x2F;programming&#x2F;tty&#x2F; 参考：  维基百科 百度百科 《UNIX 环境高级编程 第 3 版·英文版》  一些概念：  TTY Teletype 或 Teletypewriter，原来指的是电传打字机，是通过串行线用打印机键盘通过阅读和发送信息的东西，和古老的电报机区别并不是很大。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The TTY Demystified">
+<meta property="og:url" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/">
+<meta property="og:site_name" content="Aloha&#39;s Blog">
+<meta property="og:description" content="原文：http:&#x2F;&#x2F;www.linusakesson.net&#x2F;programming&#x2F;tty&#x2F; 参考：  维基百科 百度百科 《UNIX 环境高级编程 第 3 版·英文版》  一些概念：  TTY Teletype 或 Teletypewriter，原来指的是电传打字机，是通过串行线用打印机键盘通过阅读和发送信息的东西，和古老的电报机区别并不是很大。">
+<meta property="og:locale">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/case1.png">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/case2.png">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/case3.png">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/case4.png">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/linuxprocess.png">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/jobs_show.png">
+<meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/examplediagram.png">
+<meta property="article:published_time" content="2021-03-15T09:43:45.000Z">
+<meta property="article:modified_time" content="2021-04-19T13:42:36.473Z">
+<meta property="article:author" content="Qihuan Liu">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="TTY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/case1.png">
+
+
+<link rel="canonical" href="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;cn&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;www.aloha.org.cn&#x2F;2021&#x2F;03&#x2F;15&#x2F;The-TTY-Demystified&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;03&#x2F;15&#x2F;The-TTY-Demystified&#x2F;&quot;,&quot;title&quot;:&quot;The TTY Demystified&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>The TTY Demystified | Aloha's Blog</title><script src="/js/config.js"></script><script src="/lib/fireworks.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Aloha's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aloha's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Aloha's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不乱于心，不困于情。不畏将来，不念过往。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">62</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-use-case"><span class="nav-number">1.</span> <span class="nav-text">The Use Case </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-editing"><span class="nav-number">1.1.</span> <span class="nav-text">Line Editing </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session-management"><span class="nav-number">1.2.</span> <span class="nav-text">Session Management </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#processes"><span class="nav-number">2.</span> <span class="nav-text">Processes </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jobs-and-sessions"><span class="nav-number">3.</span> <span class="nav-text">Jobs and Sessions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#signal-madness"><span class="nav-number">4.</span> <span class="nav-text">Signal Madness </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-example"><span class="nav-number">5.</span> <span class="nav-text">A Example </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flow-control-and-blocking-io"><span class="nav-number">6.</span> <span class="nav-text">Flow control and blocking I&#x2F;O </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuring-the-tty-device"><span class="nav-number">7.</span> <span class="nav-text">Configuring the TTY Device </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conclusion"><span class="nav-number">8.</span> <span class="nav-text">Conclusion </span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Qihuan Liu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Qihuan Liu</p>
+  <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
+</div>
+<div class="rainbow">
+<p id="rainbow-content">🌈 获取中...</p>
+<p id="rainbow-from"></p>
+</div>
+<script>
+fetch('https://api.eatrice.top')
+  .then(response => response.json())
+  .then(data => {
+    var rainbow_content = document.getElementById('rainbow-content');
+    var rainbow_from = document.getElementById('rainbow-from');
+    rainbow_content.innerText = data.Content;
+    if(data.Author == 'unknown' && data.Source == 'unknown') {
+      rainbow_from.setAttribute('visibility', 'hidden');
+    } else {
+      var from_text = "—";
+      if(data.Author != 'unknown') {
+        from_text += ' ' + data.Author;
+      }
+      if(data.Source != 'unknown') {
+        from_text += '《' + data.Source + '》';
+      }
+      rainbow_from.innerText = from_text;
+    }
+  })
+  .catch(console.error)
+</script>
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<!-- require MetingJS-->
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<meting-js
+  server="netease"
+  type="playlist"
+  id="2362969974"
+  mini="false"
+  fixed="false"
+  list-folded="NaN"
+  autoplay="false"
+  volume="0.4"
+  theme=""
+  order="random"
+  loop="all"
+  preload="auto"
+  mutex="true">
+</meting-js>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>
+      RSS
+    </a>
+  </div>
+
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWE=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;alohaia"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdS5xaWh1YW5Ab3V0bG9vay5jb20=" title="E-Mail → mailto:liu.qihuan@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly93d3cuc2Rpb3BpZC50b3Av" title="https:&#x2F;&#x2F;www.sdiopid.top&#x2F;">SDIOPID</span>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWE=" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="cn">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The TTY Demystified
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-15 17:43:45" itemprop="dateCreated datePublished" datetime="2021-03-15T17:43:45+08:00">2021-03-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-19 21:42:36" itemprop="dateModified" datetime="2021-04-19T21:42:36+08:00">2021-04-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Projects/" itemprop="url" rel="index"><span itemprop="name">Projects</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Projects/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Projects/Programming/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">自制伪终端</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>原文：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51c2FrZXNzb24ubmV0L3Byb2dyYW1taW5nL3R0eS8=">http://www.linusakesson.net/programming/tty/<i class="fa fa-external-link-alt"></i></span></p>
+<p>参考：</p>
+<ul>
+<li>维基百科</li>
+<li>百度百科</li>
+<li>《UNIX 环境高级编程 第 3 版·英文版》</li>
+</ul>
+<p>一些概念：</p>
+<dl>
+<dt>TTY</dt>
+<dd>Teletype 或 Teletypewriter，原来指的是电传打字机，是通过串行线用打印机键盘通过阅读和发送信息的东西，和古老的电报机区别并不是很大。</dd>
+</dl>
+<span id="more"></span>
+<p>一个 getty 的处理过程是：一个程序监视物理的 TTY/终端接口。</p>
+<dl>
+<dt>PTY/伪终端/终端模拟器</dt>
+<dd>成对的逻辑终端设备（即 master 和 slave 设备，对 master 的操作会反映到 slave上）。</dd>
+</dl>
+<p>它们与实际物理设备并不直接相关。如果一个程序把 ptyp3 ( master 设备）看作是一个串行端口设
+备，则它对该端口的读/ 写操作会反映在该逻辑终端设备对应的另一个 ttyp3 ( slave 设备）上面。
+而 ttyp3 则是另一个程序用于读写操作的逻辑设备。telnet 主机 A 就是通过“伪终端”与主机 A 的
+登录程序进行通信。</p>
+<dl>
+<dt>控制终端</dt>
+<dd>可以使用命令 <code>ps –ax</code> 来查看进程与哪个控制终端相连。</dd>
+<dt>UART:</dt>
+<dd>Universal Asynchronous Receiver and Transmitter, 通用异步收发器</dd>
+<dd>一种通用串行数据总线，用于异步通信。该总线双向通信，可以实现全双工传输和接收。</dd>
+<dt>Serial device</dt>
+<dd>串行设备</dd>
+</dl>
+<p>嵌入式设计中，UART用来与PC进行通信，包括与监控调试器和其它器件，如 EEPROM 通信。</p>
+<h2 id="the-use-case">The Use Case <a class="markdownIt-Anchor" href="#the-use-case">#</a></h2>
+<h3 id="line-editing">Line Editing <a class="markdownIt-Anchor" href="#line-editing">#</a></h3>
+<img data-src="/2021/03/15/The-TTY-Demystified/case1.png" class="" title="case1" alt="case1">
+<dl>
+<dt>Line discipline</dt>
+<dd>一个编辑缓冲区和一些基本的编辑命令（退格，擦除单词，清除行，重新打印）</dd>
+</dl>
+<p>Line discipline 还包含用于字符回显（character echoing）以及回车（carriage return）和换行（linefeed）之间自动转换的选项。如果愿意，可以将其视为原始的内核级 <code>sed(1)</code>（Stream EDitor)</p>
+<p>另外，内核提供了数种不同的 line discipline，一次只能将其中之一连接到指定串行设备。默认的 line discipline 提供了 line editing，被称为 <strong>N_TTY</strong>（<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvcnZhbGRzL2xpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvdHR5L25fdHR5LmM=">driver/tty/n_tty.c<i class="fa fa-external-link-alt"></i></span>）。其他则被用于别的目的，如管理分组交换数据（packet switched data）（ppp，IrDA，serial mice）。</p>
+<p>高级应用程序（如 Vim）可以通过将线路规则置于 raw mode 而不是默认的 cooked (or canonical) mode 来禁用这些功能。</p>
+<p>大多数交互式应用程序（编辑器，邮件用户代理，shell，所有依赖于 curses 或 readline 的程序）以 raw mode 运行，并自行处理所有行编辑命令(line discipline 中提到的退格等)。</p>
+<dl>
+<dt>curses</dt>
+<dd>CRT (Cathode Ray Tube, 阴极射线管) screen handling and optimization package.</dd>
+<dd>See <code>man curses</code></dd>
+</dl>
+<h3 id="session-management">Session Management <a class="markdownIt-Anchor" href="#session-management">#</a></h3>
+<p>用户可能希望同时运行多个程序，并一次与一个程序交互。如果程序陷入无尽的循环，则用户可能想杀死（kill）或挂起（suspend）。在后台启动的程序应能够执行，直到它们尝试写入终端为止，此时应将其挂起。同样，用户输入应仅定向到前台程序。操作系统在 <strong>TTY driver</strong> （进程可能会截获某些信号，并尝试适应这种情况，但大多数情况并非如此。<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvcnZhbGRzL2xpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvdHR5L3R0eV9pby5j">driver/tty/tty_io.c<i class="fa fa-external-link-alt"></i></span>）中实现这些功能。</p>
+<p>一个操作系统进程是“alive”的（有执行上下文（execution context）），意味着它能进行某些动作。在面对对象的术语中，TTY driver 是一个 <strong>被动对象</strong>（passive object） 。它有一些数据字段和一些方法，但是能做些什么的唯一方式只有通过进程的上下文（context）或内核中断处理程序（kernel interrupt handler）调用。Line discipline 同样也是一个被动对象（entity）。</p>
+<p>UART driver、line discipline 实例和 TTY driver 这三者有时会一起被称为一个 <strong>TTY device</strong> ，或者简单地称为 <strong>TTY</strong> 。用户可以通过操作 <code>/dev</code> 目录下对应的设备文件来影响任何 TTY device的行为。由于需要对此设备文件的写入权限，用户在某个特定的 TTY 上登录时，必须成为设备文件的所有者（owner）。这个操作习惯上由以 root 权限运行的 <code>login(1)</code> 程序完成。</p>
+<p>之前图片中的 physical line 当然也可以是一根很长的电话线：</p>
+<img data-src="/2021/03/15/The-TTY-Demystified/case2.png" class="" title="case2" alt="case2">
+<dl>
+<dt>Modem</dt>
+<dd>Modulator-demodulator，调制解调器，用于计算机的数字信号和可沿电话线传播的脉冲信号之间的相互转换。</dd>
+</dl>
+<p>这没有多少变化，除了现在系统必须处理调制解调器延迟的情况。</p>
+<blockquote>
+<p>If the device is a modem, the <code>open</code> may delay inside the device driver until the modem is dialed and the call is answered.</p>
+</blockquote>
+<p>让我们来研究典型的桌面环境。Linux 控制台（console）是这样运行的：</p>
+<img data-src="/2021/03/15/The-TTY-Demystified/case3.png" class="" title="case3" alt="case3">
+<p>TTY driver 和 line discipline 和之前例子中表现得一样，但是现在这里没有了 UART 和 physical terminal。取而代之的是一个用软件模拟并渲染成 VGA 显示的 video terminal （a complex state machine including a frame buffer of characters and graphical character attributes（对 OpenGL 有了解的话应该能比较好地理解这句话））。</p>
+<dl>
+<dt>VGA</dt>
+<dd>Video Graphics Array，视频图形阵列，是IBM于1987年提出的一个使用模拟信号的电脑显示标准。</dd>
+<dd>这个标准已对于现今的个人电脑市场已经十分过时。现在的个人电脑大多使用 HDMI。</dd>
+</dl>
+<p>控制台子系统（console subsystem）有些死板。如果我们将终端模拟（terminal emulation）转到用户环境，事情会变得更加复杂。这是 <code>xterm(1)</code> 和其克隆（clone）的工作方式：</p>
+<img data-src="/2021/03/15/The-TTY-Demystified/case4.png" class="" title="case4" alt="case4">
+<h2 id="processes">Processes <a class="markdownIt-Anchor" href="#processes">#</a></h2>
+<p>一个 Linux 进程可能处于以下状态之一：</p>
+<img data-src="/2021/03/15/The-TTY-Demystified/linuxprocess.png" class="" title="linuxprocess" alt="linuxprocess">
+<ul>
+<li>R: 正在运行或可运行（在运行队列中）</li>
+<li>D: Uninterruptible sleep (wait for some event)，见下文</li>
+<li>S: Interruptible sleep (waiting for some event or signal)，见下文</li>
+<li>T: 暂停/挂起，接收到作业控制信号（job control signal）<code>SIGTSTP</code>（比如在终端正在执行命令时按下 Ctrl-z，会将此信号发送给前台进程）时或正在被 debugger 追踪时。</li>
+<li>Z: 僵尸进程，已中止但还未被父进程清除（比如父进程调用 <code>popen</code> 函数后没有调用 <code>pclose</code> 函数）。</li>
+</ul>
+<p>运行 <code>ps l</code> 命令，可以查看哪些进程正在运行，哪些进程在休眠（sleeping）。如果进程正在休眠，<code>WCHAN</code> （”wait channel“，the name of the <em>wait queue</em> ；<code>man ps</code>: address of the kernel function where the process is sleeping）这一列说明了进程正在等待的内核事件（kernel event）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ps l</span><br><span class="line">F   UID   PID  PPID PRI  NI    VSZ   RSS WCHAN  STAT TTY        TIME COMMAND</span><br><span class="line">0   500  5942  5928  15   0  12916  1460 <span class="built_in">wait</span>   Ss   pts/14     0:00 -/bin/bash</span><br><span class="line">0   500 12235  5942  15   0  21004  3572 <span class="built_in">wait</span>   S+   pts/14     0:01 vim index.php</span><br><span class="line">0   500 12580 12235  15   0   8080  1440 <span class="built_in">wait</span>   S+   pts/14     0:00 /bin/bash -c (ps l) &gt;/tmp/v727757/1 2&gt;&amp;1</span><br><span class="line">0   500 12581 12580  15   0   4412   824 -      R+   pts/14     0:00 ps l</span><br></pre></td></tr></table></figure>
+<p>其中的“wait” wait queue 对应 system call <code>wait(2)</code>，一旦这些进程的一个子进程的状态改变了，它们就会被移到运行状态。有两种休眠状态：Interruptible sleep 和 uninterruptible sleep。前者（最常见的情况）意味着，即使进程是 wait queue 的一部分，当有信号被发送给它时，它也可能会被移到运行状态。如果你去查看内核源码，你会发现，任何等待事件的代码都必须在<code>schedule()</code> 返回后检查信号是否处于 <em>pending</em> 状态，如果是，则中止 system call 。</p>
+<blockquote>
+<p><code>man 2 wait</code>: All of these system calls are used to wait for state changes in a child of the calling process, and obtain information about the child whose state has changed. A state  change  is considered to be: the child terminated; the child was stopped by a signal; or the child was resumed by a signal. In the case of a terminated child, performing a wait allows the system to release the resources associated with the child; if a wait is not performed, then the terminated child remains in a “zombie” state.</p>
+</blockquote>
+<p>在上面的 <code>ps</code> 的显示结果中， <code>STAT</code> 列显示了每个进程现在的状态。一列中可能包含一个或多个属性或标志。</p>
+<ul>
+<li><code>S</code>: 进程是一个 <a href="#session-leader">session leader</a></li>
+<li><code>+</code>: 进程属于一个前台进程组（foreground process group)</li>
+</ul>
+<h2 id="jobs-and-sessions">Jobs and Sessions <a class="markdownIt-Anchor" href="#jobs-and-sessions">#</a></h2>
+<p>作业控制（Job control）发生在你按下 <code>^Z</code> (Ctrl-Z) 来挂起一个程序，或用 <code>&amp;</code> 来启动一个程序时。一个作业（job）和一个进程组（process group）是一样的。Internal shell commands（built-in commands in the shell）如 <code>jobs</code>，<code>fg</code> 和 <code>bg</code>，能用来操作一个 <strong>会话</strong>（session） 中存在的作业。</p>
+<p>每个会话都由一个 <strong>session leader</strong> 管理。session leader，一般是 shell，通过信号和 system call 的复杂协议与内核紧密合作。</p>
+<p>下面的 Shell 交互……</p>
+<img data-src="/2021/03/15/The-TTY-Demystified/jobs_show.png" class="" title="jobs_show" alt="jobs_show">
+<p>……对应以下这些进程……</p>
+<img data-src="/2021/03/15/The-TTY-Demystified/examplediagram.png" class="" title="examplediagram" alt="examplediagram">
+<p>……和这些内核结构体。</p>
+<ul>
+<li>TTY Driver (<code>/dev/pts/0</code>)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Size: 45x13</span><br><span class="line">Controlling process group: (101)</span><br><span class="line">Foreground process group: (103)</span><br><span class="line">UART configuration (ignored, since this is an xterm):</span><br><span class="line">  Baud rate, parity, word length and much more.</span><br><span class="line">Line discipline configuration:</span><br><span class="line">  cooked/raw mode, linefeed correction,</span><br><span class="line">  meaning of interrupt characters etc.</span><br><span class="line">Line discipline state:</span><br><span class="line">  edit buffer (currently empty),</span><br><span class="line">  cursor position within buffer etc.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>pipe0</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Readable end (connected to PID 104 as file descriptor 0)</span><br><span class="line">Writable end (connected to PID 103 as file descriptor 1)</span><br><span class="line">Buffer</span><br></pre></td></tr></table></figure>
+<p>基本思想是每个管道都是一项工作，因为管道中的每个进程都应同时进行操作（停止，恢复，终止）。这就是为什么 <code>kill(2)</code> 允许您将信号发送到整个进程组。默认情况下， <code>fork(2)</code> 将新创建的子进程与其父进程放置在同一进程组中，因此，例如，键盘产生的 <code>^C</code>（Ctrl-c） 会同时影响父子进程。作为其会话负责人职责的一部分，shell 程序每次启动管道（pipeline）时都会创建一个新的进程组。</p>
+<p>TTY driver 仅以被动方式跟踪前台进程组 ID。Session leader 必须在必要时显式更新此信息（TTY driver 跟踪的前台进程组 ID）。类似地，TTY driver 跟踪所连接终端的大小（行列数），但是此信息必须由终端模拟器甚至是用户显式更新。</p>
+<p>如上图所示，几个进程将它们的标准输入连接到了 <code>/dev/pts/0</code>。但是只有前台作业（<code>ls | sort</code> 管道）将被允许接收来自 TTY 的输入。同样，仅前台作业将被允许写入 TTY 设备（在默认配置情况下）。如果 <code>cat</code> 进程试图写入 TTY，则内核将使用信号将其挂起。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; cat &amp;</span><br><span class="line">[1] 170055</span><br><span class="line">[1]  + 170055 suspended (tty input)  cat</span><br></pre></td></tr></table></figure>
+<h2 id="signal-madness">Signal Madness <a class="markdownIt-Anchor" href="#signal-madness">#</a></h2>
+<p>现在，让我们仔细看看内核中的 TTY driver，line discipline 和 UART driver 如何与用户态进程（userland processes）通信。</p>
+<p>UNIX 文件，包括 TTY driver 文件，当然可以通过魔法一般的 <code>ioctl(2)</code> （UNIX 的瑞士军刀）调用来进行读写，并对其进行进一步操作，对此它已经进行了许多与TTY相关的操作定义。不过，<code>ioctl</code> 请求必须从进程启动，因此当内核需要与应用程序异步通信时，不能使用它们。</p>
+<p>道格拉斯·亚当斯（Douglas Adams）在《银河系漫游指南》中提到了一个极其沉闷的星球，里面栖息着一群沮丧的人类和某种具有锋利牙齿的的物种，它们通过在大腿上用力地咬人与人类交流。这和内核通过发送“麻痹”或“死亡”信号与进程交流的 UNIX 惊人地相似。进程可能会截获某些信号，并尝试做出回应，但大多数进程不会这样做。</p>
+<p>因此，信号是一种粗糙的机制，它允许内核与进程异步通信。UNIX 中的信号不是干净的或通用的。相反，每个信号都是唯一的，必须单独研究。</p>
+<p>你可以使用命令 <code>kill -l</code> 查看系统实现的信号。可能是这样的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">kill</span> -l</span><br><span class="line"> 1）SIGHUP 2）SIGINT 3）SIGQUIT 4）SIGILL</span><br><span class="line"> 5）SIGTRAP 6）SIGABRT 7）SIGBUS 8）SIGFPE</span><br><span class="line"> 9）SIGKILL 10）SIGUSR1 11）SIGSEGV 12）SIGUSR2</span><br><span class="line">13）SIGPIPE 14）SIGALRM 15）SIGTERM 16）SIGSTKFLT</span><br><span class="line">17）SIGCHLD 18）SIGCONT 19）SIGSTOP 20）SIGTSTP</span><br><span class="line">21）SIGTTIN 22）SIGTTOU 23）SIGURG 24）SIGXCPU</span><br><span class="line">25）SIGXFSZ 26）SIGVTALRM 27）SIGPROF 28）SIGWINCH</span><br><span class="line">29）SIGIO 30）SIGPWR 31）SIGSYS 34）SIGRTMIN</span><br><span class="line">35）SIGRTMIN + 1 36）SIGRTMIN + 2 37）SIGRTMIN + 3 38）SIGRTMIN + 4</span><br><span class="line">39）SIGRTMIN + 5 40）SIGRTMIN + 6 41）SIGRTMIN + 7 42）SIGRTMIN + 8</span><br><span class="line">43）SIGRTMIN + 9 44）SIGRTMIN + 10 45）SIGRTMIN + 11 46）SIGRTMIN + 12</span><br><span class="line">47）SIGRTMIN + 13 48）SIGRTMIN + 14 49）SIGRTMIN + 15 50）SIGRTMAX-14</span><br><span class="line">51）SIGRTMAX-13 52）SIGRTMAX-12 53）SIGRTMAX-11 54）SIGRTMAX-10</span><br><span class="line">55）SIGRTMAX-9 56）SIGRTMAX-8 57）SIGRTMAX-7 58）SIGRTMAX-6</span><br><span class="line">59）SIGRTMAX-5 60）SIGRTMAX-4 61）SIGRTMAX-3 62）SIGRTMAX-2</span><br><span class="line">63）SIGRTMAX-1 64）SIGRTMAX</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">kill</span> -l</span><br><span class="line">HUP INT QUIT ILL TRAP ABRT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL PWR SYS</span><br></pre></td></tr></table></figure>
+<p>如你所见，信号从 1 开始编号。但是，当将它们用于位掩码（例如 <code>ps s</code> 的输出）时，最低有效位对应于信号 1。</p>
+<blockquote>
+<p>UNIX 中，没有任何一个有效信号的值为 0。</p>
+</blockquote>
+<p>本文将重点介绍以下信号：<code>SIGHUP</code>，<code>SIGINT</code>，<code>SIGQUIT</code>，<code>SIGPIPE</code>，<code>SIGCHLD</code>，<code>SIGSTOP</code>，<code>SIGCONT</code>，<code>SIGTSTP</code>，<code>SIGTTIN</code>，<code>SIGTTOU</code> 和 <code>SIGWINCH</code>。</p>
+<dl>
+<dt>SIGHUP</dt>
+<dd>默认行为： <strong>Terminate</strong></dd>
+<dd>可能行为：Terminate，Ignore，Function call</dd>
+<dd>检测到挂起（hangup）的情况时，UART driver 会将 <code>SIGHUP</code> 信号发送到整个会话。这一般会杀掉会话中的所用进程。有些进程。如 <code>nohub(1)</code> 和 <code>screen(1)</code> 会从它们的进程（和 TTY）中分离，所以它们的子进程不会注意到挂起。</dd>
+<dt>SIGINT</dt>
+<dd>默认行为： <strong>Terminate</strong></dd>
+<dd>可能行为：Terminate，Ignore，Function call</dd>
+<dd>当交互式注意字符（interactive attention character，通常是 <code>^C</code>，ASCII 码为 3）出现在输入流中时，TTY driver 会将 <code>SIGINT</code> 发送给当前的前台作业，除非此行为被关闭。只要有 TTY device 的访问（access）权限，就能改变交互式注意字符和开关这一特性。另外，session leader (manager) 会跟踪每个作业的 TTY 配置，并在每次切换作业时更新 TTY （配置）。</dd>
+<dt>SIGQUIT</dt>
+<dd>默认行为： <strong>Core dump</strong></dd>
+<dd>可能行为：Core dump，Ignore，Function call</dd>
+<dd><code>SIGQUIT</code> 和 <code>SIGINT</code> 的工作方式相似，但是对应字符为 <code>^\</code> 并且默认行为不同。</dd>
+<dt>SIGPIPE</dt>
+<dd>默认行为： <strong>Terminate</strong></dd>
+<dd>可能行为：Terminate，Ignore，Function call</dd>
+<dd>内核会将 <code>SIGPIPE</code> 发送给任何〔尝试写入〔没有读取器的管道〕的〕进程。这是很有用的，因为如果没有这个，<code>yes | head</code> 这样的进程将永远不会中止。</dd>
+</dl>
+<blockquote>
+<p><code>yes</code> 不断输出一个字符串，直到被杀死为止。</p>
+</blockquote>
+<dl>
+<dt>SIGCHLD</dt>
+<dd>默认行为： <strong>Ignore</strong></dd>
+<dd>可能行为：Ignore，Function call</dd>
+<dd>当一个进程死亡或改变状态（停止或继续），内核会将一个 <code>SIGCHLD</code> 信号发送给其父进程。<code>SIGCHLD</code> 携带了额外信息，如该进程的 ID，用户 ID，exit status （或 termination signal）和其他 执行时间数据（execution time statistics）。Session leader 借助此信号追踪其作业。</dd>
+<dt>SIGSTOP</dt>
+<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>可能行为：Suspend</dd>
+<dd>此信号会无条件地将接受者挂起，也就是说，其行为无法被重新设置。然而，请注意内核不会在作业控制过程中发送 <code>SIGSTOP</code> 信号。作为替代，<code>^Z</code> 通常会触发 <code>SIGTSTP</code>。<code>SIGTSTP</code> 可以被应用程序拦截。应用程序可以将光标移动到屏幕底部，或者将终端置于已知状态（known state），然后使用 <code>SIGSTOP</code> 让自己进入睡眠状态。</dd>
+<dt>SIGCONT</dt>
+<dd>默认行为： <strong>Wake up</strong></dd>
+<dd>可能行为：Wake up，Wake up + Function call</dd>
+<dd><code>SIGCONT</code> 会将一个被停止的进程取消挂起（un-suspend）。用户调用 <code>fg</code> 命令时，它会被显式发送给指定进程。</dd>
+<dt>SIGTSTP</dt>
+<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>可能行为：Suspend，Ignore，Function call</dd>
+<dd><code>SIGTSTP</code> 的工作方式和 <code>SIGINT</code> 与 <code>SIGQUIT</code> 类似，但是 “magic” 字符一般是 <code>^Z</code> 并且默认行为是挂起进程。</dd>
+<dt>SIGTTIN</dt>
+<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>可能行为：Suspend，Ignore，Function call</dd>
+<dd>如果一个后台作业中的进程尝试从 TTY device 读取，TTY 会向整个作业发送 <code>SIGTTIN</code>。这通常会挂起该作业。</dd>
+<dt>SIGTTOU</dt>
+<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>可能行为：Suspend，Ignore，Function call</dd>
+<dd>如果一个后台作业中的进程尝试写入到 TTY device，TTY 会向整个作业发送 <code>SIGTOUT</code>。这通常会挂起该作业。可以为单独的 TTY 关闭此功能。</dd>
+<dt>SIGWINCH</dt>
+<dd>默认行为： <strong>Ignore</strong></dd>
+<dd>可能行为：Ignore，Function call</dd>
+<dd>如前所述，TTY device 会追踪终端的大小（行列数），但是此信息需要手动更新。每当终端窗口大小改变时，TTY 会发送一个 <code>SIGWINCH</code> 信号给前台作业。行为良好的（well-behaving）交互式应用程序，如编辑器，会对此做出回应——获取新的终端大小并重新绘制自己。</dd>
+</dl>
+<h2 id="a-example">A Example <a class="markdownIt-Anchor" href="#a-example">#</a></h2>
+<p>假设您正在（基于终端的）编辑器（如 Vim）中编辑文件。光标位于屏幕中间的某处，编辑器正忙于执行一些处理器密集型任务（processor intensive task），例如对大文件的搜索和替换操作。现在你按 <code>^Z</code>。由于已将 line discipline 配置为拦截该字符（<code>^Z</code> 是一个字节，ASCII 码为 26），因此你不必等待编辑器完成其任务再开始从 TTY device 读取。取而代之的是，line discipline 子系统立即将 <code>SIGTSTP</code> 发送到前台进程组。该进程组包含编辑器以及由它创建的任何子进程。</p>
+<p>编辑器已为 <code>SIGTSTP</code> 安装了信号处理程序（即源代码中对 <code>SIGTSTP</code> 进行拦截并进行处理），因此内核将进程转到执行信号处理程序（signal handler，源码中的一个函数）的代码。该代码通过将相应的控制序列写入 TTY device，将光标移动到屏幕的最后一行。由于编辑器仍在前台，因此将按要求发送控制序列。但是随后，编辑器将 <code>SIGSTOP</code> 发送到其自己的进程组。</p>
+<p>编辑器进程现在被挂起了。这件事，包括被挂起的进程的 ID，由内核通过 <code>SIGCHLD</code> 报告给 session leader （一般为 shell）。当前台作业的所有进程都被挂起时，session leader 会从 TTY device 读取当前配置，并将其保存以供以后（恢复被挂起的前台作业时）检索。Session leader 接下来使用 <code>ioctl</code> 调用将自己安装为 TTY 的前台进程组。然后，它会打印 <code>[1]+ Stopped</code> 之类的信息来提示用户有一个作业刚刚被挂起了。</p>
+<p>此时，<code>ps(1)</code>（<code>ps l</code>）将告诉你编辑器处于停止状态（T）。如果我们尝试通过使用 shell 内置命令 <code>bg</code> 或使用 <code>kill(1)</code> 将 <code>SIGCONT</code> 发送到进程来唤醒它，则编辑器将开始执行其 <code>SIGCONT</code> 信号处理程序（signal handler）。该信号处理程序可能会通过写入 TTY 设备来尝试重绘编辑器 GUI（其实是 TUI）。但是由于编辑器现在是后台作业，因此 TTY device 将不允许这样（唤醒后台作业）。相反，TTY 会将 <code>SIGTTOU</code> 发送给编辑器，然后再次停止它。这件事将会通过 <code>SIGCHLD</code> 信号传达给 session leader，并且 shell 程序将再次向终端写入 <code>[1]+ Stopped</code> 之类的信息。</p>
+<p>然而当我们使用 <code>fg</code> 命令（如 <code>fg %vim</code>）时，shell 首先会恢复原先保存的 line discipline 配置。这告诉 TTY driver 编辑器作业从现在起应该被视为前台作业。最后，shell 会向编辑器进程组发送 <code>SIGCONT</code> 信号。编辑器进程将会尝试重绘其 GUI （其实是 TUI）。因为它现在是前台进程组的一部分，所以这次它不会被 <code>SIGTTOU</code> 信号中断。</p>
+<h2 id="flow-control-and-blocking-io">Flow control and blocking I/O <a class="markdownIt-Anchor" href="#flow-control-and-blocking-io">#</a></h2>
+<p>（流控制和阻断式 I/O）</p>
+<p>在 <code>xterm</code> 中运行 <code>yes</code>，你会看见许多只有一个 “y” 的行从你眼前掠过。自然，<code>yes</code> 生成这些行的速度会比 <code>xterm</code> 应用程序解析它们、更新其帧缓存、与 X server 沟通以滚动屏幕等工作的速度更快。这些程序是怎样协同合作的？</p>
+<p>答案就在阻塞式 I/O。伪终端只能在其内核缓冲区中保留一定数量的数据，并且当该缓冲区已满并且 <code>yes</code> 尝试调用 <code>write(2)</code> 时，<code>write(2)</code> 将阻塞（block），将 <code>yes</code> 进程移至 interruptible sleep 状态，其中它会一直保持此状态直到 <code>xterm</code> 进程有机会读取一些缓冲的字节为止。</p>
+<p>如果将 TTY 连接到串行端口，会发生相同的情况。<code>yes</code> 将能够以比 9600 波特高得多的速率传输数据，但是如果串行端口被限制为该速度，则内核缓冲区很快就会填满，并且随后所有的 <code>write(2)</code> 调用都会阻塞该进程（如果进程已请求非阻塞式 I/O，则以错误码 <code>EAGAIN</code> 失败）。</p>
+<p>如果我告诉您，即使内核缓冲区中有剩余空间，也可以将 TTY 显式置于阻塞状态，会怎么样？除非另行通知（further notice），否则所有尝试将对 TTY <code>write(2)</code> 的进程都会自动阻塞。这种功能的用途是什么？</p>
+<p>假设我们正在操作 9600 波特的旧 VT-100 硬件。我们刚刚发送了一个复杂的控制序列，要求终端滚动显示。此时，终端由于某些问题无法进行滚动操作，以致无法以 9600 波特的满速率接收新数据。嗯，实际上，终端 UART 仍以 9600 波特运行，但是终端中没有足够的缓冲区空间来保留所接收字符的积压。这是将 TTY 置于阻塞状态的好时机。但是我们如何从终端上做到这一点呢？</p>
+<p>我们已经看到，可以将 TTY 设备配置为对某些数据字节进行特殊处理。例如，在默认配置中，接收到的 <code>^C</code> 字节不会通过 <code>read(2)</code> 传递给应用程序，而是将 <code>SIGINT</code> 传递给前台作业。以类似的方式，可以将 TTY 配置为对 停止流字节（stop flow byte，通常是 <code>^S</code>，ASCII 码为 19） 和 开始流字节（start flow byte，通常是 <code>^Q</code>，ASCII 码为 17）作出反应。旧的终端硬件会自动发送这些字节，并期望操作系统相应地调节其数据流。这称为流控制。</p>
+<p>这里有一个重要的区别：对 TTY 的写入操作可能会由于流控制，也可能会由于内核缓冲区空间不足而停止，这会阻塞你的进程，但是因为后台作业尝试写入 TTY 而引发的 <code>SIGTTOU</code> 会挂起整个进程组。我不知道为什么 UNIX 的设计者会发明 <code>SIGTTOU</code> 和 <code>SIGTTIN</code> 而不是依靠阻塞式 I/O，但是我的猜测是负责作业控制的 TTY driver 旨在监控和操控整个作业，而不是其中的单个进程。</p>
+<h2 id="configuring-the-tty-device">Configuring the TTY Device <a class="markdownIt-Anchor" href="#configuring-the-tty-device">#</a></h2>
+<p>要找出当前 shell 的控制 TTY（controlling terminal）是什么，可以参考前面所述的 <code>ps l</code> 输出中的 TTY 列，或者可以简单地运行 <code>tty(1)</code> 命令。</p>
+<p>进程可以使用 <code>ioctl(2)</code> 读取或修改打开的 TTY device 的配置。该 API 在 <code>tty_ioctl(4)</code>（ioctls for terminals and serial lines）中进行了描述。由于它是 Linux 应用程序和内核之间的二进制接口的一部分，因此它将在各 Linux 版本之间保持稳定。但是，该接口是不可移植的，应用程序应该使用 <code>termios(3)</code> 手册页中描述的 POSIX 封装（wrapper）。</p>
+<p>我不会详细介绍 <code>termios(3)</code> 接口，但是如果您正在编写 C 程序，并且想在 <code>^C</code> 被转换为 <code>SIGINT</code> 之前对其进行拦截，请禁用行编辑（line editing）和字符回显（character echoing），更改串行端口的波特率，关闭流控制等。然后您将在上述手册页中找到所需的内容。</p>
+<p>还有一个命令行工具，称为 <code>stty(1)</code>，用于操纵 TTY 设备。它使用了 <code>termios(3)</code> API。</p>
+<p>Let’s try it!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ stty -a</span><br><span class="line">speed 38400 baud; rows 73; columns 238; line = 0;</span><br><span class="line">intr = ^C; quit = ^\; erase = ^?; <span class="built_in">kill</span> = ^U; eof = ^D; eol = &lt;undef&gt;; eol2 = &lt;undef&gt;; swtch = &lt;undef&gt;; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V; flush = ^O; min = 1; time = 0;</span><br><span class="line">-parenb -parodd cs8 -hupcl -cstopb cread -clocal -crtscts</span><br><span class="line">-ignbrk brkint ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany imaxbel -iutf8</span><br><span class="line">opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0</span><br><span class="line">isig icanon iexten <span class="built_in">echo</span> echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; stty -a</span><br><span class="line">speed 38400 baud; rows 15; columns 92; line = 0;</span><br><span class="line">intr = ^C; quit = ^\; erase = ^?; <span class="built_in">kill</span> = ^U; eof = ^D; eol = &lt;undef&gt;; eol2 = &lt;undef&gt;;</span><br><span class="line">swtch = &lt;undef&gt;; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V;</span><br><span class="line">discard = ^O; min = 1; time = 0;</span><br><span class="line">-parenb -parodd -cmspar cs8 -hupcl -cstopb cread -clocal -crtscts</span><br><span class="line">-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany</span><br><span class="line">-imaxbel iutf8</span><br><span class="line">opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0</span><br><span class="line">isig icanon iexten <span class="built_in">echo</span> echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke</span><br><span class="line">-flusho -extproc</span><br></pre></td></tr></table></figure>
+<p>该 <code>-a</code> 标志告诉 <code>stty</code> 显示的 <em>所有</em> 设置。默认情况下，它将查看连接到你的 Shell 的 TTY device，但是你可以使用 <code>-F</code> 指定另一个设备。</p>
+<p>其中一些设置取决于 UART 参数，有些会影响 line discipline，有些则与作业控制有关。全部放在一起供君取用。让我们先看一下第一行：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>相关</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>speed</td>
+<td>UART</td>
+<td>波特率（baud rate）。伪终端无视。</td>
+</tr>
+<tr>
+<td>rows, columns</td>
+<td>TTY driver</td>
+<td>连接到此 TTY device 的终端的大小（以字符为单位）。基本上，这只是内核空间中的一对变量，你可以自由设置和获取。设置它们将导致 TTY driver 将 <code>SIGWINCH</code> 发送给前台作业。</td>
+</tr>
+<tr>
+<td>line</td>
+<td>Line discipline</td>
+<td>连接到 TTY 的 line discipline。0 表示 <code>N_TTY</code>，所有的有效数字都在 <code>/proc/tty/ldisc</code> 中被列出。为列出的数字好像是 <code>N_TTY</code> 的别名，但是不要依赖这点。</td>
+</tr>
+</tbody>
+</table>
+<p>请尝试以下操作：启动 xterm。记下其 TTY device（由 <code>tty</code> 显示）和
+其大小（由 <code>stty -a</code> 显示）。在 xterm 中启动 vim （或其他全屏终端应用程序） 。编辑器向
+TTY device 查询当前的终端大小，以填满整个窗口。现在，从另一个 shell 窗口中键入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty -F X rows Y</span><br></pre></td></tr></table></figure>
+<p>其中 <em>X</em> 是前面记录的 TTY device， <em>Y</em> 是前面记录的终端高度的一半。这会更新内核内存中的 TTY 数据结构体（TTY data structure），并向编辑器发送 <code>SIGWINCH</code> 信号，该编辑器将仅使用可用窗口区域的上半部分立即重绘自身。</p>
+<p><code>stty -a</code> 输出的第二列列出了所有特殊字符。启动一个新的 xterm 并尝试以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty intr o</span><br></pre></td></tr></table></figure>
+<p>现在，<code>o</code> 而不是 <code>^C</code>，会向前台进程发送 <code>SIGINT</code>。尝试启动什么程序，如 <code>cat</code>，并且验证你现在无法用 <code>^C</code> 杀掉它。然后，试着向其中输入 “hello”。</p>
+<p>有时，您可能会遇到在 UNIX 系统中退格键不起作用的情况。当终端模拟器发送的退格键（ASCII 码为 8 或 127）与 TTY device 中设置的 <code>erase</code> 不匹配时，就会发生这种情况。要解决此问题，通常可以键入 <code>stty erase ^H</code>（设置为 ASCII 8）或 <code>stty erase ^?</code>（设置为 ASCII 127）。但是请记住，许多终端应用程序都使用 <code>readline</code>，这会将线路规则置于原始模式。这些应用程序不受前面 <code>stty</code> 命令的影响。</p>
+<p>最后，<code>stty -a</code> 列出了一堆开关。不出所料，它们没有按特定顺序列出。其中一些与 UART 相关，一些影响 line discipline 的行为，一些用于流控制，一些用于作业控制。破折号（-）表示开关已关闭；否则打开。所有开关都在 <code>stty(1)</code> 手册页中进行了说明，因此，我仅简要介绍其中的一些：</p>
+<p><code>icanon</code> 开启或关闭 canonical (line-based) 模式。在新的 xterm 中尝试以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty -icanon; cat</span><br></pre></td></tr></table></figure>
+<p>注意所有的行编辑字符，如退格和 <code>^U</code>，都无法正常使用。另外注意 <code>cat</code> 一次性接收和输出一个字符，而不是（一次性接收和输出）一行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; stty -icanon; cat</span><br><span class="line">aassddff^?^?^?^?^?^?^?aassddffaassdd^?^?^?^C</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p><code>echo</code> 启用字符回显，默认开启。重新回到 canonical 模式（<code>stty icanon</code>），然后尝试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty -<span class="built_in">echo</span>; cat</span><br></pre></td></tr></table></figure>
+<p>你输入的同时，终端模拟器将信息发送给内核。通常，内核会显示相同的信息到终端模拟器，使你能够看到你输入了什么。没有字符回显，你看不到你输入了什么，但是我们在 cooked 模式，所以行编辑功能任然能发挥作用。一旦你按下回车键，line discipline 就会将编辑缓冲发送给 <code>cat</code>，这将显示你写入的内容。</p>
+<p><code>tostop</code> 控制后台作业是否被允许写入终端。先来试试这个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty tostop; (sleep 5; <span class="built_in">echo</span> hello, world) &amp;</span><br></pre></td></tr></table></figure>
+<p><code>&amp;</code> 使括号中的命令在后台运行。五秒后，作业中的 <code>cat</code> 尝试写入 TTY。TTY device 会使用 <code>SIGTOUT</code>将其挂起，你的 shell 可能会对此做出报告，可能会是立即，也可能会是在将要发送新的提示符时（这种情况可以按下回车以获得新的提示符）。现在杀死后台进程，尝试以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty -tostop; (sleep 5; <span class="built_in">echo</span> hello, world) &amp;</span><br></pre></td></tr></table></figure>
+<p>你会先得到提示符，但是在五秒后，后台作业在你输入的途中会发送 <code>hello world</code> 到终端。</p>
+<p>最后，<code>stty sane</code> 会重置你的 TTY device 到合理的设置（一般为默认设置）。</p>
+<h2 id="conclusion">Conclusion <a class="markdownIt-Anchor" href="#conclusion">#</a></h2>
+<p>我希望本文为您提供了足够的信息，以使您能够熟悉 TTY drivers 和 line disciplines，以及它们与终端、line editing 和作业控制的关系。可以在我提到的各种手册页以及 glibc 手册（<code>info libc</code> 中的 “Job Control”）中找到更多详细信息。</p>
+<p>最后，尽管我没有足够的时间回答所有问题，但我欢迎您对此网站以及本网站其他页面的反馈。
+谢谢阅读！</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/04/12/自制伪终端/" rel="bookmark">自制伪终端</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/28/Create-Snippets-for-Ultisnips/" rel="bookmark">Create Snippets for UltiSnips</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/04/06/Linux-配置记录/" rel="bookmark">Linux 配置记录</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Qihuan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/" title="The TTY Demystified">https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/TTY/" rel="tag"><i class="fa fa-tag"></i> TTY</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/15/Grammar-Testing/" rel="prev" title="Grammar Testing">
+                  <i class="fa fa-chevron-left"></i> Grammar Testing
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/" rel="next" title="病原生物学">
+                  病原生物学 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div><script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qihuan Liu</span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script class="next-config" data-name="pdf" type="application/json">{&quot;object_url&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;pdfobject@2.2.5&#x2F;pdfobject.min.js&quot;,&quot;integrity&quot;:&quot;sha256-YuNlP9i6s&#x2F;WH7EaU2kErloo9Vc85C3WVqhoMDgsEVpY&#x3D;&quot;},&quot;url&quot;:&quot;&#x2F;lib&#x2F;pdf&#x2F;web&#x2F;viewer&quot;}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{&quot;enable&quot;:true,&quot;theme&quot;:&quot;forest&quot;,&quot;js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mermaid@8.9.3&#x2F;dist&#x2F;mermaid.min.js&quot;,&quot;integrity&quot;:&quot;sha256-OyJHvRcZHaRR6Ig73ppxF4QXk8HzvfgTprRWkulCkfY&#x3D;&quot;}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script class="next-config" data-name="nprogress" type="application/json">{&quot;enable&quot;:true,&quot;spinner&quot;:true}</script>
+  <script src="/js/third-party/nprogress.js"></script>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/firebase@8.4.2/firebase-app.js" integrity="sha256-aS+rZ1asHNtiV5W1+xXQ5lgWF8vMvIqUGYkHJetOD9A=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/firebase@8.4.2/firebase-firestore.js" integrity="sha256-hCnXfO8mXFtVSaEv9mZUk6Dw2xIcWZj+ABYvThpJCJg=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="firestore" type="application/json">{&quot;enable&quot;:true,&quot;collection&quot;:&quot;articles&quot;,&quot;apiKey&quot;:&quot;AIzaSyC7NHKKsudADkwkMhNPKROb1VmXMNfL5Pc&quot;,&quot;projectId&quot;:&quot;aloha-s-blog-7252f&quot;}</script>
+  <script src="/js/third-party/statistics/firestore.js"></script>
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/copy-tex.min.css" integrity="sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{&quot;copy_tex_js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.13.3&#x2F;dist&#x2F;contrib&#x2F;copy-tex.min.js&quot;,&quot;integrity&quot;:&quot;sha256-etSqbSVF4+Lwe8MGk&#x2F;Vanc1sR+mWv+qOG73fxWw9p94&#x3D;&quot;}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{&quot;enable&quot;:true,&quot;repo&quot;:&quot;alohaia&#x2F;alohaia.github.io&quot;,&quot;issue_term&quot;:&quot;title&quot;,&quot;theme&quot;:&quot;preferred-color-scheme&quot;}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/site-icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/site-icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/site-icon.jpg">
+  <link rel="mask-icon" href="/images/site-icon.jpg" color="#222">
+  <meta name="google-site-verification" content="bbrDOoVIlRq8ILDaV3dOe1EQ8RE8RSQBrNnrdfTplCE">
+  <meta name="baidu-site-verification" content="q9emFHNSuh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" integrity="sha256-no0c5ccDODBwp+9hSmV5VvPpKwHCpbVzXHexIkupM6U=" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js" integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;www.aloha.org.cn&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:true,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;width&quot;:320},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:true,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;utterances&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:true,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;utterances&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="Lua 是一种  嵌入式语言——C 语言拥有控制权，Lua 被当作库，C 代码称为应用代码 可扩展的语言——Lua 拥有控制权，C 语言被用作库，C 代码称为库代码  应用代码和库代码都使用相同的 API 和 Lua 通信，这些 API 被称为 C API。 完整函数列表见：  Lua 参考手册（Lua5.3 - 菜鸟教程） Lua 参考手册（Lua5.4 - 官网）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lua 和 C">
+<meta property="og:url" content="https://www.aloha.org.cn/2021/04/15/Lua-%E5%92%8C-C/">
+<meta property="og:site_name" content="Aloha&#39;s Blog">
+<meta property="og:description" content="Lua 是一种  嵌入式语言——C 语言拥有控制权，Lua 被当作库，C 代码称为应用代码 可扩展的语言——Lua 拥有控制权，C 语言被用作库，C 代码称为库代码  应用代码和库代码都使用相同的 API 和 Lua 通信，这些 API 被称为 C API。 完整函数列表见：  Lua 参考手册（Lua5.3 - 菜鸟教程） Lua 参考手册（Lua5.4 - 官网）">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-15T02:49:03.000Z">
+<meta property="article:modified_time" content="2021-05-07T00:29:00.918Z">
+<meta property="article:author" content="Qihuan Liu">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="Lua">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.aloha.org.cn/2021/04/15/Lua-%E5%92%8C-C/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;cn&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;www.aloha.org.cn&#x2F;2021&#x2F;04&#x2F;15&#x2F;Lua-%E5%92%8C-C&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;15&#x2F;Lua-和-C&#x2F;&quot;,&quot;title&quot;:&quot;Lua 和 C&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>Lua 和 C | Aloha's Blog</title><script src="/js/config.js"></script><script src="/lib/fireworks.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Aloha's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aloha's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Aloha's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不乱于心，不困于情。不畏将来，不念过往。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">62</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">头文件 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">2.</span> <span class="nav-text">栈 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-api-%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">C API 中的错误处理 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%BA%94%E7%94%A8%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">3.1.</span> <span class="nav-text">处理应用代码中的错误 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%BA%93%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">3.2.</span> <span class="nav-text">处理库代码中的错误 </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">4.</span> <span class="nav-text">内存分配 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-lua-%E4%B8%AD%E8%B0%83%E7%94%A8-c-%E8%AF%AD%E8%A8%80"><span class="nav-number">5.</span> <span class="nav-text">在 Lua 中调用 C 语言 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="nav-number">5.1.</span> <span class="nav-text">注册表 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%80%BC%E5%92%8C%E5%85%B1%E4%BA%AB%E4%B8%8A%E5%80%BC"><span class="nav-number">5.2.</span> <span class="nav-text">上值和共享上值 </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">6.</span> <span class="nav-text">实例 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%95%B4%E4%B8%AA%E6%A0%88%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">6.1.</span> <span class="nav-text">输出整个栈中的内容 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-lua-%E7%9A%84-dir-%E5%87%BD%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">实现 Lua 的 dir 函数 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%80%BC%E5%92%8C%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0"><span class="nav-number">6.3.</span> <span class="nav-text">上值和工厂函数 </span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Qihuan Liu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Qihuan Liu</p>
+  <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
+</div>
+<div class="rainbow">
+<p id="rainbow-content">🌈 获取中...</p>
+<p id="rainbow-from"></p>
+</div>
+<script>
+fetch('https://api.eatrice.top')
+  .then(response => response.json())
+  .then(data => {
+    var rainbow_content = document.getElementById('rainbow-content');
+    var rainbow_from = document.getElementById('rainbow-from');
+    rainbow_content.innerText = data.Content;
+    if(data.Author == 'unknown' && data.Source == 'unknown') {
+      rainbow_from.setAttribute('visibility', 'hidden');
+    } else {
+      var from_text = "—";
+      if(data.Author != 'unknown') {
+        from_text += ' ' + data.Author;
+      }
+      if(data.Source != 'unknown') {
+        from_text += '《' + data.Source + '》';
+      }
+      rainbow_from.innerText = from_text;
+    }
+  })
+  .catch(console.error)
+</script>
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<!-- require MetingJS-->
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<meting-js
+  server="netease"
+  type="playlist"
+  id="2362969974"
+  mini="false"
+  fixed="false"
+  list-folded="NaN"
+  autoplay="false"
+  volume="0.4"
+  theme=""
+  order="random"
+  loop="all"
+  preload="auto"
+  mutex="true">
+</meting-js>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>
+      RSS
+    </a>
+  </div>
+
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWE=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;alohaia"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdS5xaWh1YW5Ab3V0bG9vay5jb20=" title="E-Mail → mailto:liu.qihuan@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly93d3cuc2Rpb3BpZC50b3Av" title="https:&#x2F;&#x2F;www.sdiopid.top&#x2F;">SDIOPID</span>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWE=" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="cn">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/15/Lua-%E5%92%8C-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lua 和 C
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-15 10:49:03" itemprop="dateCreated datePublished" datetime="2021-04-15T10:49:03+08:00">2021-04-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-07 08:29:00" itemprop="dateModified" datetime="2021-05-07T08:29:00+08:00">2021-05-07</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Lua 是一种</p>
+<ul>
+<li><strong>嵌入式语言</strong>——C 语言拥有控制权，Lua 被当作库，C 代码称为<strong>应用代码</strong></li>
+<li><strong>可扩展的语言</strong>——Lua 拥有控制权，C 语言被用作库，C 代码称为<strong>库代码</strong></li>
+</ul>
+<p>应用代码和库代码都使用相同的 API 和 Lua 通信，这些 API 被称为 <mark>C API</mark>。</p>
+<div class="note info"><p>完整函数列表见：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9tYW51YWwvbHVhNTNkb2MvY29udGVudHMuaHRtbCNpbmRleA==">Lua 参考手册（Lua5.3 - 菜鸟教程）<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5sdWEub3JnL21hbnVhbC81LjQvI2luZGV4">Lua 参考手册（Lua5.4 - 官网）<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</div>
+<span id="more"></span>
+<h2 id="头文件">头文件 <a class="markdownIt-Anchor" href="#头文件">#</a></h2>
+<ul>
+<li><code>lua.h</code>：Lua 提供的基础函数，如创建新 Lua 环境、调用 Lua 函数、读写环境中全局变量以及注册供 Lua 调用的新函数的函数。这些函数都以 <code>lua_</code> 开头。</li>
+<li><code>lauxlib.h</code>：<strong>辅助库</strong>（auxlibary library, auxlib）所提供的函数，使用 <code>lua.h</code> 中的基础 API 实现更高层次的抽象。这些函数以 <code>luaL_</code> 开头。</li>
+<li><code>lualib.h</code>：用于操作 Lua 标准库。其中的函数也以 <code>luaL_</code> 开头。</li>
+</ul>
+<h2 id="栈">栈 <a class="markdownIt-Anchor" href="#栈">#</a></h2>
+<p>Lua 通过维护一个虚拟栈来完成 Lua 代码和 C 代码之间的交流。C API 中的函数若需要传入栈索引，这个索引必须是<strong>有效索引</strong>或<strong>可接受索引</strong>。</p>
+<dl>
+<dt>有效索引（valid indices）</dt>
+<dd>对应一个可以修改的 Lua 值所在位置的索引，包括 1 到栈顶（1 ≤ abs(index) ≤ <code>lua_gettop(L)</code>）之间的栈索引和<strong>伪索引</strong>。</dd>
+<dt>可接受索引（acceptable indices）</dt>
+<dd>栈顶之后的索引（abs(index) &gt; <code>lua_gettop(L)</code>）以及大于<strong>上值</strong>数目的伪索引。前者可以以只读方式访问内存。</dd>
+<dd>除非特别说明，API 中的函数能正确处理可接受索引。</dd>
+<dt>伪索引（pseudo-indices）</dt>
+<dd>可以用来访问<strong>注册表</strong>（registry）（使用 <code>LUAREGISTRYINDEX</code> 访问）和 C 函数的<strong>上值</strong>（upvalue）。</dd>
+<dd>注册表和上值都是不在栈中但是可以被 C 代码访问的位置。</dd>
+</dl>
+<p>Lua 代码严格按照后进先出的规则操纵栈，而 C 代码则可以对栈进行随机访问，甚至可以在任何位置插入和删除元素。</p>
+<p>C 代码通过 <code>lua_push*</code> 函数将元素压入栈，通过 <code>lua_to*</code> 函数取得指定位置的元素值。</p>
+<p>对于数字（Number 和 Integer），返回值 0 有意义，不能视为错误。
+Lua5.2 中引入了新函数进行处理：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">lua_Number <span class="title">lua_tonumberx</span> <span class="params">(lua_State *L, <span class="keyword">int</span> index, <span class="keyword">int</span> *isnum)</span></span>;</span><br><span class="line"><span class="function">lua_Integer <span class="title">lua_tointegerx</span> <span class="params">(lua_State *L, <span class="keyword">int</span> index, <span class="keyword">int</span> *isnum)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>当获得的值为 0 或指定的值类型不对时，两个函数都会返回 0。
+<code>isnum</code> 返回一个布尔值表示指定的值的类型是否为所需类型，以区分上述两种情况。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lua_pushstring(L, <span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lua_pushinteger(L, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 1</span></span><br><span class="line">    <span class="comment">// &quot;Not a number&quot; 判断错误，msg 表明指定位置的值的类型为 number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<details class="note warning"><summary><p>确保栈中有足够的空间</p>
+</summary>
+<p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lua_checkstack</span><span class="params">(lua_State *L, <span class="keyword">int</span> sz)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><code>lua_checkstack</code> 确保堆栈上至少有 <code>n</code> 个额外空位。
+如果不能把堆栈扩展到相应的尺寸，函数返回假（0）。</p>
+<p>辅助库 <code>lauxlib.h</code> 中定义了一个高层函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_checkstack</span><span class="params">(lua_Stack *L, <span class="keyword">int</span> sz, <span class="keyword">const</span> <span class="keyword">char</span> *msg)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>该函数类似于 <code>lua_ckeckstack</code>，但是当无法扩展空间时，会抛出一个错误。
+<code>msg</code> 是描述错误的额外文本信息，<code>NULL</code> 表示不需要额外文本。</p>
+
+</details>
+<p>其他栈操作（详细说明见<a href="#">手册</a>）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">lua_gettop</span>    <span class="params">(lua_State *L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_settop</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_pushvalue</span> <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_rotate</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_remove</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_insert</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_replace</span>   <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_copy</span>      <span class="params">(lua_State *L, <span class="keyword">int</span> fromidx, <span class="keyword">int</span> toidx)</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="c-api-中的错误处理">C API 中的错误处理 <a class="markdownIt-Anchor" href="#c-api-中的错误处理">#</a></h2>
+<blockquote>
+<p>用异常来提示错误，而没有在 API 的每个操作中使用错误码。与 C++ 或 Java 不同，C 语言没有提供异常处理机制。为了解决这个问题，Lua 使用了 C 语言中的 <code>setjmp</code> 机制，<code>setjmp</code> 营造了一个<em>类似异常处理的机制</em>。
+因此，大多数 API 都可以抛出异常（即调用 <code>longjmp</code>）而不是直接返回。</p>
+</blockquote>
+<h3 id="处理应用代码中的错误">处理应用代码中的错误 <a class="markdownIt-Anchor" href="#处理应用代码中的错误">#</a></h3>
+<p>在应用代码中，如果没有为 <code>longjmp</code> 准备对应的 <code>setjmp</code>，API 中的任何错误都会导致 Lua 调用紧急函数（panic function），这个函数返回时，应用就会退出。
+我们可以通过 <code>lua_atpanic</code> 设置自己的紧急函数，但是作用不大。</p>
+<p>要正确处理应用代码中的错误，必须通过 Lua 提供的 API 调用我们自己的代码，即在 <code>setjmp</code> 的上下文中运行代码。
+我们可以将 C 代码封装到一个 C 函数中，再通过 <code>lua_pcall</code> 调用，这样我们的 C 代码会在<strong>保护模式</strong>（见 <a target="_blank" rel="noopener" href="https://www.runoob.com/manual/lua53doc/manual.html#lua_pcall"><code>lua_pcall</code></a>）下运行。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">foo</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// code to run in protected mode</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">secure_foo</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">    lua_pushfunction(L, foo);</span><br><span class="line">    <span class="keyword">return</span>(lua_pcall(L, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>) == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="处理库代码中的错误">处理库代码中的错误 <a class="markdownIt-Anchor" href="#处理库代码中的错误">#</a></h3>
+<p>在编写<strong>库代码</strong>时，通常无需进行额外的操作。库函数抛出的错误要么被 Lua 中的 <code>pcall</code> 捕获，要么被应用代码中的 <code>lua_pcall</code> 捕获（这就要求应用代码需要按照上文中的方式编写）。
+因此，当库代码中的函数检测到错误时，只需简单地调用 <code>lua_error</code>（或 <code>luaL_error</code>）即可。<code>lua_error</code> 会以栈顶的值作为<strong>错误对象</strong>(error object)（“a single value”，<code>lua_pcall</code> 会在检测到错误时会将其置于栈顶），抛出一个 Lua 错误。</p>
+<h2 id="内存分配">内存分配 <a class="markdownIt-Anchor" href="#内存分配">#</a></h2>
+<p>Lua 的 C API 并不一定要通过调用 <code>malloc</code> 等函数来分配内存，而是可以通过用户自己实现的一个<strong>分配函数</strong>（allocation function）来分配和释放内存。</p>
+<p><code>luaL_newstate</code> 通过默认分配函数来创建 Lua 状态机，该分配函数使用了 C 的 <code>malloc</code>、<code>realloc</code>、<code>free</code> 函数。
+<code>lua_newstate</code> 则将其参数作为分配函数创建 Lua 状态机。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">lua_State* <span class="title">lua_newstate</span><span class="params">(lua_Alloc f, <span class="keyword">void</span>* ud)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>lua_Alloc f</code>：分配函数</li>
+<li><code>void* ud</code>：用户数据</li>
+</ul>
+<p>分配函数需满足以下格式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>* (*lua_Alloc)(<span class="keyword">void</span>* ud,</span><br><span class="line">                           <span class="keyword">void</span>* ptr,</span><br><span class="line">                           <span class="keyword">size_t</span> osize,</span><br><span class="line">                           <span class="keyword">size_t</span> nsize);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>void* ud</code>：始终为 <code>lua_newstate</code> 提供的用户数据</li>
+<li><code>void* ptr</code>：正要被分配、重分配、释放的块的地址</li>
+<li><code>size_t osize</code>：原始块的大小</li>
+<li><code>size_t nsize</code>：请求的块的大小</li>
+</ul>
+<p>分配函数的行为像</p>
+<ul>
+<li><code>malloc</code>：<code>ptr</code> 为 <code>NULL</code>，<code>nsize</code> 为 0，返回新分配的块的地址</li>
+<li><code>realloc</code>：<code>ptr</code> 不为 <code>NULL</code> 且 <code>nsize</code> 不为 0，释放 <code>ptr</code> 指向的块并返回新地址</li>
+<li><code>free</code>：<code>ptr</code> 不为 <code>NULL</code>，<code>nsize</code> 为 0，分配函数必须释放 <code>ptr</code> 指向的块并返回 <code>NULL</code></li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>如果 <code>ptr</code> 是 <code>NULL</code>，那么 <code>osize</code> 则用来存放其他信息。若同时 <code>nsize</code> 为 0，则分配函数什么也不做，并返回 <code>NULL</code></li>
+<li>如果无法分配指定的块，则必须返回 <code>NULL</code></li>
+<li>Lua 假定 <code>nsize</code> 等于 <code>osize</code> 时不会失败</li>
+</ul>
+<p><code>luaL_newstate</code> 使用的默认分配函数如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">l_alloc</span><span class="params">(<span class="keyword">void</span>* ud, <span class="keyword">void</span>* ptr, <span class="keyword">size_t</span> osize, <span class="keyword">size_t</span> nsize)</span> </span>&#123;</span><br><span class="line">    (<span class="keyword">void</span>) ud; (<span class="keyword">void</span>)osize; <span class="comment">/* 未使用 */</span></span><br><span class="line">    <span class="keyword">if</span>(nsize == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">free</span>(ptr);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">realloc</span>(ptr, nsize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="在-lua-中调用-c-语言">在 Lua 中调用 C 语言 <a class="markdownIt-Anchor" href="#在-lua-中调用-c-语言">#</a></h2>
+<p>Lua 调用 C 函数时，每个 C 函数痘有其独立的<strong>局部栈</strong>，其第一个参数总是位于局部栈中索引为 1 的位置。</p>
+<p>创建一个 C 库一般包含三步：</p>
+<ol>
+<li>创建 C 函数</li>
+<li>填充函数注册表：定义 C 函数到 Lua 函数的映射</li>
+<li>定义入口函数：将 C 函数注册为 Lua 函数</li>
+</ol>
+<p>首先，库函数都必须使用同一个原型：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(*lua_CFunction)</span><span class="params">(lua_State *L)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>C 函数通过返回值（<code>return</code>）决定要返回（通过虚拟栈）给 Lua 的参数个数。</p>
+<p>第二步中，函数注册表为一个 <code>luaL_Reg</code> 数组，如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">luaL_Reg</span> _<span class="title">lib_reg</span>[] =</span> &#123;</span><br><span class="line">    &#123;<span class="string">&quot;dir&quot;</span>, l_dir&#125;,</span><br><span class="line">    &#123;<span class="literal">NULL</span>, <span class="literal">NULL</span>&#125; <span class="comment">// 哨兵</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其中，<code>l_dir</code> 函数被注册为 Lua 函数 <code>dir</code>。</p>
+<p>最后就是使用第二步中的函数注册表将 C 函数注册为 Lua 函数。这一步需要我们定义一个<strong>入口函数</strong>。
+Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>luaopen_&lt;file_name_without_extention_name&gt;</code>，如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaopen_libdir</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">    luaL_newlib(L, _lib_reg);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>入口函数通常直接使用 <code>luaL_newlib</code> 方法创建新的 Lua 表，其中包含注册好的 Lua 函数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_newlib</span><span class="params">(lua_State *L, <span class="keyword">const</span> luaL_Reg l[])</span></span>;</span><br></pre></td></tr></table></figure>
+<p><code>luaL_newlib</code> 其实是一个宏，详见<a href="#%E5%85%B1%E4%BA%AB%E4%B8%8A%E5%80%BC">共享上值</a>。</p>
+<p>完整示例见<a href="#%E5%AE%9E%E7%8E%B0-lua-%E7%9A%84-dir-%E5%87%BD%E6%95%B0">实现 Lua 的 dir 函数</a>。</p>
+<details class="note info"><summary><p>require 函数参数中的连字符</p>
+</summary>
+<p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去处末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
+<p>另外，<code>require</code> 函数中的句点 <code>.</code> 表示<strong>子模块</strong>，如：<code>require'libdir-v0.1'</code> 中的 <code>libdir-v0.1</code> 表示 <code>libdir-v0/1</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; dir = require&#x27;libdir-v0.1&#x27;</span><br><span class="line">stdin:1: module &#x27;libdir-v0.1&#x27; not found:</span><br><span class="line">        no field package.preload[&#x27;libdir-v0.1&#x27;]</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0.so&#x27;</span><br><span class="line">stack traceback:</span><br><span class="line">        [C]: in function &#x27;require&#x27;</span><br><span class="line">        stdin:1: in main chunk</span><br><span class="line">        [C]: in ?</span><br></pre></td></tr></table></figure>
+</details>
+<h3 id="注册表">注册表 <a class="markdownIt-Anchor" href="#注册表">#</a></h3>
+<p>Lua API 中通过使用注册表来实现“全局变量”。使用这一功能需要一对函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaL_ref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_unref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t, <span class="keyword">int</span> ref)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>注册表总是位于<strong>伪索引</strong> <code>LUA_REGISTRYINDEX</code> 中，可以像使用一个普通的索引一样使用它。
+需要注意的是，所有在 Lua 中加载的库代码都共用一个注册表，在给表的键取名时要注意命名冲突。</p>
+<div class="note warning"><p>在注册表中不能使用数值类型的键，因为 Lua 将其作为<strong>引用系统</strong>的保留字。</p>
+</div>
+<details class="note info"><summary><p>轻量用户数据</p>
+</summary>
+<p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_settable(L, LUA_REGISTRYINDEX);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_gettable(L, LUA_REGISTRYINDEX);</span><br><span class="line">*myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
+<p>为了简化将变量地址作为唯一值的用法，Lua5.2 引入了两个函数：<code>lua_rawgetp</code> 和 <code>lua_rawsetp</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_rawsetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_rawgetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
+</details>
+<h3 id="上值和共享上值">上值和共享上值 <a class="markdownIt-Anchor" href="#上值和共享上值">#</a></h3>
+<p>Lua 中可以为一个函数绑定若干个<strong>上值</strong>，这些上值仅在绑定的函数中可见。
+一个函数和其上值的关联称为<strong>闭包</strong>（closure）。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建并返回闭包</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_pushcclosure</span><span class="params">(lua_State *L, lua_CFunction fn, <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="comment">// 在闭包函数中获取上值的索引</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lua_upvalueindex</span><span class="params">(<span class="keyword">int</span> i)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>上值的索引可以被当作普通索引使用，Lua 会处理好一切。</p>
+<p>使用 <code>lua_pushcclosure</code> 在工厂函数中返回一个闭包是上值的一种使用方法，实例见：<a href="#%E4%B8%8A%E5%80%BC%E5%92%8C%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0">上值和工厂函数</a>。</p>
+<p>如果要在多个函数中共用上值（共享上值），可以使用以下代码替代 <code>luaL_newlib</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建库函数表</span></span><br><span class="line">luaL_newlibtable(L, _lib_reg);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 准备要共享的值（这里是一个表）</span></span><br><span class="line">lua_newtable(L);</span><br><span class="line"><span class="comment">/* ...（这里假设这些代码保证上面的表最终在栈顶） */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将 _lib_reg 中的函数添加到新库中，指定栈顶一定数量（这里是 1）的共享上值</span></span><br><span class="line"><span class="comment">// lua_setfuncs 会将栈中的值删除</span></span><br><span class="line">lua_setfuncs(L, lib, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="实例">实例 <a class="markdownIt-Anchor" href="#实例">#</a></h2>
+<h3 id="输出整个栈中的内容">输出整个栈中的内容 <a class="markdownIt-Anchor" href="#输出整个栈中的内容">#</a></h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">stackDump</span> <span class="params">(lua_State* L)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> top = lua_gettop(L);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= top; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = lua_type(L, i);</span><br><span class="line">        <span class="keyword">switch</span> (t) &#123;</span><br><span class="line">            <span class="keyword">case</span> LUA_TSTRING: &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;&#x27;%s&#x27;&quot;</span>, lua_tostring(L, i));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> LUA_TBOOLEAN: &#123;</span><br><span class="line">                <span class="built_in">printf</span>(lua_toboolean(L, i) ? <span class="string">&quot;true&quot;</span> : <span class="string">&quot;false&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> LUA_TNUMBER: &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%g&quot;</span>, lua_tonumber(L, i));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>: &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, lua_typename(L, t));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现-lua-的-dir-函数">实现 Lua 的 dir 函数 <a class="markdownIt-Anchor" href="#实现-lua-的-dir-函数">#</a></h3>
+<p>Lua 标准库中没有 <code>dir</code> 函数（读取目录下的所有文件），但是我们可以自己实现：</p>
+<figure class="highlight c"><figcaption><span>libdir-v0-1.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lua.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lauxlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">l_dir</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">    DIR *dir;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> *<span class="title">entry</span>;</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *path = luaL_checkstring(L, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打开目录</span></span><br><span class="line">    dir = opendir(path);</span><br><span class="line">    <span class="keyword">if</span> (dir == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        lua_pushnil(L);</span><br><span class="line">        lua_pushstring(L, strerror(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lua_newtable(L);</span><br><span class="line">    i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> ((entry = readdir(dir)) != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        lua_pushinteger(L, i++);</span><br><span class="line">        lua_pushstring(L, entry-&gt;d_name);</span><br><span class="line">        lua_settable(L, <span class="number">-3</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    closedir(dir);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">luaL_Reg</span> _<span class="title">lib_reg</span>[] =</span> &#123;</span><br><span class="line">    &#123;<span class="string">&quot;dir&quot;</span>, l_dir&#125;,</span><br><span class="line">    &#123;<span class="literal">NULL</span>, <span class="literal">NULL</span>&#125; <span class="comment">// 哨兵</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 入口函数，不加 static，lua_open&lt;libname&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaopen_libdir</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">    luaL_newlib(L, _lib_reg);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 <code>gcc -fPIC -shared -o libdir-v0-1.so libdir-v0-1.c</code> 编译得到动态库。
+再通过以下 Lua 脚本测试：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dir = <span class="built_in">require</span><span class="string">&quot;libdir&quot;</span>   <span class="comment">--&gt; </span></span><br><span class="line">dir.dir(<span class="string">&#x27;.&#x27;</span>)  <span class="comment">--&gt; table: 0x5580923c1af0</span></span><br></pre></td></tr></table></figure>
+<h3 id="上值和工厂函数">上值和工厂函数 <a class="markdownIt-Anchor" href="#上值和工厂函数">#</a></h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前置声明</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">counter</span><span class="params">(lua_State* L)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工厂函数，返回（通过虚拟栈）一个 closure</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">newCounter</span><span class="params">(lua_State* L)</span> </span>&#123;</span><br><span class="line">    lua_pushinteger(L, <span class="number">10</span>);</span><br><span class="line">    lua_pushcclosure(L, &amp;counter, <span class="number">1</span>);   <span class="comment">// 状态机，指定闭包中的函数，要绑定的上值数量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// counter 的定义</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">counter</span><span class="params">(lua_State* L)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val = lua_tointeger(L, lua_upvalueindex(<span class="number">1</span>));</span><br><span class="line">    lua_pushinteger(L, ++val);</span><br><span class="line">    lua_copy(L, <span class="number">-1</span>, lua_upvalueindex(<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/05/03/CMake-学习记录/" rel="bookmark">CMake 学习记录</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/04/08/Lua-迭代器和泛型-for/" rel="bookmark">Lua 迭代器和泛型 for</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Qihuan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://www.aloha.org.cn/2021/04/15/Lua-%E5%92%8C-C/" title="Lua 和 C">https://www.aloha.org.cn/2021/04/15/Lua-和-C/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
+              <a href="/tags/Lua/" rel="tag"><i class="fa fa-tag"></i> Lua</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/12/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/" rel="prev" title="自制伪终端">
+                  <i class="fa fa-chevron-left"></i> 自制伪终端
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/" rel="next" title="螺旋体">
+                  螺旋体 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div><script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qihuan Liu</span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script class="next-config" data-name="pdf" type="application/json">{&quot;object_url&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;pdfobject@2.2.5&#x2F;pdfobject.min.js&quot;,&quot;integrity&quot;:&quot;sha256-YuNlP9i6s&#x2F;WH7EaU2kErloo9Vc85C3WVqhoMDgsEVpY&#x3D;&quot;},&quot;url&quot;:&quot;&#x2F;lib&#x2F;pdf&#x2F;web&#x2F;viewer&quot;}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{&quot;enable&quot;:true,&quot;theme&quot;:&quot;forest&quot;,&quot;js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mermaid@8.9.3&#x2F;dist&#x2F;mermaid.min.js&quot;,&quot;integrity&quot;:&quot;sha256-OyJHvRcZHaRR6Ig73ppxF4QXk8HzvfgTprRWkulCkfY&#x3D;&quot;}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script class="next-config" data-name="nprogress" type="application/json">{&quot;enable&quot;:true,&quot;spinner&quot;:true}</script>
+  <script src="/js/third-party/nprogress.js"></script>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/firebase@8.4.2/firebase-app.js" integrity="sha256-aS+rZ1asHNtiV5W1+xXQ5lgWF8vMvIqUGYkHJetOD9A=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/firebase@8.4.2/firebase-firestore.js" integrity="sha256-hCnXfO8mXFtVSaEv9mZUk6Dw2xIcWZj+ABYvThpJCJg=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="firestore" type="application/json">{&quot;enable&quot;:true,&quot;collection&quot;:&quot;articles&quot;,&quot;apiKey&quot;:&quot;AIzaSyC7NHKKsudADkwkMhNPKROb1VmXMNfL5Pc&quot;,&quot;projectId&quot;:&quot;aloha-s-blog-7252f&quot;}</script>
+  <script src="/js/third-party/statistics/firestore.js"></script>
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/copy-tex.min.css" integrity="sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{&quot;copy_tex_js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.13.3&#x2F;dist&#x2F;contrib&#x2F;copy-tex.min.js&quot;,&quot;integrity&quot;:&quot;sha256-etSqbSVF4+Lwe8MGk&#x2F;Vanc1sR+mWv+qOG73fxWw9p94&#x3D;&quot;}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{&quot;enable&quot;:true,&quot;repo&quot;:&quot;alohaia&#x2F;alohaia.github.io&quot;,&quot;issue_term&quot;:&quot;title&quot;,&quot;theme&quot;:&quot;preferred-color-scheme&quot;}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

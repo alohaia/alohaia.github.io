@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1590px" height="700px" enable-background="new">
+<defs>
+    <style type="text/css"><![CDATA[
+    line.spine
+    {
+        stroke-width: 7;
+        stroke: #000000;
+    }
+
+    circle.nucleotideCircle
+    {
+        stroke-width: 2.5;
+        /*stroke-opacity: 0.4;*/
+        stroke: #000000;
+    }
+
+    text.nucleotideText
+    {
+        text-anchor: middle;
+        font-family: "DejaVu Sans";
+        font-size: 28px;
+        fill: #000000;
+    }
+
+    .bracePath
+    {
+        fill: none;
+        stroke-width: 2.5;
+        stroke: #000000;
+    }
+
+    text.label
+    {
+        font-family: "DejaVu Sans";    
+        font-size: 34px;
+    }
+    ]]></style>
+
+    <g id="bond">
+        <rect x="-5" width="10" height="58" fill="#00effe"/>
+    </g>
+
+    <g id="circleX">
+        <circle class="nucleotideCircle" r="17" fill="#c8c8c8" />
+        <text class="nucleotideText" text-anchor="middle" x="-0.5" y="10">X</text>
+    </g>
+    <g id="circleA">
+        <circle class="nucleotideCircle" r="17" fill="#ff9191" />
+        <text class="nucleotideText" text-anchor="middle" x="0" y="10">A</text>
+    </g>
+    <g id="circleC">
+        <circle class="nucleotideCircle" r="17" fill="#91ffa4" />
+        <text class="nucleotideText" text-anchor="middle" x="-1" y="10">C</text>
+    </g>
+    <g id="circleG">
+        <circle class="nucleotideCircle" r="17" fill="#fffc69" />
+        <text class="nucleotideText" text-anchor="middle" x="-0.5" y="10">G</text>
+    </g>
+    <g id="circleT">
+        <circle class="nucleotideCircle" r="17" fill="#9291ff" />
+        <text class="nucleotideText" text-anchor="middle" x="0" y="10">T</text>
+    </g>
+
+    <path id="bracePath1" class="bracePath" d="M0,8.5 C0,4 4,0 10,0" />
+    <path id="bracePath2" class="bracePath" d="M12.667,-8.5 C10.125,-3.563 6.8,0 0,0" />
+</defs>
+<!--<rect x="-100" y="-100" width="10000" height="10000" fill="#e0e0e0" />-->
+<g transform="translate(95 323) translate(25 25)">
+    <g transform="translate(0 -29)">
+        <g id="tails">
+            <g id="tail">
+                <line class="spine" x2="-56" />
+                <line class="spine" stroke-dasharray="7,6" x1="-49" x2="-95" />
+            </g>
+            <use xlink:href="#tail" y="58" />
+        </g>
+
+        <line id="spine1" class="spine" x2="714" />
+        <use xlink:href="#spine1" y="58" />
+
+        <use xlink:href="#tails" transform="translate(714 0) scale(-1 1)" />
+
+        <g id="pairXX">
+            <use xlink:href="#bond" />
+            <use xlink:href="#circleX" />
+            <use xlink:href="#circleX" y="58" />
+        </g>
+        <use xlink:href="#pairXX" x="42" />
+
+        <g id="palindrome" transform="translate(84 0)">
+            <g>
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleG" />
+                <use xlink:href="#circleC" y="58" />
+            </g>
+            <g transform="translate(42 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleA" />
+                <use xlink:href="#circleT" y="58" />
+            </g>
+            <g transform="translate(84 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleT" />
+                <use xlink:href="#circleA" y="58" />
+            </g>
+            <g transform="translate(126 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleC" />
+                <use xlink:href="#circleG" y="58" />
+            </g>
+        </g>
+
+        <use xlink:href="#pairXX" x="252" />
+        <use xlink:href="#pairXX" x="294" />
+        <use xlink:href="#pairXX" x="336" />
+        <use xlink:href="#pairXX" x="378" />
+        <use xlink:href="#pairXX" x="420" />
+        <use xlink:href="#pairXX" x="462" />
+
+        <use xlink:href="#palindrome" x="420" />
+
+        <use xlink:href="#pairXX" x="672" />
+        <use xlink:href="#pairXX" x="714" />
+
+        <g id="brace1" transform="translate(147 99)">
+            <g class="brace">
+                <g id="braceSide1">
+                    <use xlink:href="#bracePath1" />
+                    <use xlink:href="#bracePath2" x="66" />
+                    <line class="bracePath" x1="10" x2="66" />
+                </g>
+                <use xlink:href="#braceSide1" transform="scale(-1 1)" />
+            </g>
+            <text class="label" text-anchor="middle" y="49">A</text>
+        </g>
+        <use xlink:href="#brace1" x="420" />
+
+    </g>
+    <g transform="translate(1122 -29)">
+        <use xlink:href="#tails" />
+
+        <line id="spine2" class="spine" x2="42" />
+        <use xlink:href="#spine2" y="58" />
+
+        <g transform="translate(42 0)">
+            <g id="spines1">
+                <line id="spine3" class="spine" x2="40.3" y2="-40.3" />
+                <use xlink:href="#spine3" transform="translate(0 58) scale(1 -1)" />
+            </g>
+            <use xlink:href="#spines1" transform="translate(80.6 0) translate(58 0) scale(-1 1)" />
+        </g>
+
+        <use xlink:href="#spine2" x="180.6" />
+        <use xlink:href="#spine2" x="180.6" y="58" />
+
+        <use xlink:href="#tails" transform="translate(222.6 0) scale(-1 1)" />
+
+        <use xlink:href="#pairXX" />
+        <use xlink:href="#pairXX" x="42" />
+
+        <use xlink:href="#pairXX" x="180.6" />
+        <use xlink:href="#pairXX" x="222.6" />
+
+        <g transform="translate(42 0) translate(40.3 -40.3) rotate(-90)">
+            <line id="spine4" class="spine" x2="126" />
+            <use xlink:href="#spine4" y="58" />
+
+            <line id="spine5" class="spine" x1="126" x2="160.3" y2="-24.2" />
+            <use xlink:href="#spine5" transform="translate(0 58) scale(1 -1)" />
+
+            <g>
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleG" />
+                <use xlink:href="#circleC" transform="translate(0 58) rotate(180)" />
+            </g>
+            <g transform="translate(42 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleA" />
+                <use xlink:href="#circleT" transform="translate(0 58) rotate(180)" />
+            </g>
+            <g transform="translate(84 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleT" />
+                <use xlink:href="#circleA" transform="translate(0 58) rotate(180)" />
+            </g>
+            <g transform="translate(126 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleC" />
+                <use xlink:href="#circleG" transform="translate(0 58) rotate(180)" />
+            </g>
+
+            <g id="loop" transform="translate(126 0)">
+                <g transform="translate(34.3 0)">
+                    <line id="spine6" class="spine" y1="-24.2" x2="42" y2="-24.2" />
+                    <use xlink:href="#spine6" y="106.4" />
+
+                    <line id="spine7" class="spine" x1="42" y1="-24.2" x2="76.3" />
+                    <use xlink:href="#spine7" transform="translate(0 58) scale(1 -1)" />
+
+                    <line class="spine" x1="76.3" x2="76.3" y2="58" />
+
+                    <g id="loop1">
+                        <use xlink:href="#circleX" transform="translate(0 -24.2) rotate(90)" />
+                        <use xlink:href="#circleX" transform="translate(0 58) translate(0 24.2) rotate(90)" />
+                    </g>
+                    <use xlink:href="#loop1" x="42" />
+
+                    <use xlink:href="#circleX" transform="translate(42 0) translate(34.3 0) rotate(90)" />
+                    <use xlink:href="#circleX" transform="translate(42 58) translate(34.3 0) rotate(90)" />
+                </g>
+            </g>
+        </g>
+        <g transform="translate(100 58) translate(40.3 40.3) rotate(90)">
+            <use xlink:href="#spine4" />
+            <use xlink:href="#spine4" y="58" />
+
+            <use xlink:href="#spine5" />
+            <use xlink:href="#spine5" transform="translate(0 58) scale(1 -1)" />
+
+            <g>
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleG" transform="rotate(180)" />
+                <use xlink:href="#circleC" y="58" />
+            </g>
+            <g transform="translate(42 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleA" transform="rotate(180)" />
+                <use xlink:href="#circleT" y="58" />
+            </g>
+            <g transform="translate(84 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleT" transform="rotate(180)" />
+                <use xlink:href="#circleA" y="58" />
+            </g>
+            <g transform="translate(126 0)">
+                <use xlink:href="#bond" />
+                <use xlink:href="#circleC" transform="rotate(180)" />
+                <use xlink:href="#circleG" y="58" />
+            </g>
+
+            <use xlink:href="#loop" />
+        </g>
+
+        <g transform="translate(210, -230)">
+            <g transform="rotate(-90)">
+                <g id="braceSide2">
+                    <use xlink:href="#bracePath1" />
+                    <use xlink:href="#bracePath2" x="40" />
+                    <line class="bracePath" x1="10" x2="40" />
+                </g>
+                <use xlink:href="#braceSide2" transform="scale(-1 1)" />
+            </g>
+            <text class="label" x="20" y="10">B</text>
+        </g>
+        <g transform="translate(210, -102)">
+            <g transform="rotate(-90)">
+                <g id="braceSide3">
+                    <use xlink:href="#bracePath1" />
+                    <use xlink:href="#bracePath2" x="52" />
+                    <line class="bracePath" x1="10" x2="52" />
+                </g>
+                <use xlink:href="#braceSide3" transform="scale(-1 1)" />
+            </g>
+            <text class="label" x="20" y="10">C</text>
+        </g>
+    </g>
+    <g transform="translate(918 0)">
+        <polygon id="arrow" transform="translate(-49 -19)" fill="#ff0000" points="0,-8 63,-8 63,-24 104,0 63,24 63,8 0,8" />
+        <use xlink:href="#arrow" transform="translate(0 37) scale(-1 1)" />
+    </g>
+</g>
+</svg>
