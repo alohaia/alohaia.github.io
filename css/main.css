@@ -3202,7 +3202,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #eeff61;
+  background: #b555e3;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3245,6 +3245,10 @@ hr {
 div.post-body {
     counter-reset: imgCounter tblCounter;
     /* text-align: left; */ /* use `text_align` in theme config */
+}
+
+div.post-body>p {
+    /* text-indent: 2em; */
 }
 
 img {
@@ -3299,28 +3303,28 @@ h2 {
 
 h3 {
     text-align: left;
-    font-size: 24px;
+    font-size: 26px;
     counter-reset: h4Counter h5Counter h6Counter;
     counter-increment: h3Counter;
 }
 
 h4 {
     text-align: left;
-    font-size: 20px;
+    font-size: 22px;
     counter-reset: h5Counter h6Counter;
     counter-increment: h4Counter;
 }
 
 h5 {
     text-align: left;
-    font-size: 18px;
+    font-size: 20px;
     counter-reset: h6Counter;
     counter-increment: h5Counter;
 }
 
 h6 {
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
     counter-increment: h6Counter;
 }
 
