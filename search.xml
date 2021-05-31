@@ -1820,36 +1820,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue 学习记录</title>
     <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1900,6 +1870,36 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </categories>
       <tags>
         <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
       </tags>
   </entry>
   <entry>
@@ -3020,6 +3020,40 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>其他病毒</title>
+    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p class="center">Empty...</p>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<p>中枢神经系统，死亡率 100%，</p>
+<p>病毒呈“子弹头状”</p>
+<dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是 <strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
+<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
+</dl>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>传染源：狂犬、猫蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>DNA 无包膜病毒</p>
+<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分子病和先天代谢病</title>
     <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -3218,40 +3252,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dd>服用 <strong>伯胺喹呤</strong>、<strong>蚕豆</strong> 可致发病</dd>
 </dl>
 ]]></content>
-  </entry>
-  <entry>
-    <title>其他病毒</title>
-    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p class="center">Empty...</p>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<p>中枢神经系统，死亡率 100%，</p>
-<p>病毒呈“子弹头状”</p>
-<dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是 <strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
-<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
-</dl>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>传染源：狂犬、猫蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>DNA 无包膜病毒</p>
-<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
   </entry>
   <entry>
     <title>动物源性细菌</title>
@@ -3864,6 +3864,177 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>单基因遗传病</title>
+    <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
+    <content><![CDATA[<dl>
+<dt>单基因病（single gene disease, monogenic disease）| 孟德尔（式）遗传病</dt>
+<dd>受一对等位基因控制的遗传病，其遗传遵循孟德尔遗传定律。</dd>
+<dt>基因座（lovus）</dt>
+<dd>一条染色体上的特定位置，每个基因座上存在有特定的基因。</dd>
+<dt>等位基因（allele）</dt>
+<dd>同源染色体生同一基因座上的基因。</dd>
+<dt>基因型（genotype）</dt>
+<dd>一个个体的基因结构或组成，也可指一个基因做伤的等位基因。</dd>
+<dt>表（现）型（phenotype）</dt>
+<dd>生物某一特定的物理外观或成分，为基因型与环境相互作用的结果。</dd>
+</dl>
+<span id="more"></span>
+<dl>
+<dt>复合杂合子</dt>
+<dd>一个特定位点伤有两个不同突变等位基因的个体。</dd>
+</dl>
+<blockquote>
+<p>隐性遗传病的杂合子（复合杂合子）也可能表现出症状。</p>
+</blockquote>
+<dl>
+<dt>双重杂合子</dt>
+<dd>在两个不同位点上每个位点带有一种突变基因的个体。</dd>
+</dl>
+<h2 id="常染色体显性遗传病">常染色体显性遗传病 <a class="markdownIt-Anchor" href="#常染色体显性遗传病">#</a></h2>
+<ul>
+<li>连续遗传</li>
+<li>男女发病概率相等</li>
+<li>双亲必有一方患病</li>
+</ul>
+<h3 id="常染色体显性遗传的不同类型">常染色体显性遗传的不同类型 <a class="markdownIt-Anchor" href="#常染色体显性遗传的不同类型">#</a></h3>
+<dl>
+<dt>完全显性（complete dominance）</dt>
+<dd>纯合子患者（AA）和杂合子患者（Aa）表型上无差别。</dd>
+<dt>不完全显性（incomplete dominance）| 半显性（semidominance）</dt>
+<dd>杂合子患者（Aa）表型介于纯合子患者（AA）和纯合隐性正常人（aa）之间。</dd>
+<dt>共显性（co-dominance）</dt>
+<dd>一对等位基因之间没有显性和隐性的区别，杂合状态下分别表达产物。</dd>
+</dl>
+<div class="note info"><dl>
+<dt>复等位基因</dt>
+<dd>某基因座上，在群体中有两个以上的等位基因。</dd>
+</dl>
+</div>
+<dl>
+<dt>不规则显性（irregular dominance）</dt>
+<dd>可以表现或不表现出相应的表型，且表现程度不同。</dd>
+<dd>是由于决定表型的主基因之外，基因组中的其他基因（<strong>遗传背景</strong>）不同造成的，<strong>修饰基因</strong>对主基因及表型有显著效应。</dd>
+<dd>常见原因：
+<ul>
+<li><strong>外显率</strong>降低</li>
+<li><strong>表现度</strong>不一致</li>
+</ul>
+</dd>
+</dl>
+<div class="note info"><dl>
+<dt>外显率（penutrance）</dt>
+<dd>一个群体中带有某一致病基因的个体，表型出相应疾病表型的比率。</dd>
+<dt>表现度（expressivity）</dt>
+<dd>致病基因在不同个体的表达程度，即患病的严重程度。</dd>
+</dl>
+</div>
+<dl>
+<dt>延迟显性（delayed onset）</dt>
+<dd>在生命早期致病基因不表达，达到一定年龄后才表现出疾病。</dd>
+<dd>如亨亭顿舞蹈症。</dd>
+</dl>
+<div class="note info"><dl>
+<dt>遗传印记</dt>
+<dd>由于基因来自来自父方或母方Ⅱ产生不同表型的现象。</dd>
+<dd>如<strong>染色体 15q11-q13 缺失</strong>：数个其中基因在男女性体内表现状态（有无活性）不同
+<ul>
+<li>父源：Prader-Willi 综合征（PWS）</li>
+<li>母源：Angelman 综合征（AS）</li>
+</ul>
+</dd>
+</dl>
+</div>
+<dl>
+<dt>遗传早现（genetic anticipation）</dt>
+<dd>某些遗传病（通常为显性遗传病）在连续世代传递中，患者发病年龄逐代<strong>提前</strong>，病情逐渐<strong>加重</strong>的现象，成因是<strong>动态突变</strong>。</dd>
+</dl>
+<h2 id="常染色体隐性遗传病">常染色体隐性遗传病 <a class="markdownIt-Anchor" href="#常染色体隐性遗传病">#</a></h2>
+<dl>
+<dt>常染色体隐性（autosomal recessive, AR）遗传病</dt>
+<dd>致病基因位于 1~22 好染色体上，只有致病基因的纯合子个体才发病。</dd>
+<dd>如苯丙酮尿症、白化病 ⅠA 型、先天性聋哑 Ⅰ 型。</dd>
+<dd><strong>近亲婚配</strong>能明显提高 AR 遗传病的患病风险。</dd>
+</dl>
+<details class="note "><summary><p>ihfo</p>
+</summary>
+<dl>
+<dt>近亲婚配（consanguineous mating）</dt>
+<dd>在 3~4 代之内有共同祖先的个体之间的婚配。</dd>
+<dt>亲缘系数（coefficient relationship）</dt>
+<dd>有共同祖先的两个个体，在同一基因座上带有由共同祖先遗传而来的相同基因的概率。</dd>
+</dl>
+
+</details>
+<div class="note info"><dl>
+<dt>携带者（carrier）</dt>
+<dd>「狭义」表型正常，但是携带致病基因，并可将致病基因遗传给下一代。</dd>
+</dl>
+</div>
+<div class="note info"><dl>
+<dt>不完全确认</dt>
+<dd>常染色体隐性遗传病患者的统包的患病丰现往往高于 1/4。</dd>
+</dl>
+</div>
+<div class="note info"><dl>
+<dt>遗传异质性（genetic heterogeneity）</dt>
+<dd>相同或相似的表型可以有不同的遗传基础所决定。</dd>
+<dt>等位基因异质性（allele heterogeneity）</dt>
+<dd>同一基因的不同突变引起的相同或相似的表型。</dd>
+<dt>基因座异质性（locus heterogeneity）</dt>
+<dd>不同基因座上的不同基因突变引起的相同或相似的表型。</dd>
+</dl>
+<p>表型模拟（phenocopy）
+:</p>
+</div>
+<p>半合子</p>
+<p>交叉遗传</p>
+<p>系谱特征</p>
+<p>出现女患者的原因：</p>
+<p>X 染色体异常的染色体优先失活</p>
+<h2 id="x-连锁隐性遗传">X 连锁隐性遗传 <a class="markdownIt-Anchor" href="#x-连锁隐性遗传">#</a></h2>
+<dl>
+<dt>X 连锁隐性遗传病</dt>
+<dd>致病基因位于 X 染色体上，只有致病基因的纯合子个体才发病。</dd>
+</dl>
+<ul>
+<li>甲型血友病（Hemophilia A）</li>
+<li>Duchenne 型肌营养不良症（DMD）</li>
+<li>Backer 型肌营养不良症（BMD）</li>
+</ul>
+<div class="note info"><dl>
+<dt>功能克隆</dt>
+<dd>在基因产物（相应蛋白质）能纯化的前提下，从基因产物的功能分析着手进行基因克隆的策略。</dd>
+</dl>
+</div>
+<div class="note info"><dl>
+<dt>定位克隆</dt>
+<dd>在其他信息未知的情况下，将与某一表型相关的基因定位与染色体的某一位点并进一步缩小
+侯选范围，根据这一位置信息再从相关区域的“邻接克隆群”中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，
+即在患者的即沟基因的筛查出突变，最终确定疾病相关基因。</dd>
+</dl>
+</div>
+<h2 id="x-连锁显性遗传">X 连锁显性遗传 <a class="markdownIt-Anchor" href="#x-连锁显性遗传">#</a></h2>
+<h2 id="y-连锁遗传病">Y 连锁遗传病 <a class="markdownIt-Anchor" href="#y-连锁遗传病">#</a></h2>
+<h2 id="线粒体遗传病">线粒体遗传病 <a class="markdownIt-Anchor" href="#线粒体遗传病">#</a></h2>
+<ul>
+<li>半自主型</li>
+<li>遗传密和通用密码不同，母系遗传</li>
+<li>复制分离、遗传瓶颈，数目锐减</li>
+<li>杂质性与阈值效应</li>
+<li>突变率极高</li>
+</ul>
+<p>Leber 遗传性视神经病</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>呼吸道感染病毒</title>
     <url>/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<dl>
@@ -4140,177 +4311,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
         <tag>TODO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单基因遗传病</title>
-    <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
-    <content><![CDATA[<dl>
-<dt>单基因病（single gene disease, monogenic disease）| 孟德尔（式）遗传病</dt>
-<dd>受一对等位基因控制的遗传病，其遗传遵循孟德尔遗传定律。</dd>
-<dt>基因座（lovus）</dt>
-<dd>一条染色体上的特定位置，每个基因座上存在有特定的基因。</dd>
-<dt>等位基因（allele）</dt>
-<dd>同源染色体生同一基因座上的基因。</dd>
-<dt>基因型（genotype）</dt>
-<dd>一个个体的基因结构或组成，也可指一个基因做伤的等位基因。</dd>
-<dt>表（现）型（phenotype）</dt>
-<dd>生物某一特定的物理外观或成分，为基因型与环境相互作用的结果。</dd>
-</dl>
-<span id="more"></span>
-<dl>
-<dt>复合杂合子</dt>
-<dd>一个特定位点伤有两个不同突变等位基因的个体。</dd>
-</dl>
-<blockquote>
-<p>隐性遗传病的杂合子（复合杂合子）也可能表现出症状。</p>
-</blockquote>
-<dl>
-<dt>双重杂合子</dt>
-<dd>在两个不同位点上每个位点带有一种突变基因的个体。</dd>
-</dl>
-<h2 id="常染色体显性遗传病">常染色体显性遗传病 <a class="markdownIt-Anchor" href="#常染色体显性遗传病">#</a></h2>
-<ul>
-<li>连续遗传</li>
-<li>男女发病概率相等</li>
-<li>双亲必有一方患病</li>
-</ul>
-<h3 id="常染色体显性遗传的不同类型">常染色体显性遗传的不同类型 <a class="markdownIt-Anchor" href="#常染色体显性遗传的不同类型">#</a></h3>
-<dl>
-<dt>完全显性（complete dominance）</dt>
-<dd>纯合子患者（AA）和杂合子患者（Aa）表型上无差别。</dd>
-<dt>不完全显性（incomplete dominance）| 半显性（semidominance）</dt>
-<dd>杂合子患者（Aa）表型介于纯合子患者（AA）和纯合隐性正常人（aa）之间。</dd>
-<dt>共显性（co-dominance）</dt>
-<dd>一对等位基因之间没有显性和隐性的区别，杂合状态下分别表达产物。</dd>
-</dl>
-<div class="note info"><dl>
-<dt>复等位基因</dt>
-<dd>某基因座上，在群体中有两个以上的等位基因。</dd>
-</dl>
-</div>
-<dl>
-<dt>不规则显性（irregular dominance）</dt>
-<dd>可以表现或不表现出相应的表型，且表现程度不同。</dd>
-<dd>是由于决定表型的主基因之外，基因组中的其他基因（<strong>遗传背景</strong>）不同造成的，<strong>修饰基因</strong>对主基因及表型有显著效应。</dd>
-<dd>常见原因：
-<ul>
-<li><strong>外显率</strong>降低</li>
-<li><strong>表现度</strong>不一致</li>
-</ul>
-</dd>
-</dl>
-<div class="note info"><dl>
-<dt>外显率（penutrance）</dt>
-<dd>一个群体中带有某一致病基因的个体，表型出相应疾病表型的比率。</dd>
-<dt>表现度（expressivity）</dt>
-<dd>致病基因在不同个体的表达程度，即患病的严重程度。</dd>
-</dl>
-</div>
-<dl>
-<dt>延迟显性（delayed onset）</dt>
-<dd>在生命早期致病基因不表达，达到一定年龄后才表现出疾病。</dd>
-<dd>如亨亭顿舞蹈症。</dd>
-</dl>
-<div class="note info"><dl>
-<dt>遗传印记</dt>
-<dd>由于基因来自来自父方或母方Ⅱ产生不同表型的现象。</dd>
-<dd>如<strong>染色体 15q11-q13 缺失</strong>：数个其中基因在男女性体内表现状态（有无活性）不同
-<ul>
-<li>父源：Prader-Willi 综合征（PWS）</li>
-<li>母源：Angelman 综合征（AS）</li>
-</ul>
-</dd>
-</dl>
-</div>
-<dl>
-<dt>遗传早现（genetic anticipation）</dt>
-<dd>某些遗传病（通常为显性遗传病）在连续世代传递中，患者发病年龄逐代<strong>提前</strong>，病情逐渐<strong>加重</strong>的现象，成因是<strong>动态突变</strong>。</dd>
-</dl>
-<h2 id="常染色体隐性遗传病">常染色体隐性遗传病 <a class="markdownIt-Anchor" href="#常染色体隐性遗传病">#</a></h2>
-<dl>
-<dt>常染色体隐性（autosomal recessive, AR）遗传病</dt>
-<dd>致病基因位于 1~22 好染色体上，只有致病基因的纯合子个体才发病。</dd>
-<dd>如苯丙酮尿症、白化病 ⅠA 型、先天性聋哑 Ⅰ 型。</dd>
-<dd><strong>近亲婚配</strong>能明显提高 AR 遗传病的患病风险。</dd>
-</dl>
-<details class="note "><summary><p>ihfo</p>
-</summary>
-<dl>
-<dt>近亲婚配（consanguineous mating）</dt>
-<dd>在 3~4 代之内有共同祖先的个体之间的婚配。</dd>
-<dt>亲缘系数（coefficient relationship）</dt>
-<dd>有共同祖先的两个个体，在同一基因座上带有由共同祖先遗传而来的相同基因的概率。</dd>
-</dl>
-
-</details>
-<div class="note info"><dl>
-<dt>携带者（carrier）</dt>
-<dd>「狭义」表型正常，但是携带致病基因，并可将致病基因遗传给下一代。</dd>
-</dl>
-</div>
-<div class="note info"><dl>
-<dt>不完全确认</dt>
-<dd>常染色体隐性遗传病患者的统包的患病丰现往往高于 1/4。</dd>
-</dl>
-</div>
-<div class="note info"><dl>
-<dt>遗传异质性（genetic heterogeneity）</dt>
-<dd>相同或相似的表型可以有不同的遗传基础所决定。</dd>
-<dt>等位基因异质性（allele heterogeneity）</dt>
-<dd>同一基因的不同突变引起的相同或相似的表型。</dd>
-<dt>基因座异质性（locus heterogeneity）</dt>
-<dd>不同基因座上的不同基因突变引起的相同或相似的表型。</dd>
-</dl>
-<p>表型模拟（phenocopy）
-:</p>
-</div>
-<p>半合子</p>
-<p>交叉遗传</p>
-<p>系谱特征</p>
-<p>出现女患者的原因：</p>
-<p>X 染色体异常的染色体优先失活</p>
-<h2 id="x-连锁隐性遗传">X 连锁隐性遗传 <a class="markdownIt-Anchor" href="#x-连锁隐性遗传">#</a></h2>
-<dl>
-<dt>X 连锁隐性遗传病</dt>
-<dd>致病基因位于 X 染色体上，只有致病基因的纯合子个体才发病。</dd>
-</dl>
-<ul>
-<li>甲型血友病（Hemophilia A）</li>
-<li>Duchenne 型肌营养不良症（DMD）</li>
-<li>Backer 型肌营养不良症（BMD）</li>
-</ul>
-<div class="note info"><dl>
-<dt>功能克隆</dt>
-<dd>在基因产物（相应蛋白质）能纯化的前提下，从基因产物的功能分析着手进行基因克隆的策略。</dd>
-</dl>
-</div>
-<div class="note info"><dl>
-<dt>定位克隆</dt>
-<dd>在其他信息未知的情况下，将与某一表型相关的基因定位与染色体的某一位点并进一步缩小
-侯选范围，根据这一位置信息再从相关区域的“邻接克隆群”中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，
-即在患者的即沟基因的筛查出突变，最终确定疾病相关基因。</dd>
-</dl>
-</div>
-<h2 id="x-连锁显性遗传">X 连锁显性遗传 <a class="markdownIt-Anchor" href="#x-连锁显性遗传">#</a></h2>
-<h2 id="y-连锁遗传病">Y 连锁遗传病 <a class="markdownIt-Anchor" href="#y-连锁遗传病">#</a></h2>
-<h2 id="线粒体遗传病">线粒体遗传病 <a class="markdownIt-Anchor" href="#线粒体遗传病">#</a></h2>
-<ul>
-<li>半自主型</li>
-<li>遗传密和通用密码不同，母系遗传</li>
-<li>复制分离、遗传瓶颈，数目锐减</li>
-<li>杂质性与阈值效应</li>
-<li>突变率极高</li>
-</ul>
-<p>Leber 遗传性视神经病</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -7743,6 +7743,60 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
+    <title>立克次体</title>
+    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>立克次体（<em>Rickettsia</em>）</dt>
+<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>其生物学性状与细菌相似。</dd>
+</dl>
+<span id="more"></span>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>
+<p>多形态、大小介于细菌与病毒之间</p>
+</li>
+<li>
+<p>与<mark>节肢动物</mark>关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</p>
+</li>
+<li>
+<p>类似病毒的特性</p>
+<ul>
+<li>缺少酶系统，细胞器不完善</li>
+<li><mark>专性胞内寄生</mark></li>
+<li>不能用人工培养基培养</li>
+</ul>
+</li>
+<li>
+<p>类似细菌的特点</p>
+<ul>
+<li>二分裂繁殖</li>
+<li>含两种核酸</li>
+<li>对多种抗生素敏感</li>
+<li><em>革兰氏染色阴性</em></li>
+</ul>
+</li>
+<li>
+<p>培养特性</p>
+</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病物质">致病物质 <a class="markdownIt-Anchor" href="#致病物质">#</a></h4>
+<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>社会医学</title>
     <url>/2021/05/11/%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6/</url>
     <content><![CDATA[<p>社会医学知识点总结。</p>
@@ -8095,60 +8149,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>立克次体</title>
-    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>立克次体（<em>Rickettsia</em>）</dt>
-<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>其生物学性状与细菌相似。</dd>
-</dl>
-<span id="more"></span>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>
-<p>多形态、大小介于细菌与病毒之间</p>
-</li>
-<li>
-<p>与<mark>节肢动物</mark>关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</p>
-</li>
-<li>
-<p>类似病毒的特性</p>
-<ul>
-<li>缺少酶系统，细胞器不完善</li>
-<li><mark>专性胞内寄生</mark></li>
-<li>不能用人工培养基培养</li>
-</ul>
-</li>
-<li>
-<p>类似细菌的特点</p>
-<ul>
-<li>二分裂繁殖</li>
-<li>含两种核酸</li>
-<li>对多种抗生素敏感</li>
-<li><em>革兰氏染色阴性</em></li>
-</ul>
-</li>
-<li>
-<p>培养特性</p>
-</li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病物质">致病物质 <a class="markdownIt-Anchor" href="#致病物质">#</a></h4>
-<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>细胞因子</title>
     <url>/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/</url>
     <content><![CDATA[<dl>
@@ -8275,44 +8275,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       <tags>
         <tag>Index</tag>
         <tag>细胞生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>细菌感染的诊断与防治</title>
-    <url>/2021/03/25/%E7%BB%86%E8%8F%8C%E6%84%9F%E6%9F%93%E7%9A%84%E8%AF%8A%E6%96%AD%E4%B8%8E%E9%98%B2%E6%B2%BB/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E6%A0%87%E6%9C%AC%E7%9A%84%E9%87%87%E9%9B%86%E4%B8%8E%E9%80%81%E6%A3%80">标本的采集与送检</a></li>
-<li><a href="#%E7%97%85%E5%8E%9F%E8%8F%8C%E6%A3%80%E9%AA%8C%E7%A8%8B%E5%BA%8F">病原菌检验程序</a></li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="标本的采集与送检">标本的采集与送检 <a class="markdownIt-Anchor" href="#标本的采集与送检">#</a></h2>
-<p>六个原则</p>
-<ol>
-<li>避免杂菌污染</li>
-<li>不同期不同标本</li>
-<li>在使用抗菌物质前采集</li>
-<li>标本必须新鲜</li>
-<li>运送注意保存</li>
-<li>采集病变明显部位/标本做好标记</li>
-</ol>
-<h2 id="病原菌检验程序">病原菌检验程序 <a class="markdownIt-Anchor" href="#病原菌检验程序">#</a></h2>
-<ol>
-<li>细菌形态学检查：直接染色（如革兰氏染色）涂片镜检</li>
-<li>分离培养：平板三段划线法</li>
-<li>生化实验：细菌的酶系统，代谢产物</li>
-<li>血清学实验：抗原抗体杂交</li>
-<li>动物实验</li>
-<li>药物敏感试验：最低抑菌浓度、最低杀菌浓度，抑菌环大小</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -8543,6 +8505,44 @@ DNA，可携带细菌的某些遗传物质。</dd>
 </ul>
 <h2 id="细菌的遗传和变异">细菌的遗传和变异 <a class="markdownIt-Anchor" href="#细菌的遗传和变异">#</a></h2>
 <p>噬菌体：见<a href="/2021/03/21/%E7%97%85%E6%AF%92/" title="病毒">病毒</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>细菌感染的诊断与防治</title>
+    <url>/2021/03/25/%E7%BB%86%E8%8F%8C%E6%84%9F%E6%9F%93%E7%9A%84%E8%AF%8A%E6%96%AD%E4%B8%8E%E9%98%B2%E6%B2%BB/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E6%A0%87%E6%9C%AC%E7%9A%84%E9%87%87%E9%9B%86%E4%B8%8E%E9%80%81%E6%A3%80">标本的采集与送检</a></li>
+<li><a href="#%E7%97%85%E5%8E%9F%E8%8F%8C%E6%A3%80%E9%AA%8C%E7%A8%8B%E5%BA%8F">病原菌检验程序</a></li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="标本的采集与送检">标本的采集与送检 <a class="markdownIt-Anchor" href="#标本的采集与送检">#</a></h2>
+<p>六个原则</p>
+<ol>
+<li>避免杂菌污染</li>
+<li>不同期不同标本</li>
+<li>在使用抗菌物质前采集</li>
+<li>标本必须新鲜</li>
+<li>运送注意保存</li>
+<li>采集病变明显部位/标本做好标记</li>
+</ol>
+<h2 id="病原菌检验程序">病原菌检验程序 <a class="markdownIt-Anchor" href="#病原菌检验程序">#</a></h2>
+<ol>
+<li>细菌形态学检查：直接染色（如革兰氏染色）涂片镜检</li>
+<li>分离培养：平板三段划线法</li>
+<li>生化实验：细菌的酶系统，代谢产物</li>
+<li>血清学实验：抗原抗体杂交</li>
+<li>动物实验</li>
+<li>药物敏感试验：最低抑菌浓度、最低杀菌浓度，抑菌环大小</li>
+</ol>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -25003,6 +25003,410 @@ window.PDFBug = (function PDFBugClosure() {
   </entry>
   <entry>
     <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+
+
+    <link rel="stylesheet" href="viewer.css">
+
+
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
+
+
+  <script src="viewer.js"></script>
+
+  </head>
+
+  <body tabindex="1">
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div class="splitToolbarButton toggled">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+            <span id="findResultsCount" class="toolbarLabel hidden"></span>
+          </div>
+
+          <div id="findbarMessageContainer">
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+            </button>
+            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+            </button>
+            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+            </button>
+            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
+
+            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div class="clearBoth"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+            </div>
+            <div class="row">
+              <input type="password" id="password" class="toolbarField">
+            </div>
+            <div class="buttonRow">
+              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
+            </div>
+            <div class="buttonRow">
+              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+            </div>
+            <div class="row">
+              <progress value="0" max="100"></progress>
+              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+            </div>
+            <div class="buttonRow">
+              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- overlayContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+  </body>
+</html>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/lib/pdf/web/viewer.css</url>
     <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
@@ -27565,410 +27969,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<!--
-Copyright 2012 Mozilla Foundation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Adobe CMap resources are covered by their own copyright but the same license:
-
-    Copyright 1990-2015 Adobe Systems Incorporated.
-
-See https://github.com/adobe-type-tools/cmap-resources
--->
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PDF.js viewer</title>
-
-
-    <link rel="stylesheet" href="viewer.css">
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="../build/pdf.js"></script>
-
-
-  <script src="viewer.js"></script>
-
-  </head>
-
-  <body tabindex="1">
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div class="splitToolbarButton toggled">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
-
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
-              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-            </button>
-            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
-              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
-              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-            </button>
-            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
-              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-            </button>
-            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
-              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
-
-            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
-              <span data-l10n-id="spread_none_label">No Spreads</span>
-            </button>
-            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
-              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-            </button>
-            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
-              <span data-l10n-id="spread_even_label">Even Spreads</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
-                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-                </button>
-
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
-                  <span data-l10n-id="bookmark_label">Current View</span>
-                </a>
-
-                <div class="verticalToolbarSeparator hiddenSmallView"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-
-        <div id="errorWrapper" hidden='true'>
-          <div id="errorMessageLeft">
-            <span id="errorMessage"></span>
-            <button id="errorShowMore" data-l10n-id="error_more_info">
-              More Information
-            </button>
-            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
-              Less Information
-            </button>
-          </div>
-          <div id="errorMessageRight">
-            <button id="errorClose" data-l10n-id="error_close">
-              Close
-            </button>
-          </div>
-          <div class="clearBoth"></div>
-          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="overlayContainer" class="hidden">
-        <div id="passwordOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
-            </div>
-            <div class="row">
-              <input type="password" id="password" class="toolbarField">
-            </div>
-            <div class="buttonRow">
-              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="documentPropertiesOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
-            </div>
-            <div class="buttonRow">
-              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="printServiceOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-            </div>
-            <div class="row">
-              <progress value="0" max="100"></progress>
-              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
-            </div>
-            <div class="buttonRow">
-              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- overlayContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-  </body>
-</html>
 ]]></content>
   </entry>
   <entry>
