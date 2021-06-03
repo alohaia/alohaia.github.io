@@ -2189,7 +2189,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .post-body {
-    text-align: justify;
+    text-align: left;
   }
 }
 @media (max-width: 991px) {
@@ -3202,7 +3202,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffdf58;
+  background: #ff22b3;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3251,9 +3251,6 @@ div.post-body>p {
     /* text-indent: 2em; */
 }
 
-img {
-    margin-left: auto !important;
-}
 p.image-caption {
     counter-increment: imgCounter;
     padding-top: 10px;
@@ -3261,6 +3258,24 @@ p.image-caption {
 p.image-caption:before {
     content: "FIG." counter(imgCounter) " - ";
 }
+
+div.img-wrap:not(.img-wrap-right):not(.img-wrap-left) {
+    max-height: 35em;
+    margin: auto;
+}
+div.img-wrap-left,
+div.img-wrap-right {
+    max-width: 400px;
+    border: 10px solid #ffffff00;
+    width: fit-content;
+    height: fit-content;
+}
+div.img-wrap-left  { float: left;  }
+div.img-wrap-right { float: right; }
+/* img.right, img.left { */
+/*     margin-left: 0; */
+/*     margin-right: 0; */
+/* } */
 
 .center {
     text-align: center;
