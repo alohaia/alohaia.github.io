@@ -792,31 +792,6 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 <branch>，获取的远端的分支为 <remote>/<branch>）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1301,6 +1276,31 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </tags>
   </entry>
   <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 <branch>，获取的远端的分支为 <remote>/<branch>）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Lua 和 C</title>
     <url>/2021/04/15/Lua-%E5%92%8C-C/</url>
     <content><![CDATA[<p>Lua 是一种</p>
@@ -1537,36 +1537,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenGL</title>
     <url>/2021/04/17/OpenGL/</url>
     <content><![CDATA[]]></content>
@@ -1579,181 +1549,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
         <tag>Index</tag>
         <tag>Computer Graphics</tag>
         <tag>OpenGL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 学习记录</title>
-    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
-<ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
-<ul>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
-<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
-<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
-<p>安装 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
-<p>安装 cnpm（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
-<p>安装 yarn（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
-<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
-<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
-<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
-<p>使用 Linux 软件包管理器安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
-<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
-<blockquote>
-<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
-<p>准备两个基本文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
-<p>初始化 <code>packages.json</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Front end</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为 <strong>人类白细胞抗原</strong>。</p>
-<span id="more"></span>
-<p>HLA 基因复合体分为三个基因区</p>
-<p>MHC 基因分两种类型</p>
-<ul>
-<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
-<li>免疫功能相关基因
-<ul>
-<li>血清补体成分的编码基因</li>
-<li>抗原加工相关基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
-</ul>
-</li>
-</ul>
-<p>MHC 遗传特点</p>
-<ol>
-<li>MHC 多态性</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类发育与遗传学</title>
-    <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
-    <content><![CDATA[<blockquote>
-<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
-differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和 <strong>繁殖</strong>（reproduction）。</p>
-</blockquote>
-<dl>
-<dt>遗传学（genetics）</dt>
-<dd>研究生物遗传物质及其变化规律的学科。</dd>
-<dt>医学遗传学（medical genetics）</dt>
-<dd>遗传学与医学结合产生的一门边缘学科。</dd>
-<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
-</dl>
-<span id="more"></span>
-<ol>
-<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
-<li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
-<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
-<li><a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
-<li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天代谢病</a></li>
-<li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
-<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
-</ol>
-<p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
-<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
-<dl>
-<dt>遗传病（genetic disease）</dt>
-<dd>以 <strong>遗传物质</strong> 变化为基本特征的疾病，其发病也不同程度的受 <strong>环境因素</strong> 的影响。</dd>
-</dl>
-<p>遗传因素作用的大小称为 <strong>遗传度</strong>（见
-<a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
-<p>理解遗传病应注意下述两种情况：</p>
-<ol>
-<li><strong>家族性疾病</strong> 不都是遗传病，只是存在家族聚集现象；</li>
-<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
-</ol>
-<p>遗传病的分类</p>
-<ol>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病">线粒体遗传病</a></li>
-<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
-<li>体细胞遗传病</li>
-</ol>
-<dl>
-<dt>体细胞遗传病</dt>
-<dd>体细胞中遗传物质改变引发的疾病，如肿瘤。</dd>
-<dd>只在特定的体细胞中发生，一般不会遗传给后代。</dd>
-</dl>
-<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
-<ol>
-<li>孟德尔于 1865 年通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
-<li>1902 年，Garrod 通过对尿黑酯尿症的研究，提出先天性代谢缺陷的概念。</li>
-<li>蒋有兴等于 1956 年证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
-<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
-<li>Watson 和 Crick 于 1953 年确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
-<li>1949 年 Pauling 发现镰状细胞病的异常血红蛋白分子，并提出了分子病的概念。</li>
-<li>1977 年，Sanger 建立了双脱氧链终止法进行 DNA 测序。</li>
-<li>1985 年，Mullis 创立了聚合酶链反应（PCR）进行体外 DNA 扩增。</li>
-<li><strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）于 2003 年公布了人类基因组“完成版”。</li>
-</ol>
-<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
-<ul>
-<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始</li>
-<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组 <strong>草图</strong> 完成</li>
-<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成</li>
-</ul>
-<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
-<strong>遗传图</strong>（genetic map）和 <strong>物理图</strong>（physical map），并完成全部
-30 亿碱基的测序任务，制作核苷酸 <strong>序列图</strong>（sequence map）。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -2029,299 +1824,208 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<dl>
-<dt>人类疱疹病毒</dt>
-<dd>一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong></dd>
-</dl>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
 <span id="more"></span>
-<details class="note info"><summary><p>举例说明 HHV 的感染类型</p>
-</summary>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
 <ol>
-<li>显性感染：病毒增殖，破坏细胞，出现症状</li>
-<li><strong>潜伏感染</strong>：病毒不增殖，但可被激活</li>
-<li>整合感染：病毒转换</li>
-<li>先天性感染：可导致先天畸形</li>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
 </ol>
-
-</details>
-<details class="note info"><summary><p>潜伏感染</p>
-</summary>
-
-</details>
-<h2 id="单纯疱疹病毒">单纯疱疹病毒 <a class="markdownIt-Anchor" href="#单纯疱疹病毒">#</a></h2>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<p>传播途径</p>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
 <ul>
-<li>直接接触、性接触</li>
-<li>垂直传播</li>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
 </ul>
-<p>感染类型</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 学习记录</title>
+    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
 <ul>
-<li>原发感染</li>
-<li>潜伏和再发感染</li>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
+<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
+<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
+<p>安装 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
+<p>安装 cnpm（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
+<p>安装 yarn（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
+<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
+<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
+<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
+<p>使用 Linux 软件包管理器安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
+<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
+<blockquote>
+<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
+<p>准备两个基本文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
+<p>初始化 <code>packages.json</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Front end</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为 <strong>人类白细胞抗原</strong>。</p>
+<span id="more"></span>
+<p>HLA 基因复合体分为三个基因区</p>
+<p>MHC 基因分两种类型</p>
+<ul>
+<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
+<li>免疫功能相关基因
+<ul>
+<li>血清补体成分的编码基因</li>
+<li>抗原加工相关基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
 <li></li>
-</ul>
+</ol>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
-        <category>病原生物学</category>
+        <category>医学免疫学</category>
       </categories>
       <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
+        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
-    <title>人胚发生和早期发育</title>
-    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
-    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
-<p>人胚发育共经历 38 周（约 266 天）：</p>
-<ul>
-<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong> 即指胚期；</li>
-<li><strong>胎期</strong>：9W 至出生。</li>
-</ul>
-<dl>
-<dt>围生期</dt>
-<dd>受精龄第 26 周至出生后 4 周。</dd>
-</dl>
-<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为 <strong>围生医学</strong>。</p>
-<span id="more"></span>
-<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
-<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
-<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
-<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
-<dl>
-<dt>卵裂（cleavage)</dt>
-<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
-<dd>此时产生的子细胞称为 <strong>卵裂球</strong>。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
-<dl>
-<dt>桑椹胚（morula）</dt>
-<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
-<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
-<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成 <strong>胚泡</strong>。</dd>
-<dd>胚泡由 <strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong> 三部份组成。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
-<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
-<dl>
-<dt>植入（implantation）| 着床（imbed）</dt>
-<dd>胚泡逐渐埋入子宫内膜的过程。
-<ul>
-<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
-<li>部位：子宫体前后壁或子宫底的内膜。</li>
-</ul>
-</dd>
-</dl>
-<blockquote>
-<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
+    <title>人类发育与遗传学</title>
+    <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
+    <content><![CDATA[<blockquote>
+<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
+differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和 <strong>繁殖</strong>（reproduction）。</p>
 </blockquote>
-<p>植入条件：</p>
+<dl>
+<dt>遗传学（genetics）</dt>
+<dd>研究生物遗传物质及其变化规律的学科。</dd>
+<dt>医学遗传学（medical genetics）</dt>
+<dd>遗传学与医学结合产生的一门边缘学科。</dd>
+<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
+</dl>
+<span id="more"></span>
 <ol>
-<li>受精卵在输卵管中运行正常；</li>
-<li>透明带准时消失；</li>
-<li>母体性激素分泌正常；</li>
-<li>子宫内膜处于分泌期。</li>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
+<li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
+<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
+<li><a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
+<li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
+<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天代谢病</a></li>
+<li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
 </ol>
-<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
-<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
-<strong>合体滋养层</strong> 和 <strong>细胞滋养层</strong>。</p>
+<p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
+<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
 <dl>
-<dt>合体滋养层（syncytiotrophoblast）</dt>
-<dd>表层滋养层，细胞互相融合，界限消失。</dd>
-<dt>细胞滋养层（cytotrophoblast）</dt>
-<dd>内层滋养层，细胞界限明显。</dd>
+<dt>遗传病（genetic disease）</dt>
+<dd>以 <strong>遗传物质</strong> 变化为基本特征的疾病，其发病也不同程度的受 <strong>环境因素</strong> 的影响。</dd>
 </dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
-<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
-<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
-<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
+<p>遗传因素作用的大小称为 <strong>遗传度</strong>（见
+<a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
+<p>理解遗传病应注意下述两种情况：</p>
+<ol>
+<li><strong>家族性疾病</strong> 不都是遗传病，只是存在家族聚集现象；</li>
+<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
+</ol>
+<p>遗传病的分类</p>
+<ol>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病">线粒体遗传病</a></li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
+<li>体细胞遗传病</li>
+</ol>
 <dl>
-<dt>蜕膜（decidua）</dt>
-<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
-<dd>蜕膜会在分娩时脱落，故得名。</dd>
+<dt>体细胞遗传病</dt>
+<dd>体细胞中遗传物质改变引发的疾病，如肿瘤。</dd>
+<dd>只在特定的体细胞中发生，一般不会遗传给后代。</dd>
 </dl>
-<p>蜕膜可分为 <strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong> 三部分。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
-<dl>
-<dt>底蜕膜（decidua basalis）</dt>
-<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
-<dt>包蜕膜（decidua capsularis）</dt>
-<dd>覆盖于胚宫腔侧的蜕膜。</dd>
-<dt>壁蜕膜（decidua parietalis）</dt>
-<dd>子宫其余部分的蜕膜，与包蜕膜围成 <strong>子宫腔</strong>。</dd>
-</dl>
-<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
-<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
-<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
-<dl>
-<dt>二胚层胚盘</dt>
-<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
-<dd>二胚层胚盘由 <strong>下胚层</strong> 和 <strong>上胚层</strong> 组成。</dd>
-<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
-<dd>二胚层胚盘中靠近 <strong>胚泡腔</strong> 的一层立方形细胞。</dd>
-<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
-<dd>二胚层胚盘中靠近 <strong>滋养层</strong> 的一层柱状细胞。</dd>
-</dl>
-<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
-<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
-<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
-<strong>初级卵黄囊</strong>（primary yolk sac）。</p>
-<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为 <strong>羊膜</strong>（amniotic membrane）。<br/>
-上胚层与 羊膜之间的间隙称为 <strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为 <strong>羊水</strong>。<br/>
-羊膜与上胚层共同包绕羊膜腔形成 <strong><mark>羊膜囊</mark></strong>（amniotic cyst）。</p>
-<p>另见：<a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
-<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
-<strong><mark>次级卵黄囊</mark></strong>（secondary yolk sac）。<br/>
-由胚外体腔膜构成的初级卵黄囊逐渐退化。</p>
-<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
-<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为 <strong><mark>胚外中胚层</mark></strong>（extra-embryonic mesoderm）。</p>
-<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为 <strong><mark>胚外体腔</mark></strong>。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
-<dl>
-<dt>体蒂（body stalk）</dt>
-<dd>胚外中胚层持续扩大，仅有的少部分连接 <em>胚盘尾端</em> 和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=脐带#脐带"><strong>脐带</strong></a>。</dd>
-</dl>
-<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
-<dl>
-<dt>原条（primitive streak）</dt>
-<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区。</dd>
-</dl>
-<details class="note info"><summary><p>原条和畸形瘤</p>
-</summary>
-<p>第 4 周原条退化消失，若残留则可形成畸形瘤。</p>
-
-</details>
-<p>原条位置和朝向：原条所在的一端为胚体的尾端（泄殖腔膜，<a href="#%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90">体蒂</a>），前为胚体的头端（口咽膜）。</p>
-<dl>
-<dt>原结（primitive node）</dt>
-<dd>原条头部的细胞增殖较快，形成的结节状肥后区。</dd>
-<dt>原沟（primitive groove）</dt>
-<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
-</dl>
-<hr />
-<p>原条细胞增殖、分化、扩散形成了 <strong>三胚层胚盘</strong>。</p>
-<div class="note warning"><p>三胚层胚盘的三个胚层均起源于 <strong>上胚层</strong>。</p>
-</div>
-<dl>
-<dt>内胚层（endoderm）</dt>
-<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
-<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
-<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
-<dt>外胚层（ectoderm）</dt>
-<dd>原来的上胚层的改称。</dd>
-</dl>
-<hr />
-<dl>
-<dt>原凹（primitive pit）</dt>
-<dd><strong>原结</strong> 中心的凹陷。</dd>
-<dt>脊索（notochord）</dt>
-<dd><strong>原凹</strong> 处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
-</dl>
-<p>脊索在胚胎早期起 <strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的 <strong>髓核</strong>。</p>
-<hr />
-<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
-<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
-<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
-<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
-<dl>
-<dt>神经板（neural plate）</dt>
-<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称 <strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
-</dl>
-<p>神经板中央凹陷，称 <strong>神经沟</strong>（neural groove）；<br/>
-沟两侧部分隆起，称 <strong>神经褶</strong>（neural fold）。</p>
-<dl>
-<dt>神经管（neural tube）</dt>
-<dd>第 3 周末，<strong>神经沟</strong> 加深，<strong>神经褶</strong> 愈合（神经板边缘融合）形成神经管。</dd>
-</dl>
-<p><strong>神经管分化</strong>：神经管是 <strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
-<dl>
-<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
-<dd>神经管头端和尾端的孔。</dd>
-</dl>
-<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致 <strong>无脑儿</strong> 和 <strong>脊髓脊柱裂</strong>。</p>
-<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
-<dl>
-<dt>神经嵴（neural crest）</dt>
-<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
-</dl>
-<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
-<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
+<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
+<ol>
+<li>孟德尔于 1865 年通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
+<li>1902 年，Garrod 通过对尿黑酯尿症的研究，提出先天性代谢缺陷的概念。</li>
+<li>蒋有兴等于 1956 年证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
+<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
+<li>Watson 和 Crick 于 1953 年确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
+<li>1949 年 Pauling 发现镰状细胞病的异常血红蛋白分子，并提出了分子病的概念。</li>
+<li>1977 年，Sanger 建立了双脱氧链终止法进行 DNA 测序。</li>
+<li>1985 年，Mullis 创立了聚合酶链反应（PCR）进行体外 DNA 扩增。</li>
+<li><strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）于 2003 年公布了人类基因组“完成版”。</li>
+</ol>
+<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
 <ul>
-<li><strong>表皮及其附属器</strong></li>
-<li>牙釉质</li>
-<li>角膜上皮、晶状体</li>
-<li>内耳迷路</li>
-<li>……</li>
+<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始</li>
+<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组 <strong>草图</strong> 完成</li>
+<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成</li>
 </ul>
-<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
-<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
-<dl>
-<dt>轴旁中胚层（paraxial mesoderm）</dt>
-<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
-<dt>间介中胚层（intermediate mesoderm）</dt>
-<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
-<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
-<dd>初为单一薄层结构，后出现间隙，称为 <strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的 <strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的 <strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
-<dl>
-<dt>间充质（mesenchyme）</dt>
-<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
-</dl>
-<p><strong>中胚层三部分的分化</strong>：</p>
-<ul>
-<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
-<li><strong>间介中胚层</strong>：<strong>泌尿生殖系统的原基</strong></li>
-<li><strong>侧中胚层</strong> →
-<ul>
-<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
-<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
-<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
-</ul>
-</li>
-</ul>
-<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
-<p>卵黄囊顶壁的内胚层被卷入胚体内形成 <strong>原始消化管</strong>（primitive gut）。<br/>
-原始消化管分为 <strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和 <strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
-<p><strong>内胚层的分化</strong>：</p>
-<ul>
-<li><strong>消化管消化腺</strong></li>
-<li>呼吸道和肺的上皮</li>
-<li>中耳、甲状腺、胸腺等的上皮</li>
-</ul>
-<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
-<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
-<dl>
-<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
-<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
-</dl>
-<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的 <strong>胚体</strong>。第四周末，胚体呈”C“字形。</p>
-<p>第 5~8 周称为 <strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8
-周时初具人形，主要器官、系统在此时期形成。</p>
-<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
-<dl>
-<dt>受精龄</dt>
-<dd>从受精到胎儿出生，约 38 周，包括 <strong>胚期</strong> 和 <strong>胎期</strong>。</dd>
-<dt>月经龄</dt>
-<dd>从末次月经到婴儿出生，约 40 周。</dd>
-</dl>
+<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
+<strong>遗传图</strong>（genetic map）和 <strong>物理图</strong>（physical map），并完成全部
+30 亿碱基的测序任务，制作核苷酸 <strong>序列图</strong>（sequence map）。</p>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
         <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
       </categories>
       <tags>
+        <tag>Index</tag>
         <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -2504,7 +2208,7 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
 <h5 id="增强子-2">增强子 <a class="markdownIt-Anchor" href="#增强子-2">#</a></h5>
 <dl>
 <dt>终止子（terminator）</dt>
-<dd>由一段 <strong>回文序列</strong>（转录中止信号）和 5’-AATAAA-3’（加尾信号）序列组成。</dd>
+<dd>由一段 <strong>回文序列</strong>（转录终止信号）和 5’-AATAAA-3’（加尾信号）序列组成。</dd>
 </dl>
 <h3 id="基因的表达与调控">基因的表达与调控 <a class="markdownIt-Anchor" href="#基因的表达与调控">#</a></h3>
 <h4 id="基因表达">基因表达 <a class="markdownIt-Anchor" href="#基因表达">#</a></h4>
@@ -2825,28 +2529,40 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>其他病毒</title>
-    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p class="center">Empty...</p>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<p>中枢神经系统，死亡率 100%，</p>
-<p>病毒呈“子弹头状”</p>
-<dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是 <strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
-<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<dl>
+<dt>人类疱疹病毒</dt>
+<dd>一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong></dd>
 </dl>
+<span id="more"></span>
+<details class="note info"><summary><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li>显性感染：病毒增殖，破坏细胞，出现症状</li>
+<li><strong>潜伏感染</strong>：病毒不增殖，但可被激活</li>
+<li>整合感染：病毒转换</li>
+<li>先天性感染：可导致先天畸形</li>
+</ol>
+
+</details>
+<details class="note info"><summary><p>潜伏感染</p>
+</summary>
+
+</details>
+<h2 id="单纯疱疹病毒">单纯疱疹病毒 <a class="markdownIt-Anchor" href="#单纯疱疹病毒">#</a></h2>
 <h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<p>传播途径</p>
 <ul>
-<li>传染源：狂犬、猫蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
+<li>直接接触、性接触</li>
+<li>垂直传播</li>
 </ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>DNA 无包膜病毒</p>
-<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
+<p>感染类型</p>
+<ul>
+<li>原发感染</li>
+<li>潜伏和再发感染</li>
+<li></li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -2856,6 +2572,256 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人胚发生和早期发育</title>
+    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
+    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
+<p>人胚发育共经历 38 周（约 266 天）：</p>
+<ul>
+<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong> 即指胚期；</li>
+<li><strong>胎期</strong>：9W 至出生。</li>
+</ul>
+<dl>
+<dt>围生期</dt>
+<dd>受精龄第 26 周至出生后 4 周。</dd>
+</dl>
+<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为 <strong>围生医学</strong>。</p>
+<span id="more"></span>
+<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
+<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
+<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
+<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
+<dl>
+<dt>卵裂（cleavage)</dt>
+<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
+<dd>此时产生的子细胞称为 <strong>卵裂球</strong>。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
+<dl>
+<dt>桑椹胚（morula）</dt>
+<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
+<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
+<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成 <strong>胚泡</strong>。</dd>
+<dd>胚泡由 <strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong> 三部份组成。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
+<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
+<dl>
+<dt>植入（implantation）| 着床（imbed）</dt>
+<dd>胚泡逐渐埋入子宫内膜的过程。
+<ul>
+<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
+<li>部位：子宫体前后壁或子宫底的内膜。</li>
+</ul>
+</dd>
+</dl>
+<blockquote>
+<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
+</blockquote>
+<p>植入条件：</p>
+<ol>
+<li>受精卵在输卵管中运行正常；</li>
+<li>透明带准时消失；</li>
+<li>母体性激素分泌正常；</li>
+<li>子宫内膜处于分泌期。</li>
+</ol>
+<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
+<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
+<strong>合体滋养层</strong> 和 <strong>细胞滋养层</strong>。</p>
+<dl>
+<dt>合体滋养层（syncytiotrophoblast）</dt>
+<dd>表层滋养层，细胞互相融合，界限消失。</dd>
+<dt>细胞滋养层（cytotrophoblast）</dt>
+<dd>内层滋养层，细胞界限明显。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
+<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
+<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
+<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
+<dl>
+<dt>蜕膜（decidua）</dt>
+<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
+<dd>蜕膜会在分娩时脱落，故得名。</dd>
+</dl>
+<p>蜕膜可分为 <strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong> 三部分。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
+<dl>
+<dt>底蜕膜（decidua basalis）</dt>
+<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
+<dt>包蜕膜（decidua capsularis）</dt>
+<dd>覆盖于胚宫腔侧的蜕膜。</dd>
+<dt>壁蜕膜（decidua parietalis）</dt>
+<dd>子宫其余部分的蜕膜，与包蜕膜围成 <strong>子宫腔</strong>。</dd>
+</dl>
+<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
+<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
+<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
+<dl>
+<dt>二胚层胚盘</dt>
+<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
+<dd>二胚层胚盘由 <strong>下胚层</strong> 和 <strong>上胚层</strong> 组成。</dd>
+<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
+<dd>二胚层胚盘中靠近 <strong>胚泡腔</strong> 的一层立方形细胞。</dd>
+<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
+<dd>二胚层胚盘中靠近 <strong>滋养层</strong> 的一层柱状细胞。</dd>
+</dl>
+<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
+<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
+<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
+<strong>初级卵黄囊</strong>（primary yolk sac）。</p>
+<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为 <strong>羊膜</strong>（amniotic membrane）。<br/>
+上胚层与 羊膜之间的间隙称为 <strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为 <strong>羊水</strong>。<br/>
+羊膜与上胚层共同包绕羊膜腔形成 <strong><mark>羊膜囊</mark></strong>（amniotic cyst）。</p>
+<p>另见：<a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
+<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
+<strong><mark>次级卵黄囊</mark></strong>（secondary yolk sac）。<br/>
+由胚外体腔膜构成的初级卵黄囊逐渐退化。</p>
+<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
+<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为 <strong><mark>胚外中胚层</mark></strong>（extra-embryonic mesoderm）。</p>
+<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为 <strong><mark>胚外体腔</mark></strong>。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
+<dl>
+<dt>体蒂（body stalk）</dt>
+<dd>胚外中胚层持续扩大，仅有的少部分连接 <em>胚盘尾端</em> 和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=脐带#脐带"><strong>脐带</strong></a>。</dd>
+</dl>
+<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
+<dl>
+<dt>原条（primitive streak）</dt>
+<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区。</dd>
+</dl>
+<details class="note info"><summary><p>原条和畸形瘤</p>
+</summary>
+<p>第 4 周原条退化消失，若残留则可形成畸形瘤。</p>
+
+</details>
+<p>原条位置和朝向：原条所在的一端为胚体的尾端（泄殖腔膜，<a href="#%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90">体蒂</a>），前为胚体的头端（口咽膜）。</p>
+<dl>
+<dt>原结（primitive node）</dt>
+<dd>原条头部的细胞增殖较快，形成的结节状肥后区。</dd>
+<dt>原沟（primitive groove）</dt>
+<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
+</dl>
+<hr />
+<p>原条细胞增殖、分化、扩散形成了 <strong>三胚层胚盘</strong>。</p>
+<div class="note warning"><p>三胚层胚盘的三个胚层均起源于 <strong>上胚层</strong>。</p>
+</div>
+<dl>
+<dt>内胚层（endoderm）</dt>
+<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
+<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
+<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
+<dt>外胚层（ectoderm）</dt>
+<dd>原来的上胚层的改称。</dd>
+</dl>
+<hr />
+<dl>
+<dt>原凹（primitive pit）</dt>
+<dd><strong>原结</strong> 中心的凹陷。</dd>
+<dt>脊索（notochord）</dt>
+<dd><strong>原凹</strong> 处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
+</dl>
+<p>脊索在胚胎早期起 <strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的 <strong>髓核</strong>。</p>
+<hr />
+<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
+<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
+<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
+<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
+<dl>
+<dt>神经板（neural plate）</dt>
+<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称 <strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
+</dl>
+<p>神经板中央凹陷，称 <strong>神经沟</strong>（neural groove）；<br/>
+沟两侧部分隆起，称 <strong>神经褶</strong>（neural fold）。</p>
+<dl>
+<dt>神经管（neural tube）</dt>
+<dd>第 3 周末，<strong>神经沟</strong> 加深，<strong>神经褶</strong> 愈合（神经板边缘融合）形成神经管。</dd>
+</dl>
+<p><strong>神经管分化</strong>：神经管是 <strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
+<dl>
+<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
+<dd>神经管头端和尾端的孔。</dd>
+</dl>
+<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致 <strong>无脑儿</strong> 和 <strong>脊髓脊柱裂</strong>。</p>
+<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
+<dl>
+<dt>神经嵴（neural crest）</dt>
+<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
+</dl>
+<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
+<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
+<ul>
+<li><strong>表皮及其附属器</strong></li>
+<li>牙釉质</li>
+<li>角膜上皮、晶状体</li>
+<li>内耳迷路</li>
+<li>……</li>
+</ul>
+<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
+<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
+<dl>
+<dt>轴旁中胚层（paraxial mesoderm）</dt>
+<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
+<dt>间介中胚层（intermediate mesoderm）</dt>
+<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
+<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
+<dd>初为单一薄层结构，后出现间隙，称为 <strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的 <strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的 <strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
+<dl>
+<dt>间充质（mesenchyme）</dt>
+<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
+</dl>
+<p><strong>中胚层三部分的分化</strong>：</p>
+<ul>
+<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
+<li><strong>间介中胚层</strong>：<strong>泌尿生殖系统的原基</strong></li>
+<li><strong>侧中胚层</strong> →
+<ul>
+<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
+<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
+<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
+</ul>
+</li>
+</ul>
+<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
+<p>卵黄囊顶壁的内胚层被卷入胚体内形成 <strong>原始消化管</strong>（primitive gut）。<br/>
+原始消化管分为 <strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和 <strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
+<p><strong>内胚层的分化</strong>：</p>
+<ul>
+<li><strong>消化管消化腺</strong></li>
+<li>呼吸道和肺的上皮</li>
+<li>中耳、甲状腺、胸腺等的上皮</li>
+</ul>
+<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
+<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
+<dl>
+<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
+<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
+</dl>
+<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的 <strong>胚体</strong>。第四周末，胚体呈”C“字形。</p>
+<p>第 5~8 周称为 <strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8
+周时初具人形，主要器官、系统在此时期形成。</p>
+<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
+<dl>
+<dt>受精龄</dt>
+<dd>从受精到胎儿出生，约 38 周，包括 <strong>胚期</strong> 和 <strong>胎期</strong>。</dd>
+<dt>月经龄</dt>
+<dd>从末次月经到婴儿出生，约 40 周。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -3053,181 +3019,197 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>其他病毒</title>
+    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p class="center">Empty...</p>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<p>中枢神经系统，死亡率 100%，</p>
+<p>病毒呈“子弹头状”</p>
+<dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是 <strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
+<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
+</dl>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>传染源：狂犬、猫蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>DNA 无包膜病毒</p>
+<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分子病和先天代谢病</title>
     <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E5%88%86%E5%AD%90%E7%97%85">分子病</a>
-<ul>
-<li><a href="#%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85">血红蛋白病</a>
-<ul>
-<li><a href="#%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E7%A7%8D%E7%B1%BB">血红蛋白病的种类</a></li>
-<li><a href="#%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">血红蛋白病的分子基础</a></li>
-<li><a href="#%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E4%B8%BE%E4%BE%8B">血红蛋白病举例</a>
-<ul>
-<li><a href="#%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%B4%AB%E8%A1%80">地中海贫血</a></li>
-<li><a href="#%E5%AE%B6%E6%97%8F%E6%80%A7%E9%AB%98%E8%83%86%E5%9B%BA%E9%86%87%E8%A1%80%E7%97%87">家族性高胆固醇血症</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85">先天代谢病</a>
-<ul>
-<li><a href="#%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%BC%BA%E9%99%B7%E7%9A%84%E4%BA%A7%E7%94%9F%E6%9C%BA%E5%88%B6">先天代谢缺陷的产生机制</a></li>
-<li><a href="#%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85%E7%9A%84%E7%B1%BB%E5%9E%8B">先天性代谢病的类型</a>
-<ul>
-<li><a href="#%E6%B0%A8%E5%9F%BA%E9%85%B8%E4%BB%A3%E8%B0%A2%E7%97%85">氨基酸代谢病</a></li>
-<li><a href="#%E7%B3%96%E4%BB%A3%E8%B0%A2%E7%97%85">糖代谢病</a></li>
-<li><a href="#%E8%84%82%E7%B1%BB%E4%BB%A3%E8%B0%A2%E7%97%85">脂类代谢病</a></li>
-<li><a href="#%E5%98%8C%E5%91%A4%E4%BB%A3%E8%B0%A2%E7%97%85">嘌呤代谢病</a></li>
-<li><a href="#%E8%91%A1%E8%90%84%E7%B3%96-6-%E7%A3%B7%E9%85%B8%E8%84%B1%E6%B0%A2%E9%85%B6%E7%BC%BA%E4%B9%8F%E7%97%87">葡萄糖 6-磷酸脱氢酶缺乏症</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</p>
+    <content><![CDATA[<dl>
+<dt><a href="#%E5%88%86%E5%AD%90%E7%97%85">分子病</a>（molecular disease）</dt>
+<dd><strong>基因突变</strong>导致蛋白质分子质和量的异常，从而引起机体功能障碍的一类疾病。</dd>
+<dt><a href="#%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85">先天性代谢缺陷</a>（inborn errors of metabolism，<abbr title="inborn errors of metabolism，先天性代谢缺陷">IEM</abbr>）</dt>
+<dd>指由遗传物质改变而引起的某些蛋白质（通常是酶）的异常，从而使机体不能正常代谢营养物质而引起的异常。</dd>
+</dl>
 <span id="more"></span>
 <h2 id="分子病">分子病 <a class="markdownIt-Anchor" href="#分子病">#</a></h2>
-<dl>
-<dt>分子病（molecular disease）</dt>
-<dd><strong>基因突变</strong>导致蛋白质分子质和量的异常，从而引起机体功能障碍的一类疾病。</dd>
-</dl>
 <h3 id="血红蛋白病">血红蛋白病 <a class="markdownIt-Anchor" href="#血红蛋白病">#</a></h3>
 <dl>
 <dt>血红蛋白病（hemoglobinpathy）</dt>
-<dd>由于珠蛋白分子结构或合成量异常所引起的疾病。
-<ul>
-<li>镰状细胞病</li>
-<li>不稳定血红蛋白病</li>
-<li>血红蛋白 M 病</li>
-<li>氧亲和力改变的血红蛋白病</li>
-</ul>
-</dd>
+<dd>由于珠蛋白分子结构或合成量异常所引起的疾病。</dd>
 </dl>
-<p>血红蛋白（<abbr title="血红蛋白">Hb</abbr>）
-:</p>
-<p>珠蛋白基因结构</p>
 <ul>
-<li>α 珠蛋白基因簇</li>
-<li>β 珠蛋白基因簇</li>
+<li>结构异常 → <a href="#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85"><strong>异常血红蛋白病</strong></a></li>
+<li>数量异常 → <a href="#%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%B4%AB%E8%A1%80"><strong>地中海贫血</strong></a></li>
 </ul>
-<p>珠蛋白基因表达调控：LCR</p>
-<dl>
+<h4 id="血红蛋白和珠蛋白基因">血红蛋白和珠蛋白基因 <a class="markdownIt-Anchor" href="#血红蛋白和珠蛋白基因">#</a></h4>
+<p>人类 <strong>血红蛋白</strong>（hemoglobin，<abbr title="血红蛋白">Hb</abbr>）是由两对珠蛋白链（α 和 β）组成的四聚体分子，每条珠蛋白链通过亚铁卟啉（bǔ lín）与一个 <strong>血红素</strong>（heme）分子相连。<br/>
+α（珠蛋白）链包括 α 和 ζ 链，β（珠蛋白）链包括 β、ε、γ 及 δ 链，6 种肽链组成的 6 种血红蛋白中，<abbr title="血红蛋白">Hb</abbr> A（α<sub>2</sub>β<sub>2</sub>）（占 95% 以上）和 <abbr title="血红蛋白">Hb</abbr> A<sub>2</sub>（α<sub>2</sub>δ<sub>2</sub>）可见于成人体内。</p>
+<p>各种血红蛋白的发育演变是 α、β 珠蛋白基因簇按照其在染色体上的排列顺序由 5’ 到 3’ 依次表达、关闭的结果。</p>
+<img data-src="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/%E7%8F%A0%E8%9B%8B%E7%99%BD%E5%9F%BA%E5%9B%A0%E7%B0%87.png" class="" title="α、β 珠蛋白基因簇的依次表达、关闭" alt="α、β 珠蛋白基因簇的依次表达、关闭">
+<p>珠蛋白基因表达调控：LCR（TODO）</p>
+<h4 id="异常血红蛋白病">异常血红蛋白病 <a class="markdownIt-Anchor" href="#异常血红蛋白病">#</a></h4>
+<p>由于珠蛋白基因突变导致珠蛋白肽链结构异常，且有临床表现者称为 <strong>异常血红蛋白病</strong> 或 <strong>异常血红蛋白综合征</strong>。</p>
+<h5 id="异常血红蛋白病类型">异常血红蛋白病类型 <a class="markdownIt-Anchor" href="#异常血红蛋白病类型">#</a></h5>
+<div class="tabs" id="异常血红蛋白病类型"><ul class="nav-tabs"><li class="tab active"><a href="#异常血红蛋白病类型-1">镰状细胞病</a></li><li class="tab"><a href="#异常血红蛋白病类型-2">不稳定血红蛋白病</a></li><li class="tab"><a href="#异常血红蛋白病类型-3">血红蛋白 M 病</a></li><li class="tab"><a href="#异常血红蛋白病类型-4">氧亲和力改变的血红蛋白病</a></li></ul><div class="tab-content"><div class="tab-pane active" id="异常血红蛋白病类型-1"><dl>
 <dt>镰状细胞病（Sickle Cell Disease）</dt>
-<dd>不完全显性遗传，缺氧时血红蛋白凝聚</dd>
+<dd>常染色体显性遗传，Hb β 链第 6 位谷氨酸被缬氨酸取代，引起电荷改变（可通过电泳与正常 Hb 区分），形成 Hb S。</dd>
 </dl>
-<p>GAG → GTG</p>
+<p>缺氧时 Hb S 聚合，使细胞镰变。<br/>
+镰变细胞使 <strong>血黏度增高</strong>，导致血管梗阻性继发症状，如一过性剧痛、急性组织损伤等。<br/>
+镰变细胞变形性降低，细胞膜脆性增加，细胞裂解，可引起 <strong>溶血</strong>。</p>
+<p>镰状细胞病 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#不完全显性"><strong>不完全显性</strong></a>：</p>
 <ul>
-<li>纯合子</li>
-<li>杂合子</li>
-</ul>
-<p>斑点杂交</p>
-<hr />
-<h4 id="血红蛋白病的种类">血红蛋白病的种类 <a class="markdownIt-Anchor" href="#血红蛋白病的种类">#</a></h4>
-<dl>
-<dt>不稳定血红蛋白病（）</dt>
-<dd>AD（不完全显性）</dd>
+<li>纯合子：镰状细胞贫血</li>
+<li>杂合子：镰状细胞性状，大多数无症状，可有轻度慢性贫血</li>
+</ul></div><div class="tab-pane" id="异常血红蛋白病类型-2"><dl>
+<dt>不稳定血红蛋白病（unstable hemoglobinopathy）</dt>
+<dd>不稳定的血红蛋白易自发变性，形成 <strong>珠蛋白小体</strong>（Heinz 小体），引起溶血，可造成贫血。</dd>
 </dl>
-<hr />
-<dl>
-<dt>血红蛋白 M 病 | 遗传性高铁血红蛋白血症</dt>
-<dd>紫绀、继发性红细胞增多症</dd>
-</dl>
-<hr />
-<dl>
+<p>如 Hb Bristol 病（β<sup>67缬→天冬</sup>）主要表现为先天性溶血性贫血、黄疸和脾大。</p>
+<p>不稳定血红蛋白病也表现为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#不完全显性"><strong>不完全显性</strong></a>：</p>
+<ul>
+<li>纯合子：可有临床症状，仅在服用磺胺等药物或有感染时溶血；</li>
+<li>杂合子：致死，需反复输血才能维持生命。</li>
+</ul></div><div class="tab-pane" id="异常血红蛋白病类型-3"><dl>
+<dt>血红蛋白 M 病（Hb M）| 遗传性高铁血红蛋白血症）</dt>
+<dd>肽链内与血红素铁原子连接的组氨酸发生了替换，使铁原子呈稳定的 <strong>高铁</strong> 状态，影响血红蛋白带氧功能，临床上表现为 <strong>紫绀</strong>（cyanosis）和 继发性<strong>红细胞增多症</strong>（polycythemia）。</dd>
+</dl></div><div class="tab-pane" id="异常血红蛋白病类型-4"><dl>
 <dt>氧亲和力改变的血红蛋白病</dt>
-<dd><abbr title="血红蛋白">Hb</abbr> 分子与氧的亲和力增高或降低导致其运输氧的能力改变。</dd>
+<dd>珠蛋白基因突变使 Hb 与氧的亲和力改变，使其运输氧功能改变。</dd>
 </dl>
-<h4 id="血红蛋白病的分子基础">血红蛋白病的分子基础 <a class="markdownIt-Anchor" href="#血红蛋白病的分子基础">#</a></h4>
 <ul>
-<li>单个碱基置换
-<ul>
-<li>错义突变：<abbr title="血红蛋白">Hb</abbr> S</li>
-<li>无义突变：</li>
-<li>终止密码突变：<abbr title="血红蛋白">Hb</abbr> content spring</li>
-</ul>
+<li><strong>Hb Rainier</strong>（β1<sup>45酪→半胱</sup>）：与氧亲和力升高，氧释放入组织减少，引起 <strong>红细胞增多症</strong>；</li>
+<li><strong>Hb Kansas</strong>（β<sup>102天冬→苏</sup>）：与氧的亲和力降低，动脉血氧饱和度降低，出现 <strong>紫绀</strong>。</li>
+</ul></div></div></div>
+<h5 id="异常血红蛋白病的分子基础">异常血红蛋白病的分子基础 <a class="markdownIt-Anchor" href="#异常血红蛋白病的分子基础">#</a></h5>
+<ol>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#点突变"><strong>单个碱基置换</strong></a>
+<ol>
+<li>错义突变：<abbr title="血红蛋白">Hb</abbr> S、<abbr title="血红蛋白">Hb</abbr> C、<abbr title="血红蛋白">Hb</abbr> E</li>
+<li>无义突变：<abbr title="血红蛋白">Hb</abbr> Mckee-Rock</li>
+<li>终止密码突变：<strong><abbr title="血红蛋白">Hb</abbr> Constant Spring</strong>（TAA → CAA，α<sup>142终止密码→谷氨酰胺</sup>，延长至 172 aa）引起 <a href="#%CE%B1-%E5%9C%B0%E8%B4%AB%E5%88%86%E7%B1%BB-2"><strong>α<sup>+</sup> 地中海贫血</strong></a></li>
+</ol>
 </li>
-<li>移码突变</li>
-<li>密码子的插入和缺失：<abbr title="血红蛋白">Hb</abbr> Gun Hill</li>
-<li>融合基因：<abbr title="血红蛋白">Hb</abbr> Lepore</li>
-</ul>
-<h4 id="血红蛋白病举例">血红蛋白病举例 <a class="markdownIt-Anchor" href="#血红蛋白病举例">#</a></h4>
-<h5 id="地中海贫血">地中海贫血 <a class="markdownIt-Anchor" href="#地中海贫血">#</a></h5>
-<dl>
-<dt>地中海贫血（Thalassemia）</dt>
-<dd>由于珠蛋白基因缺失或突变导致某种珠蛋白的链合成障碍，造成 α 或 β 链<strong>合成失去平衡</strong>而导致的溶血性贫血。
-<ul>
-<li>α 地中海贫血</li>
-<li>β 地中海贫血</li>
-</ul>
-</dd>
-</dl>
-<hr />
-<dl>
-<dt>α 地中海贫血</dt>
-<dd>α 链合成受到抑制，主要是由于 <strong>α 基因缺失</strong>
-<ul>
-<li>α<sup>0</sup> 地贫（α 地贫 1）</li>
-<li>α<sup>+</sup> 地贫（α 地贫 2）</li>
-</ul>
-</dd>
-<dt>α<sup>0</sup> 地贫（α 地贫 1）</dt>
-<dd>缺失两个基因，-- / αα</dd>
-<dt>α<sup>+</sup> 地贫（α 地贫 2）</dt>
-<dd>缺失一个基因，α- / αα</dd>
-</dl>
-<p>临床分类</p>
-<ol>
-<li>HB Bart’s 胎儿水肿综合征（γ<sub>4</sub>）</li>
-<li>血红蛋白 H 病</li>
-<li>轻型（标准型）</li>
-<li>静止型</li>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#移码突变"><strong>移码突变</strong></a></li>
+<li><strong>密码子的插入和缺失</strong>：<abbr title="血红蛋白">Hb</abbr> Gun Hill</li>
+<li><strong>融合基因</strong>：减数分裂 Ⅰ 期同源染色体错配，δ 和 β 基因之间发生不等交换，导致基因缺失或重复，如 <abbr title="血红蛋白">Hb</abbr> Lepore（部分基因缺失），只有 δβ 基因（<abbr title="血红蛋白">Hb</abbr> 反-Lepore 同时有 δ、β 基因），不稳定，可引起 [<strong>β 地中海贫血</strong>](?highlight=β 地中海贫血#β-地中海贫血)。</li>
 </ol>
-<hr />
+<h4 id="地中海贫血">地中海贫血 <a class="markdownIt-Anchor" href="#地中海贫血">#</a></h4>
 <dl>
-<dt>β 地中海贫血</dt>
-<dd>β 链合成受到抑制，主要由于<strong>基因突变</strong>
+<dt>地中海贫血（thalassemia）</dt>
+<dd>由于珠蛋白基因缺失或突变导致某种珠蛋白的链合成障碍，造成 α 或 β 链 <strong><mark>合成失去平衡</mark></strong> 而导致的溶血性贫血。</dd>
+</dl>
+<h5 id="α-地中海贫血">α 地中海贫血 <a class="markdownIt-Anchor" href="#α-地中海贫血">#</a></h5>
+<dl>
+<dt>α 地中海贫血（α-thalassemia）| α 地贫</dt>
+<dd>珠蛋白基因（<strong>16 号染色体上的 α<sub>1</sub> 和 α<sub>2</sub></strong>）缺失（主要）或缺陷使 α（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
+</dl>
+<div class="note info"><p>α 地贫主要由 <strong><mark>基因缺失</mark></strong> 造成。</p>
+</div>
 <ul>
-<li>完全不能合成 β 链：</li>
-<li>能部分合成 β 链：</li>
+<li><strong>α<sup>0</sup> 地贫</strong>（<strong>α 地贫 1</strong>）：缺失两个基因，-- / αα</li>
+<li><strong>α<sup>+</sup> 地贫</strong>（<strong>α 地贫 2</strong>）：缺失一个基因，α- / αα</li>
 </ul>
-</dd>
-</dl>
-<p>临床类型</p>
-<ol>
-<li>重型 β 地中海贫血：<strong>地中海贫血面容</strong></li>
-<li>轻型 β 地中海贫血</li>
-<li>中间型 β 地中海贫血</li>
-</ol>
+<p>根据临床表现程度和受累 α 基因缺失的数量，可将 α 地贫分为：</p>
+<div class="tabs" id="α-地贫分类"><ul class="nav-tabs"><li class="tab active"><a href="#α-地贫分类-1">HB Bart's 胎儿水肿综合征</a></li><li class="tab"><a href="#α-地贫分类-2">血红蛋白 H 病</a></li><li class="tab"><a href="#α-地贫分类-3">轻型（标准型）α 地贫</a></li><li class="tab"><a href="#α-地贫分类-4">静止型 α 地贫</a></li></ul><div class="tab-content"><div class="tab-pane active" id="α-地贫分类-1"><p>4 个 α 基因全部缺失，基因型为 <strong>--/--</strong>，α 链完全不能合成，不能形成 Hb F（α<sub>2</sub>γ<sub>2</sub>，胎儿血红蛋白），相对过多的 γ 形成 γ 四聚体（γ<sub>4</sub>），称为 <strong>Hb Bart’s</strong>。<br/>
+Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong>胎儿水肿</strong>，造成死胎或新生儿死亡。</p></div><div class="tab-pane" id="α-地贫分类-2"><p>α<sup>0</sup> 地贫和 α<sup>+</sup> 地贫的双重杂合子，即缺失 3 个 α 基因，基因型为 <strong>a-/--</strong>、<strong>-a/--</strong>，或 <strong>α<sup>T</sup>α/--</strong>（α<sup>T</sup> 表示有突变，如 <a href="#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">Hb Constant Spring</a>），只能合成少量 α 链，β 链相对较多，形成的 β<sub>4</sub> 易被氧化解体，形成包涵体，引起中度或较严重的溶血性贫血。</p></div><div class="tab-pane" id="α-地贫分类-3"><p>α<sup>0</sup> 地贫杂合子（<strong>--/αα</strong>）或 α<sup>+</sup> 地贫纯合子（<strong>α-/α-</strong>），即缺失 2 个 α 基因，有轻度贫血。轻型 α 地贫患者（主要是 --/αα）之间婚配，生育子女有 1/4 概率患有 HHb Bart’s 胎儿水肿综合征。</p></div><div class="tab-pane" id="α-地贫分类-4"><p>α<sup>+</sup> 地贫纯合子（<strong>α-/--</strong>），仅缺失一个 α 基因，<em>无症状</em>。</p></div></div></div>
+<h5 id="β-地中海贫血">β 地中海贫血 <a class="markdownIt-Anchor" href="#β-地中海贫血">#</a></h5>
 <dl>
-<dt>遗传性胎儿血红蛋白增多症</dt>
-<dd>δ 和 β 受抑、γ 链合成增多，导致成人 HbF 增多。</dd>
+<dt>β 地中海贫血（β-thalassemia）| β 地贫</dt>
+<dd>β 珠蛋白基因缺失或缺陷使 β（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
 </dl>
-<h5 id="家族性高胆固醇血症">家族性高胆固醇血症 <a class="markdownIt-Anchor" href="#家族性高胆固醇血症">#</a></h5>
+<div class="note info"><p>β 地贫主要由 <strong><mark>基因突变</mark></strong> 造成。</p>
+</div>
+<ul>
+<li><strong>β<sup>0</sup> 地贫</strong>：完全不能合成 β 链</li>
+<li><strong>β<sup>+</sup> 地贫</strong>：能部分合成 β 链</li>
+<li><em>δβ 地贫</em>：见 <a href="?highlight=%E8%9E%8D%E5%90%88%E5%9F%BA%E5%9B%A0#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">融合基因</a></li>
+</ul>
+<div class="tabs" id="β-地贫分类"><ul class="nav-tabs"><li class="tab active"><a href="#β-地贫分类-1">重型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-2">轻型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-3">中间型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-4">遗传性胎儿血红蛋白增多症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="β-地贫分类-1"><p>β<sup>+</sup>、β<sup>0</sup>、δβ<sup>0</sup> 地贫的纯合子或者 β<sup>+</sup> 和 β<sup>0</sup> 地贫的双重纯合子，基因型分别为 <strong>β<sup>+</sup>/β<sup>+</sup></strong>、<strong>β<sup>+</sup>/β<sup>+</sup></strong>、<strong>δβ<sup>0</sup>/δβ<sup>0</sup></strong> 以及 <strong>β<sup>0</sup>/β<sup>+</sup></strong>。<br/>
+患者的 β 链几乎不能合成或合成量很少，以致无 HB A 或 HB A 含量很低；λ 链合成相对增多，使 <strong>Hb F</strong>（与氧亲和力强）和 Hb A<sub>2</sub> 比率升高。<br/>
+患者组织缺氧，进而刺激红骨髓增生，引起骨质疏松，可出现“<strong>地中海贫血面容</strong>”（头颅大，额顶及枕部隆起，鼻梁塌陷，上颌及牙齿前突，眼距宽，眼睑浮肿）；过剩的 α 链游离形成 α 链包涵体，引起 <strong>溶血性贫血</strong>，靠输血维持生命。</p></div><div class="tab-pane" id="β-地贫分类-2"><p>β<sup>+</sup>、β<sup>0</sup> 或 δβ<sup>0</sup> 地贫的杂合子，基因型分别为 β<sup>+</sup>/β<sup>A</sup>、β<sup>0</sup>/β<sup>A</sup> 和 δβ<sup>0</sup>/β<sup>A</sup>。<br/>
+患者能合成相当量的 β 链，症状较轻，贫血不明显或 <strong>轻度贫血</strong>，特点是 <em>Hb A<sub>2</sub> 升高（可至 4%~8%）或/和 Hb F 升高</em>。</p></div><div class="tab-pane" id="β-地贫分类-3"><p>通常是某些变异型的纯合子或两种不同变异型的双重杂合子，如 β<sup>+</sup>/β<sup>+</sup>、δβ<sup>+</sup>/β<sup>+</sup>，。<br/>
+患者病情介于重型和轻型之间。</p></div><div class="tab-pane" id="β-地贫分类-4"><dl>
+<dt>遗传性胎儿血红蛋白增多症（hereditary persistance of fetal hemoglobin，HPFH）</dt>
+<dd>由于 β 珠蛋白基因簇中的某些 DNA 片段缺失或点突变，使 <strong>δ 和 β 链</strong> 合成受到抑制，而 <strong>γ 链</strong> 的合成明显增加，导致 <strong>Hb F</strong> 增多。</dd>
+</dl>
+<p>HPFH 的特点是 <strong>Hb F</strong> 在 <strong>成年人</strong> 体内仍持续较高水平，<em>无明显临床症状</em>。</p></div></div></div>
+<h3 id="受体蛋白病">受体蛋白病 <a class="markdownIt-Anchor" href="#受体蛋白病">#</a></h3>
+<h4 id="家族性高胆固醇血症">家族性高胆固醇血症 <a class="markdownIt-Anchor" href="#家族性高胆固醇血症">#</a></h4>
 <dl>
-<dt>家族性高胆固醇血症</dt>
-<dd>LDL 受体突变</dd>
+<dt>家族性高胆固醇血症（familial hypterlipoproteinemia，FH）</dt>
+<dd><strong>低密度脂蛋白</strong>（low density lipoprotein，<strong>LDL</strong>）受体部分缺失或功能性 LDL　受体不足，使血浆中胆固醇和甘油三酯增高，可引起冠心病、心肌梗死。</dd>
 </dl>
-<h2 id="先天代谢病">先天代谢病 <a class="markdownIt-Anchor" href="#先天代谢病">#</a></h2>
+<h2 id="先天性代谢病">先天性代谢病 <a class="markdownIt-Anchor" href="#先天性代谢病">#</a></h2>
 <h3 id="先天代谢缺陷的产生机制">先天代谢缺陷的产生机制 <a class="markdownIt-Anchor" href="#先天代谢缺陷的产生机制">#</a></h3>
 <ol>
-<li>结构基因突变使酶结构代谢</li>
-<li>调节基因突变</li>
-<li>翻译后修饰、加工</li>
+<li><strong>结构基因突变</strong> 使酶结构改变，稳定性降低，酶动力学特性改变；</li>
+<li><strong>调节基因突变</strong> 致使酶合成速率下降，催化活性降低；</li>
+<li><strong>翻译后修饰、加工障碍</strong> 致酶催化中心不完善，活性下降。</li>
 </ol>
 <h3 id="先天性代谢病的类型">先天性代谢病的类型 <a class="markdownIt-Anchor" href="#先天性代谢病的类型">#</a></h3>
+<ul>
+<li>氨基酸代谢病：苯丙酮尿症、白化病、尿黑酸尿症</li>
+<li>糖代谢病：半乳糖血症、糖原贮积病</li>
+<li>脂类代谢病：Gaucher病、Tay-Sachs病</li>
+<li>嘌呤代谢病：Lesch-Nyhan综合征</li>
+<li>葡萄糖6-磷酸脱氢酶缺乏症</li>
+</ul>
 <h4 id="氨基酸代谢病">氨基酸代谢病 <a class="markdownIt-Anchor" href="#氨基酸代谢病">#</a></h4>
-<dl>
-<dt>苯丙酮尿症</dt>
-<dd>由肝脏 <strong>苯丙氨酸羟化酶</strong> 缺乏所致的一种常染色体隐性遗传病，少数由于 <strong>四氢生物蝶呤</strong> 缺乏所致。</dd>
-<dd>旁路代谢开放、鼠尿味；黑色素和成减少、；影响大脑发育</dd>
+<div class="tabs" id="苯丙酮尿症"><ul class="nav-tabs"><li class="tab active"><a href="#苯丙酮尿症-1">苯丙酮尿症</a></li><li class="tab"><a href="#苯丙酮尿症-2">白化病</a></li><li class="tab"><a href="#苯丙酮尿症-3">尿黑酸尿症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="苯丙酮尿症-1"><dl>
+<dt>苯丙酮尿症（Phenylketonuria，PKU）</dt>
+<dd>由肝脏 <strong><mark>苯丙氨酸羟化酶</mark></strong>（phenylalanine hydroxylase，PAH）遗传性缺陷所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常染色体隐性遗传病">常染色体隐性遗传</a>，少数由于 <strong>四氢生物蝶呤</strong>（BH<sub>4</sub>）（苯丙氨酸羟化酶发挥作用需要辅因子 <strong>四氢生物蝶呤</strong>）缺乏所致。</dd>
 </dl>
-<p>苯丙氨酸羟化酶发挥作用需要辅因子 <strong>四氢生物蝶呤</strong>（BH<sub>4</sub>）</p>
+<p>临床表现：</p>
+<ul>
+<li>毛发、皮肤和尿 <strong>特殊的气味</strong>（鼠尿味）：旁路代谢产物由尿液和汗液排出；</li>
+<li><strong>皮肤和毛发颜色</strong> 较浅：黑色素合成减少；</li>
+<li><strong>智力障碍</strong>：大脑发育受到影响。</li>
+</ul></div><div class="tab-pane" id="苯丙酮尿症-2"><dl>
+<dt>白化病（albinism）</dt>
+<dd><strong><mark>酪氨酸酶</mark></strong>（tyrosinase）合成障碍所致的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=白化病#常染色体隐性遗传病">常染色体隐性遗传</a>。</dd>
+</dl>
+<p>临床表现：</p>
+<ul>
+<li>患者 <strong>皮肤</strong> 呈白色，<strong>头发</strong>呈银白色或淡黄色，<strong>虹膜及瞳孔</strong> 呈淡红色：黑色素缺乏；</li>
+<li>视物模糊、眼球震颤、<strong>畏光</strong>：视网膜无色素；</li>
+<li>皮肤日晒易被灼伤，易患 <strong>皮肤癌</strong>。</li>
+</ul></div><div class="tab-pane" id="苯丙酮尿症-3"><dl>
+<dt>尿黑酸尿症（alcaptonuira）</dt>
+<dd><strong><mark>尿黑酸氧化酶</mark></strong>（homogentisic acid oxidase）先天缺乏引起的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</dd>
+</dl></div></div></div>
 <dl>
-<dt>白化病</dt>
-<dd>缺乏 <strong>酪氨酸酶</strong> 所致的一种常染色体隐性遗传病。</dd>
 <dt>尿黑酸尿症</dt>
 <dd>缺乏 <strong>尿黑酸氧化酶</strong> 所致</dd>
 <dd>致病：褐黄病</dd>
@@ -3251,6 +3233,14 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dd>服用 <strong>伯胺喹呤</strong>、<strong>蚕豆</strong> 可致发病</dd>
 </dl>
 ]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
   </entry>
   <entry>
     <title>动物源性细菌</title>
@@ -3263,92 +3253,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医学免疫学</title>
-    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>免疫</dt>
-<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
-</dl>
-<span id="more"></span>
-<ul>
-<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
-<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
-<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
-<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
-<li>主要组织相容性复合体</li>
-</ul>
-<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
-<ul>
-<li>免疫器官
-<ul>
-<li>中枢：胸腺、骨髓</li>
-<li>外周：脾脏、淋巴结</li>
-</ul>
-</li>
-<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
-<li>免疫分子
-<ul>
-<li>膜型分子</li>
-<li>分泌型分子</li>
-</ul>
-</li>
-</ul>
-<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
-<dl>
-<dt><mark>免疫防御</mark>（immune defense）</dt>
-<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
-<dt><mark>免疫监视</mark>（immune surveillance）</dt>
-<dd>随时发现和清除体内出现的“非己”成分。</dd>
-<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
-<dd>通过 <strong>免疫耐受</strong> 和 <strong>免疫调节</strong> 两种重要机制来达到机体内环境的稳定。</dd>
-</dl>
-<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
-<dl>
-<dt>免疫应答（immune response）</dt>
-<dd>免疫系统识别和清除“非己”物质的整个过程，可分为 <strong>固有免疫</strong> 和 <strong>适应性免疫</strong>。</dd>
-<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
-<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
-<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
-<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为 <strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
-<dd>相比固有免疫，有三个主要特点：
-<ul>
-<li><strong>特异性</strong></li>
-<li><strong>耐受性</strong></li>
-<li><strong>记忆性</strong></li>
-</ul>
-</dd>
-<dd>适应性免疫应答可分为两类：
-<ul>
-<li><strong>体液免疫</strong></li>
-<li><strong>细胞免疫</strong></li>
-</ul>
-</dd>
-<dt>体液免疫（humoral immunity）</dt>
-<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
-<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
-<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
-</dl>
-<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的 <strong>先决条件</strong> 和
-<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度 <strong>促进</strong> 固有免疫应答。</p>
-<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
-<!-- UPDATING -->
-<dl>
-<dt>免疫性疾病</dt>
-<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
-<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -3863,6 +3767,92 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>医学免疫学</title>
+    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>免疫</dt>
+<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
+</dl>
+<span id="more"></span>
+<ul>
+<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
+<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
+<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
+<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
+<li>主要组织相容性复合体</li>
+</ul>
+<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
+<ul>
+<li>免疫器官
+<ul>
+<li>中枢：胸腺、骨髓</li>
+<li>外周：脾脏、淋巴结</li>
+</ul>
+</li>
+<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
+<li>免疫分子
+<ul>
+<li>膜型分子</li>
+<li>分泌型分子</li>
+</ul>
+</li>
+</ul>
+<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
+<dl>
+<dt><mark>免疫防御</mark>（immune defense）</dt>
+<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
+<dt><mark>免疫监视</mark>（immune surveillance）</dt>
+<dd>随时发现和清除体内出现的“非己”成分。</dd>
+<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
+<dd>通过 <strong>免疫耐受</strong> 和 <strong>免疫调节</strong> 两种重要机制来达到机体内环境的稳定。</dd>
+</dl>
+<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
+<dl>
+<dt>免疫应答（immune response）</dt>
+<dd>免疫系统识别和清除“非己”物质的整个过程，可分为 <strong>固有免疫</strong> 和 <strong>适应性免疫</strong>。</dd>
+<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
+<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
+<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
+<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为 <strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
+<dd>相比固有免疫，有三个主要特点：
+<ul>
+<li><strong>特异性</strong></li>
+<li><strong>耐受性</strong></li>
+<li><strong>记忆性</strong></li>
+</ul>
+</dd>
+<dd>适应性免疫应答可分为两类：
+<ul>
+<li><strong>体液免疫</strong></li>
+<li><strong>细胞免疫</strong></li>
+</ul>
+</dd>
+<dt>体液免疫（humoral immunity）</dt>
+<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
+<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
+<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
+</dl>
+<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的 <strong>先决条件</strong> 和
+<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度 <strong>促进</strong> 固有免疫应答。</p>
+<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
+<!-- UPDATING -->
+<dl>
+<dt>免疫性疾病</dt>
+<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
+<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单基因遗传病</title>
     <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -4123,8 +4113,8 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </details>
 <h3 id="ar-遗传病举例"><abbr title="autosomal recessive，常染色体隐性遗传">AR</abbr> 遗传病举例 <a class="markdownIt-Anchor" href="#ar-遗传病举例">#</a></h3>
 <ul>
-<li><strong>苯丙酮尿症</strong>（Phenylketonuria，<abbr title="Phenylketonuria，苯丙酮尿症">PKU</abbr>）：<strong>苯丙氨酸羟化酶</strong>（phenylalanine hydroxylase，<abbr title="phenylalanine hydroxylase，苯丙氨酸羟化酶">PAH</abbr>）遗传性缺陷</li>
-<li><strong>白化病 ⅠA 型</strong>（albinism type ⅠA）：<strong>酪氨酸酶</strong>（tyrosinase）遗传性缺陷</li>
+<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=苯丙酮尿症#氨基酸代谢病"><strong>苯丙酮尿症</strong></a></li>
+<li><strong><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a> ⅠA 型</strong>（albinism type ⅠA）：<strong>酪氨酸酶</strong>（tyrosinase）遗传性缺陷</li>
 <li><strong>先天性聋哑 Ⅰ 型（Congenital Deafness type Ⅰ）</strong></li>
 </ul>
 <p>部分先天性聋哑并非由遗传因素造成的，而是由于环境因素的影响所致，与 <abbr title="autosomal recessive，常染色体隐性遗传">AR</abbr> 引起的先天性聋哑表型相同，这是一种 <strong>表型模拟</strong> 现象。</p>
@@ -5953,89 +5943,6 @@ T 细胞辅助。</p>
       </tags>
   </entry>
   <entry>
-    <title>放线菌</title>
-    <url>/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>放线菌（Actinomycetes）</dt>
-<dd>一群<strong>革兰氏阳性</strong>，呈菌丝状生长和以孢子繁殖（与真菌相似）的<strong>原核生物</strong>。因在固体培养基上菌落呈放线状生长而得名。</dd>
-</dl>
-<ul>
-<li>益处：生产<strong>抗生素</strong>（80% 的抗生素种类）、酶、维生素等</li>
-<li>害处：放线菌科下的<a href="#%E6%94%BE%E7%BA%BF%E8%8F%8C%E5%B1%9E"><strong>放线菌属</strong></a>和<a href="#%E8%AF%BA%E5%8D%A1%E8%8F%8C%E5%B1%9E"><strong>诺卡菌属</strong></a>可分别引起放线菌病和诺卡菌病</li>
-</ul>
-<span id="more"></span>
-<h2 id="放线菌属">放线菌属 <a class="markdownIt-Anchor" href="#放线菌属">#</a></h2>
-<dl>
-<dt>放线菌属（<em>Actinomyces</em>）</dt>
-<dd>属于人体正常菌群，主要引起<strong>内源性感染</strong>。</dd>
-</dl>
-<div class="note info"><p>人类放线菌感染中 90% 的病原体为<mark>衣氏放线菌</mark>。其对人类致病性最强。</p>
-</div>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：与<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a>相似——无荚膜、无芽孢、无鞭毛</li>
-<li>培养特性和生化反应：<strong>专性厌氧</strong></li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<p>放线菌属于人体<mark>正常菌群</mark>，存在于口腔、呼吸道、胃肠道及泌尿生殖道，毒力弱，利用创伤、手术等机会入侵，引起<mark>内源性感染</mark>。</p>
-<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
-<dl>
-<dt>放线菌病（actinomycosis）</dt>
-<dd>临床表现：软组织<strong>肉芽肿性及化脓性炎症</strong>，可形成多发性脓肿、多发性瘘管</dd>
-<dd>好发部位：面颈、舌、下颌等部位多见；也可发生于腹、胸、盆腔、皮肤等处</dd>
-</dl>
-<div class="note info"><p>也可能与牙周炎的发生有关。</p>
-</div>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>脓液和痰液中可见<mark>硫磺样颗粒</mark>。</p>
-<dl>
-<dt>“硫磺样颗粒” | 放线菌块</dt>
-<dd>放线菌在组织中形成的菌落，存在于病灶组织或脓性分泌物中，是临床辅助诊断放线菌病的指标
-<ul>
-<li>外观：直径 0.1~0.2mm，黄、硬</li>
-<li>压片或组织切片
-<ul>
-<li>直接镜检（HE 染色）：可见放射状、<strong>形似菊花</strong>的菌丝。</li>
-<li>革兰染色：中心 G<sup>+</sup>，边缘 G<sup>-</sup></li>
-</ul>
-</li>
-</ul>
-</dd>
-</dl>
-<h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
-<dl>
-<dt>诺卡菌属（<em>Nocardia</em>）</dt>
-<dd>主要通过呼吸道或伤口侵入，引起<strong>外源性感染</strong>。</dd>
-</dl>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：形态与放线菌属类似但菌丝末端不膨大，G<sup>+</sup></li>
-<li>培养特性：<strong>专性需氧</strong></li>
-</ul>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>感染来源：<strong>外源性感染</strong></li>
-<li>感染途径：呼吸道、伤口</li>
-<li>易感人群：免疫功能低下者、长期使用广谱抗生素的患者</li>
-</ul>
-<p>临床表现</p>
-<ul>
-<li>肺部感染会产生类似<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#结核分枝杆菌">肺结核</a>的症状</li>
-<li>皮肤刺伤引起的感染，以<strong>化脓和坏死</strong>为特征，可形成化脓性肉芽肿，多发性瘘管，好发于足、腿部，故又称为<strong>足菌肿(mycetoma)</strong></li>
-</ul>
-<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<p><strong>诺卡菌属抗酸染色呈弱阳性</strong>。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数学建模大赛准备</title>
     <url>/2021/04/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
     <content><![CDATA[<ul>
@@ -6116,6 +6023,89 @@ T 细胞辅助。</p>
         <tag>Index</tag>
         <tag>数学建模</tag>
         <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>放线菌</title>
+    <url>/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
+    <content><![CDATA[<dl>
+<dt>放线菌（Actinomycetes）</dt>
+<dd>一群<strong>革兰氏阳性</strong>，呈菌丝状生长和以孢子繁殖（与真菌相似）的<strong>原核生物</strong>。因在固体培养基上菌落呈放线状生长而得名。</dd>
+</dl>
+<ul>
+<li>益处：生产<strong>抗生素</strong>（80% 的抗生素种类）、酶、维生素等</li>
+<li>害处：放线菌科下的<a href="#%E6%94%BE%E7%BA%BF%E8%8F%8C%E5%B1%9E"><strong>放线菌属</strong></a>和<a href="#%E8%AF%BA%E5%8D%A1%E8%8F%8C%E5%B1%9E"><strong>诺卡菌属</strong></a>可分别引起放线菌病和诺卡菌病</li>
+</ul>
+<span id="more"></span>
+<h2 id="放线菌属">放线菌属 <a class="markdownIt-Anchor" href="#放线菌属">#</a></h2>
+<dl>
+<dt>放线菌属（<em>Actinomyces</em>）</dt>
+<dd>属于人体正常菌群，主要引起<strong>内源性感染</strong>。</dd>
+</dl>
+<div class="note info"><p>人类放线菌感染中 90% 的病原体为<mark>衣氏放线菌</mark>。其对人类致病性最强。</p>
+</div>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：与<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a>相似——无荚膜、无芽孢、无鞭毛</li>
+<li>培养特性和生化反应：<strong>专性厌氧</strong></li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<p>放线菌属于人体<mark>正常菌群</mark>，存在于口腔、呼吸道、胃肠道及泌尿生殖道，毒力弱，利用创伤、手术等机会入侵，引起<mark>内源性感染</mark>。</p>
+<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
+<dl>
+<dt>放线菌病（actinomycosis）</dt>
+<dd>临床表现：软组织<strong>肉芽肿性及化脓性炎症</strong>，可形成多发性脓肿、多发性瘘管</dd>
+<dd>好发部位：面颈、舌、下颌等部位多见；也可发生于腹、胸、盆腔、皮肤等处</dd>
+</dl>
+<div class="note info"><p>也可能与牙周炎的发生有关。</p>
+</div>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>脓液和痰液中可见<mark>硫磺样颗粒</mark>。</p>
+<dl>
+<dt>“硫磺样颗粒” | 放线菌块</dt>
+<dd>放线菌在组织中形成的菌落，存在于病灶组织或脓性分泌物中，是临床辅助诊断放线菌病的指标
+<ul>
+<li>外观：直径 0.1~0.2mm，黄、硬</li>
+<li>压片或组织切片
+<ul>
+<li>直接镜检（HE 染色）：可见放射状、<strong>形似菊花</strong>的菌丝。</li>
+<li>革兰染色：中心 G<sup>+</sup>，边缘 G<sup>-</sup></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
+<dl>
+<dt>诺卡菌属（<em>Nocardia</em>）</dt>
+<dd>主要通过呼吸道或伤口侵入，引起<strong>外源性感染</strong>。</dd>
+</dl>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：形态与放线菌属类似但菌丝末端不膨大，G<sup>+</sup></li>
+<li>培养特性：<strong>专性需氧</strong></li>
+</ul>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>感染来源：<strong>外源性感染</strong></li>
+<li>感染途径：呼吸道、伤口</li>
+<li>易感人群：免疫功能低下者、长期使用广谱抗生素的患者</li>
+</ul>
+<p>临床表现</p>
+<ul>
+<li>肺部感染会产生类似<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#结核分枝杆菌">肺结核</a>的症状</li>
+<li>皮肤刺伤引起的感染，以<strong>化脓和坏死</strong>为特征，可形成化脓性肉芽肿，多发性瘘管，好发于足、腿部，故又称为<strong>足菌肿(mycetoma)</strong></li>
+</ul>
+<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
+<p><strong>诺卡菌属抗酸染色呈弱阳性</strong>。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -10363,11 +10353,6 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About Me</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
@@ -10406,6 +10391,11 @@ plate）。<br/>
 <li>Github <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWE=">@alohaia<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>schedule</title>

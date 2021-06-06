@@ -39,15 +39,15 @@ NexT.utils = {
       const $image = $(element);
       const imageLink = $image.attr('data-src') || $image.attr('src');
 
-      var imgWrapAlign = '';
-      if ($image.is('img.right')) {
-        imgWrapAlign = 'img-wrap-right';
-      } else if ($image.is('img.left')) {
-        imgWrapAlign = 'img-wrap-left';
-      }
-      const $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`)
-                                   .parent('a')
-                                   .wrap(`<div class='img-wrap ${imgWrapAlign}'></div>`);
+      const $imageWrapLink = $image.wrap(`<div class="img-wrap ${$image.is('img.right')
+                              ? 'img-wrap-right'
+                              : (
+                                   $image.is('img.left')
+                                     ? 'img-wrap-left'
+                                     : 'img-wrap-center'
+                                )
+                             } fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></div>`)
+                             .parent('div');
 
       if ($image.is('.post-gallery img')) {
         $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');

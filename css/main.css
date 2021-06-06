@@ -3202,7 +3202,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #03019e;
+  background: #ff7928;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3253,29 +3253,65 @@ div.post-body>p {
 
 p.image-caption {
     counter-increment: imgCounter;
-    padding-top: 10px;
+    /* padding-top: 10px; */
 }
 p.image-caption:before {
     content: "FIG." counter(imgCounter) " - ";
 }
 
-div.img-wrap:not(.img-wrap-right):not(.img-wrap-left) {
-    max-height: 35em;
+/* div.img-wrap { */
+/*     max-height: 35em; */
+/* } */
+
+/* div.img-wrap { */
+/*     display: grid; */
+/*     grid-template-areas: */
+/*         "image" */
+/*         "caption"; */
+/*     grid-template-rows: minmax(auto, 35em) auto; */
+/*     grid-template-columns: auto; */
+/* } */
+/* div.img-wrap>img { */
+/*     grid-area: image; */
+/*     margin: auto; */
+/* } */
+/* div.img-wrap>p.image-caption { */
+/*     grid-area: caption; */
+/*     margin: auto; */
+/* } */
+/*  */
+/* div.img-wrap-center { */
+/*     [> max-height: 35em; <] */
+/* } */
+
+.fancybox {
+    cursor: pointer;
+}
+
+div.fancybox {
+    width: fit-content;
+    height: fit-content;
     margin: auto;
 }
+
+div.img-wrap>img {
+    display: inline-block;
+}
+div.img-wrap-center>img {
+    max-height: 30em;
+}
+div.img-wrap-left>img,
+div.img-wrap-right>img {
+    max-height: 30em;
+}
+
 div.img-wrap-left,
 div.img-wrap-right {
     max-width: 400px;
     border: 10px solid #ffffff00;
-    width: fit-content;
-    height: fit-content;
 }
 div.img-wrap-left  { float: left;  }
 div.img-wrap-right { float: right; }
-/* img.right, img.left { */
-/*     margin-left: 0; */
-/*     margin-right: 0; */
-/* } */
 
 .center {
     text-align: center;
@@ -3286,7 +3322,6 @@ div.img-wrap-right { float: right; }
 .table-caption {
     counter-increment: tblCounter;
     display: block;
-    margin-bottom: 0;
     font-size: 14px;
     font-weight: bold;
     color: #999;
@@ -3294,6 +3329,11 @@ div.img-wrap-right { float: right; }
 .table-caption:before {
     content: "TBL." counter(tblCounter) " - "
 }
+
+/**************************************************************************************/
+
+/* for scripts/tags/align-text.js */
+
 .align-text-right {
     text-align: right;
 }
