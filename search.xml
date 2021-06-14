@@ -792,6 +792,31 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 <branch>，获取的远端的分支为 <remote>/<branch>）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1273,31 +1298,6 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 <branch>，获取的远端的分支为 <remote>/<branch>）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1824,36 +1824,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue 学习记录</title>
     <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1944,6 +1914,36 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人类发育与遗传学</title>
     <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
     <content><![CDATA[<blockquote>
@@ -1966,7 +1966,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
 <li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
 <li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天代谢病</a></li>
+<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
 <li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
 <li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
 </ol>
@@ -2800,7 +2800,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
 <dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
 </dl>
-<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的 <strong>胚体</strong>。第四周末，胚体呈”C“字形。</p>
+<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的 <strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
 <p>第 5~8 周称为 <strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8
 周时初具人形，主要器官、系统在此时期形成。</p>
 <h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
@@ -3053,8 +3053,8 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>分子病和先天代谢病</title>
-    <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
+    <title>分子病和先天性代谢病</title>
+    <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
     <content><![CDATA[<dl>
 <dt><a href="#%E5%88%86%E5%AD%90%E7%97%85">分子病</a>（molecular disease）</dt>
 <dd><strong>基因突变</strong>导致蛋白质分子质和量的异常，从而引起机体功能障碍的一类疾病。</dd>
@@ -3076,7 +3076,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <p>人类 <strong>血红蛋白</strong>（hemoglobin，<abbr title="血红蛋白">Hb</abbr>）是由两对珠蛋白链（α 和 β）组成的四聚体分子，每条珠蛋白链通过亚铁卟啉（bǔ lín）与一个 <strong>血红素</strong>（heme）分子相连。<br/>
 α（珠蛋白）链包括 α 和 ζ 链，β（珠蛋白）链包括 β、ε、γ 及 δ 链，6 种肽链组成的 6 种血红蛋白中，<abbr title="血红蛋白">Hb</abbr> A（α<sub>2</sub>β<sub>2</sub>）（占 95% 以上）和 <abbr title="血红蛋白">Hb</abbr> A<sub>2</sub>（α<sub>2</sub>δ<sub>2</sub>）可见于成人体内。</p>
 <p>各种血红蛋白的发育演变是 α、β 珠蛋白基因簇按照其在染色体上的排列顺序由 5’ 到 3’ 依次表达、关闭的结果。</p>
-<img data-src="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/%E7%8F%A0%E8%9B%8B%E7%99%BD%E5%9F%BA%E5%9B%A0%E7%B0%87.png" class="" title="α、β 珠蛋白基因簇的依次表达、关闭" alt="α、β 珠蛋白基因簇的依次表达、关闭">
+<img data-src="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/%E7%8F%A0%E8%9B%8B%E7%99%BD%E5%9F%BA%E5%9B%A0%E7%B0%87.png" class="" title="α、β 珠蛋白基因簇的依次表达、关闭" alt="α、β 珠蛋白基因簇的依次表达、关闭">
 <p>珠蛋白基因表达调控：LCR（TODO）</p>
 <h4 id="异常血红蛋白病">异常血红蛋白病 <a class="markdownIt-Anchor" href="#异常血红蛋白病">#</a></h4>
 <p>由于珠蛋白基因突变导致珠蛋白肽链结构异常，且有临床表现者称为 <strong>异常血红蛋白病</strong> 或 <strong>异常血红蛋白综合征</strong>。</p>
@@ -3187,51 +3187,68 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 <li>葡萄糖6-磷酸脱氢酶缺乏症</li>
 </ul>
 <h4 id="氨基酸代谢病">氨基酸代谢病 <a class="markdownIt-Anchor" href="#氨基酸代谢病">#</a></h4>
-<div class="tabs" id="苯丙酮尿症"><ul class="nav-tabs"><li class="tab active"><a href="#苯丙酮尿症-1">苯丙酮尿症</a></li><li class="tab"><a href="#苯丙酮尿症-2">白化病</a></li><li class="tab"><a href="#苯丙酮尿症-3">尿黑酸尿症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="苯丙酮尿症-1"><dl>
-<dt>苯丙酮尿症（Phenylketonuria，PKU）</dt>
-<dd>由肝脏 <strong><mark>苯丙氨酸羟化酶</mark></strong>（phenylalanine hydroxylase，PAH）遗传性缺陷所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常染色体隐性遗传病">常染色体隐性遗传</a>，少数由于 <strong>四氢生物蝶呤</strong>（BH<sub>4</sub>）（苯丙氨酸羟化酶发挥作用需要辅因子 <strong>四氢生物蝶呤</strong>）缺乏所致。</dd>
-</dl>
+<ol>
+<li>苯丙酮尿症：苯丙氨酸羟化酶</li>
+<li>白化病：酪氨酸酶</li>
+<li>尿黑酸尿症：尿黑酸氧化酶</li>
+</ol>
+<div class="tabs" id="氨基酸代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#氨基酸代谢病举例-1">苯丙酮尿症</a></li><li class="tab"><a href="#氨基酸代谢病举例-2">白化病</a></li><li class="tab"><a href="#氨基酸代谢病举例-3">尿黑酸尿症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="氨基酸代谢病举例-1"><p><strong>苯丙酮尿症</strong>（Phenylketonuria，PKU）是由肝脏 <strong><mark>苯丙氨酸羟化酶</mark></strong>（phenylalanine hydroxylase，PAH）遗传性缺陷所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常染色体隐性遗传病">常染色体隐性遗传</a>，少数由于 <strong>四氢生物蝶呤</strong>（BH<sub>4</sub>）（苯丙氨酸羟化酶发挥作用需要辅因子 <strong>四氢生物蝶呤</strong>）缺乏所致。</p>
 <p>临床表现：</p>
 <ul>
 <li>毛发、皮肤和尿 <strong>特殊的气味</strong>（鼠尿味）：旁路代谢产物由尿液和汗液排出；</li>
 <li><strong>皮肤和毛发颜色</strong> 较浅：黑色素合成减少；</li>
 <li><strong>智力障碍</strong>：大脑发育受到影响。</li>
-</ul></div><div class="tab-pane" id="苯丙酮尿症-2"><dl>
-<dt>白化病（albinism）</dt>
-<dd><strong><mark>酪氨酸酶</mark></strong>（tyrosinase）合成障碍所致的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=白化病#常染色体隐性遗传病">常染色体隐性遗传</a>。</dd>
-</dl>
+</ul>
+<p>防治：新生儿筛查 + 限制苯丙氨酸摄入</p></div><div class="tab-pane" id="氨基酸代谢病举例-2"><p><strong>白化病</strong>（albinism）是 <strong><mark>酪氨酸酶</mark></strong>（tyrosinase）合成障碍所致的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=白化病#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
 <p>临床表现：</p>
 <ul>
 <li>患者 <strong>皮肤</strong> 呈白色，<strong>头发</strong>呈银白色或淡黄色，<strong>虹膜及瞳孔</strong> 呈淡红色：黑色素缺乏；</li>
 <li>视物模糊、眼球震颤、<strong>畏光</strong>：视网膜无色素；</li>
 <li>皮肤日晒易被灼伤，易患 <strong>皮肤癌</strong>。</li>
-</ul></div><div class="tab-pane" id="苯丙酮尿症-3"><dl>
-<dt>尿黑酸尿症（alcaptonuira）</dt>
-<dd><strong><mark>尿黑酸氧化酶</mark></strong>（homogentisic acid oxidase）先天缺乏引起的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</dd>
-</dl></div></div></div>
-<dl>
-<dt>尿黑酸尿症</dt>
-<dd>缺乏 <strong>尿黑酸氧化酶</strong> 所致</dd>
-<dd>致病：褐黄病</dd>
-</dl>
+</ul></div><div class="tab-pane" id="氨基酸代谢病举例-3"><p><strong>尿黑酸尿症</strong>（alcaptonuira）是 <strong><mark>尿黑酸氧化酶</mark></strong>（homogentisic acid oxidase）先天缺乏引起的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>婴儿出生后不久，尿布中有黄褐色斑点，日久后尿布呈黑褐色；</li>
+<li><strong>褐黄病</strong>：体内尿黑酸沉积与结缔组织，在皮肤、 耳廓、面颊和巩膜等处弥漫性色素沉着），如累积关节，可导致 <strong>黄褐病性关节炎</strong>。</li>
+</ul></div></div></div>
 <h4 id="糖代谢病">糖代谢病 <a class="markdownIt-Anchor" href="#糖代谢病">#</a></h4>
 <ol>
-<li><strong>半乳糖血症</strong>：<strong>1-磷酸半乳糖尿苷转移酶</strong></li>
-<li><strong>糖原贮积症</strong> ：糖原降解或生成过程中某些酶活性的缺乏，如 Ⅰ 型是由于 <strong>葡糖糖-6-磷酸酶</strong> 缺乏</li>
+<li>半乳糖血症：1-磷酸半乳糖尿苷转移酶</li>
+<li>糖原贮积症 Ⅰ 型：葡糖糖-6-磷酸酶</li>
 </ol>
+<div class="tabs" id="糖代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#糖代谢病举例-1">半乳糖血症</a></li><li class="tab"><a href="#糖代谢病举例-2">糖原贮积病 Ⅰ 型</a></li></ul><div class="tab-content"><div class="tab-pane active" id="糖代谢病举例-1"><p><strong>半乳糖血症</strong>（galactosemia）是由于 <strong>1-磷酸半乳糖尿苷转移酶</strong>（galactose-1-phosphate uridyltransferase，<abbr title="galactose-1-phosphate uridyltransferase，1-磷酸半乳糖尿苷转移酶">GPUT</abbr>）缺乏活性使 1-磷酸半乳糖大量堆积在血液、肝脏和脑等组织中而导致的疾病，按 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性</a> 方式遗传。</p>
+<p>临床表现：婴儿期呕吐或腹泻、喂养困难，逐渐出现肝脏肿大、水肿、精神发育迟滞和白内障等。</p>
+<p>治疗：以限制乳类摄入为主。</p></div><div class="tab-pane" id="糖代谢病举例-2"><p><strong>糖原贮积病</strong>（Glycogen Storage Disease）是一大类遗传性糖代谢缺陷，由于糖原的降解或生成过程中某些酶活性的缺乏，致使正常或异常结构的糖原积累在肝、心、肌肉等组织而产生的多种症状。</p>
+<p><strong>糖原贮积病 Ⅰ 型</strong> 由 <strong><mark>葡萄糖-6-磷酸酶</mark></strong>（glucose-6-phosphatase）缺乏所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>肝细胞中肝糖原积聚，致患儿 <strong>肝肿大</strong>；</li>
+<li>可引起葡萄糖-6-磷酸增多，糖酵解及磷酸戊糖途径增强，引起 <em>酸中毒</em>、<em>高尿酸血症</em> 和 <em>高脂血症</em>。</li>
+</ul></div></div></div>
 <h4 id="脂类代谢病">脂类代谢病 <a class="markdownIt-Anchor" href="#脂类代谢病">#</a></h4>
+<p><strong>脂类代谢病</strong> 是指脂类分解中特异性酶缺乏，导致其相应脂质底物在内脏、脑部、血管中堆积，使这些系统发生紊乱而致病，统称为 <strong>脂类贮积症</strong>（lipidosis）。</p>
 <ol>
-<li><strong>戈谢氏（Gaucher）病</strong>：<strong>β-葡萄糖苷脂酶</strong></li>
-<li><strong>Tay-Sachs 病</strong>（GM<sub>2</sub> 神经节苷脂病Ⅰ型）：氨基己糖苷酶 A</li>
+<li>Gaucher病：β-葡萄糖苷脂酶</li>
+<li>Tay-Sachs 病：氨基己糖苷酶 A</li>
 </ol>
+<div class="tabs" id="脂类代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#脂类代谢病举例-1">Gaucher 病</a></li><li class="tab"><a href="#脂类代谢病举例-2">Tay-Sachs 病</a></li></ul><div class="tab-content"><div class="tab-pane active" id="脂类代谢病举例-1"><p><strong>Gaucher 病</strong>（戈谢氏病）是由于 <strong><mark>β-葡萄糖苷脂酶</mark></strong>（β-glucosidase）缺乏导致葡萄糖苷脂代谢障碍而引起的临床疾病，为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传病</a>。</p>
+<p>葡萄糖脑苷脂在单核巨噬细胞内蓄积形成 Gaucher 细胞，是本病的典型特征。</p></div><div class="tab-pane" id="脂类代谢病举例-2"><p><strong>Tay-Sachs 病</strong>（Tay-Sachs disease），又称 <strong>GM<sub>2</sub> 神经节苷脂贮积症</strong>（GM<sub>2</sub> gangliosidosis）、<strong>GM<sub>2</sub> 神经节苷脂病 Ⅰ 型</strong> 或 <strong>家族性黑蒙性白痴</strong>（familial amauroticidiocy），由 <strong>氨基己糖苷酶 A</strong>（hexosaminidase A）缺乏导致 GM<sub>2</sub> 神经节苷脂在神经细胞内聚集所致，为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传病</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>初发症状：听觉过敏；</li>
+<li>早期：视网膜黄斑变性，视网膜呈樱桃红斑点，进行性失明，还可表现为进行性肌张力减退、衰弱和生长迟缓；</li>
+<li>后期：完全不能运动，恶病质，平均存活 2 年左右。</li>
+</ul></div></div></div>
 <h4 id="嘌呤代谢病">嘌呤代谢病 <a class="markdownIt-Anchor" href="#嘌呤代谢病">#</a></h4>
-<p><strong>Lesch-Nyhan 综合征</strong>（LNS）/自毁容貌综合征：X 连锁隐性遗传病，**次黄嘌呤鸟嘌呤磷酸核糖转移酶（HGPRT）**缺乏</p>
+<p><strong>Lesch-Nyhan 综合征</strong>（<abbr title="Lesch-Nyhan 综合征">LNS</abbr>）又称 <mark>自毁容貌综合征</mark>，为 <mark>X 连锁隐性遗传病</mark>，是由 <strong>次黄嘌呤鸟嘌呤磷酸核糖转移酶（HGPRT）</strong> 缺乏引起嘌呤过度合成，致体液中尿酸增多造成的一类疾病。</p>
+<p>临床表现：</p>
+<ul>
+<li>精神发育迟滞、痉挛性脑瘫、不自主运动和明显的 <strong>强迫性自残行为</strong>（self-mutilation），<strong>自残行为发展</strong> 是 <abbr title="Lesch-Nyhan 综合征">LNS</abbr> 的特异性症状，先是磨牙齿和咬口唇，逐渐发展为不可克制的咬舌、咬手指、咬人或咬物，可造成严重伤残；</li>
+<li>患者血中尿酸增多，可引发 <strong>痛风性关节痛</strong>，是本病常见的全身症状。</li>
+</ul>
 <h4 id="葡萄糖-6-磷酸脱氢酶缺乏症">葡萄糖 6-磷酸脱氢酶缺乏症 <a class="markdownIt-Anchor" href="#葡萄糖-6-磷酸脱氢酶缺乏症">#</a></h4>
-<dl>
-<dt>葡萄糖 6-磷酸脱氢（G6PD）</dt>
-<dd>磷酸己糖旁路、产生 NADPH、保持 <strong>谷胱甘肽</strong> 和 <strong>巯基</strong> 水平</dd>
-<dd>服用 <strong>伯胺喹呤</strong>、<strong>蚕豆</strong> 可致发病</dd>
-</dl>
+<p><strong>葡萄糖 6-磷酸脱氢酶</strong>（<em>glucose</em>-6-phosphate dehydrogenase，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr>）催化磷酸己糖旁路的第一步。葡萄糖代谢途径产生 <strong>NADPH</strong>，以保持 <strong>谷胱甘肽</strong> 和 <strong>巯基</strong> 水平。</p>
+<p><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症患者若服用 <strong>蚕豆</strong> 或抗疟药 <strong>伯胺（基）喹呤</strong> 可发生溶血性贫血。</p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -4113,8 +4130,8 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 </details>
 <h3 id="ar-遗传病举例"><abbr title="autosomal recessive，常染色体隐性遗传">AR</abbr> 遗传病举例 <a class="markdownIt-Anchor" href="#ar-遗传病举例">#</a></h3>
 <ul>
-<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=苯丙酮尿症#氨基酸代谢病"><strong>苯丙酮尿症</strong></a></li>
-<li><strong><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a> ⅠA 型</strong>（albinism type ⅠA）：<strong>酪氨酸酶</strong>（tyrosinase）遗传性缺陷</li>
+<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=苯丙酮尿症#氨基酸代谢病"><strong>苯丙酮尿症</strong></a></li>
+<li><strong><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a> ⅠA 型</strong>（albinism type ⅠA）：<strong>酪氨酸酶</strong>（tyrosinase）遗传性缺陷</li>
 <li><strong>先天性聋哑 Ⅰ 型（Congenital Deafness type Ⅰ）</strong></li>
 </ul>
 <p>部分先天性聋哑并非由遗传因素造成的，而是由于环境因素的影响所致，与 <abbr title="autosomal recessive，常染色体隐性遗传">AR</abbr> 引起的先天性聋哑表型相同，这是一种 <strong>表型模拟</strong> 现象。</p>
@@ -4151,8 +4168,9 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 <h3 id="xr-遗传病举例"><abbr title="X-linked recessive inheritance，X 连锁隐性遗传">XR</abbr> 遗传病举例 <a class="markdownIt-Anchor" href="#xr-遗传病举例">#</a></h3>
 <ul>
 <li><strong>甲型血友病</strong>（Hemophilia A）</li>
-<li><strong>Duchenne 型肌营养不良症</strong>：较 <abbr title="Becker muscular dystrophy，Backer 型肌营养不良症">BMD</abbr> 型病情较重，患者 <strong>腓肠肌假性肥大</strong>、从卧位到站立表现有 <strong><mark>Gower 征</mark></strong></li>
+<li><strong>Duchenne 型肌营养不良症</strong>：较 <abbr title="Becker muscular dystrophy，Backer 型肌营养不良症">BMD</abbr> 型病情较重，患者 <strong>腓肠肌假性肥大</strong>、从卧位到站立表现有 <strong><mark>Gower 征</mark></strong>（Gowers’s sign，以 William Richard <em>Gowers</em> 的名字命名）。</li>
 </ul>
+<img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/Gower's%20sign.png" class="" title="Gowers&#39;s sign" alt="Gowers&#39;s sign">
 <details class="note info"><summary><p>假肥大型肌营养不良症</p>
 </summary>
 <p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的 <strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
@@ -5943,89 +5961,6 @@ T 细胞辅助。</p>
       </tags>
   </entry>
   <entry>
-    <title>数学建模大赛准备</title>
-    <url>/2021/04/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
-    <content><![CDATA[<ul>
-<li>名称：高教社杯全国大学生数学建模竞赛</li>
-<li>时间：9.9（周四）18:00 - 9.12（周日）20:00</li>
-</ul>
-<span id="more"></span>
-<h2 id="事程">事程 <a class="markdownIt-Anchor" href="#事程">#</a></h2>
-<p>优先级由高到低：</p>
-<ul class="task-list">
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_0" disabled="true" /><label for="cbx_0"> SPSS/MatLab/R</label></div></li>
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_1" disabled="true" /><label for="cbx_1"> 《数学建模算法与应用》</label></div></li>
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_2" disabled="true" /><label for="cbx_2"> LaTeX</label></div></li>
-</ul>
-<h2 id="论文结构">论文结构 <a class="markdownIt-Anchor" href="#论文结构">#</a></h2>
-<ol>
-<li><a href="#%E6%91%98%E8%A6%81">摘要</a>（一页以内）</li>
-<li><a href="#%E9%97%AE%E9%A2%98%E9%87%8D%E8%BF%B0">问题重述</a></li>
-<li><a href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">问题分析</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE">模型假设</a></li>
-<li><a href="#%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">符号说明</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B%E5%8F%8A%E6%B1%82%E8%A7%A3">模型建立及求解</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7">模型评价</a>（或加上模型推广 / 灵敏度分析 / 模型改进）</li>
-<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
-</ol>
-<h3 id="摘要">摘要 <a class="markdownIt-Anchor" href="#摘要">#</a></h3>
-<p>摘要是一篇文章的核心，应非常重视，一篇好的摘要是取胜的关键！一个好的摘要应突出模型的闪光点，用了什么样的模型，有什么样的创新，应说明研究工作的目的、方法、结和最终结论。切勿不能超过一页（研究生竞赛除外）！！！！</p>
-<p>首先第一段为背景+结论</p>
-<p>针对问题一：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>针对问题二：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>针对问题三：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>关键词（采用了什么模型，如插值、GM(1,1)、多元回归、主成分分析等等）</p>
-<h3 id="问题重述">问题重述 <a class="markdownIt-Anchor" href="#问题重述">#</a></h3>
-<p>阐明论文所研究的问题具有实际意义及建模的原题意思，列出所要研究的主要问题。不要直接把题目复制粘贴过来，另一方面也是降低查重率。</p>
-<h3 id="问题分析">问题分析 <a class="markdownIt-Anchor" href="#问题分析">#</a></h3>
-<p>分析问题，简述解决问题需要哪些条件和大体的解题思路，刨析问题的实质，确定解决问题的方法，为下面的模型假设、建立模型提供良好的基础。</p>
-<h3 id="模型假设">模型假设 <a class="markdownIt-Anchor" href="#模型假设">#</a></h3>
-<p>可以从题目和要求进行挖掘，运用模型的假设可以很好的对问题进行简化，但又不能建立太多假设，使求解与原意不符，应注意量与度。一般三到五条。</p>
-<h3 id="符号说明">符号说明 <a class="markdownIt-Anchor" href="#符号说明">#</a></h3>
-<p>文中出现的符号变量，便于读者阅读。</p>
-<h3 id="模型建立及求解">模型建立及求解 <a class="markdownIt-Anchor" href="#模型建立及求解">#</a></h3>
-<p>对问题的分析和模型的深入理解是建立一个好的模型的关键，比如该问题是一个预测问题，那么预测有很多模型，像前面所提到的插值、回归、GM(1,1)、GM（2，1）、时间序列、神经网络等等均可，那么采用什么样的模型取决于数据形式，如果数据量很少那么显然就不适合用神经网络，如果数据形式是单调的，那么推荐采用灰色预测模型，那么非单调的就不能用灰色预测模型。一个合适的模型是解决问题的关键，当然需要对我们的模型结果进行评估，比如R^2，RMSE等等来度量我们模型建立的优劣。引入一些创新点，比如将算法项结合可以得到一个更合适的模型和结果。</p>
-<h3 id="模型评价">模型评价 <a class="markdownIt-Anchor" href="#模型评价">#</a></h3>
-<p>（或加上模型推广 / 灵敏度分析 / 模型改进）</p>
-<p>模型评价就是模型的优点和缺点，优点比如采用了什么样的模型，得到了一个很好的结果，或者对数据进行了合理的预处理，为后续建模做了合理的铺垫，创新性的建立了什么模型，使得结果更为科学准确等等，缺点切勿写得太多，不要暴露文章的重大问题，大家都是聪明人就不用我再多说了。</p>
-<h3 id="参考文献">参考文献 <a class="markdownIt-Anchor" href="#参考文献">#</a></h3>
-<h4 id="专著-论文集-报告">专著、论文集、报告 <a class="markdownIt-Anchor" href="#专著-论文集-报告">#</a></h4>
-<p>[序号]主要责任者.文献题名[文献类型标识].出版地:出版者,出版年:起止页码(可选).</p>
-<p>例如：[1]刘国钧,陈绍业.图书目录[M].北京:高等教育出版社,1957:15-18.</p>
-<h4 id="期刊文章">期刊文章 <a class="markdownIt-Anchor" href="#期刊文章">#</a></h4>
-<p>[序号]主要责任者.文献题名[J].刊名,年,卷(期):起止页码.
-例如：[1]何龄修.读南明史[J].中国史研究,1998,(3):167-173.</p>
-<p>[2]OU J P,SOONG T T,et al.Recent advance in research on applications of passive energy dissipation systems[J].Earthquack Eng,1997,38(3):358-361.</p>
-<h4 id="论文集中的析出文献">论文集中的析出文献 <a class="markdownIt-Anchor" href="#论文集中的析出文献">#</a></h4>
-<p>[序号]析出文献主要责任者.析出文献题名[A].原文献主要责任者(可选)原文献题名[C].出版地:出版者,出版年:起止页码.</p>
-<p>例如：[7]钟文发.非线性规划在可燃毒物配置中的应用[A].赵炜.运筹学的理论与应用——中国运筹学会第五届大会论文集[C].西安:西安电子科技大学出版社,1996:468.</p>
-<h4 id="学位论文">学位论文 <a class="markdownIt-Anchor" href="#学位论文">#</a></h4>
-<p>[序号]主要责任者.文献题名[D].出版地:出版单位,出版年:起止页码(可选).</p>
-<p>例如：[4]赵天书.诺西肽分阶段补料分批发酵过程优化研究[D].沈阳:东北大学,2013.</p>
-<h4 id="报纸文章">报纸文章 <a class="markdownIt-Anchor" href="#报纸文章">#</a></h4>
-<p>[序号]主要责任者.文献题名[N].报纸名,出版日期(版次).</p>
-<p>例如：[8]谢希德.创造学习的新思路[N].人民日报,1998-12-25(10).</p>
-<h4 id="电子文献">电子文献 <a class="markdownIt-Anchor" href="#电子文献">#</a></h4>
-<p>[文献类型/载体类型标识]：[J/OL]网上期刊、[EB/OL]网上电子公告、
-[M/CD]光盘图书、[DB/OL]网上数据库、[DB/MT]磁带数据库
-[序号]主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出版或获得地址,发表更新日期/引用日期.
-例如：[12]王明亮.关于中国学术期刊标准化数据库系统工程的进展[EB/OL].1998-08-16/1998-10-01.
-[8]万锦.中国大学学报文摘(1983-1993).英文版[DB/CD].北京:中国大百科全书出版社,1996.</p>
-<h3 id="代码">代码 <a class="markdownIt-Anchor" href="#代码">#</a></h3>
-<p>美赛中不附代码，其余竞赛中必须附上。</p>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Contests</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>数学建模</tag>
-        <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>放线菌</title>
     <url>/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
     <content><![CDATA[<dl>
@@ -6106,6 +6041,89 @@ T 细胞辅助。</p>
       </categories>
       <tags>
         <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数学建模大赛准备</title>
+    <url>/2021/04/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
+    <content><![CDATA[<ul>
+<li>名称：高教社杯全国大学生数学建模竞赛</li>
+<li>时间：9.9（周四）18:00 - 9.12（周日）20:00</li>
+</ul>
+<span id="more"></span>
+<h2 id="事程">事程 <a class="markdownIt-Anchor" href="#事程">#</a></h2>
+<p>优先级由高到低：</p>
+<ul class="task-list">
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_0" disabled="true" /><label for="cbx_0"> SPSS/MatLab/R</label></div></li>
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_1" disabled="true" /><label for="cbx_1"> 《数学建模算法与应用》</label></div></li>
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_2" disabled="true" /><label for="cbx_2"> LaTeX</label></div></li>
+</ul>
+<h2 id="论文结构">论文结构 <a class="markdownIt-Anchor" href="#论文结构">#</a></h2>
+<ol>
+<li><a href="#%E6%91%98%E8%A6%81">摘要</a>（一页以内）</li>
+<li><a href="#%E9%97%AE%E9%A2%98%E9%87%8D%E8%BF%B0">问题重述</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">问题分析</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE">模型假设</a></li>
+<li><a href="#%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">符号说明</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B%E5%8F%8A%E6%B1%82%E8%A7%A3">模型建立及求解</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7">模型评价</a>（或加上模型推广 / 灵敏度分析 / 模型改进）</li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ol>
+<h3 id="摘要">摘要 <a class="markdownIt-Anchor" href="#摘要">#</a></h3>
+<p>摘要是一篇文章的核心，应非常重视，一篇好的摘要是取胜的关键！一个好的摘要应突出模型的闪光点，用了什么样的模型，有什么样的创新，应说明研究工作的目的、方法、结和最终结论。切勿不能超过一页（研究生竞赛除外）！！！！</p>
+<p>首先第一段为背景+结论</p>
+<p>针对问题一：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>针对问题二：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>针对问题三：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>关键词（采用了什么模型，如插值、GM(1,1)、多元回归、主成分分析等等）</p>
+<h3 id="问题重述">问题重述 <a class="markdownIt-Anchor" href="#问题重述">#</a></h3>
+<p>阐明论文所研究的问题具有实际意义及建模的原题意思，列出所要研究的主要问题。不要直接把题目复制粘贴过来，另一方面也是降低查重率。</p>
+<h3 id="问题分析">问题分析 <a class="markdownIt-Anchor" href="#问题分析">#</a></h3>
+<p>分析问题，简述解决问题需要哪些条件和大体的解题思路，刨析问题的实质，确定解决问题的方法，为下面的模型假设、建立模型提供良好的基础。</p>
+<h3 id="模型假设">模型假设 <a class="markdownIt-Anchor" href="#模型假设">#</a></h3>
+<p>可以从题目和要求进行挖掘，运用模型的假设可以很好的对问题进行简化，但又不能建立太多假设，使求解与原意不符，应注意量与度。一般三到五条。</p>
+<h3 id="符号说明">符号说明 <a class="markdownIt-Anchor" href="#符号说明">#</a></h3>
+<p>文中出现的符号变量，便于读者阅读。</p>
+<h3 id="模型建立及求解">模型建立及求解 <a class="markdownIt-Anchor" href="#模型建立及求解">#</a></h3>
+<p>对问题的分析和模型的深入理解是建立一个好的模型的关键，比如该问题是一个预测问题，那么预测有很多模型，像前面所提到的插值、回归、GM(1,1)、GM（2，1）、时间序列、神经网络等等均可，那么采用什么样的模型取决于数据形式，如果数据量很少那么显然就不适合用神经网络，如果数据形式是单调的，那么推荐采用灰色预测模型，那么非单调的就不能用灰色预测模型。一个合适的模型是解决问题的关键，当然需要对我们的模型结果进行评估，比如R^2，RMSE等等来度量我们模型建立的优劣。引入一些创新点，比如将算法项结合可以得到一个更合适的模型和结果。</p>
+<h3 id="模型评价">模型评价 <a class="markdownIt-Anchor" href="#模型评价">#</a></h3>
+<p>（或加上模型推广 / 灵敏度分析 / 模型改进）</p>
+<p>模型评价就是模型的优点和缺点，优点比如采用了什么样的模型，得到了一个很好的结果，或者对数据进行了合理的预处理，为后续建模做了合理的铺垫，创新性的建立了什么模型，使得结果更为科学准确等等，缺点切勿写得太多，不要暴露文章的重大问题，大家都是聪明人就不用我再多说了。</p>
+<h3 id="参考文献">参考文献 <a class="markdownIt-Anchor" href="#参考文献">#</a></h3>
+<h4 id="专著-论文集-报告">专著、论文集、报告 <a class="markdownIt-Anchor" href="#专著-论文集-报告">#</a></h4>
+<p>[序号]主要责任者.文献题名[文献类型标识].出版地:出版者,出版年:起止页码(可选).</p>
+<p>例如：[1]刘国钧,陈绍业.图书目录[M].北京:高等教育出版社,1957:15-18.</p>
+<h4 id="期刊文章">期刊文章 <a class="markdownIt-Anchor" href="#期刊文章">#</a></h4>
+<p>[序号]主要责任者.文献题名[J].刊名,年,卷(期):起止页码.
+例如：[1]何龄修.读南明史[J].中国史研究,1998,(3):167-173.</p>
+<p>[2]OU J P,SOONG T T,et al.Recent advance in research on applications of passive energy dissipation systems[J].Earthquack Eng,1997,38(3):358-361.</p>
+<h4 id="论文集中的析出文献">论文集中的析出文献 <a class="markdownIt-Anchor" href="#论文集中的析出文献">#</a></h4>
+<p>[序号]析出文献主要责任者.析出文献题名[A].原文献主要责任者(可选)原文献题名[C].出版地:出版者,出版年:起止页码.</p>
+<p>例如：[7]钟文发.非线性规划在可燃毒物配置中的应用[A].赵炜.运筹学的理论与应用——中国运筹学会第五届大会论文集[C].西安:西安电子科技大学出版社,1996:468.</p>
+<h4 id="学位论文">学位论文 <a class="markdownIt-Anchor" href="#学位论文">#</a></h4>
+<p>[序号]主要责任者.文献题名[D].出版地:出版单位,出版年:起止页码(可选).</p>
+<p>例如：[4]赵天书.诺西肽分阶段补料分批发酵过程优化研究[D].沈阳:东北大学,2013.</p>
+<h4 id="报纸文章">报纸文章 <a class="markdownIt-Anchor" href="#报纸文章">#</a></h4>
+<p>[序号]主要责任者.文献题名[N].报纸名,出版日期(版次).</p>
+<p>例如：[8]谢希德.创造学习的新思路[N].人民日报,1998-12-25(10).</p>
+<h4 id="电子文献">电子文献 <a class="markdownIt-Anchor" href="#电子文献">#</a></h4>
+<p>[文献类型/载体类型标识]：[J/OL]网上期刊、[EB/OL]网上电子公告、
+[M/CD]光盘图书、[DB/OL]网上数据库、[DB/MT]磁带数据库
+[序号]主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出版或获得地址,发表更新日期/引用日期.
+例如：[12]王明亮.关于中国学术期刊标准化数据库系统工程的进展[EB/OL].1998-08-16/1998-10-01.
+[8]万锦.中国大学学报文摘(1983-1993).英文版[DB/CD].北京:中国大百科全书出版社,1996.</p>
+<h3 id="代码">代码 <a class="markdownIt-Anchor" href="#代码">#</a></h3>
+<p>美赛中不附代码，其余竞赛中必须附上。</p>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Contests</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>数学建模</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -10357,7 +10375,7 @@ plate）。<br/>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
 <p><strong>Who am I?</strong></p>
-<img data-src="/images/aloha.gif" class="right" width="200">
+<img data-src="/images/aloha.gif" class="right" width="200" title="" alt="">
 <ul>
 <li>CMU <s>(Carnegie Mellon University)</s> 在读 <em>医学牲</em></li>
 <li>编程爱好者、（Neo）Vimmer</li>
@@ -10395,11 +10413,6 @@ plate）。<br/>
   <entry>
     <title>categories</title>
     <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>schedule</title>
-    <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -28576,6 +28589,11 @@ const pdfjsBuild = '3538ef0';
 ;
 });
 //# sourceMappingURL=pdf.js.map]]></content>
+  </entry>
+  <entry>
+    <title>schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
