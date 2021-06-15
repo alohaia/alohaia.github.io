@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-05-30T03:44:56.037Z</updated>
+  <updated>2021-06-15T16:34:35.422Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>肿瘤遗传学</title>
+    <link href="https://www.aloha.org.cn/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
+    <id>https://www.aloha.org.cn/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/</id>
+    <published>2021-06-15T13:44:03.000Z</published>
+    <updated>2021-06-15T16:34:35.422Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;i&gt;肿瘤发生发展相关的环境因素和遗传因素、肿瘤细胞的细胞和分子遗传学基础，以及肿瘤发生的遗传学说。&lt;/i&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
+    
+    <category term="人类发育与遗传学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
+    
+    
+    <category term="人类发育与遗传学" scheme="https://www.aloha.org.cn/tags/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>消化系统和呼吸系统的发生</title>
@@ -413,11 +436,11 @@
     <link href="https://www.aloha.org.cn/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"/>
     <id>https://www.aloha.org.cn/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</id>
     <published>2021-05-14T01:48:07.000Z</published>
-    <updated>2021-05-19T11:45:26.635Z</updated>
+    <updated>2021-06-15T13:43:17.257Z</updated>
     
     
     <summary type="html">&lt;dl&gt;
-&lt;dt&gt;多基因遗传 | 多因子遗传&lt;/dt&gt;
+&lt;dt&gt;多基因遗传（polygenic inheritance）| 多因素遗传（multifactorial inheritance）&lt;/dt&gt;
 &lt;dd&gt;由多对等位基因的 &lt;strong&gt;微效作用&lt;/strong&gt; 及 &lt;strong&gt;累积效应&lt;/strong&gt; 导致遗传性状或疾病的遗传方式。
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;主基因&lt;/strong&gt;（major gene）：起主要作用&lt;/li&gt;
@@ -478,7 +501,7 @@
     <link href="https://www.aloha.org.cn/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
     <id>https://www.aloha.org.cn/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/</id>
     <published>2021-05-12T01:41:58.000Z</published>
-    <updated>2021-06-15T12:09:36.310Z</updated>
+    <updated>2021-06-15T14:55:01.444Z</updated>
     
     
     <summary type="html">&lt;dl&gt;
@@ -609,45 +632,6 @@
     <category term="病原生物学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
     
     <category term="病毒学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E6%AF%92%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>抗体</title>
-    <link href="https://www.aloha.org.cn/2021/05/10/%E6%8A%97%E4%BD%93/"/>
-    <id>https://www.aloha.org.cn/2021/05/10/%E6%8A%97%E4%BD%93/</id>
-    <published>2021-05-10T01:23:41.000Z</published>
-    <updated>2021-05-18T13:24:56.421Z</updated>
-    
-    
-    <summary type="html">&lt;dl&gt;
-&lt;dt&gt;抗体（antibody，&lt;abbr title=&quot;抗体&quot;&gt;Ab&lt;/abbr&gt;）&lt;/dt&gt;
-&lt;dd&gt;介导体液免疫的重要效应分子&lt;/dd&gt;
-&lt;dd&gt;免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
-可与相应抗原发生特异性结合的 &lt;strong&gt;免疫球蛋白&lt;/strong&gt;（&lt;abbr title=&quot;免疫球蛋白&quot;&gt;Ig&lt;/abbr&gt;）。&lt;/dd&gt;
-&lt;dd&gt;主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;dl&gt;
-&lt;dt&gt;免疫球蛋白（immunoglobulin，&lt;abbr title=&quot;免疫球蛋白&quot;&gt;Ig&lt;/abbr&gt;）&lt;/dt&gt;
-&lt;dd&gt;具有抗体活性或化学结构与抗体相似的球蛋白的统称。&lt;/dd&gt;
-&lt;dd&gt;存在形式
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;膜型&lt;/strong&gt;（membrane immunoglobulin，mIg），如 BCR（B 细胞受体）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;分泌型&lt;/strong&gt;（secreted immunoglobulin，sIg），如抗体&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="医学免疫学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
-    
-    
-    <category term="医学免疫学" scheme="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
     
   </entry>
   
