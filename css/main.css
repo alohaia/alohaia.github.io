@@ -3202,7 +3202,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ba6296;
+  background: #ec54b6;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3243,7 +3243,7 @@ hr {
 }
 
 div.post-body {
-    counter-reset: imgCounter tblCounter;
+    counter-reset: imgCounter tblCounter equCounter;
     /* text-align: left; */ /* use `text_align` in theme config */
 }
 
@@ -3642,5 +3642,28 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(85, 85, 85);    /* color of the scroll thumb */
   /* border-radius: 20px;       [> roundness of the scroll thumb <] */
   /* border: 3px solid rgb(85, 85, 85);  [> creates padding around scroll thumb <] */
+}
+
+/**************************************************************************************/
+
+.katex-display {
+    display: table !important;
+    width: 100%;
+    counter-increment: equCounter;
+}
+
+.katex-display>.katex {
+    display: table-cell;
+}
+
+.katex-display::after {
+    width: 0;
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.katex-display::after {
+    content: "(" counter(equCounter) ")";
 }
 
