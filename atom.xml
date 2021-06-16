@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-06-15T16:34:35.422Z</updated>
+  <updated>2021-06-16T04:24:34.778Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>遗传病的诊断和治疗</title>
+    <link href="https://www.aloha.org.cn/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/"/>
+    <id>https://www.aloha.org.cn/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/</id>
+    <published>2021-06-16T02:27:07.000Z</published>
+    <updated>2021-06-16T04:24:34.778Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;遗传病的诊断&lt;/li&gt;
+&lt;li&gt;遗传病的产前诊断&lt;/li&gt;
+&lt;li&gt;遗传病的治疗&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
+    
+    <category term="人类发育与遗传学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
+    
+    
+    <category term="人类发育与遗传学" scheme="https://www.aloha.org.cn/tags/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>肿瘤遗传学</title>
     <link href="https://www.aloha.org.cn/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/"/>
     <id>https://www.aloha.org.cn/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/</id>
     <published>2021-06-15T13:44:03.000Z</published>
-    <updated>2021-06-15T16:34:35.422Z</updated>
+    <updated>2021-06-16T02:11:28.623Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;i&gt;肿瘤发生发展相关的环境因素和遗传因素、肿瘤细胞的细胞和分子遗传学基础，以及肿瘤发生的遗传学说。&lt;/i&gt;&lt;/p&gt;</summary>
@@ -142,7 +169,7 @@
     <link href="https://www.aloha.org.cn/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/"/>
     <id>https://www.aloha.org.cn/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</id>
     <published>2021-05-26T11:29:55.000Z</published>
-    <updated>2021-06-15T10:29:58.188Z</updated>
+    <updated>2021-06-16T01:19:57.137Z</updated>
     
     
     <summary type="html">&lt;p&gt;月经周期第 14 天（增生期 → 分泌期）排卵。&lt;/p&gt;
@@ -220,7 +247,7 @@
     <link href="https://www.aloha.org.cn/2021/05/25/Git-%E5%AE%9E%E6%88%98/"/>
     <id>https://www.aloha.org.cn/2021/05/25/Git-%E5%AE%9E%E6%88%98/</id>
     <published>2021-05-25T13:47:00.000Z</published>
-    <updated>2021-05-25T13:59:11.970Z</updated>
+    <updated>2021-06-16T01:14:07.873Z</updated>
     
     
     <summary type="html">&lt;p&gt;实用 Git 操作技巧。&lt;/p&gt;</summary>
@@ -527,7 +554,7 @@
     <link href="https://www.aloha.org.cn/2021/05/11/%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6/"/>
     <id>https://www.aloha.org.cn/2021/05/11/%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6/</id>
     <published>2021-05-11T11:59:01.000Z</published>
-    <updated>2021-05-18T14:40:16.508Z</updated>
+    <updated>2021-06-16T01:11:50.200Z</updated>
     
     
     <summary type="html">&lt;p&gt;社会医学知识点总结。&lt;/p&gt;
@@ -599,39 +626,6 @@
     <category term="病毒学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E6%AF%92%E5%AD%A6/"/>
     
     <category term="TODO" scheme="https://www.aloha.org.cn/tags/TODO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>消化道感染病毒</title>
-    <link href="https://www.aloha.org.cn/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/"/>
-    <id>https://www.aloha.org.cn/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/</id>
-    <published>2021-05-10T02:31:09.000Z</published>
-    <updated>2021-05-10T03:23:44.933Z</updated>
-    
-    
-    <summary type="html">&lt;dl&gt;
-&lt;dt&gt;消化道感染病毒&lt;/dt&gt;
-&lt;dd&gt;经消化道感染并在消化道内繁殖
-&lt;ul&gt;
-&lt;li&gt;多引起 &lt;strong&gt;肠道外病变&lt;/strong&gt;，如 &lt;strong&gt;肠道病毒属病毒&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;引起 &lt;strong&gt;急性胃肠炎&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    <category term="病毒学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E6%AF%92%E5%AD%A6/"/>
     
   </entry>
   

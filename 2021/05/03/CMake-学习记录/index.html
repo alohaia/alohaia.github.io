@@ -34,7 +34,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://www.aloha.org.cn/2021/05/03/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Configuring-Using-Cmake-GUI.png">
 <meta property="article:published_time" content="2021-05-03T12:35:04.000Z">
-<meta property="article:modified_time" content="2021-05-26T10:46:56.148Z">
+<meta property="article:modified_time" content="2021-06-16T01:11:23.112Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="CMake">
 <meta property="article:tag" content="C&#x2F;C++">
@@ -101,7 +101,7 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">63</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">64</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -221,7 +221,7 @@ fetch('https://api.eatrice.top')
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -335,7 +335,7 @@ fetch('https://api.eatrice.top')
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-26 18:46:56" itemprop="dateModified" datetime="2021-05-26T18:46:56+08:00">2021-05-26</time>
+        <time title="Modified: 2021-06-16 09:11:23" itemprop="dateModified" datetime="2021-06-16T09:11:23+08:00">2021-06-16</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -454,10 +454,10 @@ build）和源外构建（out-of-source build）。</p>
 <h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
 <p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
-<p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
 <div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
 </div>
+<p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="包含目录">包含目录 <a class="markdownIt-Anchor" href="#包含目录">#</a></h3>
 <p>使用 <a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/target_include_directories.html"><code>target_include_directories()</code></a> 函数为目标（target）添加包含目录（include path），这样添加的目录会在生成目标时以 <code>-I</code> 选项传递给编译器。</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(<span class="keyword">target</span></span><br><span class="line">    PRIVATE</span><br><span class="line">        <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
