@@ -792,31 +792,6 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1298,6 +1273,31 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
