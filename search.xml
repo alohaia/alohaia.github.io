@@ -792,6 +792,31 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1273,31 +1298,6 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1947,7 +1947,7 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
     <title>人类发育与遗传学</title>
     <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
     <content><![CDATA[<blockquote>
-<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
+<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及 <strong>细胞分化</strong>（cell
 differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和 <strong>繁殖</strong>（reproduction）。</p>
 </blockquote>
 <dl>
@@ -1958,6 +1958,8 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
 </dl>
 <span id="more"></span>
+<details class="note success"><summary><p><strong>Table of Content</strong></p>
+</summary>
 <ol>
 <li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
 <li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
@@ -1973,6 +1975,8 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <li><a href="/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
 </ol>
 <p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
+
+</details>
 <h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
 <dl>
 <dt>遗传病（genetic disease）</dt>
@@ -1985,36 +1989,53 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <li><strong>家族性疾病</strong> 不都是遗传病，只是存在家族聚集现象；</li>
 <li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
 </ol>
-<p>遗传病的分类
-3. <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病">线粒体遗传病</a>
-4. <a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a>
-5. 体细胞遗传病</p>
+<p><strong>遗传病的分类</strong>：</p>
+<ol>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
+<li><strong>体细胞遗传病</strong>，如 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
+</ol>
 <dl>
 <dt>体细胞遗传病</dt>
-<dd>体细胞中遗传物质改变引发的疾病，如 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</dd>
-<dd>只在特定的体细胞中发生，一般不会遗传给后代。</dd>
+<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
 </dl>
 <h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
 <ol>
-<li>孟德尔于 1865 年通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
-<li>1902 年，Garrod 通过对尿黑酯尿症的研究，提出先天性代谢缺陷的概念。</li>
-<li>蒋有兴等于 1956 年证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
+<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
+<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
 <li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
-<li>Watson 和 Crick 于 1953 年确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
-<li>1949 年 Pauling 发现镰状细胞病的异常血红蛋白分子，并提出了分子病的概念。</li>
+<li>1949 年，<strong>Pauling</strong> 发现镰状细胞病的异常血红蛋白分子，并提出了 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
+<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
+<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
 <li>1977 年，Sanger 建立了双脱氧链终止法进行 DNA 测序。</li>
 <li>1985 年，Mullis 创立了聚合酶链反应（PCR）进行体外 DNA 扩增。</li>
-<li><strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）于 2003 年公布了人类基因组“完成版”。</li>
+<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
 </ol>
 <p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
 <ul>
-<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始</li>
-<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组 <strong>草图</strong> 完成</li>
-<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成</li>
+<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
+<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组 <strong>草图</strong> 完成；</li>
+<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
+<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
 </ul>
+<details class="note info"><summary><p>关于 HPG 的两次“完成”</p>
+</summary>
+<blockquote>
+<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
+人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。[^1]</p>
+</blockquote>
+
+</details>
 <p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
 <strong>遗传图</strong>（genetic map）和 <strong>物理图</strong>（physical map），并完成全部
 30 亿碱基的测序任务，制作核苷酸 <strong>序列图</strong>（sequence map）。</p>
+<p>基因组测序方法：</p>
+<ul>
+<li>基因组公共研究中心：分级霰弹法</li>
+<li>Celera 公司：全基因组霰弹法</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -2032,7 +2053,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
     <content><![CDATA[<p>细胞增殖，遗传物质和遗传信息的传递以及一些基因分析技术。</p>
 <span id="more"></span>
 <p>另见 <a href="/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/">细胞生物学</a>。</p>
-<h2 id="真核细胞和基因组">真核细胞和基因组 <a class="markdownIt-Anchor" href="#真核细胞和基因组">#</a></h2>
+<h2 id="真核细胞的结构和功能">真核细胞的结构和功能 <a class="markdownIt-Anchor" href="#真核细胞的结构和功能">#</a></h2>
 <dl>
 <dt>核仁（nucleolus）</dt>
 <dd>核糖体 RNA（rRNA）合成和加工的部位，由细丝、颗粒和相随染色体组成。</dd>
@@ -2049,9 +2070,9 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <p>大肠杆菌的 rDNA 操纵子也会聚集在一起，形成类似于核仁的结构。</p>
 </blockquote>
 <h2 id="人类染色体">人类染色体 <a class="markdownIt-Anchor" href="#人类染色体">#</a></h2>
-<blockquote>
-<p>染色体和染色质是同一遗传物质在细胞间期和分裂期的两种不同形态。</p>
-</blockquote>
+<p>另见 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#染色体形态学">染色体形态学</a>。</p>
+<div class="note info"><p>染色体和染色质是同一遗传物质在细胞间期和分裂期的两种不同形态。</p>
+</div>
 <p>在 <strong>间期</strong> 细胞中，染色质可分为 <strong>常染色质</strong> 和 <strong>异染色质</strong>。</p>
 <dl>
 <dt>常染色质（euchromatin）</dt>
@@ -2085,10 +2106,10 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>细胞全部基因 DNA 序列和非基因 DNA 序列的总和，即人体所有遗传信息的总和。</dd>
 <dd>人类（动物细胞的基因组包括 <strong>核基因组</strong> 和 <strong>线粒体基因组</strong>。</dd>
 <dt>线粒体基因组（mitochondrial genome）</dt>
-<dd>环状封闭的双链 DNA 分子，外环是重链，内环是轻链，总共有 <strong>37 个基因</strong>，其中有
-<strong>13 个编码多肽基因</strong>。</dd>
+<dd>环状封闭的双链 DNA 分子，外环是重链，内环是轻链，总共有 <strong><mark>37</mark> 个基因</strong>，其中有
+<strong><mark>13</mark> 个编码多肽基因</strong>。</dd>
 <dt>核基因组（nuclear genome）</dt>
-<dd>由分布于 24 条不同染色体（22 对常染色体和 X、Y 染色体）上的线性 DNA 分子组成，包含 <strong>30 亿个碱基对</strong>，包含 <strong>20,000~25,000 个基因</strong>。</dd>
+<dd>由分布于 24 条不同染色体（22 对常染色体和 X、Y 染色体）上的线性 DNA 分子组成，包含 <strong><mark>30 亿</mark>个碱基对</strong>，包含 <strong>20,000~25,000 个基因</strong>。</dd>
 </dl>
 <h3 id="dna-结构和-dna-序列">DNA 结构和 DNA 序列 <a class="markdownIt-Anchor" href="#dna-结构和-dna-序列">#</a></h3>
 <p>TODO: 细胞生物学 - 大沟</p>
@@ -2122,7 +2143,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>在基因组中重复出现的 DNA 序列，约占基因组的 55%，主要为非编码序列，但
 <a href="#%E5%9F%BA%E5%9B%A0%E5%AE%B6%E6%97%8F%E5%92%8C%E5%81%87%E5%9F%BA%E5%9B%A0"><strong>基因家族</strong></a> 也包含在其中。</dd>
 </dl>
-<p>重复序列的重复次数不同，可形成 <a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/可变数目串联重复#dna-多态性">DNA 多态性</a>。</p>
+<p>重复序列的重复次数不同，可形成 <a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=可变数目串联重复#dna-多态性">DNA 多态性</a>。</p>
 <p>根据 DNA 在基因组中的重复频率不同，重复序列可分为 <strong>轻度、中度和重度重复序列</strong>；<br/>
 根据 DNA 序列在基因组中的分布形式的不同，重复序列又可以分为 <strong>串联重复序列</strong> 和 <strong>散在重复序列</strong>。</p>
 <dl>
@@ -2204,17 +2225,20 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 </dl>
 <p>增强子作用不受距离变化的影响，作用方向可以是 5’→3’，也可以是 3’→5’，具有
 <strong>组织特异性</strong>，与基因的选择性表达有关。</p>
-<h5 id="增强子-2">增强子 <a class="markdownIt-Anchor" href="#增强子-2">#</a></h5>
+<h5 id="终止子">终止子 <a class="markdownIt-Anchor" href="#终止子">#</a></h5>
 <dl>
 <dt>终止子（terminator）</dt>
 <dd>由一段 <strong>回文序列</strong>（转录终止信号）和 5’-AATAAA-3’（加尾信号）序列组成。</dd>
 </dl>
 <h3 id="基因的表达与调控">基因的表达与调控 <a class="markdownIt-Anchor" href="#基因的表达与调控">#</a></h3>
-<h4 id="基因表达">基因表达 <a class="markdownIt-Anchor" href="#基因表达">#</a></h4>
 <p><strong>基因表达</strong> 即基因的 <strong>转录</strong> 和 <strong>翻译</strong>。</p>
-<h4 id="基因表达调控">基因表达调控 <a class="markdownIt-Anchor" href="#基因表达调控">#</a></h4>
-<h5 id="转录前调控">转录前调控 <a class="markdownIt-Anchor" href="#转录前调控">#</a></h5>
-<h5 id="转录调控">转录调控 <a class="markdownIt-Anchor" href="#转录调控">#</a></h5>
+<p>基因调控方式：</p>
+<ul>
+<li>转录前调控、<a href="#%E8%BD%AC%E5%BD%95%E8%B0%83%E6%8E%A7">转录调控</a>、<a href="#%E8%BD%AC%E5%BD%95%E5%90%8E%E8%B0%83%E6%8E%A7">转录后调控</a>；</li>
+<li>翻译调控、翻译后调控；</li>
+<li><a href="#%E8%A1%A8%E8%A7%82%E9%81%97%E4%BC%A0%E8%B0%83%E6%8E%A7">表观遗传调控</a>。</li>
+</ul>
+<h4 id="转录调控">转录调控 <a class="markdownIt-Anchor" href="#转录调控">#</a></h4>
 <p><strong>转录调控</strong> 主要通过 <strong>顺式作用元件</strong> 和 <strong>转录因子</strong> 之间的相互作用来实现。</p>
 <dl>
 <dt>转录因子（transcription factor）| 反式作用元件（<em>trans</em>-acting element）</dt>
@@ -2231,7 +2255,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>一段能够结合阻遏蛋白（一种抑制因子）的 DNA 序列。</dd>
 <dd>一般位于上游 20~2000bp 不等，还可以位于启动子的下游、基因本身的内含子或外显子上。</dd>
 </dl>
-<h5 id="转录后调控">转录后调控 <a class="markdownIt-Anchor" href="#转录后调控">#</a></h5>
+<h4 id="转录后调控">转录后调控 <a class="markdownIt-Anchor" href="#转录后调控">#</a></h4>
 <p><mark>mRNA 的成熟加工</mark> 即 mRNA 前体（核内异质 RNA，<abbr title="mRNA 前体 / 核内异质 RNA">hnRNA</abbr>）加工成有功能的成熟 mRNA
 的过程，包括 <strong>加帽</strong>、<strong>剪接</strong>、<strong>加尾</strong>/<strong>多聚腺苷酸化</strong>（polyadenylation）三步。<br/>
 剪接是最关键的一步，指根据 GT-AG 法则（见 <a href="#%E4%BE%A7%E7%BF%BC%E5%BA%8F%E5%88%97">侧翼序列</a>）将 <abbr title="mRNA 前体 / 核内异质 RNA">hnRNA</abbr>
@@ -2241,9 +2265,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>mRNA 转录后在编码酶的作用下，因插入、缺失或核苷酸的替换，改变了来自 DNA 的遗传信息。</dd>
 <dd>如人载脂蛋白基因 APOB 在肝脏中编码 apoB100，在长中编码 apoB48，少见于哺乳动物。</dd>
 </dl>
-<h5 id="翻译调控">翻译调控 <a class="markdownIt-Anchor" href="#翻译调控">#</a></h5>
-<h5 id="翻译后调控">翻译后调控 <a class="markdownIt-Anchor" href="#翻译后调控">#</a></h5>
-<h5 id="表观遗传调控">表观遗传调控 <a class="markdownIt-Anchor" href="#表观遗传调控">#</a></h5>
+<h4 id="表观遗传调控">表观遗传调控 <a class="markdownIt-Anchor" href="#表观遗传调控">#</a></h4>
 <dl>
 <dt>表观遗传调控</dt>
 <dd>有丝分裂和/或减数分裂中 <em>可遗传</em> 的基因功能改变，<em>不涉及 DNA 序列的改变</em>。
@@ -2407,7 +2429,7 @@ oligonucleotide，ASO）探针，快速筛查 <strong>等位基因间单核苷�
 <li>克隆载体：外源 DNA 片段，增殖扩大数量</li>
 <li>表达载体：外源基因，产生蛋白质</li>
 </ul>
-<p><strong>载体的特征</strong></p>
+<p><strong>载体的特征</strong>：</p>
 <ol>
 <li><strong>分子质量小</strong>，便于与较大的 DNA 片段结合，能进入受体细胞并在其中增殖；</li>
 <li><strong>有多个限制酶切位点</strong>，但对每一种限制酶只能有一个酶切位点；</li>
@@ -2415,7 +2437,7 @@ oligonucleotide，ASO）探针，快速筛查 <strong>等位基因间单核苷�
 <li>有可选择的 <strong>标记基因</strong>（如抗药基因）或报道基因；</li>
 <li>克隆载体上要有 <strong>复制起点</strong>，表达载体上还要有 <strong>启动子</strong>；</li>
 </ol>
-<p>常用载体</p>
+<p>常用载体：</p>
 <ul>
 <li><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/#细胞质">质粒</a>：能克隆较小 DNA 片段（小于 10kb）</li>
 <li><a href="/2021/03/21/%E7%97%85%E6%AF%92/#噬菌体">λ 噬菌体</a>：能克隆中等长度的 DNA 片段，具有
@@ -2513,52 +2535,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<dl>
-<dt>人类疱疹病毒</dt>
-<dd>一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong></dd>
-</dl>
-<span id="more"></span>
-<details class="note info"><summary><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li>显性感染：病毒增殖，破坏细胞，出现症状</li>
-<li><strong>潜伏感染</strong>：病毒不增殖，但可被激活</li>
-<li>整合感染：病毒转换</li>
-<li>先天性感染：可导致先天畸形</li>
-</ol>
-
-</details>
-<details class="note info"><summary><p>潜伏感染</p>
-</summary>
-
-</details>
-<h2 id="单纯疱疹病毒">单纯疱疹病毒 <a class="markdownIt-Anchor" href="#单纯疱疹病毒">#</a></h2>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<p>传播途径</p>
-<ul>
-<li>直接接触、性接触</li>
-<li>垂直传播</li>
-</ul>
-<p>感染类型</p>
-<ul>
-<li>原发感染</li>
-<li>潜伏和再发感染</li>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -2810,6 +2786,52 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
         <tag>人类发育与遗传学</tag>
         <tag>组织学与胚胎学</tag>
         <tag>胚胎学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<dl>
+<dt>人类疱疹病毒</dt>
+<dd>一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong></dd>
+</dl>
+<span id="more"></span>
+<details class="note info"><summary><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li>显性感染：病毒增殖，破坏细胞，出现症状</li>
+<li><strong>潜伏感染</strong>：病毒不增殖，但可被激活</li>
+<li>整合感染：病毒转换</li>
+<li>先天性感染：可导致先天畸形</li>
+</ol>
+
+</details>
+<details class="note info"><summary><p>潜伏感染</p>
+</summary>
+
+</details>
+<h2 id="单纯疱疹病毒">单纯疱疹病毒 <a class="markdownIt-Anchor" href="#单纯疱疹病毒">#</a></h2>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<p>传播途径</p>
+<ul>
+<li>直接接触、性接触</li>
+<li>垂直传播</li>
+</ul>
+<p>感染类型</p>
+<ul>
+<li>原发感染</li>
+<li>潜伏和再发感染</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -3235,7 +3257,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 </ul>
 <h4 id="葡萄糖-6-磷酸脱氢酶缺乏症">葡萄糖 6-磷酸脱氢酶缺乏症 <a class="markdownIt-Anchor" href="#葡萄糖-6-磷酸脱氢酶缺乏症">#</a></h4>
 <p><strong>葡萄糖 6-磷酸脱氢酶</strong>（<em>glucose</em>-6-phosphate dehydrogenase，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr>）催化磷酸己糖旁路的第一步。葡萄糖代谢途径产生 <strong>NADPH</strong>，以保持 <strong>谷胱甘肽</strong> 和 <strong>巯基</strong> 水平。</p>
-<p><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症患者若服用 <strong>蚕豆</strong> 或抗疟药 <strong>伯胺（基）喹呤</strong> 可发生溶血性贫血。</p>
+<p><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症又称 <em><strong>蚕豆病</strong></em>，患者若服用 <strong>蚕豆</strong> 或抗疟药 <strong>伯胺（基）喹呤</strong> 可发生溶血性贫血。</p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -4148,7 +4170,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 <li>群体中致病基因频率高；</li>
 <li>罕见性染色体病，如 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#turner-综合征">Turner 综合征</a>；</li>
 <li>X 染色体和常染色体间易位；</li>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#lyon-假说">莱昂（Lyon）化</a>程度的不同可导致杂合子女性表现出 <abbr title="X-linked recessive inheritance，X 连锁隐性遗传">XR</abbr> 遗传病的临床特征；</li>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#lyon-假说">莱昂（Lyon）化</a> 程度的不同可导致杂合子女性表现出 <abbr title="X-linked recessive inheritance，X 连锁隐性遗传">XR</abbr> 遗传病的临床特征；</li>
 <li><a href="?highlight=%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">遗传异质性</a>：临床特征与 <abbr title="X-linked recessive inheritance，X 连锁隐性遗传">XR</abbr> 遗传病不能区别，被误认为 <abbr title="X-linked recessive inheritance，X 连锁隐性遗传">XR</abbr> 遗传病。</li>
 </ol>
 <h3 id="xr-遗传病举例"><abbr title="X-linked recessive inheritance，X 连锁隐性遗传">XR</abbr> 遗传病举例 <a class="markdownIt-Anchor" href="#xr-遗传病举例">#</a></h3>
@@ -4775,24 +4797,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       </tags>
   </entry>
   <entry>
-    <title>器官、系统的发生与先天性畸形</title>
-    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>噬菌体</title>
     <url>/2021/04/22/%E5%99%AC%E8%8F%8C%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -4828,6 +4832,24 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>器官、系统的发生与先天性畸形</title>
+    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -6053,89 +6075,6 @@ T 细胞辅助。</p>
       </tags>
   </entry>
   <entry>
-    <title>数学建模大赛准备</title>
-    <url>/2021/04/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
-    <content><![CDATA[<ul>
-<li>名称：高教社杯全国大学生数学建模竞赛</li>
-<li>时间：9.9（周四）18:00 - 9.12（周日）20:00</li>
-</ul>
-<span id="more"></span>
-<h2 id="事程">事程 <a class="markdownIt-Anchor" href="#事程">#</a></h2>
-<p>优先级由高到低：</p>
-<ul class="task-list">
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_0" disabled="true" /><label for="cbx_0"> SPSS/MatLab/R</label></div></li>
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_1" disabled="true" /><label for="cbx_1"> 《数学建模算法与应用》</label></div></li>
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_2" disabled="true" /><label for="cbx_2"> LaTeX</label></div></li>
-</ul>
-<h2 id="论文结构">论文结构 <a class="markdownIt-Anchor" href="#论文结构">#</a></h2>
-<ol>
-<li><a href="#%E6%91%98%E8%A6%81">摘要</a>（一页以内）</li>
-<li><a href="#%E9%97%AE%E9%A2%98%E9%87%8D%E8%BF%B0">问题重述</a></li>
-<li><a href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">问题分析</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE">模型假设</a></li>
-<li><a href="#%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">符号说明</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B%E5%8F%8A%E6%B1%82%E8%A7%A3">模型建立及求解</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7">模型评价</a>（或加上模型推广 / 灵敏度分析 / 模型改进）</li>
-<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
-</ol>
-<h3 id="摘要">摘要 <a class="markdownIt-Anchor" href="#摘要">#</a></h3>
-<p>摘要是一篇文章的核心，应非常重视，一篇好的摘要是取胜的关键！一个好的摘要应突出模型的闪光点，用了什么样的模型，有什么样的创新，应说明研究工作的目的、方法、结和最终结论。切勿不能超过一页（研究生竞赛除外）！！！！</p>
-<p>首先第一段为背景+结论</p>
-<p>针对问题一：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>针对问题二：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>针对问题三：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>关键词（采用了什么模型，如插值、GM(1,1)、多元回归、主成分分析等等）</p>
-<h3 id="问题重述">问题重述 <a class="markdownIt-Anchor" href="#问题重述">#</a></h3>
-<p>阐明论文所研究的问题具有实际意义及建模的原题意思，列出所要研究的主要问题。不要直接把题目复制粘贴过来，另一方面也是降低查重率。</p>
-<h3 id="问题分析">问题分析 <a class="markdownIt-Anchor" href="#问题分析">#</a></h3>
-<p>分析问题，简述解决问题需要哪些条件和大体的解题思路，刨析问题的实质，确定解决问题的方法，为下面的模型假设、建立模型提供良好的基础。</p>
-<h3 id="模型假设">模型假设 <a class="markdownIt-Anchor" href="#模型假设">#</a></h3>
-<p>可以从题目和要求进行挖掘，运用模型的假设可以很好的对问题进行简化，但又不能建立太多假设，使求解与原意不符，应注意量与度。一般三到五条。</p>
-<h3 id="符号说明">符号说明 <a class="markdownIt-Anchor" href="#符号说明">#</a></h3>
-<p>文中出现的符号变量，便于读者阅读。</p>
-<h3 id="模型建立及求解">模型建立及求解 <a class="markdownIt-Anchor" href="#模型建立及求解">#</a></h3>
-<p>对问题的分析和模型的深入理解是建立一个好的模型的关键，比如该问题是一个预测问题，那么预测有很多模型，像前面所提到的插值、回归、GM(1,1)、GM（2，1）、时间序列、神经网络等等均可，那么采用什么样的模型取决于数据形式，如果数据量很少那么显然就不适合用神经网络，如果数据形式是单调的，那么推荐采用灰色预测模型，那么非单调的就不能用灰色预测模型。一个合适的模型是解决问题的关键，当然需要对我们的模型结果进行评估，比如R^2，RMSE等等来度量我们模型建立的优劣。引入一些创新点，比如将算法项结合可以得到一个更合适的模型和结果。</p>
-<h3 id="模型评价">模型评价 <a class="markdownIt-Anchor" href="#模型评价">#</a></h3>
-<p>（或加上模型推广 / 灵敏度分析 / 模型改进）</p>
-<p>模型评价就是模型的优点和缺点，优点比如采用了什么样的模型，得到了一个很好的结果，或者对数据进行了合理的预处理，为后续建模做了合理的铺垫，创新性的建立了什么模型，使得结果更为科学准确等等，缺点切勿写得太多，不要暴露文章的重大问题，大家都是聪明人就不用我再多说了。</p>
-<h3 id="参考文献">参考文献 <a class="markdownIt-Anchor" href="#参考文献">#</a></h3>
-<h4 id="专著-论文集-报告">专著、论文集、报告 <a class="markdownIt-Anchor" href="#专著-论文集-报告">#</a></h4>
-<p>[序号]主要责任者.文献题名[文献类型标识].出版地:出版者,出版年:起止页码(可选).</p>
-<p>例如：[1]刘国钧,陈绍业.图书目录[M].北京:高等教育出版社,1957:15-18.</p>
-<h4 id="期刊文章">期刊文章 <a class="markdownIt-Anchor" href="#期刊文章">#</a></h4>
-<p>[序号]主要责任者.文献题名[J].刊名,年,卷(期):起止页码.
-例如：[1]何龄修.读南明史[J].中国史研究,1998,(3):167-173.</p>
-<p>[2]OU J P,SOONG T T,et al.Recent advance in research on applications of passive energy dissipation systems[J].Earthquack Eng,1997,38(3):358-361.</p>
-<h4 id="论文集中的析出文献">论文集中的析出文献 <a class="markdownIt-Anchor" href="#论文集中的析出文献">#</a></h4>
-<p>[序号]析出文献主要责任者.析出文献题名[A].原文献主要责任者(可选)原文献题名[C].出版地:出版者,出版年:起止页码.</p>
-<p>例如：[7]钟文发.非线性规划在可燃毒物配置中的应用[A].赵炜.运筹学的理论与应用——中国运筹学会第五届大会论文集[C].西安:西安电子科技大学出版社,1996:468.</p>
-<h4 id="学位论文">学位论文 <a class="markdownIt-Anchor" href="#学位论文">#</a></h4>
-<p>[序号]主要责任者.文献题名[D].出版地:出版单位,出版年:起止页码(可选).</p>
-<p>例如：[4]赵天书.诺西肽分阶段补料分批发酵过程优化研究[D].沈阳:东北大学,2013.</p>
-<h4 id="报纸文章">报纸文章 <a class="markdownIt-Anchor" href="#报纸文章">#</a></h4>
-<p>[序号]主要责任者.文献题名[N].报纸名,出版日期(版次).</p>
-<p>例如：[8]谢希德.创造学习的新思路[N].人民日报,1998-12-25(10).</p>
-<h4 id="电子文献">电子文献 <a class="markdownIt-Anchor" href="#电子文献">#</a></h4>
-<p>[文献类型/载体类型标识]：[J/OL]网上期刊、[EB/OL]网上电子公告、
-[M/CD]光盘图书、[DB/OL]网上数据库、[DB/MT]磁带数据库
-[序号]主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出版或获得地址,发表更新日期/引用日期.
-例如：[12]王明亮.关于中国学术期刊标准化数据库系统工程的进展[EB/OL].1998-08-16/1998-10-01.
-[8]万锦.中国大学学报文摘(1983-1993).英文版[DB/CD].北京:中国大百科全书出版社,1996.</p>
-<h3 id="代码">代码 <a class="markdownIt-Anchor" href="#代码">#</a></h3>
-<p>美赛中不附代码，其余竞赛中必须附上。</p>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Contests</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>数学建模</tag>
-        <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>染色体病</title>
     <url>/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -6233,10 +6172,10 @@ T 细胞辅助。</p>
 <p><em>区</em> 和 <em>带</em> 均从着丝粒开始编号。</p>
 <p>描述某染色体带，需写明（如 1p31 表示 1 号染色体短臂 3 区 1 带）：</p>
 <ol>
-<li>染色体号</li>
-<li>臂的符号</li>
-<li>区的序号</li>
-<li>带的序号</li>
+<li>染色体号：1~22，X，Y；</li>
+<li>臂的符号：p 表示短臂，q 表示长臂；</li>
+<li>区的序号；</li>
+<li>带的序号。</li>
 </ol>
 <h4 id="高分辨率显带技术">高分辨率显带技术 <a class="markdownIt-Anchor" href="#高分辨率显带技术">#</a></h4>
 <p>从早中期、前中期、晚前期细胞中获得的更长、带纹更丰富的染色体，由 320 条代细分为 <strong>亚带</strong> 和 <strong>次亚带</strong>。</p>
@@ -6332,7 +6271,7 @@ T 细胞辅助。</p>
 <h2 id="常见染色体病">常见染色体病 <a class="markdownIt-Anchor" href="#常见染色体病">#</a></h2>
 <h3 id="常染色体异常综合征">常染色体异常综合征 <a class="markdownIt-Anchor" href="#常染色体异常综合征">#</a></h3>
 <h4 id="21-三体综合征">21 三体综合征 <a class="markdownIt-Anchor" href="#21-三体综合征">#</a></h4>
-<p><strong>21 三体综合征</strong>（trisomy 21 syndrome）又称<strong>先天愚型</strong>、<strong>唐氏综合症</strong>（Down syndrome），由于患者细胞内多了一条 21 号染色体所导致，是人类的第一个被发现的染色体病，也是最常见的染色体病。</p>
+<p><strong>21 三体综合征</strong>（trisomy 21 syndrome）又称 <strong>先天愚型</strong>、<strong>唐氏综合症</strong>（Down syndrome），由于患者细胞内多了一条 21 号染色体所导致，是人类的第一个被发现的染色体病，也是最常见的染色体病。</p>
 <h5 id="临床表现">临床表现 <a class="markdownIt-Anchor" href="#临床表现">#</a></h5>
 <p>新生儿中 Down 综合征的发病率为 1/800~1/600，且发病率随母亲年龄的增高而增高。</p>
 <ul>
@@ -7342,6 +7281,89 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </categories>
       <tags>
         <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数学建模大赛准备</title>
+    <url>/2021/04/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
+    <content><![CDATA[<ul>
+<li>名称：高教社杯全国大学生数学建模竞赛</li>
+<li>时间：9.9（周四）18:00 - 9.12（周日）20:00</li>
+</ul>
+<span id="more"></span>
+<h2 id="事程">事程 <a class="markdownIt-Anchor" href="#事程">#</a></h2>
+<p>优先级由高到低：</p>
+<ul class="task-list">
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_0" disabled="true" /><label for="cbx_0"> SPSS/MatLab/R</label></div></li>
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_1" disabled="true" /><label for="cbx_1"> 《数学建模算法与应用》</label></div></li>
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_2" disabled="true" /><label for="cbx_2"> LaTeX</label></div></li>
+</ul>
+<h2 id="论文结构">论文结构 <a class="markdownIt-Anchor" href="#论文结构">#</a></h2>
+<ol>
+<li><a href="#%E6%91%98%E8%A6%81">摘要</a>（一页以内）</li>
+<li><a href="#%E9%97%AE%E9%A2%98%E9%87%8D%E8%BF%B0">问题重述</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">问题分析</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE">模型假设</a></li>
+<li><a href="#%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">符号说明</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B%E5%8F%8A%E6%B1%82%E8%A7%A3">模型建立及求解</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7">模型评价</a>（或加上模型推广 / 灵敏度分析 / 模型改进）</li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ol>
+<h3 id="摘要">摘要 <a class="markdownIt-Anchor" href="#摘要">#</a></h3>
+<p>摘要是一篇文章的核心，应非常重视，一篇好的摘要是取胜的关键！一个好的摘要应突出模型的闪光点，用了什么样的模型，有什么样的创新，应说明研究工作的目的、方法、结和最终结论。切勿不能超过一页（研究生竞赛除外）！！！！</p>
+<p>首先第一段为背景+结论</p>
+<p>针对问题一：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>针对问题二：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>针对问题三：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>关键词（采用了什么模型，如插值、GM(1,1)、多元回归、主成分分析等等）</p>
+<h3 id="问题重述">问题重述 <a class="markdownIt-Anchor" href="#问题重述">#</a></h3>
+<p>阐明论文所研究的问题具有实际意义及建模的原题意思，列出所要研究的主要问题。不要直接把题目复制粘贴过来，另一方面也是降低查重率。</p>
+<h3 id="问题分析">问题分析 <a class="markdownIt-Anchor" href="#问题分析">#</a></h3>
+<p>分析问题，简述解决问题需要哪些条件和大体的解题思路，刨析问题的实质，确定解决问题的方法，为下面的模型假设、建立模型提供良好的基础。</p>
+<h3 id="模型假设">模型假设 <a class="markdownIt-Anchor" href="#模型假设">#</a></h3>
+<p>可以从题目和要求进行挖掘，运用模型的假设可以很好的对问题进行简化，但又不能建立太多假设，使求解与原意不符，应注意量与度。一般三到五条。</p>
+<h3 id="符号说明">符号说明 <a class="markdownIt-Anchor" href="#符号说明">#</a></h3>
+<p>文中出现的符号变量，便于读者阅读。</p>
+<h3 id="模型建立及求解">模型建立及求解 <a class="markdownIt-Anchor" href="#模型建立及求解">#</a></h3>
+<p>对问题的分析和模型的深入理解是建立一个好的模型的关键，比如该问题是一个预测问题，那么预测有很多模型，像前面所提到的插值、回归、GM(1,1)、GM（2，1）、时间序列、神经网络等等均可，那么采用什么样的模型取决于数据形式，如果数据量很少那么显然就不适合用神经网络，如果数据形式是单调的，那么推荐采用灰色预测模型，那么非单调的就不能用灰色预测模型。一个合适的模型是解决问题的关键，当然需要对我们的模型结果进行评估，比如R^2，RMSE等等来度量我们模型建立的优劣。引入一些创新点，比如将算法项结合可以得到一个更合适的模型和结果。</p>
+<h3 id="模型评价">模型评价 <a class="markdownIt-Anchor" href="#模型评价">#</a></h3>
+<p>（或加上模型推广 / 灵敏度分析 / 模型改进）</p>
+<p>模型评价就是模型的优点和缺点，优点比如采用了什么样的模型，得到了一个很好的结果，或者对数据进行了合理的预处理，为后续建模做了合理的铺垫，创新性的建立了什么模型，使得结果更为科学准确等等，缺点切勿写得太多，不要暴露文章的重大问题，大家都是聪明人就不用我再多说了。</p>
+<h3 id="参考文献">参考文献 <a class="markdownIt-Anchor" href="#参考文献">#</a></h3>
+<h4 id="专著-论文集-报告">专著、论文集、报告 <a class="markdownIt-Anchor" href="#专著-论文集-报告">#</a></h4>
+<p>[序号]主要责任者.文献题名[文献类型标识].出版地:出版者,出版年:起止页码(可选).</p>
+<p>例如：[1]刘国钧,陈绍业.图书目录[M].北京:高等教育出版社,1957:15-18.</p>
+<h4 id="期刊文章">期刊文章 <a class="markdownIt-Anchor" href="#期刊文章">#</a></h4>
+<p>[序号]主要责任者.文献题名[J].刊名,年,卷(期):起止页码.
+例如：[1]何龄修.读南明史[J].中国史研究,1998,(3):167-173.</p>
+<p>[2]OU J P,SOONG T T,et al.Recent advance in research on applications of passive energy dissipation systems[J].Earthquack Eng,1997,38(3):358-361.</p>
+<h4 id="论文集中的析出文献">论文集中的析出文献 <a class="markdownIt-Anchor" href="#论文集中的析出文献">#</a></h4>
+<p>[序号]析出文献主要责任者.析出文献题名[A].原文献主要责任者(可选)原文献题名[C].出版地:出版者,出版年:起止页码.</p>
+<p>例如：[7]钟文发.非线性规划在可燃毒物配置中的应用[A].赵炜.运筹学的理论与应用——中国运筹学会第五届大会论文集[C].西安:西安电子科技大学出版社,1996:468.</p>
+<h4 id="学位论文">学位论文 <a class="markdownIt-Anchor" href="#学位论文">#</a></h4>
+<p>[序号]主要责任者.文献题名[D].出版地:出版单位,出版年:起止页码(可选).</p>
+<p>例如：[4]赵天书.诺西肽分阶段补料分批发酵过程优化研究[D].沈阳:东北大学,2013.</p>
+<h4 id="报纸文章">报纸文章 <a class="markdownIt-Anchor" href="#报纸文章">#</a></h4>
+<p>[序号]主要责任者.文献题名[N].报纸名,出版日期(版次).</p>
+<p>例如：[8]谢希德.创造学习的新思路[N].人民日报,1998-12-25(10).</p>
+<h4 id="电子文献">电子文献 <a class="markdownIt-Anchor" href="#电子文献">#</a></h4>
+<p>[文献类型/载体类型标识]：[J/OL]网上期刊、[EB/OL]网上电子公告、
+[M/CD]光盘图书、[DB/OL]网上数据库、[DB/MT]磁带数据库
+[序号]主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出版或获得地址,发表更新日期/引用日期.
+例如：[12]王明亮.关于中国学术期刊标准化数据库系统工程的进展[EB/OL].1998-08-16/1998-10-01.
+[8]万锦.中国大学学报文摘(1983-1993).英文版[DB/CD].北京:中国大百科全书出版社,1996.</p>
+<h3 id="代码">代码 <a class="markdownIt-Anchor" href="#代码">#</a></h3>
+<p>美赛中不附代码，其余竞赛中必须附上。</p>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Contests</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>数学建模</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -8693,60 +8715,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>立克次体</title>
-    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>立克次体（<em>Rickettsia</em>）</dt>
-<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>其生物学性状与细菌相似。</dd>
-</dl>
-<span id="more"></span>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>
-<p>多形态、大小介于细菌与病毒之间</p>
-</li>
-<li>
-<p>与<mark>节肢动物</mark>关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</p>
-</li>
-<li>
-<p>类似病毒的特性</p>
-<ul>
-<li>缺少酶系统，细胞器不完善</li>
-<li><mark>专性胞内寄生</mark></li>
-<li>不能用人工培养基培养</li>
-</ul>
-</li>
-<li>
-<p>类似细菌的特点</p>
-<ul>
-<li>二分裂繁殖</li>
-<li>含两种核酸</li>
-<li>对多种抗生素敏感</li>
-<li><em>革兰氏染色阴性</em></li>
-</ul>
-</li>
-<li>
-<p>培养特性</p>
-</li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病物质">致病物质 <a class="markdownIt-Anchor" href="#致病物质">#</a></h4>
-<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>细胞因子</title>
     <url>/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/</url>
     <content><![CDATA[<dl>
@@ -8857,6 +8825,60 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </categories>
       <tags>
         <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>立克次体</title>
+    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>立克次体（<em>Rickettsia</em>）</dt>
+<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>其生物学性状与细菌相似。</dd>
+</dl>
+<span id="more"></span>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>
+<p>多形态、大小介于细菌与病毒之间</p>
+</li>
+<li>
+<p>与<mark>节肢动物</mark>关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</p>
+</li>
+<li>
+<p>类似病毒的特性</p>
+<ul>
+<li>缺少酶系统，细胞器不完善</li>
+<li><mark>专性胞内寄生</mark></li>
+<li>不能用人工培养基培养</li>
+</ul>
+</li>
+<li>
+<p>类似细菌的特点</p>
+<ul>
+<li>二分裂繁殖</li>
+<li>含两种核酸</li>
+<li>对多种抗生素敏感</li>
+<li><em>革兰氏染色阴性</em></li>
+</ul>
+</li>
+<li>
+<p>培养特性</p>
+</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病物质">致病物质 <a class="markdownIt-Anchor" href="#致病物质">#</a></h4>
+<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -10359,7 +10381,7 @@ C3，在多种辅助因子的参与下激活补体。</p>
 <ul>
 <li>传统非介入性方法：孕妇血清检测、超声检查、X 线检查；</li>
 <li>介入性方法：羊膜腔穿刺（羊水中的胎儿细胞）、 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=绒毛膜取样#叶状绒毛膜">绒毛取样</a>（chorionic villus sampling，CVS）、脐穿刺法（cordocentesis）、 胎儿镜检查/宫腔镜检查（fetoscopy）；</li>
-<li>无创性产前基因诊断：分离孕妇外周血中的胎儿细胞、<a pref="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/#辅助生殖">植入前基因诊断/第三代试管婴儿</a>、孕妇血浆中的胎儿 DNA。</li>
+<li>无创性产前基因诊断：分离孕妇外周血中的胎儿细胞、<a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/#辅助生殖">植入前基因诊断/第三代试管婴儿</a>、孕妇血浆中的胎儿 DNA。</li>
 </ul>
 <h2 id="遗传病的治疗">遗传病的治疗 <a class="markdownIt-Anchor" href="#遗传病的治疗">#</a></h2>
 <h3 id="常规治疗">常规治疗 <a class="markdownIt-Anchor" href="#常规治疗">#</a></h3>
@@ -10464,7 +10486,7 @@ C3，在多种辅助因子的参与下激活补体。</p>
 <h3 id="第一次减数分裂前期">第一次减数分裂前期 <a class="markdownIt-Anchor" href="#第一次减数分裂前期">#</a></h3>
 <p>第一次减数分裂前期可分为 5 个亚期：</p>
 <ol>
-<li>细线期（leptotene）：染色体呈细线状；</li>
+<li>细线期（leptotene）：染色体呈细线状，并开始卷曲与螺旋化；</li>
 <li><strong>偶线期</strong>（zygotene）：同源染色体 <strong>联会</strong>（synapsis）；</li>
 <li><strong>粗线期</strong>（pachytene）：染色体变粗，开始 <strong>交换</strong>（crossing over）；</li>
 <li>双线期（diplotene）：配对的染色体开始分开；</li>
@@ -10474,6 +10496,10 @@ C3，在多种辅助因子的参与下激活补体。</p>
 <dl>
 <dt>同源染色体（homologous chromosome）</dt>
 <dd>分别来自父方和母方、形态结构和大小相同的一对染色体。</dd>
+<dt>二价体（bivalent）</dt>
+<dd>减数第一次分裂前期的 <strong>偶线期</strong>，2 条同源染色体联会形成的结合体。</dd>
+<dt>四分体（tetrad）</dt>
+<dd>减数第一次分裂前期，两条已自我复制的同源染色体形成的 4 条染色单体的结合体。</dd>
 </dl>
 <h3 id="减数分裂的生物学意义">减数分裂的生物学意义 <a class="markdownIt-Anchor" href="#减数分裂的生物学意义">#</a></h3>
 <ol>
@@ -10774,13 +10800,6 @@ plate）。<br/>
       </tags>
   </entry>
   <entry>
-    <title>404</title>
-    <url>/404.html</url>
-    <content><![CDATA[
-<div class="center">Over the mountains, mountains ...</div>
-]]></content>
-  </entry>
-  <entry>
     <title>About Me</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
@@ -10819,6 +10838,13 @@ plate）。<br/>
 <li>Github <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWE=">@alohaia<i class="fa fa-external-link-alt"></i></span></li>
 <li>你也可以直接在下方评论留言</li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>404</title>
+    <url>/404.html</url>
+    <content><![CDATA[
+<div class="center">Over the mountains, mountains ...</div>
 ]]></content>
   </entry>
   <entry>

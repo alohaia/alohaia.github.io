@@ -1,8 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1590px" height="700px" enable-background="new">
-<defs>
-    <style type="text/css"><![CDATA[
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="1590px"
+   height="700px"
+   enable-background="new"
+   id="svg299"
+   sodipodi:docname="DNA palindrome.svg"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview301"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="0.77798742"
+     inkscape:cx="609.26435"
+     inkscape:cy="350.26273"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="768"
+     inkscape:window-y="180"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg299" />
+  <defs
+     id="defs34">
+    <style
+       type="text/css"
+       id="style2"><![CDATA[
     line.spine
     {
         stroke-width: 7;
@@ -37,238 +69,635 @@
         font-size: 34px;
     }
     ]]></style>
-
-    <g id="bond">
-        <rect x="-5" width="10" height="58" fill="#00effe"/>
+    <g
+       id="bond">
+      <rect
+         x="-5"
+         width="10"
+         height="58"
+         fill="#00effe"
+         id="rect4" />
     </g>
-
-    <g id="circleX">
-        <circle class="nucleotideCircle" r="17" fill="#c8c8c8" />
-        <text class="nucleotideText" text-anchor="middle" x="-0.5" y="10">X</text>
+    <g
+       id="circleX">
+      <circle
+         class="nucleotideCircle"
+         r="17"
+         fill="#c8c8c8"
+         id="circle7" />
+      <text
+         class="nucleotideText"
+         text-anchor="middle"
+         x="-0.5"
+         y="10"
+         id="text9">X</text>
     </g>
-    <g id="circleA">
-        <circle class="nucleotideCircle" r="17" fill="#ff9191" />
-        <text class="nucleotideText" text-anchor="middle" x="0" y="10">A</text>
+    <g
+       id="circleA">
+      <circle
+         class="nucleotideCircle"
+         r="17"
+         fill="#ff9191"
+         id="circle12" />
+      <text
+         class="nucleotideText"
+         text-anchor="middle"
+         x="0"
+         y="10"
+         id="text14">A</text>
     </g>
-    <g id="circleC">
-        <circle class="nucleotideCircle" r="17" fill="#91ffa4" />
-        <text class="nucleotideText" text-anchor="middle" x="-1" y="10">C</text>
+    <g
+       id="circleC">
+      <circle
+         class="nucleotideCircle"
+         r="17"
+         fill="#91ffa4"
+         id="circle17" />
+      <text
+         class="nucleotideText"
+         text-anchor="middle"
+         x="-1"
+         y="10"
+         id="text19">C</text>
     </g>
-    <g id="circleG">
-        <circle class="nucleotideCircle" r="17" fill="#fffc69" />
-        <text class="nucleotideText" text-anchor="middle" x="-0.5" y="10">G</text>
+    <g
+       id="circleG">
+      <circle
+         class="nucleotideCircle"
+         r="17"
+         fill="#fffc69"
+         id="circle22" />
+      <text
+         class="nucleotideText"
+         text-anchor="middle"
+         x="-0.5"
+         y="10"
+         id="text24">G</text>
     </g>
-    <g id="circleT">
-        <circle class="nucleotideCircle" r="17" fill="#9291ff" />
-        <text class="nucleotideText" text-anchor="middle" x="0" y="10">T</text>
+    <g
+       id="circleT">
+      <circle
+         class="nucleotideCircle"
+         r="17"
+         fill="#9291ff"
+         id="circle27" />
+      <text
+         class="nucleotideText"
+         text-anchor="middle"
+         x="0"
+         y="10"
+         id="text29">T</text>
     </g>
-
-    <path id="bracePath1" class="bracePath" d="M0,8.5 C0,4 4,0 10,0" />
-    <path id="bracePath2" class="bracePath" d="M12.667,-8.5 C10.125,-3.563 6.8,0 0,0" />
-</defs>
-<!--<rect x="-100" y="-100" width="10000" height="10000" fill="#e0e0e0" />-->
-<g transform="translate(95 323) translate(25 25)">
-    <g transform="translate(0 -29)">
-        <g id="tails">
-            <g id="tail">
-                <line class="spine" x2="-56" />
-                <line class="spine" stroke-dasharray="7,6" x1="-49" x2="-95" />
-            </g>
-            <use xlink:href="#tail" y="58" />
+    <path
+       id="bracePath1"
+       class="bracePath"
+       d="M0,8.5 C0,4 4,0 10,0" />
+    <path
+       id="bracePath2"
+       class="bracePath"
+       d="M12.667,-8.5 C10.125,-3.563 6.8,0 0,0" />
+  </defs>
+  <!--<rect x="-100" y="-100" width="10000" height="10000" fill="#e0e0e0" />-->
+  <g
+     transform="translate(95 323) translate(25 25)"
+     id="g297">
+    <g
+       transform="translate(0 -29)"
+       id="g125">
+      <g
+         id="tails">
+        <g
+           id="tail">
+          <line
+             class="spine"
+             x2="-56"
+             id="line36" />
+          <line
+             class="spine"
+             stroke-dasharray="7,6"
+             x1="-49"
+             x2="-95"
+             id="line38" />
         </g>
-
-        <line id="spine1" class="spine" x2="714" />
-        <use xlink:href="#spine1" y="58" />
-
-        <use xlink:href="#tails" transform="translate(714 0) scale(-1 1)" />
-
-        <g id="pairXX">
-            <use xlink:href="#bond" />
-            <use xlink:href="#circleX" />
-            <use xlink:href="#circleX" y="58" />
+        <use
+           xlink:href="#tail"
+           y="58"
+           id="use41" />
+      </g>
+      <line
+         id="spine1"
+         class="spine"
+         x2="714" />
+      <use
+         xlink:href="#spine1"
+         y="58"
+         id="use45" />
+      <use
+         xlink:href="#tails"
+         transform="translate(714 0) scale(-1 1)"
+         id="use47" />
+      <g
+         id="pairXX">
+        <use
+           xlink:href="#bond"
+           id="use49" />
+        <use
+           xlink:href="#circleX"
+           id="use51" />
+        <use
+           xlink:href="#circleX"
+           y="58"
+           id="use53" />
+      </g>
+      <use
+         xlink:href="#pairXX"
+         x="42"
+         id="use56" />
+      <g
+         id="palindrome"
+         transform="translate(84 0)">
+        <g
+           id="g64">
+          <use
+             xlink:href="#bond"
+             id="use58" />
+          <use
+             xlink:href="#circleG"
+             id="use60" />
+          <use
+             xlink:href="#circleC"
+             y="58"
+             id="use62" />
         </g>
-        <use xlink:href="#pairXX" x="42" />
-
-        <g id="palindrome" transform="translate(84 0)">
-            <g>
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleG" />
-                <use xlink:href="#circleC" y="58" />
-            </g>
-            <g transform="translate(42 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleA" />
-                <use xlink:href="#circleT" y="58" />
-            </g>
-            <g transform="translate(84 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleT" />
-                <use xlink:href="#circleA" y="58" />
-            </g>
-            <g transform="translate(126 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleC" />
-                <use xlink:href="#circleG" y="58" />
-            </g>
+        <g
+           transform="translate(42 0)"
+           id="g72">
+          <use
+             xlink:href="#bond"
+             id="use66" />
+          <use
+             xlink:href="#circleA"
+             id="use68" />
+          <use
+             xlink:href="#circleT"
+             y="58"
+             id="use70" />
         </g>
-
-        <use xlink:href="#pairXX" x="252" />
-        <use xlink:href="#pairXX" x="294" />
-        <use xlink:href="#pairXX" x="336" />
-        <use xlink:href="#pairXX" x="378" />
-        <use xlink:href="#pairXX" x="420" />
-        <use xlink:href="#pairXX" x="462" />
-
-        <use xlink:href="#palindrome" x="420" />
-
-        <use xlink:href="#pairXX" x="672" />
-        <use xlink:href="#pairXX" x="714" />
-
-        <g id="brace1" transform="translate(147 99)">
-            <g class="brace">
-                <g id="braceSide1">
-                    <use xlink:href="#bracePath1" />
-                    <use xlink:href="#bracePath2" x="66" />
-                    <line class="bracePath" x1="10" x2="66" />
-                </g>
-                <use xlink:href="#braceSide1" transform="scale(-1 1)" />
-            </g>
-            <text class="label" text-anchor="middle" y="49">A</text>
+        <g
+           transform="translate(84 0)"
+           id="g80">
+          <use
+             xlink:href="#bond"
+             id="use74" />
+          <use
+             xlink:href="#circleT"
+             id="use76" />
+          <use
+             xlink:href="#circleA"
+             y="58"
+             id="use78" />
         </g>
-        <use xlink:href="#brace1" x="420" />
-
+        <g
+           transform="translate(126 0)"
+           id="g88">
+          <use
+             xlink:href="#bond"
+             id="use82" />
+          <use
+             xlink:href="#circleC"
+             id="use84" />
+          <use
+             xlink:href="#circleG"
+             y="58"
+             id="use86" />
+        </g>
+      </g>
+      <use
+         xlink:href="#pairXX"
+         x="252"
+         id="use91" />
+      <use
+         xlink:href="#pairXX"
+         x="294"
+         id="use93" />
+      <use
+         xlink:href="#pairXX"
+         x="336"
+         id="use95" />
+      <use
+         xlink:href="#pairXX"
+         x="378"
+         id="use97" />
+      <use
+         xlink:href="#pairXX"
+         x="420"
+         id="use99" />
+      <use
+         xlink:href="#pairXX"
+         x="462"
+         id="use101" />
+      <use
+         xlink:href="#palindrome"
+         x="420"
+         id="use103" />
+      <use
+         xlink:href="#pairXX"
+         x="672"
+         id="use105" />
+      <use
+         xlink:href="#pairXX"
+         x="714"
+         id="use107" />
+      <g
+         id="brace1"
+         transform="translate(147 99)">
+        <g
+           class="brace"
+           id="g118">
+          <g
+             id="braceSide1">
+            <use
+               xlink:href="#bracePath1"
+               id="use109" />
+            <use
+               xlink:href="#bracePath2"
+               x="66"
+               id="use111" />
+            <line
+               class="bracePath"
+               x1="10"
+               x2="66"
+               id="line113" />
+          </g>
+          <use
+             xlink:href="#braceSide1"
+             transform="scale(-1 1)"
+             id="use116" />
+        </g>
+        <text
+           class="label"
+           text-anchor="middle"
+           y="49"
+           id="text120">A</text>
+      </g>
+      <use
+         xlink:href="#brace1"
+         x="420"
+         id="use123" />
     </g>
-    <g transform="translate(1122 -29)">
-        <use xlink:href="#tails" />
-
-        <line id="spine2" class="spine" x2="42" />
-        <use xlink:href="#spine2" y="58" />
-
-        <g transform="translate(42 0)">
-            <g id="spines1">
-                <line id="spine3" class="spine" x2="40.3" y2="-40.3" />
-                <use xlink:href="#spine3" transform="translate(0 58) scale(1 -1)" />
-            </g>
-            <use xlink:href="#spines1" transform="translate(80.6 0) translate(58 0) scale(-1 1)" />
+    <g
+       transform="translate(1122 -29)"
+       id="g290">
+      <use
+         xlink:href="#tails"
+         id="use127" />
+      <line
+         id="spine2"
+         class="spine"
+         x2="42" />
+      <use
+         xlink:href="#spine2"
+         y="58"
+         id="use130" />
+      <g
+         transform="translate(42 0)"
+         id="g138">
+        <g
+           id="spines1">
+          <line
+             id="spine3"
+             class="spine"
+             x2="40.3"
+             y2="-40.3" />
+          <use
+             xlink:href="#spine3"
+             transform="translate(0 58) scale(1 -1)"
+             id="use133" />
         </g>
-
-        <use xlink:href="#spine2" x="180.6" />
-        <use xlink:href="#spine2" x="180.6" y="58" />
-
-        <use xlink:href="#tails" transform="translate(222.6 0) scale(-1 1)" />
-
-        <use xlink:href="#pairXX" />
-        <use xlink:href="#pairXX" x="42" />
-
-        <use xlink:href="#pairXX" x="180.6" />
-        <use xlink:href="#pairXX" x="222.6" />
-
-        <g transform="translate(42 0) translate(40.3 -40.3) rotate(-90)">
-            <line id="spine4" class="spine" x2="126" />
-            <use xlink:href="#spine4" y="58" />
-
-            <line id="spine5" class="spine" x1="126" x2="160.3" y2="-24.2" />
-            <use xlink:href="#spine5" transform="translate(0 58) scale(1 -1)" />
-
-            <g>
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleG" />
-                <use xlink:href="#circleC" transform="translate(0 58) rotate(180)" />
-            </g>
-            <g transform="translate(42 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleA" />
-                <use xlink:href="#circleT" transform="translate(0 58) rotate(180)" />
-            </g>
-            <g transform="translate(84 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleT" />
-                <use xlink:href="#circleA" transform="translate(0 58) rotate(180)" />
-            </g>
-            <g transform="translate(126 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleC" />
-                <use xlink:href="#circleG" transform="translate(0 58) rotate(180)" />
-            </g>
-
-            <g id="loop" transform="translate(126 0)">
-                <g transform="translate(34.3 0)">
-                    <line id="spine6" class="spine" y1="-24.2" x2="42" y2="-24.2" />
-                    <use xlink:href="#spine6" y="106.4" />
-
-                    <line id="spine7" class="spine" x1="42" y1="-24.2" x2="76.3" />
-                    <use xlink:href="#spine7" transform="translate(0 58) scale(1 -1)" />
-
-                    <line class="spine" x1="76.3" x2="76.3" y2="58" />
-
-                    <g id="loop1">
-                        <use xlink:href="#circleX" transform="translate(0 -24.2) rotate(90)" />
-                        <use xlink:href="#circleX" transform="translate(0 58) translate(0 24.2) rotate(90)" />
-                    </g>
-                    <use xlink:href="#loop1" x="42" />
-
-                    <use xlink:href="#circleX" transform="translate(42 0) translate(34.3 0) rotate(90)" />
-                    <use xlink:href="#circleX" transform="translate(42 58) translate(34.3 0) rotate(90)" />
-                </g>
-            </g>
+        <use
+           xlink:href="#spines1"
+           transform="translate(80.6 0) translate(58 0) scale(-1 1)"
+           id="use136" />
+      </g>
+      <use
+         xlink:href="#spine2"
+         x="180.6"
+         id="use140" />
+      <use
+         xlink:href="#spine2"
+         x="180.6"
+         y="58"
+         id="use142" />
+      <use
+         xlink:href="#tails"
+         transform="translate(222.6 0) scale(-1 1)"
+         id="use144" />
+      <use
+         xlink:href="#pairXX"
+         id="use146" />
+      <use
+         xlink:href="#pairXX"
+         x="42"
+         id="use148" />
+      <use
+         xlink:href="#pairXX"
+         x="180.6"
+         id="use150" />
+      <use
+         xlink:href="#pairXX"
+         x="222.6"
+         id="use152" />
+      <g
+         transform="translate(42 0) translate(40.3 -40.3) rotate(-90)"
+         id="g214">
+        <line
+           id="spine4"
+           class="spine"
+           x2="126" />
+        <use
+           xlink:href="#spine4"
+           y="58"
+           id="use155" />
+        <line
+           id="spine5"
+           class="spine"
+           x1="126"
+           x2="160.3"
+           y2="-24.2" />
+        <use
+           xlink:href="#spine5"
+           transform="translate(0 58) scale(1 -1)"
+           id="use158" />
+        <g
+           id="g166">
+          <use
+             xlink:href="#bond"
+             id="use160" />
+          <use
+             xlink:href="#circleG"
+             id="use162" />
+          <use
+             xlink:href="#circleC"
+             transform="translate(0 58) rotate(180)"
+             id="use164" />
         </g>
-        <g transform="translate(100 58) translate(40.3 40.3) rotate(90)">
-            <use xlink:href="#spine4" />
-            <use xlink:href="#spine4" y="58" />
-
-            <use xlink:href="#spine5" />
-            <use xlink:href="#spine5" transform="translate(0 58) scale(1 -1)" />
-
-            <g>
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleG" transform="rotate(180)" />
-                <use xlink:href="#circleC" y="58" />
-            </g>
-            <g transform="translate(42 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleA" transform="rotate(180)" />
-                <use xlink:href="#circleT" y="58" />
-            </g>
-            <g transform="translate(84 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleT" transform="rotate(180)" />
-                <use xlink:href="#circleA" y="58" />
-            </g>
-            <g transform="translate(126 0)">
-                <use xlink:href="#bond" />
-                <use xlink:href="#circleC" transform="rotate(180)" />
-                <use xlink:href="#circleG" y="58" />
-            </g>
-
-            <use xlink:href="#loop" />
+        <g
+           transform="translate(42 0)"
+           id="g174">
+          <use
+             xlink:href="#bond"
+             id="use168" />
+          <use
+             xlink:href="#circleA"
+             id="use170" />
+          <use
+             xlink:href="#circleT"
+             transform="translate(0 58) rotate(180)"
+             id="use172" />
         </g>
-
-        <g transform="translate(210, -230)">
-            <g transform="rotate(-90)">
-                <g id="braceSide2">
-                    <use xlink:href="#bracePath1" />
-                    <use xlink:href="#bracePath2" x="40" />
-                    <line class="bracePath" x1="10" x2="40" />
-                </g>
-                <use xlink:href="#braceSide2" transform="scale(-1 1)" />
-            </g>
-            <text class="label" x="20" y="10">B</text>
+        <g
+           transform="translate(84 0)"
+           id="g182">
+          <use
+             xlink:href="#bond"
+             id="use176" />
+          <use
+             xlink:href="#circleT"
+             id="use178" />
+          <use
+             xlink:href="#circleA"
+             transform="translate(0 58) rotate(180)"
+             id="use180" />
         </g>
-        <g transform="translate(210, -102)">
-            <g transform="rotate(-90)">
-                <g id="braceSide3">
-                    <use xlink:href="#bracePath1" />
-                    <use xlink:href="#bracePath2" x="52" />
-                    <line class="bracePath" x1="10" x2="52" />
-                </g>
-                <use xlink:href="#braceSide3" transform="scale(-1 1)" />
-            </g>
-            <text class="label" x="20" y="10">C</text>
+        <g
+           transform="translate(126 0)"
+           id="g190">
+          <use
+             xlink:href="#bond"
+             id="use184" />
+          <use
+             xlink:href="#circleC"
+             id="use186" />
+          <use
+             xlink:href="#circleG"
+             transform="translate(0 58) rotate(180)"
+             id="use188" />
         </g>
+        <g
+           id="loop"
+           transform="translate(126 0)">
+          <g
+             transform="translate(34.3 0)"
+             id="g211">
+            <line
+               id="spine6"
+               class="spine"
+               y1="-24.2"
+               x2="42"
+               y2="-24.2" />
+            <use
+               xlink:href="#spine6"
+               y="106.4"
+               id="use193" />
+            <line
+               id="spine7"
+               class="spine"
+               x1="42"
+               y1="-24.2"
+               x2="76.3" />
+            <use
+               xlink:href="#spine7"
+               transform="translate(0 58) scale(1 -1)"
+               id="use196" />
+            <line
+               class="spine"
+               x1="76.3"
+               x2="76.3"
+               y2="58"
+               id="line198" />
+            <g
+               id="loop1">
+              <use
+                 xlink:href="#circleX"
+                 transform="translate(0 -24.2) rotate(90)"
+                 id="use200" />
+              <use
+                 xlink:href="#circleX"
+                 transform="translate(0 58) translate(0 24.2) rotate(90)"
+                 id="use202" />
+            </g>
+            <use
+               xlink:href="#loop1"
+               x="42"
+               id="use205" />
+            <use
+               xlink:href="#circleX"
+               transform="translate(42 0) translate(34.3 0) rotate(90)"
+               id="use207" />
+            <use
+               xlink:href="#circleX"
+               transform="translate(42 58) translate(34.3 0) rotate(90)"
+               id="use209" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="translate(100 58) translate(40.3 40.3) rotate(90)"
+         id="g258">
+        <use
+           xlink:href="#spine4"
+           id="use216" />
+        <use
+           xlink:href="#spine4"
+           y="58"
+           id="use218" />
+        <use
+           xlink:href="#spine5"
+           id="use220" />
+        <use
+           xlink:href="#spine5"
+           transform="translate(0 58) scale(1 -1)"
+           id="use222" />
+        <g
+           id="g230">
+          <use
+             xlink:href="#bond"
+             id="use224" />
+          <use
+             xlink:href="#circleG"
+             transform="rotate(180)"
+             id="use226" />
+          <use
+             xlink:href="#circleC"
+             y="58"
+             id="use228" />
+        </g>
+        <g
+           transform="translate(42 0)"
+           id="g238">
+          <use
+             xlink:href="#bond"
+             id="use232" />
+          <use
+             xlink:href="#circleA"
+             transform="rotate(180)"
+             id="use234" />
+          <use
+             xlink:href="#circleT"
+             y="58"
+             id="use236" />
+        </g>
+        <g
+           transform="translate(84 0)"
+           id="g246">
+          <use
+             xlink:href="#bond"
+             id="use240" />
+          <use
+             xlink:href="#circleT"
+             transform="rotate(180)"
+             id="use242" />
+          <use
+             xlink:href="#circleA"
+             y="58"
+             id="use244" />
+        </g>
+        <g
+           transform="translate(126 0)"
+           id="g254">
+          <use
+             xlink:href="#bond"
+             id="use248" />
+          <use
+             xlink:href="#circleC"
+             transform="rotate(180)"
+             id="use250" />
+          <use
+             xlink:href="#circleG"
+             y="58"
+             id="use252" />
+        </g>
+        <use
+           xlink:href="#loop"
+           id="use256" />
+      </g>
+      <g
+         transform="translate(210, -230)"
+         id="g273">
+        <g
+           transform="rotate(-90)"
+           id="g269">
+          <g
+             id="braceSide2">
+            <use
+               xlink:href="#bracePath1"
+               id="use260" />
+            <use
+               xlink:href="#bracePath2"
+               x="40"
+               id="use262" />
+            <line
+               class="bracePath"
+               x1="10"
+               x2="40"
+               id="line264" />
+          </g>
+          <use
+             xlink:href="#braceSide2"
+             transform="scale(-1 1)"
+             id="use267" />
+        </g>
+        <text
+           class="label"
+           x="20"
+           y="10"
+           id="text271">B</text>
+      </g>
+      <g
+         transform="translate(210, -102)"
+         id="g288">
+        <g
+           transform="rotate(-90)"
+           id="g284">
+          <g
+             id="braceSide3">
+            <use
+               xlink:href="#bracePath1"
+               id="use275" />
+            <use
+               xlink:href="#bracePath2"
+               x="52"
+               id="use277" />
+            <line
+               class="bracePath"
+               x1="10"
+               x2="52"
+               id="line279" />
+          </g>
+          <use
+             xlink:href="#braceSide3"
+             transform="scale(-1 1)"
+             id="use282" />
+        </g>
+        <text
+           class="label"
+           x="20"
+           y="10"
+           id="text286">C</text>
+      </g>
     </g>
-    <g transform="translate(918 0)">
-        <polygon id="arrow" transform="translate(-49 -19)" fill="#ff0000" points="0,-8 63,-8 63,-24 104,0 63,24 63,8 0,8" />
-        <use xlink:href="#arrow" transform="translate(0 37) scale(-1 1)" />
+    <g
+       transform="translate(918 0)"
+       id="g295">
+      <polygon
+         id="arrow"
+         transform="translate(-49 -19)"
+         fill="#ff0000"
+         points="0,-8 63,-8 63,-24 104,0 63,24 63,8 0,8" />
+      <use
+         xlink:href="#arrow"
+         transform="translate(0 37) scale(-1 1)"
+         id="use293" />
     </g>
-</g>
+  </g>
 </svg>
