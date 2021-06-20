@@ -2817,7 +2817,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <p><strong>内胚层的分化</strong>：</p>
 <ul>
 <li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
-<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>）；</li>
+<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
 <li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
 </ul>
 <h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
@@ -6628,14 +6628,12 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </details>
 <h2 id="呼吸系统的发生">呼吸系统的发生 <a class="markdownIt-Anchor" href="#呼吸系统的发生">#</a></h2>
 <h3 id="喉-气管和肺的发生">喉、气管和肺的发生 <a class="markdownIt-Anchor" href="#喉-气管和肺的发生">#</a></h3>
-<p>第 4 周时，前肠原始咽的尾端腹侧正中部位出现一条纵行浅沟，称为 <strong>喉气管沟</strong>（laryngotracheal groove）。<br/>
-喉气管沟逐渐加深，并从其尾端逐渐愈合，形成一个长条形盲囊，并向咽的腹侧膨出，称
-<strong>喉气管憩室</strong>（laryngotracheal groove），为喉、气管、支气管和肺的原基。<br/>
+<p>于胚胎发育第 4 周，前肠原始咽的尾端腹侧正中部位出现一条纵行浅沟，称为 <strong>喉气管沟</strong>（laryngotracheal groove）。<br/>
+喉气管沟逐渐加深，并从其尾端逐渐愈合，形成一个长条形盲囊，并向咽的腹侧膨出，称 <strong>喉气管憩室</strong>（laryngotracheal groove），为喉、气管、支气管和肺的原基。其上端将发育为喉，中段发育为气管，末端膨大的两个分支称 <strong>肺芽</strong>，是主支气管及肺的原基。<br/>
 喉气管憩室与其背侧的食管之间的间充质增生形成 <strong>气管食管隔</strong>（tracheoesophageal septum）。</p>
 
 <h4 id="喉的发生">喉的发生 <a class="markdownIt-Anchor" href="#喉的发生">#</a></h4>
-<p>喉由喉气管憩室的上端开口于咽的部分形成。<br/>
-其黏膜上皮由内胚层分化而来，软骨、肌组织和结缔组织则由第 4、5 对 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃弓#鳃器的发生和演化">鳃弓</a> 发育而来。</p>
+<p>喉由 <strong>喉气管憩室</strong> 的上端开口于咽的部分形成。其黏膜上皮由内胚层分化而来，软骨、肌组织和结缔组织则由第 4、5 对 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃弓#鳃器的发生和演化">鳃弓</a> 发育而来。</p>
 <h4 id="气管和支气管的发生">气管和支气管的发生 <a class="markdownIt-Anchor" href="#气管和支气管的发生">#</a></h4>
 <p><em>气管</em> 由喉气管憩室的中段发育形成，<em>支气管</em> 和 <em>肺</em> 则由 <strong>肺芽</strong> 演化而成。</p>
 <dl>
@@ -10861,13 +10859,13 @@ plate）。<br/>
 <li>我的 NeoVim 配置：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvbnZpbWNmZw==">https://github.com/alohaia/nvimcfg<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 <p><strong>What do I wanna do?</strong></p>
+<img data-src="https://github-readme-stats.vercel.app/api?username=alohaia&show_icons=true&theme=tokyonight" class="right">
 <ul>
 <li><a href="/2021/04/12/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/">自制伪终端</a> - Lua 配置，输入法支持</li>
 <li>我爱数学 - 数学建模与应用、统计分析</li>
 <li>计算机图形学 - <a href="/2021/04/17/OpenGL/">OpenGL</a>、Vulkan</li>
 </ul>
 <p><strong>How to contact me?</strong></p>
-<img data-src="https://github-readme-stats.vercel.app/api?username=alohaia&show_icons=true&theme=tokyonight" class="right">
 <ul>
 <li>E-mail
 <ul>
