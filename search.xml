@@ -2091,7 +2091,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <p>在间期细胞中，异染色质呈簇分布在细胞核周围，分为 <strong>组成型异染色质</strong> 和 <strong>功能型异染色质</strong>。</p>
 <dl>
 <dt>组成型异染色质（constitutive heterochromatin）</dt>
-<dd>在各种细胞中总是处于凝缩状态，没有转录活性，常见于染色体的固定位置，如着丝粒、端粒和 <strong>核仁组织区</strong>。</dd>
+<dd>在各种细胞中总是处于凝缩状态，没有转录活性，常见于染色体的固定位置，如着丝粒、端粒和 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/?highlight=核仁组织区#随体"><strong>核仁组织区</strong></a>。</dd>
 <dt>功能型异染色质（functional heterochromatin）| 兼性染色质（facultative heterochromatin）</dt>
 <dd>在特定的细胞或个体发育到一定阶段，由常染色质凝缩转变而形成，当它处于疏松状态时，又转变为常染色质，如 <strong>X 染色质</strong>。</dd>
 <dt>X 染色质（X-chromatin）| Barr 小体</dt>
@@ -2102,7 +2102,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 \,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05017em;">B</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07847em;">X</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
 <dl>
 <dt>Y 染色质</dt>
-<dd>正常男性 Y 染色体长臂远侧由异染色质构成，间期细胞用荧光染料染色后，在细胞核内显示的一个圆形或椭圆形、直径约 0.3 μm 的强荧光小体。</dd>
+<dd>男性正常 Y 染色体长臂远侧由异染色质构成，间期细胞用荧光染料染色后，在细胞核内显示的一个圆形或椭圆形、直径约 0.3 μm 的强荧光小体。</dd>
 </dl>
 <h2 id="基因组和基因">基因组和基因 <a class="markdownIt-Anchor" href="#基因组和基因">#</a></h2>
 <dl>
@@ -6202,7 +6202,7 @@ T 细胞辅助。</p>
 <ol>
 <li><strong>中央着丝粒染色体</strong>（metacentric chromosome）：着丝粒位于或接近染色体中央（1/2~5/8）；</li>
 <li><strong>亚中着丝粒染色体</strong>（submetacentric chromosome）：着丝粒位于染色体纵轴 5/8~7/8 之间，短、长臂差异明显；</li>
-<li><strong>近端着丝粒染色体</strong>（acrocentric chromosome）：着丝粒位于染色体纵轴 7/8 至末端之间，短臂很短，短臂末端往往存在 <a href="?highlight=%E9%9A%8F%E4%BD%93#%E9%9A%8F%E4%BD%93">随体</a> 结构。</li>
+<li><strong>近端着丝粒染色体</strong>（acrocentric chromosome）：着丝粒位于染色体纵轴 7/8 至末端之间，短臂很短，包括 D 组和 G 组的染色体，短臂末端往往存在 <a href="?highlight=%E9%9A%8F%E4%BD%93#%E9%9A%8F%E4%BD%93">随体</a> 结构（Y 染色体没有）。</li>
 </ol>
 <h4 id="主缢痕和次缢痕">主缢痕和次缢痕 <a class="markdownIt-Anchor" href="#主缢痕和次缢痕">#</a></h4>
 <dl>
@@ -6217,7 +6217,7 @@ T 细胞辅助。</p>
 <dt>随体（satellite）</dt>
 <dd>人类 <a href="?highlight=%E8%BF%91%E7%AB%AF%E7%9D%80%E4%B8%9D%E7%B2%92%E6%9F%93%E8%89%B2%E4%BD%93#%E7%9D%80%E4%B8%9D%E7%B2%92">近端着丝粒染色体</a> 短臂末端的一球状结构。</dd>
 </dl>
-<p>随体与染色体主题的连接部位为 <em>次缢痕</em>，该部位与核仁的形成有关，称为 <strong><mark>核仁组织区</mark></strong>（nucleolus organizer region，<mark><abbr title="nucleolus organizer region，核仁组织区">NOR</abbr></mark>）。</p>
+<p>随体与染色体主题的连接部位为 <em>次缢痕</em>，该部位与核仁的形成有关，称为 <strong><mark>核仁组织区</mark></strong>（nucleolus organizer region，<mark><abbr title="nucleolus organizer region，核仁组织区">NOR</abbr></mark>），是一种特殊的 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=组成型异染色质#人类染色体"><strong>组成型异染色质</strong></a>。</p>
 <h4 id="端粒">端粒 <a class="markdownIt-Anchor" href="#端粒">#</a></h4>
 <dl>
 <dt>端粒（telomere）</dt>
@@ -6264,11 +6264,11 @@ T 细胞辅助。</p>
 <h3 id="染色体显带">染色体显带 <a class="markdownIt-Anchor" href="#染色体显带">#</a></h3>
 <h4 id="常用染色体显带技术">常用染色体显带技术 <a class="markdownIt-Anchor" href="#常用染色体显带技术">#</a></h4>
 <ol>
-<li><strong>Q 显带</strong>：用荧光染料染色，在荧光显微镜下可见每条染色体沿其纵轴呈现明暗相间、宽窄不同的带纹；</li>
+<li><strong>Q 显带</strong>：用荧光染料氮芥喹吖因染色，在荧光显微镜下可见每条染色体沿其纵轴呈现明暗相间、宽窄不同的带纹；</li>
 <li><strong>G 显带</strong>（<mark>常用</mark>）：先用胰酶或热、碱等预处理后再进行 Giemsa 染色，可见 Q 显带的亮带都被染成了深色，而暗带则被染成了浅色；</li>
 <li><strong>R 显带</strong>：用盐溶液预处理后再进行 Giemsa 染色，带型与 G 显带相反，对于研究 <strong>末端缺失和重排</strong> 特别有用；</li>
-<li><strong>C 显带</strong>：用 NaOH 或 Ba(OH)2 预处理染色体后再进行 Giemsa 染色，可特异地将着丝粒和副缢痕区的 <strong>组成型异染色质</strong> 染成深色；</li>
-<li><strong>N 显带</strong>：用硝酸银预处理后再行 Giemsa 染色，可特异性地将人类 <em>近端着丝粒染色体</em> 短臂副缢痕区的 <strong>核仁组织区</strong> 浓染成黑色。</li>
+<li><strong>C 显带</strong>：用 NaOH 或 Ba(OH)2 预处理染色体后再进行 Giemsa 染色，可特异地将着丝粒和副缢痕区的 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=组成型异染色质#人类染色体"><strong>组成型异染色质</strong></a>（constitutive heterochromatin）染成深色；</li>
+<li><strong>N 显带</strong>：用硝酸银预处理后再行 Giemsa 染色，可特异性地将人类 <em>近端着丝粒染色体</em> 短臂副缢痕区的 <a href="?highlight=%E6%A0%B8%E4%BB%81%E7%BB%84%E7%BB%87%E5%8C%BA#%E9%9A%8F%E4%BD%93">核仁组织区</a>（<abbr title="nucleolus organizer region，核仁组织区">NOR</abbr>）浓染成黑色。</li>
 </ol>
 <h4 id="染色体显带的描述">染色体显带的描述 <a class="markdownIt-Anchor" href="#染色体显带的描述">#</a></h4>
 <p>染色体的 <strong>界标</strong>（landmark）指对于识别染色体具有重要意义、稳定而显著的形态学特征，如染色体末端、着丝粒以及某些恒定的带。<br/>
@@ -6332,12 +6332,17 @@ T 细胞辅助。</p>
 <p>形成原因：</p>
 <ol>
 <li><strong>染色体不分离</strong>（non-disjunction）：细胞分裂中后期，两条同源染色体或姐妹染色单体进入同一个细胞：
-<ol>
+<ul>
 <li>减数分裂不分离（meiotic  non-disjunction）（初级不分离、次级不分离）→ 亚二倍体、超二倍体</li>
-<li>有丝分裂不分离（mitotic non-disjunction）→ 嵌合体</li>
-</ol>
+<li>有丝分裂不分离（mitotic non-disjunction）→ 嵌合体（两种或三种细胞系：45/47、46/47/45）</li>
+</ul>
 </li>
-<li><strong>染色体丢失</strong>：有丝分裂中至后期，一条染色单体的着丝粒未与纺锤丝相连或由于某些原因导致移动迟缓，最终使该染色体滞留在细胞质中而被分解消失。</li>
+<li><strong>染色体丢失</strong>：有丝分裂中至后期，一条染色单体的着丝粒未与纺锤丝相连或由于某些原因导致移动迟缓，最终使该染色体滞留在细胞质中而被分解消失：
+<ul>
+<li>减数分裂 → 亚二倍体</li>
+<li>有丝分裂 → 嵌合体（仅见于 46,XY/45,X、46,XX/45,X）</li>
+</ul>
+</li>
 </ol>
 <h3 id="染色体结构畸变">染色体结构畸变 <a class="markdownIt-Anchor" href="#染色体结构畸变">#</a></h3>
 <p><strong>染色体结构畸变</strong>（structural aberration）的结构基础是 <strong>染色体断裂</strong>（breakage）及随后的 <em>异常<strong>重接</strong></em>（rejoin）。</p>
@@ -6355,34 +6360,37 @@ T 细胞辅助。</p>
 <h4 id="染色体结构畸变的类型和发生机制">染色体结构畸变的类型和发生机制 <a class="markdownIt-Anchor" href="#染色体结构畸变的类型和发生机制">#</a></h4>
 <img data-src="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/%E5%9B%9B%E5%B0%84%E4%BD%93.png" class="right" title="四射体" alt="四射体">
 <ol>
-<li><strong>缺失</strong>：del，染色体片段的缺失；</li>
-<li><strong>倒位</strong>：inv，染色体发生两次断裂后，两断裂点之间的片段旋转 180 度后重接，造成染色体上的基因重排；</li>
-<li><strong>相互易位</strong>：t，两条染色体分别发生断裂后，相互交换断裂片段、重接而形成两条衍生染色体。两对同源染色体可因为相互易位而形成 <strong>四射体</strong>。涉及 3 条染色体以上的易位称为 <em>复杂易位</em>；</li>
-<li><strong>罗伯逊易位</strong>：+t，两条近端着丝粒染色体在着丝粒处断裂后重接；</li>
-<li><strong>重复</strong>：dup，一条染色体上某一片段增加了与本身相同的部分区段；</li>
-<li><strong>环状染色体</strong>：r，染色体两臂分别断裂后，含着丝粒的中间片段断端相连；</li>
-<li><strong>等臂染色体</strong>：i，有丝分裂中期，连接两条姐妹染色单体的着丝粒未能正常发生纵裂，而是发生了横裂；</li>
-<li><em>双着丝粒染色体</em>：两条染色体断裂后，具有着丝粒的残臂相连而成；</li>
-<li><strong>插入</strong>：ins，一条染色体臂上发生两处断裂，同时另一条染色体也发生了断裂，前者断片插入后者，形成一条衍生染色体；</li>
-<li><strong>标记染色体</strong>：形态上可辨认，但又无法确定其来源或特征的染色体（另见 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=标记染色体#肿瘤细胞染色体结构异常">肿瘤细胞染色体结构异常</a>），用 mar 表示。</li>
+<li><strong>缺失</strong>：<code>del</code>，染色体片段的缺失；</li>
+<li><strong>倒位</strong>：<code>inv</code>，染色体发生两次断裂后，两断裂点之间的片段旋转 180 度后重接，造成染色体上的基因重排。重排染色体在减数分裂时会形成特殊的 <strong>倒位环</strong>（inversion loop）；</li>
+<li><strong>相互易位</strong>：<code>t</code>，两条染色体分别发生断裂后，相互交换断裂片段、重接而形成两条衍生染色体。两对同源染色体可因为相互易位而形成 <strong>四射体</strong>。涉及 3 条染色体以上的易位称为 <em>复杂易位</em>；</li>
+<li><strong>罗伯逊易位</strong>：<code>+t</code>，两条近端着丝粒染色体在着丝粒处断裂后重接；</li>
+<li><strong>重复</strong>：<code>dup</code>，一条染色体上某一片段增加了与本身相同的部分区段；</li>
+<li><strong>环状染色体</strong>：<code>r</code>，染色体两臂分别断裂后，含着丝粒的中间片段断端相连；</li>
+<li><strong>等臂染色体</strong>：<code>i</code>，有丝分裂中期，连接两条姐妹染色单体的着丝粒未能正常发生纵裂，而是发生了横裂；</li>
+<li><em>双着丝粒染色体</em>：两条染色体断裂后，具有着丝粒的残臂相连而成。在核分裂的后期两个着丝粒分别向两极移动时，染色单体的两个着丝粒之间的部分在两极之间被拉紧而形成 <strong>染色体桥</strong>；</li>
+<li><strong>插入</strong>：<code>ins</code>，一条染色体臂上发生两处断裂，同时另一条染色体也发生了断裂，前者断片插入后者，形成一条衍生染色体；</li>
+<li><strong>标记染色体</strong>：形态上可辨认，但又无法确定其来源或特征的染色体（另见 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=标记染色体#肿瘤细胞染色体结构异常">肿瘤细胞染色体结构异常</a>），用 <code>mar</code> 表示。</li>
 </ol>
+<p>另外，<code>+</code>、<code>-</code> 在染色体或组的符号前面，表示染色体或组内染色体的增加或减少；在染色体臂或结构后面，表示臂或结构的增加或减少。<br/>
+<code>::</code> 常用在详式中连接染色体片段。<br/>
+<code>Ter</code> 表示末端，<code>pter</code>、<code>qter</code> 分别表示长臂、短臂末端。</p>
 <dl>
 <dt>罗伯逊易位 | 着丝粒融合</dt>
 <dd>易位的一种特殊类型，两条 <strong>近端着丝粒染色体</strong> 在着丝粒处断裂后重接，形成一条由长臂构成的衍生染色体。</dd>
 <dt>平衡易位携带者</dt>
-<dd>染色体发生了易位，单从基因成分来看仍保持平衡，故 <strong>表型正常</strong>，但子代可发生疾病，如 21 三体综合征。</dd>
+<dd>染色体发生了易位，单从基因成分来看仍保持平衡，故 <strong>表型正常</strong>，但子代可发生疾病，如 <a href="?highlight=%E6%98%93%E4%BD%8D%E5%9E%8B#21-%E4%B8%89%E4%BD%93%E7%BB%BC%E5%90%88%E5%BE%81">21 三体综合征的 <em>易位型</em></a>。</dd>
 </dl>
 <h2 id="常见染色体病">常见染色体病 <a class="markdownIt-Anchor" href="#常见染色体病">#</a></h2>
 <h3 id="常染色体异常综合征">常染色体异常综合征 <a class="markdownIt-Anchor" href="#常染色体异常综合征">#</a></h3>
 <h4 id="21-三体综合征">21 三体综合征 <a class="markdownIt-Anchor" href="#21-三体综合征">#</a></h4>
 <p><strong>21 三体综合征</strong>（trisomy 21 syndrome）又称 <strong>先天愚型</strong>、<strong>唐氏综合症</strong>（Down syndrome），由于患者细胞内多了一条 21 号染色体所导致，是人类的第一个被发现的染色体病，也是最常见的染色体病。</p>
-<h5 id="临床表现">临床表现 <a class="markdownIt-Anchor" href="#临床表现">#</a></h5>
 <p>新生儿中 Down 综合征的发病率为 1/800~1/600，且发病率随母亲年龄的增高而增高。</p>
+<h5 id="临床表现">临床表现 <a class="markdownIt-Anchor" href="#临床表现">#</a></h5>
 <ul>
 <li>严重智力低下，<strong>智力发育不全</strong> 是本病最突出的症状</li>
 <li>生长发育迟缓</li>
 <li>眼裂小、眼距宽、外眼角上斜、内眦赘皮、鼻梁低平、耳朵小 ，低位或畸形、伸舌、有时流涎</li>
-<li>通贯手、第1、2趾间间距宽</li>
+<li>通贯手、第 1、2 趾间间距宽</li>
 </ul>
 <h5 id="遗传学类型">遗传学类型 <a class="markdownIt-Anchor" href="#遗传学类型">#</a></h5>
 <p>根据核型可分为三类：</p>
@@ -6390,16 +6398,22 @@ T 细胞辅助。</p>
 <li><strong>单纯型</strong>（92.5%）：47，XX（或 XY），+21</li>
 <li><strong>嵌合型</strong>（2.5%）：患者为 <a href="?highlight=%E5%B5%8C%E5%90%88%E4%BD%93#%E9%9D%9E%E6%95%B4%E5%80%8D%E4%BD%93">嵌合体</a>，核型常为 46/47，XX（或 XY），+21 嵌合型<br/>
 根据染色体不分离发生的早晚，三体核型的细胞所占比例有所不同，47，+21 细胞比例越高，临床症状越重，低于 9% 时不表现出临床症状</li>
-<li><strong>易位型</strong>（5%）：多余的染色体不单独存在，而是易位到了一近端着丝粒染色体（通常为 14 号）上形成 <strong>假二倍体</strong>（pseudoploid）个体，如 46，XX（或 XY），-<mark>14</mark>，+t（14；21）（p11；q11）</li>
+<li><strong>易位型</strong>（5%）：多余的染色体不单独存在，而是易位到了一近端着丝粒染色体（通常为 14 号）上形成 <strong>假二倍体</strong>（pseudoploid）个体，如 46，XX（或 XY），<mark>-14</mark>，+t（14；21）（p11；q11）</li>
 </ol>
-<h5 id="临床诊断-治疗和预防">临床诊断、治疗和预防 <a class="markdownIt-Anchor" href="#临床诊断-治疗和预防">#</a></h5>
+<h5 id="21-三体综合征的预防">21 三体综合征的预防 <a class="markdownIt-Anchor" href="#21-三体综合征的预防">#</a></h5>
 <ul>
 <li>超声：胎儿颈部皮褶增厚</li>
-<li>孕妇血清（<strong>唐筛</strong>）：AFP（甲胎蛋白）及 E3（雌三醇）低于平均水平，HCG（绒毛膜促性腺激素）高于平均水平</li>
+<li>孕妇血清（<strong>唐筛</strong>）：
+<ul>
+<li>AFP（甲胎蛋白）及 E3（雌三醇）低于平均水平</li>
+<li>HCG（<a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=人绒毛膜促性腺激素#胎盘的功能">人绒毛膜促性腺激素</a>）高于平均水平</li>
+</ul>
+</li>
 <li><strong>羊膜腔穿刺</strong>（amniocentesis）&amp; <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=绒毛膜取样#叶状绒毛膜"><strong>绒毛膜取样</strong></a>（CVS）</li>
 <li>无创产前 DNA 检测/<strong>无创性产前筛查</strong>（noninvasive prenatal screening，NIPS）：</li>
 </ul>
 <h4 id="18-三体综合征">18 三体综合征 <a class="markdownIt-Anchor" href="#18-三体综合征">#</a></h4>
+<p>又称 <strong>Ewards 综合征</strong>。</p>
 <ul>
 <li>发病率：1/5000~1/4000</li>
 <li>临床表现：
@@ -6410,6 +6424,7 @@ T 细胞辅助。</p>
 </li>
 </ul>
 <h4 id="13-三体综合征">13 三体综合征 <a class="markdownIt-Anchor" href="#13-三体综合征">#</a></h4>
+<p>又称 <strong>Patau 综合征</strong>。</p>
 <ul>
 <li>发病率：1/7000~1/5000</li>
 <li>临床症状：唇裂/腭裂、多指、多趾</li>
@@ -6432,7 +6447,7 @@ T 细胞辅助。</p>
 <h5 id="性染色质">性染色质 <a class="markdownIt-Anchor" href="#性染色质">#</a></h5>
 <dl>
 <dt>性染色质（sex chromatin）</dt>
-<dd>间期细胞核中由 X he Y 染色体上的异染色质所呈现的一种特殊结构，见 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#人类染色体">人类染色体</a> - <strong>X 染色质</strong>、Y 染色质。</dd>
+<dd>间期细胞核中由 X 和 Y 染色体上的异染色质所呈现的一种特殊结构，见 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#人类染色体">人类染色体</a> - <strong>X 染色质</strong>、Y 染色质。</dd>
 </dl>
 <h5 id="lyon-假说">Lyon 假说 <a class="markdownIt-Anchor" href="#lyon-假说">#</a></h5>
 <p><strong><mark>Lyon 假说</mark></strong> 的要点：</p>
@@ -6442,6 +6457,10 @@ T 细胞辅助。</p>
 <li>在女性胚胎发育初期，两条 X 染色体均有活性；至 <strong>发育早期</strong>（人胚第16天），其中一条即失活，呈异固缩而形成 X 染色质，并持续存在于子细胞中；</li>
 <li>细胞中一旦决定了哪条 X 染色体失活，该细胞的 <strong>所有后裔细胞</strong> 中均是这条 X 染色体失活。</li>
 </ol>
+<blockquote>
+<p>X 染色体的失活并不是完全随机的，失活影响较小的 X 染色体一般会优先失活，如发生平衡易位时未参与的 X 染色体和部分缺失的染色体。</p>
+</blockquote>
+<p>Lyon 在 1974 年对其假说进行了补充，认为 X 染色体失活是 <strong>部分片段的失活</strong>。</p>
 <h4 id="常见性染色体异常综合征">常见性染色体异常综合征 <a class="markdownIt-Anchor" href="#常见性染色体异常综合征">#</a></h4>
 <h5 id="turner-综合征">Turner 综合征 <a class="markdownIt-Anchor" href="#turner-综合征">#</a></h5>
 <dl>
@@ -7455,7 +7474,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>胎盘物质交换的主要部位，由 <em>合体滋养细胞</em>、<em>合体滋养细胞基底膜</em>、<em>绒毛间质</em>、<em>毛细血管基底膜</em> 和 <em>毛细血管内皮细胞</em> 5 层组成。</dd>
 <dt>人绒毛膜促性腺激素（human chorionic gonadotropin，HCG）</dt>
 <dd>由合体滋养细胞分泌，受精后第 6 天开始分泌，至妊娠 8~10 周血清浓度达最高峰，产后 2 周内消失。</dd>
-<dd>可用于诊断早孕、检查诊断滋养细胞疾病、进行流产的保胎治疗、不孕症的促卵泡成熟及促排卵治疗。</dd>
+<dd>可用于诊断早孕、检查诊断滋养细胞疾病、进行流产的保胎治疗、不孕症的促卵泡成熟及促排卵治疗，还可用于 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/?highlight=人绒毛膜促性腺激素 唐筛#21-三体综合征">唐筛</a>。</dd>
 </dl>
 <h4 id="胎盘异常">胎盘异常 <a class="markdownIt-Anchor" href="#胎盘异常">#</a></h4>
 <ol>
