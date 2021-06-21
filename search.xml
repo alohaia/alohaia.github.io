@@ -2147,7 +2147,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>在基因组中重复出现的 DNA 序列，约占基因组的 55%，主要为非编码序列，但
 <a href="#%E5%9F%BA%E5%9B%A0%E5%AE%B6%E6%97%8F%E5%92%8C%E5%81%87%E5%9F%BA%E5%9B%A0"><strong>基因家族</strong></a> 也包含在其中。</dd>
 </dl>
-<p>重复序列的重复次数不同，可形成 <a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=可变数目串联重复#dna-多态性">DNA 多态性</a>。</p>
+<p>重复序列的重复次数不同，可形成 <a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=可变数目串联重复#dna-多态性">DNA 多态性（可变数目串联重复）</a>。</p>
 <p>根据 DNA 在基因组中的重复频率不同，重复序列可分为 <strong>轻度、中度和重度重复序列</strong>；<br/>
 根据 DNA 序列在基因组中的分布形式的不同，重复序列又可以分为 <strong>串联重复序列</strong> 和 <strong>散在重复序列</strong>。</p>
 <h6 id="串联重复序列">串联重复序列 <a class="markdownIt-Anchor" href="#串联重复序列">#</a></h6>
@@ -2227,7 +2227,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dt>启动子（promoter）</dt>
 <dd>位于转录起始点上游 100~200bp 内，为 <strong>RNA 聚合酶</strong> 结合部位，启动基因转录。</dd>
 <dt>TATA 框（TATA box）</dt>
-<dd>位于转录起始点上游 25~30bp，由 TAT(A/T)A(A/T)A 七个碱基组成，与 <strong>转录因子 TFII</strong> 结合，再与 RNA 聚合酶 Ⅱ 结合启动转录，精确定位转录起始点。</dd>
+<dd>位于转录起始点上游 25~30bp，由 TAT(A/T)A(A/T)A 七个碱基组成，与 <strong>转录因子 TFII</strong> 结合，再与 RNA 聚合酶 Ⅱ 结合 <strong>启动转录</strong>，精确定位转录起始点。</dd>
 <dt>GAAT 框（GAAT box）</dt>
 <dd>位于转录起始点上游 75~80bp，由 GG(C/T)CAATCT 九个碱基组成，与 <strong>转录因子 CTF</strong> 结合，<strong>激活转录</strong>，高效转录所必须。</dd>
 <dt>GC 框（GC box）</dt>
@@ -3208,7 +3208,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 <li>糖代谢病：半乳糖血症、糖原贮积病</li>
 <li>脂类代谢病：Gaucher病、Tay-Sachs病</li>
 <li>嘌呤代谢病：Lesch-Nyhan综合征</li>
-<li>葡萄糖6-磷酸脱氢酶缺乏症</li>
+<li>葡萄糖 6-磷酸脱氢酶缺乏症</li>
 </ul>
 <h4 id="氨基酸代谢病">氨基酸代谢病 <a class="markdownIt-Anchor" href="#氨基酸代谢病">#</a></h4>
 <ol>
@@ -3271,7 +3271,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 <li>患者血中尿酸增多，可引发 <strong>痛风性关节痛</strong>，是本病常见的全身症状。</li>
 </ul>
 <h4 id="葡萄糖-6-磷酸脱氢酶缺乏症">葡萄糖 6-磷酸脱氢酶缺乏症 <a class="markdownIt-Anchor" href="#葡萄糖-6-磷酸脱氢酶缺乏症">#</a></h4>
-<p><strong>葡萄糖 6-磷酸脱氢酶</strong>（<em>glucose</em>-6-phosphate dehydrogenase，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr>）催化磷酸己糖旁路的第一步。葡萄糖代谢途径产生 <strong>NADPH</strong>，以保持 <strong>谷胱甘肽</strong> 和 <strong>巯基</strong> 水平。</p>
+<p><strong>葡萄糖 6-磷酸脱氢酶</strong>（<em>glucose</em>-6-phosphate dehydrogenase，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr>）催化磷酸己糖旁路的第一步。葡萄糖代谢途径产生 <strong>NADPH</strong>，以保持 <strong>谷胱甘肽</strong> 和 <strong>巯基</strong> 水平。<em><strong><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr></strong></em> 基因定位与 Xq28  介于甲型血友病和红绿色盲基因座之间，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#x-连锁隐性遗传病"><mark>X 连锁隐性遗传病</mark></a>。</p>
 <p><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症又称 <em><strong>蚕豆病</strong></em>，患者若服用 <strong>蚕豆</strong> 或抗疟药 <strong>伯胺（基）喹呤</strong> 可发生溶血性贫血。</p>
 ]]></content>
       <categories>
@@ -6597,6 +6597,8 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </dl>
 <p>泄殖腔腹侧端与 <strong>尿囊</strong> 相连，末端由 <strong>泄殖腔膜</strong> 封闭。</p>
 <dl>
+<dt>尿囊（allantois）</dt>
+<dd>脊椎动物羊膜类肛膜的一种。是胚体腹侧的内脏层（内胚层 内脏中胚层）膨出并迅速扩大，扩展在浆膜与羊膜之间的胚外体腔中，形成的具有薄膜壁的囊，以细柄（尿囊柄）与胚体的消化管相连。</dd>
 <dt>尿直肠隔（urorectal septum）</dt>
 <dd>人胚第 6~7 周时，尿囊起始部和泄殖腔之间的间充质增生，形成一突入泄殖腔内的镰状隔膜。</dd>
 </dl>
@@ -7393,12 +7395,13 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <span id="more"></span>
 <h2 id="胎儿附属物">胎儿附属物 <a class="markdownIt-Anchor" href="#胎儿附属物">#</a></h2>
 <dl>
-<dt>胎儿附属物（fetal qppendage）</dt>
-<dd>胎儿以外的组织，包括 <a href="?highlight=%E8%83%8E%E7%9B%98#%E8%83%8E%E7%9B%98">胎盘</a>、<a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C">胎膜</a>、<a href="?highlight=%E8%84%90%E5%B8%A6#%E8%84%90%E5%B8%A6">脐带</a> 和 <a href="?highlight=%E7%BE%8A%E6%B0%B4#%E7%BE%8A%E6%B0%B4">羊水</a>。</dd>
+<dt>胎儿附属物（fetal appendage）</dt>
+<dd>胎儿以外的组织，包括 <a href="?highlight=%E8%83%8E%E7%9B%98#%E8%83%8E%E7%9B%98"><strong>胎盘</strong></a>、<a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a>、<a href="?highlight=%E8%84%90%E5%B8%A6#%E8%84%90%E5%B8%A6"><strong>脐带</strong></a> 和 <a href="?highlight=%E7%BE%8A%E6%B0%B4#%E7%BE%8A%E6%B0%B4"><strong>羊水</strong></a>。</dd>
 </dl>
 <h3 id="胎盘">胎盘 <a class="markdownIt-Anchor" href="#胎盘">#</a></h3>
 <img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/Placenta.png" class="" width="640" title="胎盘" alt="胎盘">
-<p><strong>胎盘</strong>（placenta）是胎儿和母体的结合体，由 <em>胎儿</em> 的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成"><strong>羊膜</strong></a>（amniotic membrane）和 <strong>叶状绒毛膜</strong>（chorion frondosum）及 <em>母体</em> 的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=底蜕膜#植入后的子宫内膜的变化"><strong>底蜕膜</strong></a>（basal deciduas）共同构成。</p>
+<p><strong>胎盘</strong>（placenta）是胎儿和母体的结合体，由 <em>胎儿</em> 的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成"><strong>羊膜</strong></a>（amniotic membrane）和 <strong>叶状绒毛膜</strong>（chorion frondosum）及 <em>母体</em> 的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=底蜕膜#植入后的子宫内膜的变化"><strong>底蜕膜</strong></a>（basal deciduas）共同构成。<br/>
+妊娠足月时，胎盘重 450~650g，直径 15~20cm，厚 1~3cm，中间厚，边缘薄，胎儿面光滑半透明，母体面粗糙呈暗红色。</p>
 <h4 id="胎盘的形成">胎盘的形成 <a class="markdownIt-Anchor" href="#胎盘的形成">#</a></h4>
 <h5 id="羊膜">羊膜 <a class="markdownIt-Anchor" href="#羊膜">#</a></h5>
 <p>另见 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成</a>。</p>
@@ -7406,7 +7409,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <p><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=滋养层#植入后的滋养层的变化">滋养层</a>内面和 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=胚外中胚层#胚外中胚层和胚外体腔的形成">胚外中胚层</a> 共同组成绒毛膜。<br/>
 人胚 13~21 天时，绒毛膜发育分化最旺盛。经历 <em>一级绒毛</em>、<em>二级绒毛</em> 和 <em>三级绒毛</em> 3 个阶段，<strong>绒毛</strong> 逐渐形成。<br/>
 当绒毛内毛细血管形成时，胚胎血管与绒毛血管连接，之后建立 <em>胎儿-胎盘循环</em>。</p>
-<p>与底蜕膜相接触的绒毛因营养丰富而发育良好，称 <strong><mark>叶状绒毛膜</mark></strong>（villous chorion），其余部分则萎缩退化成 <strong>平滑绒毛膜</strong>（smooth chorion），构成 <a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a> 的外层。</p>
+<p>与 <em>底蜕膜</em> 相接触的绒毛因营养丰富而发育良好，称 <strong><mark>叶状绒毛膜</mark></strong>（villous chorion），与 <em>包蜕膜</em> 接触的部分则萎缩退化成 <strong>平滑绒毛膜</strong>（smooth chorion），构成 <a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a> 的外层。</p>
 <dl>
 <dt>游离绒毛（free villus）</dt>
 <dd>末端悬浮与充满母血的绒毛间隙中的绒毛。</dd>
@@ -7447,43 +7450,39 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>合成功能</strong>：激素、酶、细胞因子和生长因子等，如 <em><strong>人绒毛膜促性腺激素</strong></em>；</li>
 <li><strong>免疫功能</strong>：胎儿及胎盘作为同种异体移植物，能在母体子宫内存活而不备排斥。</li>
 </ol>
-<details class="note info"><summary><p>胎盘屏障</p>
-</summary>
-<p>一般认为，氧、二氧化碳和许多小分子依靠扩散与渗透；大分子如蛋白质、抗体、激素等则依靠主动转运和吞饮转运。一些更大的分子（如Rh阳性抗原等）一般不能转运；但在缺氧、创伤、特殊分娩的情况下，也可能发生窜流而混杂。正常妊娠期间母血与子血分开，互不干扰，同时又进行选择性的物质交换，这一现象称为 <strong>胎盘屏障</strong><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
-<p>胎盘屏障的组成包括合体滋养细胞、合体滋养细胞基底膜、绒毛间质、毛细血管基底膜和毛细血管内皮细胞。</p>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cDovL3d3dy5hLWhvc3BpdGFsLmNvbS93LyVFOCU4MyU4RSVFNyU5QiU5OCVFNSVCMSU4RiVFOSU5QSU5Qw==">http://www.a-hospital.com/w/胎盘屏障<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-
-</details>
-<details class="note info"><summary><p>人绒毛膜促性腺激素</p>
-</summary>
-<p>人绒毛膜促性腺激素（human chorionic gonadotropin，HCG）</p>
-<ul>
-<li>合体滋养细胞分泌，受精后第6天开始分泌，至妊娠8～10周血清浓度达最高峰，产后2周内消失。</li>
-<li>可用于诊断早孕、检查诊断滋养细胞疾病、进行流产的保胎治疗、不孕症的促卵泡成熟及促排卵治疗。</li>
-</ul>
-
-</details>
+<dl>
+<dt>血管合体膜（vasculo-syncytial membrane，VSM）| <mark>胎盘屏障</mark>（placenta barrier）| 胎盘膜（placenta membrans）</dt>
+<dd>胎盘物质交换的主要部位，由 <em>合体滋养细胞</em>、<em>合体滋养细胞基底膜</em>、<em>绒毛间质</em>、<em>毛细血管基底膜</em> 和 <em>毛细血管内皮细胞</em> 5 层组成。</dd>
+<dt>人绒毛膜促性腺激素（human chorionic gonadotropin，HCG）</dt>
+<dd>由合体滋养细胞分泌，受精后第 6 天开始分泌，至妊娠 8~10 周血清浓度达最高峰，产后 2 周内消失。</dd>
+<dd>可用于诊断早孕、检查诊断滋养细胞疾病、进行流产的保胎治疗、不孕症的促卵泡成熟及促排卵治疗。</dd>
+</dl>
 <h4 id="胎盘异常">胎盘异常 <a class="markdownIt-Anchor" href="#胎盘异常">#</a></h4>
 <ol>
-<li>胎盘位置异常：前置胎盘</li>
-<li>胎盘形状异常：副胎盘</li>
-<li>胎盘植入异常：粘连性胎盘、植入性胎盘、穿透性胎盘</li>
+<li>胎盘位置异常：<strong>前置胎盘</strong></li>
+<li>胎盘形状异常：<strong>副胎盘</strong></li>
+<li><em>胎盘植入异常</em>：粘连性胎盘、植入性胎盘、穿透性胎盘</li>
 <li>胎盘重量异常：巨大胎盘（&gt;800g）、胎盘过小（&lt;400g）</li>
 <li>胎盘结构异常：球拍状胎盘；脐带帆状附着</li>
 </ol>
+<div class="tabs" id="tabs_胎盘异常"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_胎盘异常-1">前置胎盘</a></li><li class="tab"><a href="#tabs_胎盘异常-2">副胎盘</a></li><li class="tab"><a href="#tabs_胎盘异常-3">胎盘植入异常</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_胎盘异常-1"><p><strong>前置胎盘</strong>（placenta previa）指妊娠 28 周后，胎盘附着于子宫下段，甚至胎盘下缘达到或覆盖宫颈内口，其位置低于胎先露部。</p>
+<p>可分为三类：</p>
+<ol>
+<li><strong>完全性前置胎盘</strong>：胎盘完全覆盖子宫颈；</li>
+<li><strong>部分性前置胎盘</strong>： 胎盘部分覆盖子宫颈；</li>
+<li><strong>边缘性前置胎盘</strong>：胎盘在子宫颈边缘附近，离子宫颈内口约 2 厘米。</li>
+</ol></div><div class="tab-pane" id="tabs_胎盘异常-2"><p><strong>副胎盘</strong>（succenturiate placenta）是指在离主胎盘的周边一段距离的胎膜内，有一个或数个胎盘小叶发育，副胎盘与主胎盘之间有胎儿来源的血管相连，由中等大小的绒毛膜血管经副叶和主胎盘间的胎膜接受胎儿的血液循环。</p></div><div class="tab-pane" id="tabs_胎盘异常-3"><ol>
+<li><strong>粘连性</strong>（accreta）胎盘：胎盘绒毛膜绒毛仅侵入 <strong>子宫壁表层</strong>；</li>
+<li><strong>植入性</strong>（increta）胎盘：绒毛膜绒毛侵入 <strong>子宫肌层</strong>；</li>
+<li><strong>穿透性</strong>（percreta）胎盘：胎盘绒毛穿透子宫肌层，侵入 <strong>子宫浆膜甚至母体其他器官</strong>（膀胱、直肠等）。</li>
+</ol></div></div></div>
 <h3 id="胎膜">胎膜 <a class="markdownIt-Anchor" href="#胎膜">#</a></h3>
 <h4 id="胎膜的形成和结构">胎膜的形成和结构 <a class="markdownIt-Anchor" href="#胎膜的形成和结构">#</a></h4>
 <dl>
 <dt><strong>胎膜</strong>（fetal membrane）</dt>
-<dd>由 <a href="?highlight=%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C"><strong>绒毛膜</strong></a>（chorion）和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a> 组成，是维持羊膜完整和储存羊水的外周屏障。<br/></dd>
+<dd>由 <a href="?highlight=%E5%B9%B3%E6%BB%91%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C">（平滑）<strong>绒毛膜</strong></a>（chorion）和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a>（amnion）组成，是维持羊膜完整和储存羊水的外周屏障。<br/></dd>
 </dl>
-<p><a href="?highlight=%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C"><strong>绒毛膜</strong></a> 和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a> 分别构成胎膜的外层和内层。</p>
+<p><a href="?highlight=%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C"><strong>绒毛膜</strong></a> 和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a> 分别构成胎膜的外层和内层，胎膜还包括 <em>卵黄囊</em>、<a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=尿囊#直肠的发生与泄殖腔的分隔"><em>尿囊</em></a> 和 <a href="#%E8%84%90%E5%B8%A6"><em>脐带</em></a>。</p>
 <img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E8%86%9C.png" class="" width="500" title="胎膜" alt="胎膜">
 <h4 id="胎膜的异常">胎膜的异常 <a class="markdownIt-Anchor" href="#胎膜的异常">#</a></h4>
 <dl>
@@ -7494,7 +7493,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <h4 id="脐带的形成和结构">脐带的形成和结构 <a class="markdownIt-Anchor" href="#脐带的形成和结构">#</a></h4>
 <dl>
 <dt>脐带（umbilical cord）</dt>
-<dd>连接胎儿和胎盘的条索状结构，妊娠足月时脐带长 30~70 cm，直径 0.8~2.0cm，表面被羊膜覆盖呈灰白色，内有 1 条 <em>脐静脉</em> 和 2 条 <em>脐动脉</em>。</dd>
+<dd>连接胎儿（腹部脐轮）和胎盘（胎儿面）的条索状结构，妊娠足月时脐带长 30~70 cm，直径 0.8~2.0cm，表面被羊膜覆盖呈灰白色，内有 1 条 <em>脐静脉</em> 和 2 条 <em>脐动脉</em>。</dd>
 </dl>
 <p>脐带由 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=体蒂#胚外中胚层和胚外体腔的形成"><strong>体蒂</strong></a> 发育而来。早期胚胎通过体蒂与绒毛膜相连，而后卵黄囊被推向体蒂，羊膜将体蒂和卵黄囊包绕在一起形成圆柱状的脐带。</p>
 <h4 id="脐带的异常">脐带的异常 <a class="markdownIt-Anchor" href="#脐带的异常">#</a></h4>
@@ -7513,7 +7512,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </dl>
 <h4 id="羊水的来源">羊水的来源 <a class="markdownIt-Anchor" href="#羊水的来源">#</a></h4>
 <ol>
-<li>早期羊水：主要是 <strong>母体血清</strong> 经胎膜进入羊膜腔的透析液；</li>
+<li>早期羊水：主要是 <strong>母体血清</strong> 经 <em>胎膜</em> 进入羊膜腔的透析液；</li>
 <li>中晚期羊水：主要是 <strong>胎儿尿液</strong>。</li>
 </ol>
 <h4 id="羊水的动态平衡">羊水的动态平衡 <a class="markdownIt-Anchor" href="#羊水的动态平衡">#</a></h4>
@@ -7544,13 +7543,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>羊水过多</strong>（polyhydramnios）：&gt; 2000ml
 <ul>
 <li>可引起 <em>胎儿畸形</em>，中枢神经系统和消化道畸形最常见；</li>
-<li><em>双胎妊娠</em> 羊水过多的发生率约为单胎妊娠的 10 倍。</li>
+<li>常见于 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=无脑儿#神经管的形成和分化"><strong>无脑儿</strong></a>，也可由食管闭锁和小肠高位闭锁引起，<em>双胎妊娠</em> 羊水过多的发生率约为单胎妊娠的 10 倍。</li>
 </ul>
 </li>
 <li><strong>羊水过少</strong>（oligohydramnios）：&lt; 300ml
 <ul>
-<li><strong>羊膜带综合征</strong>；</li>
-<li>可由 <em>胎儿泌尿系统畸形</em> 和 <em>胎膜早破</em> 引起。</li>
+<li>可由 <em>胎儿泌尿系统畸形</em> 和 <em>胎膜早破</em> 引起；</li>
+<li>胎儿泌尿系统畸形、<strong>过期妊娠</strong>、胎盘功能减退、羊膜病变、<a href="?highlight=%E8%83%8E%E8%86%9C%E6%97%A9%E7%A0%B4#%E8%83%8E%E8%86%9C%E7%9A%84%E5%BC%82%E5%B8%B8">胎膜早破</a> 可引起羊水过少；</li>
+<li><strong>羊膜带综合征</strong>。</li>
 </ul>
 </li>
 </ol>
@@ -7641,7 +7641,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt>中肾管（mesonephric duct）| Wolfian 管</dt>
 <dd>在中肾退化时，保留下来形成男性生殖管道。</dd>
 <dt>中肾旁管（paramesonephric duct）| Müllerian 管</dt>
-<dd>开口于 <strong>窦结节</strong>（sinus tubercle, Müllerian 结节），将来发育称为女性生殖管道。</dd>
+<dd>开口于 <strong>窦结节</strong>（sinus tubercle, Müllerian 结节），将来发育成为女性生殖管道。</dd>
 </dl>
 <img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%88%86%E5%8C%96.png" class="" width="500" title="生殖管道的分化" alt="生殖管道的分化">
 <h4 id="男性内生殖器">男性内生殖器 <a class="markdownIt-Anchor" href="#男性内生殖器">#</a></h4>
@@ -7714,7 +7714,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 <li>阴唇阴囊隆起 → <strong>阴囊</strong>（scrotum）</li>
 </ul>
-<p><strong><mark>5α 二氢睾酮</mark></strong> 对男性外阴的形成至关重要，其受体的缺陷将导致睾丸女性化。</p>
+<p><strong><mark>5α 二氢睾酮</mark></strong> 对男性外阴的形成至关重要，其受体的缺陷将导致 <a href="?highlight=%E7%9D%BE%E4%B8%B8%E5%A5%B3%E6%80%A7%E5%8C%96%E7%BB%BC%E5%90%88%E5%BE%81#%E5%81%87%E4%B8%A4%E6%80%A7%E7%95%B8%E5%BD%A2">睾丸女性化综合征</a>。</p>
 <img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%B7%E6%80%A7%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="500" title="男性外生殖器" alt="男性外生殖器">
 <h4 id="女性外生殖器的发育">女性外生殖器的发育 <a class="markdownIt-Anchor" href="#女性外生殖器的发育">#</a></h4>
 <p>外生殖器向女性方向分化，是胚胎发育的 <em>自然趋势</em>，不需要雌激素的作用。</p>
@@ -7758,41 +7758,26 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt>真两性畸形（true hermaphrodite）</dt>
 <dd>同时具有卵巢和睾丸两种性腺或者 <strong>卵巢睾</strong>（ovotestis）。</dd>
 </dl>
-<ul>
-<li>46,XX</li>
-<li>46,XY</li>
-<li>46,XX/46,XY 嵌合</li>
-</ul>
 <h4 id="假两性畸形">假两性畸形 <a class="markdownIt-Anchor" href="#假两性畸形">#</a></h4>
 <dl>
 <dt>假两性畸形（pseudohermaphrodite）</dt>
-<dd>核型和性腺只有一种，外生殖器或副性征有两型特征或畸形。</dd>
+<dd>核型和性腺只有一种，外生殖器或副性征有两性特征或畸形。</dd>
 </dl>
 <hr />
-<p><strong>男性假两性畸形</strong></p>
-<ul>
-<li>核型：46,XY</li>
-<li>类型
+<p><strong>男性假两性畸形</strong>：核型为 46,XY，内生殖腺只有睾丸</p>
 <ul>
 <li>雄激素不敏感综合征</li>
-<li>5α-还原酶缺陷</li>
-</ul>
-</li>
+<li>5α-还原酶缺陷：影响 <a href="?highlight=%E5%8F%8C%E6%B0%A2%E7%9D%BE%E9%85%AE#%E6%80%A7%E5%88%AB%E5%8F%91%E8%82%B2%E5%BC%82%E5%B8%B8">双氢睾酮</a> 形成</li>
 </ul>
 <dl>
 <dt>雄激素不敏感综合征（testicular feminization syndrome） | 睾丸女性化综合征（androgen insensitive syndrome）</dt>
 <dd>睾丸分泌雄激素，但是体细胞雄性激素受体合成缺陷，不能使生殖器男性化。</dd>
 </dl>
 <hr />
-<p><strong>女性假两性畸形</strong>（内生殖腺只有卵巢）</p>
-<ul>
-<li>核型：46,XX</li>
-<li>类型
+<p><strong>女性假两性畸形</strong>：核型为 46,XX，内生殖腺只有卵巢</p>
 <ul>
 <li>先天性肾上腺皮质增生症</li>
 <li>母体高雄激素血症</li>
-</ul>
-</li>
 </ul>
 <dl>
 <dt>先天性肾上腺皮质增生症（congenital adrenal hyperplasia, <abbr title="congenital adrenal hyperplasia，先天性肾上腺皮质增生症">CAH</abbr>）</dt>
