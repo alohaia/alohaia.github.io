@@ -1301,68 +1301,6 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </tags>
   </entry>
   <entry>
-    <title>Lua 迭代器和泛型 for</title>
-    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
-    <content><![CDATA[<blockquote>
-<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
-本文也未刻意区分。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
-<dl>
-<dt>迭代器（iterator）</dt>
-<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
-<dt>闭包（closure）</dt>
-<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
-<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
-<dt>工厂（factory）</dt>
-<dd>用于创建闭包及其封装变量的函数。</dd>
-</dl>
-<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
-<p>泛型 for 的语法：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
-<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
-<ol>
-<li>迭代函数</li>
-<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
-<li>控制变量的初始值</li>
-</ol>
-<dl>
-<dt>控制变量（control variable）</dt>
-<dd>其值为 <code>nil</code> 时循环结束。</dd>
-</dl>
-<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
-其中只有最后一项能产生多个值。</p>
-<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
-<p>确切地说，形如</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>与以下代码等价：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
-<dl>
-<dt>无状态迭代器（stateless iterator）</dt>
-<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
-</dl>
-<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
-生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
-<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Lua 和 C</title>
     <url>/2021/04/15/Lua-%E5%92%8C-C/</url>
     <content><![CDATA[<p>Lua 是一种</p>
@@ -1533,6 +1471,68 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </categories>
       <tags>
         <tag>C/C++</tag>
+        <tag>Lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lua 迭代器和泛型 for</title>
+    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
+    <content><![CDATA[<blockquote>
+<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
+本文也未刻意区分。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<dl>
+<dt>迭代器（iterator）</dt>
+<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
+<dt>闭包（closure）</dt>
+<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
+<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
+<dt>工厂（factory）</dt>
+<dd>用于创建闭包及其封装变量的函数。</dd>
+</dl>
+<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
+<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<p>泛型 for 的语法：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
+<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
+<ol>
+<li>迭代函数</li>
+<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
+<li>控制变量的初始值</li>
+</ol>
+<dl>
+<dt>控制变量（control variable）</dt>
+<dd>其值为 <code>nil</code> 时循环结束。</dd>
+</dl>
+<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
+其中只有最后一项能产生多个值。</p>
+<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
+<p>确切地说，形如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>与以下代码等价：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
+<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<dl>
+<dt>无状态迭代器（stateless iterator）</dt>
+<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
+</dl>
+<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
+生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
+<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Lua</category>
+      </categories>
+      <tags>
         <tag>Lua</tag>
       </tags>
   </entry>
@@ -1958,7 +1958,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
 </dl>
 <span id="more"></span>
-<details class="note success"><summary><p><strong>Table of Content</strong></p>
+<details class="note info"><summary><p><strong>Table of Content</strong></p>
 </summary>
 <ol>
 <li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
@@ -3894,6 +3894,53 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       </tags>
   </entry>
   <entry>
+    <title>医学原虫学</title>
+    <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</url>
+    <content><![CDATA[<p>Empty…</p>
+<span id="more"></span>
+<h2 id="原虫概述">原虫概述 <a class="markdownIt-Anchor" href="#原虫概述">#</a></h2>
+<h2 id="叶足虫">叶足虫 <a class="markdownIt-Anchor" href="#叶足虫">#</a></h2>
+<h2 id="鞭毛虫">鞭毛虫 <a class="markdownIt-Anchor" href="#鞭毛虫">#</a></h2>
+<h2 id="孢子虫">孢子虫 <a class="markdownIt-Anchor" href="#孢子虫">#</a></h2>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+        <category>医学原虫学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>医学原虫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>医学蠕虫学</title>
+    <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</url>
+    <content><![CDATA[<p>Empty…</p>
+<span id="more"></span>
+<details class="note default"><summary><p>医学蠕虫分类</p>
+</summary>
+<ol>
+<li>线虫</li>
+<li>吸虫</li>
+<li>绦虫</li>
+</ol>
+
+</details>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+        <category>医学蠕虫学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>医学蠕虫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单基因遗传病</title>
     <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -4267,6 +4314,13 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       <tags>
         <tag>人类发育与遗传学</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>厌氧性细菌</title>
+    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<p>Empty…</p>
+<span id="more"></span>
+]]></content>
   </entry>
   <entry>
     <title>呼吸道感染病毒</title>
@@ -4812,6 +4866,24 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       </tags>
   </entry>
   <entry>
+    <title>器官、系统的发生与先天性畸形</title>
+    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>噬菌体</title>
     <url>/2021/04/22/%E5%99%AC%E8%8F%8C%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -4847,24 +4919,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>器官、系统的发生与先天性畸形</title>
-    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -5879,89 +5933,6 @@ T 细胞辅助。</p>
       </tags>
   </entry>
   <entry>
-    <title>放线菌</title>
-    <url>/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>放线菌（Actinomycetes）</dt>
-<dd>一群<strong>革兰氏阳性</strong>，呈菌丝状生长和以孢子繁殖（与真菌相似）的<strong>原核生物</strong>。因在固体培养基上菌落呈放线状生长而得名。</dd>
-</dl>
-<ul>
-<li>益处：生产<strong>抗生素</strong>（80% 的抗生素种类）、酶、维生素等</li>
-<li>害处：放线菌科下的<a href="#%E6%94%BE%E7%BA%BF%E8%8F%8C%E5%B1%9E"><strong>放线菌属</strong></a>和<a href="#%E8%AF%BA%E5%8D%A1%E8%8F%8C%E5%B1%9E"><strong>诺卡菌属</strong></a>可分别引起放线菌病和诺卡菌病</li>
-</ul>
-<span id="more"></span>
-<h2 id="放线菌属">放线菌属 <a class="markdownIt-Anchor" href="#放线菌属">#</a></h2>
-<dl>
-<dt>放线菌属（<em>Actinomyces</em>）</dt>
-<dd>属于人体正常菌群，主要引起<strong>内源性感染</strong>。</dd>
-</dl>
-<div class="note info"><p>人类放线菌感染中 90% 的病原体为<mark>衣氏放线菌</mark>。其对人类致病性最强。</p>
-</div>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：与<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a>相似——无荚膜、无芽孢、无鞭毛</li>
-<li>培养特性和生化反应：<strong>专性厌氧</strong></li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<p>放线菌属于人体<mark>正常菌群</mark>，存在于口腔、呼吸道、胃肠道及泌尿生殖道，毒力弱，利用创伤、手术等机会入侵，引起<mark>内源性感染</mark>。</p>
-<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
-<dl>
-<dt>放线菌病（actinomycosis）</dt>
-<dd>临床表现：软组织<strong>肉芽肿性及化脓性炎症</strong>，可形成多发性脓肿、多发性瘘管</dd>
-<dd>好发部位：面颈、舌、下颌等部位多见；也可发生于腹、胸、盆腔、皮肤等处</dd>
-</dl>
-<div class="note info"><p>也可能与牙周炎的发生有关。</p>
-</div>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>脓液和痰液中可见<mark>硫磺样颗粒</mark>。</p>
-<dl>
-<dt>“硫磺样颗粒” | 放线菌块</dt>
-<dd>放线菌在组织中形成的菌落，存在于病灶组织或脓性分泌物中，是临床辅助诊断放线菌病的指标
-<ul>
-<li>外观：直径 0.1~0.2mm，黄、硬</li>
-<li>压片或组织切片
-<ul>
-<li>直接镜检（HE 染色）：可见放射状、<strong>形似菊花</strong>的菌丝。</li>
-<li>革兰染色：中心 G<sup>+</sup>，边缘 G<sup>-</sup></li>
-</ul>
-</li>
-</ul>
-</dd>
-</dl>
-<h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
-<dl>
-<dt>诺卡菌属（<em>Nocardia</em>）</dt>
-<dd>主要通过呼吸道或伤口侵入，引起<strong>外源性感染</strong>。</dd>
-</dl>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：形态与放线菌属类似但菌丝末端不膨大，G<sup>+</sup></li>
-<li>培养特性：<strong>专性需氧</strong></li>
-</ul>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>感染来源：<strong>外源性感染</strong></li>
-<li>感染途径：呼吸道、伤口</li>
-<li>易感人群：免疫功能低下者、长期使用广谱抗生素的患者</li>
-</ul>
-<p>临床表现</p>
-<ul>
-<li>肺部感染会产生类似<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#结核分枝杆菌">肺结核</a>的症状</li>
-<li>皮肤刺伤引起的感染，以<strong>化脓和坏死</strong>为特征，可形成化脓性肉芽肿，多发性瘘管，好发于足、腿部，故又称为<strong>足菌肿(mycetoma)</strong></li>
-</ul>
-<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<p><strong>诺卡菌属抗酸染色呈弱阳性</strong>。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>支原体</title>
     <url>/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -6105,6 +6076,89 @@ T 细胞辅助。</p>
       </tags>
   </entry>
   <entry>
+    <title>放线菌</title>
+    <url>/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
+    <content><![CDATA[<dl>
+<dt>放线菌（Actinomycetes）</dt>
+<dd>一群<strong>革兰氏阳性</strong>，呈菌丝状生长和以孢子繁殖（与真菌相似）的<strong>原核生物</strong>。因在固体培养基上菌落呈放线状生长而得名。</dd>
+</dl>
+<ul>
+<li>益处：生产<strong>抗生素</strong>（80% 的抗生素种类）、酶、维生素等</li>
+<li>害处：放线菌科下的<a href="#%E6%94%BE%E7%BA%BF%E8%8F%8C%E5%B1%9E"><strong>放线菌属</strong></a>和<a href="#%E8%AF%BA%E5%8D%A1%E8%8F%8C%E5%B1%9E"><strong>诺卡菌属</strong></a>可分别引起放线菌病和诺卡菌病</li>
+</ul>
+<span id="more"></span>
+<h2 id="放线菌属">放线菌属 <a class="markdownIt-Anchor" href="#放线菌属">#</a></h2>
+<dl>
+<dt>放线菌属（<em>Actinomyces</em>）</dt>
+<dd>属于人体正常菌群，主要引起<strong>内源性感染</strong>。</dd>
+</dl>
+<div class="note info"><p>人类放线菌感染中 90% 的病原体为<mark>衣氏放线菌</mark>。其对人类致病性最强。</p>
+</div>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：与<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a>相似——无荚膜、无芽孢、无鞭毛</li>
+<li>培养特性和生化反应：<strong>专性厌氧</strong></li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<p>放线菌属于人体<mark>正常菌群</mark>，存在于口腔、呼吸道、胃肠道及泌尿生殖道，毒力弱，利用创伤、手术等机会入侵，引起<mark>内源性感染</mark>。</p>
+<h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
+<dl>
+<dt>放线菌病（actinomycosis）</dt>
+<dd>临床表现：软组织<strong>肉芽肿性及化脓性炎症</strong>，可形成多发性脓肿、多发性瘘管</dd>
+<dd>好发部位：面颈、舌、下颌等部位多见；也可发生于腹、胸、盆腔、皮肤等处</dd>
+</dl>
+<div class="note info"><p>也可能与牙周炎的发生有关。</p>
+</div>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>脓液和痰液中可见<mark>硫磺样颗粒</mark>。</p>
+<dl>
+<dt>“硫磺样颗粒” | 放线菌块</dt>
+<dd>放线菌在组织中形成的菌落，存在于病灶组织或脓性分泌物中，是临床辅助诊断放线菌病的指标
+<ul>
+<li>外观：直径 0.1~0.2mm，黄、硬</li>
+<li>压片或组织切片
+<ul>
+<li>直接镜检（HE 染色）：可见放射状、<strong>形似菊花</strong>的菌丝。</li>
+<li>革兰染色：中心 G<sup>+</sup>，边缘 G<sup>-</sup></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
+<dl>
+<dt>诺卡菌属（<em>Nocardia</em>）</dt>
+<dd>主要通过呼吸道或伤口侵入，引起<strong>外源性感染</strong>。</dd>
+</dl>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：形态与放线菌属类似但菌丝末端不膨大，G<sup>+</sup></li>
+<li>培养特性：<strong>专性需氧</strong></li>
+</ul>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>感染来源：<strong>外源性感染</strong></li>
+<li>感染途径：呼吸道、伤口</li>
+<li>易感人群：免疫功能低下者、长期使用广谱抗生素的患者</li>
+</ul>
+<p>临床表现</p>
+<ul>
+<li>肺部感染会产生类似<a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#结核分枝杆菌">肺结核</a>的症状</li>
+<li>皮肤刺伤引起的感染，以<strong>化脓和坏死</strong>为特征，可形成化脓性肉芽肿，多发性瘘管，好发于足、腿部，故又称为<strong>足菌肿(mycetoma)</strong></li>
+</ul>
+<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
+<p><strong>诺卡菌属抗酸染色呈弱阳性</strong>。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数学建模大赛准备</title>
     <url>/2021/04/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
     <content><![CDATA[<ul>
@@ -6185,180 +6239,6 @@ T 细胞辅助。</p>
         <tag>Index</tag>
         <tag>数学建模</tag>
         <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>消化系统和呼吸系统的发生</title>
-    <url>/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/</url>
-    <content><![CDATA[<dl>
-<dt>原始消化管（primitive gut）</dt>
-<dd>人胚第 3 周末，由于三胚层胚盘头尾和周边向腹侧卷曲，<strong>内胚层</strong> 被卷入胚体形成的一条纵行管道。</dd>
-</dl>
-<span id="more"></span>
-<p>在胚体的头、尾部分，原始消化管分别形成 <strong>前肠</strong>（foregut）和
-<strong>后肠</strong>（hindgut），其与卵黄囊相连的中间部分则称为 <strong>中肠</strong>（midgut）。<br/>
-随着胚体发育，卵黄囊相对变小，中肠与卵黄囊相连的部分逐渐变细，形成 <strong>卵黄蒂</strong>（yolk stalk）。<br/>
-前肠头端膨大形成 <strong>原始咽</strong>（primitive pharyngeal gut 或 primitive pharynx），与口凹相对处被 <strong>口咽膜</strong> 封闭；<br/>
-后肠尾端膨大形成泄殖腔，其 <em>腹侧</em> 与肛凹相对处被 <strong>泄殖腔膜</strong> 封闭。</p>
-<dl>
-<dt>口咽膜（oropharyngeal membrane）、泄殖腔膜（cloacal membrane）</dt>
-<dd>分别位于脊索头侧、原条尾侧的无中胚层、直接由内、外胚层相贴形成的薄膜区。</dd>
-</dl>
-<p>口咽膜和泄殖腔膜分别于 <mark>第 4 周</mark>、<mark>第 8 周</mark> 破裂。</p>
-<h2 id="消化系统的发生">消化系统的发生 <a class="markdownIt-Anchor" href="#消化系统的发生">#</a></h2>
-<p>消化系统的上皮组织大部分来源自内胚层，结缔组织和肌肉组织则由中胚层发育而来。<br/>
-原始消化管的内胚层也分化为甲状腺、甲状旁腺、胸腺（原始咽）以及舌的上皮（咽壁内胚层）。</p>
-<p>原始消化管的分化：</p>
-<ul>
-<li><strong>前肠</strong>：咽、食管、胃、十二指肠上段，以及肝、胆、胰和呼吸系统的原基；</li>
-<li><strong>中肠</strong>：十二指肠下段、空肠、回肠、横结肠右 2/3 部；</li>
-<li><strong>后肠</strong>：横结肠左 1/3、降结肠、乙状结肠、肛管上段，以及泌尿系统部分器官。</li>
-</ul>
-<h3 id="咽的发生及咽囊的演变">咽的发生及咽囊的演变 <a class="markdownIt-Anchor" href="#咽的发生及咽囊的演变">#</a></h3>
-<p><strong>原始咽</strong> 由前肠头端膨大形成，其侧壁有 5 对囊状结构，称 <strong>咽囊</strong>（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=咽囊#鳃器的发生和演化">鳃器的发生和演化</a>）。</p>
-<p><strong><mark>咽囊的演变</mark></strong>：</p>
-<ol>
-<li>第 1 对咽囊：内侧 → 咽鼓管，末端 → 中耳鼓室，顶部鳃膜 → 鼓膜；</li>
-<li>第 2 对咽囊：内侧 → 腭扁桃体，外侧 → 退化；</li>
-<li>第 3 对咽囊：背侧份 → 下一对甲状旁腺，腹侧份 → 胸腺原基；</li>
-<li>第 4 对咽囊：背侧份 → 上一对甲状旁腺，腹侧份 → 退化；</li>
-<li>第 5 对咽囊 → <strong>后鳃体</strong>（ultimobranchial body）→ 滤泡旁细胞。</li>
-</ol>
-<h3 id="甲状腺的发生">甲状腺的发生 <a class="markdownIt-Anchor" href="#甲状腺的发生">#</a></h3>
-<dl>
-<dt>甲状舌管（thyroglossal duct）</dt>
-<dd>即 <strong>甲状腺原基</strong>，在人胚第 4 周，在原始咽底壁正中线的与第 1
-对咽囊相当的平面上，由上皮细胞增生形成的一伸向尾侧的盲管。</dd>
-</dl>
-<p>甲状舌管沿胚颈部正中向下延伸至为来的气管前方，末端向两侧逐渐膨大，形成左、右两个甲状腺侧叶和峡部。<br/>
-甲状舌管上段则退化消失，其起始部分开口仍残留一浅凹，称 <strong>盲孔</strong>（foramen caecum）。</p>
-<h3 id="食管的发生">食管的发生 <a class="markdownIt-Anchor" href="#食管的发生">#</a></h3>
-<p>食管由 <strong>原始咽尾部</strong> 的一小段原始消化管发育而来。第 4 周时，食管很短。<br/>
-随着胚体发育，食管逐渐生长变长，其腔面的内胚层分化为表皮上层，并由单层变成复层，使食管腔变窄甚至封闭。<br/>
-人胚第 8 周时，过度增生的上皮逐渐退化，但保持复层，使食管腔再次出现。</p>
-<h3 id="胃的发生">胃的发生 <a class="markdownIt-Anchor" href="#胃的发生">#</a></h3>
-<p>第 4 周时，胃管尾端的前肠形成一梭形的膨大，即为 <strong>胃的原基</strong>，并以 <strong>背系膜</strong>（dorsal
-mesogastrium）和 <strong>腹系膜</strong>（ventral mesogastrium）与体壁相连。</p>
-<dl>
-<dt>胃大弯（greater curvature）、胃小弯（lesser curvature）</dt>
-<dd>胃背侧缘生长迅速，使胃体向背侧扩展，形成 <strong>胃大弯</strong>，胃大弯头端膨出，形成 <strong>胃底</strong>；而胃体腹侧缘生长缓慢，则形成 <strong>胃小弯</strong>。</dd>
-</dl>
-<p>胃背系膜生长较快，并向左侧扩展，膨出形成 <strong>网膜囊</strong> 和 <strong>大网膜</strong>，致使胃体沿纵轴顺时针（由上向下观）旋转 <mark>90°</mark>。<br/>
-同时由于肝的发育，将胃的头端推向左侧，使胃由原来的垂直方位变成从左上斜向右下的方位。</p>
-<h3 id="肠的发生">肠的发生 <a class="markdownIt-Anchor" href="#肠的发生">#</a></h3>
-<p>肠发生与前肠的尾段、中肠、后肠。<br/>
-肠的背系膜与腹后壁融合而被固定，而肠的腹系膜则很早就退化消失。</p>
-<p>直肠发生见 <a href="?highlight=%E7%9B%B4%E8%82%A0#%E7%9B%B4%E8%82%A0%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E6%B3%84%E6%AE%96%E8%85%94%E7%9A%84%E5%88%86%E9%9A%94">直肠的发生与泄殖腔的分隔</a>。</p>
-<div class="tabs" id="tabs_肠的发生"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_肠的发生-1">BiliBili</a></li><li class="tab"><a href="#tabs_肠的发生-2">YouTube</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_肠的发生-1"><iframe src="//player.bilibili.com/player.html?aid=291177108&bvid=BV1Df4y187iN&cid=355894657&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="tab-pane" id="tabs_肠的发生-2"><iframe width="560" height="315" src="https://www.youtube.com/embed/qtsTwRffkaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div>
-<h4 id="十二指肠的发生">十二指肠的发生 <a class="markdownIt-Anchor" href="#十二指肠的发生">#</a></h4>
-<p>人胚第 4 周，在胃的尾侧形成十二指肠。<br/>
-十二指肠生长较快，形成一凸向腹侧的“C”形 <strong>十二指肠襻</strong>（duodenum
-loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧腹后壁。</p>
-<h4 id="中肠的演变">中肠的演变 <a class="markdownIt-Anchor" href="#中肠的演变">#</a></h4>
-<p>人胚第 5 周，中肠增长迅速，使肠管形成一个凸向腹侧的 <strong>中肠襻</strong>（midgut loop）<br/>
-中肠襻与 <strong>卵黄管</strong> 相连，并由相连部位分为头至和尾支。<br/>
-中肠襻背系膜将其固定于腹后壁，<strong>肠系膜上动脉</strong> 行走于其中轴部位。</p>
-<dl>
-<dt>盲肠突（caecal bud）</dt>
-<dd>人胚第 5 周时，中肠襻尾支近卵黄囊处形成的一囊状突起。</dd>
-</dl>
-<p>盲肠突是大肠和小肠的分界点，也是 <strong>盲肠</strong>（近端）和<strong>阑尾</strong>（远端狭窄部分）的原基。</p>
-<p>第6 周时，由于中肠迅速生长和肝、肾的发育长大，使中肠襻突入 <strong>脐腔</strong>，形成胚时期的 <strong><mark>生理性脐疝</mark></strong>。<br/>
-同时，腹腔内的肠襻逆时针（由胚腹面观）旋转 <mark>90°</mark>，中肠襻由垂直方向转成水平方向。</p>
-<dl>
-<dt>脐腔（umbilical coelom）</dt>
-<dd>脐带内残留的 <strong>胚外体腔</strong>，于第 10 周封闭。</dd>
-</dl>
-<p>第 10 周时，腹腔增大，中肠襻退回腹腔，脐腔随之封闭。<br/>
-中肠襻退回腹腔退回腹腔的同时，再次以肠系膜上动脉为轴向相同方向旋转
-<mark>180°</mark>，头支转至腹腔左下方，尾支转至右上方。</p>
-<ul>
-<li>头支：空肠、回肠大部；</li>
-<li>尾支
-<ul>
-<li>盲肠突前：回肠小部；</li>
-<li>盲肠突后：横结肠右 2/3；</li>
-</ul>
-</li>
-</ul>
-<h4 id="后肠的演变">后肠的演变 <a class="markdownIt-Anchor" href="#后肠的演变">#</a></h4>
-<p>肠襻退回腹腔时，<strong>后肠</strong> 被推向左侧，形成横结肠左 2/3 部分、降结肠和乙状结肠等。</p>
-<h3 id="直肠的发生与泄殖腔的分隔">直肠的发生与泄殖腔的分隔 <a class="markdownIt-Anchor" href="#直肠的发生与泄殖腔的分隔">#</a></h3>
-<dl>
-<dt>泄殖腔（cloaca）</dt>
-<dd>后肠末端的膨大部分。</dd>
-</dl>
-<p>泄殖腔腹侧端与 <strong>尿囊</strong> 相连，末端由 <strong>泄殖腔膜</strong> 封闭。</p>
-<dl>
-<dt>尿囊（allantois）</dt>
-<dd>脊椎动物羊膜类肛膜的一种。是胚体腹侧的内脏层（内胚层 内脏中胚层）膨出并迅速扩大，扩展在浆膜与羊膜之间的胚外体腔中，形成的具有薄膜壁的囊，以细柄（尿囊柄）与胚体的消化管相连。</dd>
-<dt>尿直肠隔（urorectal septum）</dt>
-<dd>人胚第 6~7 周时，尿囊起始部和泄殖腔之间的间充质增生，形成一突入泄殖腔内的镰状隔膜。</dd>
-</dl>
-<p>尿直肠隔迅速增长，与泄殖腔膜相连，将泄殖腔分为背、腹侧两份。<br/>
-与尿囊相连的腹侧份称为 <strong>尿生殖窦</strong>（urogenital sinus），将演变为膀胱和尿道；背侧份为
-<strong>原始直肠</strong>，将演变为直肠和肛管上段。<br/>
-泄殖腔膜也被分为背、腹侧两份，分别为 <strong>尿生殖膜</strong>（urogenital membrane）和 <strong>肛膜</strong>（anal membrane）。</p>
-<p>肛膜周围形成一浅凹，称为 <strong>肛凹</strong> 或 <strong>原肛</strong>（proctodeum），在肛膜破裂后加深，演变为肛管下段。</p>
-<div class="note info"><p>肛管上段上皮来自于内胚层（原始直肠），下段上皮则来自外胚层（原肛），两者之间以 <strong>尺状线</strong>（pectinate line）分隔。</p>
-</div>
-<h2 id="消化系统常见先天畸形">消化系统常见先天畸形 <a class="markdownIt-Anchor" href="#消化系统常见先天畸形">#</a></h2>
-<dl>
-<dt>回肠憩室 | 梅克尔憩室（Meckel’s diverticulum）</dt>
-<dd>由于 <strong>卵黄蒂</strong> 退化不全而导致距回盲部 40~50cm 处的回肠壁上形成一个小囊状突起，有时有纤维索连于脐。</dd>
-</dl>
-<p>梅克尔憩室一般无临床症状，有时可发生肠扭转或肠梗阻。</p>
-<dl>
-<dt>脐粪瘘（umbilical fistula）</dt>
-<dd>由于 <strong>卵黄蒂</strong> 未退化以致肠与脐之间残存一个瘘管，内容物可通过瘘管漏出。</dd>
-<dt>先天性脐疝（congenital umbilical hernia）</dt>
-<dd>由于 <a href="?highlight=%E8%84%90%E8%85%94#%E4%B8%AD%E8%82%A0%E7%9A%84%E6%BC%94%E5%8F%98">脐腔</a> 未正常闭锁所致。</dd>
-</dl>
-<p>腹内压升高时，肠管从脐部膨出，有时会形成嵌顿疝。</p>
-<details class="note info"><summary><p>嵌顿疝</p>
-</summary>
-<p>指当腹内压突然升高时，疝内容物可强行扩张疝囊颈而突入疝囊，随后因疝囊颈弹性收缩，将疝内容物卡住而不能回纳腹腔的情况。</p>
-<p>与绞窄性疝是同一疾病的不同阶段。两者的区别在于嵌顿疝尚未发生肠壁的缺血坏死。</p>
-
-</details>
-<h2 id="呼吸系统的发生">呼吸系统的发生 <a class="markdownIt-Anchor" href="#呼吸系统的发生">#</a></h2>
-<h3 id="喉-气管和肺的发生">喉、气管和肺的发生 <a class="markdownIt-Anchor" href="#喉-气管和肺的发生">#</a></h3>
-<p>于胚胎发育第 4 周，前肠原始咽的尾端腹侧正中部位出现一条纵行浅沟，称为 <strong>喉气管沟</strong>（laryngotracheal groove）。<br/>
-喉气管沟逐渐加深，并从其尾端逐渐愈合，形成一个长条形盲囊，并向咽的腹侧膨出，称 <strong>喉气管憩室</strong>（laryngotracheal groove），为喉、气管、支气管和肺的原基。其上端将发育为喉，中段发育为气管，末端膨大的两个分支称 <strong>肺芽</strong>，是主支气管及肺的原基。<br/>
-喉气管憩室与其背侧的食管之间的间充质增生形成 <strong>气管食管隔</strong>（tracheoesophageal septum）。</p>
-
-<h4 id="喉的发生">喉的发生 <a class="markdownIt-Anchor" href="#喉的发生">#</a></h4>
-<p>喉由 <strong>喉气管憩室</strong> 的上端开口于咽的部分形成。其黏膜上皮由内胚层分化而来，软骨、肌组织和结缔组织则由第 4、5 对 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃弓#鳃器的发生和演化">鳃弓</a> 发育而来。</p>
-<h4 id="气管和支气管的发生">气管和支气管的发生 <a class="markdownIt-Anchor" href="#气管和支气管的发生">#</a></h4>
-<p><em>气管</em> 由喉气管憩室的中段发育形成，<em>支气管</em> 和 <em>肺</em> 则由 <strong>肺芽</strong> 演化而成。</p>
-<dl>
-<dt>肺芽（lung bud）</dt>
-<dd>喉气管憩室末端膨大形成的左右两个分支。</dd>
-</dl>
-<h4 id="肺的发生">肺的发生 <a class="markdownIt-Anchor" href="#肺的发生">#</a></h4>
-<p>人胚 2 个月时，<strong>肺芽</strong> 形成的肺叶支气管（2 支）分支形成肺段支气管（左肺 8~9 支，右肺
-10 支）之后（包括出生后）支气管数的分支继续发育，形成总计 24 级的分支。</p>
-<p>人胚 7 个月时，支气管树黏膜上皮细胞的一些立方上皮细胞逐渐分化为 <strong>Ⅰ 型肺泡细胞</strong>，形成原始肺泡。<br/>
-同时 <strong>Ⅱ 型肺泡细胞</strong> 在 Ⅰ 型肺泡细胞之间出现，并开始分泌表面活性物质。<br/>
-此时的肺已经具备了进行气体交换功能的结构，若此时早产，婴儿可有正常的呼吸功能。</p>
-<h2 id="呼吸系统常见先天畸形">呼吸系统常见先天畸形 <a class="markdownIt-Anchor" href="#呼吸系统常见先天畸形">#</a></h2>
-<dl>
-<dt>肺<em>透明膜病</em>（hyaline membrane disease）</dt>
-<dd><strong>Ⅱ 型肺泡细胞</strong> 发育不良，不能分泌表面活性物质，致使肺泡萎缩不张。若萎缩的肺泡上皮细胞表面覆盖一层从血管渗透出来的血浆蛋白膜，则可形成透明薄膜，称为 <em><strong>透明膜病</strong></em>。</dd>
-</dl>
-<p>透明膜病的新生儿出生后无法正常呼吸，可导致 <strong>呼吸窘迫综合征</strong>（respiratory distress syndrome，RDS）。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -6705,6 +6585,180 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>消化系统和呼吸系统的发生</title>
+    <url>/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/</url>
+    <content><![CDATA[<dl>
+<dt>原始消化管（primitive gut）</dt>
+<dd>人胚第 3 周末，由于三胚层胚盘头尾和周边向腹侧卷曲，<strong>内胚层</strong> 被卷入胚体形成的一条纵行管道。</dd>
+</dl>
+<span id="more"></span>
+<p>在胚体的头、尾部分，原始消化管分别形成 <strong>前肠</strong>（foregut）和
+<strong>后肠</strong>（hindgut），其与卵黄囊相连的中间部分则称为 <strong>中肠</strong>（midgut）。<br/>
+随着胚体发育，卵黄囊相对变小，中肠与卵黄囊相连的部分逐渐变细，形成 <strong>卵黄蒂</strong>（yolk stalk）。<br/>
+前肠头端膨大形成 <strong>原始咽</strong>（primitive pharyngeal gut 或 primitive pharynx），与口凹相对处被 <strong>口咽膜</strong> 封闭；<br/>
+后肠尾端膨大形成泄殖腔，其 <em>腹侧</em> 与肛凹相对处被 <strong>泄殖腔膜</strong> 封闭。</p>
+<dl>
+<dt>口咽膜（oropharyngeal membrane）、泄殖腔膜（cloacal membrane）</dt>
+<dd>分别位于脊索头侧、原条尾侧的无中胚层、直接由内、外胚层相贴形成的薄膜区。</dd>
+</dl>
+<p>口咽膜和泄殖腔膜分别于 <mark>第 4 周</mark>、<mark>第 8 周</mark> 破裂。</p>
+<h2 id="消化系统的发生">消化系统的发生 <a class="markdownIt-Anchor" href="#消化系统的发生">#</a></h2>
+<p>消化系统的上皮组织大部分来源自内胚层，结缔组织和肌肉组织则由中胚层发育而来。<br/>
+原始消化管的内胚层也分化为甲状腺、甲状旁腺、胸腺（原始咽）以及舌的上皮（咽壁内胚层）。</p>
+<p>原始消化管的分化：</p>
+<ul>
+<li><strong>前肠</strong>：咽、食管、胃、十二指肠上段，以及肝、胆、胰和呼吸系统的原基；</li>
+<li><strong>中肠</strong>：十二指肠下段、空肠、回肠、横结肠右 2/3 部；</li>
+<li><strong>后肠</strong>：横结肠左 1/3、降结肠、乙状结肠、肛管上段，以及泌尿系统部分器官。</li>
+</ul>
+<h3 id="咽的发生及咽囊的演变">咽的发生及咽囊的演变 <a class="markdownIt-Anchor" href="#咽的发生及咽囊的演变">#</a></h3>
+<p><strong>原始咽</strong> 由前肠头端膨大形成，其侧壁有 5 对囊状结构，称 <strong>咽囊</strong>（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=咽囊#鳃器的发生和演化">鳃器的发生和演化</a>）。</p>
+<p><strong><mark>咽囊的演变</mark></strong>：</p>
+<ol>
+<li>第 1 对咽囊：内侧 → 咽鼓管，末端 → 中耳鼓室，顶部鳃膜 → 鼓膜；</li>
+<li>第 2 对咽囊：内侧 → 腭扁桃体，外侧 → 退化；</li>
+<li>第 3 对咽囊：背侧份 → 下一对甲状旁腺，腹侧份 → 胸腺原基；</li>
+<li>第 4 对咽囊：背侧份 → 上一对甲状旁腺，腹侧份 → 退化；</li>
+<li>第 5 对咽囊 → <strong>后鳃体</strong>（ultimobranchial body）→ 滤泡旁细胞。</li>
+</ol>
+<h3 id="甲状腺的发生">甲状腺的发生 <a class="markdownIt-Anchor" href="#甲状腺的发生">#</a></h3>
+<dl>
+<dt>甲状舌管（thyroglossal duct）</dt>
+<dd>即 <strong>甲状腺原基</strong>，在人胚第 4 周，在原始咽底壁正中线的与第 1
+对咽囊相当的平面上，由上皮细胞增生形成的一伸向尾侧的盲管。</dd>
+</dl>
+<p>甲状舌管沿胚颈部正中向下延伸至为来的气管前方，末端向两侧逐渐膨大，形成左、右两个甲状腺侧叶和峡部。<br/>
+甲状舌管上段则退化消失，其起始部分开口仍残留一浅凹，称 <strong>盲孔</strong>（foramen caecum）。</p>
+<h3 id="食管的发生">食管的发生 <a class="markdownIt-Anchor" href="#食管的发生">#</a></h3>
+<p>食管由 <strong>原始咽尾部</strong> 的一小段原始消化管发育而来。第 4 周时，食管很短。<br/>
+随着胚体发育，食管逐渐生长变长，其腔面的内胚层分化为表皮上层，并由单层变成复层，使食管腔变窄甚至封闭。<br/>
+人胚第 8 周时，过度增生的上皮逐渐退化，但保持复层，使食管腔再次出现。</p>
+<h3 id="胃的发生">胃的发生 <a class="markdownIt-Anchor" href="#胃的发生">#</a></h3>
+<p>第 4 周时，胃管尾端的前肠形成一梭形的膨大，即为 <strong>胃的原基</strong>，并以 <strong>背系膜</strong>（dorsal
+mesogastrium）和 <strong>腹系膜</strong>（ventral mesogastrium）与体壁相连。</p>
+<dl>
+<dt>胃大弯（greater curvature）、胃小弯（lesser curvature）</dt>
+<dd>胃背侧缘生长迅速，使胃体向背侧扩展，形成 <strong>胃大弯</strong>，胃大弯头端膨出，形成 <strong>胃底</strong>；而胃体腹侧缘生长缓慢，则形成 <strong>胃小弯</strong>。</dd>
+</dl>
+<p>胃背系膜生长较快，并向左侧扩展，膨出形成 <strong>网膜囊</strong> 和 <strong>大网膜</strong>，致使胃体沿纵轴顺时针（由上向下观）旋转 <mark>90°</mark>。<br/>
+同时由于肝的发育，将胃的头端推向左侧，使胃由原来的垂直方位变成从左上斜向右下的方位。</p>
+<h3 id="肠的发生">肠的发生 <a class="markdownIt-Anchor" href="#肠的发生">#</a></h3>
+<p>肠发生与前肠的尾段、中肠、后肠。<br/>
+肠的背系膜与腹后壁融合而被固定，而肠的腹系膜则很早就退化消失。</p>
+<p>直肠发生见 <a href="?highlight=%E7%9B%B4%E8%82%A0#%E7%9B%B4%E8%82%A0%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E6%B3%84%E6%AE%96%E8%85%94%E7%9A%84%E5%88%86%E9%9A%94">直肠的发生与泄殖腔的分隔</a>。</p>
+<div class="tabs" id="tabs_肠的发生"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_肠的发生-1">BiliBili</a></li><li class="tab"><a href="#tabs_肠的发生-2">YouTube</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_肠的发生-1"><iframe src="//player.bilibili.com/player.html?aid=291177108&bvid=BV1Df4y187iN&cid=355894657&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="tab-pane" id="tabs_肠的发生-2"><iframe width="560" height="315" src="https://www.youtube.com/embed/qtsTwRffkaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div>
+<h4 id="十二指肠的发生">十二指肠的发生 <a class="markdownIt-Anchor" href="#十二指肠的发生">#</a></h4>
+<p>人胚第 4 周，在胃的尾侧形成十二指肠。<br/>
+十二指肠生长较快，形成一凸向腹侧的“C”形 <strong>十二指肠襻</strong>（duodenum
+loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧腹后壁。</p>
+<h4 id="中肠的演变">中肠的演变 <a class="markdownIt-Anchor" href="#中肠的演变">#</a></h4>
+<p>人胚第 5 周，中肠增长迅速，使肠管形成一个凸向腹侧的 <strong>中肠襻</strong>（midgut loop）<br/>
+中肠襻与 <strong>卵黄管</strong> 相连，并由相连部位分为头至和尾支。<br/>
+中肠襻背系膜将其固定于腹后壁，<strong>肠系膜上动脉</strong> 行走于其中轴部位。</p>
+<dl>
+<dt>盲肠突（caecal bud）</dt>
+<dd>人胚第 5 周时，中肠襻尾支近卵黄囊处形成的一囊状突起。</dd>
+</dl>
+<p>盲肠突是大肠和小肠的分界点，也是 <strong>盲肠</strong>（近端）和<strong>阑尾</strong>（远端狭窄部分）的原基。</p>
+<p>第6 周时，由于中肠迅速生长和肝、肾的发育长大，使中肠襻突入 <strong>脐腔</strong>，形成胚时期的 <strong><mark>生理性脐疝</mark></strong>。<br/>
+同时，腹腔内的肠襻逆时针（由胚腹面观）旋转 <mark>90°</mark>，中肠襻由垂直方向转成水平方向。</p>
+<dl>
+<dt>脐腔（umbilical coelom）</dt>
+<dd>脐带内残留的 <strong>胚外体腔</strong>，于第 10 周封闭。</dd>
+</dl>
+<p>第 10 周时，腹腔增大，中肠襻退回腹腔，脐腔随之封闭。<br/>
+中肠襻退回腹腔退回腹腔的同时，再次以肠系膜上动脉为轴向相同方向旋转
+<mark>180°</mark>，头支转至腹腔左下方，尾支转至右上方。</p>
+<ul>
+<li>头支：空肠、回肠大部；</li>
+<li>尾支
+<ul>
+<li>盲肠突前：回肠小部；</li>
+<li>盲肠突后：横结肠右 2/3；</li>
+</ul>
+</li>
+</ul>
+<h4 id="后肠的演变">后肠的演变 <a class="markdownIt-Anchor" href="#后肠的演变">#</a></h4>
+<p>肠襻退回腹腔时，<strong>后肠</strong> 被推向左侧，形成横结肠左 2/3 部分、降结肠和乙状结肠等。</p>
+<h3 id="直肠的发生与泄殖腔的分隔">直肠的发生与泄殖腔的分隔 <a class="markdownIt-Anchor" href="#直肠的发生与泄殖腔的分隔">#</a></h3>
+<dl>
+<dt>泄殖腔（cloaca）</dt>
+<dd>后肠末端的膨大部分。</dd>
+</dl>
+<p>泄殖腔腹侧端与 <strong>尿囊</strong> 相连，末端由 <strong>泄殖腔膜</strong> 封闭。</p>
+<dl>
+<dt>尿囊（allantois）</dt>
+<dd>脊椎动物羊膜类肛膜的一种。是胚体腹侧的内脏层（内胚层 内脏中胚层）膨出并迅速扩大，扩展在浆膜与羊膜之间的胚外体腔中，形成的具有薄膜壁的囊，以细柄（尿囊柄）与胚体的消化管相连。</dd>
+<dt>尿直肠隔（urorectal septum）</dt>
+<dd>人胚第 6~7 周时，尿囊起始部和泄殖腔之间的间充质增生，形成一突入泄殖腔内的镰状隔膜。</dd>
+</dl>
+<p>尿直肠隔迅速增长，与泄殖腔膜相连，将泄殖腔分为背、腹侧两份。<br/>
+与尿囊相连的腹侧份称为 <strong>尿生殖窦</strong>（urogenital sinus），将演变为膀胱和尿道；背侧份为
+<strong>原始直肠</strong>，将演变为直肠和肛管上段。<br/>
+泄殖腔膜也被分为背、腹侧两份，分别为 <strong>尿生殖膜</strong>（urogenital membrane）和 <strong>肛膜</strong>（anal membrane）。</p>
+<p>肛膜周围形成一浅凹，称为 <strong>肛凹</strong> 或 <strong>原肛</strong>（proctodeum），在肛膜破裂后加深，演变为肛管下段。</p>
+<div class="note info"><p>肛管上段上皮来自于内胚层（原始直肠），下段上皮则来自外胚层（原肛），两者之间以 <strong>尺状线</strong>（pectinate line）分隔。</p>
+</div>
+<h2 id="消化系统常见先天畸形">消化系统常见先天畸形 <a class="markdownIt-Anchor" href="#消化系统常见先天畸形">#</a></h2>
+<dl>
+<dt>回肠憩室 | 梅克尔憩室（Meckel’s diverticulum）</dt>
+<dd>由于 <strong>卵黄蒂</strong> 退化不全而导致距回盲部 40~50cm 处的回肠壁上形成一个小囊状突起，有时有纤维索连于脐。</dd>
+</dl>
+<p>梅克尔憩室一般无临床症状，有时可发生肠扭转或肠梗阻。</p>
+<dl>
+<dt>脐粪瘘（umbilical fistula）</dt>
+<dd>由于 <strong>卵黄蒂</strong> 未退化以致肠与脐之间残存一个瘘管，内容物可通过瘘管漏出。</dd>
+<dt>先天性脐疝（congenital umbilical hernia）</dt>
+<dd>由于 <a href="?highlight=%E8%84%90%E8%85%94#%E4%B8%AD%E8%82%A0%E7%9A%84%E6%BC%94%E5%8F%98">脐腔</a> 未正常闭锁所致。</dd>
+</dl>
+<p>腹内压升高时，肠管从脐部膨出，有时会形成嵌顿疝。</p>
+<details class="note info"><summary><p>嵌顿疝</p>
+</summary>
+<p>指当腹内压突然升高时，疝内容物可强行扩张疝囊颈而突入疝囊，随后因疝囊颈弹性收缩，将疝内容物卡住而不能回纳腹腔的情况。</p>
+<p>与绞窄性疝是同一疾病的不同阶段。两者的区别在于嵌顿疝尚未发生肠壁的缺血坏死。</p>
+
+</details>
+<h2 id="呼吸系统的发生">呼吸系统的发生 <a class="markdownIt-Anchor" href="#呼吸系统的发生">#</a></h2>
+<h3 id="喉-气管和肺的发生">喉、气管和肺的发生 <a class="markdownIt-Anchor" href="#喉-气管和肺的发生">#</a></h3>
+<p>于胚胎发育第 4 周，前肠原始咽的尾端腹侧正中部位出现一条纵行浅沟，称为 <strong>喉气管沟</strong>（laryngotracheal groove）。<br/>
+喉气管沟逐渐加深，并从其尾端逐渐愈合，形成一个长条形盲囊，并向咽的腹侧膨出，称 <strong>喉气管憩室</strong>（laryngotracheal groove），为喉、气管、支气管和肺的原基。其上端将发育为喉，中段发育为气管，末端膨大的两个分支称 <strong>肺芽</strong>，是主支气管及肺的原基。<br/>
+喉气管憩室与其背侧的食管之间的间充质增生形成 <strong>气管食管隔</strong>（tracheoesophageal septum）。</p>
+
+<h4 id="喉的发生">喉的发生 <a class="markdownIt-Anchor" href="#喉的发生">#</a></h4>
+<p>喉由 <strong>喉气管憩室</strong> 的上端开口于咽的部分形成。其黏膜上皮由内胚层分化而来，软骨、肌组织和结缔组织则由第 4、5 对 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃弓#鳃器的发生和演化">鳃弓</a> 发育而来。</p>
+<h4 id="气管和支气管的发生">气管和支气管的发生 <a class="markdownIt-Anchor" href="#气管和支气管的发生">#</a></h4>
+<p><em>气管</em> 由喉气管憩室的中段发育形成，<em>支气管</em> 和 <em>肺</em> 则由 <strong>肺芽</strong> 演化而成。</p>
+<dl>
+<dt>肺芽（lung bud）</dt>
+<dd>喉气管憩室末端膨大形成的左右两个分支。</dd>
+</dl>
+<h4 id="肺的发生">肺的发生 <a class="markdownIt-Anchor" href="#肺的发生">#</a></h4>
+<p>人胚 2 个月时，<strong>肺芽</strong> 形成的肺叶支气管（2 支）分支形成肺段支气管（左肺 8~9 支，右肺
+10 支）之后（包括出生后）支气管数的分支继续发育，形成总计 24 级的分支。</p>
+<p>人胚 7 个月时，支气管树黏膜上皮细胞的一些立方上皮细胞逐渐分化为 <strong>Ⅰ 型肺泡细胞</strong>，形成原始肺泡。<br/>
+同时 <strong>Ⅱ 型肺泡细胞</strong> 在 Ⅰ 型肺泡细胞之间出现，并开始分泌表面活性物质。<br/>
+此时的肺已经具备了进行气体交换功能的结构，若此时早产，婴儿可有正常的呼吸功能。</p>
+<h2 id="呼吸系统常见先天畸形">呼吸系统常见先天畸形 <a class="markdownIt-Anchor" href="#呼吸系统常见先天畸形">#</a></h2>
+<dl>
+<dt>肺<em>透明膜病</em>（hyaline membrane disease）</dt>
+<dd><strong>Ⅱ 型肺泡细胞</strong> 发育不良，不能分泌表面活性物质，致使肺泡萎缩不张。若萎缩的肺泡上皮细胞表面覆盖一层从血管渗透出来的血浆蛋白膜，则可形成透明薄膜，称为 <em><strong>透明膜病</strong></em>。</dd>
+</dl>
+<p>透明膜病的新生儿出生后无法正常呼吸，可导致 <strong>呼吸窘迫综合征</strong>（respiratory distress syndrome，RDS）。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -7855,39 +7909,29 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
   <entry>
     <title>病原生物学</title>
     <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<blockquote>
-<p>病原生物学导论</p>
-</blockquote>
+    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的 <em>生物学规律</em>、<em>致病机制</em> 及 <em>其和宿主之间相互作用</em> 的学科。</p>
 <dl>
-<dt>生物 | 生命体 | 有机体（Organism）</dt>
+<dt>生物 | 生命体 | 有机体（organism）</dt>
 <dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能再一定程度上适应和影响环境。</dd>
-<dt>病原生物</dt>
+<dt>病原生物（pathogenic organism）</dt>
 <dd>能给人类、动植物带来疾患的生物。</dd>
 </dl>
 <span id="more"></span>
 <h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
+<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
 <ul>
-<li><em>非细胞型</em>微生物（e.g. <strong><a href="/2021/03/21/%E7%97%85%E6%AF%92/" title="病毒">病毒</a></strong>、<strong>脘粒</strong>）</li>
-<li><em>原核细胞型</em>微生物（e.g. <strong><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a></strong>）</li>
-<li><em>真核细胞型</em>微生物（e.g. <strong><a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a></strong>）</li>
-</ul>
-<dl>
-<dt>微生物</dt>
-<dd>肉眼不可见的微小生物的总称。</dd>
-<dd>特点：个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</dd>
-</dl>
-<p>原核型微生物包括<em>两菌四体</em>：</p>
+<li><strong>非细胞型微生物</strong>（acellular microbe），如 <strong><a href="/2021/03/21/%E7%97%85%E6%AF%92/" title="病毒">病毒</a></strong>、<strong>脘粒</strong></li>
+<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
 <ul>
 <li><strong><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a></strong>（代表）、<a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a></li>
 <li><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a>、衣原体、立克次（氏）体、<a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></li>
 </ul>
-<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
-<p>医学寄生虫学</p>
-<ul>
-<li>~ 萌芽时期</li>
-<li>近代 ~ 时期</li>
-<li>现代 ~ 时期</li>
+</li>
+<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <strong><a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a></strong></li>
 </ul>
+<p><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/"><strong>螺旋体</strong></a> 也属于广义的细菌学范畴。</p>
+<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
+<p>见 <a href="/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/">医学蠕虫学</a> 和 <a href="/2021/06/23/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/">医学原虫学</a>。</p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -7920,7 +7964,8 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>动物病毒</li>
 <li>植物病毒</li>
 </ol>
-<p>病原生物学分类</p>
+<details class="note default"><summary><p>病原生物学分类（TOC）</p>
+</summary>
 <ol>
 <li><a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">呼吸道感染病毒</a></li>
 <li><a href="/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">消化道感染病毒</a></li>
@@ -7928,8 +7973,10 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><a href="/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/">虫媒病毒和出血热病毒</a></li>
 <li><a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/">人类疱疹病毒</a></li>
 <li><a href="/2021/05/20/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/">逆转录病毒</a></li>
-<li>其他病毒</li>
+<li><a href="/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/">其他病毒</a></li>
 </ol>
+
+</details>
 <span id="more"></span>
 <details class="note info"><summary><p>亚病毒</p>
 </summary>
@@ -8396,7 +8443,15 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
   <entry>
     <title>真菌</title>
     <url>/2021/03/21/%E7%9C%9F%E8%8F%8C/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<details class="note default"><summary><p>病原生物学分类（TOC）</p>
+</summary>
+<ol>
+<li><a href="">皮肤及皮下组织感染真菌</a></li>
+<li><a href="">深部感染真菌</a></li>
+</ol>
+
+</details>
+]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
@@ -8944,39 +8999,40 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
   <entry>
     <title>细菌</title>
     <url>/2021/03/21/%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>细菌</dt>
-<dd>一类有细胞壁，以无性二分裂方式进行繁殖的原核细胞型微生物。</dd>
-<dd>大小为微米（μm）级</dd>
-</dl>
+    <content><![CDATA[<p><strong>细菌</strong> 是一类有细胞壁，以无性二分裂方式进行繁殖的原核细胞型微生物，大小为微米（μm）级</p>
 <span id="more"></span>
-<h2 id="分类">分类 <a class="markdownIt-Anchor" href="#分类">#</a></h2>
-<h3 id="按形态">按形态 <a class="markdownIt-Anchor" href="#按形态">#</a></h3>
 <ul>
-<li>球菌：单球菌、双球菌、链球菌、四联球菌、八叠球菌、葡萄球菌</li>
-<li>杆菌：球杆菌、梭杆菌、棒状杆菌、链杆菌</li>
-<li>螺旋菌
+<li><strong>球菌</strong>（coccus）：单球菌、双球菌、链球菌、四联球菌、八叠球菌、葡萄球菌</li>
+<li><strong>杆菌</strong>（bacillus）：球杆菌、梭杆菌、棒状杆菌、链杆菌</li>
+<li><strong>螺形菌</strong>（spiral bacterium）
 <ul>
-<li>弧菌：一个弯曲</li>
-<li>螺菌：多个弯曲，较僵硬（<a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a>较软）</li>
-<li>螺杆菌：细长弯曲成弧状或螺旋状</li>
+<li><strong>弧菌</strong>（vibrio）：一个弯曲</li>
+<li><strong>螺菌</strong>（spirillum）：多个弯曲，较僵硬（<a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a> 较软）</li>
+<li><strong>螺杆菌</strong>（helicobacterium）：细长弯曲成弧状或螺旋状</li>
 </ul>
 </li>
 </ul>
-<h3 id="病原生物学分类">病原生物学分类 <a class="markdownIt-Anchor" href="#病原生物学分类">#</a></h3>
-<ul>
+<p><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/"><strong>螺旋体</strong></a> 也属于广义的细菌学范畴。</p>
+<details class="note default"><summary><p>病原生物学分类（TOC）</p>
+</summary>
+<ol>
 <li><a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/">化脓性细菌</a></li>
 <li><a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/">消化道感染细菌</a></li>
 <li><a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/">呼吸道感染细菌</a></li>
-</ul>
-<h2 id="结构">结构 <a class="markdownIt-Anchor" href="#结构">#</a></h2>
+<li><a href="/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/">厌氧性细菌</a></li>
+<li><a href="/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/">动物源性细菌</a></li>
+<li><a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a></li>
+</ol>
+
+</details>
+<h2 id="细菌的结构">细菌的结构 <a class="markdownIt-Anchor" href="#细菌的结构">#</a></h2>
 <ul>
 <li>基本结构（各种细菌共有的结构）：<a href="#%E7%BB%86%E8%83%9E%E5%A3%81">细胞壁</a>、<a href="#%E7%BB%86%E8%83%9E%E8%86%9C">细胞膜</a>、<a href="#%E7%BB%86%E8%83%9E%E8%B4%A8">细胞质</a>、<a href="#%E6%A0%B8%E8%B4%A8">核质</a></li>
 <li>特殊结构：<a href="#%E8%8D%9A%E8%86%9C">荚膜</a>、<a href="#%E9%9E%AD%E6%AF%9B">鞭毛</a>、<a href="#%E8%8F%8C%E6%AF%9B">菌毛</a>、<a href="#%E8%8A%BD%E5%AD%A2">芽孢</a></li>
 </ul>
 <h3 id="细胞壁">细胞壁 <a class="markdownIt-Anchor" href="#细胞壁">#</a></h3>
 <dl>
-<dt>肽聚糖 | 黏肽 | 胞壁质</dt>
+<dt>肽聚糖（peptidoglycan）| 黏肽（mucopeptide）| 胞壁质（murein）| 糖肽（glycopeptide）</dt>
 <dd>为原核细胞特有的成分，是其细胞壁的主要成分</dd>
 </dl>
 <blockquote>
@@ -8984,144 +9040,173 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 两者染色不同的原因在于<em>细胞壁组成不同</em>，除了共有的肽聚糖成分之外，各自还有<em>特殊组分</em>。</p>
 </blockquote>
 <img data-src="/2021/03/21/%E7%BB%86%E8%8F%8C/Gram-stain.jpg" class="" title="Gram stain" alt="Gram stain">
-<p>革兰氏阳性菌：<em>三维立体结构</em>，较厚</p>
+<div class="tabs" id="tabs_革兰氏阳性菌和革兰氏阴性菌"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_革兰氏阳性菌和革兰氏阴性菌-1">革兰氏阳性菌</a></li><li class="tab"><a href="#tabs_革兰氏阳性菌和革兰氏阴性菌-2">格兰氏阴性菌</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_革兰氏阳性菌和革兰氏阴性菌-1"><p>革兰氏阳性菌细胞壁：<em>三维立体结构</em>，较厚（15~50 层）</p>
 <ul>
 <li>结构
 <ul>
-<li>聚糖骨架：N-乙酰葡糖胺（G）和 N-乙酰胞壁酸（M）以 β-1,4糖苷键连接而成</li>
+<li>聚糖骨架：N-乙酰葡糖胺（G）和 N-乙酰胞壁酸（M）以 β-1,4 糖苷键连接而成</li>
 <li>四肽侧链：L-谷、D-谷、L-赖、D-丙</li>
 <li>五肽交联桥：五个甘氨酸</li>
 </ul>
 </li>
-<li><em>特殊成分</em>
+<li>组成：
 <ul>
+<li><em>肽聚糖</em></li>
 <li><strong>磷壁酸</strong>：膜磷壁酸、壁磷壁酸
 <ul>
-<li>功能：黏附、抗原性</li>
-<li>特殊成分：A蛋白、M蛋白</li>
+<li>功能
+<ul>
+<li>抗原决定簇</li>
+<li>促进细菌黏附</li>
+<li>将细胞壁锚到细胞膜上</li>
+</ul>
+</li>
+<li>特殊成分：A 蛋白、M 蛋白</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<p>格兰氏阴性菌：<em>二维平面结构</em>，较薄</p>
+</ul></div><div class="tab-pane" id="tabs_革兰氏阳性菌和革兰氏阴性菌-2"><p>格兰氏阴性菌细胞壁：<em>二维平面结构</em>，较薄（1~2 层）</p>
 <ul>
 <li>结构：
 <ul>
 <li>聚糖骨架：同 G<sup>+</sup></li>
 <li>四肽侧链：L-谷、D-谷、<em>DIP</em>、D-丙</li>
-<li>五肽交联桥：无（<em>G<sup>-</sup> 没有抗生素的作用位点</em>）</li>
+<li><s>五肽交联桥</s>：无（<mark>G<sup>-</sup> 没有抗生素的作用位点</mark>）</li>
 </ul>
 </li>
-<li><em>特殊成分</em>（由内到外）
+<li>组成（由内到外）
 <ul>
-<li>脂蛋白：连接肽聚糖的四肽侧链和外膜脂质双层的磷脂</li>
+<li><em>肽聚糖</em></li>
+<li><strong>脂蛋白</strong>：连接肽聚糖的四肽侧链和外膜脂质双层的磷脂</li>
 <li><strong>外膜</strong></li>
-<li>脂多糖（LAPS）：即 G<sup>-</sup> 的<strong>内毒素</strong>，包括（由内向外）
+<li><strong>脂多糖</strong>（lipopolysaccharide，LAPS）：即 G<sup>-</sup> 的 <strong>内毒素</strong>，包括（由内向外）
 <ul>
-<li><strong>脂质A</strong>：毒性部份和主要成分，无种属特异性</li>
-<li>核心多糖</li>
-<li>特异多糖：即 G<sup>-</sup> 的菌体抗原（O 抗原）、S-R 转变</li>
+<li><mark>脂质 A</mark>（lipid A）：毒性部份和主要成分，无种属特异性</li>
+<li>核心多糖（core polysaccharide）：属特异性</li>
+<li>特异多糖（specific polysaccharide）：即 G<sup>-</sup> 的菌体抗原（<mark>O 抗原</mark>），具有种特异性、S-R 转变</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
+</ul></div></div></div>
 <p>对细胞壁的灭菌物质</p>
 <ul>
-<li>溶菌酶：切断 M 和 G 之间的连接——致细菌裂解</li>
-<li>青霉素：干扰侧链和交联桥之间的连接——致细菌死亡</li>
+<li>溶菌酶：切断肽聚糖 M 和 G 之间的连接，破坏 <strong>聚糖骨架</strong>——致细菌裂解</li>
+<li>青霉素：干扰肽聚糖 <strong>侧链和交联桥</strong> 之间的连接——致细菌死亡</li>
 </ul>
 <dl>
-<dt>细菌 L 型</dt>
-<dd>细胞壁部份或完全缺陷的细菌
-<ul>
-<li>形成机制：自发形成或人工诱发</li>
-<li>特性
+<dt>L 型细菌（L-form bacteria）| 细胞壁缺陷型细菌</dt>
+<dd>自发形成或人工诱发形成的细胞壁部分或完全缺陷的细菌。
 <ul>
 <li>染色性：变为革兰氏阴性</li>
 <li>形态：多形性</li>
 </ul>
-</li>
-</ul>
 </dd>
-<dt>原生质体</dt>
-<dd><em>L型 G<sup>+</sup> 菌</em></dd>
-<dd>必须在高渗环境中才能存活</dd>
-<dt>原生质球</dt>
-<dd><em>L型 G<sup>-</sup> 菌</em></dd>
-<dd>因其肽聚糖层受损后外膜仍存在，而对低渗环境仍有一定的抵抗力</dd>
+<dt>原生质体（protoplast）</dt>
+<dd>即 <em>L型 G<sup>+</sup> 菌</em>，必须在 <em>高渗环境</em> 中才能存活。</dd>
+<dt>原生质球（spheroplast）</dt>
+<dd>即 <em>L型 G<sup>-</sup> 菌</em>，因其肽聚糖层受损后 <em>外膜</em> 仍存在，而对 <em>低渗环境</em> 仍有一定的抵抗力。</dd>
 </dl>
 <h3 id="细胞膜">细胞膜 <a class="markdownIt-Anchor" href="#细胞膜">#</a></h3>
 <ul>
-<li>组成：<strong>不含胆固醇</strong></li>
+<li>组成：磷脂、蛋白质，<strong>不含胆固醇</strong></li>
 <li>功能：
 <ul>
 <li><strong>生物合成</strong>、渗透和运输、呼吸作用</li>
-<li>参与<strong>细胞分裂</strong>（中介体）</li>
+<li>参与 <strong>细胞分裂</strong>（中介体）</li>
 </ul>
 </li>
 </ul>
 <dl>
-<dt>中介体</dt>
-<dd>细胞膜内陷折叠形成的囊状物</dd>
+<dt>中介体（mesosome）</dt>
+<dd>细胞膜内陷折叠形成的囊状物，多见于 <em>革兰阳性细菌</em>。</dd>
 </dl>
+<p>中介体的功能：</p>
 <ul>
-<li>功能
-<ul>
-<li>类似真核生物的线粒体，故称<em>拟线粒体</em></li>
-<li>起着类似于真核生物有丝分裂时纺锤丝的作用</li>
-</ul>
-</li>
+<li>类似真核生物的线粒体，故称 <em>拟线粒体</em>；</li>
+<li>起着类似于真核生物有丝分裂时纺锤丝的作用。</li>
 </ul>
 <h3 id="细胞质">细胞质 <a class="markdownIt-Anchor" href="#细胞质">#</a></h3>
-<p>细菌的 <strong>核糖体</strong> 沉降系数为 70S（50S+30S），一些针对专门细菌的抗生素的接合点在核糖体上。</p>
 <dl>
+<dt>细胞质（cytoplasm）| 原生质（protoplasm）</dt>
+<dd>细胞膜包绕的溶胶状物质，由水、蛋白质、脂类、核酸及少量糖和无机盐组成，其中含有需到重要结构。</dd>
+</dl>
+<div class="tabs" id="tabs_细胞质中的结构"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_细胞质中的结构-1">核糖体</a></li><li class="tab"><a href="#tabs_细胞质中的结构-2">质粒</a></li><li class="tab"><a href="#tabs_细胞质中的结构-3">胞质颗粒</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_细胞质中的结构-1"><dl>
+<dt>核糖体（ribosome）</dt>
+<dd>游离于细胞质的、由蛋白质和 RNA 组成的亚微颗粒。</dd>
+</dl>
+<p>细菌的核糖体沉降系数为 70S（50S+30S）（真核生物为 80S，60S+40S），一些针对专门细菌的抗生素的接合点在核糖体上。</p></div><div class="tab-pane" id="tabs_细胞质中的结构-2"><dl>
 <dt>质粒（plasmid）</dt>
 <dd>细菌和简单核细胞中独立于染色体外的闭环双链 DNA 分子，为双股闭合环状
 DNA，可携带细菌的某些遗传物质。</dd>
-<dd>能独立复制，与染色体复制同步（<strong>严密型质粒</strong>）或不同步（<em>松弛型质粒</em>）。</dd>
-<dt>胞质颗粒</dt>
-<dd>多数是细菌营养储存物，少数为代谢产物，可作为某些细菌（如白喉棒状杆菌）的 <mark>鉴定依据</mark>。</dd>
 </dl>
+<p>质粒能独立复制，与染色体复制同步者称为 <strong>严密型质粒</strong>，不同步者称为 <strong>松弛型质粒</strong>。</p></div><div class="tab-pane" id="tabs_细胞质中的结构-3"><dl>
+<dt>胞质颗粒</dt>
+<dd>多数是细菌营养储存物，少数为代谢产物，可作为某些细菌（如 <a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">白喉棒状杆菌</a>）的 <mark>鉴定依据</mark>。</dd>
+</dl>
+<p><strong>异染颗粒</strong>（metachromatic granule）/纡回体（volutin granule）：RNA、无机偏磷酸的聚合物。</p></div></div></div>
 <h3 id="核质">核质 <a class="markdownIt-Anchor" href="#核质">#</a></h3>
 <dl>
-<dt>核质 | 拟核</dt>
-<dd>细菌的遗传物质</dd>
+<dt>核质（nuclear material）| 拟核（nucleoid）</dt>
+<dd>一个共价闭合环状双链 DNA 分子，是细菌的遗传物质。</dd>
 </dl>
 <h3 id="荚膜">荚膜 <a class="markdownIt-Anchor" href="#荚膜">#</a></h3>
 <dl>
-<dt>荚膜</dt>
-<dd>是细菌细胞壁外一层疏松、透明 、排列有序 、不易被洗脱 、不易被染色的粘液物质</dd>
+<dt>荚膜（capsule）</dt>
+<dd>细菌细胞壁外一层疏松、透明、排列有序、不易被洗脱、不易被染色的粘液性物质，用理化方法去除后不影响细菌的生命活动。</dd>
+<dd>厚度 ≤0.2μm 者称为 <strong>微荚膜</strong>（microcapsule）。</dd>
 </dl>
 <ul>
-<li>化学组成：<strong>多糖</strong>（多数）或多肽（少数，如<em>炭疽杆菌</em>）</li>
-<li>功能——增强致病性：保护、储存营养、黏附</li>
+<li>化学组成：<strong>多糖</strong>（多数）或 <strong>多肽</strong>（少数，如 <em>炭疽杆菌</em>）</li>
+<li>染色：不易染色，可用墨汁 <strong>负染</strong></li>
+<li>形成：受遗传控制和环境影响，一般在动物体内或营养丰富的培养基中才可形成</li>
+<li>功能：增强致病性
+<ol>
+<li>保护菌体：抗干燥、抗有害物质的损伤作用</li>
+<li><strong>黏附作用</strong></li>
+<li>储存营养、堆积代谢废物</li>
+</ol>
+</li>
 </ul>
 <h3 id="鞭毛">鞭毛 <a class="markdownIt-Anchor" href="#鞭毛">#</a></h3>
-<blockquote>
-<p>鞭毛具有特殊的抗原性，称为 <strong>H抗原</strong></p>
-</blockquote>
 <ul>
+<li>组成：<strong>鞭毛蛋白</strong>（flagellin），有较强的免疫原性，又称 <strong>鞭毛抗原/H 抗原</strong></li>
 <li>种类：单鞭毛、双鞭毛、丛鞭毛、周鞭毛</li>
-<li>功能：黏附、鉴别、抗原性</li>
+<li>功能
+<ol>
+<li>细菌的运动器官</li>
+<li>有些鞭毛与致病性有关</li>
+<li>根据鞭毛菌的动力和抗原性（H 抗原），鉴定细菌和进行细菌分类</li>
+</ol>
+</li>
 </ul>
 <h3 id="菌毛">菌毛 <a class="markdownIt-Anchor" href="#菌毛">#</a></h3>
 <dl>
-<dt>菌毛</dt>
-<dd>大多 G<sup>+</sup> 和少数 G<sup>-</sup> 表面的比鞭毛更为纤细、短而直的丝状物</dd>
-<dd>化学成分为菌毛蛋白</dd>
+<dt>菌毛（pilus，fimbriae）</dt>
+<dd>大多 G<sup>+</sup> 菌和少数 G<sup>-</sup> 菌表面的比鞭毛更为纤细、短而直的丝状物（性菌毛较粗、长而弯曲），由 <strong>菌毛蛋白</strong>（pilin）构成。</dd>
 </dl>
 <ul>
-<li>普通菌毛：粘附作用，与致病性有关</li>
-<li>性菌毛：传递可遗传物质</li>
+<li>普通菌毛：<strong>粘附作用</strong>，与致病性有关</li>
+<li>性菌毛（F 菌毛）：由 F 质粒编码，传递可遗传物质</li>
 </ul>
 <h3 id="芽孢">芽孢 <a class="markdownIt-Anchor" href="#芽孢">#</a></h3>
 <dl>
-<dt>芽孢</dt>
-<dd>细菌的休眠体</dd>
+<dt>芽孢（spore）</dt>
+<dd>某些 G<sup>+</sup> 菌在一定环境条件下，在菌体内部形成的一个圆形或卵圆形小体，是细菌的休眠形式。</dd>
 </dl>
-<p>芽孢具有强大抵抗力，因此被作为灭菌的标准。</p>
+<p>芽孢的功能：</p>
+<ol>
+<li>抵抗力强（可作为灭菌的标准），<mark>原因</mark>：
+<ol>
+<li>含水量少，不易变性；</li>
+<li>有多层致密的厚膜；</li>
+<li>含 <strong>吡啶二羧酸（DPA）</strong>，增强酶对热的稳定性。</li>
+</ol>
+</li>
+<li>致病性：发芽后形成繁殖体</li>
+<li>鉴别意义：芽孢位置、大小等</li>
+</ol>
 <h2 id="细菌的生长代谢">细菌的生长代谢 <a class="markdownIt-Anchor" href="#细菌的生长代谢">#</a></h2>
 <h3 id="细菌的合成性代谢产物">细菌的合成性代谢产物 <a class="markdownIt-Anchor" href="#细菌的合成性代谢产物">#</a></h3>
 <dl>
@@ -9975,9 +10060,9 @@ DNA 序列不稳定性主要表现为 <strong>核苷酸切除修复（nucleotide
     <title>螺旋体</title>
     <url>/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/</url>
     <content><![CDATA[<dl>
-<dt>螺旋体（spirochete）</dt>
-<dd>细长、<strong>柔软</strong>、螺旋状、运动活泼的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>基本结构与细菌相似，如有细胞壁、原始核质，以二分裂方式繁殖和对抗生素等药物敏感等。</dd>
+<dt><strong>螺旋体</strong>（spirochete）</dt>
+<dd>一类细长、<strong>柔软</strong>、螺旋状、运动活泼的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>基本结构与细菌相似，如有细胞壁、原始核质，以二分裂方式繁殖和对抗生素等药物敏感等，分类学上属于广义的 <a href="/2021/03/21/%E7%BB%86%E8%8F%8C/">细菌学</a> 范畴。</dd>
 </dl>
 <p>对人致病的有三属：</p>
 <ul>
@@ -10937,6 +11022,627 @@ plate）。<br/>
 <p>Enjoy it!</p>
 <h2 id="update">Update <a class="markdownIt-Anchor" href="#update">#</a></h2>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/<span class="built_in">source</span>/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.js</url>
+    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+"use strict";
+
+// eslint-disable-next-line no-var
+var FontInspector = (function FontInspectorClosure() {
+  let fonts;
+  let active = false;
+  const fontAttribute = "data-font-name";
+  function removeSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "";
+    }
+  }
+  function resetSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "debuggerHideText";
+    }
+  }
+  function selectFont(fontName, show) {
+    const divs = document.querySelectorAll(
+      `span[${fontAttribute}=${fontName}]`
+    );
+    for (const div of divs) {
+      div.className = show ? "debuggerShowText" : "debuggerHideText";
+    }
+  }
+  function textLayerClick(e) {
+    if (
+      !e.target.dataset.fontName ||
+      e.target.tagName.toUpperCase() !== "SPAN"
+    ) {
+      return;
+    }
+    const fontName = e.target.dataset.fontName;
+    const selects = document.getElementsByTagName("input");
+    for (let i = 0; i < selects.length; ++i) {
+      const select = selects[i];
+      if (select.dataset.fontName !== fontName) {
+        continue;
+      }
+      select.checked = !select.checked;
+      selectFont(fontName, select.checked);
+      select.scrollIntoView();
+    }
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "FontInspector",
+    name: "Font Inspector",
+    panel: null,
+    manager: null,
+    init: function init(pdfjsLib) {
+      const panel = this.panel;
+      const tmp = document.createElement("button");
+      tmp.addEventListener("click", resetSelection);
+      tmp.textContent = "Refresh";
+      panel.appendChild(tmp);
+
+      fonts = document.createElement("div");
+      panel.appendChild(fonts);
+    },
+    cleanup: function cleanup() {
+      fonts.textContent = "";
+    },
+    enabled: false,
+    get active() {
+      return active;
+    },
+    set active(value) {
+      active = value;
+      if (active) {
+        document.body.addEventListener("click", textLayerClick, true);
+        resetSelection();
+      } else {
+        document.body.removeEventListener("click", textLayerClick, true);
+        removeSelection();
+      }
+    },
+    // FontInspector specific functions.
+    fontAdded: function fontAdded(fontObj, url) {
+      function properties(obj, list) {
+        const moreInfo = document.createElement("table");
+        for (let i = 0; i < list.length; i++) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = list[i];
+          tr.appendChild(td1);
+          const td2 = document.createElement("td");
+          td2.textContent = obj[list[i]].toString();
+          tr.appendChild(td2);
+          moreInfo.appendChild(tr);
+        }
+        return moreInfo;
+      }
+      const moreInfo = properties(fontObj, ["name", "type"]);
+      const fontName = fontObj.loadedName;
+      const font = document.createElement("div");
+      const name = document.createElement("span");
+      name.textContent = fontName;
+      const download = document.createElement("a");
+      if (url) {
+        url = /url\(['"]?([^)"']+)/.exec(url);
+        download.href = url[1];
+      } else if (fontObj.data) {
+        download.href = URL.createObjectURL(
+          new Blob([fontObj.data], { type: fontObj.mimeType })
+        );
+      }
+      download.textContent = "Download";
+      const logIt = document.createElement("a");
+      logIt.href = "";
+      logIt.textContent = "Log";
+      logIt.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(fontObj);
+      });
+      const select = document.createElement("input");
+      select.setAttribute("type", "checkbox");
+      select.dataset.fontName = fontName;
+      select.addEventListener("click", function () {
+        selectFont(fontName, select.checked);
+      });
+      font.appendChild(select);
+      font.appendChild(name);
+      font.appendChild(document.createTextNode(" "));
+      font.appendChild(download);
+      font.appendChild(document.createTextNode(" "));
+      font.appendChild(logIt);
+      font.appendChild(moreInfo);
+      fonts.appendChild(font);
+      // Somewhat of a hack, should probably add a hook for when the text layer
+      // is done rendering.
+      setTimeout(() => {
+        if (this.active) {
+          resetSelection();
+        }
+      }, 2000);
+    },
+  };
+})();
+
+let opMap;
+
+// Manages all the page steppers.
+//
+// eslint-disable-next-line no-var
+var StepperManager = (function StepperManagerClosure() {
+  let steppers = [];
+  let stepperDiv = null;
+  let stepperControls = null;
+  let stepperChooser = null;
+  let breakPoints = Object.create(null);
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stepper",
+    name: "Stepper",
+    panel: null,
+    manager: null,
+    init: function init(pdfjsLib) {
+      const self = this;
+      stepperControls = document.createElement("div");
+      stepperChooser = document.createElement("select");
+      stepperChooser.addEventListener("change", function (event) {
+        self.selectStepper(this.value);
+      });
+      stepperControls.appendChild(stepperChooser);
+      stepperDiv = document.createElement("div");
+      this.panel.appendChild(stepperControls);
+      this.panel.appendChild(stepperDiv);
+      if (sessionStorage.getItem("pdfjsBreakPoints")) {
+        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
+      }
+
+      opMap = Object.create(null);
+      for (const key in pdfjsLib.OPS) {
+        opMap[pdfjsLib.OPS[key]] = key;
+      }
+    },
+    cleanup: function cleanup() {
+      stepperChooser.textContent = "";
+      stepperDiv.textContent = "";
+      steppers = [];
+    },
+    enabled: false,
+    active: false,
+    // Stepper specific functions.
+    create: function create(pageIndex) {
+      const debug = document.createElement("div");
+      debug.id = "stepper" + pageIndex;
+      debug.hidden = true;
+      debug.className = "stepper";
+      stepperDiv.appendChild(debug);
+      const b = document.createElement("option");
+      b.textContent = "Page " + (pageIndex + 1);
+      b.value = pageIndex;
+      stepperChooser.appendChild(b);
+      const initBreakPoints = breakPoints[pageIndex] || [];
+      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
+      steppers.push(stepper);
+      if (steppers.length === 1) {
+        this.selectStepper(pageIndex, false);
+      }
+      return stepper;
+    },
+    selectStepper: function selectStepper(pageIndex, selectPanel) {
+      let i;
+      pageIndex = pageIndex | 0;
+      if (selectPanel) {
+        this.manager.selectPanel(this);
+      }
+      for (i = 0; i < steppers.length; ++i) {
+        const stepper = steppers[i];
+        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
+      }
+      const options = stepperChooser.options;
+      for (i = 0; i < options.length; ++i) {
+        const option = options[i];
+        option.selected = (option.value | 0) === pageIndex;
+      }
+    },
+    saveBreakPoints: function saveBreakPoints(pageIndex, bps) {
+      breakPoints[pageIndex] = bps;
+      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
+    },
+  };
+})();
+
+// The stepper for each page's operatorList.
+const Stepper = (function StepperClosure() {
+  // Shorter way to create element and optionally set textContent.
+  function c(tag, textContent) {
+    const d = document.createElement(tag);
+    if (textContent) {
+      d.textContent = textContent;
+    }
+    return d;
+  }
+
+  function simplifyArgs(args) {
+    if (typeof args === "string") {
+      const MAX_STRING_LENGTH = 75;
+      return args.length <= MAX_STRING_LENGTH
+        ? args
+        : args.substring(0, MAX_STRING_LENGTH) + "...";
+    }
+    if (typeof args !== "object" || args === null) {
+      return args;
+    }
+    if ("length" in args) {
+      // array
+      const MAX_ITEMS = 10,
+        simpleArgs = [];
+      let i, ii;
+      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i < ii; i++) {
+        simpleArgs.push(simplifyArgs(args[i]));
+      }
+      if (i < args.length) {
+        simpleArgs.push("...");
+      }
+      return simpleArgs;
+    }
+    const simpleObj = {};
+    for (const key in args) {
+      simpleObj[key] = simplifyArgs(args[key]);
+    }
+    return simpleObj;
+  }
+
+  // eslint-disable-next-line no-shadow
+  class Stepper {
+    constructor(panel, pageIndex, initialBreakPoints) {
+      this.panel = panel;
+      this.breakPoint = 0;
+      this.nextBreakPoint = null;
+      this.pageIndex = pageIndex;
+      this.breakPoints = initialBreakPoints;
+      this.currentIdx = -1;
+      this.operatorListIdx = 0;
+    }
+
+    init(operatorList) {
+      const panel = this.panel;
+      const content = c("div", "c=continue, s=step");
+      const table = c("table");
+      content.appendChild(table);
+      table.cellSpacing = 0;
+      const headerRow = c("tr");
+      table.appendChild(headerRow);
+      headerRow.appendChild(c("th", "Break"));
+      headerRow.appendChild(c("th", "Idx"));
+      headerRow.appendChild(c("th", "fn"));
+      headerRow.appendChild(c("th", "args"));
+      panel.appendChild(content);
+      this.table = table;
+      this.updateOperatorList(operatorList);
+    }
+
+    updateOperatorList(operatorList) {
+      const self = this;
+
+      function cboxOnClick() {
+        const x = +this.dataset.idx;
+        if (this.checked) {
+          self.breakPoints.push(x);
+        } else {
+          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
+        }
+        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
+      }
+
+      const MAX_OPERATORS_COUNT = 15000;
+      if (this.operatorListIdx > MAX_OPERATORS_COUNT) {
+        return;
+      }
+
+      const chunk = document.createDocumentFragment();
+      const operatorsToDisplay = Math.min(
+        MAX_OPERATORS_COUNT,
+        operatorList.fnArray.length
+      );
+      for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
+        const line = c("tr");
+        line.className = "line";
+        line.dataset.idx = i;
+        chunk.appendChild(line);
+        const checked = this.breakPoints.includes(i);
+        const args = operatorList.argsArray[i] || [];
+
+        const breakCell = c("td");
+        const cbox = c("input");
+        cbox.type = "checkbox";
+        cbox.className = "points";
+        cbox.checked = checked;
+        cbox.dataset.idx = i;
+        cbox.onclick = cboxOnClick;
+
+        breakCell.appendChild(cbox);
+        line.appendChild(breakCell);
+        line.appendChild(c("td", i.toString()));
+        const fn = opMap[operatorList.fnArray[i]];
+        let decArgs = args;
+        if (fn === "showText") {
+          const glyphs = args[0];
+          const newArgs = [];
+          let str = [];
+          for (let j = 0; j < glyphs.length; j++) {
+            const glyph = glyphs[j];
+            if (typeof glyph === "object" && glyph !== null) {
+              str.push(glyph.fontChar);
+            } else {
+              if (str.length > 0) {
+                newArgs.push(str.join(""));
+                str = [];
+              }
+              newArgs.push(glyph); // null or number
+            }
+          }
+          if (str.length > 0) {
+            newArgs.push(str.join(""));
+          }
+          decArgs = [newArgs];
+        }
+        line.appendChild(c("td", fn));
+        line.appendChild(c("td", JSON.stringify(simplifyArgs(decArgs))));
+      }
+      if (operatorsToDisplay < operatorList.fnArray.length) {
+        const lastCell = c("td", "...");
+        lastCell.colspan = 4;
+        chunk.appendChild(lastCell);
+      }
+      this.operatorListIdx = operatorList.fnArray.length;
+      this.table.appendChild(chunk);
+    }
+
+    getNextBreakPoint() {
+      this.breakPoints.sort(function (a, b) {
+        return a - b;
+      });
+      for (let i = 0; i < this.breakPoints.length; i++) {
+        if (this.breakPoints[i] > this.currentIdx) {
+          return this.breakPoints[i];
+        }
+      }
+      return null;
+    }
+
+    breakIt(idx, callback) {
+      StepperManager.selectStepper(this.pageIndex, true);
+      this.currentIdx = idx;
+
+      const listener = evt => {
+        switch (evt.keyCode) {
+          case 83: // step
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.currentIdx + 1;
+            this.goTo(-1);
+            callback();
+            break;
+          case 67: // continue
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.getNextBreakPoint();
+            this.goTo(-1);
+            callback();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      this.goTo(idx);
+    }
+
+    goTo(idx) {
+      const allRows = this.panel.getElementsByClassName("line");
+      for (let x = 0, xx = allRows.length; x < xx; ++x) {
+        const row = allRows[x];
+        if ((row.dataset.idx | 0) === idx) {
+          row.style.backgroundColor = "rgb(251,250,207)";
+          row.scrollIntoView();
+        } else {
+          row.style.backgroundColor = null;
+        }
+      }
+    }
+  }
+  return Stepper;
+})();
+
+// eslint-disable-next-line no-var
+var Stats = (function Stats() {
+  let stats = [];
+  function clear(node) {
+    while (node.hasChildNodes()) {
+      node.removeChild(node.lastChild);
+    }
+  }
+  function getStatIndex(pageNumber) {
+    for (let i = 0, ii = stats.length; i < ii; ++i) {
+      if (stats[i].pageNumber === pageNumber) {
+        return i;
+      }
+    }
+    return false;
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stats",
+    name: "Stats",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {},
+    enabled: false,
+    active: false,
+    // Stats specific functions.
+    add(pageNumber, stat) {
+      if (!stat) {
+        return;
+      }
+      const statsIndex = getStatIndex(pageNumber);
+      if (statsIndex !== false) {
+        const b = stats[statsIndex];
+        this.panel.removeChild(b.div);
+        stats.splice(statsIndex, 1);
+      }
+      const wrapper = document.createElement("div");
+      wrapper.className = "stats";
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = "Page: " + pageNumber;
+      const statsDiv = document.createElement("div");
+      statsDiv.textContent = stat.toString();
+      wrapper.appendChild(title);
+      wrapper.appendChild(statsDiv);
+      stats.push({ pageNumber, div: wrapper });
+      stats.sort(function (a, b) {
+        return a.pageNumber - b.pageNumber;
+      });
+      clear(this.panel);
+      for (let i = 0, ii = stats.length; i < ii; ++i) {
+        this.panel.appendChild(stats[i].div);
+      }
+    },
+    cleanup() {
+      stats = [];
+      clear(this.panel);
+    },
+  };
+})();
+
+// Manages all the debugging tools.
+window.PDFBug = (function PDFBugClosure() {
+  const panelWidth = 300;
+  const buttons = [];
+  let activePanel = null;
+
+  return {
+    tools: [FontInspector, StepperManager, Stats],
+    enable(ids) {
+      const all = ids.length === 1 && ids[0] === "all";
+      const tools = this.tools;
+      for (let i = 0; i < tools.length; ++i) {
+        const tool = tools[i];
+        if (all || ids.includes(tool.id)) {
+          tool.enabled = true;
+        }
+      }
+      if (!all) {
+        // Sort the tools by the order they are enabled.
+        tools.sort(function (a, b) {
+          let indexA = ids.indexOf(a.id);
+          indexA = indexA < 0 ? tools.length : indexA;
+          let indexB = ids.indexOf(b.id);
+          indexB = indexB < 0 ? tools.length : indexB;
+          return indexA - indexB;
+        });
+      }
+    },
+    init(pdfjsLib, container) {
+      /*
+       * Basic Layout:
+       * PDFBug
+       *  Controls
+       *  Panels
+       *    Panel
+       *    Panel
+       *    ...
+       */
+      const ui = document.createElement("div");
+      ui.id = "PDFBug";
+
+      const controls = document.createElement("div");
+      controls.setAttribute("class", "controls");
+      ui.appendChild(controls);
+
+      const panels = document.createElement("div");
+      panels.setAttribute("class", "panels");
+      ui.appendChild(panels);
+
+      container.appendChild(ui);
+      container.style.right = panelWidth + "px";
+
+      // Initialize all the debugging tools.
+      const tools = this.tools;
+      const self = this;
+      for (let i = 0; i < tools.length; ++i) {
+        const tool = tools[i];
+        const panel = document.createElement("div");
+        const panelButton = document.createElement("button");
+        panelButton.textContent = tool.name;
+        panelButton.addEventListener(
+          "click",
+          (function (selected) {
+            return function (event) {
+              event.preventDefault();
+              self.selectPanel(selected);
+            };
+          })(i)
+        );
+        controls.appendChild(panelButton);
+        panels.appendChild(panel);
+        tool.panel = panel;
+        tool.manager = this;
+        if (tool.enabled) {
+          tool.init(pdfjsLib);
+        } else {
+          panel.textContent =
+            tool.name +
+            " is disabled. To enable add " +
+            ' "' +
+            tool.id +
+            '" to the pdfBug parameter ' +
+            "and refresh (separate multiple by commas).";
+        }
+        buttons.push(panelButton);
+      }
+      this.selectPanel(0);
+    },
+    cleanup() {
+      for (let i = 0, ii = this.tools.length; i < ii; i++) {
+        if (this.tools[i].enabled) {
+          this.tools[i].cleanup();
+        }
+      }
+    },
+    selectPanel(index) {
+      if (typeof index !== "number") {
+        index = this.tools.indexOf(index);
+      }
+      if (index === activePanel) {
+        return;
+      }
+      activePanel = index;
+      const tools = this.tools;
+      for (let j = 0; j < tools.length; ++j) {
+        const isActive = j === index;
+        buttons[j].classList.toggle("active", isActive);
+        tools[j].active = isActive;
+        tools[j].panel.hidden = !isActive;
+      }
+    },
+  };
+})();
 ]]></content>
   </entry>
   <entry>
@@ -13907,627 +14613,6 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
   </body>
 </html>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.js</url>
-    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-"use strict";
-
-// eslint-disable-next-line no-var
-var FontInspector = (function FontInspectorClosure() {
-  let fonts;
-  let active = false;
-  const fontAttribute = "data-font-name";
-  function removeSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "";
-    }
-  }
-  function resetSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "debuggerHideText";
-    }
-  }
-  function selectFont(fontName, show) {
-    const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
-    );
-    for (const div of divs) {
-      div.className = show ? "debuggerShowText" : "debuggerHideText";
-    }
-  }
-  function textLayerClick(e) {
-    if (
-      !e.target.dataset.fontName ||
-      e.target.tagName.toUpperCase() !== "SPAN"
-    ) {
-      return;
-    }
-    const fontName = e.target.dataset.fontName;
-    const selects = document.getElementsByTagName("input");
-    for (let i = 0; i < selects.length; ++i) {
-      const select = selects[i];
-      if (select.dataset.fontName !== fontName) {
-        continue;
-      }
-      select.checked = !select.checked;
-      selectFont(fontName, select.checked);
-      select.scrollIntoView();
-    }
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "FontInspector",
-    name: "Font Inspector",
-    panel: null,
-    manager: null,
-    init: function init(pdfjsLib) {
-      const panel = this.panel;
-      const tmp = document.createElement("button");
-      tmp.addEventListener("click", resetSelection);
-      tmp.textContent = "Refresh";
-      panel.appendChild(tmp);
-
-      fonts = document.createElement("div");
-      panel.appendChild(fonts);
-    },
-    cleanup: function cleanup() {
-      fonts.textContent = "";
-    },
-    enabled: false,
-    get active() {
-      return active;
-    },
-    set active(value) {
-      active = value;
-      if (active) {
-        document.body.addEventListener("click", textLayerClick, true);
-        resetSelection();
-      } else {
-        document.body.removeEventListener("click", textLayerClick, true);
-        removeSelection();
-      }
-    },
-    // FontInspector specific functions.
-    fontAdded: function fontAdded(fontObj, url) {
-      function properties(obj, list) {
-        const moreInfo = document.createElement("table");
-        for (let i = 0; i < list.length; i++) {
-          const tr = document.createElement("tr");
-          const td1 = document.createElement("td");
-          td1.textContent = list[i];
-          tr.appendChild(td1);
-          const td2 = document.createElement("td");
-          td2.textContent = obj[list[i]].toString();
-          tr.appendChild(td2);
-          moreInfo.appendChild(tr);
-        }
-        return moreInfo;
-      }
-      const moreInfo = properties(fontObj, ["name", "type"]);
-      const fontName = fontObj.loadedName;
-      const font = document.createElement("div");
-      const name = document.createElement("span");
-      name.textContent = fontName;
-      const download = document.createElement("a");
-      if (url) {
-        url = /url\(['"]?([^)"']+)/.exec(url);
-        download.href = url[1];
-      } else if (fontObj.data) {
-        download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimeType })
-        );
-      }
-      download.textContent = "Download";
-      const logIt = document.createElement("a");
-      logIt.href = "";
-      logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log(fontObj);
-      });
-      const select = document.createElement("input");
-      select.setAttribute("type", "checkbox");
-      select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
-        selectFont(fontName, select.checked);
-      });
-      font.appendChild(select);
-      font.appendChild(name);
-      font.appendChild(document.createTextNode(" "));
-      font.appendChild(download);
-      font.appendChild(document.createTextNode(" "));
-      font.appendChild(logIt);
-      font.appendChild(moreInfo);
-      fonts.appendChild(font);
-      // Somewhat of a hack, should probably add a hook for when the text layer
-      // is done rendering.
-      setTimeout(() => {
-        if (this.active) {
-          resetSelection();
-        }
-      }, 2000);
-    },
-  };
-})();
-
-let opMap;
-
-// Manages all the page steppers.
-//
-// eslint-disable-next-line no-var
-var StepperManager = (function StepperManagerClosure() {
-  let steppers = [];
-  let stepperDiv = null;
-  let stepperControls = null;
-  let stepperChooser = null;
-  let breakPoints = Object.create(null);
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stepper",
-    name: "Stepper",
-    panel: null,
-    manager: null,
-    init: function init(pdfjsLib) {
-      const self = this;
-      stepperControls = document.createElement("div");
-      stepperChooser = document.createElement("select");
-      stepperChooser.addEventListener("change", function (event) {
-        self.selectStepper(this.value);
-      });
-      stepperControls.appendChild(stepperChooser);
-      stepperDiv = document.createElement("div");
-      this.panel.appendChild(stepperControls);
-      this.panel.appendChild(stepperDiv);
-      if (sessionStorage.getItem("pdfjsBreakPoints")) {
-        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
-      }
-
-      opMap = Object.create(null);
-      for (const key in pdfjsLib.OPS) {
-        opMap[pdfjsLib.OPS[key]] = key;
-      }
-    },
-    cleanup: function cleanup() {
-      stepperChooser.textContent = "";
-      stepperDiv.textContent = "";
-      steppers = [];
-    },
-    enabled: false,
-    active: false,
-    // Stepper specific functions.
-    create: function create(pageIndex) {
-      const debug = document.createElement("div");
-      debug.id = "stepper" + pageIndex;
-      debug.hidden = true;
-      debug.className = "stepper";
-      stepperDiv.appendChild(debug);
-      const b = document.createElement("option");
-      b.textContent = "Page " + (pageIndex + 1);
-      b.value = pageIndex;
-      stepperChooser.appendChild(b);
-      const initBreakPoints = breakPoints[pageIndex] || [];
-      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
-      steppers.push(stepper);
-      if (steppers.length === 1) {
-        this.selectStepper(pageIndex, false);
-      }
-      return stepper;
-    },
-    selectStepper: function selectStepper(pageIndex, selectPanel) {
-      let i;
-      pageIndex = pageIndex | 0;
-      if (selectPanel) {
-        this.manager.selectPanel(this);
-      }
-      for (i = 0; i < steppers.length; ++i) {
-        const stepper = steppers[i];
-        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
-      }
-      const options = stepperChooser.options;
-      for (i = 0; i < options.length; ++i) {
-        const option = options[i];
-        option.selected = (option.value | 0) === pageIndex;
-      }
-    },
-    saveBreakPoints: function saveBreakPoints(pageIndex, bps) {
-      breakPoints[pageIndex] = bps;
-      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
-    },
-  };
-})();
-
-// The stepper for each page's operatorList.
-const Stepper = (function StepperClosure() {
-  // Shorter way to create element and optionally set textContent.
-  function c(tag, textContent) {
-    const d = document.createElement(tag);
-    if (textContent) {
-      d.textContent = textContent;
-    }
-    return d;
-  }
-
-  function simplifyArgs(args) {
-    if (typeof args === "string") {
-      const MAX_STRING_LENGTH = 75;
-      return args.length <= MAX_STRING_LENGTH
-        ? args
-        : args.substring(0, MAX_STRING_LENGTH) + "...";
-    }
-    if (typeof args !== "object" || args === null) {
-      return args;
-    }
-    if ("length" in args) {
-      // array
-      const MAX_ITEMS = 10,
-        simpleArgs = [];
-      let i, ii;
-      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i < ii; i++) {
-        simpleArgs.push(simplifyArgs(args[i]));
-      }
-      if (i < args.length) {
-        simpleArgs.push("...");
-      }
-      return simpleArgs;
-    }
-    const simpleObj = {};
-    for (const key in args) {
-      simpleObj[key] = simplifyArgs(args[key]);
-    }
-    return simpleObj;
-  }
-
-  // eslint-disable-next-line no-shadow
-  class Stepper {
-    constructor(panel, pageIndex, initialBreakPoints) {
-      this.panel = panel;
-      this.breakPoint = 0;
-      this.nextBreakPoint = null;
-      this.pageIndex = pageIndex;
-      this.breakPoints = initialBreakPoints;
-      this.currentIdx = -1;
-      this.operatorListIdx = 0;
-    }
-
-    init(operatorList) {
-      const panel = this.panel;
-      const content = c("div", "c=continue, s=step");
-      const table = c("table");
-      content.appendChild(table);
-      table.cellSpacing = 0;
-      const headerRow = c("tr");
-      table.appendChild(headerRow);
-      headerRow.appendChild(c("th", "Break"));
-      headerRow.appendChild(c("th", "Idx"));
-      headerRow.appendChild(c("th", "fn"));
-      headerRow.appendChild(c("th", "args"));
-      panel.appendChild(content);
-      this.table = table;
-      this.updateOperatorList(operatorList);
-    }
-
-    updateOperatorList(operatorList) {
-      const self = this;
-
-      function cboxOnClick() {
-        const x = +this.dataset.idx;
-        if (this.checked) {
-          self.breakPoints.push(x);
-        } else {
-          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
-        }
-        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
-      }
-
-      const MAX_OPERATORS_COUNT = 15000;
-      if (this.operatorListIdx > MAX_OPERATORS_COUNT) {
-        return;
-      }
-
-      const chunk = document.createDocumentFragment();
-      const operatorsToDisplay = Math.min(
-        MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
-      );
-      for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
-        const line = c("tr");
-        line.className = "line";
-        line.dataset.idx = i;
-        chunk.appendChild(line);
-        const checked = this.breakPoints.includes(i);
-        const args = operatorList.argsArray[i] || [];
-
-        const breakCell = c("td");
-        const cbox = c("input");
-        cbox.type = "checkbox";
-        cbox.className = "points";
-        cbox.checked = checked;
-        cbox.dataset.idx = i;
-        cbox.onclick = cboxOnClick;
-
-        breakCell.appendChild(cbox);
-        line.appendChild(breakCell);
-        line.appendChild(c("td", i.toString()));
-        const fn = opMap[operatorList.fnArray[i]];
-        let decArgs = args;
-        if (fn === "showText") {
-          const glyphs = args[0];
-          const newArgs = [];
-          let str = [];
-          for (let j = 0; j < glyphs.length; j++) {
-            const glyph = glyphs[j];
-            if (typeof glyph === "object" && glyph !== null) {
-              str.push(glyph.fontChar);
-            } else {
-              if (str.length > 0) {
-                newArgs.push(str.join(""));
-                str = [];
-              }
-              newArgs.push(glyph); // null or number
-            }
-          }
-          if (str.length > 0) {
-            newArgs.push(str.join(""));
-          }
-          decArgs = [newArgs];
-        }
-        line.appendChild(c("td", fn));
-        line.appendChild(c("td", JSON.stringify(simplifyArgs(decArgs))));
-      }
-      if (operatorsToDisplay < operatorList.fnArray.length) {
-        const lastCell = c("td", "...");
-        lastCell.colspan = 4;
-        chunk.appendChild(lastCell);
-      }
-      this.operatorListIdx = operatorList.fnArray.length;
-      this.table.appendChild(chunk);
-    }
-
-    getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
-      for (let i = 0; i < this.breakPoints.length; i++) {
-        if (this.breakPoints[i] > this.currentIdx) {
-          return this.breakPoints[i];
-        }
-      }
-      return null;
-    }
-
-    breakIt(idx, callback) {
-      StepperManager.selectStepper(this.pageIndex, true);
-      this.currentIdx = idx;
-
-      const listener = evt => {
-        switch (evt.keyCode) {
-          case 83: // step
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.currentIdx + 1;
-            this.goTo(-1);
-            callback();
-            break;
-          case 67: // continue
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.getNextBreakPoint();
-            this.goTo(-1);
-            callback();
-            break;
-        }
-      };
-      document.addEventListener("keydown", listener);
-      this.goTo(idx);
-    }
-
-    goTo(idx) {
-      const allRows = this.panel.getElementsByClassName("line");
-      for (let x = 0, xx = allRows.length; x < xx; ++x) {
-        const row = allRows[x];
-        if ((row.dataset.idx | 0) === idx) {
-          row.style.backgroundColor = "rgb(251,250,207)";
-          row.scrollIntoView();
-        } else {
-          row.style.backgroundColor = null;
-        }
-      }
-    }
-  }
-  return Stepper;
-})();
-
-// eslint-disable-next-line no-var
-var Stats = (function Stats() {
-  let stats = [];
-  function clear(node) {
-    while (node.hasChildNodes()) {
-      node.removeChild(node.lastChild);
-    }
-  }
-  function getStatIndex(pageNumber) {
-    for (let i = 0, ii = stats.length; i < ii; ++i) {
-      if (stats[i].pageNumber === pageNumber) {
-        return i;
-      }
-    }
-    return false;
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stats",
-    name: "Stats",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {},
-    enabled: false,
-    active: false,
-    // Stats specific functions.
-    add(pageNumber, stat) {
-      if (!stat) {
-        return;
-      }
-      const statsIndex = getStatIndex(pageNumber);
-      if (statsIndex !== false) {
-        const b = stats[statsIndex];
-        this.panel.removeChild(b.div);
-        stats.splice(statsIndex, 1);
-      }
-      const wrapper = document.createElement("div");
-      wrapper.className = "stats";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = "Page: " + pageNumber;
-      const statsDiv = document.createElement("div");
-      statsDiv.textContent = stat.toString();
-      wrapper.appendChild(title);
-      wrapper.appendChild(statsDiv);
-      stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
-      clear(this.panel);
-      for (let i = 0, ii = stats.length; i < ii; ++i) {
-        this.panel.appendChild(stats[i].div);
-      }
-    },
-    cleanup() {
-      stats = [];
-      clear(this.panel);
-    },
-  };
-})();
-
-// Manages all the debugging tools.
-window.PDFBug = (function PDFBugClosure() {
-  const panelWidth = 300;
-  const buttons = [];
-  let activePanel = null;
-
-  return {
-    tools: [FontInspector, StepperManager, Stats],
-    enable(ids) {
-      const all = ids.length === 1 && ids[0] === "all";
-      const tools = this.tools;
-      for (let i = 0; i < tools.length; ++i) {
-        const tool = tools[i];
-        if (all || ids.includes(tool.id)) {
-          tool.enabled = true;
-        }
-      }
-      if (!all) {
-        // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
-          let indexA = ids.indexOf(a.id);
-          indexA = indexA < 0 ? tools.length : indexA;
-          let indexB = ids.indexOf(b.id);
-          indexB = indexB < 0 ? tools.length : indexB;
-          return indexA - indexB;
-        });
-      }
-    },
-    init(pdfjsLib, container) {
-      /*
-       * Basic Layout:
-       * PDFBug
-       *  Controls
-       *  Panels
-       *    Panel
-       *    Panel
-       *    ...
-       */
-      const ui = document.createElement("div");
-      ui.id = "PDFBug";
-
-      const controls = document.createElement("div");
-      controls.setAttribute("class", "controls");
-      ui.appendChild(controls);
-
-      const panels = document.createElement("div");
-      panels.setAttribute("class", "panels");
-      ui.appendChild(panels);
-
-      container.appendChild(ui);
-      container.style.right = panelWidth + "px";
-
-      // Initialize all the debugging tools.
-      const tools = this.tools;
-      const self = this;
-      for (let i = 0; i < tools.length; ++i) {
-        const tool = tools[i];
-        const panel = document.createElement("div");
-        const panelButton = document.createElement("button");
-        panelButton.textContent = tool.name;
-        panelButton.addEventListener(
-          "click",
-          (function (selected) {
-            return function (event) {
-              event.preventDefault();
-              self.selectPanel(selected);
-            };
-          })(i)
-        );
-        controls.appendChild(panelButton);
-        panels.appendChild(panel);
-        tool.panel = panel;
-        tool.manager = this;
-        if (tool.enabled) {
-          tool.init(pdfjsLib);
-        } else {
-          panel.textContent =
-            tool.name +
-            " is disabled. To enable add " +
-            ' "' +
-            tool.id +
-            '" to the pdfBug parameter ' +
-            "and refresh (separate multiple by commas).";
-        }
-        buttons.push(panelButton);
-      }
-      this.selectPanel(0);
-    },
-    cleanup() {
-      for (let i = 0, ii = this.tools.length; i < ii; i++) {
-        if (this.tools[i].enabled) {
-          this.tools[i].cleanup();
-        }
-      }
-    },
-    selectPanel(index) {
-      if (typeof index !== "number") {
-        index = this.tools.indexOf(index);
-      }
-      if (index === activePanel) {
-        return;
-      }
-      activePanel = index;
-      const tools = this.tools;
-      for (let j = 0; j < tools.length; ++j) {
-        const isActive = j === index;
-        buttons[j].classList.toggle("active", isActive);
-        tools[j].active = isActive;
-        tools[j].panel.hidden = !isActive;
-      }
-    },
-  };
-})();
 ]]></content>
   </entry>
   <entry>

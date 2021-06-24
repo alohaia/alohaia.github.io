@@ -95,9 +95,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">64</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">24</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -199,7 +199,7 @@ fetch('https://api.eatrice.top')
 <meting-js
   server="netease"
   type="playlist"
-  id="6805681357"
+  id="6822976600"
   mini="false"
   fixed="false"
   list-folded="NaN"
@@ -216,20 +216,20 @@ fetch('https://api.eatrice.top')
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -289,6 +289,621 @@ fetch('https://api.eatrice.top')
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/15/Lua-%E5%92%8C-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/15/Lua-%E5%92%8C-C/" class="post-title-link" itemprop="url">Lua 和 C</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-15 10:49:03" itemprop="dateCreated datePublished" datetime="2021-04-15T10:49:03+08:00">2021-04-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-16 09:04:09" itemprop="dateModified" datetime="2021-06-16T09:04:09+08:00">2021-06-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Lua 是一种</p>
+<ul>
+<li><strong>嵌入式语言</strong>——C 语言拥有控制权，Lua 被当作库，C 代码称为<strong>应用代码</strong></li>
+<li><strong>可扩展的语言</strong>——Lua 拥有控制权，C 语言被用作库，C 代码称为<strong>库代码</strong></li>
+</ul>
+<p>应用代码和库代码都使用相同的 API 和 Lua 通信，这些 API 被称为 <mark>C API</mark>。</p>
+<div class="note info"><p>完整函数列表见：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9tYW51YWwvbHVhNTNkb2MvY29udGVudHMuaHRtbCNpbmRleA==">Lua 参考手册（Lua5.3 - 菜鸟教程）<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5sdWEub3JnL21hbnVhbC81LjQvI2luZGV4">Lua 参考手册（Lua5.4 - 官网）<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</div>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/15/Lua-%E5%92%8C-C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/" class="post-title-link" itemprop="url">支原体</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-15 17:36:52" itemprop="dateCreated datePublished" datetime="2021-04-15T17:36:52+08:00">2021-04-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-16 08:57:48" itemprop="dateModified" datetime="2021-06-16T08:57:48+08:00">2021-06-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病原生物学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <dl>
+<dt>支原体（<em>Mycoplasma</em>）</dt>
+<dd>一类缺乏细胞壁、呈高度多形性、可通过细菌滤器、能在<strong>无生命培养基</strong>中生长繁殖的<strong>最小的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a></strong>。</dd>
+<dd>归属柔膜体门柔膜体纲支原体目支原体科的<strong>支原体属</strong>和脲原体属。</dd>
+</dl>
+<p>对人体致病的支原体</p>
+<ul>
+<li><a href="#%E8%82%BA%E7%82%8E%E6%94%AF%E5%8E%9F%E4%BD%93">肺炎支原体</a></li>
+<li>人型支原体</li>
+<li>生殖器支原体</li>
+<li><a href="#%E7%A9%BF%E9%80%8F%E6%94%AF%E5%8E%9F%E4%BD%93">穿透支原体</a></li>
+<li><a href="#%E8%A7%A3%E8%84%B2%E6%94%AF%E5%8E%9F%E4%BD%93">解脲支原体</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/03/15/Grammar-Testing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/15/Grammar-Testing/" class="post-title-link" itemprop="url">Grammar Testing</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-15 11:54:13" itemprop="dateCreated datePublished" datetime="2021-03-15T11:54:13+08:00">2021-03-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-04 09:50:30" itemprop="dateModified" datetime="2021-06-04T09:50:30+08:00">2021-06-04</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><ul class="markdownIt-TOC">
+<li><a href="#reason">reason</a></li>
+<li><a href="#hexo-renderer-markdown-it-plus">hexo-renderer-markdown-it-plus</a></li>
+<li><a href="#tag-plugins">Tag-plugins</a>
+<ul>
+<li><a href="#link">Link</a></li>
+<li><a href="#code-block">Code Block</a></li>
+<li><a href="#include-code">Include Code</a></li>
+<li><a href="#iframe">Iframe</a></li>
+<li><a href="#image">Image</a></li>
+<li><a href="#pull-quote">Pull Quote</a></li>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#asset-resource">Asset Resource</a></li>
+<li><a href="#next-tags">NexT tags</a>
+<ul>
+<li><a href="#call-out">Call Out</a></li>
+<li><a href="#button">Button</a></li>
+<li><a href="#caniuse">caniUse</a></li>
+<li><a href="#center-quote">Center Quote</a></li>
+<li><a href="#group-pictures">Group Pictures</a></li>
+<li><a href="#label">Label</a></li>
+<li><a href="#mermaid">Mermaid</a></li>
+<li><a href="#pdf">Pdf</a></li>
+<li><a href="#tabs">Tabs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/15/Grammar-Testing/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/" class="post-title-link" itemprop="url">器官、系统的发生与先天性畸形</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-10 13:55:58" itemprop="dateCreated datePublished" datetime="2021-04-10T13:55:58+08:00">2021-04-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-30 10:34:56" itemprop="dateModified" datetime="2021-05-30T10:34:56+08:00">2021-05-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">人类发育与遗传学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/" class="post-title-link" itemprop="url">其他病毒</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-20 13:59:21" itemprop="dateCreated datePublished" datetime="2021-05-20T13:59:21+08:00">2021-05-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-29 21:23:50" itemprop="dateModified" datetime="2021-05-29T21:23:50+08:00">2021-05-29</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病原生物学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p class="center">Empty...</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/" class="post-title-link" itemprop="url">病毒的感染与抗病毒免疫</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-23 18:00:34" itemprop="dateCreated datePublished" datetime="2021-04-23T18:00:34+08:00">2021-04-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-29 21:12:37" itemprop="dateModified" datetime="2021-05-29T21:12:37+08:00">2021-05-29</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病原生物学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <dl>
+<dt>病毒感染（viral infection）</dt>
+<dd>病毒侵入体内并在靶细胞内增殖，与机体发生相互作用的过程。</dd>
+</dl>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -584,128 +1199,6 @@ fetch('https://api.eatrice.top')
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/03/21/%E7%97%85%E6%AF%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/21/%E7%97%85%E6%AF%92/" class="post-title-link" itemprop="url">病毒</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-21 13:18:29" itemprop="dateCreated datePublished" datetime="2021-03-21T13:18:29+08:00">2021-03-21</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-20 13:59:09" itemprop="dateModified" datetime="2021-05-20T13:59:09+08:00">2021-05-20</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病原生物学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <dl>
-<dt>病毒（virus）</dt>
-<dd>最微小的、结构最简单的、专性细胞内寄生的一类<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">非细胞型微生物</a>。</dd>
-</dl>
-<p>病毒的特点：</p>
-<ol>
-<li><strong>体积微小</strong>（<strong>nm 级</strong>），可通过细胞滤器，需借助电子显微镜观察</li>
-<li><strong>遗传物质单一</strong>，仅有一种核酸（DNA 或 RNA）</li>
-<li><strong>严格的活细胞内寄生</strong></li>
-<li>增殖方式为<strong>复制</strong></li>
-<li>对<em>抗生素</em>不敏感，对<strong>干扰素</strong>敏感</li>
-</ol>
-<p>病毒分类：</p>
-<ol>
-<li><a href="/2021/04/22/%E5%99%AC%E8%8F%8C%E4%BD%93/">噬菌体</a></li>
-<li>动物病毒</li>
-<li>植物病毒</li>
-</ol>
-<p>病原生物学分类</p>
-<ol>
-<li><a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">呼吸道感染病毒</a></li>
-<li><a href="/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">消化道感染病毒</a></li>
-<li><a href="/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/">肝炎病毒</a></li>
-<li><a href="/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/">虫媒病毒和出血热病毒</a></li>
-<li><a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/">人类疱疹病毒</a></li>
-<li><a href="/2021/05/20/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/">逆转录病毒</a></li>
-<li>其他病毒</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/21/%E7%97%85%E6%AF%92/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/20/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -808,501 +1301,6 @@ fetch('https://api.eatrice.top')
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/" class="post-title-link" itemprop="url">细胞生物学</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-05-19 20:21:09 / Modified: 20:24:10" itemprop="dateCreated datePublished" datetime="2021-05-19T20:21:09+08:00">2021-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">细胞生物学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p class="center">Empty</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/10/%E6%8A%97%E4%BD%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/10/%E6%8A%97%E4%BD%93/" class="post-title-link" itemprop="url">抗体</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-05-10 09:23:41" itemprop="dateCreated datePublished" datetime="2021-05-10T09:23:41+08:00">2021-05-10</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 21:24:56" itemprop="dateModified" datetime="2021-05-18T21:24:56+08:00">2021-05-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">医学免疫学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <dl>
-<dt>抗体（antibody，<abbr title="抗体">Ab</abbr>）</dt>
-<dd>介导体液免疫的重要效应分子</dd>
-<dd>免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
-可与相应抗原发生特异性结合的 <strong>免疫球蛋白</strong>（<abbr title="免疫球蛋白">Ig</abbr>）。</dd>
-<dd>主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</dd>
-</dl>
-<dl>
-<dt>免疫球蛋白（immunoglobulin，<abbr title="免疫球蛋白">Ig</abbr>）</dt>
-<dd>具有抗体活性或化学结构与抗体相似的球蛋白的统称。</dd>
-<dd>存在形式
-<ul>
-<li><strong>膜型</strong>（membrane immunoglobulin，mIg），如 BCR（B 细胞受体）</li>
-<li><strong>分泌型</strong>（secreted immunoglobulin，sIg），如抗体</li>
-</ul>
-</dd>
-</dl>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/10/%E6%8A%97%E4%BD%93/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/" class="post-title-link" itemprop="url">呼吸道感染病毒</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-04-26 10:32:20" itemprop="dateCreated datePublished" datetime="2021-04-26T10:32:20+08:00">2021-04-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 20:33:18" itemprop="dateModified" datetime="2021-05-18T20:33:18+08:00">2021-05-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病原生物学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <dl>
-<dt>呼吸道感染病毒</dt>
-<dd>主要以呼吸道为传播途径，侵犯呼吸道黏膜上皮细胞，引起呼吸道局部病变或以呼吸道为敲入门户，导致呼吸道外组织病变的病毒。</dd>
-</dl>
-<blockquote>
-<p>急性呼吸道感染中 90%~95% 是由病毒引起的。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/" class="post-title-link" itemprop="url">免疫器官和组织</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-04-26 08:42:30" itemprop="dateCreated datePublished" datetime="2021-04-26T08:42:30+08:00">2021-04-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 20:31:15" itemprop="dateModified" datetime="2021-05-18T20:31:15+08:00">2021-05-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">医学免疫学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
-<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
-<ul>
-<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
-<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">补体系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-05-17 15:00:49 / Modified: 18:59:44" itemprop="dateCreated datePublished" datetime="2021-05-17T15:00:49+08:00">2021-05-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">医学免疫学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <dl>
-<dt>补体系统（complement system）| 补体级联反应（complement cascade）</dt>
-<dd>是先天免疫系统的一部分，由存在于 <strong>人和脊椎动物血清、组织液中及细包膜表面</strong> 的一种
-<strong>活化后具有酶活性的蛋白质</strong>（补体固有成分）、调节蛋白和补体受体组成。</dd>
-<dd>可增强抗体和吞噬细胞清除机体中的病原微生物和损伤细胞的能力，增强炎症反应，并攻击病原体的细胞膜。</dd>
-</dl>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1357,7 +1355,7 @@ fetch('https://api.eatrice.top')
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=" crossorigin="anonymous">
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/copy-tex.min.css" integrity="sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=" crossorigin="anonymous">
   <script class="next-config" data-name="katex" type="application/json">{&quot;copy_tex_js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.13.3&#x2F;dist&#x2F;contrib&#x2F;copy-tex.min.js&quot;,&quot;integrity&quot;:&quot;sha256-etSqbSVF4+Lwe8MGk&#x2F;Vanc1sR+mWv+qOG73fxWw9p94&#x3D;&quot;}}</script>
   <script src="/js/third-party/math/katex.js"></script>
