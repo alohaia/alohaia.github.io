@@ -2850,40 +2850,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>其他病毒</title>
-    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p class="center">Empty...</p>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<p>中枢神经系统，死亡率 100%，</p>
-<p>病毒呈“子弹头状”</p>
-<dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是 <strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
-<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
-</dl>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>传染源：狂犬、猫蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>DNA 无包膜病毒</p>
-<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>免疫器官和组织</title>
     <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
     <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
@@ -3078,9 +3044,29 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>动物源性细菌</title>
-    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[]]></content>
+    <title>其他病毒</title>
+    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p class="center">Empty...</p>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<p>中枢神经系统，死亡率 100%，</p>
+<p>病毒呈“子弹头状”</p>
+<dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是 <strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
+<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
+</dl>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>传染源：狂犬、猫蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>DNA 无包膜病毒</p>
+<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
+]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
@@ -3088,6 +3074,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -3295,6 +3282,19 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动物源性细菌</title>
+    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4704,7 +4704,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致 <strong
 </dl>
 <div class="note info"><dl>
 <dt>棒状杆菌属（<em>Corymebacterium</em>）</dt>
-<dd>G<sup>+</sup> 菌，一端或两端膨大呈棒状，无荚膜、无鞭毛、不产生芽胞，除<strong>白喉棒状杆菌</strong>外多为机会致病菌。</dd>
+<dd>G<sup>+</sup> 菌，一端或两端膨大呈棒状，无荚膜、无鞭毛、不产生芽胞，除 <strong>白喉棒状杆菌</strong>外多为机会致病菌。</dd>
 </dl>
 </div>
 <h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
@@ -10894,13 +10894,13 @@ plate）。<br/>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>schedule</title>
-    <url>/schedule/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>schedule</title>
+    <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
