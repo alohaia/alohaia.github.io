@@ -26,12 +26,12 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js" integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;www.aloha.org.cn&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:true,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;width&quot;:320},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:true,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;utterances&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:true,&quot;nav&quot;:{&quot;utterances&quot;:{&quot;text&quot;:&quot;Comment with utterances&quot;,&quot;order&quot;:1}},&quot;activeClass&quot;:&quot;utterances&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:-1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
-<meta name="description" content="病原生物学分类（TOC）   皮肤及皮下组织感染真菌 深部感染真菌">
+<meta name="description" content="病原生物学分类（TOC）       皮肤及皮下组织感染真菌 深部感染真菌">
 <meta property="og:type" content="article">
 <meta property="og:title" content="真菌">
 <meta property="og:url" content="https://www.aloha.org.cn/2021/03/21/%E7%9C%9F%E8%8F%8C/">
 <meta property="og:site_name" content="Aloha&#39;s Blog">
-<meta property="og:description" content="病原生物学分类（TOC）   皮肤及皮下组织感染真菌 深部感染真菌">
+<meta property="og:description" content="病原生物学分类（TOC）       皮肤及皮下组织感染真菌 深部感染真菌">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-21T05:23:48.000Z">
 <meta property="article:modified_time" content="2021-06-23T10:52:43.981Z">
@@ -166,31 +166,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -362,14 +365,14 @@ fetch('https://api.eatrice.top')
     
     
     <div class="post-body" itemprop="articleBody">
-        <details class="note default"><summary><p>病原生物学分类（TOC）</p>
+        <details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病原生物学分类（TOC）</p>
 </summary>
-<ol>
+    <ol>
 <li><a href="">皮肤及皮下组织感染真菌</a></li>
 <li><a href="">深部感染真菌</a></li>
 </ol>
 
-</details>
+  </details>
 
     </div>
 

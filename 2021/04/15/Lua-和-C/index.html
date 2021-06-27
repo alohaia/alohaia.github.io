@@ -168,31 +168,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -408,9 +411,9 @@ Lua5.2 中引入了新函数进行处理：</p>
 <code>isnum</code> 返回一个布尔值表示指定的值的类型是否为所需类型，以区分上述两种情况。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lua_pushstring(L, <span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lua_pushinteger(L, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 1</span></span><br><span class="line">    <span class="comment">// &quot;Not a number&quot; 判断错误，msg 表明指定位置的值的类型为 number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<details class="note warning"><summary><p>确保栈中有足够的空间</p>
+<details class="note warning" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>确保栈中有足够的空间</p>
 </summary>
-<p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
+    <p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lua_checkstack</span><span class="params">(lua_State *L, <span class="keyword">int</span> sz)</span></span>;</span><br></pre></td></tr></table></figure>
 <p><code>lua_checkstack</code> 确保堆栈上至少有 <code>n</code> 个额外空位。
 如果不能把堆栈扩展到相应的尺寸，函数返回假（0）。</p>
@@ -419,7 +422,7 @@ Lua5.2 中引入了新函数进行处理：</p>
 <p>该函数类似于 <code>lua_ckeckstack</code>，但是当无法扩展空间时，会抛出一个错误。
 <code>msg</code> 是描述错误的额外文本信息，<code>NULL</code> 表示不需要额外文本。</p>
 
-</details>
+  </details>
 <p>其他栈操作（详细说明见<a href="#">手册</a>）：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">lua_gettop</span>    <span class="params">(lua_State *L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_settop</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_pushvalue</span> <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_rotate</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_remove</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_insert</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_replace</span>   <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_copy</span>      <span class="params">(lua_State *L, <span class="keyword">int</span> fromidx, <span class="keyword">int</span> toidx)</span></span>;</span><br></pre></td></tr></table></figure>
 <h2 id="c-api-中的错误处理">C API 中的错误处理 <a class="markdownIt-Anchor" href="#c-api-中的错误处理">#</a></h2>
@@ -488,12 +491,12 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_newlib</span><span class="params">(lua_State *L, <span class="keyword">const</span> luaL_Reg l[])</span></span>;</span><br></pre></td></tr></table></figure>
 <p><code>luaL_newlib</code> 其实是一个宏，详见<a href="#%E5%85%B1%E4%BA%AB%E4%B8%8A%E5%80%BC">共享上值</a>。</p>
 <p>完整示例见<a href="#%E5%AE%9E%E7%8E%B0-lua-%E7%9A%84-dir-%E5%87%BD%E6%95%B0">实现 Lua 的 dir 函数</a>。</p>
-<details class="note info"><summary><p>require 函数参数中的连字符</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>require 函数参数中的连字符</p>
 </summary>
-<p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去除末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
+    <p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去除末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
 <p>另外，<code>require</code> 函数中的句点 <code>.</code> 表示<strong>子模块</strong>，如：<code>require'libdir-v0.1'</code> 中的 <code>libdir-v0.1</code> 表示 <code>libdir-v0/1</code>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; dir = require&#x27;libdir-v0.1&#x27;</span><br><span class="line">stdin:1: module &#x27;libdir-v0.1&#x27; not found:</span><br><span class="line">        no field package.preload[&#x27;libdir-v0.1&#x27;]</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0.so&#x27;</span><br><span class="line">stack traceback:</span><br><span class="line">        [C]: in function &#x27;require&#x27;</span><br><span class="line">        stdin:1: in main chunk</span><br><span class="line">        [C]: in ?</span><br></pre></td></tr></table></figure>
-</details>
+  </details>
 <h3 id="注册表">注册表 <a class="markdownIt-Anchor" href="#注册表">#</a></h3>
 <p>Lua API 中通过使用注册表来实现“全局变量”。使用这一功能需要一对函数：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaL_ref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_unref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t, <span class="keyword">int</span> ref)</span></span>;</span><br></pre></td></tr></table></figure>
@@ -501,13 +504,13 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
 需要注意的是，所有在 Lua 中加载的库代码都共用一个注册表，在给表的键取名时要注意命名冲突。</p>
 <div class="note warning"><p>在注册表中不能使用数值类型的键，因为 Lua 将其作为<strong>引用系统</strong>的保留字。</p>
 </div>
-<details class="note info"><summary><p>轻量用户数据</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>轻量用户数据</p>
 </summary>
-<p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
+    <p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_settable(L, LUA_REGISTRYINDEX);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_gettable(L, LUA_REGISTRYINDEX);</span><br><span class="line">*myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
 <p>为了简化将变量地址作为唯一值的用法，Lua5.2 引入了两个函数：<code>lua_rawgetp</code> 和 <code>lua_rawsetp</code>。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_rawsetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_rawgetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-</details>
+  </details>
 <h3 id="上值和共享上值">上值和共享上值 <a class="markdownIt-Anchor" href="#上值和共享上值">#</a></h3>
 <p>Lua 中可以为一个函数绑定若干个<strong>上值</strong>，这些上值仅在绑定的函数中可见。
 一个函数和其上值的关联称为<strong>闭包</strong>（closure）。</p>

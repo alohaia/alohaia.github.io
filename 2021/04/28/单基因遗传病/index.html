@@ -170,31 +170,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -393,16 +396,16 @@ fetch('https://api.eatrice.top')
 <dt>双重杂合子</dt>
 <dd>在 <em>两个不同位点上</em> 每个位点各带有一种突变基因的个体。</dd>
 </dl>
-<details class="note info"><summary><p>系谱绘制</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>系谱绘制</p>
 </summary>
-<dl>
+    <dl>
 <dt>系谱（pedigree）</dt>
 <dd>从 <strong>先证者</strong> 入手，追溯调查其家系所有成员的 <strong>亲属关系</strong> 以及某种遗传病的 <strong>发病情况</strong>（或某种性状的分布），用特定的符号按一定方式绘制而成的图解。</dd>
 <dt>先证者（proband）</dt>
 <dd>某个家庭中首先被医生或遗传研究者发现的罹患某种遗传病的患者或者具有某种遗传性状的成员。</dd>
 </dl>
 
-</details>
+  </details>
 <ol>
 <li><a href="#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E6%98%BE%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85"><strong>常染色体显性遗传病</strong></a>：
 <ul>
@@ -453,7 +456,8 @@ fetch('https://api.eatrice.top')
 </dl>
 <p><strong>ABO 血型</strong>（ABO blood group）（MIM616093）由一组复等位基因 <em>I<sup>A</sup></em>、<em>I<sup>B</sup></em> 和 <em>i</em> 所控制。</p>
 <p class="align-text-center table-caption ">
-      ABO 血型
+      <p>ABO 血型</p>
+
     </p>
 <table>
 <thead>
@@ -664,21 +668,21 @@ fetch('https://api.eatrice.top')
 <li><strong>Duchenne 型肌营养不良症</strong>：较 <abbr title="Becker muscular dystrophy，Backer 型肌营养不良症">BMD</abbr> 型病情较重，患者 <strong>腓肠肌假性肥大</strong>、从卧位到站立表现有 <strong><mark>Gower 征</mark></strong>（Gowers’s sign，以 William Richard <em>Gowers</em> 的名字命名）。</li>
 </ul>
 <img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/Gower's%20sign.png" class="" title="Gowers&#39;s sign" alt="Gowers&#39;s sign">
-<details class="note info"><summary><p>假肥大型肌营养不良症</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>假肥大型肌营养不良症</p>
 </summary>
-<p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的 <strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
+    <p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的 <strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
 <ul>
 <li><strong>Duchenne 型肌营养不良症</strong>（Duchenne muscular dystrophy，DMD）：发病早，病情重，抗肌萎缩蛋白不表达或表达无功能的蛋白</li>
 <li><strong>Backer 型肌营养不良症</strong>（Becker muscular dystrophy，BMD）：发病晚、病情轻，抗肌萎缩蛋白质量减少或蛋白质长度变化</li>
 </ul>
 
-</details>
+  </details>
 <p><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr> 的致病基因 <em><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr></em> 基因克隆是 <strong>定位克隆</strong>（positional cloning）的典型例子。</p>
-<details class="note default"><summary><p>定位克隆</p>
+<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>定位克隆</p>
 </summary>
-<p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
+    <p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
 
-</details>
+  </details>
 <h2 id="x-连锁显性遗传病">X 连锁显性遗传病 <a class="markdownIt-Anchor" href="#x-连锁显性遗传病">#</a></h2>
 <dl>
 <dt>X 连锁显性遗传（X-linked dominant inheritance，<abbr title="X-linked dominant inheritance，X 连锁显性遗传">XD</abbr>）病</dt>

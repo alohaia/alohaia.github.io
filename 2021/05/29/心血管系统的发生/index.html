@@ -175,31 +175,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -382,15 +385,15 @@ fetch('https://api.eatrice.top')
         <p>心血管系统是 <strong>最早</strong> 形成并执行功能的系统，约发生与第 3 周末，至第 4 周末血液循环开始。<br/>
 心血管系统由 <strong>中胚层</strong> 分化而来，首先形成原始心血管，再进一步经过生长、合并、扩大和萎缩等过程逐渐完善。</p>
 <span id="more"></span>
-<details class="note info"><summary><p>重点</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>重点</p>
 </summary>
-<ol>
+    <ol>
 <li>简述 <a href="#%E5%BF%83%E6%88%BF%E7%9A%84%E5%88%86%E9%9A%94">心房的分隔</a>；</li>
 <li><a href="?highlight=%E5%8D%B5%E5%9C%86%E5%AD%94#%E5%BF%83%E6%88%BF%E7%9A%84%E5%88%86%E9%9A%94">卵圆孔</a>；</li>
 <li>简述 <a href="#%E6%B3%95%E6%B4%9B%E5%9B%9B%E8%81%94%E7%97%87">法洛四联症</a> 的构成及其形成原因；</li>
 </ol>
 
-</details>
+  </details>
 <h2 id="原始心血管系统的建立">原始心血管系统的建立 <a class="markdownIt-Anchor" href="#原始心血管系统的建立">#</a></h2>
 <p>人胚第 2 周末，来自 <strong>卵黄囊</strong>、体蒂和绒毛膜的 <strong>胚外中胚层</strong> 增殖分化形成的细胞索或团，称 <strong><mark>血岛</mark></strong>（blood island）。<br/>
 不久，血岛周边细胞分化为扁平的内皮细胞，并围成管道，即 <strong>原始血管</strong>；<br/>

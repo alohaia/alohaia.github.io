@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/Grammar-Testing/hello">
 <meta property="og:image" content="https://www.aloha.org.cn/images/aloha.gif">
 <meta property="article:published_time" content="2021-03-15T03:54:13.000Z">
-<meta property="article:modified_time" content="2021-06-04T01:50:30.007Z">
+<meta property="article:modified_time" content="2021-06-27T10:04:22.422Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="Blog, Computer Science, Medicine, Literature, Philosophy">
 <meta name="twitter:card" content="summary">
@@ -171,31 +171,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -337,7 +340,7 @@ fetch('https://api.eatrice.top')
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-04 09:50:30" itemprop="dateModified" datetime="2021-06-04T09:50:30+08:00">2021-06-04</time>
+        <time title="Modified: 2021-06-27 18:04:22" itemprop="dateModified" datetime="2021-06-27T18:04:22+08:00">2021-06-27</time>
       </span>
 
   
@@ -666,18 +669,48 @@ What’s this?</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="next-tags">NexT tags <a class="markdownIt-Anchor" href="#next-tags">#</a></h3>
 <h4 id="call-out">Call Out <a class="markdownIt-Anchor" href="#call-out">#</a></h4>
-<div class="note default default"><p>default</p>
-</div>
-<div class="note primary primary"><p>primary</p>
-</div>
-<div class="note success success"><p>success</p>
-</div>
-<div class="note info info"><p>info</p>
-</div>
-<div class="note warning warning"><p>warning</p>
-</div>
-<div class="note danger danger"><p>danger</p>
-</div>
+<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>default</p>
+</summary>
+    <div class='note-title' id='default'>
+      default
+    </div><p>default</p>
+
+  </details>
+<details class="note primary" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>primary</p>
+</summary>
+    <div class='note-title' id='primary'>
+      primary
+    </div><p>primary</p>
+
+  </details>
+<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>success</p>
+</summary>
+    <div class='note-title' id='success'>
+      success
+    </div><p>success</p>
+
+  </details>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>info</p>
+</summary>
+    <div class='note-title' id='info'>
+      info
+    </div><p>info</p>
+
+  </details>
+<details class="note warning" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>warning</p>
+</summary>
+    <div class='note-title' id='warning'>
+      warning
+    </div><p>warning</p>
+
+  </details>
+<details class="note danger" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>danger</p>
+</summary>
+    <div class='note-title' id='danger'>
+      danger
+    </div><p>danger</p>
+
+  </details>
 <h4 id="button">Button <a class="markdownIt-Anchor" href="#button">#</a></h4>
 <p><code>button</code> or <code>btn</code></p>
 <p>sepqrate: ,</p>
@@ -688,7 +721,7 @@ What’s this?</p>
 <h4 id="center-quote">Center Quote <a class="markdownIt-Anchor" href="#center-quote">#</a></h4>
 <p><code>centerquote</code> or <code>cq</code></p>
 <blockquote class="blockquote-center">
-<p>So we beat on, boats against the current, borne back ceaselessly into the past.
+<p>So we beat on, boats against the current, borne back ceaselessly into the past.<br/>
 我们奋力向前，宛如逆水行舟，与激流抗争勇进，直至淹没入岁月长河。</p>
 
 </blockquote>

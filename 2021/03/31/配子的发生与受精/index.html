@@ -178,31 +178,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -456,7 +459,8 @@ fetch('https://api.eatrice.top')
 <dd>卵巢中，卵原细胞（oogonium）经过增殖、生长和成熟阶段的变化最终形成卵子的过程。</dd>
 </dl>
 <p class="align-text-center table-caption ">
-      精子发生和卵子发生的比较
+      <p>精子发生和卵子发生的比较</p>
+
     </p>
 <table>
 <thead>
@@ -546,9 +550,9 @@ fetch('https://api.eatrice.top')
 <p>受精前，卵细胞膜下存在高尔基复合体形成的分泌小泡（<strong>皮质颗粒</strong>）。
 在 <strong>皮质反应</strong> 中，精子穿入点处的皮质颗粒首先与细胞膜融合，随后迅速波及整个卵细胞表面。皮质颗粒中各种蛋白水解酶、结构蛋白和粘多糖等释放到达透明带，使其结构发生变化并分解其中的
 ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</strong>）。</p>
-<details class="note info"><summary><p>卵膜、透明带和卵黄膜</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>卵膜、透明带和卵黄膜</p>
 </summary>
-<dl>
+    <dl>
 <dt>卵膜（egg membrane）</dt>
 <dd>包裹于动物卵细胞的非细胞性被膜的总称。</dd>
 <dd>根据卵膜来源，可将其分为三类：
@@ -569,7 +573,7 @@ ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</stro
 <dd>在卵泡发育过程中，颗粒细胞发育形成排卵前卵泡中卵母细胞周围的卵丘细胞。</dd>
 </dl>
 
-</details>
+  </details>
 <p>受精的意义：</p>
 <ol>
 <li>受精卵形成新个体；</li>

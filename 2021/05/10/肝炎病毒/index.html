@@ -169,31 +169,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -423,15 +426,15 @@ fetch('https://api.eatrice.top')
 <h2 id="乙型肝炎病毒">乙型肝炎病毒 <a class="markdownIt-Anchor" href="#乙型肝炎病毒">#</a></h2>
 <p>乙型肝炎（血清型肝炎）：慢性肝炎→肝硬化→肝癌</p>
 <h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<details class="note info"><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
 </summary>
-<ol>
+    <ol>
 <li>大球形颗粒：即 <strong>Dane 颗粒</strong>，为完整的病毒体</li>
 <li>小球形颗粒：HBV 增殖合成过剩的 HBsAg</li>
 <li>管形颗粒：小球形颗粒的串联物，乙型肝炎病毒的 <strong>表面抗原</strong>（包膜上的糖蛋白）</li>
 </ol>
 
-</details>
+  </details>
 <dl>
 <dt>Dane 颗粒</dt>
 <dd>即乙型肝炎病毒的病毒体。</dd>
@@ -448,9 +451,9 @@ fetch('https://api.eatrice.top')
 </ul>
 <p>乙型肝炎病毒的表面抗原—— <abbr title="乙型肝炎病毒">HBV</abbr> S 抗原</p>
 <p>乙型肝炎病毒基因组：双股不完全闭合 DNA</p>
-<details class="note info"><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
 </summary>
-<ol>
+    <ol>
 <li>S 区
 <ul>
 <li>S 基因包膜糖蛋白</li>
@@ -477,10 +480,10 @@ fetch('https://api.eatrice.top')
 </li>
 </ol>
 
-</details>
-<details class="note info"><summary><p>HBV 的三个重要抗原及其意义</p>
+  </details>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 的三个重要抗原及其意义</p>
 </summary>
-<ol>
+    <ol>
 <li>S 抗原
 <ul>
 <li>adr/adw、ayr/ayw：a 为抗原决定簇</li>
@@ -494,12 +497,12 @@ fetch('https://api.eatrice.top')
 <p>HBxAg 抗原为致癌抗原，不作为临床血清学诊断。</p>
 </blockquote>
 
-</details>
+  </details>
 <h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
 <h4 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h4>
-<details class="note info"><summary><p>HBV 的传染源及传播途径</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 的传染源及传播途径</p>
 </summary>
-<ul>
+    <ul>
 <li>传染源：乙肝患者和 HBsAg 阳性携带者</li>
 <li>传播途径
 <ol>
@@ -510,10 +513,10 @@ fetch('https://api.eatrice.top')
 </li>
 </ul>
 
-</details>
-<details class="note info"><summary><p>HBV 感染的常见临床表现类型</p>
+  </details>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 感染的常见临床表现类型</p>
 </summary>
-<ol>
+    <ol>
 <li>无症状携带者</li>
 <li>急性肝炎：1% 黄疸性肝炎患者发生重症肝炎</li>
 <li>慢性肝炎：5%~10% 的 HBV 感染者，其中 10% 转变为肝硬化，并继而发展为肝功能衰竭</li>
@@ -523,16 +526,16 @@ fetch('https://api.eatrice.top')
 <p>临床表现主要由肝细胞是否裂解决定。</p>
 </blockquote>
 
-</details>
+  </details>
 <h4 id="免疫性-2">免疫性 <a class="markdownIt-Anchor" href="#免疫性-2">#</a></h4>
 <ul>
 <li>细胞免疫：CD8<sup>+</sup>T 细胞</li>
 <li>体液免疫：</li>
 </ul>
 <h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<details class="note info"><summary><p>HBV 感染的血清学检测指标及意义</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 感染的血清学检测指标及意义</p>
 </summary>
-<p>两对半抗原抗体检测指标（肝炎五项）</p>
+    <p>两对半抗原抗体检测指标（肝炎五项）</p>
 <ol>
 <li>乙肝表面抗原：乙肝病毒抗原感染，肝功能正常表示为无症状携带者</li>
 <li>乙肝表面抗体：隐性感染者、急性感染恢复期、疫苗接种者</li>
@@ -541,7 +544,7 @@ fetch('https://api.eatrice.top')
 <li>乙肝核心抗原：处于<strong>窗口期</strong>（传染性强）或既往感染过</li>
 </ol>
 
-</details>
+  </details>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <ol>
 <li>乙型肝炎病毒基因工程疫苗</li>

@@ -169,31 +169,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -373,25 +376,25 @@ fetch('https://api.eatrice.top')
 <p>急性呼吸道感染中 90%~95% 是由病毒引起的。</p>
 </blockquote>
 <span id="more"></span>
-<details class="note info"><summary><p>引起普通感冒的常见病毒</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>引起普通感冒的常见病毒</p>
 </summary>
-<ul>
+    <ul>
 <li>普通感冒中 50% 由<strong>鼻病毒</strong>引起。</li>
 <li>冠状病毒</li>
 </ul>
 
-</details>
+  </details>
 <h2 id="流行性感冒病毒">流行性感冒病毒 <a class="markdownIt-Anchor" href="#流行性感冒病毒">#</a></h2>
-<details class="note info"><summary><p>流感和普通感冒的不同点</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感和普通感冒的不同点</p>
 </summary>
-<ul>
+    <ul>
 <li>病原体：腮腺炎病毒、冠状病毒、呼吸道合胞病毒、鼻病毒</li>
 <li>临床表现：发热、三痛（痛、眼、肌肉关节）</li>
 <li>传染性：强</li>
 <li>流行性：流行范围广，可引起大流行</li>
 </ul>
 
-</details>
+  </details>
 <dl>
 <dt>流行性感冒病毒 | 流感病毒</dt>
 <dd>属于正黏病毒科，分为甲（A）、乙（B、）丙（C）三个型。</dd>
@@ -408,9 +411,9 @@ fetch('https://api.eatrice.top')
 <li>乙型流感病毒：一定程度的变异，局部小流行</li>
 <li>并型流感病毒：抗原稳定，主要感染婴幼儿</li>
 </ul>
-<details class="note info"><summary><p>流感大流行</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感大流行</p>
 </summary>
-<dl>
+    <dl>
 <dt>流感大流行</dt>
 <dd>系指新型流感的出现引起全世界范国大规模的流行。</dd>
 <dd>人类在上个世纪就曾经历过 3 次这样的流行：
@@ -422,7 +425,7 @@ fetch('https://api.eatrice.top')
 </dd>
 </dl>
 
-</details>
+  </details>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
 <li>形态与染色：球型或丝状，有包膜</li>
@@ -437,9 +440,9 @@ fetch('https://api.eatrice.top')
 <div class="note warning"><p>一般有包膜的病毒抵抗力较弱。</p>
 </div>
 <p>流感病毒的 RNA 分节段，甲型、乙型有 8 节段，丙型有 7 节段。</p>
-<details class="note info"><summary><p>流感病毒的抗原性变异</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感病毒的抗原性变异</p>
 </summary>
-<dl>
+    <dl>
 <dt>抗原漂移（antigen drift）</dt>
 <dd>变异幅度小，由点突变造成</dd>
 <dd>连续累积后形成亚型内变异，引起流感中、小流行</dd>
@@ -448,14 +451,14 @@ fetch('https://api.eatrice.top')
 <dd>导致新亚型的形成，引起<strong>流感大流行</strong></dd>
 </dl>
 
-</details>
-<details class="note info"><summary><p>禽类和猪</p>
+  </details>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>禽类和猪</p>
 </summary>
-<p><strong>流感病毒的储存库</strong> 所有哺乳动物的流感病毒均来源于禽类。</p>
+    <p><strong>流感病毒的储存库</strong> 所有哺乳动物的流感病毒均来源于禽类。</p>
 <p><strong>基因混合器</strong> 猪气管上皮具有禽流感病毒和人流感病毒两种病毒的受体。
 当猪受到两种病毒同时感染时，两种病毒间科发生基因重组和重配，导致抗原转换。</p>
 
-</details>
+  </details>
 <h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
 <h4 id="致病物质">致病物质 <a class="markdownIt-Anchor" href="#致病物质">#</a></h4>
 <dl>
@@ -480,15 +483,15 @@ fetch('https://api.eatrice.top')
 </dd>
 </dl>
 <p>血凝素和神经氨酸酶的抗原性皆不稳定，易发生突变，共同划分<strong>甲型流感细胞</strong>亚型。</p>
-<details class="note info"><summary><p>抗原性</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>抗原性</p>
 </summary>
-<p>抗原性一般指两方面（详见 <a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原">抗原的基本特征</a>：</p>
+    <p>抗原性一般指两方面（详见 <a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原">抗原的基本特征</a>：</p>
 <ul>
 <li>可刺激机体产生抗原</li>
 <li>可作为区分病毒类型的依据</li>
 </ul>
 
-</details>
+  </details>
 <h4 id="所致疾病">所致疾病 <a class="markdownIt-Anchor" href="#所致疾病">#</a></h4>
 <ul>
 <li>传染源：患者和隐性感染者</li>
@@ -595,10 +598,10 @@ fetch('https://api.eatrice.top')
 <dt>腺病毒</dt>
 <dd>DNA 无包膜病毒，可携带其他病毒的有效成分。</dd>
 </dl>
-<details class="note info"><summary><p>腺病毒载体疫苗</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>腺病毒载体疫苗</p>
 </summary>
-
-</details>
+    
+  </details>
 <h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
 <p>传播途径</p>
 <ul>
@@ -617,9 +620,9 @@ fetch('https://api.eatrice.top')
 </ul>
 </li>
 </ul>
-<details class="note info"><summary><p>ToRCH</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>ToRCH</p>
 </summary>
-<ul>
+    <ul>
 <li>T：</li>
 <li>o：other</li>
 <li>R</li>
@@ -627,7 +630,7 @@ fetch('https://api.eatrice.top')
 <li>H</li>
 </ul>
 
-</details>
+  </details>
 <h3 id="免疫性-4">免疫性 <a class="markdownIt-Anchor" href="#免疫性-4">#</a></h3>
 
     </div>

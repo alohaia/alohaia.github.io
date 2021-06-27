@@ -177,31 +177,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -398,11 +401,11 @@ fetch('https://api.eatrice.top')
 <dt>固定绒毛（anchoring villus）</dt>
 <dd><strong>绒毛干</strong> 固定于蜕膜上的绒毛。</dd>
 </dl>
-<details class="note info"><summary><p>绒毛膜取样/活检</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>绒毛膜取样/活检</p>
 </summary>
-<p>绒毛膜取样/活检（chorionic villus sampling，CVS）指在超声引导下行穿刺术，取出胎盘内的绒毛组织进行细胞培养、分子遗传学或生化遗传学检查，进行染色体诊断或基因诊断。分为经腹绒毛活检及经宫颈绒毛活检。</p>
+    <p>绒毛膜取样/活检（chorionic villus sampling，CVS）指在超声引导下行穿刺术，取出胎盘内的绒毛组织进行细胞培养、分子遗传学或生化遗传学检查，进行染色体诊断或基因诊断。分为经腹绒毛活检及经宫颈绒毛活检。</p>
 
-</details>
+  </details>
 <img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E5%84%BF%E5%8F%B6%E5%92%8C%E8%83%8E%E5%84%BF%E5%B0%8F%E5%8F%B6.png" class="right" width="500" title="胎儿叶和胎儿小叶" alt="胎儿叶和胎儿小叶">
 <p>绒毛膜板上伸出 60~80 个 <strong>绒毛干</strong>，每个绒毛干中均含有 <em>脐动脉</em> 和 <em>脐静脉</em>。脐血管随绒毛不断分支，最终成为毛细血管进入绒毛末端。<br/>
 一个初级绒毛干及其分支形成一个 <strong>胎儿叶</strong>（fetal lobe）；一个次级绒毛干及其分支形成一个 <strong>胎儿小叶</strong>（fetal lobule）。</p>
@@ -587,15 +590,15 @@ fetch('https://api.eatrice.top')
 <dd>分散在生精小管之间的 <strong>间充质细胞</strong> 分化而来，分泌 <strong>雄激素</strong>，促进尿道生殖窦和 <strong>中肾管</strong> 向男性生殖管道分化。</dd>
 </dl>
 <p>人胚 14~18 周，间质细胞占睾丸体积一般以上，随后迅速减少，出生时几乎见不到间质细胞，直至青春期才重现。</p>
-<details class="note info"><summary><p>雄激素</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>雄激素</p>
 </summary>
-<dl>
+    <dl>
 <dt>雄激素（androgen, androgenic hormones, testoids）| 雄性激素 | 男性荷尔蒙</dt>
 <dd>系泛称，指任何能与 <strong>雄激素受体</strong>（androgen receptor）结合，调节脊椎动物雄性性征的发育与维持的 <strong>类固醇激素</strong>。</dd>
 </dl>
 <p>男性体内的主要雄激素为 <strong>睾酮</strong> 和 <strong>双氢睾酮</strong>。</p>
 
-</details>
+  </details>
 <dl>
 <dt>支持细胞 | Sertoli 细胞</dt>
 <dd>由 <strong>初级性索</strong> 分化形成，分泌 <strong>抗 Müllerian 激素</strong>，对 <strong>中肾旁管</strong> 起抑制作用。</dd>

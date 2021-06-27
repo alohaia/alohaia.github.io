@@ -169,31 +169,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -378,9 +381,9 @@ fetch('https://api.eatrice.top')
 <li>对<em>抗生素</em>不敏感，对<strong>干扰素</strong>敏感</li>
 </ol>
 <span id="more"></span>
-<details class="note default"><summary><p>病原生物学分类（TOC）</p>
+<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病原生物学分类（TOC）</p>
 </summary>
-<ol>
+    <ol>
 <li><a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">呼吸道感染病毒</a></li>
 <li><a href="/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">消化道感染病毒</a></li>
 <li><a href="/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/">肝炎病毒</a></li>
@@ -390,10 +393,10 @@ fetch('https://api.eatrice.top')
 <li><a href="/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/">其他病毒</a></li>
 </ol>
 
-</details>
-<details class="note info"><summary><p>亚病毒</p>
+  </details>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>亚病毒</p>
 </summary>
-<dl>
+    <dl>
 <dt>亚病毒（subvirus）</dt>
 <dd>一些新的非寻常病毒的致病因子，为比病毒更小、结构更简单的微生物。</dd>
 <dd>包括<strong>类病毒</strong>、<strong>卫星病毒</strong>和<strong>脘粒</strong>。</dd>
@@ -411,10 +414,10 @@ fetch('https://api.eatrice.top')
 <dd>生物学地位尚未确定，目前归类于亚病毒。</dd>
 </dl>
 
-</details>
-<details class="note info"><summary><p>病毒是生命吗？</p>
+  </details>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病毒是生命吗？</p>
 </summary>
-<p>病毒是介于生命与非生命之间的一种物质形式。</p>
+    <p>病毒是介于生命与非生命之间的一种物质形式。</p>
 <p>什么是生命？</p>
 <ol>
 <li>复制、增殖；</li>
@@ -429,7 +432,7 @@ fetch('https://api.eatrice.top')
 <p><strong>病毒不是生命</strong>——大多数科学家普遍认为它们是<strong>非生命感染颗粒</strong>；另外的科学家则表示异议，他们因为病毒在宿主细胞内的活动而认为病毒是活的。</p>
 <p><strong>病毒是生物</strong>——生物分为六个届：病毒届、真菌届、原核生物届、原生生物届、植物届和动物届。</p>
 
-</details>
+  </details>
 <h2 id="病毒的基本性状">病毒的基本性状 <a class="markdownIt-Anchor" href="#病毒的基本性状">#</a></h2>
 <h3 id="病毒的大小和形态">病毒的大小和形态 <a class="markdownIt-Anchor" href="#病毒的大小和形态">#</a></h3>
 <dl>
@@ -558,12 +561,12 @@ fetch('https://api.eatrice.top')
 <dt>生物合成（biosynthesis）</dt>
 <dd>即病毒利用宿主细胞提供的低分子物质大量合成病毒<strong>核酸</strong>和<strong>结构蛋白</strong>。</dd>
 </dl>
-<details class="note info"><summary><p>隐蔽期</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>隐蔽期</p>
 </summary>
-<p>用血清学方法和电镜检查宿主细胞，在生物合成阶段找不到病毒颗粒，故称为隐蔽期。
+    <p>用血清学方法和电镜检查宿主细胞，在生物合成阶段找不到病毒颗粒，故称为隐蔽期。
 实质是在病毒基因控制下进行病毒核酸和蛋白质合成的阶段。</p>
 
-</details>
+  </details>
 <p>病毒合成的蛋白质：</p>
 <ul>
 <li>转录早期 mRNA → <strong>早期蛋白</strong>：是在病毒核酸复制之前合成的，主要为用于合成子代 DNA 分子的多种酶类，为<strong>功能性蛋白</strong>；</li>
@@ -582,12 +585,12 @@ fetch('https://api.eatrice.top')
 </ol>
 <p>TODO: 图示</p>
 <p><strong>双链 RNA（dsDNA）病毒</strong> 在细胞核内合成 DNA，细胞质内合成病毒蛋白，<strong>痘病毒</strong>除外。</p>
-<details class="note "><summary><p>痘病毒科</p>
+<details class="note " onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>痘病毒科</p>
 </summary>
-<p>本科为病毒粒最大的一类DNA病毒，结构复杂。
+    <p>本科为病毒粒最大的一类DNA病毒，结构复杂。
 病毒在<strong>细胞质</strong>内增殖，形成包涵体，病毒粒由微绒毛或由细胞裂解而释放。</p>
 
-</details>
+  </details>
 <p><strong>单正链 RNA 病毒</strong> 这类病毒本身就具有 mRNA 的功能。</p>
 <p><strong>逆转录病毒</strong> 核酸以单正链 RNA 形式存在，但不具 mRNA 功能，只能作为逆转录的模版。</p>
 <h4 id="组装-成熟-释放">组装、成熟、释放 <a class="markdownIt-Anchor" href="#组装-成熟-释放">#</a></h4>

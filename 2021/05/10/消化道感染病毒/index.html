@@ -168,31 +168,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -369,9 +372,9 @@ fetch('https://api.eatrice.top')
 </dl>
 <span id="more"></span>
 <h2 id="肠道病毒属病毒">肠道病毒属病毒 <a class="markdownIt-Anchor" href="#肠道病毒属病毒">#</a></h2>
-<details class="note info"><summary><p>肠道病毒属病毒的共性</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>肠道病毒属病毒的共性</p>
 </summary>
-<ul>
+    <ul>
 <li>RNA 无包膜病毒
 <ul>
 <li>RNA：在细胞质内增殖</li>
@@ -382,7 +385,7 @@ fetch('https://api.eatrice.top')
 <li>肠道外病变</li>
 </ul>
 
-</details>
+  </details>
 <h3 id="脊髓灰质炎病毒">脊髓灰质炎病毒 <a class="markdownIt-Anchor" href="#脊髓灰质炎病毒">#</a></h3>
 <h4 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h4>
 <ul>
@@ -412,9 +415,9 @@ fetch('https://api.eatrice.top')
 </ul>
 </li>
 </ul>
-<details class="note info"><summary><p>脊髓灰质炎病毒灭活疫苗和减毒活疫苗的区别</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>脊髓灰质炎病毒灭活疫苗和减毒活疫苗的区别</p>
 </summary>
-<ul>
+    <ul>
 <li>灭活脊髓灰质炎病毒（OPV）——Sabin 疫苗</li>
 <li>脊髓灰质炎病毒减毒活疫苗（IPV）——Salk 疫苗</li>
 </ul>
@@ -465,7 +468,7 @@ fetch('https://api.eatrice.top')
 </tbody>
 </table>
 
-</details>
+  </details>
 <h3 id="柯萨奇病毒">柯萨奇病毒 <a class="markdownIt-Anchor" href="#柯萨奇病毒">#</a></h3>
 <h4 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h4>
 <ul>
@@ -514,14 +517,14 @@ fetch('https://api.eatrice.top')
 </ul>
 </li>
 </ul>
-<details class="note info"><summary><p>引起手足口病的病原体</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>引起手足口病的病原体</p>
 </summary>
-<ul>
+    <ul>
 <li>柯萨奇病毒</li>
 <li>肠道病毒 71 型（较严重）</li>
 </ul>
 
-</details>
+  </details>
 <h2 id="胃肠炎病毒">胃肠炎病毒 <a class="markdownIt-Anchor" href="#胃肠炎病毒">#</a></h2>
 <ol>
 <li>轮状病毒</li>

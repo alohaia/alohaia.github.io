@@ -164,31 +164,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -289,6 +292,106 @@ fetch('https://api.eatrice.top')
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/03/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/03/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">CMake 学习记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-03 20:35:04" itemprop="dateCreated datePublished" datetime="2021-05-03T20:35:04+08:00">2021-05-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-16 09:11:23" itemprop="dateModified" datetime="2021-06-16T09:11:23+08:00">2021-06-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>GitHub repository: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3R0cm95NTAvY21ha2UtZXhhbXBsZXM=">https://github.com/ttroy50/cmake-examples<i class="fa fa-external-link-alt"></i></span></p>
+<p>CMake 是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个库。<br/>
+它用配置文件控制建构过程（build process）的方式和 Unix 的 make 相似，只是 CMake
+的配置文件取名为 CMakeLists.txt。<br/>
+CMake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile 或
+Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方式使用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/03/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -680,113 +783,6 @@ fetch('https://api.eatrice.top')
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/03/15/Grammar-Testing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/15/Grammar-Testing/" class="post-title-link" itemprop="url">Grammar Testing</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-15 11:54:13" itemprop="dateCreated datePublished" datetime="2021-03-15T11:54:13+08:00">2021-03-15</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-04 09:50:30" itemprop="dateModified" datetime="2021-06-04T09:50:30+08:00">2021-06-04</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><ul class="markdownIt-TOC">
-<li><a href="#reason">reason</a></li>
-<li><a href="#hexo-renderer-markdown-it-plus">hexo-renderer-markdown-it-plus</a></li>
-<li><a href="#tag-plugins">Tag-plugins</a>
-<ul>
-<li><a href="#link">Link</a></li>
-<li><a href="#code-block">Code Block</a></li>
-<li><a href="#include-code">Include Code</a></li>
-<li><a href="#iframe">Iframe</a></li>
-<li><a href="#image">Image</a></li>
-<li><a href="#pull-quote">Pull Quote</a></li>
-<li><a href="#reference">Reference</a></li>
-<li><a href="#asset-resource">Asset Resource</a></li>
-<li><a href="#next-tags">NexT tags</a>
-<ul>
-<li><a href="#call-out">Call Out</a></li>
-<li><a href="#button">Button</a></li>
-<li><a href="#caniuse">caniUse</a></li>
-<li><a href="#center-quote">Center Quote</a></li>
-<li><a href="#group-pictures">Group Pictures</a></li>
-<li><a href="#label">Label</a></li>
-<li><a href="#mermaid">Mermaid</a></li>
-<li><a href="#pdf">Pdf</a></li>
-<li><a href="#tabs">Tabs</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/15/Grammar-Testing/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1345,7 +1341,7 @@ fetch('https://api.eatrice.top')
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=" crossorigin="anonymous">
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/copy-tex.min.css" integrity="sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=" crossorigin="anonymous">
   <script class="next-config" data-name="katex" type="application/json">{&quot;copy_tex_js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.13.3&#x2F;dist&#x2F;contrib&#x2F;copy-tex.min.js&quot;,&quot;integrity&quot;:&quot;sha256-etSqbSVF4+Lwe8MGk&#x2F;Vanc1sR+mWv+qOG73fxWw9p94&#x3D;&quot;}}</script>
   <script src="/js/third-party/math/katex.js"></script>

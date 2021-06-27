@@ -167,31 +167,34 @@
   <p class="site-author-name" itemprop="name">Qihuan Liu</p>
   <div class="site-description" itemprop="description">追寻罗素先生的脚步，渴望寻找到我想要的答案。</div>
 </div>
-<div class="rainbow">
-<p id="rainbow-content">🌈 获取中...</p>
-<p id="rainbow-from"></p>
+<div class="sidebar-quote">
+<p class="sidebar-quote-content" onclick="toggleFull()">主人不来过夜半，闲敲棋子落灯花。</p>
+<p class="sidebar-quote-from">——</p>
 </div>
-<script>
-fetch('https://api.eatrice.top')
-  .then(response => response.json())
-  .then(data => {
-    var rainbow_content = document.getElementById('rainbow-content');
-    var rainbow_from = document.getElementById('rainbow-from');
-    rainbow_content.innerText = data.Content;
-    if(data.Author == 'unknown' && data.Source == 'unknown') {
-      rainbow_from.setAttribute('visibility', 'hidden');
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var poem_part, poem_full
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    var info = document.querySelector(".sidebar-quote-from")
+    poem_part = sentence.innerHTML = result.data.content
+    info.innerHTML = '——' + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    const indent = "&nbsp".repeat(8)
+    poem_full = indent + result.data.origin.content.join('<br/>' + indent)
+  });
+  var FULLYSHOWED = false;
+  function toggleFull() {
+    var sentence = document.querySelector(".sidebar-quote-content")
+    if (FULLYSHOWED) {
+      sentence.innerHTML = poem_part
+      /* sentence.style["text-align"] = "left" */
+      FULLYSHOWED = false
     } else {
-      var from_text = "—";
-      if(data.Author != 'unknown') {
-        from_text += ' ' + data.Author;
-      }
-      if(data.Source != 'unknown') {
-        from_text += '《' + data.Source + '》';
-      }
-      rainbow_from.innerText = from_text;
+      sentence.innerHTML = poem_full
+      /* sentence.style["text-align"] = "center" */
+      FULLYSHOWED = true
     }
-  })
-  .catch(console.error)
+  }
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -429,15 +432,15 @@ fetch('https://api.eatrice.top')
 <dt>支原体肺炎 | 原发性非典型肺炎（primary atypical pneumonia）</dt>
 <dd>一种<strong>间质性肺炎</strong>。</dd>
 </dl>
-<details class="note info"><summary><p>间质性肺炎</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>间质性肺炎</p>
 </summary>
-<dl>
+    <dl>
 <dt>间质性肺炎</dt>
 <dd>是一群主要侵犯肺泡上皮细胞，肺微血管内皮细胞、基底膜以及肺内血管及淋巴周围组织的微生物引起的疾病。</dd>
 <dd>多数的间质肺病末期时会产生肺纤维化。</dd>
 </dl>
 
-</details>
+  </details>
 <ul>
 <li>占非细菌型肺炎的 50% 左右。</li>
 <li>主要经飞沫传播，多见于 5~15 岁儿童，夏未秋初为好发季节</li>
@@ -450,9 +453,9 @@ fetch('https://api.eatrice.top')
 <li><strong>自限性</strong>，不用抗生素可自愈</li>
 </ul>
 <p>常用<strong>冷凝集试验</strong>辅助诊断。</p>
-<details class="note info"><summary><p>冷凝集试验</p>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>冷凝集试验</p>
 </summary>
-<dl>
+    <dl>
 <dt>冷凝集试验</dt>
 <dd>冷凝集素抗体为自身抗体，针对红细胞表面抗原，在低温条件下使红细胞可逆性聚集。</dd>
 <dd>健康人体内有低效价的冷凝集素，一般不会引起临床症状。但在如支原体肺炎、肝硬化、传染性单核细胞增多症、淋巴瘤等病理情况下，可能有高效价冷凝集素存在。</dd>
@@ -464,7 +467,7 @@ fetch('https://api.eatrice.top')
 <dd>抗红细胞 I 抗原的 IgM 抗体。</dd>
 </dl>
 
-</details>
+  </details>
 <h2 id="解脲脲原体">解脲脲原体 <a class="markdownIt-Anchor" href="#解脲脲原体">#</a></h2>
 <dl>
 <dt>解脲脲原体（<em>Ureaplasma urealyticum</em>）| 溶脲脲原体</dt>

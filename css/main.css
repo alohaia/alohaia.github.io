@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #83a39a;
+  background: #ffb59a;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3316,9 +3316,6 @@ div.img-wrap-right { float: right; }
 
 /* for scripts/tags/align-text.js */
 
-.align-text-right {
-    text-align: right;
-}
 .align-text-right {
     text-align: right;
 }
@@ -3488,6 +3485,32 @@ dd>ol
 }
 
 /**************************************************************************************/
+
+.note-title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.note.default>.note-title { color: #777;    text-shadow: 1px 1px #777;    }
+.note.primary>.note-title { color: #6f42c1; text-shadow: 1px 1px #6f42c1; }
+.note.success>.note-title { color: #5cb85c; text-shadow: 1px 1px #5cb85c; }
+.note.info>.note-title    { color: #428bca; text-shadow: 1px 1px #428bca; }
+.note.warning>.note-title { color: #f0ad4e; text-shadow: 1px 1px #f0ad4e; }
+.note.danger>.note-title   { color: #d9534f; text-shadow: 1px 1px #d9534f; }
+
+details[open] summary {
+    visibility: hidden;
+    height: 0;
+}
+
+details[open] {
+    cursor: pointer;
+}
+
+summary::marker {
+    visibility: visible;
+}
+
 /*  */
 /* div.note { */
 /*     box-shadow: 3px 3px 2px #aaa; */
@@ -3570,17 +3593,50 @@ dd>ol
 /*  */
 /**************************************************************************************/
 
-div.rainbow {
+div.sidebar-quote {
 
 }
+div.sidebar-quote {
+  border-left: none;
+  margin: 40px 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+div.sidebar-quote::before,
+div.sidebar-quote::after {
+  left: 0;
+  line-height: 1;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+}
+div.sidebar-quote::before {
+  /* border-top: 1px solid .ccc; */
+  text-align: left;
+  top: -20px;
+  content: '\f10d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+div.sidebar-quote::after {
+  /* border-bottom: 1px solid .ccc; */
+  bottom: -20px;
+  text-align: right;
+  content: '\f10e';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
 
-p#rainbow-content {
+p.sidebar-quote-content {
     text-align: left;
     margin: 0;
+    height: auto;
 }
 
-p#rainbow-from {
+p.sidebar-quote-from {
     text-align: right;
+    margin: 0;
     font-size: 10px;
     font-style: italic;
 }
@@ -3591,7 +3647,7 @@ p#rainbow-from {
     margin-top: 10px;
 }
 
-mark:not(.search-keyword){
+mark:not(.search-keyword):not(.label){
     border-radius: 0.2em;
     box-shadow: 0px 0px 0.3em 0.1em yellow;
 }
