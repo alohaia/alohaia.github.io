@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/jobs_show.png">
 <meta property="og:image" content="https://www.aloha.org.cn/2021/03/15/The-TTY-Demystified/examplediagram.png">
 <meta property="article:published_time" content="2021-03-15T09:43:45.000Z">
-<meta property="article:modified_time" content="2021-04-19T13:42:36.473Z">
+<meta property="article:modified_time" content="2021-06-29T08:26:16.214Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="TTY">
@@ -345,7 +345,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-19 21:42:36" itemprop="dateModified" datetime="2021-04-19T21:42:36+08:00">2021-04-19</time>
+        <time title="Modified: 2021-06-29 16:26:16" itemprop="dateModified" datetime="2021-06-29T16:26:16+08:00">2021-06-29</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -436,9 +436,9 @@
 <dd>See <code>man curses</code></dd>
 </dl>
 <h3 id="session-management">Session Management <a class="markdownIt-Anchor" href="#session-management">#</a></h3>
-<p>用户可能希望同时运行多个程序，并一次与一个程序交互。如果程序陷入无尽的循环，则用户可能想杀死（kill）或挂起（suspend）。在后台启动的程序应能够执行，直到它们尝试写入终端为止，此时应将其挂起。同样，用户输入应仅定向到前台程序。操作系统在 <strong>TTY driver</strong> （进程可能会截获某些信号，并尝试适应这种情况，但大多数情况并非如此。<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvcnZhbGRzL2xpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvdHR5L3R0eV9pby5j">driver/tty/tty_io.c<i class="fa fa-external-link-alt"></i></span>）中实现这些功能。</p>
-<p>一个操作系统进程是“alive”的（有执行上下文（execution context）），意味着它能进行某些动作。在面对对象的术语中，TTY driver 是一个 <strong>被动对象</strong>（passive object） 。它有一些数据字段和一些方法，但是能做些什么的唯一方式只有通过进程的上下文（context）或内核中断处理程序（kernel interrupt handler）调用。Line discipline 同样也是一个被动对象（entity）。</p>
-<p>UART driver、line discipline 实例和 TTY driver 这三者有时会一起被称为一个 <strong>TTY device</strong> ，或者简单地称为 <strong>TTY</strong> 。用户可以通过操作 <code>/dev</code> 目录下对应的设备文件来影响任何 TTY device的行为。由于需要对此设备文件的写入权限，用户在某个特定的 TTY 上登录时，必须成为设备文件的所有者（owner）。这个操作习惯上由以 root 权限运行的 <code>login(1)</code> 程序完成。</p>
+<p>用户可能希望同时运行多个程序，并一次与一个程序交互。如果程序陷入无尽的循环，则用户可能想杀死（kill）或挂起（suspend）。在后台启动的程序应能够执行，直到它们尝试写入终端为止，此时应将其挂起。同样，用户输入应仅定向到前台程序。操作系统在 <strong>TTY driver</strong>（进程可能会截获某些信号，并尝试适应这种情况，但大多数情况并非如此。<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvcnZhbGRzL2xpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvdHR5L3R0eV9pby5j">driver/tty/tty_io.c<i class="fa fa-external-link-alt"></i></span>）中实现这些功能。</p>
+<p>一个操作系统进程是“alive”的（有执行上下文（execution context）），意味着它能进行某些动作。在面对对象的术语中，TTY driver 是一个<strong>被动对象</strong>（passive object） 。它有一些数据字段和一些方法，但是能做些什么的唯一方式只有通过进程的上下文（context）或内核中断处理程序（kernel interrupt handler）调用。Line discipline 同样也是一个被动对象（entity）。</p>
+<p>UART driver、line discipline 实例和 TTY driver 这三者有时会一起被称为一个 <strong>TTY device</strong>，或者简单地称为 <strong>TTY</strong>。用户可以通过操作 <code>/dev</code> 目录下对应的设备文件来影响任何 TTY device的行为。由于需要对此设备文件的写入权限，用户在某个特定的 TTY 上登录时，必须成为设备文件的所有者（owner）。这个操作习惯上由以 root 权限运行的 <code>login(1)</code> 程序完成。</p>
 <p>之前图片中的 physical line 当然也可以是一根很长的电话线：</p>
 <img data-src="/2021/03/15/The-TTY-Demystified/case2.png" class="" title="case2" alt="case2">
 <dl>
@@ -481,7 +481,7 @@
 <li><code>+</code>: 进程属于一个前台进程组（foreground process group)</li>
 </ul>
 <h2 id="jobs-and-sessions">Jobs and Sessions <a class="markdownIt-Anchor" href="#jobs-and-sessions">#</a></h2>
-<p>作业控制（Job control）发生在你按下 <code>^Z</code> (Ctrl-Z) 来挂起一个程序，或用 <code>&amp;</code> 来启动一个程序时。一个作业（job）和一个进程组（process group）是一样的。Internal shell commands（built-in commands in the shell）如 <code>jobs</code>，<code>fg</code> 和 <code>bg</code>，能用来操作一个 <strong>会话</strong>（session） 中存在的作业。</p>
+<p>作业控制（Job control）发生在你按下 <code>^Z</code> (Ctrl-Z) 来挂起一个程序，或用 <code>&amp;</code> 来启动一个程序时。一个作业（job）和一个进程组（process group）是一样的。Internal shell commands（built-in commands in the shell）如 <code>jobs</code>，<code>fg</code> 和 <code>bg</code>，能用来操作一个<strong>会话</strong>（session） 中存在的作业。</p>
 <p>每个会话都由一个 <strong>session leader</strong> 管理。session leader，一般是 shell，通过信号和 system call 的复杂协议与内核紧密合作。</p>
 <p>下面的 Shell 交互……</p>
 <img data-src="/2021/03/15/The-TTY-Demystified/jobs_show.png" class="" title="jobs_show" alt="jobs_show">
@@ -515,19 +515,19 @@
 <p>本文将重点介绍以下信号：<code>SIGHUP</code>，<code>SIGINT</code>，<code>SIGQUIT</code>，<code>SIGPIPE</code>，<code>SIGCHLD</code>，<code>SIGSTOP</code>，<code>SIGCONT</code>，<code>SIGTSTP</code>，<code>SIGTTIN</code>，<code>SIGTTOU</code> 和 <code>SIGWINCH</code>。</p>
 <dl>
 <dt>SIGHUP</dt>
-<dd>默认行为： <strong>Terminate</strong></dd>
+<dd>默认行为：<strong>Terminate</strong></dd>
 <dd>可能行为：Terminate，Ignore，Function call</dd>
 <dd>检测到挂起（hangup）的情况时，UART driver 会将 <code>SIGHUP</code> 信号发送到整个会话。这一般会杀掉会话中的所用进程。有些进程。如 <code>nohub(1)</code> 和 <code>screen(1)</code> 会从它们的进程（和 TTY）中分离，所以它们的子进程不会注意到挂起。</dd>
 <dt>SIGINT</dt>
-<dd>默认行为： <strong>Terminate</strong></dd>
+<dd>默认行为：<strong>Terminate</strong></dd>
 <dd>可能行为：Terminate，Ignore，Function call</dd>
 <dd>当交互式注意字符（interactive attention character，通常是 <code>^C</code>，ASCII 码为 3）出现在输入流中时，TTY driver 会将 <code>SIGINT</code> 发送给当前的前台作业，除非此行为被关闭。只要有 TTY device 的访问（access）权限，就能改变交互式注意字符和开关这一特性。另外，session leader (manager) 会跟踪每个作业的 TTY 配置，并在每次切换作业时更新 TTY （配置）。</dd>
 <dt>SIGQUIT</dt>
-<dd>默认行为： <strong>Core dump</strong></dd>
+<dd>默认行为：<strong>Core dump</strong></dd>
 <dd>可能行为：Core dump，Ignore，Function call</dd>
 <dd><code>SIGQUIT</code> 和 <code>SIGINT</code> 的工作方式相似，但是对应字符为 <code>^\</code> 并且默认行为不同。</dd>
 <dt>SIGPIPE</dt>
-<dd>默认行为： <strong>Terminate</strong></dd>
+<dd>默认行为：<strong>Terminate</strong></dd>
 <dd>可能行为：Terminate，Ignore，Function call</dd>
 <dd>内核会将 <code>SIGPIPE</code> 发送给任何〔尝试写入〔没有读取器的管道〕的〕进程。这是很有用的，因为如果没有这个，<code>yes | head</code> 这样的进程将永远不会中止。</dd>
 </dl>
@@ -536,31 +536,31 @@
 </blockquote>
 <dl>
 <dt>SIGCHLD</dt>
-<dd>默认行为： <strong>Ignore</strong></dd>
+<dd>默认行为：<strong>Ignore</strong></dd>
 <dd>可能行为：Ignore，Function call</dd>
 <dd>当一个进程死亡或改变状态（停止或继续），内核会将一个 <code>SIGCHLD</code> 信号发送给其父进程。<code>SIGCHLD</code> 携带了额外信息，如该进程的 ID，用户 ID，exit status （或 termination signal）和其他 执行时间数据（execution time statistics）。Session leader 借助此信号追踪其作业。</dd>
 <dt>SIGSTOP</dt>
-<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>默认行为：<strong>Suspend</strong></dd>
 <dd>可能行为：Suspend</dd>
 <dd>此信号会无条件地将接受者挂起，也就是说，其行为无法被重新设置。然而，请注意内核不会在作业控制过程中发送 <code>SIGSTOP</code> 信号。作为替代，<code>^Z</code> 通常会触发 <code>SIGTSTP</code>。<code>SIGTSTP</code> 可以被应用程序拦截。应用程序可以将光标移动到屏幕底部，或者将终端置于已知状态（known state），然后使用 <code>SIGSTOP</code> 让自己进入睡眠状态。</dd>
 <dt>SIGCONT</dt>
-<dd>默认行为： <strong>Wake up</strong></dd>
+<dd>默认行为：<strong>Wake up</strong></dd>
 <dd>可能行为：Wake up，Wake up + Function call</dd>
 <dd><code>SIGCONT</code> 会将一个被停止的进程取消挂起（un-suspend）。用户调用 <code>fg</code> 命令时，它会被显式发送给指定进程。</dd>
 <dt>SIGTSTP</dt>
-<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>默认行为：<strong>Suspend</strong></dd>
 <dd>可能行为：Suspend，Ignore，Function call</dd>
 <dd><code>SIGTSTP</code> 的工作方式和 <code>SIGINT</code> 与 <code>SIGQUIT</code> 类似，但是 “magic” 字符一般是 <code>^Z</code> 并且默认行为是挂起进程。</dd>
 <dt>SIGTTIN</dt>
-<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>默认行为：<strong>Suspend</strong></dd>
 <dd>可能行为：Suspend，Ignore，Function call</dd>
 <dd>如果一个后台作业中的进程尝试从 TTY device 读取，TTY 会向整个作业发送 <code>SIGTTIN</code>。这通常会挂起该作业。</dd>
 <dt>SIGTTOU</dt>
-<dd>默认行为： <strong>Suspend</strong></dd>
+<dd>默认行为：<strong>Suspend</strong></dd>
 <dd>可能行为：Suspend，Ignore，Function call</dd>
 <dd>如果一个后台作业中的进程尝试写入到 TTY device，TTY 会向整个作业发送 <code>SIGTOUT</code>。这通常会挂起该作业。可以为单独的 TTY 关闭此功能。</dd>
 <dt>SIGWINCH</dt>
-<dd>默认行为： <strong>Ignore</strong></dd>
+<dd>默认行为：<strong>Ignore</strong></dd>
 <dd>可能行为：Ignore，Function call</dd>
 <dd>如前所述，TTY device 会追踪终端的大小（行列数），但是此信息需要手动更新。每当终端窗口大小改变时，TTY 会发送一个 <code>SIGWINCH</code> 信号给前台作业。行为良好的（well-behaving）交互式应用程序，如编辑器，会对此做出回应——获取新的终端大小并重新绘制自己。</dd>
 </dl>
@@ -587,7 +587,7 @@
 <p>Let’s try it!</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ stty -a</span><br><span class="line">speed 38400 baud; rows 73; columns 238; line = 0;</span><br><span class="line">intr = ^C; quit = ^\; erase = ^?; <span class="built_in">kill</span> = ^U; eof = ^D; eol = &lt;undef&gt;; eol2 = &lt;undef&gt;; swtch = &lt;undef&gt;; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V; flush = ^O; min = 1; time = 0;</span><br><span class="line">-parenb -parodd cs8 -hupcl -cstopb cread -clocal -crtscts</span><br><span class="line">-ignbrk brkint ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany imaxbel -iutf8</span><br><span class="line">opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0</span><br><span class="line">isig icanon iexten <span class="built_in">echo</span> echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; stty -a</span><br><span class="line">speed 38400 baud; rows 15; columns 92; line = 0;</span><br><span class="line">intr = ^C; quit = ^\; erase = ^?; <span class="built_in">kill</span> = ^U; eof = ^D; eol = &lt;undef&gt;; eol2 = &lt;undef&gt;;</span><br><span class="line">swtch = &lt;undef&gt;; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V;</span><br><span class="line">discard = ^O; min = 1; time = 0;</span><br><span class="line">-parenb -parodd -cmspar cs8 -hupcl -cstopb cread -clocal -crtscts</span><br><span class="line">-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany</span><br><span class="line">-imaxbel iutf8</span><br><span class="line">opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0</span><br><span class="line">isig icanon iexten <span class="built_in">echo</span> echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke</span><br><span class="line">-flusho -extproc</span><br></pre></td></tr></table></figure>
-<p>该 <code>-a</code> 标志告诉 <code>stty</code> 显示的 <em>所有</em> 设置。默认情况下，它将查看连接到你的 Shell 的 TTY device，但是你可以使用 <code>-F</code> 指定另一个设备。</p>
+<p>该 <code>-a</code> 标志告诉 <code>stty</code> 显示的<em>所有</em>设置。默认情况下，它将查看连接到你的 Shell 的 TTY device，但是你可以使用 <code>-F</code> 指定另一个设备。</p>
 <p>其中一些设置取决于 UART 参数，有些会影响 line discipline，有些则与作业控制有关。全部放在一起供君取用。让我们先看一下第一行：</p>
 <table>
 <thead>

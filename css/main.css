@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #e81aff;
+  background: #4b34c9;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3304,6 +3304,7 @@ div.img-wrap-right { float: right; }
 .table-caption {
     counter-increment: tblCounter;
     display: block;
+    margin-bottom: 0;
     font-size: 14px;
     font-weight: bold;
     color: #999;
