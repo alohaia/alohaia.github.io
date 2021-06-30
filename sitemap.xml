@@ -11,7 +11,7 @@
   <url>
     <loc>https://www.aloha.org.cn/2021/03/21/%E7%BB%86%E8%8F%8C/</loc>
     
-    <lastmod>2021-06-29</lastmod>
+    <lastmod>2021-06-30</lastmod>
     
   </url>
   
@@ -304,13 +304,6 @@
   
   <url>
     <loc>https://www.aloha.org.cn/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/</loc>
-    
-    <lastmod>2021-06-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/</loc>
     
     <lastmod>2021-06-29</lastmod>
     
@@ -713,7 +706,7 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Vim-NeoVim/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/</loc>
     <lastmod>2021-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -755,14 +748,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Lua/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Vim-NeoVim/</loc>
     <lastmod>2021-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Lua/</loc>
     <lastmod>2021-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

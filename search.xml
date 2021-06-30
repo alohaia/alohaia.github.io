@@ -817,6 +817,113 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
+    <title>Linux 配置记录</title>
+    <url>/2021/04/06/Linux-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>记录 Linux 使用过程中遇到的坑、软件和开发环境的安装和配置等。</p>
+<span id="more"></span>
+<h2 id="踩坑记录">踩坑记录 <a class="markdownIt-Anchor" href="#踩坑记录">#</a></h2>
+<h3 id="用-manjaro-安装镜像分区">用 Manjaro 安装镜像分区 <a class="markdownIt-Anchor" href="#用-manjaro-安装镜像分区">#</a></h3>
+<p>Manjaro 安装程序分区有时候会有问题，建议先用 <code>fdisk</code> 分好区并格式化。</p>
+<h3 id="把-home-目录下的目录名改为英文">把 HOME 目录下的目录名改为英文 <a class="markdownIt-Anchor" href="#把-home-目录下的目录名改为英文">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xdg-user-dirs-gtk &amp;&amp; <span class="built_in">export</span> LANG=en_US &amp;&amp; xdg-user-dirs-gtk-update</span><br><span class="line"><span class="built_in">export</span> LANG=zh_CN.UTF-8</span><br></pre></td></tr></table></figure>
+<h3 id="arch-系安装-deb-包">Arch 系安装 deb 包 <a class="markdownIt-Anchor" href="#arch-系安装-deb-包">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 debtap</span></span><br><span class="line">yay -S debtap</span><br><span class="line">sudo debtap -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 arch 包</span></span><br><span class="line">debtap &lt;deb 包&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装生成的包</span></span><br><span class="line">sudo pacman -U &lt;arch 包&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="linux-安装及基本配置">Linux 安装及基本配置 <a class="markdownIt-Anchor" href="#linux-安装及基本配置">#</a></h2>
+<h3 id="linux-安装">Linux 安装 <a class="markdownIt-Anchor" href="#linux-安装">#</a></h3>
+<p><strong>镜像及启动盘制作</strong>（<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuLw==">清华镜像站<i class="fa fa-external-link-alt"></i></span>）</p>
+<ul>
+<li>Arch Linux：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL2FyY2hsaW51eC9pc28vbGF0ZXN0Lw==">https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/<i class="fa fa-external-link-alt"></i></span></li>
+<li>Manjaro Linux
+<ul>
+<li>官方版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby8=">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro/<i class="fa fa-external-link-alt"></i></span></li>
+<li>社区版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby1jb21tdW5pdHkv">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro-community/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>刻录软件：
+<ul>
+<li>Windows：rufus</li>
+<li>Linux：<code>dd</code> 命令，示例：<code>dd if=~/Downloads/archlinux-2021.04.01-x86_64.iso of=/dev/sdc1</code>
+if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使用 <code>lsblk -f</code> 和 <code>sudo fdisk -l</code> 帮助确定。</li>
+</ul>
+</li>
+</ul>
+<p>启动盘制作完成后即可重启电脑，通过 BIOS 从启动盘启动计算机。</p>
+<p><strong>后续步骤</strong></p>
+<p>Arch</p>
+<ol>
+<li>参考 ArchWiki 的 <span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0luc3RhbGxhdGlvbl9ndWlkZV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">Installation Guide<i class="fa fa-external-link-alt"></i></span></li>
+<li>4-1-2021，官方发布<span class="exturl" data-url="aHR0cHM6Ly9hcmNobGludXgub3JnL25ld3MvaW5zdGFsbGF0aW9uLW1lZGl1bS13aXRoLWluc3RhbGxlci8=">消息<i class="fa fa-external-link-alt"></i></span>，可通过“a guided installer”安装 Arch Linux。镜像自带该安装器，只需在镜像系统中使用 <code>archinstall</code> 即可启动菜单式安装。<s>爷的青春结束了</s></li>
+</ol>
+<p>Manjaro：自带图形安装界面</p>
+<p><strong>分区参考</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NAME        FSTYPE FSVER LABEL  UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">nvme0n1</span><br><span class="line">├─nvme0n1p1 vfat   FAT32        3833-B9DC                             510.5M     0% /boot/efi</span><br><span class="line">├─nvme0n1p2 swap   1            8759088c-fdb3-4719-952d-a00cd91fa61b                [SWAP]</span><br><span class="line">├─nvme0n1p3 xfs                 b78adcf1-81a8-4cb0-83dc-3813e68067b8   62.3G    38% /</span><br><span class="line">├─nvme0n1p4 xfs                 7fd8a9e3-8e5e-4d7f-99c3-a6a1498bd192  146.7G    27% /home</span><br><span class="line">└─nvme0n1p5 ntfs         Shared CC00E4A900E49C28                       17.8G    89% /home/aloha/Shared</span><br></pre></td></tr></table></figure>
+<p>我的是 Win10 + Linux 双系统，<code>nvme0n1p5</code> 为共享分区。</p>
+<p><strong>文件系统格式推荐</strong></p>
+<ul>
+<li>btrfs：Fedora 的默认 文件系统，支持 copy-on-write（COW），被认为是 Linux 的下一代文件系统，参考
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzQwNzM4NjY1My9hbnN3ZXIvMTM1NDk2NDYwNg==">知乎-如何看待 Fedora 33 将默认使用 btrfs 文件系统？-@醉卧沙场的回答<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9mZWRvcmFwcm9qZWN0Lm9yZy93aWtpL0NoYW5nZXMvQnRyZnNCeURlZmF1bHQ=">Fedora Wiki-Btrfs by Default<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>xfs：RHEL（Red Hat Enterprise Linux）7 和 8 等著名的商用发行版默认采用的文件系统，我在使用的就是 xfs，主要以因为可以使用 <code>xfsdump</code> 方便备份</li>
+</ul>
+<p><strong>使用 <code>xfsdump</code> 自动备份的脚本</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +%w)</span><br><span class="line"><span class="comment"># day=0</span></span><br><span class="line"></span><br><span class="line">RET=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#@1 str</span></span><br><span class="line"><span class="comment">#@2 color</span></span><br><span class="line"><span class="function"><span class="title">Hi</span></span>()&#123;</span><br><span class="line">    RET=<span class="string">&quot;\033[1;<span class="variable">$2</span>;40m<span class="variable">$1</span>\033[0m&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">back_mnt_rel=<span class="string">&#x27;_tmp/.sys-backup-mnt&#x27;</span></span><br><span class="line"><span class="comment"># mount point of backup device</span></span><br><span class="line">back_mnt=`<span class="built_in">pwd</span> -P`/<span class="variable">$&#123;back_mnt_rel&#125;</span></span><br><span class="line"><span class="comment"># dir to store backup files</span></span><br><span class="line">back_dir=<span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line"><span class="comment"># dir to store old backup files</span></span><br><span class="line">back_old_dir=<span class="variable">$&#123;back_mnt&#125;</span>/.old</span><br><span class="line"><span class="comment"># device where to store dump files</span></span><br><span class="line">back_dev=<span class="string">&quot;6b1bd96b-5abc-4625-aa44-7de685a79752&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Backup Information:&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dev&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tUsing Device:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_mnt&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tMount Point:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dir&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Directory:\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;day&#125;</span>      33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Level:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Continue? y(es)/[n(o)]: &quot;</span> confirm</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$&#123;confirm&#125;</span> <span class="keyword">in</span></span><br><span class="line">    [yY][eE][sS]|[yY])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mBackup Starting...\033[0m&quot;</span></span><br><span class="line">        ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mAborted.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mInvalid input.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mount --uuid <span class="variable">$&#123;back_dev&#125;</span> <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_dir&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$day</span> -eq 1 || <span class="variable">$day</span> -eq 2 || <span class="variable">$day</span> -eq 3 || <span class="variable">$day</span> -eq 4 || <span class="variable">$day</span> -eq 5 || <span class="variable">$day</span> -eq 6 ]];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level <span class="variable">$&#123;day&#125;</span>]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="comment"># 7</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$day</span> -eq 0 ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level 0(full)]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mCleaning up old Dumps..\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mrm <span class="variable">$&#123;back_old_dir&#125;</span>/*\033[0m&quot;</span></span><br><span class="line">    rm <span class="variable">$&#123;back_old_dir&#125;</span>/*</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mmv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/\033[0m&quot;</span></span><br><span class="line">    mv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/</span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Actually, this is IMPOSSIBLE.&#x27;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">umount <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">rmdir -p <span class="variable">$&#123;back_mnt_rel&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="pacman-换源">pacman 换源 <a class="markdownIt-Anchor" href="#pacman-换源">#</a></h2>
+<ol>
+<li>方法 1：sudo pacman-mirrors -i -c China -m rank</li>
+<li>方法 2：在 /etc/pacman.d/mirrorlist 开头加上：</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>/etc/pacman.d/mirrorlist</span></figcaption><table><tr><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjarostable/$repo/$arch</span><br></pre></td></tr></table></figure>
+<p>然后同步本地数据库：<code>sudo pacman -Syy</code></p>
+<p>启用 <code>archlinuxcn</code> 源（optional，<mark>不建议 manjaro 用户启用</mark>）：</p>
+<p>在 <code>/etc/pacman.conf</code> 末尾加上：</p>
+<figure class="highlight plaintext"><figcaption><span>/etc/pacman.conf</span></figcaption><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+<p>然后执行命令：<code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h2 id="软件和开发环境">软件和开发环境 <a class="markdownIt-Anchor" href="#软件和开发环境">#</a></h2>
+<h3 id="wps">WPS <a class="markdownIt-Anchor" href="#wps">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -S wps-office-cn ttf-wps-fonts wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure>
+<p>安装后出现提示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ATTENTION: When you shut down wps, the wpsoffice process may still exist.</span><br><span class="line"># You can do &#x27;sudo chmod -x /usr/lib/office6/wpsoffice&#x27; to fix it. But</span><br><span class="line"># this might bring you problem with signing in.</span><br></pre></td></tr></table></figure>
+<h3 id="字体">字体 <a class="markdownIt-Anchor" href="#字体">#</a></h3>
+<p>Nerd 字体：<code>nerd-fonts-jetbrains-mono</code> 或 <code>nerd-fonts-fira-code</code></p>
+<p>中文字体：<code>ttf-sarasa-gothic</code> 或 <code>adobe-source-han-serif-otc-fonts</code> 和 <code>adobe-source-han-sans-otc-fonts</code></p>
+<h3 id="fcitx-输入法">fcitx 输入法 <a class="markdownIt-Anchor" href="#fcitx-输入法">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S fcitx5-im fcitx5-material-color fcitx5-rime librime</span><br></pre></td></tr></table></figure>
+<p>设置环境变量：</p>
+<figure class="highlight bash"><figcaption><span>~/.pam_environment</span></figcaption><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE DEFAULT=fcitx</span><br><span class="line">QT_IM_MODULE  DEFAULT=fcitx</span><br><span class="line">XMODIFIERS    DEFAULT=\@im=fcitx</span><br><span class="line">SDL_IM_MODULE DEFAULT=fcitx</span><br></pre></td></tr></table></figure>
+<p>Rime 配置目录：<code>~/.local/share/fcitx5/rime/</code></p>
+<p>参见</p>
+<ul>
+<li>ArchWiki：
+<ul>
+<li>fcitx5：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0ZjaXR4NV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">https://wiki.archlinux.org/index.php/Fcitx5_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
+<li>rime：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL1JpbWVfKCVFNyVBRSU4MCVFNCVCRCU5MyVFNCVCOCVBRCVFNiU5NiU4Nyk=">https://wiki.archlinux.org/index.php/Rime_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>Rime Github 主页：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JpbWUvaG9tZQ==">https://github.com/rime/home<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h3 id="mariadb-和-lua-mysql">MariaDB 和 lua-mysql <a class="markdownIt-Anchor" href="#mariadb-和-lua-mysql">#</a></h3>
+<ul>
+<li>lua-mysql</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo proxychains -q luarocks install luasql-mysql MYSQL_INCDIR=/usr/include/mysql</span><br></pre></td></tr></table></figure>
+<ul>
+<li>MariaDB</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients mariadb-libs</span><br><span class="line">sudo mv /var/lib/mysql /tmp</span><br><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line">sudo systemctl restart mariadb</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>uncategorized</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p>语法测试用。</p>
@@ -1234,110 +1341,65 @@ What’s this?</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Linux 配置记录</title>
-    <url>/2021/04/06/Linux-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>记录 Linux 使用过程中遇到的坑、软件和开发环境的安装和配置等。</p>
+    <title>Lua 迭代器和泛型 for</title>
+    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
+    <content><![CDATA[<blockquote>
+<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
+本文也未刻意区分。</p>
+</blockquote>
 <span id="more"></span>
-<h2 id="踩坑记录">踩坑记录 <a class="markdownIt-Anchor" href="#踩坑记录">#</a></h2>
-<h3 id="用-manjaro-安装镜像分区">用 Manjaro 安装镜像分区 <a class="markdownIt-Anchor" href="#用-manjaro-安装镜像分区">#</a></h3>
-<p>Manjaro 安装程序分区有时候会有问题，建议先用 <code>fdisk</code> 分好区并格式化。</p>
-<h3 id="把-home-目录下的目录名改为英文">把 HOME 目录下的目录名改为英文 <a class="markdownIt-Anchor" href="#把-home-目录下的目录名改为英文">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xdg-user-dirs-gtk &amp;&amp; <span class="built_in">export</span> LANG=en_US &amp;&amp; xdg-user-dirs-gtk-update</span><br><span class="line"><span class="built_in">export</span> LANG=zh_CN.UTF-8</span><br></pre></td></tr></table></figure>
-<h3 id="arch-系安装-deb-包">Arch 系安装 deb 包 <a class="markdownIt-Anchor" href="#arch-系安装-deb-包">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 debtap</span></span><br><span class="line">yay -S debtap</span><br><span class="line">sudo debtap -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 arch 包</span></span><br><span class="line">debtap &lt;deb 包&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装生成的包</span></span><br><span class="line">sudo pacman -U &lt;arch 包&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="linux-安装及基本配置">Linux 安装及基本配置 <a class="markdownIt-Anchor" href="#linux-安装及基本配置">#</a></h2>
-<h3 id="linux-安装">Linux 安装 <a class="markdownIt-Anchor" href="#linux-安装">#</a></h3>
-<p><strong>镜像及启动盘制作</strong>（<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuLw==">清华镜像站<i class="fa fa-external-link-alt"></i></span>）</p>
-<ul>
-<li>Arch Linux：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL2FyY2hsaW51eC9pc28vbGF0ZXN0Lw==">https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/<i class="fa fa-external-link-alt"></i></span></li>
-<li>Manjaro Linux
-<ul>
-<li>官方版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby8=">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro/<i class="fa fa-external-link-alt"></i></span></li>
-<li>社区版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby1jb21tdW5pdHkv">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro-community/<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-</li>
-<li>刻录软件：
-<ul>
-<li>Windows：rufus</li>
-<li>Linux：<code>dd</code> 命令，示例：<code>dd if=~/Downloads/archlinux-2021.04.01-x86_64.iso of=/dev/sdc1</code>
-if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使用 <code>lsblk -f</code> 和 <code>sudo fdisk -l</code> 帮助确定。</li>
-</ul>
-</li>
-</ul>
-<p>启动盘制作完成后即可重启电脑，通过 BIOS 从启动盘启动计算机。</p>
-<p><strong>后续步骤</strong></p>
-<p>Arch</p>
+<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<dl>
+<dt>迭代器（iterator）</dt>
+<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
+<dt>闭包（closure）</dt>
+<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
+<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
+<dt>工厂（factory）</dt>
+<dd>用于创建闭包及其封装变量的函数。</dd>
+</dl>
+<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
+<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<p>泛型 for 的语法：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
+<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
 <ol>
-<li>参考 ArchWiki 的 <span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0luc3RhbGxhdGlvbl9ndWlkZV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">Installation Guide<i class="fa fa-external-link-alt"></i></span></li>
-<li>4-1-2021，官方发布<span class="exturl" data-url="aHR0cHM6Ly9hcmNobGludXgub3JnL25ld3MvaW5zdGFsbGF0aW9uLW1lZGl1bS13aXRoLWluc3RhbGxlci8=">消息<i class="fa fa-external-link-alt"></i></span>，可通过“a guided installer”安装 Arch Linux。镜像自带该安装器，只需在镜像系统中使用 <code>archinstall</code> 即可启动菜单式安装。<s>爷的青春结束了</s></li>
+<li>迭代函数</li>
+<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
+<li>控制变量的初始值</li>
 </ol>
-<p>Manjaro：自带图形安装界面</p>
-<p><strong>分区参考</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NAME        FSTYPE FSVER LABEL  UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">nvme0n1</span><br><span class="line">├─nvme0n1p1 vfat   FAT32        3833-B9DC                             510.5M     0% /boot/efi</span><br><span class="line">├─nvme0n1p2 swap   1            8759088c-fdb3-4719-952d-a00cd91fa61b                [SWAP]</span><br><span class="line">├─nvme0n1p3 xfs                 b78adcf1-81a8-4cb0-83dc-3813e68067b8   62.3G    38% /</span><br><span class="line">├─nvme0n1p4 xfs                 7fd8a9e3-8e5e-4d7f-99c3-a6a1498bd192  146.7G    27% /home</span><br><span class="line">└─nvme0n1p5 ntfs         Shared CC00E4A900E49C28                       17.8G    89% /home/aloha/Shared</span><br></pre></td></tr></table></figure>
-<p>我的是 Win10 + Linux 双系统，<code>nvme0n1p5</code> 为共享分区。</p>
-<p><strong>文件系统格式推荐</strong></p>
-<ul>
-<li>btrfs：Fedora 的默认 文件系统，支持 copy-on-write（COW），被认为是 Linux 的下一代文件系统，参考
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzQwNzM4NjY1My9hbnN3ZXIvMTM1NDk2NDYwNg==">知乎-如何看待 Fedora 33 将默认使用 btrfs 文件系统？-@醉卧沙场的回答<i class="fa fa-external-link-alt"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9mZWRvcmFwcm9qZWN0Lm9yZy93aWtpL0NoYW5nZXMvQnRyZnNCeURlZmF1bHQ=">Fedora Wiki-Btrfs by Default<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-</li>
-<li>xfs：RHEL（Red Hat Enterprise Linux）7 和 8 等著名的商用发行版默认采用的文件系统，我在使用的就是 xfs，主要以因为可以使用 <code>xfsdump</code> 方便备份</li>
-</ul>
-<p><strong>使用 <code>xfsdump</code> 自动备份的脚本</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +%w)</span><br><span class="line"><span class="comment"># day=0</span></span><br><span class="line"></span><br><span class="line">RET=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#@1 str</span></span><br><span class="line"><span class="comment">#@2 color</span></span><br><span class="line"><span class="function"><span class="title">Hi</span></span>()&#123;</span><br><span class="line">    RET=<span class="string">&quot;\033[1;<span class="variable">$2</span>;40m<span class="variable">$1</span>\033[0m&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">back_mnt_rel=<span class="string">&#x27;_tmp/.sys-backup-mnt&#x27;</span></span><br><span class="line"><span class="comment"># mount point of backup device</span></span><br><span class="line">back_mnt=`<span class="built_in">pwd</span> -P`/<span class="variable">$&#123;back_mnt_rel&#125;</span></span><br><span class="line"><span class="comment"># dir to store backup files</span></span><br><span class="line">back_dir=<span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line"><span class="comment"># dir to store old backup files</span></span><br><span class="line">back_old_dir=<span class="variable">$&#123;back_mnt&#125;</span>/.old</span><br><span class="line"><span class="comment"># device where to store dump files</span></span><br><span class="line">back_dev=<span class="string">&quot;6b1bd96b-5abc-4625-aa44-7de685a79752&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Backup Information:&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dev&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tUsing Device:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_mnt&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tMount Point:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dir&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Directory:\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;day&#125;</span>      33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Level:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Continue? y(es)/[n(o)]: &quot;</span> confirm</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$&#123;confirm&#125;</span> <span class="keyword">in</span></span><br><span class="line">    [yY][eE][sS]|[yY])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mBackup Starting...\033[0m&quot;</span></span><br><span class="line">        ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mAborted.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mInvalid input.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mount --uuid <span class="variable">$&#123;back_dev&#125;</span> <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_dir&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$day</span> -eq 1 || <span class="variable">$day</span> -eq 2 || <span class="variable">$day</span> -eq 3 || <span class="variable">$day</span> -eq 4 || <span class="variable">$day</span> -eq 5 || <span class="variable">$day</span> -eq 6 ]];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level <span class="variable">$&#123;day&#125;</span>]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="comment"># 7</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$day</span> -eq 0 ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level 0(full)]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mCleaning up old Dumps..\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mrm <span class="variable">$&#123;back_old_dir&#125;</span>/*\033[0m&quot;</span></span><br><span class="line">    rm <span class="variable">$&#123;back_old_dir&#125;</span>/*</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mmv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/\033[0m&quot;</span></span><br><span class="line">    mv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/</span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Actually, this is IMPOSSIBLE.&#x27;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">umount <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">rmdir -p <span class="variable">$&#123;back_mnt_rel&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="pacman-换源">pacman 换源 <a class="markdownIt-Anchor" href="#pacman-换源">#</a></h2>
-<ol>
-<li>方法 1：sudo pacman-mirrors -i -c China -m rank</li>
-<li>方法 2：在 /etc/pacman.d/mirrorlist 开头加上：</li>
-</ol>
-<figure class="highlight plaintext"><figcaption><span>/etc/pacman.d/mirrorlist</span></figcaption><table><tr><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjarostable/$repo/$arch</span><br></pre></td></tr></table></figure>
-<p>然后同步本地数据库：<code>sudo pacman -Syy</code></p>
-<p>启用 <code>archlinuxcn</code> 源（optional，<mark>不建议 manjaro 用户启用</mark>）：</p>
-<p>在 <code>/etc/pacman.conf</code> 末尾加上：</p>
-<figure class="highlight plaintext"><figcaption><span>/etc/pacman.conf</span></figcaption><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
-<p>然后执行命令：<code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
-<h2 id="软件和开发环境">软件和开发环境 <a class="markdownIt-Anchor" href="#软件和开发环境">#</a></h2>
-<h3 id="wps">WPS <a class="markdownIt-Anchor" href="#wps">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -S wps-office-cn ttf-wps-fonts wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure>
-<p>安装后出现提示</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ATTENTION: When you shut down wps, the wpsoffice process may still exist.</span><br><span class="line"># You can do &#x27;sudo chmod -x /usr/lib/office6/wpsoffice&#x27; to fix it. But</span><br><span class="line"># this might bring you problem with signing in.</span><br></pre></td></tr></table></figure>
-<h3 id="字体">字体 <a class="markdownIt-Anchor" href="#字体">#</a></h3>
-<p>Nerd 字体：<code>nerd-fonts-jetbrains-mono</code> 或 <code>nerd-fonts-fira-code</code></p>
-<p>中文字体：<code>ttf-sarasa-gothic</code> 或 <code>adobe-source-han-serif-otc-fonts</code> 和 <code>adobe-source-han-sans-otc-fonts</code></p>
-<h3 id="fcitx-输入法">fcitx 输入法 <a class="markdownIt-Anchor" href="#fcitx-输入法">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S fcitx5-im fcitx5-material-color fcitx5-rime librime</span><br></pre></td></tr></table></figure>
-<p>设置环境变量：</p>
-<figure class="highlight bash"><figcaption><span>~/.pam_environment</span></figcaption><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE DEFAULT=fcitx</span><br><span class="line">QT_IM_MODULE  DEFAULT=fcitx</span><br><span class="line">XMODIFIERS    DEFAULT=\@im=fcitx</span><br><span class="line">SDL_IM_MODULE DEFAULT=fcitx</span><br></pre></td></tr></table></figure>
-<p>Rime 配置目录：<code>~/.local/share/fcitx5/rime/</code></p>
-<p>参见</p>
-<ul>
-<li>ArchWiki：
-<ul>
-<li>fcitx5：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0ZjaXR4NV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">https://wiki.archlinux.org/index.php/Fcitx5_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
-<li>rime：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL1JpbWVfKCVFNyVBRSU4MCVFNCVCRCU5MyVFNCVCOCVBRCVFNiU5NiU4Nyk=">https://wiki.archlinux.org/index.php/Rime_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-</li>
-<li>Rime Github 主页：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JpbWUvaG9tZQ==">https://github.com/rime/home<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<h3 id="mariadb-和-lua-mysql">MariaDB 和 lua-mysql <a class="markdownIt-Anchor" href="#mariadb-和-lua-mysql">#</a></h3>
-<ul>
-<li>lua-mysql</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo proxychains -q luarocks install luasql-mysql MYSQL_INCDIR=/usr/include/mysql</span><br></pre></td></tr></table></figure>
-<ul>
-<li>MariaDB</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients mariadb-libs</span><br><span class="line">sudo mv /var/lib/mysql /tmp</span><br><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line">sudo systemctl restart mariadb</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+<dl>
+<dt>控制变量（control variable）</dt>
+<dd>其值为 <code>nil</code> 时循环结束。</dd>
+</dl>
+<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
+其中只有最后一项能产生多个值。</p>
+<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
+<p>确切地说，形如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>与以下代码等价：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
+<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<dl>
+<dt>无状态迭代器（stateless iterator）</dt>
+<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
+</dl>
+<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
+生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
+<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Computer</category>
-        <category>uncategorized</category>
+        <category>Lua</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
@@ -1515,83 +1577,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
-    <title>Lua 迭代器和泛型 for</title>
-    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
-    <content><![CDATA[<blockquote>
-<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
-本文也未刻意区分。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
-<dl>
-<dt>迭代器（iterator）</dt>
-<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
-<dt>闭包（closure）</dt>
-<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
-<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
-<dt>工厂（factory）</dt>
-<dd>用于创建闭包及其封装变量的函数。</dd>
-</dl>
-<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
-<p>泛型 for 的语法：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
-<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
-<ol>
-<li>迭代函数</li>
-<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
-<li>控制变量的初始值</li>
-</ol>
-<dl>
-<dt>控制变量（control variable）</dt>
-<dd>其值为 <code>nil</code> 时循环结束。</dd>
-</dl>
-<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
-其中只有最后一项能产生多个值。</p>
-<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
-<p>确切地说，形如</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>与以下代码等价：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
-<dl>
-<dt>无状态迭代器（stateless iterator）</dt>
-<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
-</dl>
-<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
-生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
-<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenGL</title>
-    <url>/2021/04/17/OpenGL/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Computer Graphics</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>Computer Graphics</tag>
-        <tag>OpenGL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim Syntax</title>
     <url>/2021/03/16/Vim-Syntax/</url>
     <content><![CDATA[<blockquote>
@@ -1619,6 +1604,21 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </categories>
       <tags>
         <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenGL</title>
+    <url>/2021/04/17/OpenGL/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Computer Graphics</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>Computer Graphics</tag>
+        <tag>OpenGL</tag>
       </tags>
   </entry>
   <entry>
@@ -2634,6 +2634,200 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>免疫器官和组织</title>
+    <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
+    <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
+<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
+<ul>
+<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
+<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="中枢免疫器官">中枢免疫器官 <a class="markdownIt-Anchor" href="#中枢免疫器官">#</a></h2>
+<dl>
+<dt>中枢免疫器官（central immune organ）| 初级淋巴器官（primary lymphoid organ）</dt>
+<dd>免疫细胞发生、分化、发育和成熟的场所。</dd>
+</dl>
+<h3 id="骨髓">骨髓 <a class="markdownIt-Anchor" href="#骨髓">#</a></h3>
+<dl>
+<dt>骨髓（bone marrow）</dt>
+<dd>各类血细胞（包括免疫细胞）的发源地</dd>
+<dd>人类和其他哺乳动物 B 细胞发育成熟的场所</dd>
+</dl>
+<h4 id="骨髓的结构和细胞组成">骨髓的结构和细胞组成 <a class="markdownIt-Anchor" href="#骨髓的结构和细胞组成">#</a></h4>
+<dl>
+<dt>红骨髓</dt>
+<dd>造血功能活跃，由<strong>造血组织</strong>和血窦组成。</dd>
+</dl>
+<p>造血组织</p>
+<ul>
+<li>造血细胞</li>
+<li>基质细胞：网状细胞、成纤维细胞、血窦内皮细胞、巨噬细胞……</li>
+</ul>
+<dl>
+<dt>黄骨髓</dt>
+<dd>含有大量脂肪组织，特定条件下可转换为红骨髓。</dd>
+</dl>
+<p><strong>造血诱导微环境（HIM）</strong></p>
+<ul>
+<li>细胞外基质</li>
+<li>骨髓基质细胞</li>
+<li>多种细胞因子</li>
+</ul>
+<h4 id="骨髓的功能">骨髓的功能 <a class="markdownIt-Anchor" href="#骨髓的功能">#</a></h4>
+<ol>
+<li>各类血细胞、免疫细胞发生的场所</li>
+<li>B 细胞 NK 细胞分化成熟的场所</li>
+<li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
+</ol>
+<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>mIgM</p>
+</summary>
+    <p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
+<blockquote>
+<p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
+</blockquote>
+
+  </details>
+<h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
+<dl>
+<dt>胸腺（thymus）</dt>
+<dd>由胸腺细胞和胸腺基质细胞组成，是 T 细胞发育、分化、成熟的场所。</dd>
+</dl>
+<h4 id="胸腺的结构">胸腺的结构 <a class="markdownIt-Anchor" href="#胸腺的结构">#</a></h4>
+<ul>
+<li>皮质：深皮质、浅皮质</li>
+<li>髓质：散在分布的成熟胸腺细胞、巨噬细胞、树突状细胞</li>
+</ul>
+<p>细胞组成</p>
+<ul>
+<li>胸腺细胞：处于不同分化阶段的 T 细胞</li>
+<li>胸腺基质细胞（thymus stromal cell, TSC）
+<ul>
+<li>胸腺上皮细胞</li>
+<li>巨噬细胞</li>
+<li>树突状细胞</li>
+</ul>
+</li>
+</ul>
+<h4 id="胸腺微环境">胸腺微环境 <a class="markdownIt-Anchor" href="#胸腺微环境">#</a></h4>
+<dl>
+<dt>胸腺微环境（thymic microenvironment）</dt>
+<dd>决定 T 细胞分化、增殖和选择性发育的重要条件。
+<ul>
+<li>胸腺基质细胞</li>
+<li>细胞外基质</li>
+<li>局部活性因子</li>
+</ul>
+</dd>
+<dd><strong>细胞外基质</strong>也是胸腺微环境的重要组成部分。</dd>
+</dl>
+<p>胸腺上皮细胞影响胸腺细胞分化的两种方式</p>
+<ul>
+<li>细胞-细胞间相互接触</li>
+<li>分泌细胞因子和胸腺肽类因子</li>
+</ul>
+<h4 id="胸腺的功能">胸腺的功能 <a class="markdownIt-Anchor" href="#胸腺的功能">#</a></h4>
+<ol>
+<li>T 细胞分化、成熟的场所：T 细胞迁移、阳性选择、阴性选择</li>
+<li>免疫调节作用：细胞因子、胸腺肽类因子</li>
+<li>自身免疫耐受的建立与维持：通过阴性选择形成中枢免疫耐受</li>
+</ol>
+<h2 id="外周免疫器官和组织">外周免疫器官和组织 <a class="markdownIt-Anchor" href="#外周免疫器官和组织">#</a></h2>
+<ul>
+<li>成熟淋巴细胞定居的场所</li>
+<li>淋巴细胞对外来抗原产生免疫应答的主要部位</li>
+</ul>
+<h3 id="淋巴结">淋巴结 <a class="markdownIt-Anchor" href="#淋巴结">#</a></h3>
+<h4 id="淋巴结的结构">淋巴结的结构 <a class="markdownIt-Anchor" href="#淋巴结的结构">#</a></h4>
+<ul>
+<li>皮质：浅皮质区、深皮质区</li>
+<li>髓质：髓索、髓窦</li>
+</ul>
+<hr />
+<dl>
+<dt>浅皮质区 | 非胸腺依赖区（thymus-indepentent area）</dt>
+<dd>靠近被膜下的皮质区，为** B 细胞区**，是 B 细胞定居的场所。</dd>
+<dt>初级淋巴滤泡（primary lymphoid follicle）| 淋巴小结（lymphoid nodule）</dt>
+<dd>浅皮质区中，大量 B 细胞聚集而成。</dd>
+<dt>次级淋巴滤泡（secondary lymphoid follicle）</dt>
+<dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
+<dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
+</dl>
+<div class="note default"><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
+</div>
+<hr />
+<dl>
+<dt>深皮质区 | 副皮质区 | 胸腺依赖区（thymus-depentent area）</dt>
+<dd>浅皮质区与髓质之间的皮质区，为 <strong>T 细胞区</strong>，是 T 细胞定居的场所。</dd>
+<dt>高内皮微静脉（high endothelial venule, HEV）</dt>
+<dd>副皮质区中的由内皮细胞组成的、呈非连续状的<strong>毛细血管后微静脉</strong>。</dd>
+</dl>
+<hr />
+<dl>
+<dt>髓索</dt>
+<dd>由密集的淋巴细胞组成，主要为 B 细胞和浆细胞，也有部分 T 细胞和 Mϕ。</dd>
+<dt>髓窦</dt>
+<dd>富含 Mϕ，有较强的捕捉、清除抗原体的功能。</dd>
+</dl>
+<h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
+<ol>
+<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
+<li>适应性免疫应答的主要场所</li>
+<li>过滤作用：过滤组织来源的抗原</li>
+<li>参与淋巴细胞再循环</li>
+</ol>
+<h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
+<h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
+<ul>
+<li>白髄：动脉周围淋巴鞘（PALS）、脾小结、边缘区</li>
+<li>红髓：脾索、脾血窦</li>
+</ul>
+<h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
+<ol>
+<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
+<li>免疫应答发生的场所</li>
+<li>生成生物活性物质，如补体、细胞因子</li>
+<li>过滤作用：清除血液来源的抗原</li>
+</ol>
+<h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
+<dl>
+<dt>黏膜相关淋巴组织（MALT）</dt>
+<dd>胃肠道、呼吸道、泌尿生殖道黏膜固有层和上皮细胞下散在的淋巴组织，以及带有生发中心的淋巴组织。</dd>
+</dl>
+<h4 id="黏膜相关淋巴组织的组成">黏膜相关淋巴组织的组成 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的组成">#</a></h4>
+<ul>
+<li>肠相关淋巴结（GALT）
+<ul>
+<li>派氏集合淋巴结（PP）</li>
+<li>上皮内淋巴结（IEL）</li>
+</ul>
+</li>
+<li>鼻相关淋巴结（NALT）</li>
+<li>支气管相关淋巴组织（BALT）</li>
+</ul>
+<h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
+<ul>
+<li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
+<li>产生分泌型 IgA（SIgA）</li>
+</ul>
+<h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
+<dl>
+<dt>淋巴细胞归巢（lymphocyte homing）</dt>
+<dd>血液中淋巴细胞选择性取向迁移并定居与外周免疫器官的特定区域或特定组织的过程。</dd>
+<dt>淋巴细胞再循环（lymphocyte recirculation）</dt>
+<dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人胚发生和早期发育</title>
     <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
     <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
@@ -2890,200 +3084,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>免疫器官和组织</title>
-    <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
-    <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
-<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
-<ul>
-<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
-<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="中枢免疫器官">中枢免疫器官 <a class="markdownIt-Anchor" href="#中枢免疫器官">#</a></h2>
-<dl>
-<dt>中枢免疫器官（central immune organ）| 初级淋巴器官（primary lymphoid organ）</dt>
-<dd>免疫细胞发生、分化、发育和成熟的场所。</dd>
-</dl>
-<h3 id="骨髓">骨髓 <a class="markdownIt-Anchor" href="#骨髓">#</a></h3>
-<dl>
-<dt>骨髓（bone marrow）</dt>
-<dd>各类血细胞（包括免疫细胞）的发源地</dd>
-<dd>人类和其他哺乳动物 B 细胞发育成熟的场所</dd>
-</dl>
-<h4 id="骨髓的结构和细胞组成">骨髓的结构和细胞组成 <a class="markdownIt-Anchor" href="#骨髓的结构和细胞组成">#</a></h4>
-<dl>
-<dt>红骨髓</dt>
-<dd>造血功能活跃，由<strong>造血组织</strong>和血窦组成。</dd>
-</dl>
-<p>造血组织</p>
-<ul>
-<li>造血细胞</li>
-<li>基质细胞：网状细胞、成纤维细胞、血窦内皮细胞、巨噬细胞……</li>
-</ul>
-<dl>
-<dt>黄骨髓</dt>
-<dd>含有大量脂肪组织，特定条件下可转换为红骨髓。</dd>
-</dl>
-<p><strong>造血诱导微环境（HIM）</strong></p>
-<ul>
-<li>细胞外基质</li>
-<li>骨髓基质细胞</li>
-<li>多种细胞因子</li>
-</ul>
-<h4 id="骨髓的功能">骨髓的功能 <a class="markdownIt-Anchor" href="#骨髓的功能">#</a></h4>
-<ol>
-<li>各类血细胞、免疫细胞发生的场所</li>
-<li>B 细胞 NK 细胞分化成熟的场所</li>
-<li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
-</ol>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>mIgM</p>
-</summary>
-    <p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
-<blockquote>
-<p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
-</blockquote>
-
-  </details>
-<h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
-<dl>
-<dt>胸腺（thymus）</dt>
-<dd>由胸腺细胞和胸腺基质细胞组成，是 T 细胞发育、分化、成熟的场所。</dd>
-</dl>
-<h4 id="胸腺的结构">胸腺的结构 <a class="markdownIt-Anchor" href="#胸腺的结构">#</a></h4>
-<ul>
-<li>皮质：深皮质、浅皮质</li>
-<li>髓质：散在分布的成熟胸腺细胞、巨噬细胞、树突状细胞</li>
-</ul>
-<p>细胞组成</p>
-<ul>
-<li>胸腺细胞：处于不同分化阶段的 T 细胞</li>
-<li>胸腺基质细胞（thymus stromal cell, TSC）
-<ul>
-<li>胸腺上皮细胞</li>
-<li>巨噬细胞</li>
-<li>树突状细胞</li>
-</ul>
-</li>
-</ul>
-<h4 id="胸腺微环境">胸腺微环境 <a class="markdownIt-Anchor" href="#胸腺微环境">#</a></h4>
-<dl>
-<dt>胸腺微环境（thymic microenvironment）</dt>
-<dd>决定 T 细胞分化、增殖和选择性发育的重要条件。
-<ul>
-<li>胸腺基质细胞</li>
-<li>细胞外基质</li>
-<li>局部活性因子</li>
-</ul>
-</dd>
-<dd><strong>细胞外基质</strong>也是胸腺微环境的重要组成部分。</dd>
-</dl>
-<p>胸腺上皮细胞影响胸腺细胞分化的两种方式</p>
-<ul>
-<li>细胞-细胞间相互接触</li>
-<li>分泌细胞因子和胸腺肽类因子</li>
-</ul>
-<h4 id="胸腺的功能">胸腺的功能 <a class="markdownIt-Anchor" href="#胸腺的功能">#</a></h4>
-<ol>
-<li>T 细胞分化、成熟的场所：T 细胞迁移、阳性选择、阴性选择</li>
-<li>免疫调节作用：细胞因子、胸腺肽类因子</li>
-<li>自身免疫耐受的建立与维持：通过阴性选择形成中枢免疫耐受</li>
-</ol>
-<h2 id="外周免疫器官和组织">外周免疫器官和组织 <a class="markdownIt-Anchor" href="#外周免疫器官和组织">#</a></h2>
-<ul>
-<li>成熟淋巴细胞定居的场所</li>
-<li>淋巴细胞对外来抗原产生免疫应答的主要部位</li>
-</ul>
-<h3 id="淋巴结">淋巴结 <a class="markdownIt-Anchor" href="#淋巴结">#</a></h3>
-<h4 id="淋巴结的结构">淋巴结的结构 <a class="markdownIt-Anchor" href="#淋巴结的结构">#</a></h4>
-<ul>
-<li>皮质：浅皮质区、深皮质区</li>
-<li>髓质：髓索、髓窦</li>
-</ul>
-<hr />
-<dl>
-<dt>浅皮质区 | 非胸腺依赖区（thymus-indepentent area）</dt>
-<dd>靠近被膜下的皮质区，为** B 细胞区**，是 B 细胞定居的场所。</dd>
-<dt>初级淋巴滤泡（primary lymphoid follicle）| 淋巴小结（lymphoid nodule）</dt>
-<dd>浅皮质区中，大量 B 细胞聚集而成。</dd>
-<dt>次级淋巴滤泡（secondary lymphoid follicle）</dt>
-<dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
-<dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
-</dl>
-<div class="note default"><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
-</div>
-<hr />
-<dl>
-<dt>深皮质区 | 副皮质区 | 胸腺依赖区（thymus-depentent area）</dt>
-<dd>浅皮质区与髓质之间的皮质区，为 <strong>T 细胞区</strong>，是 T 细胞定居的场所。</dd>
-<dt>高内皮微静脉（high endothelial venule, HEV）</dt>
-<dd>副皮质区中的由内皮细胞组成的、呈非连续状的<strong>毛细血管后微静脉</strong>。</dd>
-</dl>
-<hr />
-<dl>
-<dt>髓索</dt>
-<dd>由密集的淋巴细胞组成，主要为 B 细胞和浆细胞，也有部分 T 细胞和 Mϕ。</dd>
-<dt>髓窦</dt>
-<dd>富含 Mϕ，有较强的捕捉、清除抗原体的功能。</dd>
-</dl>
-<h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
-<ol>
-<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
-<li>适应性免疫应答的主要场所</li>
-<li>过滤作用：过滤组织来源的抗原</li>
-<li>参与淋巴细胞再循环</li>
-</ol>
-<h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
-<h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
-<ul>
-<li>白髄：动脉周围淋巴鞘（PALS）、脾小结、边缘区</li>
-<li>红髓：脾索、脾血窦</li>
-</ul>
-<h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
-<ol>
-<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
-<li>免疫应答发生的场所</li>
-<li>生成生物活性物质，如补体、细胞因子</li>
-<li>过滤作用：清除血液来源的抗原</li>
-</ol>
-<h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
-<dl>
-<dt>黏膜相关淋巴组织（MALT）</dt>
-<dd>胃肠道、呼吸道、泌尿生殖道黏膜固有层和上皮细胞下散在的淋巴组织，以及带有生发中心的淋巴组织。</dd>
-</dl>
-<h4 id="黏膜相关淋巴组织的组成">黏膜相关淋巴组织的组成 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的组成">#</a></h4>
-<ul>
-<li>肠相关淋巴结（GALT）
-<ul>
-<li>派氏集合淋巴结（PP）</li>
-<li>上皮内淋巴结（IEL）</li>
-</ul>
-</li>
-<li>鼻相关淋巴结（NALT）</li>
-<li>支气管相关淋巴组织（BALT）</li>
-</ul>
-<h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
-<ul>
-<li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
-<li>产生分泌型 IgA（SIgA）</li>
-</ul>
-<h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
-<dl>
-<dt>淋巴细胞归巢（lymphocyte homing）</dt>
-<dd>血液中淋巴细胞选择性取向迁移并定居与外周免疫器官的特定区域或特定组织的过程。</dd>
-<dt>淋巴细胞再循环（lymphocyte recirculation）</dt>
-<dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>其他病毒</title>
     <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<p class="center">Empty...</p>
@@ -3264,6 +3264,299 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分子病和先天性代谢病</title>
+    <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
+    <content><![CDATA[<dl>
+<dt><a href="#%E5%88%86%E5%AD%90%E7%97%85">分子病</a>（molecular disease）</dt>
+<dd><strong>基因突变</strong>导致蛋白质分子质和量的异常，从而引起机体功能障碍的一类疾病。</dd>
+<dt><a href="#%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85">先天性代谢缺陷</a>（inborn errors of metabolism，<abbr title="inborn errors of metabolism，先天性代谢缺陷">IEM</abbr>）</dt>
+<dd>指由遗传物质改变而引起的某些蛋白质（通常是酶）的异常，从而使机体不能正常代谢营养物质而引起的异常。</dd>
+</dl>
+<span id="more"></span>
+<h2 id="分子病">分子病 <a class="markdownIt-Anchor" href="#分子病">#</a></h2>
+<h3 id="血红蛋白病">血红蛋白病 <a class="markdownIt-Anchor" href="#血红蛋白病">#</a></h3>
+<dl>
+<dt>血红蛋白病（hemoglobinpathy）</dt>
+<dd>由于珠蛋白分子结构或合成量异常所引起的疾病。</dd>
+</dl>
+<ul>
+<li>结构异常 → <a href="#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85"><strong>异常血红蛋白病</strong></a></li>
+<li>数量异常 → <a href="#%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%B4%AB%E8%A1%80"><strong>地中海贫血</strong></a></li>
+</ul>
+<h4 id="血红蛋白和珠蛋白基因">血红蛋白和珠蛋白基因 <a class="markdownIt-Anchor" href="#血红蛋白和珠蛋白基因">#</a></h4>
+<p>人类<strong>血红蛋白</strong>（hemoglobin，<abbr title="血红蛋白">Hb</abbr>）是由两对珠蛋白链（α 和 β）组成的四聚体分子，每条珠蛋白链通过亚铁卟啉（bǔ lín）与一个<strong>血红素</strong>（heme）分子相连。<br/>
+α（珠蛋白）链包括 α 和 ζ 链，β（珠蛋白）链包括 β、ε、γ 及 δ 链，6 种肽链组成的 6 种血红蛋白中，<abbr title="血红蛋白">Hb</abbr> A（α<sub>2</sub>β<sub>2</sub>）（占 95% 以上）和 <abbr title="血红蛋白">Hb</abbr> A<sub>2</sub>（α<sub>2</sub>δ<sub>2</sub>）可见于成人体内。</p>
+<p>各种血红蛋白的发育演变是 α、β 珠蛋白基因簇（分别位于 16p13.33-p13.11、11p15.5）按照其在染色体上的排列顺序由 5’ 到 3’ 依次表达、关闭的结果。</p>
+<img data-src="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/%E7%8F%A0%E8%9B%8B%E7%99%BD%E5%9F%BA%E5%9B%A0%E7%B0%87.png" class="" title="α、β 珠蛋白基因簇的依次表达、关闭" alt="α、β 珠蛋白基因簇的依次表达、关闭">
+<p>珠蛋白基因表达调控：<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvTG9jdXNfY29udHJvbF9yZWdpb24=">LCR<i class="fa fa-external-link-alt"></i></span>（TODO）</p>
+<h4 id="异常血红蛋白病">异常血红蛋白病 <a class="markdownIt-Anchor" href="#异常血红蛋白病">#</a></h4>
+<p>由于珠蛋白基因突变导致珠蛋白肽链结构异常，且有临床表现者称为<strong>异常血红蛋白病</strong>或<strong>异常血红蛋白综合征</strong>。</p>
+<h5 id="异常血红蛋白病类型">异常血红蛋白病类型 <a class="markdownIt-Anchor" href="#异常血红蛋白病类型">#</a></h5>
+<div class="tabs" id="异常血红蛋白病类型"><ul class="nav-tabs"><li class="tab active"><a href="#异常血红蛋白病类型-1">镰状细胞病</a></li><li class="tab"><a href="#异常血红蛋白病类型-2">不稳定血红蛋白病</a></li><li class="tab"><a href="#异常血红蛋白病类型-3">血红蛋白 M 病</a></li><li class="tab"><a href="#异常血红蛋白病类型-4">氧亲和力改变的血红蛋白病</a></li></ul><div class="tab-content"><div class="tab-pane active" id="异常血红蛋白病类型-1"><dl>
+<dt>镰状细胞病（Sickle Cell Disease）</dt>
+<dd>常染色体显性遗传，Hb β 链第 6 位谷氨酸被缬氨酸取代（β<sup>6谷→缬</sup>），引起电荷改变（可通过电泳与正常 Hb 区分），形成 Hb S。</dd>
+</dl>
+<p>缺氧时 Hb S 聚合，使细胞镰变。<br/>
+镰变细胞使<strong>血黏度增高</strong>，导致血管梗阻性继发症状，如一过性剧痛、急性组织损伤等。<br/>
+镰变细胞变形性降低，细胞膜脆性增加，细胞裂解，可引起<strong>溶血</strong>。</p>
+<p>镰状细胞病 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#不完全显性"><strong>不完全显性</strong></a>：</p>
+<ul>
+<li>纯合子：镰状细胞贫血</li>
+<li>杂合子：镰状细胞性状，大多数无症状，可有轻度慢性贫血</li>
+</ul></div><div class="tab-pane" id="异常血红蛋白病类型-2"><dl>
+<dt>不稳定血红蛋白病（unstable hemoglobinopathy）</dt>
+<dd>不稳定的血红蛋白易自发变性，形成<strong>珠蛋白小体</strong>（Heinz 小体），引起溶血，可造成贫血。</dd>
+</dl>
+<p>如 Hb Bristol 病（β<sup>67缬→天冬</sup>）主要表现为先天性溶血性贫血、黄疸和脾大。</p>
+<p>不稳定血红蛋白病也表现为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#不完全显性"><strong>不完全显性</strong></a>：</p>
+<ul>
+<li>纯合子：可有临床症状，仅在服用磺胺等药物或有感染时溶血；</li>
+<li>杂合子：致死，需反复输血才能维持生命。</li>
+</ul></div><div class="tab-pane" id="异常血红蛋白病类型-3"><dl>
+<dt>血红蛋白 M 病（Hb M）| 遗传性高铁血红蛋白血症）</dt>
+<dd>肽链内与血红素铁原子连接的组氨酸发生了替换，使铁原子呈稳定的<strong>高铁</strong>状态，影响血红蛋白带氧功能，临床上表现为<strong>紫绀</strong>（cyanosis）和 继发性<strong>红细胞增多症</strong>（polycythemia）。</dd>
+</dl></div><div class="tab-pane" id="异常血红蛋白病类型-4"><dl>
+<dt>氧亲和力改变的血红蛋白病</dt>
+<dd>珠蛋白基因突变使 Hb 与氧的亲和力改变，使其运输氧功能改变。</dd>
+</dl>
+<ul>
+<li><strong>Hb Rainier</strong>（β1<sup>45酪→半胱</sup>）：与氧亲和力升高，氧释放入组织减少，引起<strong>红细胞增多症</strong>；</li>
+<li><strong>Hb Kansas</strong>（β<sup>102天冬→苏</sup>）：与氧的亲和力降低，动脉血氧饱和度降低，出现<strong>紫绀</strong>。</li>
+</ul></div></div></div>
+<h5 id="异常血红蛋白病的分子基础">异常血红蛋白病的分子基础 <a class="markdownIt-Anchor" href="#异常血红蛋白病的分子基础">#</a></h5>
+<ol>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#点突变"><strong>单个碱基置换</strong></a>
+<ol>
+<li>错义突变：<abbr title="血红蛋白">Hb</abbr> S、<abbr title="血红蛋白">Hb</abbr> C、<abbr title="血红蛋白">Hb</abbr> E</li>
+<li>无义突变：<abbr title="血红蛋白">Hb</abbr> Mckee-Rock</li>
+<li>终止密码突变：<strong><abbr title="血红蛋白">Hb</abbr> Constant Spring</strong>（TAA → CAA，α<sup>142终止密码→谷氨酰胺</sup>，延长至 172 aa）引起 <a href="#%CE%B1-%E5%9C%B0%E8%B4%AB%E5%88%86%E7%B1%BB-2"><strong>α<sup>+</sup> 地中海贫血</strong></a></li>
+</ol>
+</li>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#移码突变"><strong>移码突变</strong></a></li>
+<li><strong>密码子的插入和缺失</strong>：<abbr title="血红蛋白">Hb</abbr> Gun Hill</li>
+<li><strong>融合基因</strong>：减数分裂 Ⅰ 期同源染色体错配，δ 和 β 基因之间发生不等交换，导致基因缺失或重复，如 <abbr title="血红蛋白">Hb</abbr> Lepore（部分基因缺失），只有 δβ 基因（<abbr title="血红蛋白">Hb</abbr> 反-Lepore 同时有 δ、β 基因），不稳定，可引起 <a href="#%CE%B2-%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%B4%AB%E8%A1%80"><strong>β 地中海贫血</strong></a>。</li>
+</ol>
+<h4 id="地中海贫血">地中海贫血 <a class="markdownIt-Anchor" href="#地中海贫血">#</a></h4>
+<dl>
+<dt>地中海贫血（thalassemia）</dt>
+<dd>由于珠蛋白基因缺失或突变导致某种珠蛋白的链合成障碍，造成 α 或 β 链<mark>合成失去平衡</mark>而导致的溶血性贫血。</dd>
+</dl>
+<h5 id="α-地中海贫血">α 地中海贫血 <a class="markdownIt-Anchor" href="#α-地中海贫血">#</a></h5>
+<dl>
+<dt>α 地中海贫血（α-thalassemia）| α 地贫</dt>
+<dd>珠蛋白基因（<strong>16 号染色体上的 α<sub>1</sub> 和 α<sub>2</sub></strong>）缺失（主要）或缺陷使 α（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
+</dl>
+<div class="note info"><p>α 地贫主要由<mark>基因缺失</mark>造成。</p>
+</div>
+<ul>
+<li><strong>α<sup>0</sup> 地贫</strong>（<strong>α 地贫 1</strong>）：缺失两个基因，-- / αα</li>
+<li><strong>α<sup>+</sup> 地贫</strong>（<strong>α 地贫 2</strong>）：缺失一个基因，α- / αα</li>
+</ul>
+<p>根据临床表现程度和受累 α 基因缺失的数量，可将 α 地贫分为：</p>
+<div class="tabs" id="α-地贫分类"><ul class="nav-tabs"><li class="tab active"><a href="#α-地贫分类-1">Hb Bart's 胎儿水肿综合征</a></li><li class="tab"><a href="#α-地贫分类-2">血红蛋白 H 病</a></li><li class="tab"><a href="#α-地贫分类-3">轻型（标准型）α 地贫</a></li><li class="tab"><a href="#α-地贫分类-4">静止型 α 地贫</a></li></ul><div class="tab-content"><div class="tab-pane active" id="α-地贫分类-1"><p>4 个 α 基因全部缺失，基因型为 <strong>--/--</strong>，α 链完全不能合成，不能形成 Hb F（α<sub>2</sub>γ<sub>2</sub>，胎儿血红蛋白），相对过多的 γ 形成 γ 四聚体（γ<sub>4</sub>），称为 <strong>Hb Bart’s</strong>。<br/>
+Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>胎儿水肿</strong>，造成死胎或新生儿死亡。</p></div><div class="tab-pane" id="α-地贫分类-2"><p>α<sup>0</sup> 地贫和 α<sup>+</sup> 地贫的双重杂合子，即缺失 3 个 α 基因，基因型为 <strong>a-/--</strong>、<strong>-a/--</strong>，或 <strong>α<sup>T</sup>α/--</strong>（α<sup>T</sup> 表示有突变，如 <a href="#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">Hb Constant Spring</a>），只能合成少量 α 链，β 链相对较多，形成的 β<sub>4</sub> 易被氧化解体，形成包涵体，引起中度或较严重的溶血性贫血。</p></div><div class="tab-pane" id="α-地贫分类-3"><p>α<sup>0</sup> 地贫杂合子（<strong>--/αα</strong>）或 α<sup>+</sup> 地贫纯合子（<strong>α-/α-</strong>），即缺失 2 个 α 基因，有轻度贫血。轻型 α 地贫患者（主要是 --/αα）之间婚配，生育子女有 1/4 概率患有 HHb Bart’s 胎儿水肿综合征。</p></div><div class="tab-pane" id="α-地贫分类-4"><p>α<sup>+</sup> 地贫纯合子（<strong>α-/αα</strong>），仅缺失一个 α 基因，<em>无症状</em>。</p></div></div></div>
+<h5 id="β-地中海贫血">β 地中海贫血 <a class="markdownIt-Anchor" href="#β-地中海贫血">#</a></h5>
+<dl>
+<dt>β 地中海贫血（β-thalassemia）| β 地贫</dt>
+<dd>β 珠蛋白基因缺失或缺陷使 β（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
+</dl>
+<div class="note info"><p>β 地贫主要由<mark>基因突变</mark>造成。</p>
+</div>
+<ul>
+<li><strong>β<sup>0</sup> 地贫</strong>：完全不能合成 β 链</li>
+<li><strong>β<sup>+</sup> 地贫</strong>：能部分合成 β 链</li>
+<li><em>δβ 地贫</em>：见 <a href="?highlight=%E8%9E%8D%E5%90%88%E5%9F%BA%E5%9B%A0#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">融合基因</a></li>
+</ul>
+<div class="tabs" id="β-地贫分类"><ul class="nav-tabs"><li class="tab active"><a href="#β-地贫分类-1">重型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-2">中间型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-3">轻型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-4">遗传性胎儿血红蛋白增多症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="β-地贫分类-1"><p>β<sup>+</sup>、β<sup>0</sup>、δβ<sup>0</sup> 地贫的纯合子或者 β<sup>+</sup> 和 β<sup>0</sup> 地贫的双重纯合子，基因型分别为 <strong>β<sup>+</sup>/β<sup>+</sup></strong>、<strong>β<sup>0</sup>/β<sup>0</sup></strong>、<strong>δβ<sup>0</sup>/δβ<sup>0</sup></strong> 以及 <strong>β<sup>0</sup>/β<sup>+</sup></strong>。<br/>
+患者的 β 链几乎不能合成或合成量很少，以致无 HB A 或 HB A 含量很低；λ 链合成相对增多，使 <strong>Hb F</strong>（与氧亲和力强）和 Hb A<sub>2</sub> 比率升高。<br/>
+患者组织缺氧，进而刺激红骨髓增生，引起骨质疏松，可出现“<strong>地中海贫血面容</strong>”（头颅大，额顶及枕部隆起，鼻梁塌陷，上颌及牙齿前突，眼距宽，眼睑浮肿）；过剩的 α 链游离形成 α 链包涵体，引起<strong>溶血性贫血</strong>，靠输血维持生命。</p></div><div class="tab-pane" id="β-地贫分类-2"><p>通常是某些变异型的纯合子或两种不同变异型的双重杂合子，如 β<sup>+</sup>/β<sup>+</sup>、δβ<sup>+</sup>/β<sup>+</sup>，。<br/>
+患者病情介于重型和轻型之间。</p></div><div class="tab-pane" id="β-地贫分类-3"><p>β<sup>+</sup>、β<sup>0</sup> 或 δβ<sup>0</sup> 地贫的杂合子，基因型分别为 β<sup>+</sup>/β<sup>A</sup>、β<sup>0</sup>/β<sup>A</sup> 和 δβ<sup>0</sup>/β<sup>A</sup>。<br/>
+患者能合成相当量的 β 链，症状较轻，贫血不明显或<strong>轻度贫血</strong>，特点是 <em>Hb A<sub>2</sub> 升高（可至 4%~8%）或/和 Hb F 升高</em>。</p></div><div class="tab-pane" id="β-地贫分类-4"><dl>
+<dt>遗传性胎儿血红蛋白增多症（hereditary persistance of fetal hemoglobin，HPFH）</dt>
+<dd>由于 β 珠蛋白基因簇中的某些 DNA 片段缺失或点突变，使 <strong>δ 和 β 链</strong>合成受到抑制，而 <strong>γ 链</strong>的合成明显增加，导致 <strong>Hb F</strong> 增多。</dd>
+</dl>
+<p>HPFH 的特点是 <strong>Hb F</strong> 在<strong>成年人</strong>体内仍持续较高水平，<em>无明显临床症状</em>。</p></div></div></div>
+<h3 id="受体蛋白病">受体蛋白病 <a class="markdownIt-Anchor" href="#受体蛋白病">#</a></h3>
+<dl>
+<dt>家族性高胆固醇血症（familial hypterlipoproteinemia，FH）</dt>
+<dd><strong>低密度脂蛋白</strong>（low density lipoprotein，<strong>LDL</strong>）受体部分缺失或功能性 LDL　受体不足，使血浆中胆固醇和甘油三酯增高，可引起冠心病、心肌梗死。</dd>
+</dl>
+<h2 id="先天性代谢病">先天性代谢病 <a class="markdownIt-Anchor" href="#先天性代谢病">#</a></h2>
+<h3 id="先天代谢缺陷的产生机制">先天代谢缺陷的产生机制 <a class="markdownIt-Anchor" href="#先天代谢缺陷的产生机制">#</a></h3>
+<ol>
+<li><strong>结构基因突变</strong>使酶结构改变，稳定性降低，酶动力学特性改变；</li>
+<li><strong>调节基因突变</strong>致使酶合成速率下降，催化活性降低；</li>
+<li><strong>翻译后修饰、加工障碍</strong>致酶催化中心不完善，活性下降。</li>
+</ol>
+<h3 id="先天性代谢病的类型">先天性代谢病的类型 <a class="markdownIt-Anchor" href="#先天性代谢病的类型">#</a></h3>
+<ul>
+<li><a href="#%E6%B0%A8%E5%9F%BA%E9%85%B8%E4%BB%A3%E8%B0%A2%E7%97%85">氨基酸代谢病</a>：苯丙酮尿症、白化病、尿黑酸尿症</li>
+<li><a href="#%E7%B3%96%E4%BB%A3%E8%B0%A2%E7%97%85">糖代谢病</a>：半乳糖血症、糖原贮积病</li>
+<li><a href="#%E8%84%82%E7%B1%BB%E4%BB%A3%E8%B0%A2%E7%97%85">脂类代谢病</a>：Gaucher病、Tay-Sachs病</li>
+<li><a href="#%E5%98%8C%E5%91%A4%E4%BB%A3%E8%B0%A2%E7%97%85">嘌呤代谢病</a>：Lesch-Nyhan综合征</li>
+<li><a href="#%E8%91%A1%E8%90%84%E7%B3%96-6-%E7%A3%B7%E9%85%B8%E8%84%B1%E6%B0%A2%E9%85%B6%E7%BC%BA%E4%B9%8F%E7%97%87">葡萄糖 6-磷酸脱氢酶缺乏症</a></li>
+</ul>
+<h4 id="氨基酸代谢病">氨基酸代谢病 <a class="markdownIt-Anchor" href="#氨基酸代谢病">#</a></h4>
+<ol>
+<li>苯丙酮尿症：苯丙氨酸羟化酶</li>
+<li>白化病：酪氨酸酶</li>
+<li>尿黑酸尿症：尿黑酸氧化酶</li>
+</ol>
+<div class="tabs" id="氨基酸代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#氨基酸代谢病举例-1">苯丙酮尿症</a></li><li class="tab"><a href="#氨基酸代谢病举例-2">白化病</a></li><li class="tab"><a href="#氨基酸代谢病举例-3">尿黑酸尿症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="氨基酸代谢病举例-1"><p><strong>苯丙酮尿症</strong>（Phenylketonuria，<abbr title="Phenylketonuria，苯丙酮尿症">PKU</abbr>）是由肝脏<mark>苯丙氨酸羟化酶</mark>（phenylalanine hydroxylase，<abbr title="phenylalanine hydroxylase，苯丙氨酸羟化酶">PAH</abbr>）遗传性缺陷所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常染色体隐性遗传病">常染色体隐性遗传</a>，少数由于<strong>四氢生物蝶呤</strong>（BH<sub>4</sub>）（苯丙氨酸羟化酶发挥作用需要辅因子<strong>四氢生物蝶呤</strong>）缺乏所致。</p>
+<p>临床表现：</p>
+<ul>
+<li>毛发、皮肤和尿<strong>特殊的气味</strong>（鼠尿味）：旁路代谢产物由尿液和汗液排出；</li>
+<li><strong>皮肤和毛发颜色</strong>较浅：黑色素合成减少；</li>
+<li><strong>智力障碍</strong>：大脑发育受到影响。</li>
+</ul>
+<p>防治：新生儿筛查 + 限制苯丙氨酸摄入</p></div><div class="tab-pane" id="氨基酸代谢病举例-2"><p><strong>白化病</strong>（albinism）（Ⅰ 型）是<mark>酪氨酸酶</mark>（tyrosinase）合成障碍所致的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=白化病#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>患者<strong>皮肤</strong>呈白色，<strong>头发</strong>呈银白色或淡黄色，<strong>虹膜及瞳孔</strong>呈淡红色：黑色素缺乏；</li>
+<li>视物模糊、眼球震颤、<strong>畏光</strong>：视网膜无色素；</li>
+<li>皮肤日晒易被灼伤，易患<strong>皮肤癌</strong>。</li>
+</ul>
+<p>白化病 Ⅰ 型由酪氨酸酶缺陷所致，ⅠA 型患者皮肤、毛发和眼部组织终生完全缺乏黑色素；ⅠB 型的突变仅导致酪氨酸酶活性部分缺失，新生儿有白色或非常浅黄色的头发，但随着年龄的增长，头发会变黑成金色或浅棕色。睫毛的颜色可能比头皮和眉毛的颜色深。皮肤保持乳白色，但可能会出现少量晒黑（tanning）以及雀斑和色素痣。白化病 ⅠB 型又称<em>黄色白化病</em>（yellow albinism）。</p></div><div class="tab-pane" id="氨基酸代谢病举例-3"><p><strong>尿黑酸尿症</strong>（alcaptonuira）是<mark>尿黑酸氧化酶</mark>（homogentisic acid oxidase）先天缺乏引起的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>婴儿出生后不久，尿布中有黄褐色斑点，日久后尿布呈黑褐色；</li>
+<li><strong>褐黄病</strong>：体内尿黑酸沉积与结缔组织，在皮肤、 耳廓、面颊和巩膜等处弥漫性色素沉着），如累积关节，可导致<strong>黄褐病性关节炎</strong>。</li>
+</ul></div></div></div>
+<h4 id="糖代谢病">糖代谢病 <a class="markdownIt-Anchor" href="#糖代谢病">#</a></h4>
+<ol>
+<li>半乳糖血症：1-磷酸半乳糖尿苷转移酶</li>
+<li>糖原贮积症 Ⅰ 型：葡萄糖-6-磷酸酶</li>
+</ol>
+<div class="tabs" id="糖代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#糖代谢病举例-1">半乳糖血症</a></li><li class="tab"><a href="#糖代谢病举例-2">糖原贮积病 Ⅰ 型</a></li></ul><div class="tab-content"><div class="tab-pane active" id="糖代谢病举例-1"><p><strong>半乳糖血症</strong>（galactosemia）是由于 <strong>1-磷酸半乳糖尿苷转移酶</strong>（galactose-1-phosphate uridyltransferase，<abbr title="galactose-1-phosphate uridyltransferase，1-磷酸半乳糖尿苷转移酶">GPUT</abbr>）缺乏活性使 1-磷酸半乳糖大量堆积在血液、肝脏和脑等组织中而导致的疾病，按 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性</a> 方式遗传。</p>
+<p>临床表现：婴儿期呕吐或腹泻、喂养困难，逐渐出现肝脏肿大、水肿、精神发育迟滞和白内障等。</p>
+<p>治疗：以限制乳类摄入为主。</p></div><div class="tab-pane" id="糖代谢病举例-2"><p><strong>糖原贮积病</strong>（Glycogen Storage Disease）是一大类遗传性糖代谢缺陷，由于糖原的降解或生成过程中某些酶活性的缺乏，致使正常或异常结构的糖原积累在肝、心、肌肉等组织而产生的多种症状。</p>
+<p><strong>糖原贮积病 Ⅰ 型</strong>由<mark>葡萄糖-6-磷酸酶</mark>（glucose-6-phosphatase）缺乏所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>肝细胞中肝糖原积聚，致患儿<strong>肝肿大</strong>；</li>
+<li>可引起葡萄糖-6-磷酸增多，糖酵解及磷酸戊糖途径增强，引起<em>酸中毒</em>、<em>高尿酸血症</em>和<em>高脂血症</em>。</li>
+</ul></div></div></div>
+<h4 id="脂类代谢病">脂类代谢病 <a class="markdownIt-Anchor" href="#脂类代谢病">#</a></h4>
+<p><strong>脂类代谢病</strong>是指脂类分解中特异性酶缺乏，导致其相应脂质底物在内脏、脑部、血管中堆积，使这些系统发生紊乱而致病，统称为<strong>脂类贮积症</strong>（lipidosis）。</p>
+<ol>
+<li>Gaucher病：β-葡萄糖苷脂酶</li>
+<li>Tay-Sachs 病：氨基己糖苷酶 A</li>
+</ol>
+<div class="tabs" id="脂类代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#脂类代谢病举例-1">Gaucher 病</a></li><li class="tab"><a href="#脂类代谢病举例-2">Tay-Sachs 病</a></li></ul><div class="tab-content"><div class="tab-pane active" id="脂类代谢病举例-1"><p><strong>Gaucher 病</strong>（戈谢氏病）是由于 <mark>β-葡萄糖苷脂酶</mark>（β-glucosidase）缺乏导致葡萄糖苷脂代谢障碍而引起的临床疾病，为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传病</a>。</p>
+<p>葡萄糖脑苷脂在单核巨噬细胞内蓄积形成 Gaucher 细胞，是本病的典型特征。</p></div><div class="tab-pane" id="脂类代谢病举例-2"><p><strong>Tay-Sachs 病</strong>（Tay-Sachs disease），又称 <strong>GM<sub>2</sub> 神经节苷脂贮积症</strong>（GM<sub>2</sub> gangliosidosis）、<strong>GM<sub>2</sub> 神经节苷脂病 Ⅰ 型</strong>或<strong>家族性黑蒙性白痴</strong>（familial amauroticidiocy），由<strong>氨基己糖苷酶 A</strong>（hexosaminidase A）缺乏导致 GM<sub>2</sub> 神经节苷脂在神经细胞内聚集所致，为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传病</a>。</p>
+<p>临床表现：</p>
+<ul>
+<li>初发症状：听觉过敏；</li>
+<li>早期：视网膜黄斑变性，视网膜呈樱桃红斑点，进行性失明，还可表现为进行性肌张力减退、衰弱和生长迟缓；</li>
+<li>后期：完全不能运动，恶病质，平均存活 2 年左右。</li>
+</ul></div></div></div>
+<h4 id="嘌呤代谢病">嘌呤代谢病 <a class="markdownIt-Anchor" href="#嘌呤代谢病">#</a></h4>
+<p><strong>Lesch-Nyhan 综合征</strong>（<abbr title="Lesch-Nyhan 综合征">LNS</abbr>）又称 <mark>自毁容貌综合征</mark>，为 <mark>X 连锁隐性遗传病</mark>，是由**次黄嘌呤鸟嘌呤磷酸核糖转移酶（HGPRT）**缺乏引起嘌呤过度合成，致体液中尿酸增多造成的一类疾病。</p>
+<p>临床表现：</p>
+<ul>
+<li>精神发育迟滞、痉挛性脑瘫、不自主运动和明显的<strong>强迫性自残行为</strong>（self-mutilation），<strong>自残行为发展</strong>是 <abbr title="Lesch-Nyhan 综合征">LNS</abbr> 的特异性症状，先是磨牙齿和咬口唇，逐渐发展为不可克制的咬舌、咬手指、咬人或咬物，可造成严重伤残；</li>
+<li>患者血中尿酸增多，可引发<strong>痛风性关节痛</strong>，是本病常见的全身症状。</li>
+</ul>
+<h4 id="葡萄糖-6-磷酸脱氢酶缺乏症">葡萄糖 6-磷酸脱氢酶缺乏症 <a class="markdownIt-Anchor" href="#葡萄糖-6-磷酸脱氢酶缺乏症">#</a></h4>
+<p><strong>葡萄糖 6-磷酸脱氢酶</strong>（<em>glucose</em>-6-phosphate dehydrogenase，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr>）催化磷酸己糖旁路的第一步。葡萄糖代谢途径产生 <strong>NADPH</strong>，以保持<strong>谷胱甘肽</strong>和<strong>巯基</strong>水平。*<strong><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr></strong> 基因定位与 Xq28 介于甲型血友病和红绿色盲基因座之间，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#x-连锁隐性遗传病"><mark>X 连锁隐性遗传病</mark></a>。</p>
+<p><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症又称<em><strong>蚕豆病***，患者若服用</strong>蚕豆</em><em>或抗疟药</em><em>伯胺（基）喹呤</em>*可发生溶血性贫血。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>医学免疫学</title>
+    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>免疫</dt>
+<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
+</dl>
+<span id="more"></span>
+<ul>
+<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
+<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
+<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
+<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
+<li>主要组织相容性复合体</li>
+</ul>
+<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
+<ul>
+<li>免疫器官
+<ul>
+<li>中枢：胸腺、骨髓</li>
+<li>外周：脾脏、淋巴结</li>
+</ul>
+</li>
+<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
+<li>免疫分子
+<ul>
+<li>膜型分子</li>
+<li>分泌型分子</li>
+</ul>
+</li>
+</ul>
+<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
+<dl>
+<dt><mark>免疫防御</mark>（immune defense）</dt>
+<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
+<dt><mark>免疫监视</mark>（immune surveillance）</dt>
+<dd>随时发现和清除体内出现的“非己”成分。</dd>
+<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
+<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
+</dl>
+<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
+<dl>
+<dt>免疫应答（immune response）</dt>
+<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
+<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
+<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
+<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
+<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
+<dd>相比固有免疫，有三个主要特点：
+<ul>
+<li><strong>特异性</strong></li>
+<li><strong>耐受性</strong></li>
+<li><strong>记忆性</strong></li>
+</ul>
+</dd>
+<dd>适应性免疫应答可分为两类：
+<ul>
+<li><strong>体液免疫</strong></li>
+<li><strong>细胞免疫</strong></li>
+</ul>
+</dd>
+<dt>体液免疫（humoral immunity）</dt>
+<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
+<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
+<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
+</dl>
+<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
+<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
+<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
+<!-- UPDATING -->
+<dl>
+<dt>免疫性疾病</dt>
+<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
+<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -3710,92 +4003,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医学免疫学</title>
-    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>免疫</dt>
-<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
-</dl>
-<span id="more"></span>
-<ul>
-<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
-<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
-<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
-<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
-<li>主要组织相容性复合体</li>
-</ul>
-<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
-<ul>
-<li>免疫器官
-<ul>
-<li>中枢：胸腺、骨髓</li>
-<li>外周：脾脏、淋巴结</li>
-</ul>
-</li>
-<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
-<li>免疫分子
-<ul>
-<li>膜型分子</li>
-<li>分泌型分子</li>
-</ul>
-</li>
-</ul>
-<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
-<dl>
-<dt><mark>免疫防御</mark>（immune defense）</dt>
-<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
-<dt><mark>免疫监视</mark>（immune surveillance）</dt>
-<dd>随时发现和清除体内出现的“非己”成分。</dd>
-<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
-<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
-</dl>
-<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
-<dl>
-<dt>免疫应答（immune response）</dt>
-<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
-<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
-<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
-<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
-<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
-<dd>相比固有免疫，有三个主要特点：
-<ul>
-<li><strong>特异性</strong></li>
-<li><strong>耐受性</strong></li>
-<li><strong>记忆性</strong></li>
-</ul>
-</dd>
-<dd>适应性免疫应答可分为两类：
-<ul>
-<li><strong>体液免疫</strong></li>
-<li><strong>细胞免疫</strong></li>
-</ul>
-</dd>
-<dt>体液免疫（humoral immunity）</dt>
-<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
-<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
-<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
-</dl>
-<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
-<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
-<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
-<!-- UPDATING -->
-<dl>
-<dt>免疫性疾病</dt>
-<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
-<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -4640,213 +4847,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
         <tag>TODO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分子病和先天性代谢病</title>
-    <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
-    <content><![CDATA[<dl>
-<dt><a href="#%E5%88%86%E5%AD%90%E7%97%85">分子病</a>（molecular disease）</dt>
-<dd><strong>基因突变</strong>导致蛋白质分子质和量的异常，从而引起机体功能障碍的一类疾病。</dd>
-<dt><a href="#%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85">先天性代谢缺陷</a>（inborn errors of metabolism，<abbr title="inborn errors of metabolism，先天性代谢缺陷">IEM</abbr>）</dt>
-<dd>指由遗传物质改变而引起的某些蛋白质（通常是酶）的异常，从而使机体不能正常代谢营养物质而引起的异常。</dd>
-</dl>
-<span id="more"></span>
-<h2 id="分子病">分子病 <a class="markdownIt-Anchor" href="#分子病">#</a></h2>
-<h3 id="血红蛋白病">血红蛋白病 <a class="markdownIt-Anchor" href="#血红蛋白病">#</a></h3>
-<dl>
-<dt>血红蛋白病（hemoglobinpathy）</dt>
-<dd>由于珠蛋白分子结构或合成量异常所引起的疾病。</dd>
-</dl>
-<ul>
-<li>结构异常 → <a href="#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85"><strong>异常血红蛋白病</strong></a></li>
-<li>数量异常 → <a href="#%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%B4%AB%E8%A1%80"><strong>地中海贫血</strong></a></li>
-</ul>
-<h4 id="血红蛋白和珠蛋白基因">血红蛋白和珠蛋白基因 <a class="markdownIt-Anchor" href="#血红蛋白和珠蛋白基因">#</a></h4>
-<p>人类<strong>血红蛋白</strong>（hemoglobin，<abbr title="血红蛋白">Hb</abbr>）是由两对珠蛋白链（α 和 β）组成的四聚体分子，每条珠蛋白链通过亚铁卟啉（bǔ lín）与一个<strong>血红素</strong>（heme）分子相连。<br/>
-α（珠蛋白）链包括 α 和 ζ 链，β（珠蛋白）链包括 β、ε、γ 及 δ 链，6 种肽链组成的 6 种血红蛋白中，<abbr title="血红蛋白">Hb</abbr> A（α<sub>2</sub>β<sub>2</sub>）（占 95% 以上）和 <abbr title="血红蛋白">Hb</abbr> A<sub>2</sub>（α<sub>2</sub>δ<sub>2</sub>）可见于成人体内。</p>
-<p>各种血红蛋白的发育演变是 α、β 珠蛋白基因簇（分别位于 16p13.33-p13.11、11p15.5）按照其在染色体上的排列顺序由 5’ 到 3’ 依次表达、关闭的结果。</p>
-<img data-src="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/%E7%8F%A0%E8%9B%8B%E7%99%BD%E5%9F%BA%E5%9B%A0%E7%B0%87.png" class="" title="α、β 珠蛋白基因簇的依次表达、关闭" alt="α、β 珠蛋白基因簇的依次表达、关闭">
-<p>珠蛋白基因表达调控：<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvTG9jdXNfY29udHJvbF9yZWdpb24=">LCR<i class="fa fa-external-link-alt"></i></span>（TODO）</p>
-<h4 id="异常血红蛋白病">异常血红蛋白病 <a class="markdownIt-Anchor" href="#异常血红蛋白病">#</a></h4>
-<p>由于珠蛋白基因突变导致珠蛋白肽链结构异常，且有临床表现者称为<strong>异常血红蛋白病</strong>或<strong>异常血红蛋白综合征</strong>。</p>
-<h5 id="异常血红蛋白病类型">异常血红蛋白病类型 <a class="markdownIt-Anchor" href="#异常血红蛋白病类型">#</a></h5>
-<div class="tabs" id="异常血红蛋白病类型"><ul class="nav-tabs"><li class="tab active"><a href="#异常血红蛋白病类型-1">镰状细胞病</a></li><li class="tab"><a href="#异常血红蛋白病类型-2">不稳定血红蛋白病</a></li><li class="tab"><a href="#异常血红蛋白病类型-3">血红蛋白 M 病</a></li><li class="tab"><a href="#异常血红蛋白病类型-4">氧亲和力改变的血红蛋白病</a></li></ul><div class="tab-content"><div class="tab-pane active" id="异常血红蛋白病类型-1"><dl>
-<dt>镰状细胞病（Sickle Cell Disease）</dt>
-<dd>常染色体显性遗传，Hb β 链第 6 位谷氨酸被缬氨酸取代（β<sup>6谷→缬</sup>），引起电荷改变（可通过电泳与正常 Hb 区分），形成 Hb S。</dd>
-</dl>
-<p>缺氧时 Hb S 聚合，使细胞镰变。<br/>
-镰变细胞使<strong>血黏度增高</strong>，导致血管梗阻性继发症状，如一过性剧痛、急性组织损伤等。<br/>
-镰变细胞变形性降低，细胞膜脆性增加，细胞裂解，可引起<strong>溶血</strong>。</p>
-<p>镰状细胞病 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#不完全显性"><strong>不完全显性</strong></a>：</p>
-<ul>
-<li>纯合子：镰状细胞贫血</li>
-<li>杂合子：镰状细胞性状，大多数无症状，可有轻度慢性贫血</li>
-</ul></div><div class="tab-pane" id="异常血红蛋白病类型-2"><dl>
-<dt>不稳定血红蛋白病（unstable hemoglobinopathy）</dt>
-<dd>不稳定的血红蛋白易自发变性，形成<strong>珠蛋白小体</strong>（Heinz 小体），引起溶血，可造成贫血。</dd>
-</dl>
-<p>如 Hb Bristol 病（β<sup>67缬→天冬</sup>）主要表现为先天性溶血性贫血、黄疸和脾大。</p>
-<p>不稳定血红蛋白病也表现为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#不完全显性"><strong>不完全显性</strong></a>：</p>
-<ul>
-<li>纯合子：可有临床症状，仅在服用磺胺等药物或有感染时溶血；</li>
-<li>杂合子：致死，需反复输血才能维持生命。</li>
-</ul></div><div class="tab-pane" id="异常血红蛋白病类型-3"><dl>
-<dt>血红蛋白 M 病（Hb M）| 遗传性高铁血红蛋白血症）</dt>
-<dd>肽链内与血红素铁原子连接的组氨酸发生了替换，使铁原子呈稳定的<strong>高铁</strong>状态，影响血红蛋白带氧功能，临床上表现为<strong>紫绀</strong>（cyanosis）和 继发性<strong>红细胞增多症</strong>（polycythemia）。</dd>
-</dl></div><div class="tab-pane" id="异常血红蛋白病类型-4"><dl>
-<dt>氧亲和力改变的血红蛋白病</dt>
-<dd>珠蛋白基因突变使 Hb 与氧的亲和力改变，使其运输氧功能改变。</dd>
-</dl>
-<ul>
-<li><strong>Hb Rainier</strong>（β1<sup>45酪→半胱</sup>）：与氧亲和力升高，氧释放入组织减少，引起<strong>红细胞增多症</strong>；</li>
-<li><strong>Hb Kansas</strong>（β<sup>102天冬→苏</sup>）：与氧的亲和力降低，动脉血氧饱和度降低，出现<strong>紫绀</strong>。</li>
-</ul></div></div></div>
-<h5 id="异常血红蛋白病的分子基础">异常血红蛋白病的分子基础 <a class="markdownIt-Anchor" href="#异常血红蛋白病的分子基础">#</a></h5>
-<ol>
-<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#点突变"><strong>单个碱基置换</strong></a>
-<ol>
-<li>错义突变：<abbr title="血红蛋白">Hb</abbr> S、<abbr title="血红蛋白">Hb</abbr> C、<abbr title="血红蛋白">Hb</abbr> E</li>
-<li>无义突变：<abbr title="血红蛋白">Hb</abbr> Mckee-Rock</li>
-<li>终止密码突变：<strong><abbr title="血红蛋白">Hb</abbr> Constant Spring</strong>（TAA → CAA，α<sup>142终止密码→谷氨酰胺</sup>，延长至 172 aa）引起 <a href="#%CE%B1-%E5%9C%B0%E8%B4%AB%E5%88%86%E7%B1%BB-2"><strong>α<sup>+</sup> 地中海贫血</strong></a></li>
-</ol>
-</li>
-<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/#移码突变"><strong>移码突变</strong></a></li>
-<li><strong>密码子的插入和缺失</strong>：<abbr title="血红蛋白">Hb</abbr> Gun Hill</li>
-<li><strong>融合基因</strong>：减数分裂 Ⅰ 期同源染色体错配，δ 和 β 基因之间发生不等交换，导致基因缺失或重复，如 <abbr title="血红蛋白">Hb</abbr> Lepore（部分基因缺失），只有 δβ 基因（<abbr title="血红蛋白">Hb</abbr> 反-Lepore 同时有 δ、β 基因），不稳定，可引起 <a href="#%CE%B2-%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%B4%AB%E8%A1%80"><strong>β 地中海贫血</strong></a>。</li>
-</ol>
-<h4 id="地中海贫血">地中海贫血 <a class="markdownIt-Anchor" href="#地中海贫血">#</a></h4>
-<dl>
-<dt>地中海贫血（thalassemia）</dt>
-<dd>由于珠蛋白基因缺失或突变导致某种珠蛋白的链合成障碍，造成 α 或 β 链<mark>合成失去平衡</mark>而导致的溶血性贫血。</dd>
-</dl>
-<h5 id="α-地中海贫血">α 地中海贫血 <a class="markdownIt-Anchor" href="#α-地中海贫血">#</a></h5>
-<dl>
-<dt>α 地中海贫血（α-thalassemia）| α 地贫</dt>
-<dd>珠蛋白基因（<strong>16 号染色体上的 α<sub>1</sub> 和 α<sub>2</sub></strong>）缺失（主要）或缺陷使 α（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
-</dl>
-<div class="note info"><p>α 地贫主要由<mark>基因缺失</mark>造成。</p>
-</div>
-<ul>
-<li><strong>α<sup>0</sup> 地贫</strong>（<strong>α 地贫 1</strong>）：缺失两个基因，-- / αα</li>
-<li><strong>α<sup>+</sup> 地贫</strong>（<strong>α 地贫 2</strong>）：缺失一个基因，α- / αα</li>
-</ul>
-<p>根据临床表现程度和受累 α 基因缺失的数量，可将 α 地贫分为：</p>
-<div class="tabs" id="α-地贫分类"><ul class="nav-tabs"><li class="tab active"><a href="#α-地贫分类-1">Hb Bart's 胎儿水肿综合征</a></li><li class="tab"><a href="#α-地贫分类-2">血红蛋白 H 病</a></li><li class="tab"><a href="#α-地贫分类-3">轻型（标准型）α 地贫</a></li><li class="tab"><a href="#α-地贫分类-4">静止型 α 地贫</a></li></ul><div class="tab-content"><div class="tab-pane active" id="α-地贫分类-1"><p>4 个 α 基因全部缺失，基因型为 <strong>--/--</strong>，α 链完全不能合成，不能形成 Hb F（α<sub>2</sub>γ<sub>2</sub>，胎儿血红蛋白），相对过多的 γ 形成 γ 四聚体（γ<sub>4</sub>），称为 <strong>Hb Bart’s</strong>。<br/>
-Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>胎儿水肿</strong>，造成死胎或新生儿死亡。</p></div><div class="tab-pane" id="α-地贫分类-2"><p>α<sup>0</sup> 地贫和 α<sup>+</sup> 地贫的双重杂合子，即缺失 3 个 α 基因，基因型为 <strong>a-/--</strong>、<strong>-a/--</strong>，或 <strong>α<sup>T</sup>α/--</strong>（α<sup>T</sup> 表示有突变，如 <a href="#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">Hb Constant Spring</a>），只能合成少量 α 链，β 链相对较多，形成的 β<sub>4</sub> 易被氧化解体，形成包涵体，引起中度或较严重的溶血性贫血。</p></div><div class="tab-pane" id="α-地贫分类-3"><p>α<sup>0</sup> 地贫杂合子（<strong>--/αα</strong>）或 α<sup>+</sup> 地贫纯合子（<strong>α-/α-</strong>），即缺失 2 个 α 基因，有轻度贫血。轻型 α 地贫患者（主要是 --/αα）之间婚配，生育子女有 1/4 概率患有 HHb Bart’s 胎儿水肿综合征。</p></div><div class="tab-pane" id="α-地贫分类-4"><p>α<sup>+</sup> 地贫纯合子（<strong>α-/αα</strong>），仅缺失一个 α 基因，<em>无症状</em>。</p></div></div></div>
-<h5 id="β-地中海贫血">β 地中海贫血 <a class="markdownIt-Anchor" href="#β-地中海贫血">#</a></h5>
-<dl>
-<dt>β 地中海贫血（β-thalassemia）| β 地贫</dt>
-<dd>β 珠蛋白基因缺失或缺陷使 β（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
-</dl>
-<div class="note info"><p>β 地贫主要由<mark>基因突变</mark>造成。</p>
-</div>
-<ul>
-<li><strong>β<sup>0</sup> 地贫</strong>：完全不能合成 β 链</li>
-<li><strong>β<sup>+</sup> 地贫</strong>：能部分合成 β 链</li>
-<li><em>δβ 地贫</em>：见 <a href="?highlight=%E8%9E%8D%E5%90%88%E5%9F%BA%E5%9B%A0#%E5%BC%82%E5%B8%B8%E8%A1%80%E7%BA%A2%E8%9B%8B%E7%99%BD%E7%97%85%E7%9A%84%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80">融合基因</a></li>
-</ul>
-<div class="tabs" id="β-地贫分类"><ul class="nav-tabs"><li class="tab active"><a href="#β-地贫分类-1">重型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-2">中间型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-3">轻型 β 地中海贫血</a></li><li class="tab"><a href="#β-地贫分类-4">遗传性胎儿血红蛋白增多症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="β-地贫分类-1"><p>β<sup>+</sup>、β<sup>0</sup>、δβ<sup>0</sup> 地贫的纯合子或者 β<sup>+</sup> 和 β<sup>0</sup> 地贫的双重纯合子，基因型分别为 <strong>β<sup>+</sup>/β<sup>+</sup></strong>、<strong>β<sup>0</sup>/β<sup>0</sup></strong>、<strong>δβ<sup>0</sup>/δβ<sup>0</sup></strong> 以及 <strong>β<sup>0</sup>/β<sup>+</sup></strong>。<br/>
-患者的 β 链几乎不能合成或合成量很少，以致无 HB A 或 HB A 含量很低；λ 链合成相对增多，使 <strong>Hb F</strong>（与氧亲和力强）和 Hb A<sub>2</sub> 比率升高。<br/>
-患者组织缺氧，进而刺激红骨髓增生，引起骨质疏松，可出现“<strong>地中海贫血面容</strong>”（头颅大，额顶及枕部隆起，鼻梁塌陷，上颌及牙齿前突，眼距宽，眼睑浮肿）；过剩的 α 链游离形成 α 链包涵体，引起<strong>溶血性贫血</strong>，靠输血维持生命。</p></div><div class="tab-pane" id="β-地贫分类-2"><p>通常是某些变异型的纯合子或两种不同变异型的双重杂合子，如 β<sup>+</sup>/β<sup>+</sup>、δβ<sup>+</sup>/β<sup>+</sup>，。<br/>
-患者病情介于重型和轻型之间。</p></div><div class="tab-pane" id="β-地贫分类-3"><p>β<sup>+</sup>、β<sup>0</sup> 或 δβ<sup>0</sup> 地贫的杂合子，基因型分别为 β<sup>+</sup>/β<sup>A</sup>、β<sup>0</sup>/β<sup>A</sup> 和 δβ<sup>0</sup>/β<sup>A</sup>。<br/>
-患者能合成相当量的 β 链，症状较轻，贫血不明显或<strong>轻度贫血</strong>，特点是 <em>Hb A<sub>2</sub> 升高（可至 4%~8%）或/和 Hb F 升高</em>。</p></div><div class="tab-pane" id="β-地贫分类-4"><dl>
-<dt>遗传性胎儿血红蛋白增多症（hereditary persistance of fetal hemoglobin，HPFH）</dt>
-<dd>由于 β 珠蛋白基因簇中的某些 DNA 片段缺失或点突变，使 <strong>δ 和 β 链</strong>合成受到抑制，而 <strong>γ 链</strong>的合成明显增加，导致 <strong>Hb F</strong> 增多。</dd>
-</dl>
-<p>HPFH 的特点是 <strong>Hb F</strong> 在<strong>成年人</strong>体内仍持续较高水平，<em>无明显临床症状</em>。</p></div></div></div>
-<h3 id="受体蛋白病">受体蛋白病 <a class="markdownIt-Anchor" href="#受体蛋白病">#</a></h3>
-<dl>
-<dt>家族性高胆固醇血症（familial hypterlipoproteinemia，FH）</dt>
-<dd><strong>低密度脂蛋白</strong>（low density lipoprotein，<strong>LDL</strong>）受体部分缺失或功能性 LDL　受体不足，使血浆中胆固醇和甘油三酯增高，可引起冠心病、心肌梗死。</dd>
-</dl>
-<h2 id="先天性代谢病">先天性代谢病 <a class="markdownIt-Anchor" href="#先天性代谢病">#</a></h2>
-<h3 id="先天代谢缺陷的产生机制">先天代谢缺陷的产生机制 <a class="markdownIt-Anchor" href="#先天代谢缺陷的产生机制">#</a></h3>
-<ol>
-<li><strong>结构基因突变</strong>使酶结构改变，稳定性降低，酶动力学特性改变；</li>
-<li><strong>调节基因突变</strong>致使酶合成速率下降，催化活性降低；</li>
-<li><strong>翻译后修饰、加工障碍</strong>致酶催化中心不完善，活性下降。</li>
-</ol>
-<h3 id="先天性代谢病的类型">先天性代谢病的类型 <a class="markdownIt-Anchor" href="#先天性代谢病的类型">#</a></h3>
-<ul>
-<li><a href="#%E6%B0%A8%E5%9F%BA%E9%85%B8%E4%BB%A3%E8%B0%A2%E7%97%85">氨基酸代谢病</a>：苯丙酮尿症、白化病、尿黑酸尿症</li>
-<li><a href="#%E7%B3%96%E4%BB%A3%E8%B0%A2%E7%97%85">糖代谢病</a>：半乳糖血症、糖原贮积病</li>
-<li><a href="#%E8%84%82%E7%B1%BB%E4%BB%A3%E8%B0%A2%E7%97%85">脂类代谢病</a>：Gaucher病、Tay-Sachs病</li>
-<li><a href="#%E5%98%8C%E5%91%A4%E4%BB%A3%E8%B0%A2%E7%97%85">嘌呤代谢病</a>：Lesch-Nyhan综合征</li>
-<li><a href="#%E8%91%A1%E8%90%84%E7%B3%96-6-%E7%A3%B7%E9%85%B8%E8%84%B1%E6%B0%A2%E9%85%B6%E7%BC%BA%E4%B9%8F%E7%97%87">葡萄糖 6-磷酸脱氢酶缺乏症</a></li>
-</ul>
-<h4 id="氨基酸代谢病">氨基酸代谢病 <a class="markdownIt-Anchor" href="#氨基酸代谢病">#</a></h4>
-<ol>
-<li>苯丙酮尿症：苯丙氨酸羟化酶</li>
-<li>白化病：酪氨酸酶</li>
-<li>尿黑酸尿症：尿黑酸氧化酶</li>
-</ol>
-<div class="tabs" id="氨基酸代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#氨基酸代谢病举例-1">苯丙酮尿症</a></li><li class="tab"><a href="#氨基酸代谢病举例-2">白化病</a></li><li class="tab"><a href="#氨基酸代谢病举例-3">尿黑酸尿症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="氨基酸代谢病举例-1"><p><strong>苯丙酮尿症</strong>（Phenylketonuria，<abbr title="Phenylketonuria，苯丙酮尿症">PKU</abbr>）是由肝脏<mark>苯丙氨酸羟化酶</mark>（phenylalanine hydroxylase，<abbr title="phenylalanine hydroxylase，苯丙氨酸羟化酶">PAH</abbr>）遗传性缺陷所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常染色体隐性遗传病">常染色体隐性遗传</a>，少数由于<strong>四氢生物蝶呤</strong>（BH<sub>4</sub>）（苯丙氨酸羟化酶发挥作用需要辅因子<strong>四氢生物蝶呤</strong>）缺乏所致。</p>
-<p>临床表现：</p>
-<ul>
-<li>毛发、皮肤和尿<strong>特殊的气味</strong>（鼠尿味）：旁路代谢产物由尿液和汗液排出；</li>
-<li><strong>皮肤和毛发颜色</strong>较浅：黑色素合成减少；</li>
-<li><strong>智力障碍</strong>：大脑发育受到影响。</li>
-</ul>
-<p>防治：新生儿筛查 + 限制苯丙氨酸摄入</p></div><div class="tab-pane" id="氨基酸代谢病举例-2"><p><strong>白化病</strong>（albinism）（Ⅰ 型）是<mark>酪氨酸酶</mark>（tyrosinase）合成障碍所致的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=白化病#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
-<p>临床表现：</p>
-<ul>
-<li>患者<strong>皮肤</strong>呈白色，<strong>头发</strong>呈银白色或淡黄色，<strong>虹膜及瞳孔</strong>呈淡红色：黑色素缺乏；</li>
-<li>视物模糊、眼球震颤、<strong>畏光</strong>：视网膜无色素；</li>
-<li>皮肤日晒易被灼伤，易患<strong>皮肤癌</strong>。</li>
-</ul>
-<p>白化病 Ⅰ 型由酪氨酸酶缺陷所致，ⅠA 型患者皮肤、毛发和眼部组织终生完全缺乏黑色素；ⅠB 型的突变仅导致酪氨酸酶活性部分缺失，新生儿有白色或非常浅黄色的头发，但随着年龄的增长，头发会变黑成金色或浅棕色。睫毛的颜色可能比头皮和眉毛的颜色深。皮肤保持乳白色，但可能会出现少量晒黑（tanning）以及雀斑和色素痣。白化病 ⅠB 型又称<em>黄色白化病</em>（yellow albinism）。</p></div><div class="tab-pane" id="氨基酸代谢病举例-3"><p><strong>尿黑酸尿症</strong>（alcaptonuira）是<mark>尿黑酸氧化酶</mark>（homogentisic acid oxidase）先天缺乏引起的一种代谢病，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
-<p>临床表现：</p>
-<ul>
-<li>婴儿出生后不久，尿布中有黄褐色斑点，日久后尿布呈黑褐色；</li>
-<li><strong>褐黄病</strong>：体内尿黑酸沉积与结缔组织，在皮肤、 耳廓、面颊和巩膜等处弥漫性色素沉着），如累积关节，可导致<strong>黄褐病性关节炎</strong>。</li>
-</ul></div></div></div>
-<h4 id="糖代谢病">糖代谢病 <a class="markdownIt-Anchor" href="#糖代谢病">#</a></h4>
-<ol>
-<li>半乳糖血症：1-磷酸半乳糖尿苷转移酶</li>
-<li>糖原贮积症 Ⅰ 型：葡萄糖-6-磷酸酶</li>
-</ol>
-<div class="tabs" id="糖代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#糖代谢病举例-1">半乳糖血症</a></li><li class="tab"><a href="#糖代谢病举例-2">糖原贮积病 Ⅰ 型</a></li></ul><div class="tab-content"><div class="tab-pane active" id="糖代谢病举例-1"><p><strong>半乳糖血症</strong>（galactosemia）是由于 <strong>1-磷酸半乳糖尿苷转移酶</strong>（galactose-1-phosphate uridyltransferase，<abbr title="galactose-1-phosphate uridyltransferase，1-磷酸半乳糖尿苷转移酶">GPUT</abbr>）缺乏活性使 1-磷酸半乳糖大量堆积在血液、肝脏和脑等组织中而导致的疾病，按 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性</a> 方式遗传。</p>
-<p>临床表现：婴儿期呕吐或腹泻、喂养困难，逐渐出现肝脏肿大、水肿、精神发育迟滞和白内障等。</p>
-<p>治疗：以限制乳类摄入为主。</p></div><div class="tab-pane" id="糖代谢病举例-2"><p><strong>糖原贮积病</strong>（Glycogen Storage Disease）是一大类遗传性糖代谢缺陷，由于糖原的降解或生成过程中某些酶活性的缺乏，致使正常或异常结构的糖原积累在肝、心、肌肉等组织而产生的多种症状。</p>
-<p><strong>糖原贮积病 Ⅰ 型</strong>由<mark>葡萄糖-6-磷酸酶</mark>（glucose-6-phosphatase）缺乏所致，呈 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传</a>。</p>
-<p>临床表现：</p>
-<ul>
-<li>肝细胞中肝糖原积聚，致患儿<strong>肝肿大</strong>；</li>
-<li>可引起葡萄糖-6-磷酸增多，糖酵解及磷酸戊糖途径增强，引起<em>酸中毒</em>、<em>高尿酸血症</em>和<em>高脂血症</em>。</li>
-</ul></div></div></div>
-<h4 id="脂类代谢病">脂类代谢病 <a class="markdownIt-Anchor" href="#脂类代谢病">#</a></h4>
-<p><strong>脂类代谢病</strong>是指脂类分解中特异性酶缺乏，导致其相应脂质底物在内脏、脑部、血管中堆积，使这些系统发生紊乱而致病，统称为<strong>脂类贮积症</strong>（lipidosis）。</p>
-<ol>
-<li>Gaucher病：β-葡萄糖苷脂酶</li>
-<li>Tay-Sachs 病：氨基己糖苷酶 A</li>
-</ol>
-<div class="tabs" id="脂类代谢病举例"><ul class="nav-tabs"><li class="tab active"><a href="#脂类代谢病举例-1">Gaucher 病</a></li><li class="tab"><a href="#脂类代谢病举例-2">Tay-Sachs 病</a></li></ul><div class="tab-content"><div class="tab-pane active" id="脂类代谢病举例-1"><p><strong>Gaucher 病</strong>（戈谢氏病）是由于 <mark>β-葡萄糖苷脂酶</mark>（β-glucosidase）缺乏导致葡萄糖苷脂代谢障碍而引起的临床疾病，为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传病</a>。</p>
-<p>葡萄糖脑苷脂在单核巨噬细胞内蓄积形成 Gaucher 细胞，是本病的典型特征。</p></div><div class="tab-pane" id="脂类代谢病举例-2"><p><strong>Tay-Sachs 病</strong>（Tay-Sachs disease），又称 <strong>GM<sub>2</sub> 神经节苷脂贮积症</strong>（GM<sub>2</sub> gangliosidosis）、<strong>GM<sub>2</sub> 神经节苷脂病 Ⅰ 型</strong>或<strong>家族性黑蒙性白痴</strong>（familial amauroticidiocy），由<strong>氨基己糖苷酶 A</strong>（hexosaminidase A）缺乏导致 GM<sub>2</sub> 神经节苷脂在神经细胞内聚集所致，为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/?highlight=尿黑酸尿症#常染色体隐性遗传病">常染色体隐性遗传病</a>。</p>
-<p>临床表现：</p>
-<ul>
-<li>初发症状：听觉过敏；</li>
-<li>早期：视网膜黄斑变性，视网膜呈樱桃红斑点，进行性失明，还可表现为进行性肌张力减退、衰弱和生长迟缓；</li>
-<li>后期：完全不能运动，恶病质，平均存活 2 年左右。</li>
-</ul></div></div></div>
-<h4 id="嘌呤代谢病">嘌呤代谢病 <a class="markdownIt-Anchor" href="#嘌呤代谢病">#</a></h4>
-<p><strong>Lesch-Nyhan 综合征</strong>（<abbr title="Lesch-Nyhan 综合征">LNS</abbr>）又称 <mark>自毁容貌综合征</mark>，为 <mark>X 连锁隐性遗传病</mark>，是由**次黄嘌呤鸟嘌呤磷酸核糖转移酶（HGPRT）**缺乏引起嘌呤过度合成，致体液中尿酸增多造成的一类疾病。</p>
-<p>临床表现：</p>
-<ul>
-<li>精神发育迟滞、痉挛性脑瘫、不自主运动和明显的<strong>强迫性自残行为</strong>（self-mutilation），<strong>自残行为发展</strong>是 <abbr title="Lesch-Nyhan 综合征">LNS</abbr> 的特异性症状，先是磨牙齿和咬口唇，逐渐发展为不可克制的咬舌、咬手指、咬人或咬物，可造成严重伤残；</li>
-<li>患者血中尿酸增多，可引发<strong>痛风性关节痛</strong>，是本病常见的全身症状。</li>
-</ul>
-<h4 id="葡萄糖-6-磷酸脱氢酶缺乏症">葡萄糖 6-磷酸脱氢酶缺乏症 <a class="markdownIt-Anchor" href="#葡萄糖-6-磷酸脱氢酶缺乏症">#</a></h4>
-<p><strong>葡萄糖 6-磷酸脱氢酶</strong>（<em>glucose</em>-6-phosphate dehydrogenase，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr>）催化磷酸己糖旁路的第一步。葡萄糖代谢途径产生 <strong>NADPH</strong>，以保持<strong>谷胱甘肽</strong>和<strong>巯基</strong>水平。*<strong><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr></strong> 基因定位与 Xq28 介于甲型血友病和红绿色盲基因座之间，<abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症为 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#x-连锁隐性遗传病"><mark>X 连锁隐性遗传病</mark></a>。</p>
-<p><abbr title="glucose-6-phosphate dehydrogenase，葡萄糖 6-磷酸脱氢酶">G6PD</abbr> 缺乏症又称<em><strong>蚕豆病***，患者若服用</strong>蚕豆</em><em>或抗疟药</em><em>伯胺（基）喹呤</em>*可发生溶血性贫血。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -8089,29 +8089,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ol>
 
   </details>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>亚病毒</p>
-</summary>
-    <div class='note-title' id='亚病毒'>
-      亚病毒
-    </div><dl>
-<dt>亚病毒（subvirus）</dt>
-<dd>一些新的非寻常病毒的致病因子，为比病毒更小、结构更简单的微生物。</dd>
-<dd>包括<strong>类病毒</strong>、<strong>卫星病毒</strong>和<strong>脘粒</strong>。</dd>
-<dt>类病毒（viroid）</dt>
-<dd>均为<strong>植物病毒</strong>，仅由 250~400 个核酸组成，核酸为单链杆状 RNA，有二级结构，无包膜或衣壳，不含蛋白质。</dd>
-<dd>类病毒通常通过种子或花粉传播。</dd>
-<dt>卫星病毒（satellite virus）</dt>
-<dd>一种引起苜蓿（mùxu）绒毛菸（yū）等植物损害的致病因子。分为两大类：
-<ul>
-<li>可编码自身的衣壳蛋白</li>
-<li><strong>卫星病毒 RNA 分子</strong>，曾称为<em>拟病毒</em>（virusoid）,需利用<strong>辅助病毒</strong>的蛋白质衣壳。</li>
-</ul>
-</dd>
-<dt>朊粒（prion）</dt>
-<dd>生物学地位尚未确定，目前归类于亚病毒。</dd>
-</dl>
-
-  </details>
 <details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病毒是生命吗？</p>
 </summary>
     <div class='note-title' id='病毒是生命吗？'>
@@ -8134,6 +8111,28 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 
   </details>
+<div class="note info"><div class='note-title' id='亚病毒'>
+      亚病毒
+    </div><dl>
+<dt>亚病毒（subvirus）</dt>
+<dd>一些新的非寻常病毒的致病因子，为比病毒更小、结构更简单的微生物。</dd>
+</dl>
+<p>亚病毒包括<strong>类病毒</strong>、<strong>卫星病毒</strong>和<strong>脘粒</strong>。</p>
+<dl>
+<dt>类病毒（viroid）</dt>
+<dd>均为<strong>植物病毒</strong>，仅由 250~400 个核酸组成，核酸为单链杆状 RNA，有二级结构，无包膜或衣壳，不含蛋白质。</dd>
+<dd>类病毒通常通过种子或花粉传播。</dd>
+<dt>卫星病毒（satellite virus）</dt>
+<dd>一种引起苜蓿（mùxu）绒毛菸（yū）等植物损害的致病因子。分为两大类：
+<ul>
+<li>可编码自身的衣壳蛋白</li>
+<li><strong>卫星病毒 RNA 分子</strong>，曾称为<em>拟病毒</em>（virusoid）,需利用<strong>辅助病毒</strong>的蛋白质衣壳。</li>
+</ul>
+</dd>
+<dt>朊粒（prion）</dt>
+<dd>生物学地位尚未确定，目前归类于亚病毒。</dd>
+</dl>
+</div>
 <h2 id="病毒的基本性状">病毒的基本性状 <a class="markdownIt-Anchor" href="#病毒的基本性状">#</a></h2>
 <h3 id="病毒的大小和形态">病毒的大小和形态 <a class="markdownIt-Anchor" href="#病毒的大小和形态">#</a></h3>
 <dl>
@@ -8254,15 +8253,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <div class="note info"><p>病毒核酸的复制方式因核酸类型的不同而异，可分为 7 个类型：</p>
 <ol>
-<li><strong>双链 DNA 病毒</strong></li>
+<li><a href="/2021/03/21/%E7%97%85%E6%AF%92/%E5%8F%8C%E9%93%BE%20DNA%20%E7%97%85%E6%AF%92.png"><strong>双链 DNA 病毒</strong></a></li>
 <li>单链 DNA 病毒</li>
-<li><strong>单正链 RNA 病毒</strong></li>
+<li><a href="/2021/03/21/%E7%97%85%E6%AF%92/%E5%8D%95%E6%AD%A3%E9%93%BE%20RNA%20%E7%97%85%E6%AF%92.png"><strong>单正链 RNA 病毒</strong></a></li>
 <li>单负链 RNA 病毒</li>
 <li>双链 RNA 病毒</li>
-<li><strong>逆转录病毒</strong>/<strong>反转录病毒</strong></li>
+<li><a href="/2021/03/21/%E7%97%85%E6%AF%92/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92.png"><strong>逆（反）转录病毒</strong></a></li>
 <li>嗜肝 DNA 病毒</li>
 </ol>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="/2021/03/21/%E7%97%85%E6%AF%92/%E5%8F%8C%E9%93%BE%20DNA%20%E7%97%85%E6%AF%92.png" class=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="/2021/03/21/%E7%97%85%E6%AF%92/%E5%8D%95%E6%AD%A3%E9%93%BE%20RNA%20%E7%97%85%E6%AF%92.png" class=""></div><div class="group-picture-column"><img data-src="/2021/03/21/%E7%97%85%E6%AF%92/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92.png" class=""></div></div></div>
 <p><strong>双链 RNA（dsDNA）病毒</strong>在细胞核内合成 DNA，细胞质内合成病毒蛋白，<strong>痘病毒</strong>除外。</p>
 <details class="note " onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>痘病毒科</p>
 </summary>
@@ -8281,35 +8279,38 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>RNA 病毒与痘病毒在胞质内组装</li>
 </ul>
 <p><strong>释放</strong>（release）方式：</p>
-<ul>
+<ol>
 <li><strong>破胞释放</strong>：<strong>无包膜的病毒</strong>在宿主细胞内积累到一定数量后，随细胞裂解释放；</li>
 <li><strong>出芽</strong>：<strong>有包膜的病毒</strong>在释放过程中包被上了宿主细胞的核膜（疱疹病毒）或细胞膜；</li>
 <li>通过<strong>细胞间桥</strong>或<strong>细胞融合</strong>的方式在细胞间传播，很少释放到细胞外。</li>
-</ul>
+</ol>
 <h3 id="病毒的异常增殖与干扰现象">病毒的异常增殖与干扰现象 <a class="markdownIt-Anchor" href="#病毒的异常增殖与干扰现象">#</a></h3>
 <h4 id="病毒的异常增殖">病毒的异常增殖 <a class="markdownIt-Anchor" href="#病毒的异常增殖">#</a></h4>
 <div class="tabs" id="tabs_病毒的异常感染"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_病毒的异常感染-1">顿挫感染</a></li><li class="tab"><a href="#tabs_病毒的异常感染-2">缺陷干扰颗粒</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_病毒的异常感染-1"><dl>
 <dt>顿挫感染 | 流产感染（abortive infection）</dt>
 <dd>病毒感染宿主细胞后，因细胞不能为病毒提供复制的必要条件（如酶类、能量及必要成分）而没有完整病毒体的产生。</dd>
-<dt>非容纳细胞（non-permissive cell）</dt>
-<dd>引起病毒顿挫感染的细胞。</dd>
-<dt>容纳细胞（permissive cell）</dt>
-<dd>能支持病毒完成正常增殖的细胞。</dd>
-</dl></div><div class="tab-pane" id="tabs_病毒的异常感染-2"><dl>
+</dl>
+<ul>
+<li><strong>非容纳细胞</strong>（non-permissive cell）：引起病毒顿挫感染的细胞。</li>
+<li><strong>容纳细胞</strong>（permissive cell）：能支持病毒完成正常增殖的细胞。</li>
+</ul></div><div class="tab-pane" id="tabs_病毒的异常感染-2"><dl>
 <dt>缺陷病毒（defective virus）| 缺陷干扰颗粒（defective interfering particle, DIP）</dt>
 <dd>因基因组不完整或发生严重改变，而不能复制出完整子代病毒的病毒。</dd>
-<dd>缺陷干扰颗粒能干扰同种成熟病毒体进入细胞。</dd>
+</dl>
+<ul>
+<li><em>缺陷病毒</em>在<strong>辅助病毒</strong>的帮助下，可以增殖出完整病毒；</li>
+<li><em>缺陷干扰颗粒</em>能干扰（属于 <a href="#%E7%97%85%E6%AF%92%E7%9A%84%E5%B9%B2%E6%89%B0%E7%8E%B0%E8%B1%A1">病毒的干扰现象</a>）同种成熟病毒体进入细胞。</li>
+</ul>
+<dl>
 <dt>辅助病毒（helper virus）</dt>
-<dd>具有弥补缺陷病毒的不足，使之增殖除完整病毒的辅助功能的病毒。</dd>
+<dd>具有弥补缺陷病毒的不足，使之增殖出完整病毒的辅助功能的病毒。</dd>
 </dl></div></div></div>
 <h4 id="干扰现象">干扰现象 <a class="markdownIt-Anchor" href="#干扰现象">#</a></h4>
 <dl>
 <dt>干扰现象（interference）</dt>
 <dd>两种病毒感染同一细胞时，一种病毒的增殖可以抑制另一种病毒增殖的现象。</dd>
 </dl>
-<blockquote>
-<p>干扰现象不仅在活病毒间发生，灭活病毒也能干扰活病毒。</p>
-</blockquote>
+<p>干扰现象不仅在活病毒间发生，<strong>灭活病毒</strong>也能干扰活病毒。</p>
 <h2 id="病毒的遗传与变异">病毒的遗传与变异 <a class="markdownIt-Anchor" href="#病毒的遗传与变异">#</a></h2>
 <h3 id="遗传型变异">遗传型变异 <a class="markdownIt-Anchor" href="#遗传型变异">#</a></h3>
 <h4 id="基因突变">基因突变 <a class="markdownIt-Anchor" href="#基因突变">#</a></h4>
@@ -8318,18 +8319,11 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>由基因突变产生的病毒表型性状改变的毒株。</dd>
 </dl>
 <ol>
-<li>毒力改变</li>
-<li>条件致死突变株</li>
-<li>宿主范围突变株</li>
-<li>耐药性突变株（drug-resistant mutant）</li>
-<li>……</li>
+<li><strong>毒力改变</strong></li>
+<li><strong>条件致死突变株</strong>（conditional lethal mutant）：病毒突变后在特定条件下能增殖，在原来的条件下不能增殖而致死的突变株。</li>
+<li><strong>宿主范围突变株</strong>（host-range mutant, hr 突变株）：病毒基因组的改变影响了其对宿主细胞的吸附或相互作用。</li>
+<li><strong>耐药性突变株</strong>（drug-resistant mutant）</li>
 </ol>
-<dl>
-<dt>条件致死突变株（conditional lethal mutant）</dt>
-<dd>病毒突变后在特定条件下能增殖，在原来的条件下不能增殖而致死的突变株。</dd>
-<dt>宿主范围突变株（host-range mutant, hr 突变株）</dt>
-<dd>病毒基因组的改变影响了其对宿主细胞的吸附或相互作用。</dd>
-</dl>
 <h4 id="重组和重配">重组和重配 <a class="markdownIt-Anchor" href="#重组和重配">#</a></h4>
 <dl>
 <dt>重组（recombination）</dt>
@@ -8342,15 +8336,15 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dl>
 <dt>整合（integration）</dt>
 <dd>病毒基因组或基因组中的某些片段插入宿主细胞染色体 DNA 的重组过程。</dd>
-<dd>可引起病毒基因的变异及宿主细胞染色体基因的改变，导致细胞转化发生肿瘤等。</dd>
 </dl>
+<p>基因整合可引起病毒基因的变异及宿主细胞染色体基因的改变，导致细胞转化发生肿瘤等。</p>
 <h3 id="非遗传性变异">非遗传性变异 <a class="markdownIt-Anchor" href="#非遗传性变异">#</a></h3>
 <h4 id="表型混合与核衣壳转移">表型混合与核衣壳转移 <a class="markdownIt-Anchor" href="#表型混合与核衣壳转移">#</a></h4>
 <dl>
 <dt>表型混合（phenotypic mixing）</dt>
 <dd>一种病毒复制的核酸被另一种病毒编码的蛋白质衣壳或包膜包裹，是<strong>基因产物的交换</strong>。</dd>
-<dt>核壳转移（transcapsidation）</dt>
-<dd><strong>无包膜病毒</strong>发生的表型混合。</dd>
+<dt>核衣壳转移（transcapsidation）</dt>
+<dd><strong>裸露病毒</strong>发生的表型混合。</dd>
 </dl>
 <h4 id="基因型混合">基因型混合 <a class="markdownIt-Anchor" href="#基因型混合">#</a></h4>
 <dl>
@@ -8358,20 +8352,117 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>两种病毒的核酸偶尔混合装在同一个病毒衣壳内，或两种病毒的核衣壳偶尔装在同一个包膜内，</dd>
 <dd>核酸未重组，没有遗传性，传代后子代恢复其亲代的性状。</dd>
 </dl>
-<h4 id="互补和增强">互补和增强 <a class="markdownIt-Anchor" href="#互补和增强">#</a></h4>
+<h4 id="互补">互补 <a class="markdownIt-Anchor" href="#互补">#</a></h4>
 <dl>
 <dt>互补（complementation）</dt>
 <dd>两种病毒通过产生的蛋白质产物互相弥补不足，如辅助病毒和缺损病毒。</dd>
+</dl>
+<h4 id="增强">增强 <a class="markdownIt-Anchor" href="#增强">#</a></h4>
+<dl>
 <dt>增强（enhancement）</dt>
 <dd>一种病毒对另一种病毒的产量有促进作用。</dd>
 </dl>
 <h2 id="理化因素对病毒的影响">理化因素对病毒的影响 <a class="markdownIt-Anchor" href="#理化因素对病毒的影响">#</a></h2>
 <ul>
 <li>物理因素：温度、PH、射线</li>
-<li>化学因素：脂溶剂、化学消毒剂、抗生素与中草药、其他（离子等）</li>
+<li>化学因素：脂溶剂、化学消毒剂、抗生素与中草药、其他（离子等）、脂溶剂（包膜病毒）</li>
 </ul>
 <h2 id="病毒的感染与抗病毒免疫">病毒的感染与抗病毒免疫 <a class="markdownIt-Anchor" href="#病毒的感染与抗病毒免疫">#</a></h2>
-<p><a href="/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/">病毒的感染与抗病毒免疫</a></p>
+<dl>
+<dt>病毒感染（viral infection）</dt>
+<dd>病毒侵入体内并在靶细胞内增殖，与机体发生相互作用的过程。</dd>
+<dt>病毒性疾病（viral disease）</dt>
+<dd>病毒感染根据病毒种类、机体状态的不同而产生的轻重不一的损伤。</dd>
+</dl>
+<h3 id="病毒传播和播散">病毒传播和播散 <a class="markdownIt-Anchor" href="#病毒传播和播散">#</a></h3>
+<p>传播方式：</p>
+<ul>
+<li><strong>水平传播</strong>：经呼吸道、消化道、皮肤（包括虫媒传播）或黏膜、血液、泌尿生殖道传播；</li>
+<li><strong>垂直传播</strong>：母体病原生物经<em>胎盘</em>、<em>产道</em>或<em>乳汁</em>传播给子代，如<strong>风疹病毒</strong>、<strong>巨细胞病毒</strong>、<strong>乙型肝炎病毒</strong>、<strong>人类免疫缺陷病病毒</strong>等。</li>
+</ul>
+<p>病毒在宿主体内的播散方式</p>
+<ul>
+<li>直接接触播散</li>
+<li>经血液播散</li>
+<li>经神经系统播散</li>
+</ul>
+<h3 id="病毒的致病机制">病毒的致病机制 <a class="markdownIt-Anchor" href="#病毒的致病机制">#</a></h3>
+<h4 id="病毒感染对宿主细胞的直接作用">病毒感染对宿主细胞的直接作用 <a class="markdownIt-Anchor" href="#病毒感染对宿主细胞的直接作用">#</a></h4>
+<ol>
+<li><strong>杀细胞性感染</strong>（cytocidal infection）/溶细胞性感染（cytolytic infection）：病毒在宿主细胞内复制增殖后，在短时间内释放大量二代病毒，细胞被破坏、死亡，这种作用称为<strong>杀细胞效应</strong>，这种感染称为<strong>杀细胞性感染</strong>。</li>
+<li><strong>稳定状态感染</strong>（steady state infection）：有些病毒增殖较慢，所致病变较轻；以出芽的方式释放子代病毒，细胞短时间内不会溶解死亡。</li>
+<li><strong>细胞凋亡</strong>（cell apoptosis）：由宿主基因控制的细胞程序性死亡，属于正常的生理学现象。</li>
+<li><strong>病毒基因组的整合</strong>（viral integration）：病毒的遗传物质结合至宿主细胞的染色体内。</li>
+<li><strong>细胞增生与细胞转化</strong>：
+<ul>
+<li>细胞增生：少数病毒感染宿主细胞后反而会促进宿主细胞 DNA 的合成。</li>
+<li>细胞转化（cell transformation）：某些病毒感染导致宿主细胞出现形态发生改变、细胞增殖加快、失去细胞间的接触抑制等细胞生物学行为的改变。转化的细胞可能变成肿瘤细胞。</li>
+</ul>
+</li>
+<li><strong>包涵体</strong>（inclusion body）（<a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a> 也能形成包涵体）：
+<ul>
+<li>某些病毒感染细胞后，在细胞浆或/和细胞核内出现的嗜酸性或嗜碱性、大小数量不同的圆形或卵圆形斑块状结构。</li>
+<li>病毒包涵体是由病毒颗粒和未装配的病毒成分在细胞内堆积而成。</li>
+</ul>
+</li>
+</ol>
+<h4 id="病毒感染的免疫病理作用">病毒感染的免疫病理作用 <a class="markdownIt-Anchor" href="#病毒感染的免疫病理作用">#</a></h4>
+<ol>
+<li>体液免疫病理作用</li>
+<li>细胞免疫病理作用</li>
+<li>病毒感染对免疫系统的致病作用</li>
+<li>病毒感染引起的自身免疫病</li>
+</ol>
+<h3 id="病毒感染类型">病毒感染类型 <a class="markdownIt-Anchor" href="#病毒感染类型">#</a></h3>
+<h4 id="隐性感染">隐性感染 <a class="markdownIt-Anchor" href="#隐性感染">#</a></h4>
+<dl>
+<dt>隐性感染（inapparent infection）| 亚临床感染（subclinical infection）</dt>
+<dd>病毒侵入机体后，由于病毒毒力较弱或机体防御力较强，病毒不能大量增殖，对细胞损伤不严重，<strong>临床无症状或症状不典型</strong>。</dd>
+</dl>
+<h4 id="显性感染">显性感染 <a class="markdownIt-Anchor" href="#显性感染">#</a></h4>
+<dl>
+<dt>显性感染（apparent infection）</dt>
+<dd>病毒侵入后大量增殖致使机体出现典型临床症状。</dd>
+</dl>
+<p>显性感染包括：</p>
+<ul>
+<li><strong>急性病毒感染</strong>（acute viral infection）：潜伏期短，发病急，病程短，恢复后机体不在携带病毒。</li>
+<li><strong>持续性病毒感染</strong>（persistent viral infection）：机体可携带潜伏病毒数月至数（十）年；可出现症状，也可不出现症状；引起慢性进行性疾病，并可称为重要的传染源。
+<ul>
+<li><strong>潜伏（性）感染</strong>（latent infection）：持续性感染伴有疾病的间歇性发作，在两次发作间用常规方法不能分离到病毒，如 HSV 、水痘-带状疱疹病毒及 CMV 感染等。</li>
+<li><strong>慢性感染</strong>（chronic infection）：持续感染可检出病毒，并常排出病毒，但不发病或带有免疫病理失调，如 HBV 、jc 病毒、BK 病毒、HIV 及 LCMV 感染等。</li>
+<li><strong>慢发病毒感染</strong>（slow virus infection）/迟发（病毒）感染/长程感染：持续感染有很长的潜伏期，随后缓慢的发展成致死性疾病，如 <strong>HIV</strong> 和<strong>痲疹病毒</strong>的感染。儿童期感染<mark>痲疹病毒</mark>恢复后，极少数人于十余年后可发生<mark>亚急性硬化性全脑炎</mark>（<mark>SSPE</mark>）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="抗病毒感染免疫">抗病毒感染免疫 <a class="markdownIt-Anchor" href="#抗病毒感染免疫">#</a></h3>
+<p>干扰素是机体抗病毒感染免疫的主要细胞因子。</p>
+<dl>
+<dt>干扰素（interferon, IFN）</dt>
+<dd>由病毒或其他干扰素诱生剂刺激人或动物细胞产生的一种糖蛋白。</dd>
+</dl>
+<p><strong>干扰素的作用</strong>：</p>
+<ul>
+<li>广谱抗病毒（无病毒特异性）</li>
+<li>调节免疫功能</li>
+<li>抑制肿瘤细胞生长</li>
+</ul>
+<p>干扰素不是直接杀伤细胞，而是于宿主细胞的受体结合，进而作用于宿主细胞的基因，使之合成抗病毒蛋白。</p>
+<p><strong>干扰素的种类</strong>：</p>
+<ul>
+<li><strong>Ⅰ 型干扰素</strong>：α 干扰素、β 干扰素
+<ul>
+<li>由白细胞（α）和成纤维细胞（β）产生</li>
+<li>抗病毒作用较强</li>
+</ul>
+</li>
+<li><strong>Ⅱ 型干扰素</strong>：γ 干扰素
+<ul>
+<li>由 T 细胞产生</li>
+<li>对免疫细胞的调节作用较强</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -8380,154 +8471,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </categories>
       <tags>
         <tag>Index</tag>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>病毒的感染与抗病毒免疫</title>
-    <url>/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/</url>
-    <content><![CDATA[<dl>
-<dt>病毒感染（viral infection）</dt>
-<dd>病毒侵入体内并在靶细胞内增殖，与机体发生相互作用的过程。</dd>
-</dl>
-<span id="more"></span>
-<h2 id="病毒传播和播散">病毒传播和播散 <a class="markdownIt-Anchor" href="#病毒传播和播散">#</a></h2>
-<p>传播方式</p>
-<ul>
-<li>水平传播</li>
-<li>垂直传播</li>
-</ul>
-<p>病毒在宿主体内的播散方式</p>
-<ul>
-<li>直接接触播散</li>
-<li>经血液播散</li>
-<li>经神经系统播散</li>
-</ul>
-<h2 id="病毒的致病机制">病毒的致病机制 <a class="markdownIt-Anchor" href="#病毒的致病机制">#</a></h2>
-<h3 id="病毒感染对宿主细胞的直接作用">病毒感染对宿主细胞的直接作用 <a class="markdownIt-Anchor" href="#病毒感染对宿主细胞的直接作用">#</a></h3>
-<ol>
-<li>杀细胞性感染</li>
-<li>稳定状态感染</li>
-<li>细胞凋亡</li>
-<li>病毒基因组的整合</li>
-<li>细胞增生与细胞转化：少数病毒感染宿主细胞后反而会促进宿主细胞 DNA 的合成。</li>
-<li>包涵体的彤成</li>
-</ol>
-<dl>
-<dt>杀细胞性感染（cytocidal infection）| 溶细胞性感染（cytolytic infection）</dt>
-<dd>病毒在宿主细胞内复制增殖后，在短时间内释放大量二代病毒，细胞被破坏、死亡，这种作用称为<strong>杀细胞效应</strong>，这种感染称为<strong>杀细胞性感染</strong>。</dd>
-<dt>稳定状态感染（steady state infection）</dt>
-<dd>有些病毒增殖较慢，所致病变较轻；以出芽的方式释放子代病毒，细胞短时间内不会溶解死亡。</dd>
-<dt>细胞凋亡（cell apoptosis）</dt>
-<dd>由宿主基因控制的细胞程序性死亡，属于正常的生理学现象。</dd>
-<dt>病毒基因组的整合（viral integration）</dt>
-<dd>病毒的遗传物质结合至宿主细胞的染色体内。</dd>
-<dt>细胞转化（cell transformation）</dt>
-<dd>某些病毒感染导致宿主细胞出现形态发生改变、细胞增殖加快、失去细胞间的接触抑制等细胞生物学行为的改变。转化的细胞可能变成肿瘤细胞。</dd>
-<dt>包涵体（inclusion body）</dt>
-<dd>某些病毒感染细胞后，在细胞浆或/和细胞核内出现的嗜酸性或嗜碱性、大小数量不同的圆形或卵圆形斑块状结构。</dd>
-<dd>病毒包涵体是由病毒颗粒和未装配的病毒成分在细胞内堆积而成。</dd>
-<dd><a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a> 也能形成包涵体。</dd>
-</dl>
-<h3 id="病毒感染的免疫病理作用">病毒感染的免疫病理作用 <a class="markdownIt-Anchor" href="#病毒感染的免疫病理作用">#</a></h3>
-<ol>
-<li>体液免疫病理作用</li>
-<li>细胞免疫病理作用</li>
-<li>病毒感染对免疫系统的致病作用</li>
-<li>病毒感染引起的自身免疫病</li>
-</ol>
-<h2 id="病毒感染类型">病毒感染类型 <a class="markdownIt-Anchor" href="#病毒感染类型">#</a></h2>
-<h3 id="隐性感染">隐性感染 <a class="markdownIt-Anchor" href="#隐性感染">#</a></h3>
-<dl>
-<dt>隐性感染（inapparent infection）| 亚临床感染（subclinical infection）</dt>
-<dd>病毒侵入机体后，由于病毒毒力较弱或机体防御力较强，病毒不能大量增殖，对细胞损伤不严重，<strong>临床无症状或症状不典型</strong>。</dd>
-</dl>
-<h3 id="显性感染">显性感染 <a class="markdownIt-Anchor" href="#显性感染">#</a></h3>
-<dl>
-<dt>显性感染（apparent infection）</dt>
-<dd>病毒侵入后大量增殖致使机体出现典型临床症状。
-<ul>
-<li>急性病毒感染</li>
-<li>持续性病毒感染</li>
-</ul>
-</dd>
-<dt>急性病毒感染（acute viral infection）</dt>
-<dd>潜伏期短，发病急，病程短，恢复后机体不在携带病毒。</dd>
-<dt>持续性病毒感染（persistent viral infection）</dt>
-<dd>机体可携带潜伏病毒数月至数（十）年；可出现症状，也可不出现症状；引起慢性进行性疾病，并可称为重要的传染源。
-<ul>
-<li>潜伏感染</li>
-<li>慢性感染</li>
-<li>慢发病毒感染</li>
-</ul>
-</dd>
-<dt>潜伏（性）感染（latent infection）</dt>
-<dd>持续性感染伴有疾病的间歇性发作，在两次发作间用常规方法不能分离到病毒，如 HSV 、水痘-带状疱疹病毒及 CMV 感染等。</dd>
-<dt>慢性感染（chronic infection）</dt>
-<dd>持续感染可检出病毒，并常排出病毒，但不发病或带有免疫病理失调，如 HBV 、jc 病毒、BK 病毒、HIV 及 LCMV 感染等。</dd>
-<dt>慢发病毒感染（slow virus infection）| 迟发（病毒）感染 | 长程感染</dt>
-<dd>持续感染有很长的潜伏期，随后缓慢的发展成致死性疾病，如 HIV 和 痲疹病毒的感染。</dd>
-<dd>儿童期感染痲疹病毒恢复后，极少数人于十余年后可发生<strong>亚急性硬化性全脑炎（SSPE）</strong>。</dd>
-</dl>
-<h2 id="抗病毒感染免疫">抗病毒感染免疫 <a class="markdownIt-Anchor" href="#抗病毒感染免疫">#</a></h2>
-<h3 id="固有抗病毒免疫">固有抗病毒免疫 <a class="markdownIt-Anchor" href="#固有抗病毒免疫">#</a></h3>
-<ol>
-<li>先天不感受性：细胞膜上无病毒受体</li>
-<li>屏障作用：机械和化学屏障</li>
-<li>细胞作用：单核吞噬细胞、自然杀伤细胞（NK 细胞）</li>
-<li>干扰素</li>
-</ol>
-<dl>
-<dt>干扰素（interferon, IFN）</dt>
-<dd>由病毒或其他干扰素诱生剂刺激人或动物细胞产生的一种糖蛋白。</dd>
-</dl>
-<p>另见 <a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/#细胞">TODO</a></p>
-<p>干扰素的作用</p>
-<ul>
-<li>广谱抗病毒（无病毒特异性）</li>
-<li>调节免疫功能</li>
-<li>抑制肿瘤细胞生长</li>
-</ul>
-<p>干扰素不是直接杀伤细胞，而是于宿主细胞的受体结合，进而作用于宿主细胞的基因，使之合成抗病毒蛋白。</p>
-<p>干扰素的种类</p>
-<ul>
-<li>Ⅰ型干扰素：α 干扰素、β 干扰素
-<ul>
-<li>由白细胞（α）和成纤维细胞（β）产生</li>
-<li>抗病毒作用较强</li>
-</ul>
-</li>
-<li>Ⅱ型干扰素：γ 干扰素
-<ul>
-<li>由 T 细胞产生</li>
-<li>对免疫细胞的调节作用较强</li>
-</ul>
-</li>
-</ul>
-<h3 id="适应性抗病毒免疫">适应性抗病毒免疫 <a class="markdownIt-Anchor" href="#适应性抗病毒免疫">#</a></h3>
-<p>即病毒的各种结构蛋白及少数 DNA 多聚酶作为抗原在体内诱生细胞免疫及体液免疫。</p>
-<h4 id="抗体介导的抗病毒作用">抗体介导的抗病毒作用 <a class="markdownIt-Anchor" href="#抗体介导的抗病毒作用">#</a></h4>
-<p>另见：<a href="/2021/05/10/%E6%8A%97%E4%BD%93/"><mark class="label default">抗体</mark></a></p>
-<dl>
-<dt>中和抗体（neutralization antibody）</dt>
-<dd>具有与病毒结合后消除病毒感染能力的抗体。</dd>
-<dt>非中和抗体</dt>
-<dd>指哪些不具有吸附穿入作用的病毒表面抗原及病毒体内部抗原所诱生的抗体。
-<ul>
-<li>神经氨酸抗体：抑制病毒释放及扩散</li>
-<li>血凝抑制抗体</li>
-<li>补体结合抗体</li>
-</ul>
-</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
       </tags>
@@ -8906,6 +8849,119 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
+    <title>细胞因子</title>
+    <url>/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/</url>
+    <content><![CDATA[<dl>
+<dt>细胞因子（cytokine，<abbr title="细胞因子（cytokine）">CK</abbr>）</dt>
+<dd>由免疫细胞及组织细胞分泌的在细胞间发挥相互调控作用的一类小分子可溶性蛋白质。</dd>
+</dl>
+<blockquote>
+<p>早期认为细胞因子由白细胞产生，因此曾称为“白细胞介素”。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="细胞因子的共同特点">细胞因子的共同特点 <a class="markdownIt-Anchor" href="#细胞因子的共同特点">#</a></h2>
+<p>细胞因子的基本特性</p>
+<ol>
+<li>小分子糖蛋白</li>
+<li>高效性</li>
+<li>通过与受体结合发挥生物学作用</li>
+<li>可诱导产生，且合成具有自限性</li>
+<li>半寿期短</li>
+<li>效应范围小</li>
+</ol>
+<h3 id="细胞因子的作用方式">细胞因子的作用方式 <a class="markdownIt-Anchor" href="#细胞因子的作用方式">#</a></h3>
+<ol>
+<li><strong>自分泌</strong>（autocrine）方式：T 细胞产生白细胞介素-2 可刺激自身生长；</li>
+<li><strong>旁分泌</strong>（paracrine）方式：</li>
+<li><strong>内分泌</strong>（endocrine）方式</li>
+</ol>
+<h3 id="细胞因子的功能特点">细胞因子的功能特点 <a class="markdownIt-Anchor" href="#细胞因子的功能特点">#</a></h3>
+<ol>
+<li><strong>多效性</strong></li>
+</ol>
+<ul>
+<li><abbr title="白细胞介素">IL</abbr>-4 可刺激 B 细胞增殖分化，也可以刺激胸腺细胞和肥大细胞的增殖；</li>
+</ul>
+<ol start="2">
+<li><strong>重叠性</strong>：Il-2、<abbr title="白细胞介素">IL</abbr>-7、<abbr title="白细胞介素">IL</abbr>-15 均可以刺激 T 细胞增殖；</li>
+<li><strong>协同性</strong>：</li>
+<li><strong>拮抗性</strong></li>
+<li><strong>网络性</strong></li>
+</ol>
+<h2 id="细胞因子的分类">细胞因子的分类 <a class="markdownIt-Anchor" href="#细胞因子的分类">#</a></h2>
+<ol>
+<li><strong>白细胞介素</strong>（<abbr title="白细胞介素">IL</abbr>）</li>
+<li><strong>集落刺激因子</strong>（<abbr title="集落刺激因子">CSF</abbr>）</li>
+<li><a href="#固有抗病毒免疫"><strong>干扰素</strong></a>（IFN）</li>
+<li>Ⅰ 型；</li>
+<li>Ⅱ 型</li>
+<li>Ⅲ 型</li>
+<li><strong>肿瘤坏死因子</strong>（<abbr title="肿瘤坏死因子">TNF</abbr>）</li>
+<li><strong>生长因子</strong>（<abbr title="生长因子">GF</abbr>）</li>
+<li><strong>趋化因子</strong></li>
+</ol>
+<h2 id="细胞因子受体">细胞因子受体 <a class="markdownIt-Anchor" href="#细胞因子受体">#</a></h2>
+<h3 id="细胞因子受体的分类">细胞因子受体的分类 <a class="markdownIt-Anchor" href="#细胞因子受体的分类">#</a></h3>
+<ol>
+<li>Ⅰ 型细胞因子受体/血细胞生成素受体家族</li>
+<li>Ⅱ 型细胞因子受体/干扰素受体家族</li>
+<li>肿瘤坏死因子受体</li>
+<li>免疫球蛋白超家族受体/ <abbr title="白细胞介素">IL</abbr>-1 受体家族</li>
+<li><abbr title="白细胞介素">IL</abbr>-17 受体家族</li>
+<li>趋化因子受体家族/ 7 次跨膜蛋白受体家族
+<ul>
+<li>特异性趋化因子受体</li>
+<li>共享性趋化因子受体</li>
+</ul>
+</li>
+</ol>
+<h3 id="细胞因子受体的共有链">细胞因子受体的共有链 <a class="markdownIt-Anchor" href="#细胞因子受体的共有链">#</a></h3>
+<ul>
+<li>共有 γ 链</li>
+<li>共有 β 链</li>
+<li>gp130</li>
+</ul>
+<h3 id="可溶性细胞因子受体">可溶性细胞因子受体、 <a class="markdownIt-Anchor" href="#可溶性细胞因子受体">#</a></h3>
+<h4 id="可溶性细胞因子受体-2">可溶性细胞因子受体 <a class="markdownIt-Anchor" href="#可溶性细胞因子受体-2">#</a></h4>
+<p>竞争性与受体结合，</p>
+<h4 id="细胞因子诱饵受体">细胞因子诱饵受体 <a class="markdownIt-Anchor" href="#细胞因子诱饵受体">#</a></h4>
+<h4 id="细胞因子受体拮抗剂">细胞因子受体拮抗剂 <a class="markdownIt-Anchor" href="#细胞因子受体拮抗剂">#</a></h4>
+<h2 id="细胞因子的免疫学功能">细胞因子的免疫学功能 <a class="markdownIt-Anchor" href="#细胞因子的免疫学功能">#</a></h2>
+<ol>
+<li>调控免疫细胞发育、分化和功能</li>
+<li>调控免疫细胞在中枢免疫器官中的发育、分化</li>
+<li>调控免疫细胞在外周免疫器官中的发育、分化、活化和功能</li>
+<li>调控机体的免疫应答</li>
+<li>抗感染作用：抗菌免疫、抗病毒免疫</li>
+<li>抗肿瘤作用</li>
+<li>诱导细胞凋亡</li>
+<li><em>其他功能</em>：刺激造血；促进组织创伤的修复；</li>
+</ol>
+<h2 id="细胞因子和临床">细胞因子和临床 <a class="markdownIt-Anchor" href="#细胞因子和临床">#</a></h2>
+<h3 id="细胞因子与疾病的发生">细胞因子与疾病的发生 <a class="markdownIt-Anchor" href="#细胞因子与疾病的发生">#</a></h3>
+<ol>
+<li>细胞因子风暴</li>
+<li>致热与炎症病理损害</li>
+<li>肿瘤的发生与免疫逃逸</li>
+<li>参与多种免疫系统相关疾病</li>
+<li>参与代谢性疾病</li>
+</ol>
+<dl>
+<dt>细胞因子风暴（cytokine storm）</dt>
+<dd>短期内机体大量分泌多种细胞因子，引起全身性炎症反应综合征，严重者可致多器官功能障碍综合征。</dd>
+</dl>
+<h3 id="细胞因子与疾病治疗">细胞因子与疾病治疗 <a class="markdownIt-Anchor" href="#细胞因子与疾病治疗">#</a></h3>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>立克次体</title>
     <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -8985,119 +9041,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </categories>
       <tags>
         <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>细胞因子</title>
-    <url>/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/</url>
-    <content><![CDATA[<dl>
-<dt>细胞因子（cytokine，<abbr title="细胞因子（cytokine）">CK</abbr>）</dt>
-<dd>由免疫细胞及组织细胞分泌的在细胞间发挥相互调控作用的一类小分子可溶性蛋白质。</dd>
-</dl>
-<blockquote>
-<p>早期认为细胞因子由白细胞产生，因此曾称为“白细胞介素”。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="细胞因子的共同特点">细胞因子的共同特点 <a class="markdownIt-Anchor" href="#细胞因子的共同特点">#</a></h2>
-<p>细胞因子的基本特性</p>
-<ol>
-<li>小分子糖蛋白</li>
-<li>高效性</li>
-<li>通过与受体结合发挥生物学作用</li>
-<li>可诱导产生，且合成具有自限性</li>
-<li>半寿期短</li>
-<li>效应范围小</li>
-</ol>
-<h3 id="细胞因子的作用方式">细胞因子的作用方式 <a class="markdownIt-Anchor" href="#细胞因子的作用方式">#</a></h3>
-<ol>
-<li><strong>自分泌</strong>（autocrine）方式：T 细胞产生白细胞介素-2 可刺激自身生长；</li>
-<li><strong>旁分泌</strong>（paracrine）方式：</li>
-<li><strong>内分泌</strong>（endocrine）方式</li>
-</ol>
-<h3 id="细胞因子的功能特点">细胞因子的功能特点 <a class="markdownIt-Anchor" href="#细胞因子的功能特点">#</a></h3>
-<ol>
-<li><strong>多效性</strong></li>
-</ol>
-<ul>
-<li><abbr title="白细胞介素">IL</abbr>-4 可刺激 B 细胞增殖分化，也可以刺激胸腺细胞和肥大细胞的增殖；</li>
-</ul>
-<ol start="2">
-<li><strong>重叠性</strong>：Il-2、<abbr title="白细胞介素">IL</abbr>-7、<abbr title="白细胞介素">IL</abbr>-15 均可以刺激 T 细胞增殖；</li>
-<li><strong>协同性</strong>：</li>
-<li><strong>拮抗性</strong></li>
-<li><strong>网络性</strong></li>
-</ol>
-<h2 id="细胞因子的分类">细胞因子的分类 <a class="markdownIt-Anchor" href="#细胞因子的分类">#</a></h2>
-<ol>
-<li><strong>白细胞介素</strong>（<abbr title="白细胞介素">IL</abbr>）</li>
-<li><strong>集落刺激因子</strong>（<abbr title="集落刺激因子">CSF</abbr>）</li>
-<li><a href="/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/#固有抗病毒免疫"><strong>干扰素</strong></a>（IFN）</li>
-<li>Ⅰ 型；</li>
-<li>Ⅱ 型</li>
-<li>Ⅲ 型</li>
-<li><strong>肿瘤坏死因子</strong>（<abbr title="肿瘤坏死因子">TNF</abbr>）</li>
-<li><strong>生长因子</strong>（<abbr title="生长因子">GF</abbr>）</li>
-<li><strong>趋化因子</strong></li>
-</ol>
-<h2 id="细胞因子受体">细胞因子受体 <a class="markdownIt-Anchor" href="#细胞因子受体">#</a></h2>
-<h3 id="细胞因子受体的分类">细胞因子受体的分类 <a class="markdownIt-Anchor" href="#细胞因子受体的分类">#</a></h3>
-<ol>
-<li>Ⅰ 型细胞因子受体/血细胞生成素受体家族</li>
-<li>Ⅱ 型细胞因子受体/干扰素受体家族</li>
-<li>肿瘤坏死因子受体</li>
-<li>免疫球蛋白超家族受体/ <abbr title="白细胞介素">IL</abbr>-1 受体家族</li>
-<li><abbr title="白细胞介素">IL</abbr>-17 受体家族</li>
-<li>趋化因子受体家族/ 7 次跨膜蛋白受体家族
-<ul>
-<li>特异性趋化因子受体</li>
-<li>共享性趋化因子受体</li>
-</ul>
-</li>
-</ol>
-<h3 id="细胞因子受体的共有链">细胞因子受体的共有链 <a class="markdownIt-Anchor" href="#细胞因子受体的共有链">#</a></h3>
-<ul>
-<li>共有 γ 链</li>
-<li>共有 β 链</li>
-<li>gp130</li>
-</ul>
-<h3 id="可溶性细胞因子受体">可溶性细胞因子受体、 <a class="markdownIt-Anchor" href="#可溶性细胞因子受体">#</a></h3>
-<h4 id="可溶性细胞因子受体-2">可溶性细胞因子受体 <a class="markdownIt-Anchor" href="#可溶性细胞因子受体-2">#</a></h4>
-<p>竞争性与受体结合，</p>
-<h4 id="细胞因子诱饵受体">细胞因子诱饵受体 <a class="markdownIt-Anchor" href="#细胞因子诱饵受体">#</a></h4>
-<h4 id="细胞因子受体拮抗剂">细胞因子受体拮抗剂 <a class="markdownIt-Anchor" href="#细胞因子受体拮抗剂">#</a></h4>
-<h2 id="细胞因子的免疫学功能">细胞因子的免疫学功能 <a class="markdownIt-Anchor" href="#细胞因子的免疫学功能">#</a></h2>
-<ol>
-<li>调控免疫细胞发育、分化和功能</li>
-<li>调控免疫细胞在中枢免疫器官中的发育、分化</li>
-<li>调控免疫细胞在外周免疫器官中的发育、分化、活化和功能</li>
-<li>调控机体的免疫应答</li>
-<li>抗感染作用：抗菌免疫、抗病毒免疫</li>
-<li>抗肿瘤作用</li>
-<li>诱导细胞凋亡</li>
-<li><em>其他功能</em>：刺激造血；促进组织创伤的修复；</li>
-</ol>
-<h2 id="细胞因子和临床">细胞因子和临床 <a class="markdownIt-Anchor" href="#细胞因子和临床">#</a></h2>
-<h3 id="细胞因子与疾病的发生">细胞因子与疾病的发生 <a class="markdownIt-Anchor" href="#细胞因子与疾病的发生">#</a></h3>
-<ol>
-<li>细胞因子风暴</li>
-<li>致热与炎症病理损害</li>
-<li>肿瘤的发生与免疫逃逸</li>
-<li>参与多种免疫系统相关疾病</li>
-<li>参与代谢性疾病</li>
-</ol>
-<dl>
-<dt>细胞因子风暴（cytokine storm）</dt>
-<dd>短期内机体大量分泌多种细胞因子，引起全身性炎症反应综合征，严重者可致多器官功能障碍综合征。</dd>
-</dl>
-<h3 id="细胞因子与疾病治疗">细胞因子与疾病治疗 <a class="markdownIt-Anchor" href="#细胞因子与疾病治疗">#</a></h3>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -9475,11 +9418,17 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <p>传播方式：</p>
 <ul>
-<li>按病原生物进入机体的方式分类：直接方式、间接方式、媒介方式</li>
+<li>按病原生物进入机体的方式分类：
+<ul>
+<li><strong>直接方式</strong>，如吸入、食入病原菌；</li>
+<li><strong>间接方式</strong>，通过接触环境污染物或器具；</li>
+<li><strong>媒介方式</strong>：动物或昆虫叮咬。</li>
+</ul>
+</li>
 <li>按病原生物在机体间的传播方式：
 <ul>
-<li><strong>水平传播</strong></li>
-<li><strong>垂直传播</strong>：母体病原生物经<em>胎盘</em>、<em>产道</em>或<em>乳汁</em>传播给子代</li>
+<li><strong>水平传播</strong>：病原生物在人群不同个体间传播，主要通过呼吸道、消化道、皮肤或黏膜，也包括由媒介动物参与的传播；</li>
+<li><strong>垂直传播</strong>：母体病原生物经<em>胎盘</em>、<em>产道</em>或<em>乳汁</em>传播给子代。</li>
 </ul>
 </li>
 </ul>
@@ -10570,7 +10519,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <dl>
 <dt>包涵体（inclusion body）</dt>
 <dd>易感细胞内含有繁殖型的<strong>始体</strong>和子代<strong>原体</strong>的空泡。</dd>
-<dd>某些病毒也能形成包涵体，见 <a href="/2021/04/23/%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93%E4%B8%8E%E6%8A%97%E7%97%85%E6%AF%92%E5%85%8D%E7%96%AB/#病毒的致病机制">病毒的致病机制</a>。</dd>
+<dd>某些病毒也能形成包涵体，见 <a href="#病毒的致病机制">病毒的致病机制</a>。</dd>
 </dl>
 <h2 id="沙眼衣原体">沙眼衣原体 <a class="markdownIt-Anchor" href="#沙眼衣原体">#</a></h2>
 <ul>
@@ -11332,11 +11281,9 @@ plate）。<br/>
       </tags>
   </entry>
   <entry>
-    <title>404</title>
-    <url>/404.html</url>
-    <content><![CDATA[
-<div class="center">Over the mountains, mountains ...</div>
-]]></content>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>About Me</title>
@@ -11380,11 +11327,6 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
@@ -11393,6 +11335,13 @@ plate）。<br/>
     <title>tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>404</title>
+    <url>/404.html</url>
+    <content><![CDATA[
+<div class="center">Over the mountains, mountains ...</div>
+]]></content>
   </entry>
   <entry>
     <title></title>
