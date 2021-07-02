@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aloha.org.cn/2021/03/21/%E7%97%85%E6%AF%92/</loc>
+    
+    <lastmod>2021-07-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aloha.org.cn/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</loc>
     
     <lastmod>2021-07-02</lastmod>
@@ -24,13 +31,6 @@
   
   <url>
     <loc>https://www.aloha.org.cn/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/</loc>
-    
-    <lastmod>2021-07-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/2021/03/21/%E7%97%85%E6%AF%92/</loc>
     
     <lastmod>2021-07-02</lastmod>
     
@@ -627,14 +627,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</loc>
     <lastmod>2021-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</loc>
     <lastmod>2021-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -825,14 +825,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</loc>
     <lastmod>2021-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</loc>
     <lastmod>2021-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

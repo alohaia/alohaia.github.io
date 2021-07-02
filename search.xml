@@ -17,13 +17,11 @@ Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方�
 <p>最基本的 Hello World CMakeLists.txt 文件：</p>
 <figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
 <details class="note info "><summary><p>Note</p>
-</summary>
-      <p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
+</summary><p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
 然后就可以像下面这样写：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，<a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
-
-    </details>
+</details>
 <h3 id="二进制目录">二进制目录 <a class="markdownIt-Anchor" href="#二进制目录">#</a></h3>
 <p>我们运行 <code>cmake</code>（可带参数）命令时所在的目录（即当前工作目录、<code>pwd</code> 显示的目录）被称为
 <code>CMAKE_BINARY_DIR</code>。这是你的生成的二进制文件所在的根目录（通常还会有一些其他文件）。</p>
@@ -130,13 +128,11 @@ build）和源外构建（out-of-source build）。</p>
 <p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <details class="note info "><summary><p>目标别名</p>
-</summary>
-      <p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
+</summary><p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
 <p>如为库创建别名：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>当然，也可以为可执行文件创建别名：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure>
-    </details>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure></details>
 <h3 id="安装">安装 <a class="markdownIt-Anchor" href="#安装">#</a></h3>
 <p>CMake 提供了生成 <code>make install</code> 目标（是 Makefile 中的 target，而不是之前提到的
 CMake 中的 target）的功能。<br/>
@@ -1137,47 +1133,23 @@ What’s this?</p>
 <h3 id="next-tags">NexT tags <a class="markdownIt-Anchor" href="#next-tags">#</a></h3>
 <h4 id="call-out">Call Out <a class="markdownIt-Anchor" href="#call-out">#</a></h4>
 <details class="note default titled"><summary><p>default</p>
-</summary>
-      <div class='note-title' id='default' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      default
-    </div><p>default</p>
-
-    </details>
+</summary><div class='note-title' id='default' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">default</div><p>default</p>
+</details>
 <details class="note primary titled"><summary><p>primary</p>
-</summary>
-      <div class='note-title' id='primary' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      primary
-    </div><p>primary</p>
-
-    </details>
+</summary><div class='note-title' id='primary' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">primary</div><p>primary</p>
+</details>
 <details class="note success titled"><summary><p>success</p>
-</summary>
-      <div class='note-title' id='success' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      success
-    </div><p>success</p>
-
-    </details>
+</summary><div class='note-title' id='success' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">success</div><p>success</p>
+</details>
 <details class="note info titled"><summary><p>info</p>
-</summary>
-      <div class='note-title' id='info' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      info
-    </div><p>info</p>
-
-    </details>
+</summary><div class='note-title' id='info' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">info</div><p>info</p>
+</details>
 <details class="note warning titled"><summary><p>warning</p>
-</summary>
-      <div class='note-title' id='warning' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      warning
-    </div><p>warning</p>
-
-    </details>
+</summary><div class='note-title' id='warning' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">warning</div><p>warning</p>
+</details>
 <details class="note danger titled"><summary><p>danger</p>
-</summary>
-      <div class='note-title' id='danger' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      danger
-    </div><p>danger</p>
-
-    </details>
+</summary><div class='note-title' id='danger' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">danger</div><p>danger</p>
+</details>
 <h4 id="button">Button <a class="markdownIt-Anchor" href="#button">#</a></h4>
 <p><code>button</code> or <code>btn</code></p>
 <p>sepqrate: ,</p>
@@ -1384,8 +1356,7 @@ Lua5.2 中引入了新函数进行处理：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">lua_pushstring(L, <span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">lua_pushinteger(L, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 1</span></span><br><span class="line">    <span class="comment">// &quot;Not a number&quot; 判断错误，msg 表明指定位置的值的类型为 number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <details class="note warning "><summary><p>确保栈中有足够的空间</p>
-</summary>
-      <p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
+</summary><p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lua_checkstack</span><span class="params">(lua_State *L, <span class="keyword">int</span> sz)</span></span>;</span><br></pre></td></tr></table></figure>
 <p><code>lua_checkstack</code> 确保堆栈上至少有 <code>n</code> 个额外空位。
 如果不能把堆栈扩展到相应的尺寸，函数返回假（0）。</p>
@@ -1393,8 +1364,7 @@ Lua5.2 中引入了新函数进行处理：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_checkstack</span><span class="params">(lua_Stack *L, <span class="keyword">int</span> sz, <span class="keyword">const</span> <span class="keyword">char</span> *msg)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>该函数类似于 <code>lua_ckeckstack</code>，但是当无法扩展空间时，会抛出一个错误。
 <code>msg</code> 是描述错误的额外文本信息，<code>NULL</code> 表示不需要额外文本。</p>
-
-    </details>
+</details>
 <p>其他栈操作（详细说明见<a href="#">手册</a>）：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">lua_gettop</span>    <span class="params">(lua_State *L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_settop</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_pushvalue</span> <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_rotate</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_remove</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_insert</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_replace</span>   <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_copy</span>      <span class="params">(lua_State *L, <span class="keyword">int</span> fromidx, <span class="keyword">int</span> toidx)</span></span>;</span><br></pre></td></tr></table></figure>
 <h2 id="c-api-中的错误处理">C API 中的错误处理 <a class="markdownIt-Anchor" href="#c-api-中的错误处理">#</a></h2>
@@ -1464,11 +1434,9 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
 <p><code>luaL_newlib</code> 其实是一个宏，详见<a href="#%E5%85%B1%E4%BA%AB%E4%B8%8A%E5%80%BC">共享上值</a>。</p>
 <p>完整示例见<a href="#%E5%AE%9E%E7%8E%B0-lua-%E7%9A%84-dir-%E5%87%BD%E6%95%B0">实现 Lua 的 dir 函数</a>。</p>
 <details class="note info "><summary><p>require 函数参数中的连字符</p>
-</summary>
-      <p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去除末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
+</summary><p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去除末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
 <p>另外，<code>require</code> 函数中的句点 <code>.</code> 表示<strong>子模块</strong>，如：<code>require'libdir-v0.1'</code> 中的 <code>libdir-v0.1</code> 表示 <code>libdir-v0/1</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; dir = require&#x27;libdir-v0.1&#x27;</span><br><span class="line">stdin:1: module &#x27;libdir-v0.1&#x27; not found:</span><br><span class="line">        no field package.preload[&#x27;libdir-v0.1&#x27;]</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0.so&#x27;</span><br><span class="line">stack traceback:</span><br><span class="line">        [C]: in function &#x27;require&#x27;</span><br><span class="line">        stdin:1: in main chunk</span><br><span class="line">        [C]: in ?</span><br></pre></td></tr></table></figure>
-    </details>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; dir = require&#x27;libdir-v0.1&#x27;</span><br><span class="line">stdin:1: module &#x27;libdir-v0.1&#x27; not found:</span><br><span class="line">        no field package.preload[&#x27;libdir-v0.1&#x27;]</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0.so&#x27;</span><br><span class="line">stack traceback:</span><br><span class="line">        [C]: in function &#x27;require&#x27;</span><br><span class="line">        stdin:1: in main chunk</span><br><span class="line">        [C]: in ?</span><br></pre></td></tr></table></figure></details>
 <h3 id="注册表">注册表 <a class="markdownIt-Anchor" href="#注册表">#</a></h3>
 <p>Lua API 中通过使用注册表来实现“全局变量”。使用这一功能需要一对函数：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaL_ref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_unref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t, <span class="keyword">int</span> ref)</span></span>;</span><br></pre></td></tr></table></figure>
@@ -1477,12 +1445,10 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
 <div class="note warning "><p>在注册表中不能使用数值类型的键，因为 Lua 将其作为<strong>引用系统</strong>的保留字。</p>
 </div>
 <details class="note info "><summary><p>轻量用户数据</p>
-</summary>
-      <p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
+</summary><p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_settable(L, LUA_REGISTRYINDEX);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_gettable(L, LUA_REGISTRYINDEX);</span><br><span class="line">*myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
 <p>为了简化将变量地址作为唯一值的用法，Lua5.2 引入了两个函数：<code>lua_rawgetp</code> 和 <code>lua_rawsetp</code>。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_rawsetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_rawgetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-    </details>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_rawsetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_rawgetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure></details>
 <h3 id="上值和共享上值">上值和共享上值 <a class="markdownIt-Anchor" href="#上值和共享上值">#</a></h3>
 <p>Lua 中可以为一个函数绑定若干个<strong>上值</strong>，这些上值仅在绑定的函数中可见。
 一个函数和其上值的关联称为<strong>闭包</strong>（closure）。</p>
@@ -1999,8 +1965,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 </dl>
 <span id="more"></span>
 <details class="note info "><summary><p><strong>Table of Content</strong></p>
-</summary>
-      <ol>
+</summary><ol>
 <li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
 <li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
 <li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
@@ -2015,8 +1980,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <li><a href="/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
 </ol>
 <p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
-
-    </details>
+</details>
 <h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
 <dl>
 <dt>遗传病（genetic disease）</dt>
@@ -2061,8 +2025,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
 </ul>
 <details class="note info "><summary><p>关于 HPG 的两次“完成”</p>
-</summary>
-      <blockquote>
+</summary><blockquote>
 <p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
 人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 </blockquote>
@@ -2073,8 +2036,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 </li>
 </ol>
 </section>
-
-    </details>
+</details>
 <p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
 <strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
 30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
@@ -2593,15 +2555,13 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
     <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
 <span id="more"></span>
 <details class="note success "><summary><p>举例说明 HHV 的感染类型</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
 <li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
 <li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
 <li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
 </ol>
-
-    </details>
+</details>
 <table>
 <thead>
 <tr>
@@ -2951,6 +2911,41 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>其他病毒</title>
+    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p class="center">Empty...</p>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<p>中枢神经系统，死亡率 100%，</p>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<p>病毒呈“子弹头状”，</p>
+<dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是<strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
+<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
+</dl>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>传染源：狂犬、猫蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>DNA 无包膜病毒</p>
+<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>免疫器官和组织</title>
     <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
     <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
@@ -2998,13 +2993,11 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
 </ol>
 <details class="note info "><summary><p>mIgM</p>
-</summary>
-      <p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
+</summary><p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
 <blockquote>
 <p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
 </blockquote>
-
-    </details>
+</details>
 <h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
 <dl>
 <dt>胸腺（thymus）</dt>
@@ -3142,41 +3135,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>其他病毒</title>
-    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p class="center">Empty...</p>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<p>中枢神经系统，死亡率 100%，</p>
-<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
-<p>病毒呈“子弹头状”，</p>
-<dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是<strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
-<dd>是决定狂犬病病毒感染的辅助诊断指标。</dd>
-</dl>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>传染源：狂犬、猫蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>DNA 无包膜病毒</p>
-<h3 id=""> <a class="markdownIt-Anchor" href="#">#</a></h3>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -3424,9 +3382,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </li>
 </ul>
 <h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      芽孢杆菌属
-    </div><ul>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">芽孢杆菌属</div><ul>
 <li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
 <li>培养特性：需氧，多数在由氧条件下形成芽孢</li>
 <li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
@@ -4068,6 +4024,30 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
+    <title>医学蠕虫学</title>
+    <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</url>
+    <content><![CDATA[<p>Empty…</p>
+<span id="more"></span>
+<details class="note default "><summary><p>医学蠕虫分类</p>
+</summary><ol>
+<li>线虫</li>
+<li>吸虫</li>
+<li>绦虫</li>
+</ol>
+</details>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+        <category>医学蠕虫学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>医学蠕虫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>医学原虫学</title>
     <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</url>
     <content><![CDATA[<p>Empty…</p>
@@ -4086,32 +4066,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       <tags>
         <tag>病原生物学</tag>
         <tag>医学原虫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医学蠕虫学</title>
-    <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</url>
-    <content><![CDATA[<p>Empty…</p>
-<span id="more"></span>
-<details class="note default "><summary><p>医学蠕虫分类</p>
-</summary>
-      <ol>
-<li>线虫</li>
-<li>吸虫</li>
-<li>绦虫</li>
-</ol>
-
-    </details>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-        <category>医学蠕虫学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>医学蠕虫学</tag>
       </tags>
   </entry>
   <entry>
@@ -4145,15 +4099,13 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dd>在<em>两个不同位点上</em>每个位点各带有一种突变基因的个体。</dd>
 </dl>
 <details class="note info "><summary><p>系谱绘制</p>
-</summary>
-      <dl>
+</summary><dl>
 <dt>系谱（pedigree）</dt>
 <dd>从<strong>先证者</strong>入手，追溯调查其家系所有成员的<strong>亲属关系</strong>以及某种遗传病的<strong>发病情况</strong>（或某种性状的分布），用特定的符号按一定方式绘制而成的图解。</dd>
 <dt>先证者（proband）</dt>
 <dd>某个家庭中首先被医生或遗传研究者发现的罹患某种遗传病的患者或者具有某种遗传性状的成员。</dd>
 </dl>
-
-    </details>
+</details>
 <ol>
 <li><a href="#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E6%98%BE%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85"><strong>常染色体显性遗传病</strong></a>：
 <ul>
@@ -4416,20 +4368,16 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 <img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/Gower's%20sign.png" class="" title="Gowers&#39;s sign" alt="Gowers&#39;s sign">
 <details class="note info "><summary><p>假肥大型肌营养不良症</p>
-</summary>
-      <p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的<strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
+</summary><p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的<strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
 <ul>
 <li><strong>Duchenne 型肌营养不良症</strong>（Duchenne muscular dystrophy，DMD）：发病早，病情重，抗肌萎缩蛋白不表达或表达无功能的蛋白</li>
 <li><strong>Backer 型肌营养不良症</strong>（Becker muscular dystrophy，BMD）：发病晚、病情轻，抗肌萎缩蛋白质量减少或蛋白质长度变化</li>
 </ul>
-
-    </details>
+</details>
 <p><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr> 的致病基因 <em><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr></em> 基因克隆是<strong>定位克隆</strong>（positional cloning）的典型例子。</p>
 <details class="note default "><summary><p>定位克隆</p>
-</summary>
-      <p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
-
-    </details>
+</summary><p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
+</details>
 <h2 id="x-连锁显性遗传病">X 连锁显性遗传病 <a class="markdownIt-Anchor" href="#x-连锁显性遗传病">#</a></h2>
 <dl>
 <dt>X 连锁显性遗传（X-linked dominant inheritance，<abbr title="X-linked dominant inheritance，X 连锁显性遗传">XD</abbr>）病</dt>
@@ -4502,9 +4450,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </dd>
 </dl>
 <span id="more"></span>
-<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      厌氧芽孢梭菌属
-    </div><ul>
+<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">厌氧芽孢梭菌属</div><ul>
 <li>严格厌氧菌，抵抗力强</li>
 <li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除 <a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a> 等极少数外，均有周身鞭毛、无荚膜</li>
 <li>致病性：强，能产生多种外毒素和侵袭性酶</li>
@@ -4644,25 +4590,21 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </blockquote>
 <span id="more"></span>
 <details class="note info "><summary><p>引起普通感冒的常见病毒</p>
-</summary>
-      <!-- TODO -->
+</summary><!-- TODO -->
 <ul>
 <li>普通感冒中 50% 由<a href="#%E9%BC%BB%E7%97%85%E6%AF%92"><strong>鼻病毒</strong></a>引起。</li>
 <li><a href="#%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92">冠状病毒</a></li>
 </ul>
-
-    </details>
+</details>
 <h2 id="流行性感冒病毒">流行性感冒病毒 <a class="markdownIt-Anchor" href="#流行性感冒病毒">#</a></h2>
 <details class="note info "><summary><p>流感和普通感冒的不同点</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>病原体：腮腺炎病毒、冠状病毒、呼吸道合胞病毒、鼻病毒</li>
 <li>临床表现：发热、三痛（痛、眼、肌肉关节）</li>
 <li>传染性：强</li>
 <li>流行性：流行范围广，可引起大流行</li>
 </ul>
-
-    </details>
+</details>
 <dl>
 <dt>流行性感冒病毒（influenza virus）| 流感病毒</dt>
 <dd>属于<em>正黏病毒科</em>，分为甲（A）、乙（B）、丙（C）三个型，是一种人兽共患病毒。</dd>
@@ -4672,8 +4614,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dd>希腊文 Orthos 有“正确，直”之意；myxo 有“粘液”之意。</dd>
 </dl>
 <details class="note success "><summary><p>流感病毒的分型及其特点</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>甲（A）型流感病毒：抗原易变异，引起<strong>流感大流行</strong></li>
 <li>乙（B）型流感病毒：一定程度的变异，局部小流行</li>
 <li>丙（C）型流感病毒：抗原稳定，主要感染婴幼儿</li>
@@ -4688,8 +4629,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li>1957 年，亚洲流感</li>
 <li>1968 年，香港流感</li>
 </ol>
-</div>
-    </details>
+</div></details>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
 <li>形态结构：球型或丝状，与黏蛋白有高度亲合性，<ins>有包膜，核酸分节段的 RNA 病毒</ins></li>
@@ -4719,8 +4659,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <p>核酸为分节段的 RNA 病毒有 <a href="#%E6%B5%81%E8%A1%8C%E6%80%A7%E6%84%9F%E5%86%92%E7%97%85%E6%AF%92">流行性感冒病毒</a>、<a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#轮状病毒">轮状病毒</a> 和 <a href="/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/#汉坦病毒">汉坦病毒</a>。</p>
 </div>
 <details class="note success "><summary><p>血凝素的作用</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>凝集红细胞；</li>
 <li>吸附宿主细胞；</li>
 <li>具有抗原性。</li>
@@ -4730,11 +4669,9 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li>刺激机体产生保护性的综合抗体；</li>
 <li>抗原易变异，是划分亚型的依据。</li>
 </ul>
-</div>
-    </details>
+</div></details>
 <details class="note success "><summary><p>流感病毒的抗原性变异的类型及其特点</p>
-</summary>
-      <dl>
+</summary><dl>
 <dt>抗原漂移（antigen drift）</dt>
 <dd>变异幅度小，由<strong>点突变</strong>造成，连续累积后形成亚型内变异，引起流感中、小流行。</dd>
 <dt>抗原转换（antigen shift）</dt>
@@ -4745,8 +4682,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li><strong>流感病毒的储存库</strong>：所有哺乳动物的流感病毒均来源于 <mark>水生禽类</mark>。</li>
 <li><strong>基因混合器</strong>：猪气管上皮具有禽流感病毒和人流感病毒两种病毒的受体。当猪受到两种病毒同时感染时，两种病毒间科发生基因重组和重配，导致抗原转换。</li>
 </ul>
-</div>
-    </details>
+</div></details>
 <h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
 <ul>
 <li>所致疾病：<strong>流行性感冒</strong>（流感），流行性感冒病毒是引起流感的唯一病原体</li>
@@ -4760,14 +4696,12 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
 <p>一般流感可仅根据临床表现和流行情况做出诊断。</p>
 <details class="note success "><summary><p>流感病毒的分离与鉴定的方法</p>
-</summary>
-      <ol>
+</summary><ol>
 <li>取材：急性患者的咽漱液或鼻咽拭子</li>
 <li>接种：鸡胚（或培养细胞），初次分离用羊膜腔，传代用尿囊腔</li>
 <li>鉴定：红细胞凝集实验或红细胞吸附实验</li>
 </ol>
-
-    </details>
+</details>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <ul>
 <li>预防：采取综合措施</li>
@@ -4784,10 +4718,8 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <p>传染性极强，又名“见面传”。</p>
 </blockquote>
 <details class="note info "><summary><p>副黏病毒</p>
-</summary>
-      <p><strong>副黏病毒</strong>（<em>Paramyxoviridae</em>）病毒体较大，抗原性稳定，不易发生变异。</p>
-
-    </details>
+</summary><p><strong>副黏病毒</strong>（<em>Paramyxoviridae</em>）病毒体较大，抗原性稳定，不易发生变异。</p>
+</details>
 <h3 id="致病性与免疫性-2">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性-2">#</a></h3>
 <ul>
 <li>传染源：患者</li>
@@ -4865,10 +4797,8 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 <h2 id="风疹病毒">风疹病毒 <a class="markdownIt-Anchor" href="#风疹病毒">#</a></h2>
 <details class="note info "><summary><p>麻腮风三联疫苗</p>
-</summary>
-      <p><strong>麻腮风三联疫苗</strong>是预防麻疹、腮腺炎、风疹（德国麻疹）的疫苗，由三种疾病病毒的活性减毒活病毒混合而成，是以注射的方式施打疫苗。</p>
-
-    </details>
+</summary><p><strong>麻腮风三联疫苗</strong>是预防麻疹、腮腺炎、风疹（德国麻疹）的疫苗，由三种疾病病毒的活性减毒活病毒混合而成，是以注射的方式施打疫苗。</p>
+</details>
 <h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
 <ul>
 <li>传染源：人类是其唯一自然宿主</li>
@@ -4880,8 +4810,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </li>
 </ul>
 <details class="note info "><summary><p>ToRCH</p>
-</summary>
-      <p>ToRCH 指可导致先天性宫内感染及围产期感染而引起围产儿畸形的病原体，它是一组病原微生物的英文名称缩写：</p>
+</summary><p>ToRCH 指可导致先天性宫内感染及围产期感染而引起围产儿畸形的病原体，它是一组病原微生物的英文名称缩写：</p>
 <ul>
 <li>T：弓形虫</li>
 <li>o（other）：如 <a href="#%E8%85%AE%E8%85%BA%E7%82%8E%E7%97%85%E6%AF%92">腮腺炎病毒</a></li>
@@ -4889,8 +4818,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li>C：<a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=巨细胞病毒#巨细胞病毒">巨细胞病毒</a></li>
 <li>H：<a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=单纯疱疹病毒#单纯疱疹病毒">单纯疱疹病毒</a></li>
 </ul>
-
-    </details>
+</details>
 <h2 id="鼻病毒">鼻病毒 <a class="markdownIt-Anchor" href="#鼻病毒">#</a></h2>
 <p>普通感冒中 50% 由<strong>鼻病毒</strong>引起。</p>
 ]]></content>
@@ -5007,10 +4935,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </dl>
 </div>
 <details class="note info titled"><summary><p>结核菌素试验</p>
-</summary>
-      <div class='note-title' id='结核菌素试验' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      结核菌素试验
-    </div><dl>
+</summary><div class='note-title' id='结核菌素试验' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">结核菌素试验</div><dl>
 <dt>结核菌素（OT）试验</dt>
 <dd>应用<strong>结核菌素</strong>进行皮肤试验来测定机体对结核分枝杆菌是否能引起迟发型超敏反应的一种试验。</dd>
 </dl>
@@ -5030,8 +4955,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dt>纯蛋白衍生物（purified protein derivative，PPD）</dt>
 <dd>OT 经三氯乙酸沉淀后的纯化物。</dd>
 </dl>
-
-    </details>
+</details>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <p>预防</p>
 <ul>
@@ -5335,14 +5259,12 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 心血管系统由<strong>中胚层</strong>分化而来，首先形成原始心血管，再进一步经过生长、合并、扩大和萎缩等过程逐渐完善。</p>
 <span id="more"></span>
 <details class="note info "><summary><p>重点</p>
-</summary>
-      <ol>
+</summary><ol>
 <li>简述 <a href="#%E5%BF%83%E6%88%BF%E7%9A%84%E5%88%86%E9%9A%94">心房的分隔</a>；</li>
 <li><a href="?highlight=%E5%8D%B5%E5%9C%86%E5%AD%94#%E5%BF%83%E6%88%BF%E7%9A%84%E5%88%86%E9%9A%94">卵圆孔</a>；</li>
 <li>简述 <a href="#%E6%B3%95%E6%B4%9B%E5%9B%9B%E8%81%94%E7%97%87">法洛四联症</a> 的构成及其形成原因；</li>
 </ol>
-
-    </details>
+</details>
 <h2 id="原始心血管系统的建立">原始心血管系统的建立 <a class="markdownIt-Anchor" href="#原始心血管系统的建立">#</a></h2>
 <p>人胚第 2 周末，来自<strong>卵黄囊</strong>、体蒂和绒毛膜的<strong>胚外中胚层</strong>增殖分化形成的细胞索或团，称 <mark>血岛</mark>（blood island）。<br/>
 不久，血岛周边细胞分化为扁平的内皮细胞，并围成管道，即<strong>原始血管</strong>；<br/>
@@ -6951,11 +6873,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </dl>
 <p>腹内压升高时，肠管从脐部膨出，有时会形成嵌顿疝。</p>
 <details class="note info "><summary><p>嵌顿疝</p>
-</summary>
-      <p>指当腹内压突然升高时，疝内容物可强行扩张疝囊颈而突入疝囊，随后因疝囊颈弹性收缩，将疝内容物卡住而不能回纳腹腔的情况。</p>
+</summary><p>指当腹内压突然升高时，疝内容物可强行扩张疝囊颈而突入疝囊，随后因疝囊颈弹性收缩，将疝内容物卡住而不能回纳腹腔的情况。</p>
 <p>与绞窄性疝是同一疾病的不同阶段。两者的区别在于嵌顿疝尚未发生肠壁的缺血坏死。</p>
-
-    </details>
+</details>
 <h2 id="呼吸系统的发生">呼吸系统的发生 <a class="markdownIt-Anchor" href="#呼吸系统的发生">#</a></h2>
 <h3 id="喉-气管和肺的发生">喉、气管和肺的发生 <a class="markdownIt-Anchor" href="#喉-气管和肺的发生">#</a></h3>
 <p>于胚胎发育第 4 周，前肠原始咽的尾端腹侧正中部位出现一条纵行浅沟，称为<strong>喉气管沟</strong>（laryngotracheal groove）。<br/>
@@ -7007,8 +6927,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <span id="more"></span>
 <h2 id="肠道病毒属病毒">肠道病毒属病毒 <a class="markdownIt-Anchor" href="#肠道病毒属病毒">#</a></h2>
 <details class="note success "><summary><p>肠道病毒属病毒的共性</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>RNA 无包膜病毒
 <ul>
 <li>核酸为 <strong>+ssRNA</strong>：在细胞质内增殖</li>
@@ -7018,8 +6937,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>经粪-口途径传播</strong></li>
 <li>主要引起<strong>肠道外疾病</strong></li>
 </ul>
-
-    </details>
+</details>
 <h3 id="脊髓灰质炎病毒">脊髓灰质炎病毒 <a class="markdownIt-Anchor" href="#脊髓灰质炎病毒">#</a></h3>
 <h4 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h4>
 <ul>
@@ -7046,8 +6964,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 </ul>
 <details class="note success "><summary><p>脊髓灰质炎病毒灭活疫苗和减毒活疫苗的区别</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>灭活脊髓灰质炎病毒（OPV）/Sabin 疫苗</li>
 <li>脊髓灰质炎病毒减毒活疫苗（IPV）/Salk 疫苗</li>
 </ul>
@@ -7097,8 +7014,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </tr>
 </tbody>
 </table>
-
-    </details>
+</details>
 <h3 id="柯萨奇病毒">柯萨奇病毒 <a class="markdownIt-Anchor" href="#柯萨奇病毒">#</a></h3>
 <ul>
 <li>传播途径：消化道、呼吸道、垂直传播</li>
@@ -7169,6 +7085,427 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生殖内分泌</title>
+    <url>/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/</url>
+    <content><![CDATA[<p><a href="#%E8%83%8E%E5%84%BF%E9%99%84%E5%B1%9E%E7%89%A9">胎儿附属物</a>、<a href="#%E7%94%9F%E6%AE%96%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2">生殖系统发育</a>，以及常见畸形……</p>
+<span id="more"></span>
+<h2 id="胎儿附属物">胎儿附属物 <a class="markdownIt-Anchor" href="#胎儿附属物">#</a></h2>
+<dl>
+<dt>胎儿附属物（fetal appendage）</dt>
+<dd>胎儿以外的组织，包括 <a href="?highlight=%E8%83%8E%E7%9B%98#%E8%83%8E%E7%9B%98"><strong>胎盘</strong></a>、<a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a>、<a href="?highlight=%E8%84%90%E5%B8%A6#%E8%84%90%E5%B8%A6"><strong>脐带</strong></a> 和 <a href="?highlight=%E7%BE%8A%E6%B0%B4#%E7%BE%8A%E6%B0%B4"><strong>羊水</strong></a>。</dd>
+</dl>
+<h3 id="胎盘">胎盘 <a class="markdownIt-Anchor" href="#胎盘">#</a></h3>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/Placenta.png" class="" width="640" title="胎盘" alt="胎盘">
+<p><strong>胎盘</strong>（placenta）是胎儿和母体的结合体，由<em>胎儿</em>的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成"><strong>羊膜</strong></a>（amniotic membrane）和<strong>叶状绒毛膜</strong>（chorion frondosum）及<em>母体</em>的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=底蜕膜#植入后的子宫内膜的变化"><strong>底蜕膜</strong></a>（basal deciduas）共同构成。<br/>
+妊娠足月时，胎盘重 450~650g，直径 15~20cm，厚 1~3cm，中间厚，边缘薄，胎儿面光滑半透明，母体面粗糙呈暗红色。</p>
+<h4 id="胎盘的形成">胎盘的形成 <a class="markdownIt-Anchor" href="#胎盘的形成">#</a></h4>
+<h5 id="羊膜">羊膜 <a class="markdownIt-Anchor" href="#羊膜">#</a></h5>
+<p>另见 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成</a>。</p>
+<h5 id="叶状绒毛膜">叶状绒毛膜 <a class="markdownIt-Anchor" href="#叶状绒毛膜">#</a></h5>
+<p><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=滋养层#植入后的滋养层的变化">滋养层</a>内面和 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=胚外中胚层#胚外中胚层和胚外体腔的形成">胚外中胚层</a> 共同组成绒毛膜。<br/>
+人胚 13~21 天时，绒毛膜发育分化最旺盛。经历<em>一级绒毛</em>、<em>二级绒毛</em>和<em>三级绒毛</em> 3 个阶段，<strong>绒毛</strong>逐渐形成。<br/>
+当绒毛内毛细血管形成时，胚胎血管与绒毛血管连接，之后建立<em>胎儿-胎盘循环</em>。</p>
+<p>与<em>底蜕膜</em>相接触的绒毛因营养丰富而发育良好，称 <mark>叶状绒毛膜</mark>（villous chorion），与<em>包蜕膜</em>接触的部分则萎缩退化成<strong>平滑绒毛膜</strong>（smooth chorion），构成 <a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a> 的外层。</p>
+<dl>
+<dt>游离绒毛（free villus）</dt>
+<dd>末端悬浮与充满母血的绒毛间隙中的绒毛。</dd>
+<dt>固定绒毛（anchoring villus）</dt>
+<dd><strong>绒毛干</strong>固定于蜕膜上的绒毛。</dd>
+</dl>
+<details class="note info "><summary><p>绒毛膜取样/活检</p>
+</summary><p>绒毛膜取样/活检（chorionic villus sampling，CVS）指在超声引导下行穿刺术，取出胎盘内的绒毛组织进行细胞培养、分子遗传学或生化遗传学检查，进行染色体诊断或基因诊断。分为经腹绒毛活检及经宫颈绒毛活检。</p>
+</details>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E5%84%BF%E5%8F%B6%E5%92%8C%E8%83%8E%E5%84%BF%E5%B0%8F%E5%8F%B6.png" class="right" width="500" title="胎儿叶和胎儿小叶" alt="胎儿叶和胎儿小叶">
+<p>绒毛膜板上伸出 60~80 个<strong>绒毛干</strong>，每个绒毛干中均含有<em>脐动脉</em>和<em>脐静脉</em>。脐血管随绒毛不断分支，最终成为毛细血管进入绒毛末端。<br/>
+一个初级绒毛干及其分支形成一个<strong>胎儿叶</strong>（fetal lobe）；一个次级绒毛干及其分支形成一个<strong>胎儿小叶</strong>（fetal lobule）。</p>
+<p>病理改变：</p>
+<ul>
+<li><strong>葡萄胎</strong>（hydatidiform mole）：绒毛滋养层细胞过度增生，间质变性水肿，血管消失，绒毛呈水泡状和葡萄状；</li>
+<li><strong>绒毛上皮癌</strong>（choriocarcinoma）：滋养层过度增生并癌变；</li>
+<li>绒毛血管发育不良或与胚体血管连接不良，会导致胚胎发育不良甚至死亡。</li>
+</ul>
+<h5 id="底蜕膜">底蜕膜 <a class="markdownIt-Anchor" href="#底蜕膜">#</a></h5>
+<p>另见：<a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=底蜕膜#植入后的子宫内膜的变化">植入后的子宫内膜的变化</a>。</p>
+<p>底蜕膜表面来自<em>固定绒毛</em>的滋养层细胞，与底蜕膜共同构成<em>绒毛间隙</em>的底，称为<strong>蜕膜板</strong>。
+从蜕膜板相绒毛膜方向形成一些蜕膜间隔，称为<strong>胎盘隔</strong>（placenta septa），一般不超过胎盘全层厚度的 2/3。<br/>
+将<em>胎儿叶</em>们不完全地分隔为 15~30 个（一般为 20 个）<em>母体叶</em>，又称<strong>胎盘小叶</strong>（cotyledon）。<br/>
+<strong>子宫螺旋动脉</strong>和<strong>子宫静脉</strong>开口于绒毛间隙，使之充满母体血液。</p>
+<h4 id="胎盘的血液循环">胎盘的血液循环 <a class="markdownIt-Anchor" href="#胎盘的血液循环">#</a></h4>
+<p>胎盘内有母体和胎儿两套血液循环系统：</p>
+<ul>
+<li><strong>母体</strong>：子宫螺旋动脉 → 绒毛间隙，与绒毛毛细血管内的胎儿血进行物质交换 → 子宫静脉</li>
+<li><strong>胎儿</strong>：脐动脉（2 条） → 绒毛毛细血管，与绒毛间隙中的母体血进行物质交换 → 脐静脉（1 条）</li>
+</ul>
+<h4 id="胎盘的功能">胎盘的功能 <a class="markdownIt-Anchor" href="#胎盘的功能">#</a></h4>
+<ol>
+<li><strong>物质交换</strong>：气体交换功能、营养物质供应、排除胎儿代谢产物；</li>
+<li><strong>防御功能</strong>：<em><strong>胎盘屏障</strong></em> 是一种<em>选择性通透膜</em>、<em>母体 IgG</em> 可通过胎膜，使胎儿获得被动免疫力；</li>
+<li><strong>再循环功能</strong>：液体交换，见 <a href="?highlight=%E8%83%8E%E7%9B%98#%E7%BE%8A%E6%B0%B4%E7%9A%84%E5%8A%A8%E6%80%81%E5%B9%B3%E8%A1%A1%E7%8A%B6%E6%80%81">羊水的动态平衡状态</a>；</li>
+<li><strong>合成功能</strong>：激素、酶、细胞因子和生长因子等，如 <em><strong>人绒毛膜促性腺激素</strong></em>；</li>
+<li><strong>免疫功能</strong>：胎儿及胎盘作为同种异体移植物，能在母体子宫内存活而不备排斥。</li>
+</ol>
+<dl>
+<dt>血管合体膜（vasculo-syncytial membrane，VSM）| <mark>胎盘屏障</mark>（placenta barrier）| 胎盘膜（placenta membrans）</dt>
+<dd>胎盘物质交换的主要部位，由<em>合体滋养细胞</em>、<em>合体滋养细胞基底膜</em>、<em>绒毛间质</em>、<em>毛细血管基底膜</em>和<em>毛细血管内皮细胞</em> 5 层组成。</dd>
+<dt>人绒毛膜促性腺激素（human chorionic gonadotropin，HCG）</dt>
+<dd>由合体滋养细胞分泌，受精后第 6 天开始分泌，至妊娠 8~10 周血清浓度达最高峰，产后 2 周内消失。</dd>
+<dd>可用于诊断早孕、检查诊断滋养细胞疾病、进行流产的保胎治疗、不孕症的促卵泡成熟及促排卵治疗，还可用于 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/?highlight=人绒毛膜促性腺激素 唐筛#21-三体综合征">唐筛</a>。</dd>
+</dl>
+<h4 id="胎盘异常">胎盘异常 <a class="markdownIt-Anchor" href="#胎盘异常">#</a></h4>
+<ol>
+<li>胎盘位置异常：<strong>前置胎盘</strong></li>
+<li>胎盘形状异常：<strong>副胎盘</strong></li>
+<li><em>胎盘植入异常</em>：粘连性胎盘、植入性胎盘、穿透性胎盘</li>
+<li>胎盘重量异常：巨大胎盘（&gt;800g）、胎盘过小（&lt;400g）</li>
+<li>胎盘结构异常：球拍状胎盘；脐带帆状附着</li>
+</ol>
+<div class="tabs" id="tabs_胎盘异常"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_胎盘异常-1">前置胎盘</a></li><li class="tab"><a href="#tabs_胎盘异常-2">副胎盘</a></li><li class="tab"><a href="#tabs_胎盘异常-3">胎盘植入异常</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_胎盘异常-1"><p><strong>前置胎盘</strong>（placenta previa）指妊娠 28 周后，胎盘附着于子宫下段，甚至胎盘下缘达到或覆盖宫颈内口，其位置低于胎先露部。</p>
+<p>可分为三类：</p>
+<ol>
+<li><strong>完全性前置胎盘</strong>：胎盘完全覆盖子宫颈；</li>
+<li><strong>部分性前置胎盘</strong>： 胎盘部分覆盖子宫颈；</li>
+<li><strong>边缘性前置胎盘</strong>：胎盘在子宫颈边缘附近，离子宫颈内口约 2 厘米。</li>
+</ol></div><div class="tab-pane" id="tabs_胎盘异常-2"><p><strong>副胎盘</strong>（succenturiate placenta）是指在离主胎盘的周边一段距离的胎膜内，有一个或数个胎盘小叶发育，副胎盘与主胎盘之间有胎儿来源的血管相连，由中等大小的绒毛膜血管经副叶和主胎盘间的胎膜接受胎儿的血液循环。</p></div><div class="tab-pane" id="tabs_胎盘异常-3"><ol>
+<li><strong>粘连性</strong>（accreta）胎盘：胎盘绒毛膜绒毛仅侵入<strong>子宫壁表层</strong>；</li>
+<li><strong>植入性</strong>（increta）胎盘：绒毛膜绒毛侵入<strong>子宫肌层</strong>；</li>
+<li><strong>穿透性</strong>（percreta）胎盘：胎盘绒毛穿透子宫肌层，侵入<strong>子宫浆膜甚至母体其他器官</strong>（膀胱、直肠等）。</li>
+</ol></div></div></div>
+<h3 id="胎膜">胎膜 <a class="markdownIt-Anchor" href="#胎膜">#</a></h3>
+<h4 id="胎膜的形成和结构">胎膜的形成和结构 <a class="markdownIt-Anchor" href="#胎膜的形成和结构">#</a></h4>
+<dl>
+<dt><strong>胎膜</strong>（fetal membrane）</dt>
+<dd>由 <a href="?highlight=%E5%B9%B3%E6%BB%91%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C">（平滑）<strong>绒毛膜</strong></a>（chorion）和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a>（amnion）组成，是维持羊膜完整和储存羊水的外周屏障。<br/></dd>
+</dl>
+<p><a href="?highlight=%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C"><strong>绒毛膜</strong></a> 和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a> 分别构成胎膜的外层和内层，胎膜还包括<em>卵黄囊</em>、<a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=尿囊#直肠的发生与泄殖腔的分隔"><em>尿囊</em></a> 和 <a href="#%E8%84%90%E5%B8%A6"><em>脐带</em></a>。</p>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E8%86%9C.png" class="" width="500" title="胎膜" alt="胎膜">
+<h4 id="胎膜的异常">胎膜的异常 <a class="markdownIt-Anchor" href="#胎膜的异常">#</a></h4>
+<dl>
+<dt>胎膜早破（premature rupture of membranes，PROM）</dt>
+<dd>胎膜在临产前破裂。</dd>
+</dl>
+<h3 id="脐带">脐带 <a class="markdownIt-Anchor" href="#脐带">#</a></h3>
+<h4 id="脐带的形成和结构">脐带的形成和结构 <a class="markdownIt-Anchor" href="#脐带的形成和结构">#</a></h4>
+<dl>
+<dt>脐带（umbilical cord）</dt>
+<dd>连接胎儿（腹部脐轮）和胎盘（胎儿面）的条索状结构，妊娠足月时脐带长 30~70 cm，直径 0.8~2.0cm，表面被羊膜覆盖呈灰白色，内有 1 条<em>脐静脉</em>和 2 条<em>脐动脉</em>。</dd>
+</dl>
+<p>脐带由 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=体蒂#胚外中胚层和胚外体腔的形成"><strong>体蒂</strong></a> 发育而来。早期胚胎通过体蒂与绒毛膜相连，而后卵黄囊被推向体蒂，羊膜将体蒂和卵黄囊包绕在一起形成圆柱状的脐带。</p>
+<h4 id="脐带的异常">脐带的异常 <a class="markdownIt-Anchor" href="#脐带的异常">#</a></h4>
+<ol>
+<li>脐带长度异常：脐带过长（≥ 80cm）、脐带过短（≤ 30cm）</li>
+<li><em>脐带先露</em>（隐性脐带脱垂）和<em>脐带脱垂</em></li>
+<li>脐带缠绕</li>
+<li>脐带附着异常</li>
+<li>脐带打结</li>
+<li>脐带扭转</li>
+</ol>
+<h3 id="羊水">羊水 <a class="markdownIt-Anchor" href="#羊水">#</a></h3>
+<dl>
+<dt><strong>羊水</strong>（amniotic fluid）</dt>
+<dd>即充满羊膜腔的液体，其来源、成分和组成在妊娠不同时期均有不同。</dd>
+</dl>
+<h4 id="羊水的来源">羊水的来源 <a class="markdownIt-Anchor" href="#羊水的来源">#</a></h4>
+<ol>
+<li>早期羊水：主要是<strong>母体血清</strong>经<em>胎膜</em>进入羊膜腔的透析液；</li>
+<li>中晚期羊水：主要是<strong>胎儿尿液</strong>。</li>
+</ol>
+<h4 id="羊水的动态平衡">羊水的动态平衡 <a class="markdownIt-Anchor" href="#羊水的动态平衡">#</a></h4>
+<p>母体、羊水、胎儿之间一直进行着双向的水和电解质的交换：</p>
+<ol>
+<li>母体和胎儿：<a href="?highlight=%E8%83%8E%E7%9B%98#%E8%83%8E%E7%9B%98%E7%9A%84%E5%8A%9F%E8%83%BD">胎盘</a>；</li>
+<li>母体和羊水：<a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C">胎膜</a>；</li>
+<li>胎儿和羊水：胎儿消化道、呼吸道、泌尿道和角化前的皮肤。</li>
+</ol>
+<h4 id="羊水的功能">羊水的功能 <a class="markdownIt-Anchor" href="#羊水的功能">#</a></h4>
+<ol>
+<li>保护胎儿：
+<ul>
+<li>自由活动，避免胎儿受到挤压，防止胎体畸形和粘连；</li>
+<li>抑菌作用。</li>
+</ul>
+</li>
+<li>保护母体：
+<ul>
+<li>减少胎动引起的不适感；</li>
+<li>临产后扩张宫颈口和阴道；</li>
+<li>冲洗和润滑阴道。</li>
+</ul>
+</li>
+</ol>
+<h4 id="羊水量的异常">羊水量的异常 <a class="markdownIt-Anchor" href="#羊水量的异常">#</a></h4>
+<ol>
+<li><strong>羊水过多</strong>（polyhydramnios）：&gt; 2000ml
+<ul>
+<li>可引起<em>胎儿畸形</em>，中枢神经系统和消化道畸形最常见；</li>
+<li>常见于 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=无脑儿#神经管的形成和分化"><strong>无脑儿</strong></a>，也可由食管闭锁和小肠高位闭锁引起，<em>双胎妊娠</em>羊水过多的发生率约为单胎妊娠的 10 倍。</li>
+</ul>
+</li>
+<li><strong>羊水过少</strong>（oligohydramnios）：&lt; 300ml
+<ul>
+<li>可由<em>胎儿泌尿系统畸形</em>和<em>胎膜早破</em>引起；</li>
+<li>胎儿泌尿系统畸形、<strong>过期妊娠</strong>、胎盘功能减退、羊膜病变、<a href="?highlight=%E8%83%8E%E8%86%9C%E6%97%A9%E7%A0%B4#%E8%83%8E%E8%86%9C%E7%9A%84%E5%BC%82%E5%B8%B8">胎膜早破</a> 可引起羊水过少；</li>
+<li><strong>羊膜带综合征</strong>。</li>
+</ul>
+</li>
+</ol>
+<dl>
+<dt>羊膜带综合征（amniotic band syndrome）</dt>
+<dd>孕妇腹围宫高小于同期妊娠者，若在妊娠早期以发生过<em>羊水过少</em>，常使羊膜粘在胎儿肢体上，造成胎儿畸形甚至肢体短缺。</dd>
+</dl>
+<h2 id="生殖系统发育">生殖系统发育 <a class="markdownIt-Anchor" href="#生殖系统发育">#</a></h2>
+<h3 id="生殖腺的发育">生殖腺的发育 <a class="markdownIt-Anchor" href="#生殖腺的发育">#</a></h3>
+<dl>
+<dt>生殖嵴（gonadal ridge）</dt>
+<dd><strong>生殖腺的原基</strong>（primordium of gonad），位于胚体正中线两侧、中肾嵴和背系膜之间的一对纵嵴，由体腔上皮的增生和深面 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/#中胚层分化">间充质</a> 的聚集而形成。</dd>
+<dt>初级性索（primary sex cord）</dt>
+<dd>生殖嵴表面的上皮增生穿入到深面的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=间充质#中胚层的分化">间充质</a> 内，形成的若干不规则的细胞索。</dd>
+</dl>
+<ul>
+<li>第 4 周，<a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/#羊膜囊和卵黄囊的形成">卵黄囊</a> 出现<strong>原始生殖细胞</strong>（primordial germ cell）；</li>
+<li>第 6 周，原始生殖细胞迁入<strong>初级性索</strong>。此时不能分辨性腺是睾丸还是卵巢，因此称为<strong>未分化性腺</strong>。</li>
+</ul>
+<dl>
+<dt><mark>Y 染色体的性别决定区</mark>（sex determining region of Y chromosome, <mark><abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr></mark>）</dt>
+<dd>Y 染色体上的一段非同源区段，目前被认为真正决定性别。</dd>
+</dl>
+<p>生殖腺分化（原始生殖腺有向卵巢发育的趋势）：</p>
+<ul>
+<li>男性 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr>(+) 且表达 → <a href="#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">睾丸</a></li>
+<li>女性 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr>(-) → <a href="#%E5%8D%B5%E5%B7%A2%E7%9A%84%E5%8F%91%E7%94%9F">卵巢</a></li>
+</ul>
+<h4 id="睾丸的发生">睾丸的发生 <a class="markdownIt-Anchor" href="#睾丸的发生">#</a></h4>
+<p>初级性索 → 睾丸索 → 生精小管</p>
+<dl>
+<dt>睾丸索（testicular cord）| 曲精索</dt>
+<dd>第 7~8 周时，在 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr> 基因的作用下，初级性索与表面上皮分离，向生殖腺嵴深处生长，形成的许多界限清楚的、相互吻合的细胞索。</dd>
+</dl>
+<p>睾丸索进一步分化形成的襻状的<strong>生精小管</strong>（seminiferous tubules），其末端相互连接，形成<strong>睾丸网</strong>（rete testis）。</p>
+<p>睾丸内的细胞分化</p>
+<ul>
+<li>生精小管间
+<ul>
+<li>间充质细胞 → <strong>睾丸间质细胞</strong></li>
+</ul>
+</li>
+<li>生精小管腔
+<ul>
+<li>初级性索 → <strong>支持细胞</strong>（Sertoli 细胞）</li>
+<li>原始生殖细胞 → <strong>精原细胞</strong>（spermatogonium）</li>
+</ul>
+</li>
+</ul>
+<dl>
+<dt>睾丸间质细胞 | Leydig 细胞</dt>
+<dd>分散在生精小管之间的<strong>间充质细胞</strong>分化而来，分泌<strong>雄激素</strong>，促进尿道生殖窦和<strong>中肾管</strong>向男性生殖管道分化。</dd>
+</dl>
+<p>人胚 14~18 周，间质细胞占睾丸体积一般以上，随后迅速减少，出生时几乎见不到间质细胞，直至青春期才重现。</p>
+<details class="note info "><summary><p>雄激素</p>
+</summary><dl>
+<dt>雄激素（androgen, androgenic hormones, testoids）| 雄性激素 | 男性荷尔蒙</dt>
+<dd>系泛称，指任何能与<strong>雄激素受体</strong>（androgen receptor）结合，调节脊椎动物雄性性征的发育与维持的<strong>类固醇激素</strong>。</dd>
+</dl>
+<p>男性体内的主要雄激素为<strong>睾酮</strong>和<strong>双氢睾酮</strong>。</p>
+</details>
+<dl>
+<dt>支持细胞 | Sertoli 细胞</dt>
+<dd>由<strong>初级性索</strong>分化形成，分泌<strong>抗 Müllerian 激素</strong>，对<strong>中肾旁管</strong>起抑制作用。</dd>
+</dl>
+<p>另见：<a href="#%E7%94%B7%E6%80%A7%E5%86%85%E7%94%9F%E6%AE%96%E5%99%A8">男性内生殖器</a>。</p>
+<h4 id="卵巢的发生">卵巢的发生 <a class="markdownIt-Anchor" href="#卵巢的发生">#</a></h4>
+<p>卵巢的发生比睾丸晚 2 周，是原始生殖腺分化的自然趋势。</p>
+<dl>
+<dt>次级性索（secondary sex cord）| 皮质索（cortical cord）</dt>
+<dd>第 10 周时，由于无 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr> 基因的作用，<a href="?highlight=%E5%88%9D%E7%BA%A7%E6%80%A7%E7%B4%A2#%E7%94%9F%E6%AE%96%E8%85%BA%E7%9A%84%E5%8F%91%E8%82%B2"><strong>初级性索</strong></a> 退化消失，性腺表面上皮细胞继续增生，形成<strong>次级性索</strong>。</dd>
+</dl>
+<ul>
+<li>次级性腺/皮质索 → 原始卵泡的<strong>卵泡细胞</strong></li>
+<li>原始生殖细胞 → <strong>卵原细胞</strong></li>
+<li>间充质 → <strong>卵巢间质</strong></li>
+</ul>
+<dl>
+<dt>原始卵泡（primordial ovarian folliele）</dt>
+<dd><strong>皮质索</strong>断裂形成的细胞团。</dd>
+<dd>周围的<strong>卵泡细胞</strong>由<strong>皮质索</strong>的细胞分化形成；中心的<strong>卵原细胞</strong>（oogonium）由<strong>原始生殖细胞</strong>分化而来。</dd>
+</dl>
+<h3 id="内生殖器的发育">内生殖器的发育 <a class="markdownIt-Anchor" href="#内生殖器的发育">#</a></h3>
+<p>在第 6 周的未分化期，男性和女性均有两套生殖管道——<strong>中肾管</strong>、<strong>中肾旁管</strong>。</p>
+<dl>
+<dt>中肾管（mesonephric duct）| Wolfian 管</dt>
+<dd>在中肾退化时，保留下来形成男性生殖管道。</dd>
+<dt>中肾旁管（paramesonephric duct）| Müllerian 管</dt>
+<dd>开口于<strong>窦结节</strong>（sinus tubercle, Müllerian 结节），将来发育成为女性生殖管道。</dd>
+</dl>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%88%86%E5%8C%96.png" class="" width="500" title="生殖管道的分化" alt="生殖管道的分化">
+<h4 id="男性内生殖器">男性内生殖器 <a class="markdownIt-Anchor" href="#男性内生殖器">#</a></h4>
+<ul>
+<li>支持细胞<strong>抗 Müllerian 激素</strong>：中肾旁管 → 退化</li>
+<li>睾丸间质细胞 <a href="?highlight=%E9%9B%84%E6%BF%80%E7%B4%A0#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">雄激素</a>：中肾管（和部分未退化的中肾小管）→ 副睾管、输精管</li>
+</ul>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%B7%E6%80%A7%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%8F%91%E8%82%B2.png" class="" title="男性生殖管道的发育" alt="男性生殖管道的发育">
+<p>另见：<a href="#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">睾丸的发生</a>。</p>
+<dl>
+<dt>抗 Müllerian 激素（anti-Müllerian hormone，<abbr title="anti-Müllerian hormone, 抗 Müllerian 激素">AMH</abbr>）| Müllerian 抑制因子（Müllerian inhibiting factor, <abbr title="Müllerian inhibiting factor, Müllerian 抑制因子">MIF</abbr>）</dt>
+<dd>由<strong>支持细胞</strong>产生，抑制中肾旁管，使其逐渐退化。</dd>
+</dl>
+<h4 id="女性内生殖器">女性内生殖器 <a class="markdownIt-Anchor" href="#女性内生殖器">#</a></h4>
+<p>无抗 Müllerian 激素和雄激素的作用</p>
+<ul>
+<li>中肾管退化</li>
+<li>中肾旁管发育
+<ul>
+<li>上段、中段 → 输卵管（uterine tube）</li>
+<li>下段 → 合并成子宫</li>
+<li>副中肾管最尾端 → 阴道板（vaginal plate）</li>
+</ul>
+</li>
+</ul>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E5%A5%B3%E6%80%A7%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%8F%91%E8%82%B2.png" class="" title="女性生殖管道的发育" alt="女性生殖管道的发育">
+<h4 id="内生殖腺发育异常">内生殖腺发育异常 <a class="markdownIt-Anchor" href="#内生殖腺发育异常">#</a></h4>
+<ol>
+<li>睾丸发育异常
+<ol>
+<li>先天性睾丸缺如（congenital absence of testis）</li>
+<li><strong>隐睾</strong></li>
+<li>异位睾丸（ectopic testis）</li>
+</ol>
+</li>
+<li><strong>先天性腹股沟疝</strong>和<strong>阴囊积水</strong></li>
+<li>阴道发育异常</li>
+<li>子宫发育异常</li>
+</ol>
+<dl>
+<dt>隐睾（cryptorchidism）</dt>
+<dd>睾丸未下降至阴囊，多停留在腹腔或腹股沟等处，65% 的患者伴有<em>先天性腹股沟疝</em>。</dd>
+<dt>先天性腹股沟疝（congenital inguinal hernia）</dt>
+<dd>腹膜腔和<em>鞘膜腔</em>之间的通路未闭合，腹压升高时，肠管可突入鞘膜腔。</dd>
+<dd>新生儿腹股沟疝常有鞘膜积液，可致<strong>阴囊积水</strong>（scrotal hydrocele）。</dd>
+</dl>
+<h3 id="外生殖器的发育">外生殖器的发育 <a class="markdownIt-Anchor" href="#外生殖器的发育">#</a></h3>
+<p>胚胎第 3 周，起源于原条区域的间充质细胞迁移到泄殖腔膜周围，形成头尾方向的 2 条隆起，称<strong>泄殖腔褶</strong>。</p>
+<dl>
+<dt>生殖结节（genital tubercle）</dt>
+<dd>胚胎第 5 周初，<em>泄殖腔褶</em>在紧靠泄殖腔膜的头端联合形成的结节。</dd>
+<dt>尿生殖褶（urogenital fold）</dt>
+<dd>在第 6 周由部分<em>泄殖腔褶</em>分化而来的两条纵行隆起。</dd>
+</dl>
+<p>尿生殖褶中间的凹陷称<strong>尿生殖沟</strong>，沟底为<strong>尿生殖膜</strong>。<br/>
+<strong>尿生殖膜</strong>于第 7~9 周破裂，之后形成<strong>尿道沟</strong>，正常情况下最终愈合。</p>
+<dl>
+<dt>阴唇阴囊隆起（labioscrotal swelling）</dt>
+<dd>第 7~9 周时，在<strong>尿生殖褶</strong>外侧又形成的两条纵行隆起。</dd>
+</dl>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E6%9C%AA%E5%88%86%E5%8C%96%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="500" title="未分化外生殖器" alt="未分化外生殖器">
+<h4 id="男性外生殖器的发育">男性外生殖器的发育 <a class="markdownIt-Anchor" href="#男性外生殖器的发育">#</a></h4>
+<p>在睾丸产生的 <a href="?highlight=%E9%9B%84%E6%BF%80%E7%B4%A0#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">雄激素</a> 作用下：</p>
+<ul>
+<li>间充质细胞 → <strong>泄殖腔褶</strong> →
+<ul>
+<li>生殖结节 → <strong>阴茎</strong>（penis）</li>
+<li>尿生殖褶 → 尿道<strong>海绵体</strong>部</li>
+</ul>
+</li>
+<li>阴唇阴囊隆起 → <strong>阴囊</strong>（scrotum）</li>
+</ul>
+<p><mark>5α 二氢睾酮</mark> 对男性外阴的形成至关重要，其受体的缺陷将导致 <a href="?highlight=%E7%9D%BE%E4%B8%B8%E5%A5%B3%E6%80%A7%E5%8C%96%E7%BB%BC%E5%90%88%E5%BE%81#%E5%81%87%E4%B8%A4%E6%80%A7%E7%95%B8%E5%BD%A2">睾丸女性化综合征</a>。</p>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%B7%E6%80%A7%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="500" title="男性外生殖器" alt="男性外生殖器">
+<h4 id="女性外生殖器的发育">女性外生殖器的发育 <a class="markdownIt-Anchor" href="#女性外生殖器的发育">#</a></h4>
+<p>外生殖器向女性方向分化，是胚胎发育的<em>自然趋势</em>，不需要雌激素的作用。</p>
+<ul>
+<li>生殖结节 → <strong>阴蒂</strong>（clitoris）</li>
+<li>尿生殖褶 → <strong>小阴唇</strong>（labia minora）</li>
+<li>阴囊阴唇隆起 → <strong>大阴唇</strong>（labia majora）</li>
+</ul>
+<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E5%A5%B3%E6%80%A7%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="600" title="女性外生殖器" alt="女性外生殖器">
+<h4 id="外生殖器发育异常">外生殖器发育异常 <a class="markdownIt-Anchor" href="#外生殖器发育异常">#</a></h4>
+<dl>
+<dt>尿道下裂（hypospadias）</dt>
+<dd>左右<strong>尿生殖褶</strong>不闭合或闭合不全，导致尿道外口不在阴茎顶端而在阴茎<em>腹侧</em>。</dd>
+</dl>
+<h3 id="性别发育异常">性别发育异常 <a class="markdownIt-Anchor" href="#性别发育异常">#</a></h3>
+<ul>
+<li>原始生殖腺的决定因素
+<ul>
+<li><strong><abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr></strong> 基因：决定睾丸的形成</li>
+<li>其他基因</li>
+</ul>
+</li>
+<li>性器官分化的决定因素
+<ul>
+<li>内生殖器：<strong>睾酮</strong>、<abbr title="anti-Müllerian hormone, 抗 Müllerian 激素">AMH</abbr>/<abbr title="Müllerian inhibiting factor, Müllerian 抑制因子">MIF</abbr>、雌激素</li>
+<li>外生殖器：<strong>双氢睾酮</strong>（<abbr title="双氢睾酮">DHT</abbr>）</li>
+</ul>
+</li>
+</ul>
+<dl>
+<dt>双氢睾酮（<abbr title="双氢睾酮">DHT</abbr>）</dt>
+<dd>由男性外生殖器通过 <strong>5α-还原酶</strong>将<strong>睾酮</strong>还原形成，使外阴向男性分化。</dd>
+</dl>
+<hr />
+<dl>
+<dt>性别发育异常 | 两性畸形</dt>
+<dd>患者的性腺或其内外生殖器、副性征具有不同程度的两性特征。</dd>
+</dl>
+<h4 id="真两性畸形">真两性畸形 <a class="markdownIt-Anchor" href="#真两性畸形">#</a></h4>
+<dl>
+<dt>真两性畸形（true hermaphrodite）</dt>
+<dd>同时具有卵巢和睾丸两种性腺或者<strong>卵巢睾</strong>（ovotestis）。</dd>
+</dl>
+<h4 id="假两性畸形">假两性畸形 <a class="markdownIt-Anchor" href="#假两性畸形">#</a></h4>
+<dl>
+<dt>假两性畸形（pseudohermaphrodite）</dt>
+<dd>核型和性腺只有一种，外生殖器或副性征有两性特征或畸形。</dd>
+</dl>
+<hr />
+<p><strong>男性假两性畸形</strong>：核型为 46,XY，内生殖腺只有睾丸</p>
+<ul>
+<li>雄激素不敏感综合征</li>
+<li>5α-还原酶缺陷：影响 <a href="?highlight=%E5%8F%8C%E6%B0%A2%E7%9D%BE%E9%85%AE#%E6%80%A7%E5%88%AB%E5%8F%91%E8%82%B2%E5%BC%82%E5%B8%B8">双氢睾酮</a> 形成</li>
+</ul>
+<dl>
+<dt>雄激素不敏感综合征（testicular feminization syndrome） | 睾丸女性化综合征（androgen insensitive syndrome）</dt>
+<dd>睾丸分泌雄激素，但是体细胞雄性激素受体合成缺陷，不能使生殖器男性化。</dd>
+</dl>
+<hr />
+<p><strong>女性假两性畸形</strong>：核型为 46,XX，内生殖腺只有卵巢</p>
+<ul>
+<li>先天性肾上腺皮质增生症</li>
+<li>母体高雄激素血症</li>
+</ul>
+<dl>
+<dt>先天性肾上腺皮质增生症（congenital adrenal hyperplasia, <abbr title="congenital adrenal hyperplasia，先天性肾上腺皮质增生症">CAH</abbr>）</dt>
+<dd>由于肾上腺多种合成皮质醇的酶缺陷，导致雄激素大量分泌而表现为外生殖器男性化。</dd>
+</dl>
+<dl>
+<dt>母体高雄激素血症</dt>
+<dd>孕期母亲血液雄激素水平高引起。</dd>
+<dd>无需激素治疗，只需外科手术校正外生殖器畸形。</dd>
+</dl>
+<h4 id="性逆转综合征">性逆转综合征 <a class="markdownIt-Anchor" href="#性逆转综合征">#</a></h4>
+<dl>
+<dt>性逆转综合征（sex reversal syndrome）| 性反转综合征</dt>
+<dd>染色体核型与性表型相反。</dd>
+</dl>
+<ul>
+<li>46,XX 男性：临床症状类似于 Klinefelter 综合征（见 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/?highlight=Klinefelter#常见性染色体异常综合征">常见性染色体异常综合征</a>）</li>
+<li>46,XY 女性</li>
+</ul>
+<h3 id="生殖内分泌">生殖内分泌 <a class="markdownIt-Anchor" href="#生殖内分泌">#</a></h3>
+<ul>
+<li>下丘脑：促性腺激素释放激素（GnRH）</li>
+<li>垂体前叶：促性腺激素，如卵泡刺激素（FSH）、黄体生成素（LH）</li>
+<li>睾丸（男性）；卵巢（女性）/ 胎盘（孕期）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -7626,431 +7963,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>生殖内分泌</title>
-    <url>/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/</url>
-    <content><![CDATA[<p><a href="#%E8%83%8E%E5%84%BF%E9%99%84%E5%B1%9E%E7%89%A9">胎儿附属物</a>、<a href="#%E7%94%9F%E6%AE%96%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2">生殖系统发育</a>，以及常见畸形……</p>
-<span id="more"></span>
-<h2 id="胎儿附属物">胎儿附属物 <a class="markdownIt-Anchor" href="#胎儿附属物">#</a></h2>
-<dl>
-<dt>胎儿附属物（fetal appendage）</dt>
-<dd>胎儿以外的组织，包括 <a href="?highlight=%E8%83%8E%E7%9B%98#%E8%83%8E%E7%9B%98"><strong>胎盘</strong></a>、<a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a>、<a href="?highlight=%E8%84%90%E5%B8%A6#%E8%84%90%E5%B8%A6"><strong>脐带</strong></a> 和 <a href="?highlight=%E7%BE%8A%E6%B0%B4#%E7%BE%8A%E6%B0%B4"><strong>羊水</strong></a>。</dd>
-</dl>
-<h3 id="胎盘">胎盘 <a class="markdownIt-Anchor" href="#胎盘">#</a></h3>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/Placenta.png" class="" width="640" title="胎盘" alt="胎盘">
-<p><strong>胎盘</strong>（placenta）是胎儿和母体的结合体，由<em>胎儿</em>的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成"><strong>羊膜</strong></a>（amniotic membrane）和<strong>叶状绒毛膜</strong>（chorion frondosum）及<em>母体</em>的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=底蜕膜#植入后的子宫内膜的变化"><strong>底蜕膜</strong></a>（basal deciduas）共同构成。<br/>
-妊娠足月时，胎盘重 450~650g，直径 15~20cm，厚 1~3cm，中间厚，边缘薄，胎儿面光滑半透明，母体面粗糙呈暗红色。</p>
-<h4 id="胎盘的形成">胎盘的形成 <a class="markdownIt-Anchor" href="#胎盘的形成">#</a></h4>
-<h5 id="羊膜">羊膜 <a class="markdownIt-Anchor" href="#羊膜">#</a></h5>
-<p>另见 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=羊膜#羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成</a>。</p>
-<h5 id="叶状绒毛膜">叶状绒毛膜 <a class="markdownIt-Anchor" href="#叶状绒毛膜">#</a></h5>
-<p><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=滋养层#植入后的滋养层的变化">滋养层</a>内面和 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=胚外中胚层#胚外中胚层和胚外体腔的形成">胚外中胚层</a> 共同组成绒毛膜。<br/>
-人胚 13~21 天时，绒毛膜发育分化最旺盛。经历<em>一级绒毛</em>、<em>二级绒毛</em>和<em>三级绒毛</em> 3 个阶段，<strong>绒毛</strong>逐渐形成。<br/>
-当绒毛内毛细血管形成时，胚胎血管与绒毛血管连接，之后建立<em>胎儿-胎盘循环</em>。</p>
-<p>与<em>底蜕膜</em>相接触的绒毛因营养丰富而发育良好，称 <mark>叶状绒毛膜</mark>（villous chorion），与<em>包蜕膜</em>接触的部分则萎缩退化成<strong>平滑绒毛膜</strong>（smooth chorion），构成 <a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C"><strong>胎膜</strong></a> 的外层。</p>
-<dl>
-<dt>游离绒毛（free villus）</dt>
-<dd>末端悬浮与充满母血的绒毛间隙中的绒毛。</dd>
-<dt>固定绒毛（anchoring villus）</dt>
-<dd><strong>绒毛干</strong>固定于蜕膜上的绒毛。</dd>
-</dl>
-<details class="note info "><summary><p>绒毛膜取样/活检</p>
-</summary>
-      <p>绒毛膜取样/活检（chorionic villus sampling，CVS）指在超声引导下行穿刺术，取出胎盘内的绒毛组织进行细胞培养、分子遗传学或生化遗传学检查，进行染色体诊断或基因诊断。分为经腹绒毛活检及经宫颈绒毛活检。</p>
-
-    </details>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E5%84%BF%E5%8F%B6%E5%92%8C%E8%83%8E%E5%84%BF%E5%B0%8F%E5%8F%B6.png" class="right" width="500" title="胎儿叶和胎儿小叶" alt="胎儿叶和胎儿小叶">
-<p>绒毛膜板上伸出 60~80 个<strong>绒毛干</strong>，每个绒毛干中均含有<em>脐动脉</em>和<em>脐静脉</em>。脐血管随绒毛不断分支，最终成为毛细血管进入绒毛末端。<br/>
-一个初级绒毛干及其分支形成一个<strong>胎儿叶</strong>（fetal lobe）；一个次级绒毛干及其分支形成一个<strong>胎儿小叶</strong>（fetal lobule）。</p>
-<p>病理改变：</p>
-<ul>
-<li><strong>葡萄胎</strong>（hydatidiform mole）：绒毛滋养层细胞过度增生，间质变性水肿，血管消失，绒毛呈水泡状和葡萄状；</li>
-<li><strong>绒毛上皮癌</strong>（choriocarcinoma）：滋养层过度增生并癌变；</li>
-<li>绒毛血管发育不良或与胚体血管连接不良，会导致胚胎发育不良甚至死亡。</li>
-</ul>
-<h5 id="底蜕膜">底蜕膜 <a class="markdownIt-Anchor" href="#底蜕膜">#</a></h5>
-<p>另见：<a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=底蜕膜#植入后的子宫内膜的变化">植入后的子宫内膜的变化</a>。</p>
-<p>底蜕膜表面来自<em>固定绒毛</em>的滋养层细胞，与底蜕膜共同构成<em>绒毛间隙</em>的底，称为<strong>蜕膜板</strong>。
-从蜕膜板相绒毛膜方向形成一些蜕膜间隔，称为<strong>胎盘隔</strong>（placenta septa），一般不超过胎盘全层厚度的 2/3。<br/>
-将<em>胎儿叶</em>们不完全地分隔为 15~30 个（一般为 20 个）<em>母体叶</em>，又称<strong>胎盘小叶</strong>（cotyledon）。<br/>
-<strong>子宫螺旋动脉</strong>和<strong>子宫静脉</strong>开口于绒毛间隙，使之充满母体血液。</p>
-<h4 id="胎盘的血液循环">胎盘的血液循环 <a class="markdownIt-Anchor" href="#胎盘的血液循环">#</a></h4>
-<p>胎盘内有母体和胎儿两套血液循环系统：</p>
-<ul>
-<li><strong>母体</strong>：子宫螺旋动脉 → 绒毛间隙，与绒毛毛细血管内的胎儿血进行物质交换 → 子宫静脉</li>
-<li><strong>胎儿</strong>：脐动脉（2 条） → 绒毛毛细血管，与绒毛间隙中的母体血进行物质交换 → 脐静脉（1 条）</li>
-</ul>
-<h4 id="胎盘的功能">胎盘的功能 <a class="markdownIt-Anchor" href="#胎盘的功能">#</a></h4>
-<ol>
-<li><strong>物质交换</strong>：气体交换功能、营养物质供应、排除胎儿代谢产物；</li>
-<li><strong>防御功能</strong>：<em><strong>胎盘屏障</strong></em> 是一种<em>选择性通透膜</em>、<em>母体 IgG</em> 可通过胎膜，使胎儿获得被动免疫力；</li>
-<li><strong>再循环功能</strong>：液体交换，见 <a href="?highlight=%E8%83%8E%E7%9B%98#%E7%BE%8A%E6%B0%B4%E7%9A%84%E5%8A%A8%E6%80%81%E5%B9%B3%E8%A1%A1%E7%8A%B6%E6%80%81">羊水的动态平衡状态</a>；</li>
-<li><strong>合成功能</strong>：激素、酶、细胞因子和生长因子等，如 <em><strong>人绒毛膜促性腺激素</strong></em>；</li>
-<li><strong>免疫功能</strong>：胎儿及胎盘作为同种异体移植物，能在母体子宫内存活而不备排斥。</li>
-</ol>
-<dl>
-<dt>血管合体膜（vasculo-syncytial membrane，VSM）| <mark>胎盘屏障</mark>（placenta barrier）| 胎盘膜（placenta membrans）</dt>
-<dd>胎盘物质交换的主要部位，由<em>合体滋养细胞</em>、<em>合体滋养细胞基底膜</em>、<em>绒毛间质</em>、<em>毛细血管基底膜</em>和<em>毛细血管内皮细胞</em> 5 层组成。</dd>
-<dt>人绒毛膜促性腺激素（human chorionic gonadotropin，HCG）</dt>
-<dd>由合体滋养细胞分泌，受精后第 6 天开始分泌，至妊娠 8~10 周血清浓度达最高峰，产后 2 周内消失。</dd>
-<dd>可用于诊断早孕、检查诊断滋养细胞疾病、进行流产的保胎治疗、不孕症的促卵泡成熟及促排卵治疗，还可用于 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/?highlight=人绒毛膜促性腺激素 唐筛#21-三体综合征">唐筛</a>。</dd>
-</dl>
-<h4 id="胎盘异常">胎盘异常 <a class="markdownIt-Anchor" href="#胎盘异常">#</a></h4>
-<ol>
-<li>胎盘位置异常：<strong>前置胎盘</strong></li>
-<li>胎盘形状异常：<strong>副胎盘</strong></li>
-<li><em>胎盘植入异常</em>：粘连性胎盘、植入性胎盘、穿透性胎盘</li>
-<li>胎盘重量异常：巨大胎盘（&gt;800g）、胎盘过小（&lt;400g）</li>
-<li>胎盘结构异常：球拍状胎盘；脐带帆状附着</li>
-</ol>
-<div class="tabs" id="tabs_胎盘异常"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_胎盘异常-1">前置胎盘</a></li><li class="tab"><a href="#tabs_胎盘异常-2">副胎盘</a></li><li class="tab"><a href="#tabs_胎盘异常-3">胎盘植入异常</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_胎盘异常-1"><p><strong>前置胎盘</strong>（placenta previa）指妊娠 28 周后，胎盘附着于子宫下段，甚至胎盘下缘达到或覆盖宫颈内口，其位置低于胎先露部。</p>
-<p>可分为三类：</p>
-<ol>
-<li><strong>完全性前置胎盘</strong>：胎盘完全覆盖子宫颈；</li>
-<li><strong>部分性前置胎盘</strong>： 胎盘部分覆盖子宫颈；</li>
-<li><strong>边缘性前置胎盘</strong>：胎盘在子宫颈边缘附近，离子宫颈内口约 2 厘米。</li>
-</ol></div><div class="tab-pane" id="tabs_胎盘异常-2"><p><strong>副胎盘</strong>（succenturiate placenta）是指在离主胎盘的周边一段距离的胎膜内，有一个或数个胎盘小叶发育，副胎盘与主胎盘之间有胎儿来源的血管相连，由中等大小的绒毛膜血管经副叶和主胎盘间的胎膜接受胎儿的血液循环。</p></div><div class="tab-pane" id="tabs_胎盘异常-3"><ol>
-<li><strong>粘连性</strong>（accreta）胎盘：胎盘绒毛膜绒毛仅侵入<strong>子宫壁表层</strong>；</li>
-<li><strong>植入性</strong>（increta）胎盘：绒毛膜绒毛侵入<strong>子宫肌层</strong>；</li>
-<li><strong>穿透性</strong>（percreta）胎盘：胎盘绒毛穿透子宫肌层，侵入<strong>子宫浆膜甚至母体其他器官</strong>（膀胱、直肠等）。</li>
-</ol></div></div></div>
-<h3 id="胎膜">胎膜 <a class="markdownIt-Anchor" href="#胎膜">#</a></h3>
-<h4 id="胎膜的形成和结构">胎膜的形成和结构 <a class="markdownIt-Anchor" href="#胎膜的形成和结构">#</a></h4>
-<dl>
-<dt><strong>胎膜</strong>（fetal membrane）</dt>
-<dd>由 <a href="?highlight=%E5%B9%B3%E6%BB%91%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C">（平滑）<strong>绒毛膜</strong></a>（chorion）和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a>（amnion）组成，是维持羊膜完整和储存羊水的外周屏障。<br/></dd>
-</dl>
-<p><a href="?highlight=%E7%BB%92%E6%AF%9B%E8%86%9C#%E5%8F%B6%E7%8A%B6%E7%BB%92%E6%AF%9B%E8%86%9C"><strong>绒毛膜</strong></a> 和 <a href="?highlight=%E7%BE%8A%E8%86%9C#%E7%BE%8A%E8%86%9C"><strong>羊膜</strong></a> 分别构成胎膜的外层和内层，胎膜还包括<em>卵黄囊</em>、<a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=尿囊#直肠的发生与泄殖腔的分隔"><em>尿囊</em></a> 和 <a href="#%E8%84%90%E5%B8%A6"><em>脐带</em></a>。</p>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E8%86%9C.png" class="" width="500" title="胎膜" alt="胎膜">
-<h4 id="胎膜的异常">胎膜的异常 <a class="markdownIt-Anchor" href="#胎膜的异常">#</a></h4>
-<dl>
-<dt>胎膜早破（premature rupture of membranes，PROM）</dt>
-<dd>胎膜在临产前破裂。</dd>
-</dl>
-<h3 id="脐带">脐带 <a class="markdownIt-Anchor" href="#脐带">#</a></h3>
-<h4 id="脐带的形成和结构">脐带的形成和结构 <a class="markdownIt-Anchor" href="#脐带的形成和结构">#</a></h4>
-<dl>
-<dt>脐带（umbilical cord）</dt>
-<dd>连接胎儿（腹部脐轮）和胎盘（胎儿面）的条索状结构，妊娠足月时脐带长 30~70 cm，直径 0.8~2.0cm，表面被羊膜覆盖呈灰白色，内有 1 条<em>脐静脉</em>和 2 条<em>脐动脉</em>。</dd>
-</dl>
-<p>脐带由 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=体蒂#胚外中胚层和胚外体腔的形成"><strong>体蒂</strong></a> 发育而来。早期胚胎通过体蒂与绒毛膜相连，而后卵黄囊被推向体蒂，羊膜将体蒂和卵黄囊包绕在一起形成圆柱状的脐带。</p>
-<h4 id="脐带的异常">脐带的异常 <a class="markdownIt-Anchor" href="#脐带的异常">#</a></h4>
-<ol>
-<li>脐带长度异常：脐带过长（≥ 80cm）、脐带过短（≤ 30cm）</li>
-<li><em>脐带先露</em>（隐性脐带脱垂）和<em>脐带脱垂</em></li>
-<li>脐带缠绕</li>
-<li>脐带附着异常</li>
-<li>脐带打结</li>
-<li>脐带扭转</li>
-</ol>
-<h3 id="羊水">羊水 <a class="markdownIt-Anchor" href="#羊水">#</a></h3>
-<dl>
-<dt><strong>羊水</strong>（amniotic fluid）</dt>
-<dd>即充满羊膜腔的液体，其来源、成分和组成在妊娠不同时期均有不同。</dd>
-</dl>
-<h4 id="羊水的来源">羊水的来源 <a class="markdownIt-Anchor" href="#羊水的来源">#</a></h4>
-<ol>
-<li>早期羊水：主要是<strong>母体血清</strong>经<em>胎膜</em>进入羊膜腔的透析液；</li>
-<li>中晚期羊水：主要是<strong>胎儿尿液</strong>。</li>
-</ol>
-<h4 id="羊水的动态平衡">羊水的动态平衡 <a class="markdownIt-Anchor" href="#羊水的动态平衡">#</a></h4>
-<p>母体、羊水、胎儿之间一直进行着双向的水和电解质的交换：</p>
-<ol>
-<li>母体和胎儿：<a href="?highlight=%E8%83%8E%E7%9B%98#%E8%83%8E%E7%9B%98%E7%9A%84%E5%8A%9F%E8%83%BD">胎盘</a>；</li>
-<li>母体和羊水：<a href="?highlight=%E8%83%8E%E8%86%9C#%E8%83%8E%E8%86%9C">胎膜</a>；</li>
-<li>胎儿和羊水：胎儿消化道、呼吸道、泌尿道和角化前的皮肤。</li>
-</ol>
-<h4 id="羊水的功能">羊水的功能 <a class="markdownIt-Anchor" href="#羊水的功能">#</a></h4>
-<ol>
-<li>保护胎儿：
-<ul>
-<li>自由活动，避免胎儿受到挤压，防止胎体畸形和粘连；</li>
-<li>抑菌作用。</li>
-</ul>
-</li>
-<li>保护母体：
-<ul>
-<li>减少胎动引起的不适感；</li>
-<li>临产后扩张宫颈口和阴道；</li>
-<li>冲洗和润滑阴道。</li>
-</ul>
-</li>
-</ol>
-<h4 id="羊水量的异常">羊水量的异常 <a class="markdownIt-Anchor" href="#羊水量的异常">#</a></h4>
-<ol>
-<li><strong>羊水过多</strong>（polyhydramnios）：&gt; 2000ml
-<ul>
-<li>可引起<em>胎儿畸形</em>，中枢神经系统和消化道畸形最常见；</li>
-<li>常见于 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=无脑儿#神经管的形成和分化"><strong>无脑儿</strong></a>，也可由食管闭锁和小肠高位闭锁引起，<em>双胎妊娠</em>羊水过多的发生率约为单胎妊娠的 10 倍。</li>
-</ul>
-</li>
-<li><strong>羊水过少</strong>（oligohydramnios）：&lt; 300ml
-<ul>
-<li>可由<em>胎儿泌尿系统畸形</em>和<em>胎膜早破</em>引起；</li>
-<li>胎儿泌尿系统畸形、<strong>过期妊娠</strong>、胎盘功能减退、羊膜病变、<a href="?highlight=%E8%83%8E%E8%86%9C%E6%97%A9%E7%A0%B4#%E8%83%8E%E8%86%9C%E7%9A%84%E5%BC%82%E5%B8%B8">胎膜早破</a> 可引起羊水过少；</li>
-<li><strong>羊膜带综合征</strong>。</li>
-</ul>
-</li>
-</ol>
-<dl>
-<dt>羊膜带综合征（amniotic band syndrome）</dt>
-<dd>孕妇腹围宫高小于同期妊娠者，若在妊娠早期以发生过<em>羊水过少</em>，常使羊膜粘在胎儿肢体上，造成胎儿畸形甚至肢体短缺。</dd>
-</dl>
-<h2 id="生殖系统发育">生殖系统发育 <a class="markdownIt-Anchor" href="#生殖系统发育">#</a></h2>
-<h3 id="生殖腺的发育">生殖腺的发育 <a class="markdownIt-Anchor" href="#生殖腺的发育">#</a></h3>
-<dl>
-<dt>生殖嵴（gonadal ridge）</dt>
-<dd><strong>生殖腺的原基</strong>（primordium of gonad），位于胚体正中线两侧、中肾嵴和背系膜之间的一对纵嵴，由体腔上皮的增生和深面 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/#中胚层分化">间充质</a> 的聚集而形成。</dd>
-<dt>初级性索（primary sex cord）</dt>
-<dd>生殖嵴表面的上皮增生穿入到深面的 <a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/?highlight=间充质#中胚层的分化">间充质</a> 内，形成的若干不规则的细胞索。</dd>
-</dl>
-<ul>
-<li>第 4 周，<a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/#羊膜囊和卵黄囊的形成">卵黄囊</a> 出现<strong>原始生殖细胞</strong>（primordial germ cell）；</li>
-<li>第 6 周，原始生殖细胞迁入<strong>初级性索</strong>。此时不能分辨性腺是睾丸还是卵巢，因此称为<strong>未分化性腺</strong>。</li>
-</ul>
-<dl>
-<dt><mark>Y 染色体的性别决定区</mark>（sex determining region of Y chromosome, <mark><abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr></mark>）</dt>
-<dd>Y 染色体上的一段非同源区段，目前被认为真正决定性别。</dd>
-</dl>
-<p>生殖腺分化（原始生殖腺有向卵巢发育的趋势）：</p>
-<ul>
-<li>男性 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr>(+) 且表达 → <a href="#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">睾丸</a></li>
-<li>女性 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr>(-) → <a href="#%E5%8D%B5%E5%B7%A2%E7%9A%84%E5%8F%91%E7%94%9F">卵巢</a></li>
-</ul>
-<h4 id="睾丸的发生">睾丸的发生 <a class="markdownIt-Anchor" href="#睾丸的发生">#</a></h4>
-<p>初级性索 → 睾丸索 → 生精小管</p>
-<dl>
-<dt>睾丸索（testicular cord）| 曲精索</dt>
-<dd>第 7~8 周时，在 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr> 基因的作用下，初级性索与表面上皮分离，向生殖腺嵴深处生长，形成的许多界限清楚的、相互吻合的细胞索。</dd>
-</dl>
-<p>睾丸索进一步分化形成的襻状的<strong>生精小管</strong>（seminiferous tubules），其末端相互连接，形成<strong>睾丸网</strong>（rete testis）。</p>
-<p>睾丸内的细胞分化</p>
-<ul>
-<li>生精小管间
-<ul>
-<li>间充质细胞 → <strong>睾丸间质细胞</strong></li>
-</ul>
-</li>
-<li>生精小管腔
-<ul>
-<li>初级性索 → <strong>支持细胞</strong>（Sertoli 细胞）</li>
-<li>原始生殖细胞 → <strong>精原细胞</strong>（spermatogonium）</li>
-</ul>
-</li>
-</ul>
-<dl>
-<dt>睾丸间质细胞 | Leydig 细胞</dt>
-<dd>分散在生精小管之间的<strong>间充质细胞</strong>分化而来，分泌<strong>雄激素</strong>，促进尿道生殖窦和<strong>中肾管</strong>向男性生殖管道分化。</dd>
-</dl>
-<p>人胚 14~18 周，间质细胞占睾丸体积一般以上，随后迅速减少，出生时几乎见不到间质细胞，直至青春期才重现。</p>
-<details class="note info "><summary><p>雄激素</p>
-</summary>
-      <dl>
-<dt>雄激素（androgen, androgenic hormones, testoids）| 雄性激素 | 男性荷尔蒙</dt>
-<dd>系泛称，指任何能与<strong>雄激素受体</strong>（androgen receptor）结合，调节脊椎动物雄性性征的发育与维持的<strong>类固醇激素</strong>。</dd>
-</dl>
-<p>男性体内的主要雄激素为<strong>睾酮</strong>和<strong>双氢睾酮</strong>。</p>
-
-    </details>
-<dl>
-<dt>支持细胞 | Sertoli 细胞</dt>
-<dd>由<strong>初级性索</strong>分化形成，分泌<strong>抗 Müllerian 激素</strong>，对<strong>中肾旁管</strong>起抑制作用。</dd>
-</dl>
-<p>另见：<a href="#%E7%94%B7%E6%80%A7%E5%86%85%E7%94%9F%E6%AE%96%E5%99%A8">男性内生殖器</a>。</p>
-<h4 id="卵巢的发生">卵巢的发生 <a class="markdownIt-Anchor" href="#卵巢的发生">#</a></h4>
-<p>卵巢的发生比睾丸晚 2 周，是原始生殖腺分化的自然趋势。</p>
-<dl>
-<dt>次级性索（secondary sex cord）| 皮质索（cortical cord）</dt>
-<dd>第 10 周时，由于无 <abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr> 基因的作用，<a href="?highlight=%E5%88%9D%E7%BA%A7%E6%80%A7%E7%B4%A2#%E7%94%9F%E6%AE%96%E8%85%BA%E7%9A%84%E5%8F%91%E8%82%B2"><strong>初级性索</strong></a> 退化消失，性腺表面上皮细胞继续增生，形成<strong>次级性索</strong>。</dd>
-</dl>
-<ul>
-<li>次级性腺/皮质索 → 原始卵泡的<strong>卵泡细胞</strong></li>
-<li>原始生殖细胞 → <strong>卵原细胞</strong></li>
-<li>间充质 → <strong>卵巢间质</strong></li>
-</ul>
-<dl>
-<dt>原始卵泡（primordial ovarian folliele）</dt>
-<dd><strong>皮质索</strong>断裂形成的细胞团。</dd>
-<dd>周围的<strong>卵泡细胞</strong>由<strong>皮质索</strong>的细胞分化形成；中心的<strong>卵原细胞</strong>（oogonium）由<strong>原始生殖细胞</strong>分化而来。</dd>
-</dl>
-<h3 id="内生殖器的发育">内生殖器的发育 <a class="markdownIt-Anchor" href="#内生殖器的发育">#</a></h3>
-<p>在第 6 周的未分化期，男性和女性均有两套生殖管道——<strong>中肾管</strong>、<strong>中肾旁管</strong>。</p>
-<dl>
-<dt>中肾管（mesonephric duct）| Wolfian 管</dt>
-<dd>在中肾退化时，保留下来形成男性生殖管道。</dd>
-<dt>中肾旁管（paramesonephric duct）| Müllerian 管</dt>
-<dd>开口于<strong>窦结节</strong>（sinus tubercle, Müllerian 结节），将来发育成为女性生殖管道。</dd>
-</dl>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%88%86%E5%8C%96.png" class="" width="500" title="生殖管道的分化" alt="生殖管道的分化">
-<h4 id="男性内生殖器">男性内生殖器 <a class="markdownIt-Anchor" href="#男性内生殖器">#</a></h4>
-<ul>
-<li>支持细胞<strong>抗 Müllerian 激素</strong>：中肾旁管 → 退化</li>
-<li>睾丸间质细胞 <a href="?highlight=%E9%9B%84%E6%BF%80%E7%B4%A0#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">雄激素</a>：中肾管（和部分未退化的中肾小管）→ 副睾管、输精管</li>
-</ul>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%B7%E6%80%A7%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%8F%91%E8%82%B2.png" class="" title="男性生殖管道的发育" alt="男性生殖管道的发育">
-<p>另见：<a href="#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">睾丸的发生</a>。</p>
-<dl>
-<dt>抗 Müllerian 激素（anti-Müllerian hormone，<abbr title="anti-Müllerian hormone, 抗 Müllerian 激素">AMH</abbr>）| Müllerian 抑制因子（Müllerian inhibiting factor, <abbr title="Müllerian inhibiting factor, Müllerian 抑制因子">MIF</abbr>）</dt>
-<dd>由<strong>支持细胞</strong>产生，抑制中肾旁管，使其逐渐退化。</dd>
-</dl>
-<h4 id="女性内生殖器">女性内生殖器 <a class="markdownIt-Anchor" href="#女性内生殖器">#</a></h4>
-<p>无抗 Müllerian 激素和雄激素的作用</p>
-<ul>
-<li>中肾管退化</li>
-<li>中肾旁管发育
-<ul>
-<li>上段、中段 → 输卵管（uterine tube）</li>
-<li>下段 → 合并成子宫</li>
-<li>副中肾管最尾端 → 阴道板（vaginal plate）</li>
-</ul>
-</li>
-</ul>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E5%A5%B3%E6%80%A7%E7%94%9F%E6%AE%96%E7%AE%A1%E9%81%93%E7%9A%84%E5%8F%91%E8%82%B2.png" class="" title="女性生殖管道的发育" alt="女性生殖管道的发育">
-<h4 id="内生殖腺发育异常">内生殖腺发育异常 <a class="markdownIt-Anchor" href="#内生殖腺发育异常">#</a></h4>
-<ol>
-<li>睾丸发育异常
-<ol>
-<li>先天性睾丸缺如（congenital absence of testis）</li>
-<li><strong>隐睾</strong></li>
-<li>异位睾丸（ectopic testis）</li>
-</ol>
-</li>
-<li><strong>先天性腹股沟疝</strong>和<strong>阴囊积水</strong></li>
-<li>阴道发育异常</li>
-<li>子宫发育异常</li>
-</ol>
-<dl>
-<dt>隐睾（cryptorchidism）</dt>
-<dd>睾丸未下降至阴囊，多停留在腹腔或腹股沟等处，65% 的患者伴有<em>先天性腹股沟疝</em>。</dd>
-<dt>先天性腹股沟疝（congenital inguinal hernia）</dt>
-<dd>腹膜腔和<em>鞘膜腔</em>之间的通路未闭合，腹压升高时，肠管可突入鞘膜腔。</dd>
-<dd>新生儿腹股沟疝常有鞘膜积液，可致<strong>阴囊积水</strong>（scrotal hydrocele）。</dd>
-</dl>
-<h3 id="外生殖器的发育">外生殖器的发育 <a class="markdownIt-Anchor" href="#外生殖器的发育">#</a></h3>
-<p>胚胎第 3 周，起源于原条区域的间充质细胞迁移到泄殖腔膜周围，形成头尾方向的 2 条隆起，称<strong>泄殖腔褶</strong>。</p>
-<dl>
-<dt>生殖结节（genital tubercle）</dt>
-<dd>胚胎第 5 周初，<em>泄殖腔褶</em>在紧靠泄殖腔膜的头端联合形成的结节。</dd>
-<dt>尿生殖褶（urogenital fold）</dt>
-<dd>在第 6 周由部分<em>泄殖腔褶</em>分化而来的两条纵行隆起。</dd>
-</dl>
-<p>尿生殖褶中间的凹陷称<strong>尿生殖沟</strong>，沟底为<strong>尿生殖膜</strong>。<br/>
-<strong>尿生殖膜</strong>于第 7~9 周破裂，之后形成<strong>尿道沟</strong>，正常情况下最终愈合。</p>
-<dl>
-<dt>阴唇阴囊隆起（labioscrotal swelling）</dt>
-<dd>第 7~9 周时，在<strong>尿生殖褶</strong>外侧又形成的两条纵行隆起。</dd>
-</dl>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E6%9C%AA%E5%88%86%E5%8C%96%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="500" title="未分化外生殖器" alt="未分化外生殖器">
-<h4 id="男性外生殖器的发育">男性外生殖器的发育 <a class="markdownIt-Anchor" href="#男性外生殖器的发育">#</a></h4>
-<p>在睾丸产生的 <a href="?highlight=%E9%9B%84%E6%BF%80%E7%B4%A0#%E7%9D%BE%E4%B8%B8%E7%9A%84%E5%8F%91%E7%94%9F">雄激素</a> 作用下：</p>
-<ul>
-<li>间充质细胞 → <strong>泄殖腔褶</strong> →
-<ul>
-<li>生殖结节 → <strong>阴茎</strong>（penis）</li>
-<li>尿生殖褶 → 尿道<strong>海绵体</strong>部</li>
-</ul>
-</li>
-<li>阴唇阴囊隆起 → <strong>阴囊</strong>（scrotum）</li>
-</ul>
-<p><mark>5α 二氢睾酮</mark> 对男性外阴的形成至关重要，其受体的缺陷将导致 <a href="?highlight=%E7%9D%BE%E4%B8%B8%E5%A5%B3%E6%80%A7%E5%8C%96%E7%BB%BC%E5%90%88%E5%BE%81#%E5%81%87%E4%B8%A4%E6%80%A7%E7%95%B8%E5%BD%A2">睾丸女性化综合征</a>。</p>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E7%94%B7%E6%80%A7%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="500" title="男性外生殖器" alt="男性外生殖器">
-<h4 id="女性外生殖器的发育">女性外生殖器的发育 <a class="markdownIt-Anchor" href="#女性外生殖器的发育">#</a></h4>
-<p>外生殖器向女性方向分化，是胚胎发育的<em>自然趋势</em>，不需要雌激素的作用。</p>
-<ul>
-<li>生殖结节 → <strong>阴蒂</strong>（clitoris）</li>
-<li>尿生殖褶 → <strong>小阴唇</strong>（labia minora）</li>
-<li>阴囊阴唇隆起 → <strong>大阴唇</strong>（labia majora）</li>
-</ul>
-<img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E5%A5%B3%E6%80%A7%E5%A4%96%E7%94%9F%E6%AE%96%E5%99%A8.png" class="" width="600" title="女性外生殖器" alt="女性外生殖器">
-<h4 id="外生殖器发育异常">外生殖器发育异常 <a class="markdownIt-Anchor" href="#外生殖器发育异常">#</a></h4>
-<dl>
-<dt>尿道下裂（hypospadias）</dt>
-<dd>左右<strong>尿生殖褶</strong>不闭合或闭合不全，导致尿道外口不在阴茎顶端而在阴茎<em>腹侧</em>。</dd>
-</dl>
-<h3 id="性别发育异常">性别发育异常 <a class="markdownIt-Anchor" href="#性别发育异常">#</a></h3>
-<ul>
-<li>原始生殖腺的决定因素
-<ul>
-<li><strong><abbr title="sex determining region of Y chromosome，Y 染色体的性别决定区">SRY</abbr></strong> 基因：决定睾丸的形成</li>
-<li>其他基因</li>
-</ul>
-</li>
-<li>性器官分化的决定因素
-<ul>
-<li>内生殖器：<strong>睾酮</strong>、<abbr title="anti-Müllerian hormone, 抗 Müllerian 激素">AMH</abbr>/<abbr title="Müllerian inhibiting factor, Müllerian 抑制因子">MIF</abbr>、雌激素</li>
-<li>外生殖器：<strong>双氢睾酮</strong>（<abbr title="双氢睾酮">DHT</abbr>）</li>
-</ul>
-</li>
-</ul>
-<dl>
-<dt>双氢睾酮（<abbr title="双氢睾酮">DHT</abbr>）</dt>
-<dd>由男性外生殖器通过 <strong>5α-还原酶</strong>将<strong>睾酮</strong>还原形成，使外阴向男性分化。</dd>
-</dl>
-<hr />
-<dl>
-<dt>性别发育异常 | 两性畸形</dt>
-<dd>患者的性腺或其内外生殖器、副性征具有不同程度的两性特征。</dd>
-</dl>
-<h4 id="真两性畸形">真两性畸形 <a class="markdownIt-Anchor" href="#真两性畸形">#</a></h4>
-<dl>
-<dt>真两性畸形（true hermaphrodite）</dt>
-<dd>同时具有卵巢和睾丸两种性腺或者<strong>卵巢睾</strong>（ovotestis）。</dd>
-</dl>
-<h4 id="假两性畸形">假两性畸形 <a class="markdownIt-Anchor" href="#假两性畸形">#</a></h4>
-<dl>
-<dt>假两性畸形（pseudohermaphrodite）</dt>
-<dd>核型和性腺只有一种，外生殖器或副性征有两性特征或畸形。</dd>
-</dl>
-<hr />
-<p><strong>男性假两性畸形</strong>：核型为 46,XY，内生殖腺只有睾丸</p>
-<ul>
-<li>雄激素不敏感综合征</li>
-<li>5α-还原酶缺陷：影响 <a href="?highlight=%E5%8F%8C%E6%B0%A2%E7%9D%BE%E9%85%AE#%E6%80%A7%E5%88%AB%E5%8F%91%E8%82%B2%E5%BC%82%E5%B8%B8">双氢睾酮</a> 形成</li>
-</ul>
-<dl>
-<dt>雄激素不敏感综合征（testicular feminization syndrome） | 睾丸女性化综合征（androgen insensitive syndrome）</dt>
-<dd>睾丸分泌雄激素，但是体细胞雄性激素受体合成缺陷，不能使生殖器男性化。</dd>
-</dl>
-<hr />
-<p><strong>女性假两性畸形</strong>：核型为 46,XX，内生殖腺只有卵巢</p>
-<ul>
-<li>先天性肾上腺皮质增生症</li>
-<li>母体高雄激素血症</li>
-</ul>
-<dl>
-<dt>先天性肾上腺皮质增生症（congenital adrenal hyperplasia, <abbr title="congenital adrenal hyperplasia，先天性肾上腺皮质增生症">CAH</abbr>）</dt>
-<dd>由于肾上腺多种合成皮质醇的酶缺陷，导致雄激素大量分泌而表现为外生殖器男性化。</dd>
-</dl>
-<dl>
-<dt>母体高雄激素血症</dt>
-<dd>孕期母亲血液雄激素水平高引起。</dd>
-<dd>无需激素治疗，只需外科手术校正外生殖器畸形。</dd>
-</dl>
-<h4 id="性逆转综合征">性逆转综合征 <a class="markdownIt-Anchor" href="#性逆转综合征">#</a></h4>
-<dl>
-<dt>性逆转综合征（sex reversal syndrome）| 性反转综合征</dt>
-<dd>染色体核型与性表型相反。</dd>
-</dl>
-<ul>
-<li>46,XX 男性：临床症状类似于 Klinefelter 综合征（见 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/?highlight=Klinefelter#常见性染色体异常综合征">常见性染色体异常综合征</a>）</li>
-<li>46,XY 女性</li>
-</ul>
-<h3 id="生殖内分泌">生殖内分泌 <a class="markdownIt-Anchor" href="#生殖内分泌">#</a></h3>
-<ul>
-<li>下丘脑：促性腺激素释放激素（GnRH）</li>
-<li>垂体前叶：促性腺激素，如卵泡刺激素（FSH）、黄体生成素（LH）</li>
-<li>睾丸（男性）；卵巢（女性）/ 胎盘（孕期）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>病原生物学</title>
     <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
     <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<em>生物学规律</em>、<em>致病机制</em>及 <em>其和宿主之间相互作用</em>的学科。</p>
@@ -8104,8 +8016,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ol>
 <span id="more"></span>
 <details class="note default "><summary><p>病原生物学分类（TOC）</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">呼吸道感染病毒</a></li>
 <li><a href="/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">消化道感染病毒</a></li>
 <li><a href="/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/">肝炎病毒</a></li>
@@ -8114,13 +8025,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><a href="/2021/05/20/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/">逆转录病毒</a></li>
 <li><a href="/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/">其他病毒</a></li>
 </ol>
-
-    </details>
+</details>
 <details class="note info titled"><summary><p>病毒是生命吗？</p>
-</summary>
-      <div class='note-title' id='病毒是生命吗？' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      病毒是生命吗？
-    </div><p><strong>什么是生命？</strong></p>
+</summary><div class='note-title' id='病毒是生命吗？' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">病毒是生命吗？</div><p><strong>什么是生命？</strong></p>
 <ol>
 <li>复制、增殖；</li>
 <li>进行新陈代谢：
@@ -8136,11 +8043,8 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>病毒不是生命</strong>——大多数科学家普遍认为它们是<strong>非生命感染颗粒</strong>；另外的科学家则表示异议，他们因为病毒在宿主细胞内的活动而认为病毒是活的。</li>
 <li><strong>病毒是生物</strong>——生物分为六个届：病毒届、真菌届、原核生物届、原生生物届、植物届和动物届。</li>
 </ul>
-
-    </details>
-<div class="note info titled"><div class='note-title' id='亚病毒' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-      亚病毒
-    </div><dl>
+</details>
+<div class="note info titled"><div class='note-title' id='亚病毒' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">亚病毒</div><dl>
 <dt>亚病毒（subvirus）</dt>
 <dd>一些新的非寻常病毒的致病因子，为比病毒更小、结构更简单的微生物。</dd>
 </dl>
@@ -8268,11 +8172,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>即病毒利用宿主细胞提供的低分子物质大量合成病毒<strong>核酸</strong>和<strong>结构蛋白</strong>。</dd>
 </dl>
 <details class="note info "><summary><p>隐蔽期</p>
-</summary>
-      <p>用血清学方法和电镜检查宿主细胞，在生物合成阶段找不到病毒颗粒，故称为隐蔽期。
+</summary><p>用血清学方法和电镜检查宿主细胞，在生物合成阶段找不到病毒颗粒，故称为隐蔽期。
 实质是在病毒基因控制下进行病毒核酸和蛋白质合成的阶段。</p>
-
-    </details>
+</details>
 <p>病毒合成的蛋白质：</p>
 <ul>
 <li>转录早期 mRNA → <strong>早期蛋白</strong>：是在病毒核酸复制之前合成的，主要为用于合成子代 DNA 分子的多种酶类，为<strong>功能性蛋白</strong>；</li>
@@ -8290,11 +8192,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ol>
 <p><strong>双链 RNA（dsDNA）病毒</strong>在细胞核内合成 DNA，细胞质内合成病毒蛋白，<strong>痘病毒</strong>除外。</p>
 <details class="note  "><summary><p>痘病毒科</p>
-</summary>
-      <p>本科为病毒粒最大的一类DNA病毒，结构复杂。
+</summary><p>本科为病毒粒最大的一类DNA病毒，结构复杂。
 病毒在<strong>细胞质</strong>内增殖，形成包涵体，病毒粒由微绒毛或由细胞裂解而释放。</p>
-<pre><code>&lt;/details&gt;
-</code></pre>
+</details>
 <p><strong>单正链 RNA 病毒</strong>这类病毒本身就具有 mRNA 的功能。</p>
 <p><strong>逆转录病毒</strong>核酸以单正链 RNA 形式存在，但不具 mRNA 功能，只能作为逆转录的模版。</p></div>
 <h4 id="组装-成熟-释放">组装、成熟、释放 <a class="markdownIt-Anchor" href="#组装-成熟-释放">#</a></h4>
@@ -8506,13 +8406,11 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
     <title>真菌</title>
     <url>/2021/03/21/%E7%9C%9F%E8%8F%8C/</url>
     <content><![CDATA[<details class="note default "><summary><p>病原生物学分类（TOC）</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><a href="">皮肤及皮下组织感染真菌</a></li>
 <li><a href="">深部感染真菌</a></li>
 </ol>
-
-    </details>
+</details>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -9104,16 +9002,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <p><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/"><strong>螺旋体</strong></a> 也属于广义的细菌学范畴。</p>
 <details class="note default "><summary><p>病原生物学分类（TOC）</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/">化脓性细菌</a></li>
 <li><a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/">消化道感染细菌</a></li>
 <li><a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/">呼吸道感染细菌</a></li>
 <li><a href="/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/">厌氧性细菌</a></li>
 <li><a href="/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/">动物源性细菌</a></li>
 </ol>
-
-    </details>
+</details>
 <h2 id="细菌的结构">细菌的结构 <a class="markdownIt-Anchor" href="#细菌的结构">#</a></h2>
 <ul>
 <li>基本结构（各种细菌共有的结构）：<a href="#%E7%BB%86%E8%83%9E%E5%A3%81">细胞壁</a>、<a href="#%E7%BB%86%E8%83%9E%E8%86%9C">细胞膜</a>、<a href="#%E7%BB%86%E8%83%9E%E8%B4%A8">细胞质</a>、<a href="#%E6%A0%B8%E8%B4%A8">核质</a></li>
@@ -9793,14 +9689,12 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <h2 id="乙型肝炎病毒">乙型肝炎病毒 <a class="markdownIt-Anchor" href="#乙型肝炎病毒">#</a></h2>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <details class="note success "><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><strong>大球形颗粒</strong>：即 <strong>Dane 颗粒</strong>，为 HBV 的完整<strong>病毒体</strong></li>
 <li><strong>小球形颗粒</strong>：HBV 增殖合成过剩的 <strong><mark>HBsAg</mark></strong>（乙型肝炎病毒的<strong>表面抗原</strong>，即包膜上的糖蛋白）</li>
 <li><strong>管形颗粒</strong>：<strong>小球形颗粒的串联物</strong></li>
 </ol>
-
-    </details>
+</details>
 <ul>
 <li>形态结构：核酸为 DNA，有双层衣壳［<strong>外衣壳</strong>（相当于包膜）、内衣壳］
 <ul>
@@ -9819,8 +9713,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>抵抗力：强，强于甲型肝炎病毒</li>
 </ul>
 <details class="note success "><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
-</summary>
-      <p class="align-text-center table-caption ">
+</summary><p class="align-text-center table-caption ">
       乙型肝炎病毒基因组的结构及其功能
     </p>
 <table>
@@ -9857,11 +9750,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <blockquote>
 <p>HBxAg 为反式激活蛋白，是一种致癌蛋白，与原发性肝癌发生发展有关，不作为临床血清学诊断。</p>
 </blockquote>
-
-    </details>
+</details>
 <details class="note success "><summary><p>HBV 的三个重要抗原及其意义</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><strong>HbsAg</strong>：
 <ul>
 <li>划分亚型：adr/adw、ayr/ayw，a 为共同抗原决定簇，d/y、w/r 为亚型决定簇，一对亚型决定簇之间互斥</li>
@@ -9871,15 +9762,13 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>HBcAg</strong>：可在感染的肝细胞表面表达，为 CD8<sup>+</sup>T 细胞作用的靶抗原</li>
 <li><strong>HBeAg</strong>：消长与病毒体及 DNA 聚合酶的消长一致，可作为体内有 HBV 复制及血清具有强感染性的指标</li>
 </ol>
-
-    </details>
+</details>
 <h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
 <ul>
 <li>所致疾病：乙型肝炎（血清型肝炎），慢性肝炎 → 肝硬化 → 肝癌</li>
 </ul>
 <details class="note success "><summary><p>HBV 的传染源及传播途径</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>传染源：<strong>乙肝患者</strong>和<strong>表面抗原阳性阳性的携带者</strong></li>
 <li>传播途径：
 <ol>
@@ -9889,11 +9778,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ol>
 </li>
 </ul>
-
-    </details>
+</details>
 <details class="note success "><summary><p>HBV 感染的常见临床表现类型</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><strong>急性肝炎</strong>：1% 黄疸性肝炎患者发生重症肝炎</li>
 <li><strong>慢性肝炎</strong>：5%~10% 的 HBV 感染者，其中 10% 转变为肝硬化，并继而发展为肝功能衰竭</li>
 <li><strong>原发性肝细胞癌</strong>：80% 归因于慢性肝炎</li>
@@ -9902,8 +9789,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <blockquote>
 <p>临床表现主要由肝细胞是否裂解决定。</p>
 </blockquote>
-
-    </details>
+</details>
 <h3 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h3>
 <ul>
 <li>细胞免疫：CD8<sup>+</sup>T 细胞</li>
@@ -9911,8 +9797,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
 <details class="note success "><summary><p>HBV 感染的血清学检测指标及其意义</p>
-</summary>
-      <p class="align-text-center table-caption ">
+</summary><p class="align-text-center table-caption ">
       两对半抗原抗体检测系统（肝炎五项）
     </p>
 <table>
@@ -10002,8 +9887,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </tr>
 </tbody>
 </table>
-
-    </details>
+</details>
 <div class="note default "><p>肝炎八项还包括甲肝、丙肝、戊肝各一项。</p>
 </div>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
@@ -10340,14 +10224,12 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <li>形态与结构：<strong>分节段 RNA，有包膜</strong></li>
 </ul>
 <details class="note success "><summary><p>汉坦病毒的核酸片段与功能</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><strong>L</strong>（large）片段：编码 <strong>RNA 聚合酶</strong>（L）</li>
 <li><strong>M</strong>（middle）片段：编码<strong>糖蛋白</strong>（G1、G2）</li>
 <li><strong>S</strong>（small）片段：编码<strong>核蛋白</strong>（N）</li>
 </ol>
-
-    </details>
+</details>
 <ul>
 <li>抗原结构和分型：分为 6 个血清型，我国流行两个型：
 <ul>
@@ -10358,8 +10240,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 </ul>
 <h4 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h4>
 <details class="note success "><summary><p>汉坦病毒的传染源及传播途径</p>
-</summary>
-      <ul>
+</summary><ul>
 <li>传染源：多种啮齿动物（姬鼠、田鼠）</li>
 <li>传播途径
 <ul>
@@ -10369,8 +10250,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 </ul>
 </li>
 </ul>
-
-    </details>
+</details>
 <p>所致疾病：</p>
 <ul>
 <li><strong>肾病综合症出血热</strong>（<mark>HRFS</mark>）：<span class="horizontal-list"><span class="horizontal-list-item"><strong>出血现象</strong> <strong>发热</strong> <strong>肾损害</strong></span></span></li>
@@ -10568,14 +10448,12 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <dd><strong>莱姆病</strong>病原体存在异质性，分类尚未统一，目前将伯氏疏螺旋体作为<strong>莱姆病</strong>病原体的统称。</dd>
 </dl>
 <details class="note info "><summary><p>疏螺旋菌体属</p>
-</summary>
-      <dl>
+</summary><dl>
 <dt>疏螺旋菌体属（Borrelia）| 包柔螺旋菌体属</dt>
 <dd>有 3~10 个稀疏而不规则的螺旋，呈波状。</dd>
 <dd>对人体致病的主要有 <a href="#%E4%BC%AF%E6%B0%8F%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93"><strong>伯氏疏螺旋体</strong></a> 和 <a href="#%E5%9B%9E%E5%BD%92%E7%83%AD%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93"><strong>回归热疏螺旋体</strong></a>，它们均通过<strong>吸血昆虫</strong>传播，分别致<strong>莱姆病</strong>和<strong>回归热</strong>。</dd>
 </dl>
-
-    </details>
+</details>
 <h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
 <ul>
 <li>形态：疏螺旋体，两端稍尖，运动活泼</li>
@@ -10913,23 +10791,19 @@ C3，在多种辅助因子的参与下激活补体。</p>
 </li>
 </ul>
 <details class="note success "><summary><p>gp120 的功能</p>
-</summary>
-      <ol>
+</summary><ol>
 <li>识别并结合靶细胞膜上的 CD4 分子；</li>
 <li>具有抗原性，可刺激机体产生保护性抗体；</li>
 <li>对应基因（<em>env</em>）易变异，有利于病毒的免疫逃逸。</li>
 </ol>
-
-    </details>
+</details>
 <details class="note success "><summary><p>HIV 的结构基因及其功能</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><em><strong>gap</strong></em>：p17、p24、p7</li>
 <li><em><strong>pol</strong></em>：逆转录酶、整合酶、蛋白酶</li>
 <li><em><strong>env</strong></em>：gp120、gp41</li>
 </ol>
-
-    </details>
+</details>
 <h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
 <div class="note success "><ul>
 <li>传染源：<span class="horizontal-list"><span class="horizontal-list-item">AIDS 患者</span><span class="horizontal-list-item">HIV 感染者</span></span>；</li>
@@ -10937,18 +10811,15 @@ C3，在多种辅助因子的参与下激活补体。</p>
 </ul>
 </div>
 <details class="note success "><summary><p>HIV 感染的临床过程及其特点</p>
-</summary>
-      <ol>
+</summary><ol>
 <li><strong>HIV 感染急性期</strong>：持续时间短暂，表现为发热、皮疹淋巴结肿大等<strong>非特异性症状</strong>；</li>
 <li><strong>潜伏期</strong>：持续时间可达 2~10 年或更久，感染者没有临床症状，病毒在淋巴结内进行低水平增殖，并释放少量病毒入血，患者血液具有传染性；</li>
 <li><strong>艾滋病相关综合征</strong>：时间较短，患者表现为<strong>持续性</strong>的发热、腹泻、淋巴结肿大；</li>
 <li><strong>典型 AIDS 期</strong>：患者血中能稳定检出高水平 HIV，患者血中 CD4<sup>+</sup>T 细胞明显下降，引起严重免疫缺陷，合并各种机会性感染。</li>
 </ol>
-
-    </details>
+</details>
 <details class="note success "><summary><p>典型 AIDS 期的基本特征</p>
-</summary>
-      <ol>
+</summary><ol>
 <li>患者血中 CD4<sup>+</sup>T 细胞明显下降，引起严重免疫缺陷；</li>
 <li>严重机会性感染：
 <ol>
@@ -10961,8 +10832,7 @@ C3，在多种辅助因子的参与下激活补体。</p>
 <li>机会性肿瘤，如 <a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=卡波济肉瘤#">卡波济肉瘤</a>、恶性淋巴瘤；</li>
 <li>全身症状加重或神经系统疾患。</li>
 </ol>
-
-    </details>
+</details>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
 <div class="note success "><ol>
 <li>初筛：用 <strong>ELISA 法</strong>对抗抗体进行初筛</li>
@@ -11267,8 +11137,7 @@ C3，在多种辅助因子的参与下激活补体。</p>
 在<strong>皮质反应</strong>中，精子穿入点处的皮质颗粒首先与细胞膜融合，随后迅速波及整个卵细胞表面。皮质颗粒中各种蛋白水解酶、结构蛋白和粘多糖等释放到达透明带，使其结构发生变化并分解其中的
 ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</strong>）。</p>
 <details class="note info "><summary><p>卵膜、透明带和卵黄膜</p>
-</summary>
-      <dl>
+</summary><dl>
 <dt>卵膜（egg membrane）</dt>
 <dd>包裹于动物卵细胞的非细胞性被膜的总称。</dd>
 <dd>根据卵膜来源，可将其分为三类：
@@ -11288,8 +11157,7 @@ ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</stro
 <dd>与雌配子在哺乳动物卵巢中的发育密切相关的一种体细胞。</dd>
 <dd>在卵泡发育过程中，颗粒细胞发育形成排卵前卵泡中卵母细胞周围的卵丘细胞。</dd>
 </dl>
-
-    </details>
+</details>
 <p>受精的意义：</p>
 <ol>
 <li>受精卵形成新个体；</li>
@@ -11460,6 +11328,11 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>About Me</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
@@ -11501,11 +11374,6 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
@@ -11540,6 +11408,627 @@ plate）。<br/>
 <p>Enjoy it!</p>
 <h2 id="update">Update <a class="markdownIt-Anchor" href="#update">#</a></h2>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/<span class="built_in">source</span>/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.js</url>
+    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+"use strict";
+
+// eslint-disable-next-line no-var
+var FontInspector = (function FontInspectorClosure() {
+  let fonts;
+  let active = false;
+  const fontAttribute = "data-font-name";
+  function removeSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "";
+    }
+  }
+  function resetSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "debuggerHideText";
+    }
+  }
+  function selectFont(fontName, show) {
+    const divs = document.querySelectorAll(
+      `span[${fontAttribute}=${fontName}]`
+    );
+    for (const div of divs) {
+      div.className = show ? "debuggerShowText" : "debuggerHideText";
+    }
+  }
+  function textLayerClick(e) {
+    if (
+      !e.target.dataset.fontName ||
+      e.target.tagName.toUpperCase() !== "SPAN"
+    ) {
+      return;
+    }
+    const fontName = e.target.dataset.fontName;
+    const selects = document.getElementsByTagName("input");
+    for (let i = 0; i < selects.length; ++i) {
+      const select = selects[i];
+      if (select.dataset.fontName !== fontName) {
+        continue;
+      }
+      select.checked = !select.checked;
+      selectFont(fontName, select.checked);
+      select.scrollIntoView();
+    }
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "FontInspector",
+    name: "Font Inspector",
+    panel: null,
+    manager: null,
+    init: function init(pdfjsLib) {
+      const panel = this.panel;
+      const tmp = document.createElement("button");
+      tmp.addEventListener("click", resetSelection);
+      tmp.textContent = "Refresh";
+      panel.appendChild(tmp);
+
+      fonts = document.createElement("div");
+      panel.appendChild(fonts);
+    },
+    cleanup: function cleanup() {
+      fonts.textContent = "";
+    },
+    enabled: false,
+    get active() {
+      return active;
+    },
+    set active(value) {
+      active = value;
+      if (active) {
+        document.body.addEventListener("click", textLayerClick, true);
+        resetSelection();
+      } else {
+        document.body.removeEventListener("click", textLayerClick, true);
+        removeSelection();
+      }
+    },
+    // FontInspector specific functions.
+    fontAdded: function fontAdded(fontObj, url) {
+      function properties(obj, list) {
+        const moreInfo = document.createElement("table");
+        for (let i = 0; i < list.length; i++) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = list[i];
+          tr.appendChild(td1);
+          const td2 = document.createElement("td");
+          td2.textContent = obj[list[i]].toString();
+          tr.appendChild(td2);
+          moreInfo.appendChild(tr);
+        }
+        return moreInfo;
+      }
+      const moreInfo = properties(fontObj, ["name", "type"]);
+      const fontName = fontObj.loadedName;
+      const font = document.createElement("div");
+      const name = document.createElement("span");
+      name.textContent = fontName;
+      const download = document.createElement("a");
+      if (url) {
+        url = /url\(['"]?([^)"']+)/.exec(url);
+        download.href = url[1];
+      } else if (fontObj.data) {
+        download.href = URL.createObjectURL(
+          new Blob([fontObj.data], { type: fontObj.mimeType })
+        );
+      }
+      download.textContent = "Download";
+      const logIt = document.createElement("a");
+      logIt.href = "";
+      logIt.textContent = "Log";
+      logIt.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(fontObj);
+      });
+      const select = document.createElement("input");
+      select.setAttribute("type", "checkbox");
+      select.dataset.fontName = fontName;
+      select.addEventListener("click", function () {
+        selectFont(fontName, select.checked);
+      });
+      font.appendChild(select);
+      font.appendChild(name);
+      font.appendChild(document.createTextNode(" "));
+      font.appendChild(download);
+      font.appendChild(document.createTextNode(" "));
+      font.appendChild(logIt);
+      font.appendChild(moreInfo);
+      fonts.appendChild(font);
+      // Somewhat of a hack, should probably add a hook for when the text layer
+      // is done rendering.
+      setTimeout(() => {
+        if (this.active) {
+          resetSelection();
+        }
+      }, 2000);
+    },
+  };
+})();
+
+let opMap;
+
+// Manages all the page steppers.
+//
+// eslint-disable-next-line no-var
+var StepperManager = (function StepperManagerClosure() {
+  let steppers = [];
+  let stepperDiv = null;
+  let stepperControls = null;
+  let stepperChooser = null;
+  let breakPoints = Object.create(null);
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stepper",
+    name: "Stepper",
+    panel: null,
+    manager: null,
+    init: function init(pdfjsLib) {
+      const self = this;
+      stepperControls = document.createElement("div");
+      stepperChooser = document.createElement("select");
+      stepperChooser.addEventListener("change", function (event) {
+        self.selectStepper(this.value);
+      });
+      stepperControls.appendChild(stepperChooser);
+      stepperDiv = document.createElement("div");
+      this.panel.appendChild(stepperControls);
+      this.panel.appendChild(stepperDiv);
+      if (sessionStorage.getItem("pdfjsBreakPoints")) {
+        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
+      }
+
+      opMap = Object.create(null);
+      for (const key in pdfjsLib.OPS) {
+        opMap[pdfjsLib.OPS[key]] = key;
+      }
+    },
+    cleanup: function cleanup() {
+      stepperChooser.textContent = "";
+      stepperDiv.textContent = "";
+      steppers = [];
+    },
+    enabled: false,
+    active: false,
+    // Stepper specific functions.
+    create: function create(pageIndex) {
+      const debug = document.createElement("div");
+      debug.id = "stepper" + pageIndex;
+      debug.hidden = true;
+      debug.className = "stepper";
+      stepperDiv.appendChild(debug);
+      const b = document.createElement("option");
+      b.textContent = "Page " + (pageIndex + 1);
+      b.value = pageIndex;
+      stepperChooser.appendChild(b);
+      const initBreakPoints = breakPoints[pageIndex] || [];
+      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
+      steppers.push(stepper);
+      if (steppers.length === 1) {
+        this.selectStepper(pageIndex, false);
+      }
+      return stepper;
+    },
+    selectStepper: function selectStepper(pageIndex, selectPanel) {
+      let i;
+      pageIndex = pageIndex | 0;
+      if (selectPanel) {
+        this.manager.selectPanel(this);
+      }
+      for (i = 0; i < steppers.length; ++i) {
+        const stepper = steppers[i];
+        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
+      }
+      const options = stepperChooser.options;
+      for (i = 0; i < options.length; ++i) {
+        const option = options[i];
+        option.selected = (option.value | 0) === pageIndex;
+      }
+    },
+    saveBreakPoints: function saveBreakPoints(pageIndex, bps) {
+      breakPoints[pageIndex] = bps;
+      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
+    },
+  };
+})();
+
+// The stepper for each page's operatorList.
+const Stepper = (function StepperClosure() {
+  // Shorter way to create element and optionally set textContent.
+  function c(tag, textContent) {
+    const d = document.createElement(tag);
+    if (textContent) {
+      d.textContent = textContent;
+    }
+    return d;
+  }
+
+  function simplifyArgs(args) {
+    if (typeof args === "string") {
+      const MAX_STRING_LENGTH = 75;
+      return args.length <= MAX_STRING_LENGTH
+        ? args
+        : args.substring(0, MAX_STRING_LENGTH) + "...";
+    }
+    if (typeof args !== "object" || args === null) {
+      return args;
+    }
+    if ("length" in args) {
+      // array
+      const MAX_ITEMS = 10,
+        simpleArgs = [];
+      let i, ii;
+      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i < ii; i++) {
+        simpleArgs.push(simplifyArgs(args[i]));
+      }
+      if (i < args.length) {
+        simpleArgs.push("...");
+      }
+      return simpleArgs;
+    }
+    const simpleObj = {};
+    for (const key in args) {
+      simpleObj[key] = simplifyArgs(args[key]);
+    }
+    return simpleObj;
+  }
+
+  // eslint-disable-next-line no-shadow
+  class Stepper {
+    constructor(panel, pageIndex, initialBreakPoints) {
+      this.panel = panel;
+      this.breakPoint = 0;
+      this.nextBreakPoint = null;
+      this.pageIndex = pageIndex;
+      this.breakPoints = initialBreakPoints;
+      this.currentIdx = -1;
+      this.operatorListIdx = 0;
+    }
+
+    init(operatorList) {
+      const panel = this.panel;
+      const content = c("div", "c=continue, s=step");
+      const table = c("table");
+      content.appendChild(table);
+      table.cellSpacing = 0;
+      const headerRow = c("tr");
+      table.appendChild(headerRow);
+      headerRow.appendChild(c("th", "Break"));
+      headerRow.appendChild(c("th", "Idx"));
+      headerRow.appendChild(c("th", "fn"));
+      headerRow.appendChild(c("th", "args"));
+      panel.appendChild(content);
+      this.table = table;
+      this.updateOperatorList(operatorList);
+    }
+
+    updateOperatorList(operatorList) {
+      const self = this;
+
+      function cboxOnClick() {
+        const x = +this.dataset.idx;
+        if (this.checked) {
+          self.breakPoints.push(x);
+        } else {
+          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
+        }
+        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
+      }
+
+      const MAX_OPERATORS_COUNT = 15000;
+      if (this.operatorListIdx > MAX_OPERATORS_COUNT) {
+        return;
+      }
+
+      const chunk = document.createDocumentFragment();
+      const operatorsToDisplay = Math.min(
+        MAX_OPERATORS_COUNT,
+        operatorList.fnArray.length
+      );
+      for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
+        const line = c("tr");
+        line.className = "line";
+        line.dataset.idx = i;
+        chunk.appendChild(line);
+        const checked = this.breakPoints.includes(i);
+        const args = operatorList.argsArray[i] || [];
+
+        const breakCell = c("td");
+        const cbox = c("input");
+        cbox.type = "checkbox";
+        cbox.className = "points";
+        cbox.checked = checked;
+        cbox.dataset.idx = i;
+        cbox.onclick = cboxOnClick;
+
+        breakCell.appendChild(cbox);
+        line.appendChild(breakCell);
+        line.appendChild(c("td", i.toString()));
+        const fn = opMap[operatorList.fnArray[i]];
+        let decArgs = args;
+        if (fn === "showText") {
+          const glyphs = args[0];
+          const newArgs = [];
+          let str = [];
+          for (let j = 0; j < glyphs.length; j++) {
+            const glyph = glyphs[j];
+            if (typeof glyph === "object" && glyph !== null) {
+              str.push(glyph.fontChar);
+            } else {
+              if (str.length > 0) {
+                newArgs.push(str.join(""));
+                str = [];
+              }
+              newArgs.push(glyph); // null or number
+            }
+          }
+          if (str.length > 0) {
+            newArgs.push(str.join(""));
+          }
+          decArgs = [newArgs];
+        }
+        line.appendChild(c("td", fn));
+        line.appendChild(c("td", JSON.stringify(simplifyArgs(decArgs))));
+      }
+      if (operatorsToDisplay < operatorList.fnArray.length) {
+        const lastCell = c("td", "...");
+        lastCell.colspan = 4;
+        chunk.appendChild(lastCell);
+      }
+      this.operatorListIdx = operatorList.fnArray.length;
+      this.table.appendChild(chunk);
+    }
+
+    getNextBreakPoint() {
+      this.breakPoints.sort(function (a, b) {
+        return a - b;
+      });
+      for (let i = 0; i < this.breakPoints.length; i++) {
+        if (this.breakPoints[i] > this.currentIdx) {
+          return this.breakPoints[i];
+        }
+      }
+      return null;
+    }
+
+    breakIt(idx, callback) {
+      StepperManager.selectStepper(this.pageIndex, true);
+      this.currentIdx = idx;
+
+      const listener = evt => {
+        switch (evt.keyCode) {
+          case 83: // step
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.currentIdx + 1;
+            this.goTo(-1);
+            callback();
+            break;
+          case 67: // continue
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.getNextBreakPoint();
+            this.goTo(-1);
+            callback();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      this.goTo(idx);
+    }
+
+    goTo(idx) {
+      const allRows = this.panel.getElementsByClassName("line");
+      for (let x = 0, xx = allRows.length; x < xx; ++x) {
+        const row = allRows[x];
+        if ((row.dataset.idx | 0) === idx) {
+          row.style.backgroundColor = "rgb(251,250,207)";
+          row.scrollIntoView();
+        } else {
+          row.style.backgroundColor = null;
+        }
+      }
+    }
+  }
+  return Stepper;
+})();
+
+// eslint-disable-next-line no-var
+var Stats = (function Stats() {
+  let stats = [];
+  function clear(node) {
+    while (node.hasChildNodes()) {
+      node.removeChild(node.lastChild);
+    }
+  }
+  function getStatIndex(pageNumber) {
+    for (let i = 0, ii = stats.length; i < ii; ++i) {
+      if (stats[i].pageNumber === pageNumber) {
+        return i;
+      }
+    }
+    return false;
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stats",
+    name: "Stats",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {},
+    enabled: false,
+    active: false,
+    // Stats specific functions.
+    add(pageNumber, stat) {
+      if (!stat) {
+        return;
+      }
+      const statsIndex = getStatIndex(pageNumber);
+      if (statsIndex !== false) {
+        const b = stats[statsIndex];
+        this.panel.removeChild(b.div);
+        stats.splice(statsIndex, 1);
+      }
+      const wrapper = document.createElement("div");
+      wrapper.className = "stats";
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = "Page: " + pageNumber;
+      const statsDiv = document.createElement("div");
+      statsDiv.textContent = stat.toString();
+      wrapper.appendChild(title);
+      wrapper.appendChild(statsDiv);
+      stats.push({ pageNumber, div: wrapper });
+      stats.sort(function (a, b) {
+        return a.pageNumber - b.pageNumber;
+      });
+      clear(this.panel);
+      for (let i = 0, ii = stats.length; i < ii; ++i) {
+        this.panel.appendChild(stats[i].div);
+      }
+    },
+    cleanup() {
+      stats = [];
+      clear(this.panel);
+    },
+  };
+})();
+
+// Manages all the debugging tools.
+window.PDFBug = (function PDFBugClosure() {
+  const panelWidth = 300;
+  const buttons = [];
+  let activePanel = null;
+
+  return {
+    tools: [FontInspector, StepperManager, Stats],
+    enable(ids) {
+      const all = ids.length === 1 && ids[0] === "all";
+      const tools = this.tools;
+      for (let i = 0; i < tools.length; ++i) {
+        const tool = tools[i];
+        if (all || ids.includes(tool.id)) {
+          tool.enabled = true;
+        }
+      }
+      if (!all) {
+        // Sort the tools by the order they are enabled.
+        tools.sort(function (a, b) {
+          let indexA = ids.indexOf(a.id);
+          indexA = indexA < 0 ? tools.length : indexA;
+          let indexB = ids.indexOf(b.id);
+          indexB = indexB < 0 ? tools.length : indexB;
+          return indexA - indexB;
+        });
+      }
+    },
+    init(pdfjsLib, container) {
+      /*
+       * Basic Layout:
+       * PDFBug
+       *  Controls
+       *  Panels
+       *    Panel
+       *    Panel
+       *    ...
+       */
+      const ui = document.createElement("div");
+      ui.id = "PDFBug";
+
+      const controls = document.createElement("div");
+      controls.setAttribute("class", "controls");
+      ui.appendChild(controls);
+
+      const panels = document.createElement("div");
+      panels.setAttribute("class", "panels");
+      ui.appendChild(panels);
+
+      container.appendChild(ui);
+      container.style.right = panelWidth + "px";
+
+      // Initialize all the debugging tools.
+      const tools = this.tools;
+      const self = this;
+      for (let i = 0; i < tools.length; ++i) {
+        const tool = tools[i];
+        const panel = document.createElement("div");
+        const panelButton = document.createElement("button");
+        panelButton.textContent = tool.name;
+        panelButton.addEventListener(
+          "click",
+          (function (selected) {
+            return function (event) {
+              event.preventDefault();
+              self.selectPanel(selected);
+            };
+          })(i)
+        );
+        controls.appendChild(panelButton);
+        panels.appendChild(panel);
+        tool.panel = panel;
+        tool.manager = this;
+        if (tool.enabled) {
+          tool.init(pdfjsLib);
+        } else {
+          panel.textContent =
+            tool.name +
+            " is disabled. To enable add " +
+            ' "' +
+            tool.id +
+            '" to the pdfBug parameter ' +
+            "and refresh (separate multiple by commas).";
+        }
+        buttons.push(panelButton);
+      }
+      this.selectPanel(0);
+    },
+    cleanup() {
+      for (let i = 0, ii = this.tools.length; i < ii; i++) {
+        if (this.tools[i].enabled) {
+          this.tools[i].cleanup();
+        }
+      }
+    },
+    selectPanel(index) {
+      if (typeof index !== "number") {
+        index = this.tools.indexOf(index);
+      }
+      if (index === activePanel) {
+        return;
+      }
+      activePanel = index;
+      const tools = this.tools;
+      for (let j = 0; j < tools.length; ++j) {
+        const isActive = j === index;
+        buttons[j].classList.toggle("active", isActive);
+        tools[j].active = isActive;
+        tools[j].panel.hidden = !isActive;
+      }
+    },
+  };
+})();
 ]]></content>
   </entry>
   <entry>
@@ -26093,627 +26582,6 @@ const pdfjsBuild = '3538ef0';
 ;
 });
 //# sourceMappingURL=pdf.js.map]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.js</url>
-    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-"use strict";
-
-// eslint-disable-next-line no-var
-var FontInspector = (function FontInspectorClosure() {
-  let fonts;
-  let active = false;
-  const fontAttribute = "data-font-name";
-  function removeSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "";
-    }
-  }
-  function resetSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "debuggerHideText";
-    }
-  }
-  function selectFont(fontName, show) {
-    const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
-    );
-    for (const div of divs) {
-      div.className = show ? "debuggerShowText" : "debuggerHideText";
-    }
-  }
-  function textLayerClick(e) {
-    if (
-      !e.target.dataset.fontName ||
-      e.target.tagName.toUpperCase() !== "SPAN"
-    ) {
-      return;
-    }
-    const fontName = e.target.dataset.fontName;
-    const selects = document.getElementsByTagName("input");
-    for (let i = 0; i < selects.length; ++i) {
-      const select = selects[i];
-      if (select.dataset.fontName !== fontName) {
-        continue;
-      }
-      select.checked = !select.checked;
-      selectFont(fontName, select.checked);
-      select.scrollIntoView();
-    }
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "FontInspector",
-    name: "Font Inspector",
-    panel: null,
-    manager: null,
-    init: function init(pdfjsLib) {
-      const panel = this.panel;
-      const tmp = document.createElement("button");
-      tmp.addEventListener("click", resetSelection);
-      tmp.textContent = "Refresh";
-      panel.appendChild(tmp);
-
-      fonts = document.createElement("div");
-      panel.appendChild(fonts);
-    },
-    cleanup: function cleanup() {
-      fonts.textContent = "";
-    },
-    enabled: false,
-    get active() {
-      return active;
-    },
-    set active(value) {
-      active = value;
-      if (active) {
-        document.body.addEventListener("click", textLayerClick, true);
-        resetSelection();
-      } else {
-        document.body.removeEventListener("click", textLayerClick, true);
-        removeSelection();
-      }
-    },
-    // FontInspector specific functions.
-    fontAdded: function fontAdded(fontObj, url) {
-      function properties(obj, list) {
-        const moreInfo = document.createElement("table");
-        for (let i = 0; i < list.length; i++) {
-          const tr = document.createElement("tr");
-          const td1 = document.createElement("td");
-          td1.textContent = list[i];
-          tr.appendChild(td1);
-          const td2 = document.createElement("td");
-          td2.textContent = obj[list[i]].toString();
-          tr.appendChild(td2);
-          moreInfo.appendChild(tr);
-        }
-        return moreInfo;
-      }
-      const moreInfo = properties(fontObj, ["name", "type"]);
-      const fontName = fontObj.loadedName;
-      const font = document.createElement("div");
-      const name = document.createElement("span");
-      name.textContent = fontName;
-      const download = document.createElement("a");
-      if (url) {
-        url = /url\(['"]?([^)"']+)/.exec(url);
-        download.href = url[1];
-      } else if (fontObj.data) {
-        download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimeType })
-        );
-      }
-      download.textContent = "Download";
-      const logIt = document.createElement("a");
-      logIt.href = "";
-      logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log(fontObj);
-      });
-      const select = document.createElement("input");
-      select.setAttribute("type", "checkbox");
-      select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
-        selectFont(fontName, select.checked);
-      });
-      font.appendChild(select);
-      font.appendChild(name);
-      font.appendChild(document.createTextNode(" "));
-      font.appendChild(download);
-      font.appendChild(document.createTextNode(" "));
-      font.appendChild(logIt);
-      font.appendChild(moreInfo);
-      fonts.appendChild(font);
-      // Somewhat of a hack, should probably add a hook for when the text layer
-      // is done rendering.
-      setTimeout(() => {
-        if (this.active) {
-          resetSelection();
-        }
-      }, 2000);
-    },
-  };
-})();
-
-let opMap;
-
-// Manages all the page steppers.
-//
-// eslint-disable-next-line no-var
-var StepperManager = (function StepperManagerClosure() {
-  let steppers = [];
-  let stepperDiv = null;
-  let stepperControls = null;
-  let stepperChooser = null;
-  let breakPoints = Object.create(null);
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stepper",
-    name: "Stepper",
-    panel: null,
-    manager: null,
-    init: function init(pdfjsLib) {
-      const self = this;
-      stepperControls = document.createElement("div");
-      stepperChooser = document.createElement("select");
-      stepperChooser.addEventListener("change", function (event) {
-        self.selectStepper(this.value);
-      });
-      stepperControls.appendChild(stepperChooser);
-      stepperDiv = document.createElement("div");
-      this.panel.appendChild(stepperControls);
-      this.panel.appendChild(stepperDiv);
-      if (sessionStorage.getItem("pdfjsBreakPoints")) {
-        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
-      }
-
-      opMap = Object.create(null);
-      for (const key in pdfjsLib.OPS) {
-        opMap[pdfjsLib.OPS[key]] = key;
-      }
-    },
-    cleanup: function cleanup() {
-      stepperChooser.textContent = "";
-      stepperDiv.textContent = "";
-      steppers = [];
-    },
-    enabled: false,
-    active: false,
-    // Stepper specific functions.
-    create: function create(pageIndex) {
-      const debug = document.createElement("div");
-      debug.id = "stepper" + pageIndex;
-      debug.hidden = true;
-      debug.className = "stepper";
-      stepperDiv.appendChild(debug);
-      const b = document.createElement("option");
-      b.textContent = "Page " + (pageIndex + 1);
-      b.value = pageIndex;
-      stepperChooser.appendChild(b);
-      const initBreakPoints = breakPoints[pageIndex] || [];
-      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
-      steppers.push(stepper);
-      if (steppers.length === 1) {
-        this.selectStepper(pageIndex, false);
-      }
-      return stepper;
-    },
-    selectStepper: function selectStepper(pageIndex, selectPanel) {
-      let i;
-      pageIndex = pageIndex | 0;
-      if (selectPanel) {
-        this.manager.selectPanel(this);
-      }
-      for (i = 0; i < steppers.length; ++i) {
-        const stepper = steppers[i];
-        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
-      }
-      const options = stepperChooser.options;
-      for (i = 0; i < options.length; ++i) {
-        const option = options[i];
-        option.selected = (option.value | 0) === pageIndex;
-      }
-    },
-    saveBreakPoints: function saveBreakPoints(pageIndex, bps) {
-      breakPoints[pageIndex] = bps;
-      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
-    },
-  };
-})();
-
-// The stepper for each page's operatorList.
-const Stepper = (function StepperClosure() {
-  // Shorter way to create element and optionally set textContent.
-  function c(tag, textContent) {
-    const d = document.createElement(tag);
-    if (textContent) {
-      d.textContent = textContent;
-    }
-    return d;
-  }
-
-  function simplifyArgs(args) {
-    if (typeof args === "string") {
-      const MAX_STRING_LENGTH = 75;
-      return args.length <= MAX_STRING_LENGTH
-        ? args
-        : args.substring(0, MAX_STRING_LENGTH) + "...";
-    }
-    if (typeof args !== "object" || args === null) {
-      return args;
-    }
-    if ("length" in args) {
-      // array
-      const MAX_ITEMS = 10,
-        simpleArgs = [];
-      let i, ii;
-      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i < ii; i++) {
-        simpleArgs.push(simplifyArgs(args[i]));
-      }
-      if (i < args.length) {
-        simpleArgs.push("...");
-      }
-      return simpleArgs;
-    }
-    const simpleObj = {};
-    for (const key in args) {
-      simpleObj[key] = simplifyArgs(args[key]);
-    }
-    return simpleObj;
-  }
-
-  // eslint-disable-next-line no-shadow
-  class Stepper {
-    constructor(panel, pageIndex, initialBreakPoints) {
-      this.panel = panel;
-      this.breakPoint = 0;
-      this.nextBreakPoint = null;
-      this.pageIndex = pageIndex;
-      this.breakPoints = initialBreakPoints;
-      this.currentIdx = -1;
-      this.operatorListIdx = 0;
-    }
-
-    init(operatorList) {
-      const panel = this.panel;
-      const content = c("div", "c=continue, s=step");
-      const table = c("table");
-      content.appendChild(table);
-      table.cellSpacing = 0;
-      const headerRow = c("tr");
-      table.appendChild(headerRow);
-      headerRow.appendChild(c("th", "Break"));
-      headerRow.appendChild(c("th", "Idx"));
-      headerRow.appendChild(c("th", "fn"));
-      headerRow.appendChild(c("th", "args"));
-      panel.appendChild(content);
-      this.table = table;
-      this.updateOperatorList(operatorList);
-    }
-
-    updateOperatorList(operatorList) {
-      const self = this;
-
-      function cboxOnClick() {
-        const x = +this.dataset.idx;
-        if (this.checked) {
-          self.breakPoints.push(x);
-        } else {
-          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
-        }
-        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
-      }
-
-      const MAX_OPERATORS_COUNT = 15000;
-      if (this.operatorListIdx > MAX_OPERATORS_COUNT) {
-        return;
-      }
-
-      const chunk = document.createDocumentFragment();
-      const operatorsToDisplay = Math.min(
-        MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
-      );
-      for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
-        const line = c("tr");
-        line.className = "line";
-        line.dataset.idx = i;
-        chunk.appendChild(line);
-        const checked = this.breakPoints.includes(i);
-        const args = operatorList.argsArray[i] || [];
-
-        const breakCell = c("td");
-        const cbox = c("input");
-        cbox.type = "checkbox";
-        cbox.className = "points";
-        cbox.checked = checked;
-        cbox.dataset.idx = i;
-        cbox.onclick = cboxOnClick;
-
-        breakCell.appendChild(cbox);
-        line.appendChild(breakCell);
-        line.appendChild(c("td", i.toString()));
-        const fn = opMap[operatorList.fnArray[i]];
-        let decArgs = args;
-        if (fn === "showText") {
-          const glyphs = args[0];
-          const newArgs = [];
-          let str = [];
-          for (let j = 0; j < glyphs.length; j++) {
-            const glyph = glyphs[j];
-            if (typeof glyph === "object" && glyph !== null) {
-              str.push(glyph.fontChar);
-            } else {
-              if (str.length > 0) {
-                newArgs.push(str.join(""));
-                str = [];
-              }
-              newArgs.push(glyph); // null or number
-            }
-          }
-          if (str.length > 0) {
-            newArgs.push(str.join(""));
-          }
-          decArgs = [newArgs];
-        }
-        line.appendChild(c("td", fn));
-        line.appendChild(c("td", JSON.stringify(simplifyArgs(decArgs))));
-      }
-      if (operatorsToDisplay < operatorList.fnArray.length) {
-        const lastCell = c("td", "...");
-        lastCell.colspan = 4;
-        chunk.appendChild(lastCell);
-      }
-      this.operatorListIdx = operatorList.fnArray.length;
-      this.table.appendChild(chunk);
-    }
-
-    getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
-      for (let i = 0; i < this.breakPoints.length; i++) {
-        if (this.breakPoints[i] > this.currentIdx) {
-          return this.breakPoints[i];
-        }
-      }
-      return null;
-    }
-
-    breakIt(idx, callback) {
-      StepperManager.selectStepper(this.pageIndex, true);
-      this.currentIdx = idx;
-
-      const listener = evt => {
-        switch (evt.keyCode) {
-          case 83: // step
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.currentIdx + 1;
-            this.goTo(-1);
-            callback();
-            break;
-          case 67: // continue
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.getNextBreakPoint();
-            this.goTo(-1);
-            callback();
-            break;
-        }
-      };
-      document.addEventListener("keydown", listener);
-      this.goTo(idx);
-    }
-
-    goTo(idx) {
-      const allRows = this.panel.getElementsByClassName("line");
-      for (let x = 0, xx = allRows.length; x < xx; ++x) {
-        const row = allRows[x];
-        if ((row.dataset.idx | 0) === idx) {
-          row.style.backgroundColor = "rgb(251,250,207)";
-          row.scrollIntoView();
-        } else {
-          row.style.backgroundColor = null;
-        }
-      }
-    }
-  }
-  return Stepper;
-})();
-
-// eslint-disable-next-line no-var
-var Stats = (function Stats() {
-  let stats = [];
-  function clear(node) {
-    while (node.hasChildNodes()) {
-      node.removeChild(node.lastChild);
-    }
-  }
-  function getStatIndex(pageNumber) {
-    for (let i = 0, ii = stats.length; i < ii; ++i) {
-      if (stats[i].pageNumber === pageNumber) {
-        return i;
-      }
-    }
-    return false;
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stats",
-    name: "Stats",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {},
-    enabled: false,
-    active: false,
-    // Stats specific functions.
-    add(pageNumber, stat) {
-      if (!stat) {
-        return;
-      }
-      const statsIndex = getStatIndex(pageNumber);
-      if (statsIndex !== false) {
-        const b = stats[statsIndex];
-        this.panel.removeChild(b.div);
-        stats.splice(statsIndex, 1);
-      }
-      const wrapper = document.createElement("div");
-      wrapper.className = "stats";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = "Page: " + pageNumber;
-      const statsDiv = document.createElement("div");
-      statsDiv.textContent = stat.toString();
-      wrapper.appendChild(title);
-      wrapper.appendChild(statsDiv);
-      stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
-      clear(this.panel);
-      for (let i = 0, ii = stats.length; i < ii; ++i) {
-        this.panel.appendChild(stats[i].div);
-      }
-    },
-    cleanup() {
-      stats = [];
-      clear(this.panel);
-    },
-  };
-})();
-
-// Manages all the debugging tools.
-window.PDFBug = (function PDFBugClosure() {
-  const panelWidth = 300;
-  const buttons = [];
-  let activePanel = null;
-
-  return {
-    tools: [FontInspector, StepperManager, Stats],
-    enable(ids) {
-      const all = ids.length === 1 && ids[0] === "all";
-      const tools = this.tools;
-      for (let i = 0; i < tools.length; ++i) {
-        const tool = tools[i];
-        if (all || ids.includes(tool.id)) {
-          tool.enabled = true;
-        }
-      }
-      if (!all) {
-        // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
-          let indexA = ids.indexOf(a.id);
-          indexA = indexA < 0 ? tools.length : indexA;
-          let indexB = ids.indexOf(b.id);
-          indexB = indexB < 0 ? tools.length : indexB;
-          return indexA - indexB;
-        });
-      }
-    },
-    init(pdfjsLib, container) {
-      /*
-       * Basic Layout:
-       * PDFBug
-       *  Controls
-       *  Panels
-       *    Panel
-       *    Panel
-       *    ...
-       */
-      const ui = document.createElement("div");
-      ui.id = "PDFBug";
-
-      const controls = document.createElement("div");
-      controls.setAttribute("class", "controls");
-      ui.appendChild(controls);
-
-      const panels = document.createElement("div");
-      panels.setAttribute("class", "panels");
-      ui.appendChild(panels);
-
-      container.appendChild(ui);
-      container.style.right = panelWidth + "px";
-
-      // Initialize all the debugging tools.
-      const tools = this.tools;
-      const self = this;
-      for (let i = 0; i < tools.length; ++i) {
-        const tool = tools[i];
-        const panel = document.createElement("div");
-        const panelButton = document.createElement("button");
-        panelButton.textContent = tool.name;
-        panelButton.addEventListener(
-          "click",
-          (function (selected) {
-            return function (event) {
-              event.preventDefault();
-              self.selectPanel(selected);
-            };
-          })(i)
-        );
-        controls.appendChild(panelButton);
-        panels.appendChild(panel);
-        tool.panel = panel;
-        tool.manager = this;
-        if (tool.enabled) {
-          tool.init(pdfjsLib);
-        } else {
-          panel.textContent =
-            tool.name +
-            " is disabled. To enable add " +
-            ' "' +
-            tool.id +
-            '" to the pdfBug parameter ' +
-            "and refresh (separate multiple by commas).";
-        }
-        buttons.push(panelButton);
-      }
-      this.selectPanel(0);
-    },
-    cleanup() {
-      for (let i = 0, ii = this.tools.length; i < ii; i++) {
-        if (this.tools[i].enabled) {
-          this.tools[i].cleanup();
-        }
-      }
-    },
-    selectPanel(index) {
-      if (typeof index !== "number") {
-        index = this.tools.indexOf(index);
-      }
-      if (index === activePanel) {
-        return;
-      }
-      activePanel = index;
-      const tools = this.tools;
-      for (let j = 0; j < tools.length; ++j) {
-        const isActive = j === index;
-        buttons[j].classList.toggle("active", isActive);
-        tools[j].active = isActive;
-        tools[j].panel.hidden = !isActive;
-      }
-    },
-  };
-})();
-]]></content>
   </entry>
   <entry>
     <title></title>
