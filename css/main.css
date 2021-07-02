@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #1cff39;
+  background: #75eb65;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3311,6 +3311,43 @@ div.img-wrap-right { float: right; }
 }
 .table-caption:before {
     content: "TBL." counter(tblCounter) " - "
+}
+
+/**************************************************************************************/
+
+.hide {
+    background-color: black;
+    color: black;
+    -webkit-transition: all .5s;
+    border-radius: 0.2em;
+    box-shadow: 0px 0px 0.2em 0.1em black;
+    margin: 0 0.2em 0;
+}
+
+.hide:hover {
+    color: white;
+}
+
+/**************************************************************************************/
+
+.horizontal-list {
+    counter-reset: hzlistCounter;
+}
+
+.horizontal-list::before {
+    content: ' ';
+}
+
+.horizontal-list-item {
+    counter-increment: hzlistCounter;
+}
+
+.horizontal-list-item::before {
+    content: counter(hzlistCounter) '. '
+}
+
+.horizontal-list-item::after {
+    content: ' '
 }
 
 /**************************************************************************************/
@@ -3499,17 +3536,18 @@ dd>ol
 .note.warning>.note-title { color: #f0ad4e; text-shadow: 1px 1px #f0ad4e; }
 .note.danger>.note-title   { color: #d9534f; text-shadow: 1px 1px #d9534f; }
 
-details[open] summary {
+details.note.titled[open]>summary {
     visibility: hidden;
     height: 0;
 }
 
-details[open] {
+
+details.note.titled[open]>.note-title {
     cursor: pointer;
 }
 
-summary::marker {
-    visibility: visible;
+summary+ol, summary+ul {
+    margin-top: 0;
 }
 
 /*  */
@@ -3673,7 +3711,7 @@ post-toc-wrap {
 
 div.sidebar-panel-container::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  width: 4px;               /* width of the entire scrollbar */
+  width: 5px;               /* width of the entire scrollbar */
 }
 
 div.sidebar-panel-container::-webkit-scrollbar-track,
@@ -3710,5 +3748,31 @@ body::-webkit-scrollbar-thumb {
 
 .katex-display::after {
     content: "(" counter(equCounter) ")";
+}
+
+/**************************************************************************************/
+
+div.table-container {
+    overflow: auto;
+    margin-bottom: 1em;
+}
+
+table {
+    margin: 0;
+    white-space: nowrap;
+}
+
+div.table-container::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+  height: 5px;
+}
+
+div.table-container::-webkit-scrollbar-track {
+  background: #bbbbbb;        /* color of the tracking area */
+}
+
+div.table-container::-webkit-scrollbar-thumb {
+  background-color: rgb(85, 85, 85);    /* color of the scroll thumb */
 }
 

@@ -16,14 +16,14 @@ Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方�
 <h2 id="基础">基础 <a class="markdownIt-Anchor" href="#基础">#</a></h2>
 <p>最基本的 Hello World CMakeLists.txt 文件：</p>
 <figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>Note</p>
+<details class="note info "><summary><p>Note</p>
 </summary>
-    <p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
+      <p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
 然后就可以像下面这样写：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，<a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
 
-  </details>
+    </details>
 <h3 id="二进制目录">二进制目录 <a class="markdownIt-Anchor" href="#二进制目录">#</a></h3>
 <p>我们运行 <code>cmake</code>（可带参数）命令时所在的目录（即当前工作目录、<code>pwd</code> 显示的目录）被称为
 <code>CMAKE_BINARY_DIR</code>。这是你的生成的二进制文件所在的根目录（通常还会有一些其他文件）。</p>
@@ -92,7 +92,7 @@ build）和源外构建（out-of-source build）。</p>
 <h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
 <p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
+<div class="note warning "><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
 </div>
 <p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
@@ -129,14 +129,14 @@ build）和源外构建（out-of-source build）。</p>
 <h4 id="链接库和目标">链接库和目标 <a class="markdownIt-Anchor" href="#链接库和目标">#</a></h4>
 <p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>目标别名</p>
+<details class="note info "><summary><p>目标别名</p>
 </summary>
-    <p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
+      <p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
 <p>如为库创建别名：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>当然，也可以为可执行文件创建别名：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure>
-  </details>
+    </details>
 <h3 id="安装">安装 <a class="markdownIt-Anchor" href="#安装">#</a></h3>
 <p>CMake 提供了生成 <code>make install</code> 目标（是 Makefile 中的 target，而不是之前提到的
 CMake 中的 target）的功能。<br/>
@@ -145,7 +145,7 @@ CMake 中的 target）的功能。<br/>
 <p>安装由 <a href="https://cmake.org/cmake/help/latest/command/install.html"><code>install()</code></a> 函数控制。</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst_bin</span><br><span class="line">    DESTINATION bin)</span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib)</span><br></pre></td></tr></table></figure>
 <p>上面的代码会将 <code>cmake_examples_inst_bin</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下，将 <code>cmake_examples_inst</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下。</p>
-<div class="note warning"><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
+<div class="note warning "><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure></div>
 <p>使用 <code>DIRECTORY</code> 以安装目录：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/</span><br><span class="line">    DESTINATION <span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
@@ -226,7 +226,7 @@ CMake 中的 target）的功能。<br/>
 <p><code>CMAKE_CXX_FLAGS</code> 要么为空，要么包含所选构建类型的对应标志。<br/>
 要设置<strong>额外</strong>的编译标志，可以在顶层 CMakeLists.txt 中添加如下内容：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -DEX2&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;Set C++ Compiler Flags&quot;</span> FORCE)</span><br></pre></td></tr></table></figure>
-<div class="note info"><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
+<div class="note info "><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
 </div>
 <p>类似地，<code>CMAKE_C_FLAGS</code> 等变量也可以以同样的方式设置。其他变量见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a>。<br/>
 一旦设置了这些变量，CMake 会为此目录及其子目录下的所有目标设置编译器标志，因此更推荐使用 <code>target_compile_definitions</code> 函数。</p>
@@ -762,7 +762,7 @@ then insert new method invokation);</li>
 <p>如在 electron-vue 目录下创建项目：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
 <p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
-<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
+<div class="note warning "><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
 </div>
 <h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
 <p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
@@ -771,7 +771,7 @@ then insert new method invokation);</li>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
 <p>要构建应用：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
+<div class="note info "><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
 </div>
 <h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
 <p>文档：</p>
@@ -1136,48 +1136,48 @@ What’s this?</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="next-tags">NexT tags <a class="markdownIt-Anchor" href="#next-tags">#</a></h3>
 <h4 id="call-out">Call Out <a class="markdownIt-Anchor" href="#call-out">#</a></h4>
-<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>default</p>
+<details class="note default titled"><summary><p>default</p>
 </summary>
-    <div class='note-title' id='default'>
+      <div class='note-title' id='default' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       default
     </div><p>default</p>
 
-  </details>
-<details class="note primary" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>primary</p>
+    </details>
+<details class="note primary titled"><summary><p>primary</p>
 </summary>
-    <div class='note-title' id='primary'>
+      <div class='note-title' id='primary' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       primary
     </div><p>primary</p>
 
-  </details>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>success</p>
+    </details>
+<details class="note success titled"><summary><p>success</p>
 </summary>
-    <div class='note-title' id='success'>
+      <div class='note-title' id='success' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       success
     </div><p>success</p>
 
-  </details>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>info</p>
+    </details>
+<details class="note info titled"><summary><p>info</p>
 </summary>
-    <div class='note-title' id='info'>
+      <div class='note-title' id='info' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       info
     </div><p>info</p>
 
-  </details>
-<details class="note warning" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>warning</p>
+    </details>
+<details class="note warning titled"><summary><p>warning</p>
 </summary>
-    <div class='note-title' id='warning'>
+      <div class='note-title' id='warning' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       warning
     </div><p>warning</p>
 
-  </details>
-<details class="note danger" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>danger</p>
+    </details>
+<details class="note danger titled"><summary><p>danger</p>
 </summary>
-    <div class='note-title' id='danger'>
+      <div class='note-title' id='danger' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       danger
     </div><p>danger</p>
 
-  </details>
+    </details>
 <h4 id="button">Button <a class="markdownIt-Anchor" href="#button">#</a></h4>
 <p><code>button</code> or <code>btn</code></p>
 <p>sepqrate: ,</p>
@@ -1349,7 +1349,7 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
 <li><strong>可扩展的语言</strong>——Lua 拥有控制权，C 语言被用作库，C 代码称为<strong>库代码</strong></li>
 </ul>
 <p>应用代码和库代码都使用相同的 API 和 Lua 通信，这些 API 被称为 <mark>C API</mark>。</p>
-<div class="note info"><p>完整函数列表见：</p>
+<div class="note info "><p>完整函数列表见：</p>
 <ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9tYW51YWwvbHVhNTNkb2MvY29udGVudHMuaHRtbCNpbmRleA==">Lua 参考手册（Lua5.3 - 菜鸟教程）<i class="fa fa-external-link-alt"></i></span></li>
 <li><span class="exturl" data-url="aHR0cDovL3d3dy5sdWEub3JnL21hbnVhbC81LjQvI2luZGV4">Lua 参考手册（Lua5.4 - 官网）<i class="fa fa-external-link-alt"></i></span></li>
@@ -1383,9 +1383,9 @@ Lua5.2 中引入了新函数进行处理：</p>
 <code>isnum</code> 返回一个布尔值表示指定的值的类型是否为所需类型，以区分上述两种情况。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">lua_pushstring(L, <span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">lua_pushinteger(L, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> msg;</span><br><span class="line"><span class="keyword">if</span>(!lua_tonumberx(L, <span class="number">-1</span>, &amp;msg)) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Not a number, %d\n&quot;</span>, msg);</span><br><span class="line">    <span class="comment">// -&gt; Not a number, 1</span></span><br><span class="line">    <span class="comment">// &quot;Not a number&quot; 判断错误，msg 表明指定位置的值的类型为 number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<details class="note warning" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>确保栈中有足够的空间</p>
+<details class="note warning "><summary><p>确保栈中有足够的空间</p>
 </summary>
-    <p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
+      <p>Lua 保证在使用栈时栈中至少有 20 个空闲的位置（slot）（<code>lua.h</code> 中定义的单位大小为 <code>LUA_MINSTACK</code>），但有些时候会需要更多的空间，这时便需要 <code>lua_checkstack</code> 函数：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lua_checkstack</span><span class="params">(lua_State *L, <span class="keyword">int</span> sz)</span></span>;</span><br></pre></td></tr></table></figure>
 <p><code>lua_checkstack</code> 确保堆栈上至少有 <code>n</code> 个额外空位。
 如果不能把堆栈扩展到相应的尺寸，函数返回假（0）。</p>
@@ -1394,7 +1394,7 @@ Lua5.2 中引入了新函数进行处理：</p>
 <p>该函数类似于 <code>lua_ckeckstack</code>，但是当无法扩展空间时，会抛出一个错误。
 <code>msg</code> 是描述错误的额外文本信息，<code>NULL</code> 表示不需要额外文本。</p>
 
-  </details>
+    </details>
 <p>其他栈操作（详细说明见<a href="#">手册</a>）：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">lua_gettop</span>    <span class="params">(lua_State *L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_settop</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_pushvalue</span> <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_rotate</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_remove</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_insert</span>    <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_replace</span>   <span class="params">(lua_State *L, <span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lua_copy</span>      <span class="params">(lua_State *L, <span class="keyword">int</span> fromidx, <span class="keyword">int</span> toidx)</span></span>;</span><br></pre></td></tr></table></figure>
 <h2 id="c-api-中的错误处理">C API 中的错误处理 <a class="markdownIt-Anchor" href="#c-api-中的错误处理">#</a></h2>
@@ -1463,26 +1463,26 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_newlib</span><span class="params">(lua_State *L, <span class="keyword">const</span> luaL_Reg l[])</span></span>;</span><br></pre></td></tr></table></figure>
 <p><code>luaL_newlib</code> 其实是一个宏，详见<a href="#%E5%85%B1%E4%BA%AB%E4%B8%8A%E5%80%BC">共享上值</a>。</p>
 <p>完整示例见<a href="#%E5%AE%9E%E7%8E%B0-lua-%E7%9A%84-dir-%E5%87%BD%E6%95%B0">实现 Lua 的 dir 函数</a>。</p>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>require 函数参数中的连字符</p>
+<details class="note info "><summary><p>require 函数参数中的连字符</p>
 </summary>
-    <p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去除末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
+      <p>Lua 的 <code>require</code> 函数在寻找入口函数时，入口函数名为库文件第一个连字符（-）之前的部分或文件名去除末尾的 <code>.so</code>（Windows 为 <code>.dll</code>）。</p>
 <p>另外，<code>require</code> 函数中的句点 <code>.</code> 表示<strong>子模块</strong>，如：<code>require'libdir-v0.1'</code> 中的 <code>libdir-v0.1</code> 表示 <code>libdir-v0/1</code>：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; dir = require&#x27;libdir-v0.1&#x27;</span><br><span class="line">stdin:1: module &#x27;libdir-v0.1&#x27; not found:</span><br><span class="line">        no field package.preload[&#x27;libdir-v0.1&#x27;]</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/share/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.lua&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1/init.lua&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0/1.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/libdir-v0.so&#x27;</span><br><span class="line">        no file &#x27;/usr/lib/lua/5.4/loadall.so&#x27;</span><br><span class="line">        no file &#x27;./libdir-v0.so&#x27;</span><br><span class="line">stack traceback:</span><br><span class="line">        [C]: in function &#x27;require&#x27;</span><br><span class="line">        stdin:1: in main chunk</span><br><span class="line">        [C]: in ?</span><br></pre></td></tr></table></figure>
-  </details>
+    </details>
 <h3 id="注册表">注册表 <a class="markdownIt-Anchor" href="#注册表">#</a></h3>
 <p>Lua API 中通过使用注册表来实现“全局变量”。使用这一功能需要一对函数：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaL_ref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">luaL_unref</span> <span class="params">(lua_State *L, <span class="keyword">int</span> t, <span class="keyword">int</span> ref)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>注册表总是位于<strong>伪索引</strong> <code>LUA_REGISTRYINDEX</code> 中，可以像使用一个普通的索引一样使用它。
 需要注意的是，所有在 Lua 中加载的库代码都共用一个注册表，在给表的键取名时要注意命名冲突。</p>
-<div class="note warning"><p>在注册表中不能使用数值类型的键，因为 Lua 将其作为<strong>引用系统</strong>的保留字。</p>
+<div class="note warning "><p>在注册表中不能使用数值类型的键，因为 Lua 将其作为<strong>引用系统</strong>的保留字。</p>
 </div>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>轻量用户数据</p>
+<details class="note info "><summary><p>轻量用户数据</p>
 </summary>
-    <p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
+      <p>Lua 中提供轻量用户数据（light userdata）来获取唯一值。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_settable(L, LUA_REGISTRYINDEX);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_pushlightuserdata(L, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">lua_gettable(L, LUA_REGISTRYINDEX);</span><br><span class="line">*myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
 <p>为了简化将变量地址作为唯一值的用法，Lua5.2 引入了两个函数：<code>lua_rawgetp</code> 和 <code>lua_rawsetp</code>。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 具有唯一地址的变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> Key = <span class="string">&#x27;k&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存字符串</span></span><br><span class="line">lua_pushstring(L, myStr);</span><br><span class="line">lua_rawsetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串</span></span><br><span class="line">lua_rawgetp(L, LUA_REGISTRYINDEX, (<span class="keyword">void</span>*)&amp;Key);</span><br><span class="line">myStr = lua_tostring(L, <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>
-  </details>
+    </details>
 <h3 id="上值和共享上值">上值和共享上值 <a class="markdownIt-Anchor" href="#上值和共享上值">#</a></h3>
 <p>Lua 中可以为一个函数绑定若干个<strong>上值</strong>，这些上值仅在绑定的函数中可见。
 一个函数和其上值的关联称为<strong>闭包</strong>（closure）。</p>
@@ -1512,6 +1512,83 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       <tags>
         <tag>C/C++</tag>
         <tag>Lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lua 迭代器和泛型 for</title>
+    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
+    <content><![CDATA[<blockquote>
+<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
+本文也未刻意区分。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<dl>
+<dt>迭代器（iterator）</dt>
+<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
+<dt>闭包（closure）</dt>
+<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
+<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
+<dt>工厂（factory）</dt>
+<dd>用于创建闭包及其封装变量的函数。</dd>
+</dl>
+<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
+<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<p>泛型 for 的语法：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
+<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
+<ol>
+<li>迭代函数</li>
+<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
+<li>控制变量的初始值</li>
+</ol>
+<dl>
+<dt>控制变量（control variable）</dt>
+<dd>其值为 <code>nil</code> 时循环结束。</dd>
+</dl>
+<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
+其中只有最后一项能产生多个值。</p>
+<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
+<p>确切地说，形如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>与以下代码等价：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
+<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<dl>
+<dt>无状态迭代器（stateless iterator）</dt>
+<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
+</dl>
+<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
+生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
+<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Lua</category>
+      </categories>
+      <tags>
+        <tag>Lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenGL</title>
+    <url>/2021/04/17/OpenGL/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Computer Graphics</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>Computer Graphics</tag>
+        <tag>OpenGL</tag>
       </tags>
   </entry>
   <entry>
@@ -1787,83 +1864,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>Lua 迭代器和泛型 for</title>
-    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
-    <content><![CDATA[<blockquote>
-<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
-本文也未刻意区分。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
-<dl>
-<dt>迭代器（iterator）</dt>
-<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
-<dt>闭包（closure）</dt>
-<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
-<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
-<dt>工厂（factory）</dt>
-<dd>用于创建闭包及其封装变量的函数。</dd>
-</dl>
-<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
-<p>泛型 for 的语法：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
-<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
-<ol>
-<li>迭代函数</li>
-<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
-<li>控制变量的初始值</li>
-</ol>
-<dl>
-<dt>控制变量（control variable）</dt>
-<dd>其值为 <code>nil</code> 时循环结束。</dd>
-</dl>
-<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
-其中只有最后一项能产生多个值。</p>
-<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
-<p>确切地说，形如</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>与以下代码等价：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
-<dl>
-<dt>无状态迭代器（stateless iterator）</dt>
-<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
-</dl>
-<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
-生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
-<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenGL</title>
-    <url>/2021/04/17/OpenGL/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Computer Graphics</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>Computer Graphics</tag>
-        <tag>OpenGL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim Syntax</title>
     <url>/2021/03/16/Vim-Syntax/</url>
     <content><![CDATA[<blockquote>
@@ -1998,9 +1998,9 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
 </dl>
 <span id="more"></span>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p><strong>Table of Content</strong></p>
+<details class="note info "><summary><p><strong>Table of Content</strong></p>
 </summary>
-    <ol>
+      <ol>
 <li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
 <li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
 <li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
@@ -2016,7 +2016,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 </ol>
 <p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
 
-  </details>
+    </details>
 <h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
 <dl>
 <dt>遗传病（genetic disease）</dt>
@@ -2060,9 +2060,9 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
 <li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
 </ul>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>关于 HPG 的两次“完成”</p>
+<details class="note info "><summary><p>关于 HPG 的两次“完成”</p>
 </summary>
-    <blockquote>
+      <blockquote>
 <p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
 人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 </blockquote>
@@ -2074,7 +2074,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 </ol>
 </section>
 
-  </details>
+    </details>
 <p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
 <strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
 30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
@@ -2116,7 +2116,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 </blockquote>
 <h2 id="人类染色体">人类染色体 <a class="markdownIt-Anchor" href="#人类染色体">#</a></h2>
 <p>另见 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#染色体形态学">染色体形态学</a>。</p>
-<div class="note info"><p>染色体和染色质是同一遗传物质在细胞间期和分裂期的两种不同形态。</p>
+<div class="note info "><p>染色体和染色质是同一遗传物质在细胞间期和分裂期的两种不同形态。</p>
 </div>
 <p>在<strong>间期</strong>细胞中，染色质可分为<strong>常染色质</strong>和<strong>异染色质</strong>。</p>
 <dl>
@@ -2259,7 +2259,7 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
 <dd>每个基因的 5’ 端和 3’ 端都有的一段不转录的非编码区。</dd>
 <dd>包括 5‘ 端的启动子、增强子及 3’ 端的终止子等。</dd>
 </dl>
-<div class="note warning"><p>注意区分启动子和起始密码子、终止子和终止密码子。</p>
+<div class="note warning "><p>注意区分启动子和起始密码子、终止子和终止密码子。</p>
 </div>
 <h5 id="启动子">启动子 <a class="markdownIt-Anchor" href="#启动子">#</a></h5>
 <dl>
@@ -2590,38 +2590,99 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
   <entry>
     <title>人类疱疹病毒</title>
     <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<dl>
-<dt>人类疱疹病毒</dt>
-<dd>一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong></dd>
-</dl>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
 <span id="more"></span>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>举例说明 HHV 的感染类型</p>
+<details class="note success "><summary><p>举例说明 HHV 的感染类型</p>
 </summary>
-    <ol>
-<li>显性感染：病毒增殖，破坏细胞，出现症状</li>
-<li><strong>潜伏感染</strong>：病毒不增殖，但可被激活</li>
-<li>整合感染：病毒转换</li>
-<li>先天性感染：可导致先天畸形</li>
+      <ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
 </ol>
 
-  </details>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>潜伏感染</p>
-</summary>
-    
-  </details>
-<h2 id="单纯疱疹病毒">单纯疱疹病毒 <a class="markdownIt-Anchor" href="#单纯疱疹病毒">#</a></h2>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<p>传播途径</p>
+    </details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
 <ul>
-<li>直接接触、性接触</li>
-<li>垂直传播</li>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
 </ul>
-<p>感染类型</p>
-<ul>
-<li>原发感染</li>
-<li>潜伏和再发感染</li>
-<li></li>
-</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -2751,7 +2812,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dt>原条（primitive streak）</dt>
 <dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
 </dl>
-<div class="note info"><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
+<div class="note info "><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
 <dl>
 <dt>畸胎瘤（teratoma）</dt>
 <dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
@@ -2766,7 +2827,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </div>
 <p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
 <p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
-<div class="note warning"><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
+<div class="note warning "><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
 </div>
 <dl>
 <dt>内胚层（endoderm）</dt>
@@ -2936,14 +2997,14 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li>B 细胞 NK 细胞分化成熟的场所</li>
 <li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
 </ol>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>mIgM</p>
+<details class="note info "><summary><p>mIgM</p>
 </summary>
-    <p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
+      <p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
 <blockquote>
 <p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
 </blockquote>
 
-  </details>
+    </details>
 <h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
 <dl>
 <dt>胸腺（thymus）</dt>
@@ -3009,7 +3070,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
 <dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
 </dl>
-<div class="note default"><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
+<div class="note default "><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
 </div>
 <hr />
 <dl>
@@ -3090,7 +3151,8 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <span id="more"></span>
 <h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
 <p>中枢神经系统，死亡率 100%，</p>
-<p>病毒呈“子弹头状”</p>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<p>病毒呈“子弹头状”，</p>
 <dl>
 <dt><mark>内基小体</mark></dt>
 <dd>狂犬病病毒在神经细胞（主要是<strong>大脑海马回的锥体细胞</strong>）中增殖形成的嗜酸性包涵体。</dd>
@@ -3200,7 +3262,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dt>α 地中海贫血（α-thalassemia）| α 地贫</dt>
 <dd>珠蛋白基因（<strong>16 号染色体上的 α<sub>1</sub> 和 α<sub>2</sub></strong>）缺失（主要）或缺陷使 α（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
 </dl>
-<div class="note info"><p>α 地贫主要由<mark>基因缺失</mark>造成。</p>
+<div class="note info "><p>α 地贫主要由<mark>基因缺失</mark>造成。</p>
 </div>
 <ul>
 <li><strong>α<sup>0</sup> 地贫</strong>（<strong>α 地贫 1</strong>）：缺失两个基因，-- / αα</li>
@@ -3214,7 +3276,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dt>β 地中海贫血（β-thalassemia）| β 地贫</dt>
 <dd>β 珠蛋白基因缺失或缺陷使 β（珠蛋白）链合成受到抑制而引起的溶血性贫血。</dd>
 </dl>
-<div class="note info"><p>β 地贫主要由<mark>基因突变</mark>造成。</p>
+<div class="note info "><p>β 地贫主要由<mark>基因突变</mark>造成。</p>
 </div>
 <ul>
 <li><strong>β<sup>0</sup> 地贫</strong>：完全不能合成 β 链</li>
@@ -3362,7 +3424,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </li>
 </ul>
 <h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info"><div class='note-title' id='芽孢杆菌属'>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       芽孢杆菌属
     </div><ul>
 <li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
@@ -3474,92 +3536,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>医学免疫学</title>
-    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>免疫</dt>
-<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
-</dl>
-<span id="more"></span>
-<ul>
-<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
-<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
-<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
-<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
-<li>主要组织相容性复合体</li>
-</ul>
-<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
-<ul>
-<li>免疫器官
-<ul>
-<li>中枢：胸腺、骨髓</li>
-<li>外周：脾脏、淋巴结</li>
-</ul>
-</li>
-<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
-<li>免疫分子
-<ul>
-<li>膜型分子</li>
-<li>分泌型分子</li>
-</ul>
-</li>
-</ul>
-<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
-<dl>
-<dt><mark>免疫防御</mark>（immune defense）</dt>
-<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
-<dt><mark>免疫监视</mark>（immune surveillance）</dt>
-<dd>随时发现和清除体内出现的“非己”成分。</dd>
-<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
-<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
-</dl>
-<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
-<dl>
-<dt>免疫应答（immune response）</dt>
-<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
-<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
-<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
-<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
-<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
-<dd>相比固有免疫，有三个主要特点：
-<ul>
-<li><strong>特异性</strong></li>
-<li><strong>耐受性</strong></li>
-<li><strong>记忆性</strong></li>
-</ul>
-</dd>
-<dd>适应性免疫应答可分为两类：
-<ul>
-<li><strong>体液免疫</strong></li>
-<li><strong>细胞免疫</strong></li>
-</ul>
-</dd>
-<dt>体液免疫（humoral immunity）</dt>
-<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
-<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
-<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
-</dl>
-<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
-<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
-<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
-<!-- UPDATING -->
-<dl>
-<dt>免疫性疾病</dt>
-<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
-<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>化脓性细菌</title>
     <url>/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
     <content><![CDATA[<ul>
@@ -3655,7 +3631,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 <h3 id="预防和治疗">预防和治疗 <a class="markdownIt-Anchor" href="#预防和治疗">#</a></h3>
 <p>首选<strong>万古霉素</strong>。</p>
-<div class="note warning"><p>已发现万古霉素耐药的葡萄球菌。</p>
+<div class="note warning "><p>已发现万古霉素耐药的葡萄球菌。</p>
 </div>
 <h2 id="链球菌">链球菌 <a class="markdownIt-Anchor" href="#链球菌">#</a></h2>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
@@ -3810,7 +3786,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 <h2 id="脑膜炎奈瑟菌">脑膜炎奈瑟菌 <a class="markdownIt-Anchor" href="#脑膜炎奈瑟菌">#</a></h2>
 <p><strong>流行性脑脊髓膜炎</strong>的第二常见病原菌（第一为 <mark>肺炎球菌</mark>），属于奈瑟菌属。</p>
-<div class="note info"><p>奈瑟菌属中仅有 <a href="#%E8%84%91%E8%86%9C%E7%82%8E%E5%A5%88%E7%91%9F%E8%8F%8C">脑膜炎奈瑟菌</a> 和 <a href="#%E6%B7%8B%E7%97%85%E5%A5%88%E7%91%9F%E8%8F%8C">淋病奈瑟菌</a> 对人致病。</p>
+<div class="note info "><p>奈瑟菌属中仅有 <a href="#%E8%84%91%E8%86%9C%E7%82%8E%E5%A5%88%E7%91%9F%E8%8F%8C">脑膜炎奈瑟菌</a> 和 <a href="#%E6%B7%8B%E7%97%85%E5%A5%88%E7%91%9F%E8%8F%8C">淋病奈瑟菌</a> 对人致病。</p>
 <img data-src="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/%E5%A5%88%E7%91%9F%E8%8F%8C%E5%B1%9E.png" class="" title="奈瑟菌属" alt="奈瑟菌属">
 <ul>
 <li>形态与染色：革兰氏阴性，双球菌，无鞭毛，无芽孢，有菌毛</li>
@@ -4006,6 +3982,92 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
+    <title>医学免疫学</title>
+    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>免疫</dt>
+<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
+</dl>
+<span id="more"></span>
+<ul>
+<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
+<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
+<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
+<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
+<li>主要组织相容性复合体</li>
+</ul>
+<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
+<ul>
+<li>免疫器官
+<ul>
+<li>中枢：胸腺、骨髓</li>
+<li>外周：脾脏、淋巴结</li>
+</ul>
+</li>
+<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
+<li>免疫分子
+<ul>
+<li>膜型分子</li>
+<li>分泌型分子</li>
+</ul>
+</li>
+</ul>
+<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
+<dl>
+<dt><mark>免疫防御</mark>（immune defense）</dt>
+<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
+<dt><mark>免疫监视</mark>（immune surveillance）</dt>
+<dd>随时发现和清除体内出现的“非己”成分。</dd>
+<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
+<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
+</dl>
+<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
+<dl>
+<dt>免疫应答（immune response）</dt>
+<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
+<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
+<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
+<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
+<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
+<dd>相比固有免疫，有三个主要特点：
+<ul>
+<li><strong>特异性</strong></li>
+<li><strong>耐受性</strong></li>
+<li><strong>记忆性</strong></li>
+</ul>
+</dd>
+<dd>适应性免疫应答可分为两类：
+<ul>
+<li><strong>体液免疫</strong></li>
+<li><strong>细胞免疫</strong></li>
+</ul>
+</dd>
+<dt>体液免疫（humoral immunity）</dt>
+<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
+<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
+<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
+</dl>
+<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
+<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
+<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
+<!-- UPDATING -->
+<dl>
+<dt>免疫性疾病</dt>
+<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
+<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>医学原虫学</title>
     <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</url>
     <content><![CDATA[<p>Empty…</p>
@@ -4031,15 +4093,15 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
     <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</url>
     <content><![CDATA[<p>Empty…</p>
 <span id="more"></span>
-<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>医学蠕虫分类</p>
+<details class="note default "><summary><p>医学蠕虫分类</p>
 </summary>
-    <ol>
+      <ol>
 <li>线虫</li>
 <li>吸虫</li>
 <li>绦虫</li>
 </ol>
 
-  </details>
+    </details>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -4076,22 +4138,22 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dt>复合杂合子</dt>
 <dd>一个特定位点伤有<em>两个不同突变</em>等位基因的个体。</dd>
 </dl>
-<div class="note warning"><p>隐性遗传病的杂合子（复合杂合子）也可能表现出症状。</p>
+<div class="note warning "><p>隐性遗传病的杂合子（复合杂合子）也可能表现出症状。</p>
 </div>
 <dl>
 <dt>双重杂合子</dt>
 <dd>在<em>两个不同位点上</em>每个位点各带有一种突变基因的个体。</dd>
 </dl>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>系谱绘制</p>
+<details class="note info "><summary><p>系谱绘制</p>
 </summary>
-    <dl>
+      <dl>
 <dt>系谱（pedigree）</dt>
 <dd>从<strong>先证者</strong>入手，追溯调查其家系所有成员的<strong>亲属关系</strong>以及某种遗传病的<strong>发病情况</strong>（或某种性状的分布），用特定的符号按一定方式绘制而成的图解。</dd>
 <dt>先证者（proband）</dt>
 <dd>某个家庭中首先被医生或遗传研究者发现的罹患某种遗传病的患者或者具有某种遗传性状的成员。</dd>
 </dl>
 
-  </details>
+    </details>
 <ol>
 <li><a href="#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E6%98%BE%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85"><strong>常染色体显性遗传病</strong></a>：
 <ul>
@@ -4219,7 +4281,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <div class="tabs" id="延迟显性遗传病"><ul class="nav-tabs"><li class="tab active"><a href="#延迟显性遗传病-1">多囊肾病</a></li><li class="tab"><a href="#延迟显性遗传病-2">亨亭顿舞蹈症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="延迟显性遗传病-1"><p><strong>多囊肾病</strong>（Polycystic kidney disease 1，<abbr title="Polycystic kidney disease 1，多囊肾病">PKD1</abbr>）特征是双侧肾肿大，并有许多囊肿、血尿、高血压、腹痛和进行性肾衰竭，许多患者直到 40 岁甚至更晚才出现临床症状。</p></div><div class="tab-pane" id="延迟显性遗传病-2"><p><mark>Huntington 病</mark>（Huntington disease，<abbr title="Huntington disease，Huntington 病，亨亭顿舞蹈症">HD</abbr>）（<strong>亨亭顿舞蹈症</strong>）是一种进行性神经病变，临床表现为<strong>进行性不自主舞蹈样动作</strong>。该病通常 30~40 岁发病，最终演变为<strong>痴呆</strong>。<br/>
 <abbr title="Huntington disease，Huntington 病，亨亭顿舞蹈症">HD</abbr> 是由于 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=动态突变#动态突变"><mark>动态突变</mark></a> 引起的。<abbr title="Huntington disease，Huntington 病，亨亭顿舞蹈症">HD</abbr> 的致病基因为 4p16.3 上的 <em>HTT</em>，其 5’ 端有 (CAG)<sub>n</sub> 三核苷酸重复，正常人重复拷贝数范围为 9~34 次，患者的重复拷贝数扩展到 37~100 次。<br/></p>
 <p>如果 <em>HTT</em> 是由父亲传来的，患者可在 20 岁之前发病且病情严重；若是从母亲传来的，则多在 40 岁以后发病且病情轻，这种现象称为<strong>遗传印记</strong>。</p>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>遗传印记（genetic imprinting）</dt>
 <dd>由于基因来自来自父方或母方而产生不同表型的现象。</dd>
 <dd>是一种依赖于配子起源的某些等位基因的修饰现象，一些基因在精子/卵子的形成过程中被印记（如甲基化），表达受到影响。</dd>
@@ -4266,7 +4328,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li>近亲婚配明显提告 <abbr title="autosomal recessive，常染色体隐性遗传">AR</abbr> 遗传病的发病风险。</li>
 </ul>
 <img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/%E4%B8%8D%E5%AE%8C%E5%85%A8%E7%A1%AE%E8%AE%A4.png" class="" title="不完全确认" alt="不完全确认">
-<div class="note info"><p><strong>近亲婚配</strong>（Consanguineous Mating）指在 3~4 代之内有共同祖先的个体之间的婚配，会<em>明显提高 AR 遗传病的患病风险</em>。</p>
+<div class="note info "><p><strong>近亲婚配</strong>（Consanguineous Mating）指在 3~4 代之内有共同祖先的个体之间的婚配，会<em>明显提高 AR 遗传病的患病风险</em>。</p>
 <p><mark>亲缘系数</mark>（coefficient of relationship，r）见 <a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=亲缘系数#非随机婚配">非随机婚配</a>。</p>
 <table>
 <thead>
@@ -4353,21 +4415,21 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li><strong>Duchenne 型肌营养不良症</strong>：较 <abbr title="Becker muscular dystrophy，Backer 型肌营养不良症">BMD</abbr> 型病情较重，患者<strong>腓肠肌假性肥大</strong>、从卧位到站立表现有 <mark>Gower 征</mark>（Gowers’s sign，以 William Richard <em>Gowers</em> 的名字命名）。</li>
 </ul>
 <img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/Gower's%20sign.png" class="" title="Gowers&#39;s sign" alt="Gowers&#39;s sign">
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>假肥大型肌营养不良症</p>
+<details class="note info "><summary><p>假肥大型肌营养不良症</p>
 </summary>
-    <p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的<strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
+      <p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的<strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
 <ul>
 <li><strong>Duchenne 型肌营养不良症</strong>（Duchenne muscular dystrophy，DMD）：发病早，病情重，抗肌萎缩蛋白不表达或表达无功能的蛋白</li>
 <li><strong>Backer 型肌营养不良症</strong>（Becker muscular dystrophy，BMD）：发病晚、病情轻，抗肌萎缩蛋白质量减少或蛋白质长度变化</li>
 </ul>
 
-  </details>
+    </details>
 <p><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr> 的致病基因 <em><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr></em> 基因克隆是<strong>定位克隆</strong>（positional cloning）的典型例子。</p>
-<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>定位克隆</p>
+<details class="note default "><summary><p>定位克隆</p>
 </summary>
-    <p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
+      <p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
 
-  </details>
+    </details>
 <h2 id="x-连锁显性遗传病">X 连锁显性遗传病 <a class="markdownIt-Anchor" href="#x-连锁显性遗传病">#</a></h2>
 <dl>
 <dt>X 连锁显性遗传（X-linked dominant inheritance，<abbr title="X-linked dominant inheritance，X 连锁显性遗传">XD</abbr>）病</dt>
@@ -4440,7 +4502,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </dd>
 </dl>
 <span id="more"></span>
-<div class="note info"><div class='note-title' id='厌氧芽孢梭菌属'>
+<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       厌氧芽孢梭菌属
     </div><ul>
 <li>严格厌氧菌，抵抗力强</li>
@@ -4581,26 +4643,26 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <p>急性呼吸道感染中 90%~95% 是由病毒引起的。</p>
 </blockquote>
 <span id="more"></span>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>引起普通感冒的常见病毒</p>
+<details class="note info "><summary><p>引起普通感冒的常见病毒</p>
 </summary>
-    <!-- TODO -->
+      <!-- TODO -->
 <ul>
 <li>普通感冒中 50% 由<a href="#%E9%BC%BB%E7%97%85%E6%AF%92"><strong>鼻病毒</strong></a>引起。</li>
 <li><a href="#%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92">冠状病毒</a></li>
 </ul>
 
-  </details>
+    </details>
 <h2 id="流行性感冒病毒">流行性感冒病毒 <a class="markdownIt-Anchor" href="#流行性感冒病毒">#</a></h2>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感和普通感冒的不同点</p>
+<details class="note info "><summary><p>流感和普通感冒的不同点</p>
 </summary>
-    <ul>
+      <ul>
 <li>病原体：腮腺炎病毒、冠状病毒、呼吸道合胞病毒、鼻病毒</li>
 <li>临床表现：发热、三痛（痛、眼、肌肉关节）</li>
 <li>传染性：强</li>
 <li>流行性：流行范围广，可引起大流行</li>
 </ul>
 
-  </details>
+    </details>
 <dl>
 <dt>流行性感冒病毒（influenza virus）| 流感病毒</dt>
 <dd>属于<em>正黏病毒科</em>，分为甲（A）、乙（B）、丙（C）三个型，是一种人兽共患病毒。</dd>
@@ -4609,14 +4671,14 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dd>与人的呼吸道黏膜黏蛋白亲合力强、有包膜、<strong>遗传物质为分节段</strong>的一类负链 RNA 病毒。</dd>
 <dd>希腊文 Orthos 有“正确，直”之意；myxo 有“粘液”之意。</dd>
 </dl>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感病毒的分型及其特点</p>
+<details class="note success "><summary><p>流感病毒的分型及其特点</p>
 </summary>
-    <ul>
+      <ul>
 <li>甲（A）型流感病毒：抗原易变异，引起<strong>流感大流行</strong></li>
 <li>乙（B）型流感病毒：一定程度的变异，局部小流行</li>
 <li>丙（C）型流感病毒：抗原稳定，主要感染婴幼儿</li>
 </ul>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>流感大流行</dt>
 <dd>系指新型流感的出现引起全世界范国大规模的流行。</dd>
 </dl>
@@ -4627,7 +4689,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li>1968 年，香港流感</li>
 </ol>
 </div>
-  </details>
+    </details>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
 <li>形态结构：球型或丝状，与黏蛋白有高度亲合性，<ins>有包膜，核酸分节段的 RNA 病毒</ins></li>
@@ -4651,40 +4713,40 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </li>
 <li>抵抗力：弱，对热、消毒剂菌敏感</li>
 </ul>
-<div class="note warning"><p>一般有包膜的病毒抵抗力较弱。</p>
+<div class="note warning "><p>一般有包膜的病毒抵抗力较弱。</p>
 </div>
-<div class="note success"><!-- TODO -->
-<p>核酸分节段的病毒有<a href="#%E6%B5%81%E8%A1%8C%E6%80%A7%E6%84%9F%E5%86%92%E7%97%85%E6%AF%92">流行性感冒病毒</a>、<a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#轮状病毒">轮状病毒</a>。</p>
+<div class="note success "><!-- TODO -->
+<p>核酸为分节段的 RNA 病毒有 <a href="#%E6%B5%81%E8%A1%8C%E6%80%A7%E6%84%9F%E5%86%92%E7%97%85%E6%AF%92">流行性感冒病毒</a>、<a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#轮状病毒">轮状病毒</a> 和 <a href="/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/#汉坦病毒">汉坦病毒</a>。</p>
 </div>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>血凝素的作用</p>
+<details class="note success "><summary><p>血凝素的作用</p>
 </summary>
-    <ul>
+      <ul>
 <li>凝集红细胞；</li>
 <li>吸附宿主细胞；</li>
 <li>具有抗原性。</li>
 </ul>
-<div class="note info"><p>抗原性的意义：</p>
+<div class="note info "><p>抗原性的意义：</p>
 <ul>
 <li>刺激机体产生保护性的综合抗体；</li>
 <li>抗原易变异，是划分亚型的依据。</li>
 </ul>
 </div>
-  </details>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感病毒的抗原性变异的类型及其特点</p>
+    </details>
+<details class="note success "><summary><p>流感病毒的抗原性变异的类型及其特点</p>
 </summary>
-    <dl>
+      <dl>
 <dt>抗原漂移（antigen drift）</dt>
 <dd>变异幅度小，由<strong>点突变</strong>造成，连续累积后形成亚型内变异，引起流感中、小流行。</dd>
 <dt>抗原转换（antigen shift）</dt>
 <dd>变异幅度大，由<a href="/2021/03/21/%E7%97%85%E6%AF%92/#重组和重配"><strong>基因重组或重配</strong></a>造成，导致新亚型的形成，引起<strong>流感大流行</strong>。</dd>
 </dl>
 <p>乙型和丙型流感病毒都没有抗原转换。</p>
-<div class="note info"><ul>
+<div class="note info "><ul>
 <li><strong>流感病毒的储存库</strong>：所有哺乳动物的流感病毒均来源于 <mark>水生禽类</mark>。</li>
 <li><strong>基因混合器</strong>：猪气管上皮具有禽流感病毒和人流感病毒两种病毒的受体。当猪受到两种病毒同时感染时，两种病毒间科发生基因重组和重配，导致抗原转换。</li>
 </ul>
 </div>
-  </details>
+    </details>
 <h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
 <ul>
 <li>所致疾病：<strong>流行性感冒</strong>（流感），流行性感冒病毒是引起流感的唯一病原体</li>
@@ -4697,15 +4759,15 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <p>病后对同型有 1~2 年的免疫力，无交叉免疫。</p>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
 <p>一般流感可仅根据临床表现和流行情况做出诊断。</p>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>流感病毒的分离与鉴定的方法</p>
+<details class="note success "><summary><p>流感病毒的分离与鉴定的方法</p>
 </summary>
-    <ol>
+      <ol>
 <li>取材：急性患者的咽漱液或鼻咽拭子</li>
 <li>接种：鸡胚（或培养细胞），初次分离用羊膜腔，传代用尿囊腔</li>
 <li>鉴定：红细胞凝集实验或红细胞吸附实验</li>
 </ol>
 
-  </details>
+    </details>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <ul>
 <li>预防：采取综合措施</li>
@@ -4721,11 +4783,11 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <blockquote>
 <p>传染性极强，又名“见面传”。</p>
 </blockquote>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>副黏病毒</p>
+<details class="note info "><summary><p>副黏病毒</p>
 </summary>
-    <p><strong>副黏病毒</strong>（<em>Paramyxoviridae</em>）病毒体较大，抗原性稳定，不易发生变异。</p>
+      <p><strong>副黏病毒</strong>（<em>Paramyxoviridae</em>）病毒体较大，抗原性稳定，不易发生变异。</p>
 
-  </details>
+    </details>
 <h3 id="致病性与免疫性-2">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性-2">#</a></h3>
 <ul>
 <li>传染源：患者</li>
@@ -4802,11 +4864,11 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </li>
 </ul>
 <h2 id="风疹病毒">风疹病毒 <a class="markdownIt-Anchor" href="#风疹病毒">#</a></h2>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>麻腮风三联疫苗</p>
+<details class="note info "><summary><p>麻腮风三联疫苗</p>
 </summary>
-    <p><strong>麻腮风三联疫苗</strong>是预防麻疹、腮腺炎、风疹（德国麻疹）的疫苗，由三种疾病病毒的活性减毒活病毒混合而成，是以注射的方式施打疫苗。</p>
+      <p><strong>麻腮风三联疫苗</strong>是预防麻疹、腮腺炎、风疹（德国麻疹）的疫苗，由三种疾病病毒的活性减毒活病毒混合而成，是以注射的方式施打疫苗。</p>
 
-  </details>
+    </details>
 <h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
 <ul>
 <li>传染源：人类是其唯一自然宿主</li>
@@ -4817,18 +4879,18 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 </li>
 </ul>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>ToRCH</p>
+<details class="note info "><summary><p>ToRCH</p>
 </summary>
-    <p>ToRCH 指可导致先天性宫内感染及围产期感染而引起围产儿畸形的病原体，它是一组病原微生物的英文名称缩写：</p>
+      <p>ToRCH 指可导致先天性宫内感染及围产期感染而引起围产儿畸形的病原体，它是一组病原微生物的英文名称缩写：</p>
 <ul>
 <li>T：弓形虫</li>
-<li>o：other，如梅毒螺旋体、带状疱疹病毒</li>
-<li>R：风疹病毒</li>
-<li>C：巨细胞病毒</li>
-<li>H：单纯疱疹胞毒</li>
+<li>o（other）：如 <a href="#%E8%85%AE%E8%85%BA%E7%82%8E%E7%97%85%E6%AF%92">腮腺炎病毒</a></li>
+<li>R：<a href="#%E9%A3%8E%E7%96%B9%E7%97%85%E6%AF%92">风疹病毒</a></li>
+<li>C：<a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=巨细胞病毒#巨细胞病毒">巨细胞病毒</a></li>
+<li>H：<a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=单纯疱疹病毒#单纯疱疹病毒">单纯疱疹病毒</a></li>
 </ul>
 
-  </details>
+    </details>
 <h2 id="鼻病毒">鼻病毒 <a class="markdownIt-Anchor" href="#鼻病毒">#</a></h2>
 <p>普通感冒中 50% 由<strong>鼻病毒</strong>引起。</p>
 ]]></content>
@@ -4858,7 +4920,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dt>结核分枝杆菌（<em>M. tuherculosis</em>）| 结核杆菌 | 抗酸杆菌（acid-fast bacilli）</dt>
 <dd>属<strong>分枝杆菌属</strong> ，可引起人类<strong>结核病</strong>。</dd>
 </dl>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>分枝杆菌属（<em>Mycobacterium</em>）</dt>
 <dd>一类细长、直或微弯曲的杆菌，有分枝生长趋势的细菌，可呈丝状或菌丝样生长。</dd>
 <dd>主要特点
@@ -4876,7 +4938,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </dd>
 </dl>
 </div>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>抗酸染色法（acid-fast stain）</dt>
 <dd>以 5% 石炭酸复红加温染色，再用 3% 盐酸酒精脱色，然后用美蓝复染，分枝杆菌呈红色（+），其他细菌和背景物质为蓝色（-）。</dd>
 <dd>参见：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYXVzdGluY2MuZWR1L21pY3JvYnVnei9hY2lkX2Zhc3Rfc3RhaW4ucGhw">https://www.austincc.edu/microbugz/acid_fast_stain.php<i class="fa fa-external-link-alt"></i></span></dd>
@@ -4912,7 +4974,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 </li>
 </ul>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>卡介苗（BCG）</dt>
 <dd>Calmette 和 Guerin 将<strong>牛分枝杆菌</strong>经 13 年 230 次传代获得的<strong>减活活疫苗株</strong>。</dd>
 </dl>
@@ -4938,15 +5000,15 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 <h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
 <p>抗结核免疫主要依靠细胞免疫，属于<strong>感染免疫（infection immunity）</strong>，又称<strong>有菌免疫</strong>。机体抗结核免疫特点：<strong>传染、免疫、迟发型超敏反应共存</strong>。</p>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>Ⅳ 型超敏反应 | 迟发型超敏反应</dt>
 <dd>由<strong>效应性 T 细胞</strong>与相应抗原作用后，引起的以单个核细胞浸润和组织细胞损伤为主要特征的炎症反应。</dd>
 <dd>反应时间 48~72h，明显晚于其他 3 个型。</dd>
 </dl>
 </div>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>结核菌素试验</p>
+<details class="note info titled"><summary><p>结核菌素试验</p>
 </summary>
-    <div class='note-title' id='结核菌素试验'>
+      <div class='note-title' id='结核菌素试验' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       结核菌素试验
     </div><dl>
 <dt>结核菌素（OT）试验</dt>
@@ -4969,7 +5031,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dd>OT 经三氯乙酸沉淀后的纯化物。</dd>
 </dl>
 
-  </details>
+    </details>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <p>预防</p>
 <ul>
@@ -5001,7 +5063,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <dt>白喉棒状杆菌（<em>C. diphtheriea</em>）</dt>
 <dd>致病性最强的<strong>棒状杆菌属</strong>细菌，可引起人类<strong>白喉病</strong>。</dd>
 </dl>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>棒状杆菌属（<em>Corymebacterium</em>）</dt>
 <dd>G<sup>+</sup> 菌，一端或两端膨大呈棒状，无荚膜、无鞭毛、不产生芽胞，除<strong>白喉棒状杆菌</strong>外多为机会致病菌。</dd>
 </dl>
@@ -5272,15 +5334,15 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
     <content><![CDATA[<p>心血管系统是<strong>最早</strong>形成并执行功能的系统，约发生与第 3 周末，至第 4 周末血液循环开始。<br/>
 心血管系统由<strong>中胚层</strong>分化而来，首先形成原始心血管，再进一步经过生长、合并、扩大和萎缩等过程逐渐完善。</p>
 <span id="more"></span>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>重点</p>
+<details class="note info "><summary><p>重点</p>
 </summary>
-    <ol>
+      <ol>
 <li>简述 <a href="#%E5%BF%83%E6%88%BF%E7%9A%84%E5%88%86%E9%9A%94">心房的分隔</a>；</li>
 <li><a href="?highlight=%E5%8D%B5%E5%9C%86%E5%AD%94#%E5%BF%83%E6%88%BF%E7%9A%84%E5%88%86%E9%9A%94">卵圆孔</a>；</li>
 <li>简述 <a href="#%E6%B3%95%E6%B4%9B%E5%9B%9B%E8%81%94%E7%97%87">法洛四联症</a> 的构成及其形成原因；</li>
 </ol>
 
-  </details>
+    </details>
 <h2 id="原始心血管系统的建立">原始心血管系统的建立 <a class="markdownIt-Anchor" href="#原始心血管系统的建立">#</a></h2>
 <p>人胚第 2 周末，来自<strong>卵黄囊</strong>、体蒂和绒毛膜的<strong>胚外中胚层</strong>增殖分化形成的细胞索或团，称 <mark>血岛</mark>（blood island）。<br/>
 不久，血岛周边细胞分化为扁平的内皮细胞，并围成管道，即<strong>原始血管</strong>；<br/>
@@ -5614,7 +5676,7 @@ IgG 的“桥联”作用，促进吞噬细胞对细菌的吞噬。</p>
 <p>主要由 <strong>IgE</strong> 介导，IgE 通过其 <abbr title="可结晶片段">Fc</abbr> 段与肥大细胞或嗜碱性粒细胞表面高亲和力 IgE <abbr title="可结晶片段">Fc</abbr>
 受体（FcεR Ⅰ）结合，并使其致敏。<br/>
 若相同<strong>应变原</strong>再次进入机体与致敏靶细胞表面特异性 IgE 结合，即可引起 Ⅰ 型超敏反应。</p>
-<div class="note info"><dl>
+<div class="note info "><dl>
 <dt>Ⅰ 型超敏反应 | 过敏反应（anaphylaxis）| 变态反应（allergy）</dt>
 <dd>机体受到某些抗原刺激时，引起的由特异性 IgE 抗体介导产生的一种发生快消退亦快的免疫应答。</dd>
 <dd>表现为局部或全身的生理功能紊乱，具有明显个体差异和遗传倾向。</dd>
@@ -5777,7 +5839,7 @@ FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其�
 <dd>抗原分子中决定抗原特异性的特殊化学基团。</dd>
 <dd>是抗原与 <abbr title="T 细胞表面抗原">TCR</abbr>/<abbr title="B 细胞表面抗原">BCR</abbr> 或者抗体特异性结合的<strong>最小结构和功能单位</strong>。</dd>
 </dl>
-<div class="note default"><p>抗体和抗原上的某一个<strong>表位</strong>结合具有特异性，而一个抗原上可存在多个表位。</p>
+<div class="note default "><p>抗体和抗原上的某一个<strong>表位</strong>结合具有特异性，而一个抗原上可存在多个表位。</p>
 </div>
 <dl>
 <dt>抗原结合价（antigenic valence）</dt>
@@ -5964,7 +6026,7 @@ T 细胞辅助。</p>
 <dt>同种异型抗原 | 同种异体抗原</dt>
 <dd>同一物种不同个体间存在的不同抗原，如血型抗原和人 <abbr title="主要组织相容性复合体（major histocompatibility complex）">MHC</abbr>（即 <abbr title="人白细胞抗原">HLA</abbr>）。</dd>
 </dl>
-<div class="note info"><p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的
+<div class="note info "><p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的
 <strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。</p>
 </div>
 <dl>
@@ -6112,7 +6174,7 @@ T 细胞辅助。</p>
 <p>对人体致病的支原体有 <a href="#%E8%82%BA%E7%82%8E%E6%94%AF%E5%8E%9F%E4%BD%93">肺炎支原体</a>、人型支原体、生殖器支原体、<a href="#%E7%A9%BF%E9%80%8F%E6%94%AF%E5%8E%9F%E4%BD%93">穿透支原体</a> 和 <a href="#%E8%A7%A3%E8%84%B2%E8%84%B2%E5%8E%9F%E4%BD%93">解脲脲原体</a> 等。</p>
 <span id="more"></span>
 <h2 id="支原体概述">支原体概述 <a class="markdownIt-Anchor" href="#支原体概述">#</a></h2>
-<div class="note warning"><p>支原体是引起细胞培养污染的一个重要因素。</p>
+<div class="note warning "><p>支原体是引起细胞培养污染的一个重要因素。</p>
 </div>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
@@ -6873,7 +6935,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <strong>原始直肠</strong>，将演变为直肠和肛管上段。<br/>
 泄殖腔膜也被分为背、腹侧两份，分别为<strong>尿生殖膜</strong>（urogenital membrane）和<strong>肛膜</strong>（anal membrane）。</p>
 <p>肛膜周围形成一浅凹，称为<strong>肛凹</strong>或<strong>原肛</strong>（proctodeum），在肛膜破裂后加深，演变为肛管下段。</p>
-<div class="note info"><p>肛管上段上皮来自于内胚层（原始直肠），下段上皮则来自外胚层（原肛），两者之间以<strong>尺状线</strong>（pectinate line）分隔。</p>
+<div class="note info "><p>肛管上段上皮来自于内胚层（原始直肠），下段上皮则来自外胚层（原肛），两者之间以<strong>尺状线</strong>（pectinate line）分隔。</p>
 </div>
 <h2 id="消化系统常见先天畸形">消化系统常见先天畸形 <a class="markdownIt-Anchor" href="#消化系统常见先天畸形">#</a></h2>
 <dl>
@@ -6888,12 +6950,12 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>由于 <a href="?highlight=%E8%84%90%E8%85%94#%E4%B8%AD%E8%82%A0%E7%9A%84%E6%BC%94%E5%8F%98">脐腔</a> 未正常闭锁所致。</dd>
 </dl>
 <p>腹内压升高时，肠管从脐部膨出，有时会形成嵌顿疝。</p>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>嵌顿疝</p>
+<details class="note info "><summary><p>嵌顿疝</p>
 </summary>
-    <p>指当腹内压突然升高时，疝内容物可强行扩张疝囊颈而突入疝囊，随后因疝囊颈弹性收缩，将疝内容物卡住而不能回纳腹腔的情况。</p>
+      <p>指当腹内压突然升高时，疝内容物可强行扩张疝囊颈而突入疝囊，随后因疝囊颈弹性收缩，将疝内容物卡住而不能回纳腹腔的情况。</p>
 <p>与绞窄性疝是同一疾病的不同阶段。两者的区别在于嵌顿疝尚未发生肠壁的缺血坏死。</p>
 
-  </details>
+    </details>
 <h2 id="呼吸系统的发生">呼吸系统的发生 <a class="markdownIt-Anchor" href="#呼吸系统的发生">#</a></h2>
 <h3 id="喉-气管和肺的发生">喉、气管和肺的发生 <a class="markdownIt-Anchor" href="#喉-气管和肺的发生">#</a></h3>
 <p>于胚胎发育第 4 周，前肠原始咽的尾端腹侧正中部位出现一条纵行浅沟，称为<strong>喉气管沟</strong>（laryngotracheal groove）。<br/>
@@ -6944,9 +7006,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <span id="more"></span>
 <h2 id="肠道病毒属病毒">肠道病毒属病毒 <a class="markdownIt-Anchor" href="#肠道病毒属病毒">#</a></h2>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>肠道病毒属病毒的共性</p>
+<details class="note success "><summary><p>肠道病毒属病毒的共性</p>
 </summary>
-    <ul>
+      <ul>
 <li>RNA 无包膜病毒
 <ul>
 <li>核酸为 <strong>+ssRNA</strong>：在细胞质内增殖</li>
@@ -6957,7 +7019,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>主要引起<strong>肠道外疾病</strong></li>
 </ul>
 
-  </details>
+    </details>
 <h3 id="脊髓灰质炎病毒">脊髓灰质炎病毒 <a class="markdownIt-Anchor" href="#脊髓灰质炎病毒">#</a></h3>
 <h4 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h4>
 <ul>
@@ -6983,9 +7045,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 </li>
 </ul>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>脊髓灰质炎病毒灭活疫苗和减毒活疫苗的区别</p>
+<details class="note success "><summary><p>脊髓灰质炎病毒灭活疫苗和减毒活疫苗的区别</p>
 </summary>
-    <ul>
+      <ul>
 <li>灭活脊髓灰质炎病毒（OPV）/Sabin 疫苗</li>
 <li>脊髓灰质炎病毒减毒活疫苗（IPV）/Salk 疫苗</li>
 </ul>
@@ -7036,7 +7098,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </tbody>
 </table>
 
-  </details>
+    </details>
 <h3 id="柯萨奇病毒">柯萨奇病毒 <a class="markdownIt-Anchor" href="#柯萨奇病毒">#</a></h3>
 <ul>
 <li>传播途径：消化道、呼吸道、垂直传播</li>
@@ -7072,7 +7134,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 </li>
 </ul>
-<div class="note success"><p>引起手足口病的病原体有<strong>柯萨奇病毒</strong>、<strong>肠道病毒 71 型</strong>（较严重）。</p>
+<div class="note success "><p>引起手足口病的病原体有<strong>柯萨奇病毒</strong>、<strong>肠道病毒 71 型</strong>（较严重）。</p>
 </div>
 <h2 id="呼肠病毒科病毒">呼肠病毒科病毒 <a class="markdownIt-Anchor" href="#呼肠病毒科病毒">#</a></h2>
 <ol>
@@ -7521,7 +7583,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <h3 id="治疗-3">治疗 <a class="markdownIt-Anchor" href="#治疗-3">#</a></h3>
 <p>霍乱为<strong>自限性</strong>疾病，治疗的关键是<strong>及时补充液体和电解质</strong>。</p>
-<div class="note info"><p><strong>自限性疾病</strong>指在发生发展到一定程度后能自动停止并逐渐恢复，只需对症治疗或不治疗，靠自身免疫就可痊愈的疾病。</p>
+<div class="note info "><p><strong>自限性疾病</strong>指在发生发展到一定程度后能自动停止并逐渐恢复，只需对症治疗或不治疗，靠自身免疫就可痊愈的疾病。</p>
 </div>
 <h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
 <h3 id="副溶血性弧菌">副溶血性弧菌 <a class="markdownIt-Anchor" href="#副溶血性弧菌">#</a></h3>
@@ -7591,11 +7653,11 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt>固定绒毛（anchoring villus）</dt>
 <dd><strong>绒毛干</strong>固定于蜕膜上的绒毛。</dd>
 </dl>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>绒毛膜取样/活检</p>
+<details class="note info "><summary><p>绒毛膜取样/活检</p>
 </summary>
-    <p>绒毛膜取样/活检（chorionic villus sampling，CVS）指在超声引导下行穿刺术，取出胎盘内的绒毛组织进行细胞培养、分子遗传学或生化遗传学检查，进行染色体诊断或基因诊断。分为经腹绒毛活检及经宫颈绒毛活检。</p>
+      <p>绒毛膜取样/活检（chorionic villus sampling，CVS）指在超声引导下行穿刺术，取出胎盘内的绒毛组织进行细胞培养、分子遗传学或生化遗传学检查，进行染色体诊断或基因诊断。分为经腹绒毛活检及经宫颈绒毛活检。</p>
 
-  </details>
+    </details>
 <img data-src="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/%E8%83%8E%E5%84%BF%E5%8F%B6%E5%92%8C%E8%83%8E%E5%84%BF%E5%B0%8F%E5%8F%B6.png" class="right" width="500" title="胎儿叶和胎儿小叶" alt="胎儿叶和胎儿小叶">
 <p>绒毛膜板上伸出 60~80 个<strong>绒毛干</strong>，每个绒毛干中均含有<em>脐动脉</em>和<em>脐静脉</em>。脐血管随绒毛不断分支，最终成为毛细血管进入绒毛末端。<br/>
 一个初级绒毛干及其分支形成一个<strong>胎儿叶</strong>（fetal lobe）；一个次级绒毛干及其分支形成一个<strong>胎儿小叶</strong>（fetal lobule）。</p>
@@ -7780,15 +7842,15 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>分散在生精小管之间的<strong>间充质细胞</strong>分化而来，分泌<strong>雄激素</strong>，促进尿道生殖窦和<strong>中肾管</strong>向男性生殖管道分化。</dd>
 </dl>
 <p>人胚 14~18 周，间质细胞占睾丸体积一般以上，随后迅速减少，出生时几乎见不到间质细胞，直至青春期才重现。</p>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>雄激素</p>
+<details class="note info "><summary><p>雄激素</p>
 </summary>
-    <dl>
+      <dl>
 <dt>雄激素（androgen, androgenic hormones, testoids）| 雄性激素 | 男性荷尔蒙</dt>
 <dd>系泛称，指任何能与<strong>雄激素受体</strong>（androgen receptor）结合，调节脊椎动物雄性性征的发育与维持的<strong>类固醇激素</strong>。</dd>
 </dl>
 <p>男性体内的主要雄激素为<strong>睾酮</strong>和<strong>双氢睾酮</strong>。</p>
 
-  </details>
+    </details>
 <dl>
 <dt>支持细胞 | Sertoli 细胞</dt>
 <dd>由<strong>初级性索</strong>分化形成，分泌<strong>抗 Müllerian 激素</strong>，对<strong>中肾旁管</strong>起抑制作用。</dd>
@@ -8041,9 +8103,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>对<em>抗生素</em>不敏感，对<strong>干扰素</strong>敏感</li>
 </ol>
 <span id="more"></span>
-<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病原生物学分类（TOC）</p>
+<details class="note default "><summary><p>病原生物学分类（TOC）</p>
 </summary>
-    <ol>
+      <ol>
 <li><a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">呼吸道感染病毒</a></li>
 <li><a href="/2021/05/10/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/">消化道感染病毒</a></li>
 <li><a href="/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/">肝炎病毒</a></li>
@@ -8053,10 +8115,10 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><a href="/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/">其他病毒</a></li>
 </ol>
 
-  </details>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病毒是生命吗？</p>
+    </details>
+<details class="note info titled"><summary><p>病毒是生命吗？</p>
 </summary>
-    <div class='note-title' id='病毒是生命吗？'>
+      <div class='note-title' id='病毒是生命吗？' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       病毒是生命吗？
     </div><p><strong>什么是生命？</strong></p>
 <ol>
@@ -8075,8 +8137,8 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>病毒是生物</strong>——生物分为六个届：病毒届、真菌届、原核生物届、原生生物届、植物届和动物届。</li>
 </ul>
 
-  </details>
-<div class="note info"><div class='note-title' id='亚病毒'>
+    </details>
+<div class="note info titled"><div class='note-title' id='亚病毒' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       亚病毒
     </div><dl>
 <dt>亚病毒（subvirus）</dt>
@@ -8104,7 +8166,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt><mark>病毒体</mark>（virion）</dt>
 <dd>有感染性、结构完整、成熟的病毒颗粒。</dd>
 </dl>
-<div class="note info"><p>病毒的大小指的是病毒体的大小。</p>
+<div class="note info "><p>病毒的大小指的是病毒体的大小。</p>
 </div>
 <p>病毒体积微小，测量单位为 nm，必须借助电子显微镜观察。不同病毒体大小相差很大。</p>
 <p>不同病毒的性状不同，多为球型或近似球型，而植物病毒多为杆状。
@@ -8192,7 +8254,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dd>病毒包膜与细胞膜密切接触，在融合蛋白的催化下，融合孔开口，病毒包膜与胞膜融合，将病毒的核衣壳释放至细胞内。</dd>
 <dd><strong>有包膜病毒</strong>以此方式穿入细胞。</dd>
 </dl>
-<div class="note info"><p>噬菌体穿入细胞的方式为<strong>直接注入</strong>。</p>
+<div class="note info "><p>噬菌体穿入细胞的方式为<strong>直接注入</strong>。</p>
 </div>
 <h4 id="脱壳">脱壳 <a class="markdownIt-Anchor" href="#脱壳">#</a></h4>
 <dl>
@@ -8205,18 +8267,18 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt>生物合成（biosynthesis）</dt>
 <dd>即病毒利用宿主细胞提供的低分子物质大量合成病毒<strong>核酸</strong>和<strong>结构蛋白</strong>。</dd>
 </dl>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>隐蔽期</p>
+<details class="note info "><summary><p>隐蔽期</p>
 </summary>
-    <p>用血清学方法和电镜检查宿主细胞，在生物合成阶段找不到病毒颗粒，故称为隐蔽期。
+      <p>用血清学方法和电镜检查宿主细胞，在生物合成阶段找不到病毒颗粒，故称为隐蔽期。
 实质是在病毒基因控制下进行病毒核酸和蛋白质合成的阶段。</p>
 
-  </details>
+    </details>
 <p>病毒合成的蛋白质：</p>
 <ul>
 <li>转录早期 mRNA → <strong>早期蛋白</strong>：是在病毒核酸复制之前合成的，主要为用于合成子代 DNA 分子的多种酶类，为<strong>功能性蛋白</strong>；</li>
 <li>转录晚期 mRNA → <strong>晚期蛋白</strong>：病毒核酸自我复制后，以<strong>子代的病毒核酸</strong>为模版翻译出来的，主要为构成病毒衣壳的<strong>结构蛋白</strong>。</li>
 </ul>
-<div class="note info"><p>病毒核酸的复制方式因核酸类型的不同而异，可分为 7 个类型：</p>
+<div class="note info "><p>病毒核酸的复制方式因核酸类型的不同而异，可分为 7 个类型：</p>
 <ol>
 <li><a href="/2021/03/21/%E7%97%85%E6%AF%92/%E5%8F%8C%E9%93%BE%20DNA%20%E7%97%85%E6%AF%92.png"><strong>双链 DNA 病毒</strong></a></li>
 <li>单链 DNA 病毒</li>
@@ -8227,11 +8289,12 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>嗜肝 DNA 病毒</li>
 </ol>
 <p><strong>双链 RNA（dsDNA）病毒</strong>在细胞核内合成 DNA，细胞质内合成病毒蛋白，<strong>痘病毒</strong>除外。</p>
-<details class="note " onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>痘病毒科</p>
+<details class="note  "><summary><p>痘病毒科</p>
 </summary>
-    <p>本科为病毒粒最大的一类DNA病毒，结构复杂。
+      <p>本科为病毒粒最大的一类DNA病毒，结构复杂。
 病毒在<strong>细胞质</strong>内增殖，形成包涵体，病毒粒由微绒毛或由细胞裂解而释放。</p>
-  </details>
+<pre><code>&lt;/details&gt;
+</code></pre>
 <p><strong>单正链 RNA 病毒</strong>这类病毒本身就具有 mRNA 的功能。</p>
 <p><strong>逆转录病毒</strong>核酸以单正链 RNA 形式存在，但不具 mRNA 功能，只能作为逆转录的模版。</p></div>
 <h4 id="组装-成熟-释放">组装、成熟、释放 <a class="markdownIt-Anchor" href="#组装-成熟-释放">#</a></h4>
@@ -8393,7 +8456,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>急性病毒感染</strong>（acute viral infection）：潜伏期短，发病急，病程短，恢复后机体不在携带病毒。</li>
 <li><strong>持续性病毒感染</strong>（persistent viral infection）：机体可携带潜伏病毒数月至数（十）年；可出现症状，也可不出现症状；引起慢性进行性疾病，并可称为重要的传染源。
 <ul>
-<li><strong>潜伏（性）感染</strong>（latent infection）：持续性感染伴有疾病的间歇性发作，在两次发作间用常规方法不能分离到病毒，如 HSV 、水痘-带状疱疹病毒及 CMV 感染等。</li>
+<li><strong>潜伏（性）感染</strong>（latent infection）：持续性感染伴有疾病的间歇性发作，在两次发作间用常规方法不能分离到病毒，如 HSV 、水痘-带状疱疹病毒及 CMV 感染（见 <a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/">人类疱疹病毒</a>）等。</li>
 <li><strong>慢性感染</strong>（chronic infection）：持续感染可检出病毒，并常排出病毒，但不发病或带有免疫病理失调，如 HBV 、jc 病毒、BK 病毒、HIV 及 LCMV 感染等。</li>
 <li><strong>慢发病毒感染</strong>（slow virus infection）/迟发（病毒）感染/长程感染：持续感染有很长的潜伏期，随后缓慢的发展成致死性疾病，如 <strong>HIV</strong> 和<strong>痲疹病毒</strong>的感染。儿童期感染<a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#痲疹病毒"><mark>痲疹病毒</mark></a>恢复后，极少数人于十余年后可发生<mark>亚急性硬化性全脑炎</mark>（<mark>SSPE</mark>）。</li>
 </ul>
@@ -8442,14 +8505,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
   <entry>
     <title>真菌</title>
     <url>/2021/03/21/%E7%9C%9F%E8%8F%8C/</url>
-    <content><![CDATA[<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病原生物学分类（TOC）</p>
+    <content><![CDATA[<details class="note default "><summary><p>病原生物学分类（TOC）</p>
 </summary>
-    <ol>
+      <ol>
 <li><a href="">皮肤及皮下组织感染真菌</a></li>
 <li><a href="">深部感染真菌</a></li>
 </ol>
 
-  </details>
+    </details>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -9040,9 +9103,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 </ul>
 <p><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/"><strong>螺旋体</strong></a> 也属于广义的细菌学范畴。</p>
-<details class="note default" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>病原生物学分类（TOC）</p>
+<details class="note default "><summary><p>病原生物学分类（TOC）</p>
 </summary>
-    <ol>
+      <ol>
 <li><a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/">化脓性细菌</a></li>
 <li><a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/">消化道感染细菌</a></li>
 <li><a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/">呼吸道感染细菌</a></li>
@@ -9050,7 +9113,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><a href="/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/">动物源性细菌</a></li>
 </ol>
 
-  </details>
+    </details>
 <h2 id="细菌的结构">细菌的结构 <a class="markdownIt-Anchor" href="#细菌的结构">#</a></h2>
 <ul>
 <li>基本结构（各种细菌共有的结构）：<a href="#%E7%BB%86%E8%83%9E%E5%A3%81">细胞壁</a>、<a href="#%E7%BB%86%E8%83%9E%E8%86%9C">细胞膜</a>、<a href="#%E7%BB%86%E8%83%9E%E8%B4%A8">细胞质</a>、<a href="#%E6%A0%B8%E8%B4%A8">核质</a></li>
@@ -9462,12 +9525,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt>机会致病菌（opportunistic bacterium）| 条件致病菌（conditional bacterium）</dt>
 <dd>某些在正常条件下不致病，在某些条件改变的特殊情况下可以致病。</dd>
 </dl>
-<p>由机会致病菌引起的感染称为<strong>机会性感染</strong>（opportunistic infection），发生条件包括：</p>
-<ol>
-<li>定居部位改变</li>
-<li>机体免疫力低下</li>
-<li>菌群失调</li>
-</ol>
+<p>由机会致病菌引起的感染称为<mark>机会性感染</mark>（opportunistic infection），发生条件包括<span class="horizontal-list"><span class="horizontal-list-item"><strong>定居部位改变</strong></span><span class="horizontal-list-item"><strong>机体免疫力低下</strong></span><span class="horizontal-list-item"><strong>菌群失调</strong></span></span>，常发生于免疫力异常低下的人群，包括<span class="horizontal-list"><span class="horizontal-list-item"><strong>长期使用免疫抑制剂或激素者</strong></span><span class="horizontal-list-item"><strong>肿瘤患者</strong></span><span class="horizontal-list-item"><strong>AIDS 患者</strong></span></span>。</p>
 <h2 id="细菌感染的诊断和治疗">细菌感染的诊断和治疗 <a class="markdownIt-Anchor" href="#细菌感染的诊断和治疗">#</a></h2>
 <p>标本的采集和送检六原则：</p>
 <ol>
@@ -9734,15 +9792,15 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <h2 id="乙型肝炎病毒">乙型肝炎病毒 <a class="markdownIt-Anchor" href="#乙型肝炎病毒">#</a></h2>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
+<details class="note success "><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
 </summary>
-    <ol>
+      <ol>
 <li><strong>大球形颗粒</strong>：即 <strong>Dane 颗粒</strong>，为 HBV 的完整<strong>病毒体</strong></li>
 <li><strong>小球形颗粒</strong>：HBV 增殖合成过剩的 <strong><mark>HBsAg</mark></strong>（乙型肝炎病毒的<strong>表面抗原</strong>，即包膜上的糖蛋白）</li>
 <li><strong>管形颗粒</strong>：<strong>小球形颗粒的串联物</strong></li>
 </ol>
 
-  </details>
+    </details>
 <ul>
 <li>形态结构：核酸为 DNA，有双层衣壳［<strong>外衣壳</strong>（相当于包膜）、内衣壳］
 <ul>
@@ -9760,9 +9818,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>基因组：<strong>双股不完全闭合 DNA</strong></li>
 <li>抵抗力：强，强于甲型肝炎病毒</li>
 </ul>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
+<details class="note success "><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
 </summary>
-    <p class="align-text-center table-caption ">
+      <p class="align-text-center table-caption ">
       乙型肝炎病毒基因组的结构及其功能
     </p>
 <table>
@@ -9800,10 +9858,10 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <p>HBxAg 为反式激活蛋白，是一种致癌蛋白，与原发性肝癌发生发展有关，不作为临床血清学诊断。</p>
 </blockquote>
 
-  </details>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 的三个重要抗原及其意义</p>
+    </details>
+<details class="note success "><summary><p>HBV 的三个重要抗原及其意义</p>
 </summary>
-    <ol>
+      <ol>
 <li><strong>HbsAg</strong>：
 <ul>
 <li>划分亚型：adr/adw、ayr/ayw，a 为共同抗原决定簇，d/y、w/r 为亚型决定簇，一对亚型决定簇之间互斥</li>
@@ -9814,14 +9872,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li><strong>HBeAg</strong>：消长与病毒体及 DNA 聚合酶的消长一致，可作为体内有 HBV 复制及血清具有强感染性的指标</li>
 </ol>
 
-  </details>
+    </details>
 <h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
 <ul>
 <li>所致疾病：乙型肝炎（血清型肝炎），慢性肝炎 → 肝硬化 → 肝癌</li>
 </ul>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 的传染源及传播途径</p>
+<details class="note success "><summary><p>HBV 的传染源及传播途径</p>
 </summary>
-    <ul>
+      <ul>
 <li>传染源：<strong>乙肝患者</strong>和<strong>表面抗原阳性阳性的携带者</strong></li>
 <li>传播途径：
 <ol>
@@ -9832,10 +9890,10 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 </ul>
 
-  </details>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 感染的常见临床表现类型</p>
+    </details>
+<details class="note success "><summary><p>HBV 感染的常见临床表现类型</p>
 </summary>
-    <ol>
+      <ol>
 <li><strong>急性肝炎</strong>：1% 黄疸性肝炎患者发生重症肝炎</li>
 <li><strong>慢性肝炎</strong>：5%~10% 的 HBV 感染者，其中 10% 转变为肝硬化，并继而发展为肝功能衰竭</li>
 <li><strong>原发性肝细胞癌</strong>：80% 归因于慢性肝炎</li>
@@ -9845,16 +9903,16 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <p>临床表现主要由肝细胞是否裂解决定。</p>
 </blockquote>
 
-  </details>
+    </details>
 <h3 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h3>
 <ul>
 <li>细胞免疫：CD8<sup>+</sup>T 细胞</li>
 <li>体液免疫：主要依靠<strong>抗-Hbs</strong> 和抗-Hbe，抗-Hbc 可作为 <abbr title="乙型肝炎病毒">HBV</abbr> 感染的指标</li>
 </ul>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<details class="note success" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>HBV 感染的血清学检测指标及其意义</p>
+<details class="note success "><summary><p>HBV 感染的血清学检测指标及其意义</p>
 </summary>
-    <p class="align-text-center table-caption ">
+      <p class="align-text-center table-caption ">
       两对半抗原抗体检测系统（肝炎五项）
     </p>
 <table>
@@ -9945,8 +10003,8 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </tbody>
 </table>
 
-  </details>
-<div class="note default"><p>肝炎八项还包括甲肝、丙肝、戊肝各一项。</p>
+    </details>
+<div class="note default "><p>肝炎八项还包括甲肝、丙肝、戊肝各一项。</p>
 </div>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <ul>
@@ -10239,9 +10297,12 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
     <content><![CDATA[<dl>
 <dt><strong>虫媒病毒</strong>（arbovirus）</dt>
 <dd>通过吸血节肢动物叮咬人和脊椎动物而传播的病毒，均为 <strong>RNA 有包膜病毒</strong>。</dd>
+<dt>出血热病毒（hemorrhagic fever virus）</dt>
+<dd>由节肢动物或啮齿动物传播的，引起病毒性出血热的一大类病毒。</dd>
 </dl>
 <span id="more"></span>
-<h2 id="流行性乙型脑炎病毒">流行性乙型脑炎病毒 <a class="markdownIt-Anchor" href="#流行性乙型脑炎病毒">#</a></h2>
+<h2 id="虫媒病毒">虫媒病毒 <a class="markdownIt-Anchor" href="#虫媒病毒">#</a></h2>
+<h3 id="流行性乙型脑炎病毒">流行性乙型脑炎病毒 <a class="markdownIt-Anchor" href="#流行性乙型脑炎病毒">#</a></h3>
 <p>简称乙脑病毒，也称日本乙型脑炎病毒。</p>
 <p>致病性：</p>
 <ul>
@@ -10249,7 +10310,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <li>所致疾病：<strong>流行性乙型脑炎</strong>（<strong>乙脑</strong>）</li>
 <li>传染源：猪，尤其是幼猪，病毒滴度高</li>
 </ul>
-<h2 id="登革病毒">登革病毒 <a class="markdownIt-Anchor" href="#登革病毒">#</a></h2>
+<h3 id="登革病毒">登革病毒 <a class="markdownIt-Anchor" href="#登革病毒">#</a></h3>
 <p>致病性：</p>
 <ul>
 <li>传播媒介：<strong>伊蚊</strong></li>
@@ -10260,86 +10321,81 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 </ul>
 </li>
 </ul>
-<h2 id="寨卡病毒">寨卡病毒 <a class="markdownIt-Anchor" href="#寨卡病毒">#</a></h2>
+<h3 id="寨卡病毒">寨卡病毒 <a class="markdownIt-Anchor" href="#寨卡病毒">#</a></h3>
 <p>致病性：</p>
 <ul>
 <li>传播媒介：<strong>伊蚊</strong></li>
 <li><em>所致疾病</em>：
 <ul>
 <li>低热、斑丘疹、关节疼痛，症状轻微，可自愈</li>
-<li>孕妇感染可能导致<strong>新生儿小头畸形</strong></li>
+<li>孕妇感染可能导致<em>新生儿小头畸形</em></li>
 </ul>
 </li>
 </ul>
-<!-- ## 汉坦病毒 -->
-<!--  -->
-<!-- 汉坦病毒 -->
-<!-- : 流行性出血热/肾病综合征的病原体 -->
-<!--  -->
-<!-- ### 生物学特性 -->
-<!--  -->
-<!-- - 形态与结构：分节段 RNA，有包膜 -->
-<!--  -->
-<!-- <details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>汉坦病毒的核酸片段与功能</p>
+<h2 id="出血热病毒">出血热病毒 <a class="markdownIt-Anchor" href="#出血热病毒">#</a></h2>
+<h3 id="汉坦病毒">汉坦病毒 <a class="markdownIt-Anchor" href="#汉坦病毒">#</a></h3>
+<p>又称<strong>肾病综合征出血热病毒</strong>。</p>
+<h4 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h4>
+<ul>
+<li>形态与结构：<strong>分节段 RNA，有包膜</strong></li>
+</ul>
+<details class="note success "><summary><p>汉坦病毒的核酸片段与功能</p>
 </summary>
-    <p>–&gt;</p>
-<!-- 1. L（large）片段：编码 RNA 聚合酶 -->
-<!-- 2. M（middle）片段：糖蛋白 -->
-<!-- 3. S（small）片段：核蛋白 -->
-<!-- 
-  </details> -->
-<!--  -->
-<!-- - 抗原结构和分型：分为 6 个血清型，我国流行两个型： -->
-<!--   - Ⅰ 型（黑线姬鼠型） -->
-<!--   - Ⅱ 型（家鼠或大鼠型） -->
-<!--  -->
-<!-- ### 致病性与免疫性 -->
-<!--  -->
-<!-- <details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>汉坦病毒的传染源及传播途径</p>
+      <ol>
+<li><strong>L</strong>（large）片段：编码 <strong>RNA 聚合酶</strong>（L）</li>
+<li><strong>M</strong>（middle）片段：编码<strong>糖蛋白</strong>（G1、G2）</li>
+<li><strong>S</strong>（small）片段：编码<strong>核蛋白</strong>（N）</li>
+</ol>
+
+    </details>
+<ul>
+<li>抗原结构和分型：分为 6 个血清型，我国流行两个型：
+<ul>
+<li>Ⅰ 型：<strong>野鼠型</strong>/<strong>黑线姬鼠型</strong></li>
+<li>Ⅱ 型：<strong>家鼠型</strong>/<strong>大鼠型</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h4>
+<details class="note success "><summary><p>汉坦病毒的传染源及传播途径</p>
 </summary>
-    <p>–&gt;</p>
-<!-- - 传染源：多种啮齿动物（姬鼠、田鼠） -->
-<!-- - 传播途径 -->
-<!--   - 动物源性传播：消化道、呼吸道、破碎皮肤黏膜 -->
-<!--   - 母婴传播 -->
-<!--   - 虫媒传播 -->
-<!-- 
-  </details> -->
-<!--  -->
-<!-- 所致疾病 -->
-<!-- - **肾病综合征**（HFRS）：出血现象和肾损害 -->
-<!-- - 汉坦病毒肺综合征（HPS）：病死率高 -->
-<!--  -->
-<!-- 肾病综合征 -->
-<!-- 1. 出血现象 -->
-<!-- 2. 肾损害 -->
-<!--  -->
-<!-- - 病后可获得较强的免疫力，以抗体为主 -->
-<!-- - 疫苗：**双价灭活疫苗** -->
-<!--  -->
-<!-- ## 埃博拉病毒 -->
-<!--  -->
-<!-- ### 生物学特性 -->
-<!--  -->
-<!-- RNA，有包膜，呈长丝状体 -->
-<!--  -->
-<!-- ### 致病性 -->
-<!--  -->
-<!-- **埃博拉出血热**，病死率高 -->
-<!--  -->
-<!-- ### 防治原则 -->
-<!--  -->
-<!-- 尚无有效治疗方法和疫苗 -->
-<!--  -->
-<!-- ## 克里米亚-刚果出血热病毒 -->
-<!--  -->
-<!-- 又称新疆出血热病毒 -->
-<!--  -->
-<!-- ### 致病性 -->
-<!--  -->
-<!-- - 传染源： -->
-<!-- - 传播途径：虫媒传播——蜱 -->
-<!--  -->
+      <ul>
+<li>传染源：多种啮齿动物（姬鼠、田鼠）</li>
+<li>传播途径
+<ul>
+<li><strong>动物源性传播</strong>：<span class="horizontal-list"><span class="horizontal-list-item">消化道 呼吸道 破损皮肤黏膜</span></span></li>
+<li><em>母婴传播</em></li>
+<li><em>虫媒传播</em></li>
+</ul>
+</li>
+</ul>
+
+    </details>
+<p>所致疾病：</p>
+<ul>
+<li><strong>肾病综合症出血热</strong>（<mark>HRFS</mark>）：<span class="horizontal-list"><span class="horizontal-list-item"><strong>出血现象</strong> <strong>发热</strong> <strong>肾损害</strong></span></span></li>
+<li>汉坦病毒肺综合征（<strong>HPS</strong>）</li>
+</ul>
+<p>免疫性：</p>
+<ul>
+<li>病后可获得较强的免疫力，以抗体为主</li>
+<li>疫苗：<strong>双价灭活疫苗</strong></li>
+</ul>
+<h3 id="埃博拉病毒">埃博拉病毒 <a class="markdownIt-Anchor" href="#埃博拉病毒">#</a></h3>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈<strong>长丝状体</strong></li>
+<li>所致疾病：<strong>埃博拉出血热</strong>，病死率高</li>
+</ul>
+<h3 id="克里米亚-刚果出血热病毒">克里米亚-刚果出血热病毒 <a class="markdownIt-Anchor" href="#克里米亚-刚果出血热病毒">#</a></h3>
+<p>又称<em>新疆出血热病毒</em>。</p>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong></li>
+</ul>
+<p>致病性：</p>
+<ul>
+<li>传播途径：虫媒传播——<strong>蜱</strong></li>
+<li>所致疾病：<strong>克里米亚-刚果出血热</strong></li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -10511,15 +10567,15 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <dt>伯氏疏螺旋体（<em>B. burgdorefri</em>）</dt>
 <dd><strong>莱姆病</strong>病原体存在异质性，分类尚未统一，目前将伯氏疏螺旋体作为<strong>莱姆病</strong>病原体的统称。</dd>
 </dl>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>疏螺旋菌体属</p>
+<details class="note info "><summary><p>疏螺旋菌体属</p>
 </summary>
-    <dl>
+      <dl>
 <dt>疏螺旋菌体属（Borrelia）| 包柔螺旋菌体属</dt>
 <dd>有 3~10 个稀疏而不规则的螺旋，呈波状。</dd>
 <dd>对人体致病的主要有 <a href="#%E4%BC%AF%E6%B0%8F%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93"><strong>伯氏疏螺旋体</strong></a> 和 <a href="#%E5%9B%9E%E5%BD%92%E7%83%AD%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93"><strong>回归热疏螺旋体</strong></a>，它们均通过<strong>吸血昆虫</strong>传播，分别致<strong>莱姆病</strong>和<strong>回归热</strong>。</dd>
 </dl>
 
-  </details>
+    </details>
 <h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
 <ul>
 <li>形态：疏螺旋体，两端稍尖，运动活泼</li>
@@ -10835,35 +10891,86 @@ C3，在多种辅助因子的参与下激活补体。</p>
   <entry>
     <title>逆转录病毒</title>
     <url>/2021/05/20/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<span id="more"></span>
-<p>HIV 感染的过程及其特点</p>
-<ol>
-<li><strong>HIV 感染急性期</strong>：</li>
-<li><strong>潜伏期</strong>：</li>
-<li><strong>艾滋病相关综合征</strong>：</li>
-<li><strong>典型 AIDS 期</strong>：</li>
+    <content><![CDATA[<p><strong>逆转录病毒</strong>（retrovirus）是一类含有<strong>逆转录酶</strong>（reverse transcriptase，RT）的<strong>单正链 RNA 病毒</strong>。</p>
+<span id="more"></span>
+<h2 id="人类免疫缺陷病毒">人类免疫缺陷病毒 <a class="markdownIt-Anchor" href="#人类免疫缺陷病毒">#</a></h2>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<p>形态结构：<strong>RNA 有包膜病毒</strong>，从内到外的结构组成：</p>
+<ul>
+<li>包膜：包膜上含两种刺突——<strong>gp120</strong>、<strong>gp41</strong></li>
+<li>内膜：内膜蛋白（p17）</li>
+<li>衣壳：衣壳蛋白（p24）</li>
+<li>核心：+ssRNA、核衣壳蛋白（p7）、逆转录酶、整合酶、蛋白酶</li>
+</ul>
+<p>致病性：</p>
+<ul>
+<li>所致疾病：<strong>获得性人类免疫缺陷综合征</strong>（<strong>AIDS</strong>）</li>
+<li>致病特点：
+<ul>
+<li>仅感染病毒受体 <strong>CD4</strong> 阳性的细胞（CD4<sup>+</sup>T 细胞、树突状细胞、单核巨噬细胞）</li>
+<li>需要辅助受体 <strong>CXCR4</strong>、<strong>CCR5</strong></li>
+</ul>
+</li>
+</ul>
+<details class="note success "><summary><p>gp120 的功能</p>
+</summary>
+      <ol>
+<li>识别并结合靶细胞膜上的 CD4 分子；</li>
+<li>具有抗原性，可刺激机体产生保护性抗体；</li>
+<li>对应基因（<em>env</em>）易变异，有利于病毒的免疫逃逸。</li>
 </ol>
-<p>典型 AIDS 期的基本特征</p>
-<ol>
-<li>CD44<sup>+</sup>T 细胞严重下降</li>
-<li>严重机会性感染</li>
-<li>机会性肿瘤，卡波西（kaposi）肉瘤、恶性淋巴瘤</li>
-<li>全身症状加重或神经系统疾患</li>
+
+    </details>
+<details class="note success "><summary><p>HIV 的结构基因及其功能</p>
+</summary>
+      <ol>
+<li><em><strong>gap</strong></em>：p17、p24、p7</li>
+<li><em><strong>pol</strong></em>：逆转录酶、整合酶、蛋白酶</li>
+<li><em><strong>env</strong></em>：gp120、gp41</li>
 </ol>
-<p>常见机会性感染的病原体，如</p>
+
+    </details>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<div class="note success "><ul>
+<li>传染源：<span class="horizontal-list"><span class="horizontal-list-item">AIDS 患者</span><span class="horizontal-list-item">HIV 感染者</span></span>；</li>
+<li>传播途径：<span class="horizontal-list"><span class="horizontal-list-item">性传播</span><span class="horizontal-list-item">血源或医源性传播</span><span class="horizontal-list-item">母婴传播</span></span>。</li>
+</ul>
+</div>
+<details class="note success "><summary><p>HIV 感染的临床过程及其特点</p>
+</summary>
+      <ol>
+<li><strong>HIV 感染急性期</strong>：持续时间短暂，表现为发热、皮疹淋巴结肿大等<strong>非特异性症状</strong>；</li>
+<li><strong>潜伏期</strong>：持续时间可达 2~10 年或更久，感染者没有临床症状，病毒在淋巴结内进行低水平增殖，并释放少量病毒入血，患者血液具有传染性；</li>
+<li><strong>艾滋病相关综合征</strong>：时间较短，患者表现为<strong>持续性</strong>的发热、腹泻、淋巴结肿大；</li>
+<li><strong>典型 AIDS 期</strong>：患者血中能稳定检出高水平 HIV，患者血中 CD4<sup>+</sup>T 细胞明显下降，引起严重免疫缺陷，合并各种机会性感染。</li>
+</ol>
+
+    </details>
+<details class="note success "><summary><p>典型 AIDS 期的基本特征</p>
+</summary>
+      <ol>
+<li>患者血中 CD4<sup>+</sup>T 细胞明显下降，引起严重免疫缺陷；</li>
+<li>严重机会性感染：
 <ol>
-<li>细菌：结核杆菌</li>
+<li>细菌：结核杆菌引起全身性</li>
 <li>病毒：巨细胞病毒、HBV</li>
-<li>真菌：真菌肺胞子菌</li>
-<li>寄生虫：弓形虫、眼孢子虫</li>
+<li>真菌：肺胞子菌引起 PCP（肺孢子虫肺炎），为 AIDS 的标志病</li>
+<li>寄生虫：弓形虫、隐孢子虫</li>
 </ol>
+</li>
+<li>机会性肿瘤，如 <a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=卡波济肉瘤#">卡波济肉瘤</a>、恶性淋巴瘤；</li>
+<li>全身症状加重或神经系统疾患。</li>
+</ol>
+
+    </details>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<ol>
-<li>初筛：用 ELISA 法对抗抗体</li>
-<li>确诊：免疫印记实验</li>
+<div class="note success "><ol>
+<li>初筛：用 <strong>ELISA 法</strong>对抗抗体进行初筛</li>
+<li>确诊：<strong>免疫印记实验</strong>（Western blot）</li>
 </ol>
+</div>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>临床上常采用<strong>高效抗逆转录病毒治疗</strong>（“鸡尾酒疗法”，即多种抗病毒药物联合治疗。</p>
+<p>临床上常采用<mark>高效抗逆转录病毒治疗</mark>（HARRT）（<strong>“鸡尾酒疗法”</strong>），即多种抗病毒药物联合治疗。</p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -11159,9 +11266,9 @@ C3，在多种辅助因子的参与下激活补体。</p>
 <p>受精前，卵细胞膜下存在高尔基复合体形成的分泌小泡（<strong>皮质颗粒</strong>）。
 在<strong>皮质反应</strong>中，精子穿入点处的皮质颗粒首先与细胞膜融合，随后迅速波及整个卵细胞表面。皮质颗粒中各种蛋白水解酶、结构蛋白和粘多糖等释放到达透明带，使其结构发生变化并分解其中的
 ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</strong>）。</p>
-<details class="note info" onclick="if (window.getSelection() == '') { this.open = false; }"><summary><p>卵膜、透明带和卵黄膜</p>
+<details class="note info "><summary><p>卵膜、透明带和卵黄膜</p>
 </summary>
-    <dl>
+      <dl>
 <dt>卵膜（egg membrane）</dt>
 <dd>包裹于动物卵细胞的非细胞性被膜的总称。</dd>
 <dd>根据卵膜来源，可将其分为三类：
@@ -11182,7 +11289,7 @@ ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</stro
 <dd>在卵泡发育过程中，颗粒细胞发育形成排卵前卵泡中卵母细胞周围的卵丘细胞。</dd>
 </dl>
 
-  </details>
+    </details>
 <p>受精的意义：</p>
 <ol>
 <li>受精卵形成新个体；</li>
@@ -11290,7 +11397,7 @@ ZP<sub>3</sub> 使其不能与其他精子结合（<strong>透明带反应</stro
 </dl>
 <p>唇板中央部分的上皮很快退化，形成一道深沟，将上、下颌的唇和龈分隔区分开。</p>
 <h3 id="腭的发生">腭的发生 <a class="markdownIt-Anchor" href="#腭的发生">#</a></h3>
-<div class="note info"><p>腭的发生即口腔和鼻腔分隔的过程。<br/>
+<div class="note info "><p>腭的发生即口腔和鼻腔分隔的过程。<br/>
 腭的形成将原始口腔与原始鼻腔分隔成为永久的口腔与鼻腔，鼻腔后缘即后鼻孔与咽相通。</p>
 </div>
 <p>腭起源于<strong>正中腭突</strong>和<strong>外侧腭突</strong>两部分。</p>
@@ -26610,410 +26717,6 @@ window.PDFBug = (function PDFBugClosure() {
   </entry>
   <entry>
     <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<!--
-Copyright 2012 Mozilla Foundation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Adobe CMap resources are covered by their own copyright but the same license:
-
-    Copyright 1990-2015 Adobe Systems Incorporated.
-
-See https://github.com/adobe-type-tools/cmap-resources
--->
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PDF.js viewer</title>
-
-
-    <link rel="stylesheet" href="viewer.css">
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="../build/pdf.js"></script>
-
-
-  <script src="viewer.js"></script>
-
-  </head>
-
-  <body tabindex="1">
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div class="splitToolbarButton toggled">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
-
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
-              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-            </button>
-            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
-              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
-              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-            </button>
-            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
-              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-            </button>
-            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
-              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
-
-            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
-              <span data-l10n-id="spread_none_label">No Spreads</span>
-            </button>
-            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
-              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-            </button>
-            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
-              <span data-l10n-id="spread_even_label">Even Spreads</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
-                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-                </button>
-
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
-                  <span data-l10n-id="bookmark_label">Current View</span>
-                </a>
-
-                <div class="verticalToolbarSeparator hiddenSmallView"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-
-        <div id="errorWrapper" hidden='true'>
-          <div id="errorMessageLeft">
-            <span id="errorMessage"></span>
-            <button id="errorShowMore" data-l10n-id="error_more_info">
-              More Information
-            </button>
-            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
-              Less Information
-            </button>
-          </div>
-          <div id="errorMessageRight">
-            <button id="errorClose" data-l10n-id="error_close">
-              Close
-            </button>
-          </div>
-          <div class="clearBoth"></div>
-          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="overlayContainer" class="hidden">
-        <div id="passwordOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
-            </div>
-            <div class="row">
-              <input type="password" id="password" class="toolbarField">
-            </div>
-            <div class="buttonRow">
-              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="documentPropertiesOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
-            </div>
-            <div class="buttonRow">
-              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="printServiceOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-            </div>
-            <div class="row">
-              <progress value="0" max="100"></progress>
-              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
-            </div>
-            <div class="buttonRow">
-              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- overlayContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-  </body>
-</html>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
     <url>/lib/pdf/web/viewer.css</url>
     <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
@@ -29576,6 +29279,410 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+
+
+    <link rel="stylesheet" href="viewer.css">
+
+
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
+
+
+  <script src="viewer.js"></script>
+
+  </head>
+
+  <body tabindex="1">
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div class="splitToolbarButton toggled">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+            <span id="findResultsCount" class="toolbarLabel hidden"></span>
+          </div>
+
+          <div id="findbarMessageContainer">
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+            </button>
+            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+            </button>
+            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+            </button>
+            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
+
+            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div class="clearBoth"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+            </div>
+            <div class="row">
+              <input type="password" id="password" class="toolbarField">
+            </div>
+            <div class="buttonRow">
+              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
+            </div>
+            <div class="buttonRow">
+              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+            </div>
+            <div class="row">
+              <progress value="0" max="100"></progress>
+              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+            </div>
+            <div class="buttonRow">
+              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- overlayContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+  </body>
+</html>
 ]]></content>
   </entry>
   <entry>
