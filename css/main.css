@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #fffe91;
+  background: #26ff28;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3330,6 +3330,12 @@ div.img-wrap-right { float: right; }
 
 /**************************************************************************************/
 
+@counter-style circled-number {
+    system: fixed;
+    symbols: ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ⑳;
+    /* suffix: " "; */
+}
+
 .horizontal-list {
     counter-reset: hzlistCounter;
 }
@@ -3343,7 +3349,7 @@ div.img-wrap-right { float: right; }
 }
 
 .horizontal-list-item::before {
-    content: counter(hzlistCounter) '. '
+    content: counter(hzlistCounter, circled-number)
 }
 
 .horizontal-list-item::after {
