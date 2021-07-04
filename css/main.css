@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #26ff28;
+  background: #ffb317;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3494,7 +3494,7 @@ dd {
     color: #707070ee;
 }
 
-strong, em {
+strong, em, ins {
     color: var(--text-color) !important;
 }
 
@@ -3540,7 +3540,14 @@ dd>ol
 .note.success>.note-title { color: #5cb85c; text-shadow: 1px 1px #5cb85c; }
 .note.info>.note-title    { color: #428bca; text-shadow: 1px 1px #428bca; }
 .note.warning>.note-title { color: #f0ad4e; text-shadow: 1px 1px #f0ad4e; }
-.note.danger>.note-title   { color: #d9534f; text-shadow: 1px 1px #d9534f; }
+.note.danger>.note-title  { color: #d9534f; text-shadow: 1px 1px #d9534f; }
+
+.note.default>summary { color: #777;    }
+.note.primary>summary { color: #6f42c1; }
+.note.success>summary { color: #5cb85c; }
+.note.info>summary    { color: #428bca; }
+.note.warning>summary { color: #f0ad4e; }
+.note.danger>summary  { color: #d9534f; }
 
 details.note.titled[open]>summary {
     visibility: hidden;

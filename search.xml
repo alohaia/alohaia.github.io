@@ -1558,196 +1558,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 学习记录</title>
-    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
-<ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
-<ul>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
-<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
-<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
-<p>安装 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
-<p>安装 cnpm（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
-<p>安装 yarn（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
-<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
-<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
-<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
-<p>使用 Linux 软件包管理器安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
-<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
-<blockquote>
-<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
-<p>准备两个基本文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
-<p>初始化 <code>packages.json</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Front end</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类发育与遗传学</title>
-    <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
-    <content><![CDATA[<blockquote>
-<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
-differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
-</blockquote>
-<dl>
-<dt>遗传学（genetics）</dt>
-<dd>研究生物遗传物质及其变化规律的学科。</dd>
-<dt>医学遗传学（medical genetics）</dt>
-<dd>遗传学与医学结合产生的一门边缘学科。</dd>
-<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
-</dl>
-<span id="more"></span>
-<details class="note info "><summary><p><strong>Table of Content</strong></p>
-</summary><ol>
-<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
-<li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
-<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
-<li><a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
-<li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
-<li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
-<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
-<li><a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
-<li><a href="/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
-</ol>
-<p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
-</details>
-<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
-<dl>
-<dt>遗传病（genetic disease）</dt>
-<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
-</dl>
-<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
-<a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
-<p>理解遗传病应注意下述两种情况：</p>
-<ol>
-<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
-<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
-</ol>
-<p><strong>遗传病的分类</strong>：</p>
-<ol>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
-<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
-<li><strong>体细胞遗传病</strong>，如 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
-</ol>
-<dl>
-<dt>体细胞遗传病</dt>
-<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
-</dl>
-<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
-<ol>
-<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
-<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
-<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
-<li>1949 年，<strong>Pauling</strong> 发现 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
-<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
-<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
-<li>1977 年，Sanger 建立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
-<li>1985 年，Mullis 创立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
-<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
-</ol>
-<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
-<ul>
-<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
-<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
-<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
-<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
-</ul>
-<details class="note info "><summary><p>关于 HPG 的两次“完成”</p>
-</summary><blockquote>
-<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
-人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-</blockquote>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</details>
-<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
-<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
-30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
-<p>基因组测序方法：</p>
-<ul>
-<li>基因组公共研究中心：分级霰弹法</li>
-<li>Celera 公司：全基因组霰弹法</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The TTY Demystified</title>
     <url>/2021/03/15/The-TTY-Demystified/</url>
     <content><![CDATA[<p>原文：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51c2FrZXNzb24ubmV0L3Byb2dyYW1taW5nL3R0eS8=">http://www.linusakesson.net/programming/tty/<i class="fa fa-external-link-alt"></i></span></p>
@@ -2017,6 +1827,233 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       <tags>
         <tag>Linux</tag>
         <tag>TTY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 学习记录</title>
+    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
+<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
+<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
+<p>安装 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
+<p>安装 cnpm（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
+<p>安装 yarn（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
+<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
+<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
+<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
+<p>使用 Linux 软件包管理器安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
+<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
+<blockquote>
+<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
+<p>准备两个基本文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
+<p>初始化 <code>packages.json</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Front end</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
+<span id="more"></span>
+<p>HLA 基因复合体分为三个基因区</p>
+<p>MHC 基因分两种类型</p>
+<ul>
+<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
+<li>免疫功能相关基因
+<ul>
+<li>血清补体成分的编码基因</li>
+<li>抗原加工相关基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类发育与遗传学</title>
+    <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
+    <content><![CDATA[<blockquote>
+<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
+differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
+</blockquote>
+<dl>
+<dt>遗传学（genetics）</dt>
+<dd>研究生物遗传物质及其变化规律的学科。</dd>
+<dt>医学遗传学（medical genetics）</dt>
+<dd>遗传学与医学结合产生的一门边缘学科。</dd>
+<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
+</dl>
+<span id="more"></span>
+<details class="note info "><summary><p><strong>Table of Content</strong></p>
+</summary><ol>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
+<li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
+<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
+<li><a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
+<li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
+<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
+<li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
+<li><a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
+<li><a href="/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
+</ol>
+<p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
+</details>
+<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
+<dl>
+<dt>遗传病（genetic disease）</dt>
+<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
+</dl>
+<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
+<a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
+<p>理解遗传病应注意下述两种情况：</p>
+<ol>
+<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
+<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
+</ol>
+<p><strong>遗传病的分类</strong>：</p>
+<ol>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
+<li><strong>体细胞遗传病</strong>，如 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
+</ol>
+<dl>
+<dt>体细胞遗传病</dt>
+<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
+</dl>
+<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
+<ol>
+<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
+<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
+<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
+<li>1949 年，<strong>Pauling</strong> 发现 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
+<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
+<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
+<li>1977 年，Sanger 建立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
+<li>1985 年，Mullis 创立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
+<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
+</ol>
+<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
+<ul>
+<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
+<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
+<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
+<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
+</ul>
+<details class="note info "><summary><p>关于 HPG 的两次“完成”</p>
+</summary><blockquote>
+<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
+人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</blockquote>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</details>
+<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
+<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
+30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
+<p>基因组测序方法：</p>
+<ul>
+<li>基因组公共研究中心：分级霰弹法</li>
+<li>Celera 公司：全基因组霰弹法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -2618,259 +2655,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>其他病毒</title>
-    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<ul>
-<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
-<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
-<ul>
-<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
-</ul>
-<div class="note success "><dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
-<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
-</dl>
-</div>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
-<li>传染源：狂犬、猫、蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-<li>临床症状：
-<ul>
-<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
-<li>麻痹型：20 不到，不出现典型症状，直接进入麻痹期</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>英文简称 <strong>HPV</strong>。</p>
-<ul>
-<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
-<li>所致疾病：
-<ul>
-<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
-<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
-<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免疫器官和组织</title>
-    <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
-    <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
-<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
-<ul>
-<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
-<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="中枢免疫器官">中枢免疫器官 <a class="markdownIt-Anchor" href="#中枢免疫器官">#</a></h2>
-<dl>
-<dt>中枢免疫器官（central immune organ）| 初级淋巴器官（primary lymphoid organ）</dt>
-<dd>免疫细胞发生、分化、发育和成熟的场所。</dd>
-</dl>
-<h3 id="骨髓">骨髓 <a class="markdownIt-Anchor" href="#骨髓">#</a></h3>
-<dl>
-<dt>骨髓（bone marrow）</dt>
-<dd>各类血细胞（包括免疫细胞）的发源地</dd>
-<dd>人类和其他哺乳动物 B 细胞发育成熟的场所</dd>
-</dl>
-<h4 id="骨髓的结构和细胞组成">骨髓的结构和细胞组成 <a class="markdownIt-Anchor" href="#骨髓的结构和细胞组成">#</a></h4>
-<dl>
-<dt>红骨髓</dt>
-<dd>造血功能活跃，由<strong>造血组织</strong>和血窦组成。</dd>
-</dl>
-<p>造血组织</p>
-<ul>
-<li>造血细胞</li>
-<li>基质细胞：网状细胞、成纤维细胞、血窦内皮细胞、巨噬细胞……</li>
-</ul>
-<dl>
-<dt>黄骨髓</dt>
-<dd>含有大量脂肪组织，特定条件下可转换为红骨髓。</dd>
-</dl>
-<p><strong>造血诱导微环境（HIM）</strong></p>
-<ul>
-<li>细胞外基质</li>
-<li>骨髓基质细胞</li>
-<li>多种细胞因子</li>
-</ul>
-<h4 id="骨髓的功能">骨髓的功能 <a class="markdownIt-Anchor" href="#骨髓的功能">#</a></h4>
-<ol>
-<li>各类血细胞、免疫细胞发生的场所</li>
-<li>B 细胞 NK 细胞分化成熟的场所</li>
-<li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
-</ol>
-<details class="note info "><summary><p>mIgM</p>
-</summary><p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
-<blockquote>
-<p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
-</blockquote>
-</details>
-<h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
-<dl>
-<dt>胸腺（thymus）</dt>
-<dd>由胸腺细胞和胸腺基质细胞组成，是 T 细胞发育、分化、成熟的场所。</dd>
-</dl>
-<h4 id="胸腺的结构">胸腺的结构 <a class="markdownIt-Anchor" href="#胸腺的结构">#</a></h4>
-<ul>
-<li>皮质：深皮质、浅皮质</li>
-<li>髓质：散在分布的成熟胸腺细胞、巨噬细胞、树突状细胞</li>
-</ul>
-<p>细胞组成</p>
-<ul>
-<li>胸腺细胞：处于不同分化阶段的 T 细胞</li>
-<li>胸腺基质细胞（thymus stromal cell, TSC）
-<ul>
-<li>胸腺上皮细胞</li>
-<li>巨噬细胞</li>
-<li>树突状细胞</li>
-</ul>
-</li>
-</ul>
-<h4 id="胸腺微环境">胸腺微环境 <a class="markdownIt-Anchor" href="#胸腺微环境">#</a></h4>
-<dl>
-<dt>胸腺微环境（thymic microenvironment）</dt>
-<dd>决定 T 细胞分化、增殖和选择性发育的重要条件。
-<ul>
-<li>胸腺基质细胞</li>
-<li>细胞外基质</li>
-<li>局部活性因子</li>
-</ul>
-</dd>
-<dd><strong>细胞外基质</strong>也是胸腺微环境的重要组成部分。</dd>
-</dl>
-<p>胸腺上皮细胞影响胸腺细胞分化的两种方式</p>
-<ul>
-<li>细胞-细胞间相互接触</li>
-<li>分泌细胞因子和胸腺肽类因子</li>
-</ul>
-<h4 id="胸腺的功能">胸腺的功能 <a class="markdownIt-Anchor" href="#胸腺的功能">#</a></h4>
-<ol>
-<li>T 细胞分化、成熟的场所：T 细胞迁移、阳性选择、阴性选择</li>
-<li>免疫调节作用：细胞因子、胸腺肽类因子</li>
-<li>自身免疫耐受的建立与维持：通过阴性选择形成中枢免疫耐受</li>
-</ol>
-<h2 id="外周免疫器官和组织">外周免疫器官和组织 <a class="markdownIt-Anchor" href="#外周免疫器官和组织">#</a></h2>
-<ul>
-<li>成熟淋巴细胞定居的场所</li>
-<li>淋巴细胞对外来抗原产生免疫应答的主要部位</li>
-</ul>
-<h3 id="淋巴结">淋巴结 <a class="markdownIt-Anchor" href="#淋巴结">#</a></h3>
-<h4 id="淋巴结的结构">淋巴结的结构 <a class="markdownIt-Anchor" href="#淋巴结的结构">#</a></h4>
-<ul>
-<li>皮质：浅皮质区、深皮质区</li>
-<li>髓质：髓索、髓窦</li>
-</ul>
-<hr />
-<dl>
-<dt>浅皮质区 | 非胸腺依赖区（thymus-indepentent area）</dt>
-<dd>靠近被膜下的皮质区，为** B 细胞区**，是 B 细胞定居的场所。</dd>
-<dt>初级淋巴滤泡（primary lymphoid follicle）| 淋巴小结（lymphoid nodule）</dt>
-<dd>浅皮质区中，大量 B 细胞聚集而成。</dd>
-<dt>次级淋巴滤泡（secondary lymphoid follicle）</dt>
-<dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
-<dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
-</dl>
-<div class="note default "><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
-</div>
-<hr />
-<dl>
-<dt>深皮质区 | 副皮质区 | 胸腺依赖区（thymus-depentent area）</dt>
-<dd>浅皮质区与髓质之间的皮质区，为 <strong>T 细胞区</strong>，是 T 细胞定居的场所。</dd>
-<dt>高内皮微静脉（high endothelial venule, HEV）</dt>
-<dd>副皮质区中的由内皮细胞组成的、呈非连续状的<strong>毛细血管后微静脉</strong>。</dd>
-</dl>
-<hr />
-<dl>
-<dt>髓索</dt>
-<dd>由密集的淋巴细胞组成，主要为 B 细胞和浆细胞，也有部分 T 细胞和 Mϕ。</dd>
-<dt>髓窦</dt>
-<dd>富含 Mϕ，有较强的捕捉、清除抗原体的功能。</dd>
-</dl>
-<h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
-<ol>
-<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
-<li>适应性免疫应答的主要场所</li>
-<li>过滤作用：过滤组织来源的抗原</li>
-<li>参与淋巴细胞再循环</li>
-</ol>
-<h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
-<h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
-<ul>
-<li>白髄：动脉周围淋巴鞘（PALS）、脾小结、边缘区</li>
-<li>红髓：脾索、脾血窦</li>
-</ul>
-<h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
-<ol>
-<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
-<li>免疫应答发生的场所</li>
-<li>生成生物活性物质，如补体、细胞因子</li>
-<li>过滤作用：清除血液来源的抗原</li>
-</ol>
-<h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
-<dl>
-<dt>黏膜相关淋巴组织（MALT）</dt>
-<dd>胃肠道、呼吸道、泌尿生殖道黏膜固有层和上皮细胞下散在的淋巴组织，以及带有生发中心的淋巴组织。</dd>
-</dl>
-<h4 id="黏膜相关淋巴组织的组成">黏膜相关淋巴组织的组成 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的组成">#</a></h4>
-<ul>
-<li>肠相关淋巴结（GALT）
-<ul>
-<li>派氏集合淋巴结（PP）</li>
-<li>上皮内淋巴结（IEL）</li>
-</ul>
-</li>
-<li>鼻相关淋巴结（NALT）</li>
-<li>支气管相关淋巴组织（BALT）</li>
-</ul>
-<h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
-<ul>
-<li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
-<li>产生分泌型 IgA（SIgA）</li>
-</ul>
-<h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
-<dl>
-<dt>淋巴细胞归巢（lymphocyte homing）</dt>
-<dd>血液中淋巴细胞选择性取向迁移并定居与外周免疫器官的特定区域或特定组织的过程。</dd>
-<dt>淋巴细胞再循环（lymphocyte recirculation）</dt>
-<dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人胚发生和早期发育</title>
     <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
     <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
@@ -3127,141 +2911,246 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>动物源性细菌</title>
-    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
+    <title>免疫器官和组织</title>
+    <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
+    <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
+<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
+<ul>
+<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
+<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
+</ul>
 <span id="more"></span>
-<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
-<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<h2 id="中枢免疫器官">中枢免疫器官 <a class="markdownIt-Anchor" href="#中枢免疫器官">#</a></h2>
+<dl>
+<dt>中枢免疫器官（central immune organ）| 初级淋巴器官（primary lymphoid organ）</dt>
+<dd>免疫细胞发生、分化、发育和成熟的场所。</dd>
+</dl>
+<h3 id="骨髓">骨髓 <a class="markdownIt-Anchor" href="#骨髓">#</a></h3>
+<dl>
+<dt>骨髓（bone marrow）</dt>
+<dd>各类血细胞（包括免疫细胞）的发源地</dd>
+<dd>人类和其他哺乳动物 B 细胞发育成熟的场所</dd>
+</dl>
+<h4 id="骨髓的结构和细胞组成">骨髓的结构和细胞组成 <a class="markdownIt-Anchor" href="#骨髓的结构和细胞组成">#</a></h4>
+<dl>
+<dt>红骨髓</dt>
+<dd>造血功能活跃，由<strong>造血组织</strong>和血窦组成。</dd>
+</dl>
+<p>造血组织</p>
 <ul>
-<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
-<li>培养特性和生化反应：需氧，营养要求较高</li>
-<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+<li>造血细胞</li>
+<li>基质细胞：网状细胞、成纤维细胞、血窦内皮细胞、巨噬细胞……</li>
 </ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<dl>
+<dt>黄骨髓</dt>
+<dd>含有大量脂肪组织，特定条件下可转换为红骨髓。</dd>
+</dl>
+<p><strong>造血诱导微环境（HIM）</strong></p>
 <ul>
-<li><strong>感染途径</strong>：
-<ul>
-<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
-<li>经呼吸道或眼结膜</li>
-<li>经皮肤</li>
+<li>细胞外基质</li>
+<li>骨髓基质细胞</li>
+<li>多种细胞因子</li>
 </ul>
-</li>
-<li><strong>常见患者</strong>：
-<ul>
-<li>和动物密切接触者</li>
-<li>饮用生奶者</li>
-</ul>
-</li>
-<li>致病物质：内毒素、荚膜、侵袭性酶</li>
-<li>所致疾病：
-<ul>
-<li>人类：<strong>波浪热</strong>，人类胎盘不含<strong>赤藓糖醇</strong>，故人类感染后不会引起流产</li>
-<li>感染家畜：母畜<strong>流产</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">芽孢杆菌属</div><ul>
-<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
-<li>培养特性：需氧，多数在由氧条件下形成芽孢</li>
-<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
-</ul>
-</div>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，有荚膜，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
-<li>培养特性和生化反应：
-<ul>
-<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
-<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>粘液性菌落</mark></li>
-</ul>
-</li>
-<li>抵抗力：
-<ul>
-<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
-<li>对青霉素等多种抗生素敏感</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>荚膜：抗吞噬</li>
-<li><strong>炭疽毒素</strong>：
-<ul>
-<li><strong>水肿因子</strong>（EF）、<strong>水肿因子</strong>（EF）、<strong>致死因子</strong>（LF）</li>
-<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
-</ul>
-</li>
-</ul>
-<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
-<ul>
-<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
-<li><strong>感染途径及所致疾病</strong>：
-<ul>
-<li>接触 → 皮肤炭疽</li>
-<li>食入 → 肠炭疽</li>
-<li>吸入 → 肺炭疽（最严重）</li>
-</ul>
-</li>
-</ul>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<ul>
-<li>标本：严禁在室外剖检病体</li>
-<li>直接涂片镜检：荚膜，竹节状排布</li>
-<li>分离培养与鉴定：
-<ul>
-<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
-<li>青霉素串珠实验、噬菌体裂解实验</li>
-</ul>
-</li>
-</ul>
-<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
-<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
+<h4 id="骨髓的功能">骨髓的功能 <a class="markdownIt-Anchor" href="#骨髓的功能">#</a></h4>
 <ol>
-<li>鼠疫耶尔森菌：鼠疫；</li>
-<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
-<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
+<li>各类血细胞、免疫细胞发生的场所</li>
+<li>B 细胞 NK 细胞分化成熟的场所</li>
+<li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
 </ol>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<details class="note info "><summary><p>mIgM</p>
+</summary><p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
+<blockquote>
+<p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
+</blockquote>
+</details>
+<h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
+<dl>
+<dt>胸腺（thymus）</dt>
+<dd>由胸腺细胞和胸腺基质细胞组成，是 T 细胞发育、分化、成熟的场所。</dd>
+</dl>
+<h4 id="胸腺的结构">胸腺的结构 <a class="markdownIt-Anchor" href="#胸腺的结构">#</a></h4>
 <ul>
-<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，有荚膜，无鞭毛、芽孢，菌体形态、大小变化较大</li>
-<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
-<li>抗原构造：
+<li>皮质：深皮质、浅皮质</li>
+<li>髓质：散在分布的成熟胸腺细胞、巨噬细胞、树突状细胞</li>
+</ul>
+<p>细胞组成</p>
 <ul>
-<li>F1 抗原：荚膜抗原</li>
-<li>V/W 抗原：菌体表面抗原</li>
-<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
-<li>内毒素：与肠道杆菌内毒素相似</li>
+<li>胸腺细胞：处于不同分化阶段的 T 细胞</li>
+<li>胸腺基质细胞（thymus stromal cell, TSC）
+<ul>
+<li>胸腺上皮细胞</li>
+<li>巨噬细胞</li>
+<li>树突状细胞</li>
 </ul>
 </li>
-<li>抵抗力：较弱</li>
 </ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：</p>
+<h4 id="胸腺微环境">胸腺微环境 <a class="markdownIt-Anchor" href="#胸腺微环境">#</a></h4>
+<dl>
+<dt>胸腺微环境（thymic microenvironment）</dt>
+<dd>决定 T 细胞分化、增殖和选择性发育的重要条件。
 <ul>
-<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
-<li><strong>鼠毒素</strong>（主要致病物质）、内毒素</li>
+<li>胸腺基质细胞</li>
+<li>细胞外基质</li>
+<li>局部活性因子</li>
 </ul>
-<p>所致疾病：<strong>鼠疫</strong></p>
+</dd>
+<dd><strong>细胞外基质</strong>也是胸腺微环境的重要组成部分。</dd>
+</dl>
+<p>胸腺上皮细胞影响胸腺细胞分化的两种方式</p>
 <ul>
-<li>传染源：鼠，患病者</li>
-<li>传播途径及所致疾病：
+<li>细胞-细胞间相互接触</li>
+<li>分泌细胞因子和胸腺肽类因子</li>
+</ul>
+<h4 id="胸腺的功能">胸腺的功能 <a class="markdownIt-Anchor" href="#胸腺的功能">#</a></h4>
+<ol>
+<li>T 细胞分化、成熟的场所：T 细胞迁移、阳性选择、阴性选择</li>
+<li>免疫调节作用：细胞因子、胸腺肽类因子</li>
+<li>自身免疫耐受的建立与维持：通过阴性选择形成中枢免疫耐受</li>
+</ol>
+<h2 id="外周免疫器官和组织">外周免疫器官和组织 <a class="markdownIt-Anchor" href="#外周免疫器官和组织">#</a></h2>
 <ul>
-<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
-<li>染菌的尘埃——<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
-<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
+<li>成熟淋巴细胞定居的场所</li>
+<li>淋巴细胞对外来抗原产生免疫应答的主要部位</li>
+</ul>
+<h3 id="淋巴结">淋巴结 <a class="markdownIt-Anchor" href="#淋巴结">#</a></h3>
+<h4 id="淋巴结的结构">淋巴结的结构 <a class="markdownIt-Anchor" href="#淋巴结的结构">#</a></h4>
+<ul>
+<li>皮质：浅皮质区、深皮质区</li>
+<li>髓质：髓索、髓窦</li>
+</ul>
+<hr />
+<dl>
+<dt>浅皮质区 | 非胸腺依赖区（thymus-indepentent area）</dt>
+<dd>靠近被膜下的皮质区，为** B 细胞区**，是 B 细胞定居的场所。</dd>
+<dt>初级淋巴滤泡（primary lymphoid follicle）| 淋巴小结（lymphoid nodule）</dt>
+<dd>浅皮质区中，大量 B 细胞聚集而成。</dd>
+<dt>次级淋巴滤泡（secondary lymphoid follicle）</dt>
+<dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
+<dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
+</dl>
+<div class="note default "><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
+</div>
+<hr />
+<dl>
+<dt>深皮质区 | 副皮质区 | 胸腺依赖区（thymus-depentent area）</dt>
+<dd>浅皮质区与髓质之间的皮质区，为 <strong>T 细胞区</strong>，是 T 细胞定居的场所。</dd>
+<dt>高内皮微静脉（high endothelial venule, HEV）</dt>
+<dd>副皮质区中的由内皮细胞组成的、呈非连续状的<strong>毛细血管后微静脉</strong>。</dd>
+</dl>
+<hr />
+<dl>
+<dt>髓索</dt>
+<dd>由密集的淋巴细胞组成，主要为 B 细胞和浆细胞，也有部分 T 细胞和 Mϕ。</dd>
+<dt>髓窦</dt>
+<dd>富含 Mϕ，有较强的捕捉、清除抗原体的功能。</dd>
+</dl>
+<h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
+<ol>
+<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
+<li>适应性免疫应答的主要场所</li>
+<li>过滤作用：过滤组织来源的抗原</li>
+<li>参与淋巴细胞再循环</li>
+</ol>
+<h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
+<h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
+<ul>
+<li>白髄：动脉周围淋巴鞘（PALS）、脾小结、边缘区</li>
+<li>红髓：脾索、脾血窦</li>
+</ul>
+<h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
+<ol>
+<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
+<li>免疫应答发生的场所</li>
+<li>生成生物活性物质，如补体、细胞因子</li>
+<li>过滤作用：清除血液来源的抗原</li>
+</ol>
+<h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
+<dl>
+<dt>黏膜相关淋巴组织（MALT）</dt>
+<dd>胃肠道、呼吸道、泌尿生殖道黏膜固有层和上皮细胞下散在的淋巴组织，以及带有生发中心的淋巴组织。</dd>
+</dl>
+<h4 id="黏膜相关淋巴组织的组成">黏膜相关淋巴组织的组成 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的组成">#</a></h4>
+<ul>
+<li>肠相关淋巴结（GALT）
+<ul>
+<li>派氏集合淋巴结（PP）</li>
+<li>上皮内淋巴结（IEL）</li>
+</ul>
+</li>
+<li>鼻相关淋巴结（NALT）</li>
+<li>支气管相关淋巴组织（BALT）</li>
+</ul>
+<h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
+<ul>
+<li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
+<li>产生分泌型 IgA（SIgA）</li>
+</ul>
+<h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
+<dl>
+<dt>淋巴细胞归巢（lymphocyte homing）</dt>
+<dd>血液中淋巴细胞选择性取向迁移并定居与外周免疫器官的特定区域或特定组织的过程。</dd>
+<dt>淋巴细胞再循环（lymphocyte recirculation）</dt>
+<dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>其他病毒</title>
+    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<ul>
+<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
+<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
+</ul>
+<div class="note success "><dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
+<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
+</dl>
+</div>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
+<li>传染源：狂犬、猫、蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+<li>临床症状：
+<ul>
+<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
+<li>麻痹型：20 不到，不出现典型症状，直接进入麻痹期</li>
 </ul>
 </li>
 </ul>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>英文简称 <strong>HPV</strong>。</p>
 <ul>
-<li>消灭传染源：灭鼠灭蚤</li>
-<li>疫苗：无毒株活菌疫苗接种</li>
-<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
+<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
+<li>所致疾病：
+<ul>
+<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
+<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
+<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -3271,6 +3160,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -3481,40 +3371,150 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
+    <title>动物源性细菌</title>
+    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
 <span id="more"></span>
-<p>HLA 基因复合体分为三个基因区</p>
-<p>MHC 基因分两种类型</p>
+<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
+<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
-<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
-<li>免疫功能相关基因
+<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
+<li>培养特性和生化反应：需氧，营养要求较高</li>
+<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
 <ul>
-<li>血清补体成分的编码基因</li>
-<li>抗原加工相关基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
+<li><strong>感染途径</strong>：
+<ul>
+<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
+<li>经呼吸道或眼结膜</li>
+<li>经皮肤</li>
+</ul>
+</li>
+<li><strong>常见患者</strong>：
+<ul>
+<li>和动物密切接触者</li>
+<li>饮用生奶者</li>
+</ul>
+</li>
+<li>致病物质：内毒素、荚膜、侵袭性酶</li>
+<li>所致疾病：
+<ul>
+<li>人类：<strong>波浪热</strong>，人类胎盘不含<strong>赤藓糖醇</strong>，故人类感染后不会引起流产</li>
+<li>感染家畜：母畜<strong>流产</strong></li>
 </ul>
 </li>
 </ul>
-<p>MHC 遗传特点</p>
+<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">芽孢杆菌属</div><ul>
+<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
+<li>培养特性：需氧，多数在由氧条件下形成芽孢</li>
+<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
+</ul>
+</div>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，有荚膜，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
+<li>培养特性和生化反应：
+<ul>
+<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
+<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>粘液性菌落</mark></li>
+</ul>
+</li>
+<li>抵抗力：
+<ul>
+<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
+<li>对青霉素等多种抗生素敏感</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>荚膜：抗吞噬</li>
+<li><strong>炭疽毒素</strong>：
+<ul>
+<li><strong>水肿因子</strong>（EF）、<strong>水肿因子</strong>（EF）、<strong>致死因子</strong>（LF）</li>
+<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
+</ul>
+</li>
+</ul>
+<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
+<ul>
+<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
+<li><strong>感染途径及所致疾病</strong>：
+<ul>
+<li>接触 → 皮肤炭疽</li>
+<li>食入 → 肠炭疽</li>
+<li>吸入 → 肺炭疽（最严重）</li>
+</ul>
+</li>
+</ul>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<ul>
+<li>标本：严禁在室外剖检病体</li>
+<li>直接涂片镜检：荚膜，竹节状排布</li>
+<li>分离培养与鉴定：
+<ul>
+<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
+<li>青霉素串珠实验、噬菌体裂解实验</li>
+</ul>
+</li>
+</ul>
+<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
+<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
 <ol>
-<li>MHC 多态性</li>
-<li></li>
+<li>鼠疫耶尔森菌：鼠疫；</li>
+<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
+<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
 </ol>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，有荚膜，无鞭毛、芽孢，菌体形态、大小变化较大</li>
+<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
+<li>抗原构造：
+<ul>
+<li>F1 抗原：荚膜抗原</li>
+<li>V/W 抗原：菌体表面抗原</li>
+<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
+<li>内毒素：与肠道杆菌内毒素相似</li>
+</ul>
+</li>
+<li>抵抗力：较弱</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
+<li><strong>鼠毒素</strong>（主要致病物质）、内毒素</li>
+</ul>
+<p>所致疾病：<strong>鼠疫</strong></p>
+<ul>
+<li>传染源：鼠，患病者</li>
+<li>传播途径及所致疾病：
+<ul>
+<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
+<li>染菌的尘埃——<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
+<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>消灭传染源：灭鼠灭蚤</li>
+<li>疫苗：无毒株活菌疫苗接种</li>
+<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
-        <category>医学免疫学</category>
+        <category>病原生物学</category>
       </categories>
       <tags>
-        <tag>医学免疫学</tag>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4050,70 +4050,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>医学原虫学</title>
-    <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/</url>
-    <content><![CDATA[<p>Empty…</p>
-<span id="more"></span>
-<h2 id="原虫概述">原虫概述 <a class="markdownIt-Anchor" href="#原虫概述">#</a></h2>
-<h2 id="叶足虫">叶足虫 <a class="markdownIt-Anchor" href="#叶足虫">#</a></h2>
-<h2 id="鞭毛虫">鞭毛虫 <a class="markdownIt-Anchor" href="#鞭毛虫">#</a></h2>
-<h2 id="孢子虫">孢子虫 <a class="markdownIt-Anchor" href="#孢子虫">#</a></h2>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-        <category>医学原虫学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>医学原虫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医学蠕虫学</title>
-    <url>/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/</url>
-    <content><![CDATA[<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
-<dl>
-<dt>共栖（commensalism）</dt>
-<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
-<dt>互利共生（mutualism）</dt>
-<dd>两种生活在一起的生物均获得益处。</dd>
-<dt><mark>寄生</mark>（parasitism）</dt>
-<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
-<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
-</dl>
-<span id="more"></span>
-<details class="note default "><summary><p>医学蠕虫分类</p>
-</summary><ol>
-<li>线虫</li>
-<li>吸虫</li>
-<li>绦虫</li>
-</ol>
-</details>
-<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
-<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
-<ul>
-<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
-<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
-</ul>
-<dl>
-<dt>世代交替（alternation of generations）</dt>
-<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-        <category>医学蠕虫学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>医学蠕虫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>单基因遗传病</title>
     <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -4624,6 +4560,182 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
+    <title>吸虫</title>
+    <url>/2021/07/04/%E5%90%B8%E8%99%AB/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">华支睾吸虫（肝吸虫）</th>
+<th style="text-align:center">卫氏并殖吸虫（肺吸虫）</th>
+<th style="text-align:center">日本血吸虫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">感染阶段</td>
+<td style="text-align:center">囊蚴</td>
+<td style="text-align:center">囊蚴</td>
+<td style="text-align:center">尾蚴</td>
+</tr>
+<tr>
+<td style="text-align:center">感染方式</td>
+<td style="text-align:center">经口</td>
+<td style="text-align:center">经口</td>
+<td style="text-align:center">经皮</td>
+</tr>
+<tr>
+<td style="text-align:center">体内移行</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+（童虫，血管）</td>
+</tr>
+<tr>
+<td style="text-align:center">寄生部位</td>
+<td style="text-align:center">肝胆管</td>
+<td style="text-align:center">肺脏</td>
+<td style="text-align:center">门脉-肠系膜静脉系统<br/>异位寄生（脑、肺）</td>
+</tr>
+<tr>
+<td style="text-align:center">离体途径</td>
+<td style="text-align:center">卵随便</td>
+<td style="text-align:center">卵随<strong>铁锈色痰液</strong>、卵随便</td>
+<td style="text-align:center">卵随脓血便排出</td>
+</tr>
+<tr>
+<td style="text-align:center">终宿主</td>
+<td style="text-align:center">人、保虫宿主</td>
+<td style="text-align:center">人、保虫宿主</td>
+<td style="text-align:center">人及保虫宿主</td>
+</tr>
+<tr>
+<td style="text-align:center">第一中间宿主</td>
+<td style="text-align:center">纹沼螺</td>
+<td style="text-align:center">川卷螺</td>
+<td style="text-align:center">钉螺</td>
+</tr>
+<tr>
+<td style="text-align:center">第二中间宿主</td>
+<td style="text-align:center">淡水鱼、<em>虾</em></td>
+<td style="text-align:center">溪蟹、蝲蛄（<em>小龙虾</em>）</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">保虫宿主</td>
+<td style="text-align:center">猫、狗、猪、鼠</td>
+<td style="text-align:center">犬、猫、狼、虎</td>
+<td style="text-align:center">水牛</td>
+</tr>
+<tr>
+<td style="text-align:center">转续宿主</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">野猪</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">所致疾病</td>
+<td style="text-align:center">肝吸虫病（可致<strong>原发性胆管上皮细胞癌</strong>）</td>
+<td style="text-align:center">肺吸虫病</td>
+<td style="text-align:center">血吸虫病</td>
+</tr>
+<tr>
+<td style="text-align:center">检查方法</td>
+<td style="text-align:center">粪便直接涂片法、<strong>十二指肠引流法</strong></td>
+<td style="text-align:center">直接涂片法</td>
+<td style="text-align:center">脓血便涂片法（急性期）、直肠镜镜检法（晚期）</td>
+</tr>
+</tbody>
+</table>
+<!-- |   感染阶段   | -->
+<!-- |   感染方式   | -->
+<!-- |   体内移行   | -->
+<!-- |   寄生部位   | -->
+<!-- |   离体途径   | -->
+<!-- |    终宿主    | -->
+<!-- | 第一中间宿主 | -->
+<!-- | 第二中间宿主 | -->
+<!-- |   保虫宿主   | -->
+<!-- |   转续宿主   | -->
+<!-- |   所致疾病   | -->
+<!-- |   检查方法   | -->
+<span id="more"></span>
+<h2 id="吸虫概述">吸虫概述 <a class="markdownIt-Anchor" href="#吸虫概述">#</a></h2>
+<h3 id="形态">形态 <a class="markdownIt-Anchor" href="#形态">#</a></h3>
+<p><em>形态特点</em>：</p>
+<ol>
+<li>背腹扁平，具有口腹吸盘；</li>
+<li>生殖系统：除裂体科吸虫（血吸虫）外均为雌雄同体；</li>
+<li>消化系统不完整。</li>
+</ol>
+<h3 id="生活史">生活史 <a class="markdownIt-Anchor" href="#生活史">#</a></h3>
+<ul>
+<li><strong>完成生活史必须条件</strong>：
+<ol>
+<li>虫卵和幼虫必须在水（淡水）中发育；</li>
+<li>幼虫需要水生生物（淡水螺、淡水鱼、甲壳类水生动物）作为中间宿主。</li>
+</ol>
+</li>
+<li>生殖方式：<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/?highlight=世代交替#寄生虫生活史">世代交替</a></li>
+<li>幼虫发育阶段：<span class="horizontal-list"><span class="horizontal-list-item">毛蚴</span><span class="horizontal-list-item">胞蚴（进行无性生殖）</span><span class="horizontal-list-item">雷蚴</span><span class="horizontal-list-item"><strong>尾蚴</strong>（淡水螺体内发育的最后一个阶段）</span><span class="horizontal-list-item"><strong>囊蚴</strong></span></span></li>
+</ul>
+<h2 id="华支睾吸虫">华支睾吸虫 <a class="markdownIt-Anchor" href="#华支睾吸虫">#</a></h2>
+<p>简称<strong>肝吸虫</strong>，为一种食源性（<strong>鱼源性</strong>）寄生虫。</p>
+<p>治疗药物：<s>肠虫清</s><strong>吡喹酮</strong></p>
+<h2 id="并殖吸虫">并殖吸虫 <a class="markdownIt-Anchor" href="#并殖吸虫">#</a></h2>
+<p><strong>并殖吸虫</strong>因其成虫生殖器官并列排布而得名，成虫主要寄生在宿主肺部，因此也称<strong>肺吸虫</strong>，引起<strong>并殖吸虫病</strong>，也称<strong>肺吸虫病</strong>。</p>
+<h3 id="卫氏并殖吸虫">卫氏并殖吸虫 <a class="markdownIt-Anchor" href="#卫氏并殖吸虫">#</a></h3>
+<p>致病性：</p>
+<ul>
+<li>童虫：急性期病变</li>
+<li>成虫：慢性期病变</li>
+</ul>
+<details class="note success "><summary><p>肺吸虫病慢性期病变的过程及其特点</p>
+</summary><ol>
+<li><strong>脓肿期</strong>：X 线可见边缘模糊、界限不清的<strong>浸润性阴影</strong>；</li>
+<li><strong>囊肿期</strong>：X 线可见边缘锐利的<strong>结节影</strong>；</li>
+<li><strong>纤维疤痕期</strong>：X 线可见<strong>硬结状</strong>或<strong>条索状</strong>的阴影。</li>
+</ol>
+</details>
+<h3 id="斯氏狸殖吸虫">斯氏狸殖吸虫 <a class="markdownIt-Anchor" href="#斯氏狸殖吸虫">#</a></h3>
+<p>斯氏狸殖吸虫的终宿主是中型哺乳动物（果子狸、猫、犬等），人是其<strong>非正常宿主</strong>，感染人体后可引起皮肤、内脏的<strong>幼虫移行症</strong>。</p>
+<h2 id="血吸虫">血吸虫 <a class="markdownIt-Anchor" href="#血吸虫">#</a></h2>
+<p><strong>血吸虫</strong>雌雄异体，故又称<em>裂体吸虫</em>，寄生于人体的血吸虫共有六种，其中我国流行的只有<strong>日本血吸虫</strong>，且其防治难度最大，引起的病情最严重。一般所说的血吸虫即指日本血吸虫。</p>
+<ul>
+<li>形态：雌雄合抱；雄虫短粗，呈乳白色；雌虫细长，后端逐渐变粗，呈黑褐色</li>
+<li>临床表现：日本血吸虫病病程可分为<span class="horizontal-list"><span class="horizontal-list-item">急性期</span><span class="horizontal-list-item">慢性期</span><span class="horizontal-list-item">晚期（重症患者或少量多次重复感染后）</span></span>3 个阶段，晚期血吸虫病可分为<span class="horizontal-list"><span class="horizontal-list-item">巨脾</span><span class="horizontal-list-item">腹水</span><span class="horizontal-list-item">侏儒</span></span>3 型</li>
+</ul>
+<details class="note success "><summary><p>血吸虫虫卵从静脉落入肠腔的机制</p>
+</summary><p>由于<strong>血吸虫虫卵内毛蚴</strong>的分泌物能透过卵壳，破坏血管壁，并使周围组织发炎坏死；<br/>
+同时肠的蠕动、腹内压增加，致使坏死组织向肠内溃破，虫卵随之排入肠腔，随粪便排出体外。</p>
+</details>
+<details class="note success "><summary><p>血吸虫的致病阶段及所致疾病</p>
+</summary><ol>
+<li>尾蚴：尾蚴性皮炎；</li>
+<li>童虫：毛细血管炎；</li>
+<li>成虫：静脉内膜炎；</li>
+<li><strong>虫卵</strong>（主要致病阶段）：虫卵肉芽肿，肝、肠壁。</li>
+</ol>
+</details>
+<p>日本血吸虫成虫在门脉系统外的部位寄生称为<strong>异位寄生</strong>。成虫寄生或虫卵沉着在肝及肠壁以外的组织和器官（以<strong>脑</strong>和<strong>肺</strong>多见）并造成损害，称为<strong>异位血吸虫病</strong>。</p>
+<details class="note success "><summary><p>简述血吸虫虫卵肉芽肿的形成机制及好发部位</p>
+</summary><ul>
+<li>机制：当卵内毛蚴成熟后，其分泌的酶、蛋白质及糖等物质，称<strong>可溶性虫卵抗原</strong>（soluble egg antigen，SEA），透过卵壳微孔缓慢释放，致敏
+T 细胞，当再次遇到抗原后，刺激致敏的 T 细胞产生各种淋巴因子，诱发肉芽肿反应。</li>
+<li>好发部位：虫卵沉着较多的肝、肠壁。</li>
+</ul>
+</details>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>医学蠕虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>呼吸道感染病毒</title>
     <url>/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<dl>
@@ -4635,9 +4747,8 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </blockquote>
 <span id="more"></span>
 <details class="note info "><summary><p>引起普通感冒的常见病毒</p>
-</summary><!-- TODO -->
-<ul>
-<li>普通感冒中 50% 由<a href="#%E9%BC%BB%E7%97%85%E6%AF%92"><strong>鼻病毒</strong></a>引起。</li>
+</summary><ul>
+<li>普通感冒中 50% 由<a href="#%E9%BC%BB%E7%97%85%E6%AF%92"><strong>鼻病毒</strong></a>引起</li>
 <li><a href="#%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92">冠状病毒</a></li>
 </ul>
 </details>
@@ -4700,8 +4811,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </ul>
 <div class="note warning "><p>一般有包膜的病毒抵抗力较弱。</p>
 </div>
-<div class="note success "><!-- TODO -->
-<p>核酸为分节段的 RNA 病毒有 <a href="#%E6%B5%81%E8%A1%8C%E6%80%A7%E6%84%9F%E5%86%92%E7%97%85%E6%AF%92">流行性感冒病毒</a>、<a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#轮状病毒">轮状病毒</a> 和 <a href="/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/#汉坦病毒">汉坦病毒</a>。</p>
+<div class="note success "><p>核酸为分节段的 RNA 病毒有 <a href="#%E6%B5%81%E8%A1%8C%E6%80%A7%E6%84%9F%E5%86%92%E7%97%85%E6%AF%92">流行性感冒病毒</a>、<a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/#轮状病毒">轮状病毒</a> 和 <a href="/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/#汉坦病毒">汉坦病毒</a>。</p>
 </div>
 <details class="note success "><summary><p>血凝素的作用</p>
 </summary><ul>
@@ -4766,6 +4876,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </summary><p><strong>副黏病毒</strong>（<em>Paramyxoviridae</em>）病毒体较大，抗原性稳定，不易发生变异。</p>
 </details>
 <h3 id="致病性与免疫性-2">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性-2">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
 <ul>
 <li>传染源：患者</li>
 <li>传播途径：呼吸道，<strong>飞沫传播</strong></li>
@@ -4788,7 +4899,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li>疫苗：<strong>麻疹病毒减毒活疫苗</strong></li>
 </ul>
 <h2 id="腮腺炎病毒">腮腺炎病毒 <a class="markdownIt-Anchor" href="#腮腺炎病毒">#</a></h2>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
 <ul>
 <li>传染源：患者和隐性感染者</li>
 <li>传播途径：<strong>飞沫传播</strong>、<strong>垂直传播</strong>（可导致<ins>先天畸形</ins>）</li>
@@ -4805,14 +4916,16 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </li>
 </ul>
 <h3 id="防治原则-3">防治原则 <a class="markdownIt-Anchor" href="#防治原则-3">#</a></h3>
-<p>腮腺炎减毒活疫苗</p>
+<ul>
+<li>疫苗：腮腺炎减毒活疫苗</li>
+</ul>
 <h2 id="冠状病毒">冠状病毒 <a class="markdownIt-Anchor" href="#冠状病毒">#</a></h2>
 <h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
 <ul>
 <li>形态结构：<strong>+ssRNA</strong>，衣壳螺旋对称，有包膜，<strong>刺突</strong>形如太阳光环</li>
 <li>抵抗力：弱</li>
 </ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
 <ul>
 <li>传染源：患者和潜伏期带毒者</li>
 <li>传播途径：呼吸道</li>
@@ -4829,7 +4942,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <p>无特效治疗方法，一般采用对症治疗。</p>
 <h2 id="腺病毒">腺病毒 <a class="markdownIt-Anchor" href="#腺病毒">#</a></h2>
 <p><strong>腺病毒</strong>是一种<strong>DNA 无包膜病毒</strong>，可携带其他病毒的有效成分。</p>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
 <ul>
 <li>传染源：患者和无症状带毒者</li>
 <li>传播途径：
@@ -4844,7 +4957,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <details class="note info "><summary><p>麻腮风三联疫苗</p>
 </summary><p><strong>麻腮风三联疫苗</strong>是预防麻疹、腮腺炎、风疹（德国麻疹）的疫苗，由三种疾病病毒的活性减毒活病毒混合而成，是以注射的方式施打疫苗。</p>
 </details>
-<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
+<h3 id="致病性-5">致病性 <a class="markdownIt-Anchor" href="#致病性-5">#</a></h3>
 <ul>
 <li>传染源：人类是其唯一自然宿主</li>
 <li>传播途径和所致疾病：
@@ -4875,25 +4988,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-        <tag>TODO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>器官、系统的发生与先天性畸形</title>
-    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -5205,6 +5299,24 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>器官、系统的发生与先天性畸形</title>
+    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -8032,7 +8144,100 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <p><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/"><strong>螺旋体</strong></a> 也属于广义的细菌学范畴。</p>
 <h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
-<p>另见 <a href="/2021/06/23/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB%E5%AD%A6/"><strong>医学蠕虫学</strong></a> 和 <a href="/2021/06/23/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB%E5%AD%A6/"><strong>医学原虫学</strong></a>。</p>
+<ul>
+<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="">绦虫</a></span></span></li>
+<li>医学原虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="">叶足虫</a></span><span class="horizontal-list-item"><a href="">鞭毛虫</a></span><span class="horizontal-list-item"><a href="">孢子虫</a></span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
+<li><em>医学节肢动物</em></li>
+</ul>
+<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
+<dl>
+<dt>共栖（commensalism）</dt>
+<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
+<dt>互利共生（mutualism）</dt>
+<dd>两种生活在一起的生物均获得益处。</dd>
+<dt><mark>寄生</mark>（parasitism）</dt>
+<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
+<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
+</dl>
+<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
+<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
+<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
+<ul>
+<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
+<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
+</ul>
+<dl>
+<dt>世代交替（alternation of generations）</dt>
+<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
+</dl>
+<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
+<dl>
+<dt>机会致病性寄生虫（opportunistic parasite）</dt>
+<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
+</dl>
+<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
+<dl>
+<dt>终宿主（definitive host）</dt>
+<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>中间宿主（intermediate host）</dt>
+<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>保虫宿主（reservoir host）| 储存宿主</dt>
+<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
+<dd>保虫宿主属于终宿主。</dd>
+<dt>转续宿主（paratenic host，transport host）</dt>
+<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
+</dl>
+<details class="note success "><summary><p>寄生虫对宿主的作用</p>
+</summary><ol>
+<li><strong>夺取营养</strong>：营养不良、贫血；</li>
+<li><strong>机械性损伤</strong>；</li>
+<li><strong>毒性作用与免疫病理损伤</strong>。</li>
+</ol>
+</details>
+<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
+<ol>
+<li>先天性免疫</li>
+<li>获得性免疫：
+<ol>
+<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
+<li><strong>非消除性免疫</strong>（non-sterilizing immunity）：较常见；<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span><em>带虫免疫</em>和<em>伴随免疫</em>属于这一类：
+<ol>
+<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的 <a href="#"><ins>原虫</ins></a> 引起的非消除性免疫，可致<em>临床治愈</em>；</li>
+<li><strong>伴随免疫</strong>（concomitant immunity）：某些 <a href="#"><ins>蠕虫</ins></a>，引起的非消除性免疫，对再感染的幼虫由一定免疫力，但对体内的成虫没有影响。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
+<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
+<ol>
+<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
+<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
+<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
+</ol>
+<dl>
+<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
+<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
+</dl>
+<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
+<ol>
+<li>带虫者、慢性感染与隐性感染；</li>
+<li>多寄生现象；</li>
+<li>幼虫移行与幼虫移行症：
+<ul>
+<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
+<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
+<ul>
+<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
+<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
+<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
+</ol>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -9020,6 +9225,203 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
+    <title>线虫</title>
+    <url>/2021/07/04/%E7%BA%BF%E8%99%AB/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">似蚓蛔线虫</th>
+<th style="text-align:center">钩虫</th>
+<th style="text-align:center">旋毛形线虫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">感染阶段</td>
+<td style="text-align:center">感染性虫卵（幼虫）</td>
+<td style="text-align:center">丝状蚴</td>
+<td style="text-align:center">囊包幼虫</td>
+</tr>
+<tr>
+<td style="text-align:center">感染方式</td>
+<td style="text-align:center">经口</td>
+<td style="text-align:center">经皮、经胎盘</td>
+<td style="text-align:center">经口</td>
+</tr>
+<tr>
+<td style="text-align:center">体内移行</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center">寄生部位</td>
+<td style="text-align:center">小肠</td>
+<td style="text-align:center">小肠</td>
+<td style="text-align:center">小肠（成虫，终宿主）<br/>横纹肌细胞（幼虫，中间宿主/保虫宿主）</td>
+</tr>
+<tr>
+<td style="text-align:center">离体途径</td>
+<td style="text-align:center">卵随便</td>
+<td style="text-align:center">卵随便</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">终宿主</td>
+<td style="text-align:center">人</td>
+<td style="text-align:center">人</td>
+<td style="text-align:center">人、保虫宿主</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>第一中间宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>第二中间宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">保虫宿主</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">猪、狗、猫、鼠</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>转续宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">所致疾病</td>
+<td style="text-align:center">蛔虫病、并发症</td>
+<td style="text-align:center">贫血</td>
+<td style="text-align:center">旋毛虫病</td>
+</tr>
+<tr>
+<td style="text-align:center">病原性检查方法</td>
+<td style="text-align:center">粪便直接涂片法</td>
+<td style="text-align:center">粪便直接涂片法、<strong>饱和盐水漂浮法</strong></td>
+<td style="text-align:center">肌肉组织活检法</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="线虫概述">线虫概述 <a class="markdownIt-Anchor" href="#线虫概述">#</a></h2>
+<h3 id="形态特点">形态特点 <a class="markdownIt-Anchor" href="#形态特点">#</a></h3>
+<ul>
+<li>线虫均为雌雄异体，通常雌虫较大，<ins>尾端尖直</ins>；雄虫较小，<ins>尾端卷曲呈钩状或膨大呈伞状</ins>。</li>
+<li>线虫体壁和消化道之间存在间隙，称<strong>原体腔</strong>，其中充满<strong>血淋巴</strong>。</li>
+<li>线虫具有<ins>完整的消化系统</ins>。</li>
+</ul>
+<h3 id="生活史">生活史 <a class="markdownIt-Anchor" href="#生活史">#</a></h3>
+<p>线虫生活史包括<mark><span class="horizontal-list"><span class="horizontal-list-item">卵</span><span class="horizontal-list-item">幼虫</span><span class="horizontal-list-item">成虫</span></span></mark>3 个发育阶段。
+幼虫发育生长最显著的特征是<mark>蜕皮</mark>，幼虫一般分 4 期，通常第二次蜕皮后发育为<em>感染期幼虫</em>，第 4 次蜕皮后发育为成虫。</p>
+<p>生活史类型：</p>
+<ul>
+<li>直接型，土源性线虫，如<a href="#%E4%BC%BC%E8%9A%93%E8%9B%94%E7%BA%BF%E8%99%AB">蛔虫</a>、<a href="#%E9%92%A9%E8%99%AB">钩虫</a>；</li>
+<li>间接型，生物源性线虫，如<a href="#%E6%97%8B%E6%AF%9B%E5%BD%A2%E7%BA%BF%E8%99%AB">旋毛虫</a>。</li>
+</ul>
+<h2 id="似蚓蛔线虫">似蚓蛔线虫 <a class="markdownIt-Anchor" href="#似蚓蛔线虫">#</a></h2>
+<p>简称<strong>蛔虫</strong>。</p>
+<p>虫卵：<span class="horizontal-list"><span class="horizontal-list-item">受精卵</span><span class="horizontal-list-item">蜕蛋白膜受精卵</span><span class="horizontal-list-item">未受精卵</span><span class="horizontal-list-item">感染期虫卵<span class="hide">课上说是感染性虫卵</span></span></span>（前三个为<strong>诊断依据</strong>）</p>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<details class="note success "><summary><p>蛔虫致病阶段及所致疾病</p>
+</summary><ol>
+<li>幼虫：<strong>蛔虫性肺炎</strong>/<strong>蛔虫性哮喘</strong></li>
+<li>成虫：<strong>肠蛔虫症</strong>，<strong>蛔虫并发症</strong></li>
+</ol>
+</details>
+<details class="note success "><summary><p>蛔虫常见并发症及其原因</p>
+</summary><ol>
+<li>蛔虫有钻孔习性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>胆道蛔虫症</strong></span><span class="horizontal-list-item"><strong>蛔虫性阑尾炎</strong></span><span class="horizontal-list-item"><strong>蛔虫性胰腺炎</strong></span></span></li>
+<li>蛔虫大量寄生：<strong>蛔虫性肠梗阻</strong></li>
+</ol>
+</details>
+<h3 id="防治">防治 <a class="markdownIt-Anchor" href="#防治">#</a></h3>
+<p><strong>阿苯达唑</strong>（肠虫清）</p>
+<h2 id="钩虫">钩虫 <a class="markdownIt-Anchor" href="#钩虫">#</a></h2>
+<p><strong>钩虫</strong>是钩口科线虫的统称，人兽共患的有 9 种，寄生于人体的钩虫主要有<span class="horizontal-list"><span class="horizontal-list-item"><strong>十二指肠钩口线虫</strong>（十二指肠钩虫）</span><span class="horizontal-list-item"><strong>美洲板口线虫</strong>（美洲钩虫）</span></span>两种。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">鉴别要点</th>
+<th>十二指肠钩口线虫</th>
+<th>美洲板口线虫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">口囊</td>
+<td>腹侧前缘有 2 对钩齿</td>
+<td>腹侧前缘有 1 对板齿</td>
+</tr>
+<tr>
+<td style="text-align:center">体形</td>
+<td>前端和后端均向背面弯曲，虫体呈“C”形</td>
+<td>前端向背面仰曲，后端向腹面弯曲</td>
+</tr>
+<tr>
+<td style="text-align:center">交合伞</td>
+<td><em>撑开时略成圆形</em></td>
+<td><em>撑开时略成扁圆形</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<details class="note success "><summary><p>钩虫的致病阶段及所致疾病</p>
+</summary><ol>
+<li>丝状蚴：钩蚴性皮炎（自限性）</li>
+<li>幼虫：呼吸系统病变（自限性），如肺炎、哮喘</li>
+<li>成虫：<span class="horizontal-list"><span class="horizontal-list-item">消化道症状</span><span class="horizontal-list-item">贫血</span><span class="horizontal-list-item">异嗜症</span><span class="horizontal-list-item">消化道大出血</span></span></li>
+</ol>
+</details>
+<details class="note success "><summary><p>钩虫对人体最严重的危害及其原因</p>
+</summary><p>最严重的危害是<strong>贫血</strong>，原因：</p>
+<ol>
+<li>咬破肠黏膜，损伤小血管引起出血；</li>
+<li>吸血量与伤口渗血量相同；</li>
+<li>虫体吸血后血液迅速经其消化道排出；</li>
+<li>虫体经常更换咬附部位。</li>
+</ol>
+</details>
+<h3 id="防治-2">防治 <a class="markdownIt-Anchor" href="#防治-2">#</a></h3>
+<p><strong>阿苯达唑</strong>（肠虫清）</p>
+<h2 id="旋毛形线虫">旋毛形线虫 <a class="markdownIt-Anchor" href="#旋毛形线虫">#</a></h2>
+<p><strong>旋毛形线虫</strong>简称<strong>旋毛虫</strong>，引起的<strong>旋毛虫病</strong>是一种自然疫源性、食源性（狭义，<mark>肉源性</mark>）人兽共患寄生虫病。</p>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>旋毛虫的幼虫和成虫同时寄生于同一宿主体内，但要完成生活史必须进行宿主转换。</p>
+<details class="note success "><summary><p>旋毛虫致病过程及常见临床表现</p>
+</summary><ol>
+<li><strong>侵入期</strong>（肠道期）：消化道症状；</li>
+<li><mark>幼虫移行期</mark>（肠外期/肌肉期）：<span class="horizontal-list"><span class="horizontal-list-item">发热、眼睑和面部水肿（血管炎）</span><span class="horizontal-list-item">肌痛（肌炎）</span></span>；</li>
+<li><strong>囊包形成期</strong>（恢复期）：肌痛。</li>
+</ol>
+</details>
+<h2 id="广州管圆线虫">广州管圆线虫 <a class="markdownIt-Anchor" href="#广州管圆线虫">#</a></h2>
+<p>人是广州管圆线虫的非正常宿主（转续宿主），主要通过生食或半生食含感染性幼虫的中间宿主或转续宿主而被感染。</p>
+<ul>
+<li>终宿主：<strong>大鼠类啮齿动物</strong>；</li>
+<li>转续宿主：<strong>人</strong>、猴、小鼠、家兔、豚鼠；</li>
+<li>中间宿主：<span class="horizontal-list"><span class="horizontal-list-item"><strong>淡水螺类</strong></span><span class="horizontal-list-item">陆地蜗牛类</span><span class="horizontal-list-item">蛞蝓类</span></span>。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>医学蠕虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>细胞因子</title>
     <url>/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/</url>
     <content><![CDATA[<dl>
@@ -9802,21 +10204,21 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:center"><abbr title="乙型肝炎病毒">HBV</abbr></td>
+<td style="text-align:center"><a href="#%E4%B9%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="乙型肝炎病毒">HBV</abbr></a></td>
 <td style="text-align:center">dsDNA</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">血液、母婴、性传播</td>
 <td style="text-align:center">+</td>
 </tr>
 <tr>
-<td style="text-align:center"><abbr title="丙型肝炎病毒">HCV</abbr></td>
+<td style="text-align:center"><a href="#%E4%B8%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="丙型肝炎病毒">HCV</abbr></a></td>
 <td style="text-align:center">+ssRNA</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">血液、母婴、性传播</td>
 <td style="text-align:center">+</td>
 </tr>
 <tr>
-<td style="text-align:center"><abbr title="丁型肝炎病毒">HDV</abbr></td>
+<td style="text-align:center"><a href="#%E4%B8%81%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="丁型肝炎病毒">HDV</abbr></a></td>
 <td style="text-align:center">-ssRNA</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">血液、母婴、性传播</td>
@@ -10098,7 +10500,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-        <tag>TODO</tag>
       </tags>
   </entry>
   <entry>
@@ -10294,36 +10695,6 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
       </tags>
   </entry>
   <entry>
-    <title>胚胎学</title>
-    <url>/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>胚胎学（embryology）</dt>
-<dd>研究个体发生、发育及其机制的科学。</dd>
-<dd>研究内容包括生殖细胞的形成、受精胚胎早期发育、器官与系统的发生、胚胎与母体的关系、先天性畸形、环境因素对胚胎发育的影响等。</dd>
-</dl>
-<span id="more"></span>
-<p>TODO: 胚胎学时间线</p>
-<ul>
-<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">人胚发生和早期发育</a></li>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自制伪终端</title>
     <url>/2021/04/12/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/</url>
     <content><![CDATA[<p>参见：<a href="/2021/03/15/The-TTY-Demystified/">The TTY Demystified</a></p>
@@ -10449,7 +10820,36 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-        <tag>TODO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>胚胎学</title>
+    <url>/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>胚胎学（embryology）</dt>
+<dd>研究个体发生、发育及其机制的科学。</dd>
+<dd>研究内容包括生殖细胞的形成、受精胚胎早期发育、器官与系统的发生、胚胎与母体的关系、先天性畸形、环境因素对胚胎发育的影响等。</dd>
+</dl>
+<span id="more"></span>
+<p>TODO: 胚胎学时间线</p>
+<ul>
+<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">人胚发生和早期发育</a></li>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
