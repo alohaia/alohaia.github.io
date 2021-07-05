@@ -2057,111 +2057,6 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success "><summary><p>举例说明 HHV 的感染类型</p>
-</summary><ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人类发育的细胞学和遗传学基础</title>
     <url>/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>细胞增殖，遗传物质和遗传信息的传递以及一些基因分析技术。</p>
@@ -2652,6 +2547,111 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success "><summary><p>举例说明 HHV 的感染类型</p>
+</summary><ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -4050,6 +4050,273 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
+    <title>医学原虫</title>
+    <url>/2021/07/06/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/</url>
+    <content><![CDATA[<p><strong>原虫</strong>（protozoa）为<strong>单细胞真核生物</strong>，属原生动物界，分布极为广泛，大多营自由生活。寄生于人体和的动物的原虫有 40 余种，包括致病性原虫（<strong>医学原虫</strong>）和非致病性原虫。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">溶组织内阿米巴</th>
+<th style="text-align:center">蓝氏贾第鞭毛虫</th>
+<th style="text-align:center">阴道毛滴虫</th>
+<th style="text-align:center">疟原虫</th>
+<th style="text-align:center">刚地弓形虫</th>
+<th style="text-align:center">隐孢子虫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">感染阶段</td>
+<td style="text-align:center">成熟包囊/四核包囊</td>
+<td style="text-align:center">成熟包囊/四核包囊</td>
+<td style="text-align:center">滋养体</td>
+<td style="text-align:center">子孢子（雌性按蚊唾液腺）</td>
+<td style="text-align:center">卵囊（含子孢子）</td>
+<td style="text-align:center">卵囊</td>
+</tr>
+<tr>
+<td style="text-align:center">感染方式</td>
+<td style="text-align:center">经口</td>
+<td style="text-align:center">经口</td>
+<td style="text-align:center">直接（性接触）、间接接触</td>
+<td style="text-align:center">虫媒传播、输血、垂直传播</td>
+<td style="text-align:center">多种水平传播及垂直传播</td>
+<td style="text-align:center">经口</td>
+</tr>
+<tr>
+<td style="text-align:center">体内移行</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">寄生部位</td>
+<td style="text-align:center">大肠<br/>肝、肺、脑</td>
+<td style="text-align:center">小肠上段</td>
+<td style="text-align:center">男、女泌尿生殖道（<strong>阴道后穹隆</strong>）</td>
+<td style="text-align:center">有核细胞（速殖子）<br/>组织内（包囊）</td>
+<td style="text-align:center">所要有核细胞（<s>红细胞</s>）和组织内</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">离体途径</td>
+<td style="text-align:center">滋养体随患者脓血便<br/>包囊随带虫者成形便</td>
+<td style="text-align:center">滋养体随患者水样便<br/>包囊随带虫者成形便</td>
+<td style="text-align:center">泌尿生殖道分泌物</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">终宿主</td>
+<td style="text-align:center">人（人际传播型）</td>
+<td style="text-align:center">人（人际传播型）</td>
+<td style="text-align:center">人（人际传播型）</td>
+<td style="text-align:center">按蚊</td>
+<td style="text-align:center">猫及其他猫科动物（肠上皮细胞）</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">第一中间宿主</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">人</td>
+<td style="text-align:center">人和所有动物</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>第二中间宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>保虫宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>转续宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">所致疾病</td>
+<td style="text-align:center">肠阿米巴病、肠外阿米巴病</td>
+<td style="text-align:center">脂肪痢</td>
+<td style="text-align:center">泌尿生殖道炎症（滴虫性阴道炎）</td>
+<td style="text-align:center">疟疾</td>
+<td style="text-align:center">先天性、获得性弓形虫病</td>
+<td style="text-align:center">机会致病：腹泻</td>
+</tr>
+<tr>
+<td style="text-align:center">检查方法</td>
+<td style="text-align:center">碘液染色法（查包囊）<br/>脓血便直接涂片法</td>
+<td style="text-align:center">碘液染色法（查包囊）<br/>水样便直接涂片法<br/>十二指肠引流法</td>
+<td style="text-align:center">泌尿生殖道分泌物直接涂片法</td>
+<td style="text-align:center">外周血涂片染色法</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="原虫概述">原虫概述 <a class="markdownIt-Anchor" href="#原虫概述">#</a></h2>
+<h3 id="细胞器">细胞器 <a class="markdownIt-Anchor" href="#细胞器">#</a></h3>
+<p>原虫细胞器类型多样，有<span class="horizontal-list"><span class="horizontal-list-item"><strong>运动细胞器</strong></span><span class="horizontal-list-item">膜质细胞器</span><span class="horizontal-list-item">营养细胞器</span></span>。常见的医学原虫的运动细胞器有<span class="horizontal-list"><span class="horizontal-list-item"><strong>伪足</strong></span><span class="horizontal-list-item"><strong>鞭毛</strong></span><span class="horizontal-list-item"><strong>纤毛</strong></span></span>。</p>
+<h3 id="生活史">生活史 <a class="markdownIt-Anchor" href="#生活史">#</a></h3>
+<details class="note success "><summary><p>举例说明医学原虫的生活史类型</p>
+</summary><ol>
+<li><strong>人际传播型</strong>，如阿米巴原虫、蓝氏贾第鞭毛虫、阴道毛滴虫，<em>只需一个宿主，经直接、间接接触或中间媒介的携带而传播</em>；</li>
+<li><strong>循环传播型</strong>，如刚地弓形虫、隐孢子虫，<em>需一种以上脊椎动物，分别进行有性生殖和无性生殖，形成世代交替现象</em>；</li>
+<li><strong>虫媒传播型</strong>，如疟原虫，<em>需要在吸血昆虫体内生长发育，并进行有性和无性生殖，发育到感染阶段，再由媒介昆虫叮咬、吸血传播</em>。</li>
+</ol>
+</details>
+<details class="note success "><summary><p>医学原虫的致病特点</p>
+</summary><ol>
+<li><strong>增殖破坏作用</strong>：<em>原虫侵入人体组织细胞后大量增殖，引起寄生细胞的破坏，造成宿主细胞被大量破坏并出现临床症状，如疟原虫</em>；</li>
+<li><strong>播散侵袭作用</strong>：<em>原虫具有迅速大量增殖的能力，使其能有原发病灶向邻近或远处组织播散，从而累及多个器官，如溶组织内阿米巴</em>；</li>
+<li><strong>机会致病作用</strong>：<em>某些原虫感染免疫功能正常的宿主后不会出现明显的致病作用及临床症状，呈隐性感染状态，这类寄生虫称为机会致病性原虫，如弓形虫、隐孢子虫</em>。</li>
+</ol>
+</details>
+<h2 id="叶足虫">叶足虫 <a class="markdownIt-Anchor" href="#叶足虫">#</a></h2>
+<h3 id="溶组织内阿米巴">溶组织内阿米巴 <a class="markdownIt-Anchor" href="#溶组织内阿米巴">#</a></h3>
+<p>又称<strong>痢疾阿米巴</strong>、<strong>（痢疾）变形虫</strong>。</p>
+<h4 id="形态">形态 <a class="markdownIt-Anchor" href="#形态">#</a></h4>
+<p>溶组织内阿米巴有两个发育阶段：</p>
+<ol>
+<li><strong>滋养体</strong>（致病阶段）：
+<ul>
+<li>组织型/致病型：含有摄入的<strong>红细胞</strong>，运动活泼可从有症状患者的肠黏膜组织中分离得到；</li>
+<li>肠腔型/非致病型：不含<s>红细胞</s>，可在无症状带虫者的肠腔或非腹泻的粪便中分离到。</li>
+</ul>
+</li>
+<li><strong>包囊</strong>：未成熟包囊有 1~2 个核，<strong>成熟包囊</strong>（感染阶段）有 <strong>4 个核</strong></li>
+</ol>
+<h4 id="生活史-2">生活史 <a class="markdownIt-Anchor" href="#生活史-2">#</a></h4>
+<ul>
+<li>传染源：<strong>带虫者</strong>、<s>患者</s>（四核包囊在带虫者肠腔内形成）</li>
+<li>病理变化：典型的病变是<strong>口小底大的烧瓶样溃疡</strong></li>
+<li>临床表现：90% 为无症状带虫者，所致疾病可分为：
+<ol>
+<li><strong>肠阿米巴病</strong></li>
+<li><strong>肠外阿米巴病</strong>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>肝</strong></span><span class="horizontal-list-item">肺</span><span class="horizontal-list-item">脑</span></span>多见，分别形成肝、肺、脑脓肿，肝脓肿穿刺取“巧克力酱”样脓液，可检出滋养体</li>
+</ol>
+</li>
+</ul>
+<h4 id="治疗">治疗 <a class="markdownIt-Anchor" href="#治疗">#</a></h4>
+<ul>
+<li>患者：<strong>甲硝唑</strong></li>
+<li>带虫者：巴龙霉素</li>
+</ul>
+<h3 id="结肠内阿米巴"><em>结肠内阿米巴</em> <a class="markdownIt-Anchor" href="#结肠内阿米巴">#</a></h3>
+<p><strong>结肠内阿米巴</strong>是人体肠道内的一种常见<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/?highlight=共栖#寄生虫">共栖</a>原虫<s>寄生虫</s>，常与<a href="#%E6%BA%B6%E7%BB%84%E7%BB%87%E5%86%85%E9%98%BF%E7%B1%B3%E5%B7%B4">溶组织内阿米巴</a>共同存在，其成熟包囊含 <strong>8 个核</strong>（偶尔更多），临床上以此与溶组织内阿米巴区分。</p>
+<h2 id="鞭毛虫">鞭毛虫 <a class="markdownIt-Anchor" href="#鞭毛虫">#</a></h2>
+<h3 id="蓝氏贾第鞭毛虫">蓝氏贾第鞭毛虫 <a class="markdownIt-Anchor" href="#蓝氏贾第鞭毛虫">#</a></h3>
+<p>简称<strong>贾第虫</strong>，是引起<strong>旅游者腹泻</strong>（水土不服）的常见病原体之一。</p>
+<ul>
+<li>治疗：同<a href="?highlight=%E9%98%BF%E7%B1%B3%E5%B7%B4%E5%8E%9F%E8%99%AB#%E6%BA%B6%E7%BB%84%E7%BB%87%E5%86%85%E9%98%BF%E7%B1%B3%E5%B7%B4">阿米巴原虫</a></li>
+</ul>
+<h3 id="阴道毛滴虫">阴道毛滴虫 <a class="markdownIt-Anchor" href="#阴道毛滴虫">#</a></h3>
+<ul>
+<li>生活史：仅有<strong>滋养体</strong>，即是<em>感染阶段</em>，也是<em>致病阶段</em></li>
+</ul>
+<h2 id="孢子虫">孢子虫 <a class="markdownIt-Anchor" href="#孢子虫">#</a></h2>
+<p><strong>孢子虫</strong>没有<s>运动器官</s>，均为<strong>专性的细胞内寄生原虫</strong>。常见的对人体危害较大的孢子虫有<span class="horizontal-list"><span class="horizontal-list-item"><a href="#%E7%96%9F%E5%8E%9F%E8%99%AB"><strong>疟原虫</strong></a></span><span class="horizontal-list-item">弓形虫</span><span class="horizontal-list-item">隐孢子虫</span></span>等。</p>
+<h3 id="疟原虫">疟原虫 <a class="markdownIt-Anchor" href="#疟原虫">#</a></h3>
+<p>寄生于人体的疟原虫有 4 种，即<span class="horizontal-list"><span class="horizontal-list-item"><strong>间日疟原虫</strong></span><span class="horizontal-list-item"><strong>恶性疟原虫</strong></span><span class="horizontal-list-item"><strong>三日疟原虫</strong></span><span class="horizontal-list-item"><strong>卵形疟原虫</strong></span></span>，分别引起<span class="horizontal-list"><span class="horizontal-list-item">间日疟</span><span class="horizontal-list-item">恶性疟</span><span class="horizontal-list-item">三日疟</span><span class="horizontal-list-item">卵形疟</span></span>。我国最常见的是间日疟原虫，其次是恶性疟原虫。</p>
+<h4 id="形态-2">形态 <a class="markdownIt-Anchor" href="#形态-2">#</a></h4>
+<p>疟原虫为虫媒传播型原虫，其在人体内的发育阶段中可出现<span class="horizontal-list"><span class="horizontal-list-item"><strong>环状体</strong></span><span class="horizontal-list-item"><strong>大滋养体</strong></span><span class="horizontal-list-item"><strong>裂殖体</strong></span><span class="horizontal-list-item"><strong>配子体</strong>（雌~、雄~）</span></span>四种形态。</p>
+<p>恶性疟原虫环状体在外周血液中发育后，停留在毛细血管、血窦等血流缓慢处，继续发育为大滋养体和裂殖体，故<strong>外周血中常检测不到恶性疟原虫的大滋养体和裂殖体</strong>。<br/>
+恶性疟原虫的<strong>配子体</strong>呈新月形（雌）或腊肠形（雄），可作为诊断依据。</p>
+<h4 id="生活史-3">生活史 <a class="markdownIt-Anchor" href="#生活史-3">#</a></h4>
+<p>寄生于人体的 4 种疟原虫生活史基本相同，需要<strong>人</strong>和<strong>按蚊</strong>两个宿主：</p>
+<ul>
+<li>人（中间宿主）体内的发育：<span class="horizontal-list"><span class="horizontal-list-item"><strong>红细胞外期</strong>（肝细胞）</span><span class="horizontal-list-item"><strong>红细胞内期</strong>（红细胞）</span><span class="horizontal-list-item"><strong>配子体形成</strong></span></span></li>
+<li>蚊（终宿主）体内的发育：<span class="horizontal-list"><span class="horizontal-list-item">配子生殖</span><span class="horizontal-list-item">孢子繁殖</span></span></li>
+</ul>
+<p><strong>间日疟原虫</strong>、<strong>卵形疟原虫</strong>有<span class="horizontal-list"><span class="horizontal-list-item"><strong>速发型子孢子</strong>（发育快）</span><span class="horizontal-list-item"><strong>迟发型子孢子</strong></span></span>两种遗传学类型。</p>
+<details class="note success "><summary><p>疟原虫红内期发育过程及临床意义</p>
+</summary><ul>
+<li>发育过程：环状体→大滋养体→裂殖体（未成熟裂殖体→含有一定数量裂殖子的成熟裂殖体）→裂殖子</li>
+<li>临床意义：<span class="horizontal-list"><span class="horizontal-list-item">构成<strong>潜伏期</strong>的一部分；</span><span class="horizontal-list-item">引发<strong>疟疾发作</strong>；</span><span class="horizontal-list-item"><strong>诊断依据</strong>；</span><span class="horizontal-list-item">与<strong>再燃</strong>有关；</span><span class="horizontal-list-item">经<strong>输血传播</strong>（红细胞内期）</span></span>。</li>
+</ul>
+</details>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<ol>
+<li>潜伏期：包括红细胞外期和红细胞内期原虫经数代裂体生殖、虫体量达到疟疾发作阈值的时间，分为<span class="horizontal-list"><span class="horizontal-list-item"><strong>短潜伏期</strong>（速发型子孢子）</span><span class="horizontal-list-item"><strong>长潜伏期</strong>（迟发型子孢子）</span></span></li>
+<li><strong>疟疾发作</strong></li>
+<li>再燃与复发
+<ul>
+<li><strong>再燃</strong>：急性疟疾患者发病后，无重复感染，因体内残存的少量红细胞内期原虫经抗原变异或宿主的抵抗力和对疟原虫的特异性免疫力下降，残存的<strong>红细胞内期原虫</strong>又重新开始大量增殖，引起疟疾发作；</li>
+<li><strong>复发</strong>：疟疾初发停止后，<s>红细胞内期原虫</s>已被消灭，无重复感染，由原先的<strong>迟发型子孢子</strong>经数月或年余的休眠后复苏，发育释放裂殖子进入红细胞繁殖，引起疟疾发作。</li>
+</ul>
+</li>
+</ol>
+<details class="note success "><summary><p>疟疾发作的典型临床表现及其发作机制</p>
+</summary><ul>
+<li>典型临床表现：周期性的<span class="horizontal-list"><span class="horizontal-list-item">寒症</span><span class="horizontal-list-item">高热</span><span class="horizontal-list-item">出汗退热</span></span>三个连续阶段</li>
+<li>机制/原因：红细胞内期成熟的裂殖体胀破红细胞后，大量的裂殖子、原虫代谢产物、红细胞碎片进入血液，其中部分被单核细胞、中性粒细胞吞噬，刺激这些细胞产生 TNF-α、IL-1 等内源性致热原，内源性致热原和疟原虫代谢产物共同作用于宿主下丘脑的体温调节中枢，引起发热。</li>
+</ul>
+</details>
+<details class="note success "><summary><p>疟原虫引起贫血的机制</p>
+</summary><ol>
+<li><strong>直接破坏</strong>，红细胞内期原虫裂体增殖；</li>
+<li><strong>脾功亢进</strong>，脾巨噬细胞吞噬正常红细胞；</li>
+<li><strong>免疫病理性损伤</strong>，红细胞膜隐蔽抗原暴露；</li>
+<li>骨髓中红细胞生成受到抑制<span class="hide">PPT 和书上都有，但老师上课没提</span>。</li>
+</ol>
+</details>
+<h4 id="流行">流行 <a class="markdownIt-Anchor" href="#流行">#</a></h4>
+<ul>
+<li>传染源：<strong>外周血中含有成熟配子体的患者和带虫者</strong>（从终宿主按蚊的角度考虑）</li>
+<li>传播媒介：按蚊</li>
+</ul>
+<h3 id="刚地弓形虫">刚地弓形虫 <a class="markdownIt-Anchor" href="#刚地弓形虫">#</a></h3>
+<h4 id="形态-3">形态 <a class="markdownIt-Anchor" href="#形态-3">#</a></h4>
+<p>刚地弓形虫整个生活史包括<span class="horizontal-list"><span class="horizontal-list-item"><strong>速殖子</strong>（致病阶段），形成<em>假包囊</em></span><span class="horizontal-list-item"><strong>包囊</strong>，内含<em>缓殖子</em>，导致隐性感染</span><span class="horizontal-list-item"><strong>裂殖体</strong></span><span class="horizontal-list-item"><strong>配子体</strong></span><span class="horizontal-list-item"><strong>卵囊</strong>（感染阶段），含<em>子孢子</em></span></span>5 种形态。</p>
+<h4 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h4>
+<ul>
+<li>感染阶段：
+<ol>
+<li>终宿主→中间宿主：卵囊</li>
+<li>中间宿主→中间宿主：假包囊、包囊、卵囊</li>
+</ol>
+</li>
+<li>感染方式：
+<ul>
+<li>各感染阶段均可经口感染</li>
+<li>损伤的皮肤黏膜</li>
+<li>输血（速殖子）</li>
+<li>器官移植</li>
+<li>经胎盘（垂直传播）</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>单基因遗传病</title>
     <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -4599,14 +4866,14 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <tr>
 <td style="text-align:center">离体途径</td>
 <td style="text-align:center">卵随便</td>
-<td style="text-align:center">卵随<strong>铁锈色痰液</strong>、卵随便</td>
+<td style="text-align:center">卵随<strong>铁锈色痰液</strong><br/>卵随便</td>
 <td style="text-align:center">卵随脓血便排出</td>
 </tr>
 <tr>
 <td style="text-align:center">终宿主</td>
-<td style="text-align:center">人、保虫宿主</td>
-<td style="text-align:center">人、保虫宿主</td>
-<td style="text-align:center">人及保虫宿主</td>
+<td style="text-align:center">人<br/>保虫宿主</td>
+<td style="text-align:center">人<br/>保虫宿主</td>
+<td style="text-align:center">人<br/>保虫宿主</td>
 </tr>
 <tr>
 <td style="text-align:center">第一中间宿主</td>
@@ -4640,24 +4907,12 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </tr>
 <tr>
 <td style="text-align:center">检查方法</td>
-<td style="text-align:center">粪便直接涂片法、<strong>十二指肠引流法</strong></td>
+<td style="text-align:center">粪便直接涂片法<br/><strong>十二指肠引流法</strong></td>
 <td style="text-align:center">直接涂片法</td>
-<td style="text-align:center">脓血便涂片法（急性期）、直肠镜镜检法（晚期）</td>
+<td style="text-align:center">脓血便涂片法（急性期）<br/>直肠镜镜检法（晚期）</td>
 </tr>
 </tbody>
 </table>
-<!-- |   感染阶段   | -->
-<!-- |   感染方式   | -->
-<!-- |   体内移行   | -->
-<!-- |   寄生部位   | -->
-<!-- |   离体途径   | -->
-<!-- |    终宿主    | -->
-<!-- | 第一中间宿主 | -->
-<!-- | 第二中间宿主 | -->
-<!-- |   保虫宿主   | -->
-<!-- |   转续宿主   | -->
-<!-- |   所致疾病   | -->
-<!-- |   检查方法   | -->
 <span id="more"></span>
 <h2 id="吸虫概述">吸虫概述 <a class="markdownIt-Anchor" href="#吸虫概述">#</a></h2>
 <h3 id="形态">形态 <a class="markdownIt-Anchor" href="#形态">#</a></h3>
@@ -4970,7 +5225,7 @@ T 细胞，当再次遇到抗原后，刺激致敏的 T 细胞产生各种淋巴
 <details class="note info "><summary><p>ToRCH</p>
 </summary><p>ToRCH 指可导致先天性宫内感染及围产期感染而引起围产儿畸形的病原体，它是一组病原微生物的英文名称缩写：</p>
 <ul>
-<li>T：弓形虫</li>
+<li>T：<a href="#刚地弓形虫">弓形虫</a></li>
 <li>o（other）：如 <a href="#%E8%85%AE%E8%85%BA%E7%82%8E%E7%97%85%E6%AF%92">腮腺炎病毒</a></li>
 <li>R：<a href="#%E9%A3%8E%E7%96%B9%E7%97%85%E6%AF%92">风疹病毒</a></li>
 <li>C：<a href="/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/?highlight=巨细胞病毒#巨细胞病毒">巨细胞病毒</a></li>
@@ -8145,8 +8400,8 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <p><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/"><strong>螺旋体</strong></a> 也属于广义的细菌学范畴。</p>
 <h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
 <ul>
-<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="">绦虫</a></span></span></li>
-<li>医学原虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="">叶足虫</a></span><span class="horizontal-list-item"><a href="">鞭毛虫</a></span><span class="horizontal-list-item"><a href="">孢子虫</a></span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
+<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
+<li><a href="/2021/07/06/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
 <li><em>医学节肢动物</em></li>
 </ul>
 <p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
@@ -9246,7 +9501,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <tr>
 <td style="text-align:center">感染方式</td>
 <td style="text-align:center">经口</td>
-<td style="text-align:center">经皮、经胎盘</td>
+<td style="text-align:center">经皮<br/>经胎盘</td>
 <td style="text-align:center">经口</td>
 </tr>
 <tr>
@@ -9271,7 +9526,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <td style="text-align:center">终宿主</td>
 <td style="text-align:center">人</td>
 <td style="text-align:center">人</td>
-<td style="text-align:center">人、保虫宿主</td>
+<td style="text-align:center">人<br>保虫宿主</td>
 </tr>
 <tr>
 <td style="text-align:center"><s>第一中间宿主</s></td>
@@ -9299,14 +9554,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </tr>
 <tr>
 <td style="text-align:center">所致疾病</td>
-<td style="text-align:center">蛔虫病、并发症</td>
+<td style="text-align:center">蛔虫病</td>
 <td style="text-align:center">贫血</td>
 <td style="text-align:center">旋毛虫病</td>
 </tr>
 <tr>
 <td style="text-align:center">病原性检查方法</td>
 <td style="text-align:center">粪便直接涂片法</td>
-<td style="text-align:center">粪便直接涂片法、<strong>饱和盐水漂浮法</strong></td>
+<td style="text-align:center">粪便直接涂片法<br/><strong>饱和盐水漂浮法</strong></td>
 <td style="text-align:center">肌肉组织活检法</td>
 </tr>
 </tbody>
@@ -9620,7 +9875,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>结构：
 <ul>
 <li>聚糖骨架：同 G<sup>+</sup></li>
-<li>四肽侧链：L-谷、D-谷、<em>DIP</em>、D-丙</li>
+<li>四肽侧链：L-谷、D-谷、DAP、D-丙</li>
 <li><s>五肽交联桥</s>：无（<mark>G<sup>-</sup> 没有抗生素的作用位点</mark>）</li>
 </ul>
 </li>
@@ -10018,6 +10273,157 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
+    <title>绦虫</title>
+    <url>/2021/07/05/%E7%BB%A6%E8%99%AB/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">链状带绦虫（猪肉绦虫，有钩绦虫）</th>
+<th style="text-align:center">肥胖带绦虫（牛肉绦虫，无钩绦虫）</th>
+<th style="text-align:center">细粒棘球绦虫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">感染阶段</td>
+<td style="text-align:center">囊尾蚴（终宿主）<br/>虫卵（中间宿主）</td>
+<td style="text-align:center">牛囊尾蚴</td>
+<td style="text-align:center">虫卵（中间宿主）</td>
+</tr>
+<tr>
+<td style="text-align:center">感染方式</td>
+<td style="text-align:center">经口（肉源性）</td>
+<td style="text-align:center">经口（肉源性）</td>
+<td style="text-align:center">经口</td>
+</tr>
+<tr>
+<td style="text-align:center">体内移行</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center">寄生部位</td>
+<td style="text-align:center">成虫：小肠<br/>囊尾蚴：全身各处（<span class="horizontal-list"><span class="horizontal-list-item">皮下肌肉</span><span class="horizontal-list-item">脑</span><span class="horizontal-list-item">眼</span></span>）</td>
+<td style="text-align:center">小肠（成虫）</td>
+<td style="text-align:center">成虫：小肠<br/>棘球蚴：全身各处［<span class="horizontal-list"><span class="horizontal-list-item"><strong>肝</strong>（最严重）</span><span class="horizontal-list-item">肺</span><span class="horizontal-list-item">脑</span></span>］</td>
+</tr>
+<tr>
+<td style="text-align:center">离体途径</td>
+<td style="text-align:center">孕节随便</td>
+<td style="text-align:center">孕节随便、自行爬出</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">终宿主</td>
+<td style="text-align:center">人</td>
+<td style="text-align:center">人</td>
+<td style="text-align:center">狗、豺、狼</td>
+</tr>
+<tr>
+<td style="text-align:center">第一中间宿主</td>
+<td style="text-align:center">猪<br/>人</td>
+<td style="text-align:center">牛</td>
+<td style="text-align:center">偶蹄类动物<br/>啮齿类动物<br/>灵长类动物（包括人）</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>第二中间宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>保虫宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><s>转续宿主</s></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">所致疾病</td>
+<td style="text-align:center">肠绦虫病<br/>人体囊尾蚴病</td>
+<td style="text-align:center">肠绦虫病</td>
+<td style="text-align:center">棘球蚴病/包虫病</td>
+</tr>
+<tr>
+<td style="text-align:center">检查方法</td>
+<td style="text-align:center">查孕节单侧子宫分支数（7~13）</td>
+<td style="text-align:center">查孕节单侧子宫分支数（15~30）</td>
+<td style="text-align:center">血清学实验、影像学检查</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<ul>
+<li>形态特点：
+<ul>
+<li>体分节，<span class="horizontal-list"><span class="horizontal-list-item">头节</span><span class="horizontal-list-item">颈节</span><span class="horizontal-list-item">链体</span></span>，链体分为<span class="horizontal-list"><span class="horizontal-list-item">幼节</span><span class="horizontal-list-item">成节</span><span class="horizontal-list-item">孕节</span></span></li>
+<li>卵壳很薄，卵壳内为胚膜，胚膜厚而坚固，具有放射状条纹；虫卵内为六钩蚴</li>
+</ul>
+</li>
+<li>生活史：所有绦虫均寄生于脊椎动物的消化道（<strong>小肠</strong>）中</li>
+<li>致病性：
+<ul>
+<li>成虫：<strong>肠绦虫病</strong>，危害性不大</li>
+<li>幼虫：某些绦虫的幼虫可寄生于人体组织器官，危害远比成虫严重</li>
+</ul>
+</li>
+</ul>
+<h2 id="链状带绦虫">链状带绦虫 <a class="markdownIt-Anchor" href="#链状带绦虫">#</a></h2>
+<ul>
+<li>形态：幼节中子宫向两侧分支，每侧 <strong>7~13</strong> 支</li>
+<li>致病性：
+<ul>
+<li>成虫：肠绦虫病</li>
+<li><strong>猪囊尾蚴</strong>：<strong>人体囊尾蚴病</strong>/人体囊虫病，<span class="horizontal-list"><span class="horizontal-list-item">皮下及肌肉囊尾蚴病</span><span class="horizontal-list-item">脑囊尾蚴病</span><span class="horizontal-list-item">眼囊尾蚴病</span></span></li>
+</ul>
+</li>
+</ul>
+<details class="note success "><summary><p>人体囊尾蚴病的感染方式及常见类型</p>
+</summary><ol>
+<li>自体内感染：绦虫病患者肠道逆蠕动，孕节返入胃中引起感染；不适当驱虫（如使用肠虫清）；</li>
+<li>自体外感染：误食自己排出的虫卵；</li>
+<li>异体感染：误食入他人排出的虫卵。</li>
+</ol>
+</details>
+<h2 id="肥胖带绦虫">肥胖带绦虫 <a class="markdownIt-Anchor" href="#肥胖带绦虫">#</a></h2>
+<ul>
+<li>形态：幼节中子宫向两侧分支，每侧 <strong>15~30</strong> 支</li>
+</ul>
+<h2 id="细粒棘球绦虫">细粒棘球绦虫 <a class="markdownIt-Anchor" href="#细粒棘球绦虫">#</a></h2>
+<p>形态：</p>
+<ul>
+<li>成虫：绦虫纲中最细小，长 2~7mm，由头节、颈节、链体组成，幼节、成节、孕节各一片</li>
+<li>幼虫：又称<strong>棘球蚴</strong>/<strong>包虫</strong>，呈圆形或近似圆形，直径从不足一厘米到数十厘米，由囊壁和内容物组成：
+<ul>
+<li>囊壁：角皮层/角质层、生发层；</li>
+<li>内容物：生发囊、子囊、<strong>原头蚴</strong>（发育为成虫）、棘球蚴液</li>
+</ul>
+</li>
+</ul>
+<dl>
+<dt>棘球蚴砂（hydatid sand）| 囊砂</dt>
+<dd>游离于囊液中的<em>原头蚴</em>、<em>生发囊</em>及小的<em>子囊</em>。</dd>
+<dd>手术时取囊内棘球蚴砂作为<em>诊断依据</em>。</dd>
+</dl>
+<ul>
+<li>致病特点：人仅作为细粒棘球绦虫的<strong>中间宿主</strong></li>
+<li>流行特点：主要在<strong>牧区</strong>流行</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>群体遗传学</title>
     <url>/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
     <content><![CDATA[<dl>
@@ -10369,30 +10775,30 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <table>
 <thead>
 <tr>
-<th>指标</th>
+<th style="text-align:center">指标</th>
 <th>单项阳性意义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>乙肝表面抗原（HBsAg）</td>
+<td style="text-align:center">乙肝表面抗原（HBsAg）</td>
 <td>乙肝病毒抗原感染</td>
 </tr>
 <tr>
-<td>乙肝表面抗体（HBsAb）</td>
+<td style="text-align:center">乙肝表面抗体（HBsAb）</td>
 <td>隐性感染者、急性感染恢复期、疫苗接种者</td>
 </tr>
 <tr>
-<td>乙肝 e 抗原（HBeAg）</td>
+<td style="text-align:center">乙肝 e 抗原（HBeAg）</td>
 <td>病毒复制，传染性强</td>
 </tr>
 <tr>
-<td>乙肝 e 抗体（HBeAb）</td>
+<td style="text-align:center">乙肝 e 抗体（HBeAb）</td>
 <td>恢复阶段，预后良好</td>
 </tr>
 <tr>
-<td>乙肝核心抗体（HbcAb）</td>
-<td>IgM：同HbeAG；IgG：处于<strong>窗口期</strong>（传染性强）或既往感染过</td>
+<td style="text-align:center">乙肝核心抗体（HbcAb）</td>
+<td>IgM：同 HbeAG；IgG：处于<strong>窗口期</strong>（传染性强）或既往感染过</td>
 </tr>
 </tbody>
 </table>
@@ -10695,6 +11101,36 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
       </tags>
   </entry>
   <entry>
+    <title>胚胎学</title>
+    <url>/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>胚胎学（embryology）</dt>
+<dd>研究个体发生、发育及其机制的科学。</dd>
+<dd>研究内容包括生殖细胞的形成、受精胚胎早期发育、器官与系统的发生、胚胎与母体的关系、先天性畸形、环境因素对胚胎发育的影响等。</dd>
+</dl>
+<span id="more"></span>
+<p>TODO: 胚胎学时间线</p>
+<ul>
+<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">人胚发生和早期发育</a></li>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自制伪终端</title>
     <url>/2021/04/12/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/</url>
     <content><![CDATA[<p>参见：<a href="/2021/03/15/The-TTY-Demystified/">The TTY Demystified</a></p>
@@ -10820,36 +11256,6 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>胚胎学</title>
-    <url>/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>胚胎学（embryology）</dt>
-<dd>研究个体发生、发育及其机制的科学。</dd>
-<dd>研究内容包括生殖细胞的形成、受精胚胎早期发育、器官与系统的发生、胚胎与母体的关系、先天性畸形、环境因素对胚胎发育的影响等。</dd>
-</dl>
-<span id="more"></span>
-<p>TODO: 胚胎学时间线</p>
-<ul>
-<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">人胚发生和早期发育</a></li>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
