@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffc2e3;
+  background: #74f7bb;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3354,6 +3354,10 @@ div.img-wrap-right { float: right; }
 
 .horizontal-list-item::after {
     content: ' '
+}
+
+.horizontal-list-conjunction {
+    font-size: 50%;
 }
 
 /**************************************************************************************/
