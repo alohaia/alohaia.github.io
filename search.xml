@@ -285,6 +285,79 @@ CMake 中的 target）的功能。<br/>
       </tags>
   </entry>
   <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Electron+Vue 开发笔记软件</title>
+    <url>/2021/04/28/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
+<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
+<ul>
+<li>node、npm（cnpm、yarn）</li>
+<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
+<p>如在 electron-vue 目录下创建项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
+<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
+<div class="note warning "><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
+</div>
+<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
+<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
+<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
+<p>要构建应用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
+<div class="note info "><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
+</div>
+<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
+<p>文档：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Softwares</category>
+      </categories>
+      <tags>
+        <tag>Electron</tag>
+        <tag>Vue</tag>
+        <tag>Index</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Create Snippets for UltiSnips</title>
     <url>/2021/03/28/Create-Snippets-for-Ultisnips/</url>
     <content><![CDATA[<p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
@@ -740,76 +813,110 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
-    <title>Electron+Vue 开发笔记软件</title>
-    <url>/2021/04/28/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
-</ul>
+    <title>Linux 配置记录</title>
+    <url>/2021/04/06/Linux-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>记录 Linux 使用过程中遇到的坑、软件和开发环境的安装和配置等。</p>
 <span id="more"></span>
-<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
-<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
+<h2 id="踩坑记录">踩坑记录 <a class="markdownIt-Anchor" href="#踩坑记录">#</a></h2>
+<h3 id="用-manjaro-安装镜像分区">用 Manjaro 安装镜像分区 <a class="markdownIt-Anchor" href="#用-manjaro-安装镜像分区">#</a></h3>
+<p>Manjaro 安装程序分区有时候会有问题，建议先用 <code>fdisk</code> 分好区并格式化。</p>
+<h3 id="把-home-目录下的目录名改为英文">把 HOME 目录下的目录名改为英文 <a class="markdownIt-Anchor" href="#把-home-目录下的目录名改为英文">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xdg-user-dirs-gtk &amp;&amp; <span class="built_in">export</span> LANG=en_US &amp;&amp; xdg-user-dirs-gtk-update</span><br><span class="line"><span class="built_in">export</span> LANG=zh_CN.UTF-8</span><br></pre></td></tr></table></figure>
+<h3 id="arch-系安装-deb-包">Arch 系安装 deb 包 <a class="markdownIt-Anchor" href="#arch-系安装-deb-包">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 debtap</span></span><br><span class="line">yay -S debtap</span><br><span class="line">sudo debtap -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 arch 包</span></span><br><span class="line">debtap &lt;deb 包&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装生成的包</span></span><br><span class="line">sudo pacman -U &lt;arch 包&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="linux-安装及基本配置">Linux 安装及基本配置 <a class="markdownIt-Anchor" href="#linux-安装及基本配置">#</a></h2>
+<h3 id="linux-安装">Linux 安装 <a class="markdownIt-Anchor" href="#linux-安装">#</a></h3>
+<p><strong>镜像及启动盘制作</strong>（<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuLw==">清华镜像站<i class="fa fa-external-link-alt"></i></span>）</p>
 <ul>
-<li>node、npm（cnpm、yarn）</li>
-<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
+<li>Arch Linux：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL2FyY2hsaW51eC9pc28vbGF0ZXN0Lw==">https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/<i class="fa fa-external-link-alt"></i></span></li>
+<li>Manjaro Linux
+<ul>
+<li>官方版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby8=">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro/<i class="fa fa-external-link-alt"></i></span></li>
+<li>社区版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby1jb21tdW5pdHkv">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro-community/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
 </li>
-<li></li>
-</ul>
-<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
-<p>如在 electron-vue 目录下创建项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
-<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
-<div class="note warning "><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
-</div>
-<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
-<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
-<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
-<p>要构建应用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
-<div class="note info "><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
-</div>
-<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
-<p>文档：</p>
+<li>刻录软件：
 <ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
+<li>Windows：rufus</li>
+<li>Linux：<code>dd</code> 命令，示例：<code>dd if=~/Downloads/archlinux-2021.04.01-x86_64.iso of=/dev/sdc1</code>
+if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使用 <code>lsblk -f</code> 和 <code>sudo fdisk -l</code> 帮助确定。</li>
 </ul>
-<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Softwares</category>
-      </categories>
-      <tags>
-        <tag>Electron</tag>
-        <tag>Vue</tag>
-        <tag>Index</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>启动盘制作完成后即可重启电脑，通过 BIOS 从启动盘启动计算机。</p>
+<p><strong>后续步骤</strong></p>
+<p>Arch</p>
+<ol>
+<li>参考 ArchWiki 的 <span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0luc3RhbGxhdGlvbl9ndWlkZV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">Installation Guide<i class="fa fa-external-link-alt"></i></span></li>
+<li>4-1-2021，官方发布<span class="exturl" data-url="aHR0cHM6Ly9hcmNobGludXgub3JnL25ld3MvaW5zdGFsbGF0aW9uLW1lZGl1bS13aXRoLWluc3RhbGxlci8=">消息<i class="fa fa-external-link-alt"></i></span>，可通过“a guided installer”安装 Arch Linux。镜像自带该安装器，只需在镜像系统中使用 <code>archinstall</code> 即可启动菜单式安装。<s>爷的青春结束了</s></li>
+</ol>
+<p>Manjaro：自带图形安装界面</p>
+<p><strong>分区参考</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NAME        FSTYPE FSVER LABEL  UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">nvme0n1</span><br><span class="line">├─nvme0n1p1 vfat   FAT32        3833-B9DC                             510.5M     0% /boot/efi</span><br><span class="line">├─nvme0n1p2 swap   1            8759088c-fdb3-4719-952d-a00cd91fa61b                [SWAP]</span><br><span class="line">├─nvme0n1p3 xfs                 b78adcf1-81a8-4cb0-83dc-3813e68067b8   62.3G    38% /</span><br><span class="line">├─nvme0n1p4 xfs                 7fd8a9e3-8e5e-4d7f-99c3-a6a1498bd192  146.7G    27% /home</span><br><span class="line">└─nvme0n1p5 ntfs         Shared CC00E4A900E49C28                       17.8G    89% /home/aloha/Shared</span><br></pre></td></tr></table></figure>
+<p>我的是 Win10 + Linux 双系统，<code>nvme0n1p5</code> 为共享分区。</p>
+<p><strong>文件系统格式推荐</strong></p>
+<ul>
+<li>btrfs：Fedora 的默认 文件系统，支持 copy-on-write（COW），被认为是 Linux 的下一代文件系统，参考
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzQwNzM4NjY1My9hbnN3ZXIvMTM1NDk2NDYwNg==">知乎-如何看待 Fedora 33 将默认使用 btrfs 文件系统？-@醉卧沙场的回答<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9mZWRvcmFwcm9qZWN0Lm9yZy93aWtpL0NoYW5nZXMvQnRyZnNCeURlZmF1bHQ=">Fedora Wiki-Btrfs by Default<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>xfs：RHEL（Red Hat Enterprise Linux）7 和 8 等著名的商用发行版默认采用的文件系统，我在使用的就是 xfs，主要以因为可以使用 <code>xfsdump</code> 方便备份</li>
+</ul>
+<p><strong>使用 <code>xfsdump</code> 自动备份的脚本</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +%w)</span><br><span class="line"><span class="comment"># day=0</span></span><br><span class="line"></span><br><span class="line">RET=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#@1 str</span></span><br><span class="line"><span class="comment">#@2 color</span></span><br><span class="line"><span class="function"><span class="title">Hi</span></span>()&#123;</span><br><span class="line">    RET=<span class="string">&quot;\033[1;<span class="variable">$2</span>;40m<span class="variable">$1</span>\033[0m&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">back_mnt_rel=<span class="string">&#x27;_tmp/.sys-backup-mnt&#x27;</span></span><br><span class="line"><span class="comment"># mount point of backup device</span></span><br><span class="line">back_mnt=`<span class="built_in">pwd</span> -P`/<span class="variable">$&#123;back_mnt_rel&#125;</span></span><br><span class="line"><span class="comment"># dir to store backup files</span></span><br><span class="line">back_dir=<span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line"><span class="comment"># dir to store old backup files</span></span><br><span class="line">back_old_dir=<span class="variable">$&#123;back_mnt&#125;</span>/.old</span><br><span class="line"><span class="comment"># device where to store dump files</span></span><br><span class="line">back_dev=<span class="string">&quot;6b1bd96b-5abc-4625-aa44-7de685a79752&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Backup Information:&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dev&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tUsing Device:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_mnt&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tMount Point:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dir&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Directory:\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;day&#125;</span>      33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Level:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Continue? y(es)/[n(o)]: &quot;</span> confirm</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$&#123;confirm&#125;</span> <span class="keyword">in</span></span><br><span class="line">    [yY][eE][sS]|[yY])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mBackup Starting...\033[0m&quot;</span></span><br><span class="line">        ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mAborted.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mInvalid input.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mount --uuid <span class="variable">$&#123;back_dev&#125;</span> <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_dir&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$day</span> -eq 1 || <span class="variable">$day</span> -eq 2 || <span class="variable">$day</span> -eq 3 || <span class="variable">$day</span> -eq 4 || <span class="variable">$day</span> -eq 5 || <span class="variable">$day</span> -eq 6 ]];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level <span class="variable">$&#123;day&#125;</span>]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="comment"># 7</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$day</span> -eq 0 ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level 0(full)]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mCleaning up old Dumps..\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mrm <span class="variable">$&#123;back_old_dir&#125;</span>/*\033[0m&quot;</span></span><br><span class="line">    rm <span class="variable">$&#123;back_old_dir&#125;</span>/*</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mmv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/\033[0m&quot;</span></span><br><span class="line">    mv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/</span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Actually, this is IMPOSSIBLE.&#x27;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">umount <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">rmdir -p <span class="variable">$&#123;back_mnt_rel&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="pacman-换源">pacman 换源 <a class="markdownIt-Anchor" href="#pacman-换源">#</a></h2>
+<ol>
+<li>方法 1：sudo pacman-mirrors -i -c China -m rank</li>
+<li>方法 2：在 /etc/pacman.d/mirrorlist 开头加上：</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>/etc/pacman.d/mirrorlist</span></figcaption><table><tr><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjarostable/$repo/$arch</span><br></pre></td></tr></table></figure>
+<p>然后同步本地数据库：<code>sudo pacman -Syy</code></p>
+<p>启用 <code>archlinuxcn</code> 源（optional，<mark>不建议 manjaro 用户启用</mark>）：</p>
+<p>在 <code>/etc/pacman.conf</code> 末尾加上：</p>
+<figure class="highlight plaintext"><figcaption><span>/etc/pacman.conf</span></figcaption><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+<p>然后执行命令：<code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h2 id="软件和开发环境">软件和开发环境 <a class="markdownIt-Anchor" href="#软件和开发环境">#</a></h2>
+<h3 id="wps">WPS <a class="markdownIt-Anchor" href="#wps">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -S wps-office-cn ttf-wps-fonts wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure>
+<p>安装后出现提示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ATTENTION: When you shut down wps, the wpsoffice process may still exist.</span><br><span class="line"># You can do &#x27;sudo chmod -x /usr/lib/office6/wpsoffice&#x27; to fix it. But</span><br><span class="line"># this might bring you problem with signing in.</span><br></pre></td></tr></table></figure>
+<h3 id="字体">字体 <a class="markdownIt-Anchor" href="#字体">#</a></h3>
+<p>Nerd 字体：<code>nerd-fonts-jetbrains-mono</code> 或 <code>nerd-fonts-fira-code</code></p>
+<p>中文字体：<code>ttf-sarasa-gothic</code> 或 <code>adobe-source-han-serif-otc-fonts</code> 和 <code>adobe-source-han-sans-otc-fonts</code></p>
+<h3 id="fcitx-输入法">fcitx 输入法 <a class="markdownIt-Anchor" href="#fcitx-输入法">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S fcitx5-im fcitx5-material-color fcitx5-rime librime</span><br></pre></td></tr></table></figure>
+<p>设置环境变量：</p>
+<figure class="highlight bash"><figcaption><span>~/.pam_environment</span></figcaption><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE DEFAULT=fcitx</span><br><span class="line">QT_IM_MODULE  DEFAULT=fcitx</span><br><span class="line">XMODIFIERS    DEFAULT=\@im=fcitx</span><br><span class="line">SDL_IM_MODULE DEFAULT=fcitx</span><br></pre></td></tr></table></figure>
+<p>Rime 配置目录：<code>~/.local/share/fcitx5/rime/</code></p>
+<p>参见</p>
+<ul>
+<li>ArchWiki：
+<ul>
+<li>fcitx5：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0ZjaXR4NV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">https://wiki.archlinux.org/index.php/Fcitx5_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
+<li>rime：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL1JpbWVfKCVFNyVBRSU4MCVFNCVCRCU5MyVFNCVCOCVBRCVFNiU5NiU4Nyk=">https://wiki.archlinux.org/index.php/Rime_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>Rime Github 主页：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JpbWUvaG9tZQ==">https://github.com/rime/home<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h3 id="mariadb-和-lua-mysql">MariaDB 和 lua-mysql <a class="markdownIt-Anchor" href="#mariadb-和-lua-mysql">#</a></h3>
+<ul>
+<li>lua-mysql</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo proxychains -q luarocks install luasql-mysql MYSQL_INCDIR=/usr/include/mysql</span><br></pre></td></tr></table></figure>
+<ul>
+<li>MariaDB</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients mariadb-libs</span><br><span class="line">sudo mv /var/lib/mysql /tmp</span><br><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line">sudo systemctl restart mariadb</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Computer</category>
-        <category>Git</category>
+        <category>uncategorized</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1206,110 +1313,65 @@ What’s this?</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Linux 配置记录</title>
-    <url>/2021/04/06/Linux-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>记录 Linux 使用过程中遇到的坑、软件和开发环境的安装和配置等。</p>
+    <title>Lua 迭代器和泛型 for</title>
+    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
+    <content><![CDATA[<blockquote>
+<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
+本文也未刻意区分。</p>
+</blockquote>
 <span id="more"></span>
-<h2 id="踩坑记录">踩坑记录 <a class="markdownIt-Anchor" href="#踩坑记录">#</a></h2>
-<h3 id="用-manjaro-安装镜像分区">用 Manjaro 安装镜像分区 <a class="markdownIt-Anchor" href="#用-manjaro-安装镜像分区">#</a></h3>
-<p>Manjaro 安装程序分区有时候会有问题，建议先用 <code>fdisk</code> 分好区并格式化。</p>
-<h3 id="把-home-目录下的目录名改为英文">把 HOME 目录下的目录名改为英文 <a class="markdownIt-Anchor" href="#把-home-目录下的目录名改为英文">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xdg-user-dirs-gtk &amp;&amp; <span class="built_in">export</span> LANG=en_US &amp;&amp; xdg-user-dirs-gtk-update</span><br><span class="line"><span class="built_in">export</span> LANG=zh_CN.UTF-8</span><br></pre></td></tr></table></figure>
-<h3 id="arch-系安装-deb-包">Arch 系安装 deb 包 <a class="markdownIt-Anchor" href="#arch-系安装-deb-包">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 debtap</span></span><br><span class="line">yay -S debtap</span><br><span class="line">sudo debtap -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 arch 包</span></span><br><span class="line">debtap &lt;deb 包&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装生成的包</span></span><br><span class="line">sudo pacman -U &lt;arch 包&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="linux-安装及基本配置">Linux 安装及基本配置 <a class="markdownIt-Anchor" href="#linux-安装及基本配置">#</a></h2>
-<h3 id="linux-安装">Linux 安装 <a class="markdownIt-Anchor" href="#linux-安装">#</a></h3>
-<p><strong>镜像及启动盘制作</strong>（<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuLw==">清华镜像站<i class="fa fa-external-link-alt"></i></span>）</p>
-<ul>
-<li>Arch Linux：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL2FyY2hsaW51eC9pc28vbGF0ZXN0Lw==">https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/<i class="fa fa-external-link-alt"></i></span></li>
-<li>Manjaro Linux
-<ul>
-<li>官方版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby8=">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro/<i class="fa fa-external-link-alt"></i></span></li>
-<li>社区版：<span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLnR1bmEudHNpbmdodWEuZWR1LmNuL29zZG4vc3RvcmFnZS9nL20vbWEvbWFuamFyby1jb21tdW5pdHkv">https://mirrors.tuna.tsinghua.edu.cn/osdn/storage/g/m/ma/manjaro-community/<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-</li>
-<li>刻录软件：
-<ul>
-<li>Windows：rufus</li>
-<li>Linux：<code>dd</code> 命令，示例：<code>dd if=~/Downloads/archlinux-2021.04.01-x86_64.iso of=/dev/sdc1</code>
-if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使用 <code>lsblk -f</code> 和 <code>sudo fdisk -l</code> 帮助确定。</li>
-</ul>
-</li>
-</ul>
-<p>启动盘制作完成后即可重启电脑，通过 BIOS 从启动盘启动计算机。</p>
-<p><strong>后续步骤</strong></p>
-<p>Arch</p>
+<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<dl>
+<dt>迭代器（iterator）</dt>
+<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
+<dt>闭包（closure）</dt>
+<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
+<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
+<dt>工厂（factory）</dt>
+<dd>用于创建闭包及其封装变量的函数。</dd>
+</dl>
+<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
+<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<p>泛型 for 的语法：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
+<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
 <ol>
-<li>参考 ArchWiki 的 <span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0luc3RhbGxhdGlvbl9ndWlkZV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">Installation Guide<i class="fa fa-external-link-alt"></i></span></li>
-<li>4-1-2021，官方发布<span class="exturl" data-url="aHR0cHM6Ly9hcmNobGludXgub3JnL25ld3MvaW5zdGFsbGF0aW9uLW1lZGl1bS13aXRoLWluc3RhbGxlci8=">消息<i class="fa fa-external-link-alt"></i></span>，可通过“a guided installer”安装 Arch Linux。镜像自带该安装器，只需在镜像系统中使用 <code>archinstall</code> 即可启动菜单式安装。<s>爷的青春结束了</s></li>
+<li>迭代函数</li>
+<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
+<li>控制变量的初始值</li>
 </ol>
-<p>Manjaro：自带图形安装界面</p>
-<p><strong>分区参考</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NAME        FSTYPE FSVER LABEL  UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">nvme0n1</span><br><span class="line">├─nvme0n1p1 vfat   FAT32        3833-B9DC                             510.5M     0% /boot/efi</span><br><span class="line">├─nvme0n1p2 swap   1            8759088c-fdb3-4719-952d-a00cd91fa61b                [SWAP]</span><br><span class="line">├─nvme0n1p3 xfs                 b78adcf1-81a8-4cb0-83dc-3813e68067b8   62.3G    38% /</span><br><span class="line">├─nvme0n1p4 xfs                 7fd8a9e3-8e5e-4d7f-99c3-a6a1498bd192  146.7G    27% /home</span><br><span class="line">└─nvme0n1p5 ntfs         Shared CC00E4A900E49C28                       17.8G    89% /home/aloha/Shared</span><br></pre></td></tr></table></figure>
-<p>我的是 Win10 + Linux 双系统，<code>nvme0n1p5</code> 为共享分区。</p>
-<p><strong>文件系统格式推荐</strong></p>
-<ul>
-<li>btrfs：Fedora 的默认 文件系统，支持 copy-on-write（COW），被认为是 Linux 的下一代文件系统，参考
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzQwNzM4NjY1My9hbnN3ZXIvMTM1NDk2NDYwNg==">知乎-如何看待 Fedora 33 将默认使用 btrfs 文件系统？-@醉卧沙场的回答<i class="fa fa-external-link-alt"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9mZWRvcmFwcm9qZWN0Lm9yZy93aWtpL0NoYW5nZXMvQnRyZnNCeURlZmF1bHQ=">Fedora Wiki-Btrfs by Default<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-</li>
-<li>xfs：RHEL（Red Hat Enterprise Linux）7 和 8 等著名的商用发行版默认采用的文件系统，我在使用的就是 xfs，主要以因为可以使用 <code>xfsdump</code> 方便备份</li>
-</ul>
-<p><strong>使用 <code>xfsdump</code> 自动备份的脚本</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +%w)</span><br><span class="line"><span class="comment"># day=0</span></span><br><span class="line"></span><br><span class="line">RET=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#@1 str</span></span><br><span class="line"><span class="comment">#@2 color</span></span><br><span class="line"><span class="function"><span class="title">Hi</span></span>()&#123;</span><br><span class="line">    RET=<span class="string">&quot;\033[1;<span class="variable">$2</span>;40m<span class="variable">$1</span>\033[0m&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">back_mnt_rel=<span class="string">&#x27;_tmp/.sys-backup-mnt&#x27;</span></span><br><span class="line"><span class="comment"># mount point of backup device</span></span><br><span class="line">back_mnt=`<span class="built_in">pwd</span> -P`/<span class="variable">$&#123;back_mnt_rel&#125;</span></span><br><span class="line"><span class="comment"># dir to store backup files</span></span><br><span class="line">back_dir=<span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line"><span class="comment"># dir to store old backup files</span></span><br><span class="line">back_old_dir=<span class="variable">$&#123;back_mnt&#125;</span>/.old</span><br><span class="line"><span class="comment"># device where to store dump files</span></span><br><span class="line">back_dev=<span class="string">&quot;6b1bd96b-5abc-4625-aa44-7de685a79752&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Backup Information:&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dev&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tUsing Device:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_mnt&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tMount Point:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;back_dir&#125;</span> 33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Directory:\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line">Hi <span class="variable">$&#123;day&#125;</span>      33 &amp;&amp; <span class="built_in">echo</span> -e <span class="string">&quot;\tBackup Level:\t\t<span class="variable">$&#123;RET&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Continue? y(es)/[n(o)]: &quot;</span> confirm</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$&#123;confirm&#125;</span> <span class="keyword">in</span></span><br><span class="line">    [yY][eE][sS]|[yY])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mBackup Starting...\033[0m&quot;</span></span><br><span class="line">        ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mAborted.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;31;40mInvalid input.\033[0m&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mount --uuid <span class="variable">$&#123;back_dev&#125;</span> <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">mkdir -p <span class="variable">$&#123;back_dir&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$day</span> -eq 1 || <span class="variable">$day</span> -eq 2 || <span class="variable">$day</span> -eq 3 || <span class="variable">$day</span> -eq 4 || <span class="variable">$day</span> -eq 5 || <span class="variable">$day</span> -eq 6 ]];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level <span class="variable">$&#123;day&#125;</span>]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -upf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/root-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -l <span class="variable">$&#123;day&#125;</span> -f <span class="variable">$&#123;back_dir&#125;</span>/home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -L home-inc<span class="variable">$&#123;day&#125;</span>-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="comment"># 7</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$day</span> -eq 0 ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40m[Level 0(full)]Dumping...\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;34;40mCleaning up old Dumps..\033[0m&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mrm <span class="variable">$&#123;back_old_dir&#125;</span>/*\033[0m&quot;</span></span><br><span class="line">    rm <span class="variable">$&#123;back_old_dir&#125;</span>/*</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mmv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/\033[0m&quot;</span></span><br><span class="line">    mv <span class="variable">$&#123;back_dir&#125;</span>/*inc* <span class="variable">$&#123;back_dir&#125;</span>/*full* <span class="variable">$&#123;back_old_dir&#125;</span>/</span><br><span class="line">    <span class="comment"># /boot/efi</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mtar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi\033[0m&quot;</span></span><br><span class="line">    tar -cpf <span class="variable">$&#123;back_dir&#125;</span>/efi-full-`date +%F`.tgz /boot/efi</span><br><span class="line">    <span class="comment"># /</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/root-full-`date +%F` -L root-full-`date +%F` -M nvme0n1p3 /</span><br><span class="line">    <span class="comment"># /home</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\033[1;32;40mxfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home\033[0m&quot;</span></span><br><span class="line">    xfsdump -e -f <span class="variable">$&#123;back_dir&#125;</span>/home-full-`date +%F` -L home-full-`date +%F` -M nvme0n1p4 /home</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;Actually, this is IMPOSSIBLE.&#x27;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">umount <span class="variable">$&#123;back_mnt&#125;</span></span><br><span class="line">rmdir -p <span class="variable">$&#123;back_mnt_rel&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="pacman-换源">pacman 换源 <a class="markdownIt-Anchor" href="#pacman-换源">#</a></h2>
-<ol>
-<li>方法 1：sudo pacman-mirrors -i -c China -m rank</li>
-<li>方法 2：在 /etc/pacman.d/mirrorlist 开头加上：</li>
-</ol>
-<figure class="highlight plaintext"><figcaption><span>/etc/pacman.d/mirrorlist</span></figcaption><table><tr><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjarostable/$repo/$arch</span><br></pre></td></tr></table></figure>
-<p>然后同步本地数据库：<code>sudo pacman -Syy</code></p>
-<p>启用 <code>archlinuxcn</code> 源（optional，<mark>不建议 manjaro 用户启用</mark>）：</p>
-<p>在 <code>/etc/pacman.conf</code> 末尾加上：</p>
-<figure class="highlight plaintext"><figcaption><span>/etc/pacman.conf</span></figcaption><table><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
-<p>然后执行命令：<code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
-<h2 id="软件和开发环境">软件和开发环境 <a class="markdownIt-Anchor" href="#软件和开发环境">#</a></h2>
-<h3 id="wps">WPS <a class="markdownIt-Anchor" href="#wps">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -S wps-office-cn ttf-wps-fonts wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure>
-<p>安装后出现提示</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ATTENTION: When you shut down wps, the wpsoffice process may still exist.</span><br><span class="line"># You can do &#x27;sudo chmod -x /usr/lib/office6/wpsoffice&#x27; to fix it. But</span><br><span class="line"># this might bring you problem with signing in.</span><br></pre></td></tr></table></figure>
-<h3 id="字体">字体 <a class="markdownIt-Anchor" href="#字体">#</a></h3>
-<p>Nerd 字体：<code>nerd-fonts-jetbrains-mono</code> 或 <code>nerd-fonts-fira-code</code></p>
-<p>中文字体：<code>ttf-sarasa-gothic</code> 或 <code>adobe-source-han-serif-otc-fonts</code> 和 <code>adobe-source-han-sans-otc-fonts</code></p>
-<h3 id="fcitx-输入法">fcitx 输入法 <a class="markdownIt-Anchor" href="#fcitx-输入法">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S fcitx5-im fcitx5-material-color fcitx5-rime librime</span><br></pre></td></tr></table></figure>
-<p>设置环境变量：</p>
-<figure class="highlight bash"><figcaption><span>~/.pam_environment</span></figcaption><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE DEFAULT=fcitx</span><br><span class="line">QT_IM_MODULE  DEFAULT=fcitx</span><br><span class="line">XMODIFIERS    DEFAULT=\@im=fcitx</span><br><span class="line">SDL_IM_MODULE DEFAULT=fcitx</span><br></pre></td></tr></table></figure>
-<p>Rime 配置目录：<code>~/.local/share/fcitx5/rime/</code></p>
-<p>参见</p>
-<ul>
-<li>ArchWiki：
-<ul>
-<li>fcitx5：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL0ZjaXR4NV8oJUU3JUFFJTgwJUU0JUJEJTkzJUU0JUI4JUFEJUU2JTk2JTg3KQ==">https://wiki.archlinux.org/index.php/Fcitx5_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
-<li>rime：<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvaW5kZXgucGhwL1JpbWVfKCVFNyVBRSU4MCVFNCVCRCU5MyVFNCVCOCVBRCVFNiU5NiU4Nyk=">https://wiki.archlinux.org/index.php/Rime_(简体中文)<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-</li>
-<li>Rime Github 主页：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JpbWUvaG9tZQ==">https://github.com/rime/home<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<h3 id="mariadb-和-lua-mysql">MariaDB 和 lua-mysql <a class="markdownIt-Anchor" href="#mariadb-和-lua-mysql">#</a></h3>
-<ul>
-<li>lua-mysql</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo proxychains -q luarocks install luasql-mysql MYSQL_INCDIR=/usr/include/mysql</span><br></pre></td></tr></table></figure>
-<ul>
-<li>MariaDB</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients mariadb-libs</span><br><span class="line">sudo mv /var/lib/mysql /tmp</span><br><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line">sudo systemctl restart mariadb</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+<dl>
+<dt>控制变量（control variable）</dt>
+<dd>其值为 <code>nil</code> 时循环结束。</dd>
+</dl>
+<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
+其中只有最后一项能产生多个值。</p>
+<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
+<p>确切地说，形如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>与以下代码等价：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
+<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<dl>
+<dt>无状态迭代器（stateless iterator）</dt>
+<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
+</dl>
+<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
+生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
+<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Computer</category>
-        <category>uncategorized</category>
+        <category>Lua</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
@@ -1481,68 +1543,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
-    <title>Lua 迭代器和泛型 for</title>
-    <url>/2021/04/08/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
-    <content><![CDATA[<blockquote>
-<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
-本文也未刻意区分。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
-<dl>
-<dt>迭代器（iterator）</dt>
-<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
-<dt>闭包（closure）</dt>
-<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
-<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
-<dt>工厂（factory）</dt>
-<dd>用于创建闭包及其封装变量的函数。</dd>
-</dl>
-<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
-<p>泛型 for 的语法：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
-<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
-<ol>
-<li>迭代函数</li>
-<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
-<li>控制变量的初始值</li>
-</ol>
-<dl>
-<dt>控制变量（control variable）</dt>
-<dd>其值为 <code>nil</code> 时循环结束。</dd>
-</dl>
-<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
-其中只有最后一项能产生多个值。</p>
-<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
-<p>确切地说，形如</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>与以下代码等价：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
-<dl>
-<dt>无状态迭代器（stateless iterator）</dt>
-<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
-</dl>
-<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
-生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
-<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenGL</title>
     <url>/2021/04/17/OpenGL/</url>
     <content><![CDATA[]]></content>
@@ -1675,113 +1675,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </categories>
       <tags>
         <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类发育与遗传学</title>
-    <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
-    <content><![CDATA[<blockquote>
-<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
-differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
-</blockquote>
-<dl>
-<dt>遗传学（genetics）</dt>
-<dd>研究生物遗传物质及其变化规律的学科。</dd>
-<dt>医学遗传学（medical genetics）</dt>
-<dd>遗传学与医学结合产生的一门边缘学科。</dd>
-<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
-</dl>
-<span id="more"></span>
-<details class="note info "><summary><p><strong>Table of Content</strong></p>
-</summary><ol>
-<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
-<li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
-<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
-<li><a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
-<li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
-<li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
-<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
-<li><a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
-<li><a href="/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
-</ol>
-<p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
-</details>
-<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
-<dl>
-<dt>遗传病（genetic disease）</dt>
-<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
-</dl>
-<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
-<a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
-<p>理解遗传病应注意下述两种情况：</p>
-<ol>
-<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
-<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
-</ol>
-<p><strong>遗传病的分类</strong>：</p>
-<ol>
-<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
-<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
-<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
-<li><strong>体细胞遗传病</strong>，如 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
-</ol>
-<dl>
-<dt>体细胞遗传病</dt>
-<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
-</dl>
-<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
-<ol>
-<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
-<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
-<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
-<li>1949 年，<strong>Pauling</strong> 发现 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
-<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
-<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
-<li>1977 年，Sanger 建立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
-<li>1985 年，Mullis 创立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
-<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
-</ol>
-<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
-<ul>
-<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
-<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
-<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
-<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
-</ul>
-<details class="note info "><summary><p>关于 HPG 的两次“完成”</p>
-</summary><blockquote>
-<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
-人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-</blockquote>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</details>
-<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
-<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
-30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
-<p>基因组测序方法：</p>
-<ul>
-<li>基因组公共研究中心：分级霰弹法</li>
-<li>Celera 公司：全基因组霰弹法</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -2057,6 +1950,113 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
+    <title>人类发育与遗传学</title>
+    <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
+    <content><![CDATA[<blockquote>
+<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
+differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
+</blockquote>
+<dl>
+<dt>遗传学（genetics）</dt>
+<dd>研究生物遗传物质及其变化规律的学科。</dd>
+<dt>医学遗传学（medical genetics）</dt>
+<dd>遗传学与医学结合产生的一门边缘学科。</dd>
+<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
+</dl>
+<span id="more"></span>
+<details class="note info "><summary><p><strong>Table of Content</strong></p>
+</summary><ol>
+<li><a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
+<li><a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
+<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
+<li><a href="/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
+<li><a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
+<li><a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
+<li><a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
+<li><a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
+<li><a href="/2021/06/16/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
+</ol>
+<p>另见：<a href="/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
+</details>
+<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
+<dl>
+<dt>遗传病（genetic disease）</dt>
+<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
+</dl>
+<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
+<a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
+<p>理解遗传病应注意下述两种情况：</p>
+<ol>
+<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
+<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
+</ol>
+<p><strong>遗传病的分类</strong>：</p>
+<ol>
+<li><a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/2021/04/26/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
+<li><a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
+<li><a href="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
+<li><strong>体细胞遗传病</strong>，如 <a href="/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
+</ol>
+<dl>
+<dt>体细胞遗传病</dt>
+<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
+</dl>
+<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
+<ol>
+<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
+<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
+<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
+<li>1949 年，<strong>Pauling</strong> 发现 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
+<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
+<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
+<li>1977 年，Sanger 建立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
+<li>1985 年，Mullis 创立了 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
+<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
+</ol>
+<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
+<ul>
+<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
+<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
+<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
+<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
+</ul>
+<details class="note info "><summary><p>关于 HPG 的两次“完成”</p>
+</summary><blockquote>
+<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
+人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</blockquote>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</details>
+<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
+<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
+30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
+<p>基因组测序方法：</p>
+<ul>
+<li>基因组公共研究中心：分级霰弹法</li>
+<li>Celera 公司：全基因组霰弹法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人类疱疹病毒</title>
     <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
@@ -2159,6 +2159,262 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人胚发生和早期发育</title>
+    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
+    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
+<p>人胚发育共经历 38 周（约 266 天）：</p>
+<ul>
+<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong>即指胚期；</li>
+<li><strong>胎期</strong>：9W 至出生。</li>
+</ul>
+<dl>
+<dt>围生期</dt>
+<dd><a href="#%E8%83%9A%E8%83%8E%E9%BE%84%E7%9A%84%E6%8E%A8%E7%AE%97">受精龄</a> 第 26 周至出生后 4 周。</dd>
+</dl>
+<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为<strong>围生医学</strong>。</p>
+<span id="more"></span>
+<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
+<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
+<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
+<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
+<dl>
+<dt>卵裂（cleavage)</dt>
+<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
+<dd>此时产生的子细胞称为<strong>卵裂球</strong>。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
+<dl>
+<dt>桑椹胚（morula）</dt>
+<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
+<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
+<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成<strong>胚泡</strong>。</dd>
+<dd>胚泡由<strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong>三部份组成。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
+<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
+<dl>
+<dt>植入（implantation）| 着床（imbed）</dt>
+<dd>胚泡逐渐埋入子宫内膜的过程。
+<ul>
+<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
+<li>部位：子宫体前后壁或子宫底的内膜。</li>
+</ul>
+</dd>
+</dl>
+<blockquote>
+<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
+</blockquote>
+<p>植入条件：</p>
+<ol>
+<li>受精卵在输卵管中运行正常；</li>
+<li>透明带准时消失；</li>
+<li>母体性激素分泌正常；</li>
+<li>子宫内膜处于分泌期。</li>
+</ol>
+<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
+<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
+<strong>合体滋养层</strong>和<strong>细胞滋养层</strong>。</p>
+<dl>
+<dt>合体滋养层（syncytiotrophoblast）</dt>
+<dd>表层滋养层，细胞互相融合，界限消失。</dd>
+<dt>细胞滋养层（cytotrophoblast）</dt>
+<dd>内层滋养层，细胞界限明显。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
+<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
+<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
+<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
+<dl>
+<dt>蜕膜（decidua）</dt>
+<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
+<dd>蜕膜会在分娩时脱落，故得名。</dd>
+</dl>
+<p>蜕膜可分为<strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong>三部分。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
+<dl>
+<dt>底蜕膜（decidua basalis）</dt>
+<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
+<dt>包蜕膜（decidua capsularis）</dt>
+<dd>覆盖于胚宫腔侧的蜕膜。</dd>
+<dt>壁蜕膜（decidua parietalis）</dt>
+<dd>子宫其余部分的蜕膜，与包蜕膜围成<strong>子宫腔</strong>。</dd>
+</dl>
+<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
+<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
+<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
+<dl>
+<dt>二胚层胚盘（bilaminar germ disc）</dt>
+<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
+</dl>
+<p>二胚层胚盘由<strong>下胚层</strong>和<strong>上胚层</strong>组成。</p>
+<dl>
+<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
+<dd>二胚层胚盘中靠近<strong>胚泡腔</strong>的一层立方形细胞。</dd>
+<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
+<dd>二胚层胚盘中靠近<strong>滋养层</strong>的一层柱状细胞。</dd>
+</dl>
+<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
+<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
+<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
+<strong>初级卵黄囊</strong>（primary yolk sac）或<strong>外体腔</strong>（outer coelom）。</p>
+<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为<strong>羊膜</strong>（amniotic membrane）。<br/>
+上胚层与羊膜之间的间隙称为<strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为<strong>羊水</strong>。<br/>
+羊膜与上胚层共同包绕羊膜腔形成<mark>羊膜囊</mark>（amniotic cyst）。</p>
+<p>另见 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
+<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
+<mark>次级卵黄囊</mark>（secondary yolk sac）。由胚外体腔膜构成的<em>初级卵黄囊</em>则逐渐退化。</p>
+<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
+<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为<mark>胚外中胚层</mark>（extra-embryonic mesoderm）。</p>
+<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为<mark>胚外体腔</mark>。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
+<dl>
+<dt>体蒂（body stalk）</dt>
+<dd>胚外中胚层持续扩大，仅有的少部分连接<em>胚盘尾端</em>和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/#脐带"><strong>脐带</strong></a>。</dd>
+</dl>
+<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
+<dl>
+<dt>原条（primitive streak）</dt>
+<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
+</dl>
+<div class="note info "><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
+<dl>
+<dt>畸胎瘤（teratoma）</dt>
+<dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
+</dl>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTk1JUI4JUU4JTgzJThFJUU3JTk4JUE0">https://zh.wikipedia.org/wiki/畸胎瘤<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+<p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
+<p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
+<div class="note warning "><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
+</div>
+<dl>
+<dt>内胚层（endoderm）</dt>
+<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
+<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
+<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
+<dt>外胚层（ectoderm）</dt>
+<dd>原来的上胚层的改称。</dd>
+</dl>
+<hr />
+<dl>
+<dt>原结（primitive node）</dt>
+<dd>原条头部的细胞增殖较快，形成的结节状肥厚区。</dd>
+<dt>原沟（primitive groove）</dt>
+<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
+<dt>原凹（primitive pit）</dt>
+<dd><strong>原结</strong>中心的凹陷。</dd>
+<dt>脊索（notochord）</dt>
+<dd><strong>原凹</strong>处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
+</dl>
+<p>脊索在胚胎早期起<strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的<strong>髓核</strong>。</p>
+<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
+<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
+<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
+<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
+<dl>
+<dt>神经板（neural plate）</dt>
+<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称<strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
+</dl>
+<p>神经板中央凹陷，称<strong>神经沟</strong>（neural groove）；<br/>
+沟两侧部分隆起，称<strong>神经褶</strong>（neural fold）。</p>
+<dl>
+<dt>神经管（neural tube）</dt>
+<dd>第 3 周末，<strong>神经沟</strong>加深，<strong>神经褶</strong>愈合（神经板边缘融合）形成神经管。</dd>
+</dl>
+<p><strong>神经管分化</strong>：神经管是<strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
+<dl>
+<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
+<dd>神经管头端和尾端的孔。</dd>
+</dl>
+<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致<strong>无脑儿</strong>和<strong>脊髓脊柱裂</strong>。</p>
+<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
+<dl>
+<dt>神经嵴（neural crest）</dt>
+<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管形成过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
+</dl>
+<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
+<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
+<ul>
+<li><strong>表皮及其附属器</strong></li>
+<li>牙釉质</li>
+<li>角膜上皮、晶状体</li>
+<li>内耳迷路</li>
+<li>……</li>
+</ul>
+<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
+<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
+<dl>
+<dt>轴旁中胚层（paraxial mesoderm）</dt>
+<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
+<dt>间介中胚层（intermediate mesoderm）</dt>
+<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
+<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
+<dd>初为单一薄层结构，后出现间隙，称为<strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的<strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的<strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
+<dl>
+<dt>间充质（mesenchyme）</dt>
+<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
+</dl>
+<p><strong>中胚层三部分的分化</strong>：</p>
+<ul>
+<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
+<li><strong>间介中胚层</strong>：泌尿生殖系统的原基</li>
+<li><strong>侧中胚层</strong> →
+<ul>
+<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
+<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
+<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
+</ul>
+</li>
+</ul>
+<p><strong>体节</strong>（somite）是轴旁中胚层断裂形成的左右成对的立方体细胞团。<br/>
+体节是<em>脊柱、背部皮肤真皮和骨骼肌</em>的原基，从头端开始生成，逐渐向尾端推进，可根据体节数目推算早期胚龄。</p>
+<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
+<p>卵黄囊顶壁的内胚层被卷入胚体内形成<strong>原始消化管</strong>（primitive gut）。<br/>
+原始消化管分为<strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和<strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
+<p><strong>内胚层的分化</strong>：</p>
+<ul>
+<li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
+<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
+<li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
+</ul>
+<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
+<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
+<dl>
+<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
+<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
+</dl>
+<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的<strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
+<p>第 5~8 周称为<strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8 周末时初具人形，主要器官、系统在此时期形成。</p>
+<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
+<dl>
+<dt>受精龄</dt>
+<dd>从受精到胎儿出生，约 38 周，包括<strong>胚期</strong>和<strong>胎期</strong>。</dd>
+<dt>月经龄</dt>
+<dd>从末次月经到婴儿出生，约 40 周。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -2847,262 +3103,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>人胚发生和早期发育</title>
-    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
-    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
-<p>人胚发育共经历 38 周（约 266 天）：</p>
-<ul>
-<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong>即指胚期；</li>
-<li><strong>胎期</strong>：9W 至出生。</li>
-</ul>
-<dl>
-<dt>围生期</dt>
-<dd><a href="#%E8%83%9A%E8%83%8E%E9%BE%84%E7%9A%84%E6%8E%A8%E7%AE%97">受精龄</a> 第 26 周至出生后 4 周。</dd>
-</dl>
-<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为<strong>围生医学</strong>。</p>
-<span id="more"></span>
-<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
-<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
-<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
-<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
-<dl>
-<dt>卵裂（cleavage)</dt>
-<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
-<dd>此时产生的子细胞称为<strong>卵裂球</strong>。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
-<dl>
-<dt>桑椹胚（morula）</dt>
-<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
-<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
-<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成<strong>胚泡</strong>。</dd>
-<dd>胚泡由<strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong>三部份组成。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
-<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
-<dl>
-<dt>植入（implantation）| 着床（imbed）</dt>
-<dd>胚泡逐渐埋入子宫内膜的过程。
-<ul>
-<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
-<li>部位：子宫体前后壁或子宫底的内膜。</li>
-</ul>
-</dd>
-</dl>
-<blockquote>
-<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
-</blockquote>
-<p>植入条件：</p>
-<ol>
-<li>受精卵在输卵管中运行正常；</li>
-<li>透明带准时消失；</li>
-<li>母体性激素分泌正常；</li>
-<li>子宫内膜处于分泌期。</li>
-</ol>
-<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
-<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
-<strong>合体滋养层</strong>和<strong>细胞滋养层</strong>。</p>
-<dl>
-<dt>合体滋养层（syncytiotrophoblast）</dt>
-<dd>表层滋养层，细胞互相融合，界限消失。</dd>
-<dt>细胞滋养层（cytotrophoblast）</dt>
-<dd>内层滋养层，细胞界限明显。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
-<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
-<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
-<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
-<dl>
-<dt>蜕膜（decidua）</dt>
-<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
-<dd>蜕膜会在分娩时脱落，故得名。</dd>
-</dl>
-<p>蜕膜可分为<strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong>三部分。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
-<dl>
-<dt>底蜕膜（decidua basalis）</dt>
-<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
-<dt>包蜕膜（decidua capsularis）</dt>
-<dd>覆盖于胚宫腔侧的蜕膜。</dd>
-<dt>壁蜕膜（decidua parietalis）</dt>
-<dd>子宫其余部分的蜕膜，与包蜕膜围成<strong>子宫腔</strong>。</dd>
-</dl>
-<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
-<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
-<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
-<dl>
-<dt>二胚层胚盘（bilaminar germ disc）</dt>
-<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
-</dl>
-<p>二胚层胚盘由<strong>下胚层</strong>和<strong>上胚层</strong>组成。</p>
-<dl>
-<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
-<dd>二胚层胚盘中靠近<strong>胚泡腔</strong>的一层立方形细胞。</dd>
-<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
-<dd>二胚层胚盘中靠近<strong>滋养层</strong>的一层柱状细胞。</dd>
-</dl>
-<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
-<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
-<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
-<strong>初级卵黄囊</strong>（primary yolk sac）或<strong>外体腔</strong>（outer coelom）。</p>
-<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为<strong>羊膜</strong>（amniotic membrane）。<br/>
-上胚层与羊膜之间的间隙称为<strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为<strong>羊水</strong>。<br/>
-羊膜与上胚层共同包绕羊膜腔形成<mark>羊膜囊</mark>（amniotic cyst）。</p>
-<p>另见 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
-<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
-<mark>次级卵黄囊</mark>（secondary yolk sac）。由胚外体腔膜构成的<em>初级卵黄囊</em>则逐渐退化。</p>
-<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
-<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为<mark>胚外中胚层</mark>（extra-embryonic mesoderm）。</p>
-<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为<mark>胚外体腔</mark>。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
-<dl>
-<dt>体蒂（body stalk）</dt>
-<dd>胚外中胚层持续扩大，仅有的少部分连接<em>胚盘尾端</em>和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/#脐带"><strong>脐带</strong></a>。</dd>
-</dl>
-<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
-<dl>
-<dt>原条（primitive streak）</dt>
-<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
-</dl>
-<div class="note info "><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
-<dl>
-<dt>畸胎瘤（teratoma）</dt>
-<dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
-</dl>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTk1JUI4JUU4JTgzJThFJUU3JTk4JUE0">https://zh.wikipedia.org/wiki/畸胎瘤<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</div>
-<p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
-<p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
-<div class="note warning "><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
-</div>
-<dl>
-<dt>内胚层（endoderm）</dt>
-<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
-<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
-<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
-<dt>外胚层（ectoderm）</dt>
-<dd>原来的上胚层的改称。</dd>
-</dl>
-<hr />
-<dl>
-<dt>原结（primitive node）</dt>
-<dd>原条头部的细胞增殖较快，形成的结节状肥厚区。</dd>
-<dt>原沟（primitive groove）</dt>
-<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
-<dt>原凹（primitive pit）</dt>
-<dd><strong>原结</strong>中心的凹陷。</dd>
-<dt>脊索（notochord）</dt>
-<dd><strong>原凹</strong>处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
-</dl>
-<p>脊索在胚胎早期起<strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的<strong>髓核</strong>。</p>
-<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
-<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
-<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
-<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
-<dl>
-<dt>神经板（neural plate）</dt>
-<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称<strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
-</dl>
-<p>神经板中央凹陷，称<strong>神经沟</strong>（neural groove）；<br/>
-沟两侧部分隆起，称<strong>神经褶</strong>（neural fold）。</p>
-<dl>
-<dt>神经管（neural tube）</dt>
-<dd>第 3 周末，<strong>神经沟</strong>加深，<strong>神经褶</strong>愈合（神经板边缘融合）形成神经管。</dd>
-</dl>
-<p><strong>神经管分化</strong>：神经管是<strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
-<dl>
-<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
-<dd>神经管头端和尾端的孔。</dd>
-</dl>
-<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致<strong>无脑儿</strong>和<strong>脊髓脊柱裂</strong>。</p>
-<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
-<dl>
-<dt>神经嵴（neural crest）</dt>
-<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管形成过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
-</dl>
-<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
-<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
-<ul>
-<li><strong>表皮及其附属器</strong></li>
-<li>牙釉质</li>
-<li>角膜上皮、晶状体</li>
-<li>内耳迷路</li>
-<li>……</li>
-</ul>
-<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
-<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
-<dl>
-<dt>轴旁中胚层（paraxial mesoderm）</dt>
-<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
-<dt>间介中胚层（intermediate mesoderm）</dt>
-<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
-<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
-<dd>初为单一薄层结构，后出现间隙，称为<strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的<strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的<strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
-<dl>
-<dt>间充质（mesenchyme）</dt>
-<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
-</dl>
-<p><strong>中胚层三部分的分化</strong>：</p>
-<ul>
-<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
-<li><strong>间介中胚层</strong>：泌尿生殖系统的原基</li>
-<li><strong>侧中胚层</strong> →
-<ul>
-<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
-<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
-<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
-</ul>
-</li>
-</ul>
-<p><strong>体节</strong>（somite）是轴旁中胚层断裂形成的左右成对的立方体细胞团。<br/>
-体节是<em>脊柱、背部皮肤真皮和骨骼肌</em>的原基，从头端开始生成，逐渐向尾端推进，可根据体节数目推算早期胚龄。</p>
-<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
-<p>卵黄囊顶壁的内胚层被卷入胚体内形成<strong>原始消化管</strong>（primitive gut）。<br/>
-原始消化管分为<strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和<strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
-<p><strong>内胚层的分化</strong>：</p>
-<ul>
-<li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
-<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
-<li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
-</ul>
-<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
-<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
-<dl>
-<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
-<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
-</dl>
-<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的<strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
-<p>第 5~8 周称为<strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8 周末时初具人形，主要器官、系统在此时期形成。</p>
-<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
-<dl>
-<dt>受精龄</dt>
-<dd>从受精到胎儿出生，约 38 周，包括<strong>胚期</strong>和<strong>胎期</strong>。</dd>
-<dt>月经龄</dt>
-<dd>从末次月经到婴儿出生，约 40 周。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>其他病毒</title>
     <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<ul>
@@ -3161,6 +3161,153 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动物源性细菌</title>
+    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
+<span id="more"></span>
+<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
+<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
+<li>培养特性和生化反应：需氧，营养要求较高</li>
+<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<ul>
+<li><strong>感染途径</strong>：
+<ul>
+<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
+<li>经呼吸道或眼结膜</li>
+<li>经皮肤</li>
+</ul>
+</li>
+<li><strong>常见患者</strong>：
+<ul>
+<li>和动物密切接触者</li>
+<li>饮用生奶者</li>
+</ul>
+</li>
+<li>致病物质：内毒素、荚膜、侵袭性酶</li>
+<li>所致疾病：
+<ul>
+<li>人类：<strong>波浪热</strong>，人类胎盘不含<strong>赤藓糖醇</strong>，故人类感染后不会引起流产</li>
+<li>感染家畜：母畜<strong>流产</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">芽孢杆菌属</div><ul>
+<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
+<li>培养特性：需氧，多数在由氧条件下形成芽孢</li>
+<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
+</ul>
+</div>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，有荚膜，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
+<li>培养特性和生化反应：
+<ul>
+<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
+<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>粘液性菌落</mark></li>
+</ul>
+</li>
+<li>抵抗力：
+<ul>
+<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
+<li>对青霉素等多种抗生素敏感</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>荚膜：抗吞噬</li>
+<li><strong>炭疽毒素</strong>：
+<ul>
+<li><strong>水肿因子</strong>（EF）、<strong>水肿因子</strong>（EF）、<strong>致死因子</strong>（LF）</li>
+<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
+</ul>
+</li>
+</ul>
+<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
+<ul>
+<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
+<li><strong>感染途径及所致疾病</strong>：
+<ul>
+<li>接触 → 皮肤炭疽</li>
+<li>食入 → 肠炭疽</li>
+<li>吸入 → 肺炭疽（最严重）</li>
+</ul>
+</li>
+</ul>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<ul>
+<li>标本：严禁在室外剖检病体</li>
+<li>直接涂片镜检：荚膜，竹节状排布</li>
+<li>分离培养与鉴定：
+<ul>
+<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
+<li>青霉素串珠实验、噬菌体裂解实验</li>
+</ul>
+</li>
+</ul>
+<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
+<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
+<ol>
+<li>鼠疫耶尔森菌：鼠疫；</li>
+<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
+<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
+</ol>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，有荚膜，无鞭毛、芽孢，菌体形态、大小变化较大</li>
+<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
+<li>抗原构造：
+<ul>
+<li>F1 抗原：荚膜抗原</li>
+<li>V/W 抗原：菌体表面抗原</li>
+<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
+<li>内毒素：与肠道杆菌内毒素相似</li>
+</ul>
+</li>
+<li>抵抗力：较弱</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
+<li><strong>鼠毒素</strong>（主要致病物质）、内毒素</li>
+</ul>
+<p>所致疾病：<strong>鼠疫</strong></p>
+<ul>
+<li>传染源：鼠，患病者</li>
+<li>传播途径及所致疾病：
+<ul>
+<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
+<li>染菌的尘埃——<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
+<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>消灭传染源：灭鼠灭蚤</li>
+<li>疫苗：无毒株活菌疫苗接种</li>
+<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -3371,150 +3518,89 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>动物源性细菌</title>
-    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
+    <title>医学免疫学</title>
+    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>免疫</dt>
+<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
+</dl>
 <span id="more"></span>
-<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
-<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
-<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
-<li>培养特性和生化反应：需氧，营养要求较高</li>
-<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
+<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
+<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
+<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
+<li>主要组织相容性复合体</li>
 </ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
 <ul>
-<li><strong>感染途径</strong>：
+<li>免疫器官
 <ul>
-<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
-<li>经呼吸道或眼结膜</li>
-<li>经皮肤</li>
+<li>中枢：胸腺、骨髓</li>
+<li>外周：脾脏、淋巴结</li>
 </ul>
 </li>
-<li><strong>常见患者</strong>：
+<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
+<li>免疫分子
 <ul>
-<li>和动物密切接触者</li>
-<li>饮用生奶者</li>
-</ul>
-</li>
-<li>致病物质：内毒素、荚膜、侵袭性酶</li>
-<li>所致疾病：
-<ul>
-<li>人类：<strong>波浪热</strong>，人类胎盘不含<strong>赤藓糖醇</strong>，故人类感染后不会引起流产</li>
-<li>感染家畜：母畜<strong>流产</strong></li>
+<li>膜型分子</li>
+<li>分泌型分子</li>
 </ul>
 </li>
 </ul>
-<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info titled"><div class='note-title' id='芽孢杆菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">芽孢杆菌属</div><ul>
-<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
-<li>培养特性：需氧，多数在由氧条件下形成芽孢</li>
-<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
-</ul>
-</div>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
+<dl>
+<dt><mark>免疫防御</mark>（immune defense）</dt>
+<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
+<dt><mark>免疫监视</mark>（immune surveillance）</dt>
+<dd>随时发现和清除体内出现的“非己”成分。</dd>
+<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
+<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
+</dl>
+<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
+<dl>
+<dt>免疫应答（immune response）</dt>
+<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
+<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
+<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
+<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
+<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
+<dd>相比固有免疫，有三个主要特点：
 <ul>
-<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，有荚膜，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
-<li>培养特性和生化反应：
+<li><strong>特异性</strong></li>
+<li><strong>耐受性</strong></li>
+<li><strong>记忆性</strong></li>
+</ul>
+</dd>
+<dd>适应性免疫应答可分为两类：
 <ul>
-<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
-<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>粘液性菌落</mark></li>
+<li><strong>体液免疫</strong></li>
+<li><strong>细胞免疫</strong></li>
 </ul>
-</li>
-<li>抵抗力：
-<ul>
-<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
-<li>对青霉素等多种抗生素敏感</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>荚膜：抗吞噬</li>
-<li><strong>炭疽毒素</strong>：
-<ul>
-<li><strong>水肿因子</strong>（EF）、<strong>水肿因子</strong>（EF）、<strong>致死因子</strong>（LF）</li>
-<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
-</ul>
-</li>
-</ul>
-<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
-<ul>
-<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
-<li><strong>感染途径及所致疾病</strong>：
-<ul>
-<li>接触 → 皮肤炭疽</li>
-<li>食入 → 肠炭疽</li>
-<li>吸入 → 肺炭疽（最严重）</li>
-</ul>
-</li>
-</ul>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<ul>
-<li>标本：严禁在室外剖检病体</li>
-<li>直接涂片镜检：荚膜，竹节状排布</li>
-<li>分离培养与鉴定：
-<ul>
-<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
-<li>青霉素串珠实验、噬菌体裂解实验</li>
-</ul>
-</li>
-</ul>
-<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
-<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
-<ol>
-<li>鼠疫耶尔森菌：鼠疫；</li>
-<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
-<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
-</ol>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，有荚膜，无鞭毛、芽孢，菌体形态、大小变化较大</li>
-<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
-<li>抗原构造：
-<ul>
-<li>F1 抗原：荚膜抗原</li>
-<li>V/W 抗原：菌体表面抗原</li>
-<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
-<li>内毒素：与肠道杆菌内毒素相似</li>
-</ul>
-</li>
-<li>抵抗力：较弱</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
-<li><strong>鼠毒素</strong>（主要致病物质）、内毒素</li>
-</ul>
-<p>所致疾病：<strong>鼠疫</strong></p>
-<ul>
-<li>传染源：鼠，患病者</li>
-<li>传播途径及所致疾病：
-<ul>
-<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
-<li>染菌的尘埃——<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
-<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>消灭传染源：灭鼠灭蚤</li>
-<li>疫苗：无毒株活菌疫苗接种</li>
-<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
-</ul>
+</dd>
+<dt>体液免疫（humoral immunity）</dt>
+<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
+<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
+<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
+</dl>
+<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
+<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
+<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
+<!-- UPDATING -->
+<dl>
+<dt>免疫性疾病</dt>
+<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
+<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
+</dl>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
-        <category>病原生物学</category>
+        <category>医学免疫学</category>
       </categories>
       <tags>
-        <tag>病原生物学</tag>
+        <tag>Index</tag>
+        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -3525,14 +3611,16 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <li><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/#细胞壁">革兰氏阴性菌</a>
 <ul>
 <li>奈瑟菌属：<a href="#%E8%84%91%E8%86%9C%E7%82%8E%E5%A5%88%E7%91%9F%E8%8F%8C">脑膜炎奈瑟菌</a>、<a href="#%E6%B7%8B%E7%97%85%E5%A5%88%E7%91%9F%E8%8F%8C">淋病奈瑟菌</a></li>
+<li>其他：<a href="#%E9%93%9C%E7%BB%BF%E5%81%87%E5%8D%95%E8%83%9E%E8%8F%8C">铜绿假单胞菌</a></li>
 </ul>
 </li>
-<li>其他：<a href="#%E9%93%9C%E7%BB%BF%E5%81%87%E5%8D%95%E8%83%9E%E8%8F%8C">铜绿假单胞菌</a></li>
 </ul>
 <span id="more"></span>
 <h2 id="葡萄球菌">葡萄球菌 <a class="markdownIt-Anchor" href="#葡萄球菌">#</a></h2>
 <h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
-<p>形态与染色：球型，葡萄串状，革兰氏染色阳姓（G<sup>+</sup>）</p>
+<ul>
+<li>形态与染色：G<sup>+</sup>，球型，葡萄串状</li>
+</ul>
 <h4 id="培养特性和生化反应">培养特性和生化反应 <a class="markdownIt-Anchor" href="#培养特性和生化反应">#</a></h4>
 <ul>
 <li>易培养：普通平板、血平板</li>
@@ -3618,10 +3706,10 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <h2 id="链球菌">链球菌 <a class="markdownIt-Anchor" href="#链球菌">#</a></h2>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
-<li>形态与染色：球形，链状排列，革兰染色阳性（G<sup>+</sup>）</li>
+<li>形态与染色：G<sup>+</sup>，球形，链状排列</li>
 <li>抗原组成和分类
 <ul>
-<li>细胞壁多糖抗原：A～H、K～T、U、V 共 20 群</li>
+<li>细胞壁多糖抗原：A~H、K~T、U、V 共 20 群</li>
 <li>根据表面抗原，A 群可分为 100 型</li>
 <li><strong>A 群菌</strong>对人类致病，多数呈<em>乙型溶血</em></li>
 </ul>
@@ -3707,7 +3795,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <h2 id="肺炎链球菌">肺炎链球菌 <a class="markdownIt-Anchor" href="#肺炎链球菌">#</a></h2>
 <h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
 <ul>
-<li>形态与染色：双球菌，矛头状（平面相对，尖面相背），<mark>有厚荚膜</mark>，无鞭毛</li>
+<li>形态与染色：G<sup>+</sup>，双球菌，矛头状（平面相对，尖面相背），<mark>有厚荚膜</mark>，无鞭毛</li>
 <li>抗原结构和分类
 <ul>
 <li>荚膜多糖抗原：可分为 90 多型，致病的血清型有 20 多型（<strong>8～10</strong>个较常见）：造成 2/3 的成年人肺炎链球菌感染</li>
@@ -3771,7 +3859,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <div class="note info "><p>奈瑟菌属中仅有 <a href="#%E8%84%91%E8%86%9C%E7%82%8E%E5%A5%88%E7%91%9F%E8%8F%8C">脑膜炎奈瑟菌</a> 和 <a href="#%E6%B7%8B%E7%97%85%E5%A5%88%E7%91%9F%E8%8F%8C">淋病奈瑟菌</a> 对人致病。</p>
 <img data-src="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/%E5%A5%88%E7%91%9F%E8%8F%8C%E5%B1%9E.png" class="" title="奈瑟菌属" alt="奈瑟菌属">
 <ul>
-<li>形态与染色：革兰氏阴性，双球菌，无鞭毛，无芽孢，有菌毛</li>
+<li>形态与染色：G<sup>-</sup>，双球菌，无鞭毛，无芽孢，有菌毛</li>
 <li><strong>培养特性和生化反应</strong>
 <ul>
 <li>5%~10% CO<sub>2</sub></li>
@@ -3790,7 +3878,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 </div>
 <h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
 <ul>
-<li>形态与染色：革兰氏染色阴性，双球菌，肾形或咖啡豆形</li>
+<li>形态与染色：G<sup>-</sup>，双球菌，肾形或咖啡豆形</li>
 <li>抗原结构和分类
 <ul>
 <li>荚膜多糖抗原：分 13 个<strong>群</strong>，跟人类疾病密切相关的是 A，B，C，Y，W135 五个群；A，C 在我国多见</li>
@@ -3845,7 +3933,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <h2 id="淋病奈瑟菌">淋病奈瑟菌 <a class="markdownIt-Anchor" href="#淋病奈瑟菌">#</a></h2>
 <h3 id="生物学特性-4">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-4">#</a></h3>
 <ul>
-<li>形态与染色：革兰氏染色阴性，双球菌，肾形或咖啡豆形，有菌毛和荚膜</li>
+<li>形态与染色：G<sup>-</sup>，双球菌，肾形或咖啡豆形，有菌毛和荚膜</li>
 <li>抗原结构和分类</li>
 <li>抵抗力：同 <a href="#%E8%84%91%E8%86%9C%E7%82%8E%E5%A5%88%E7%91%9F%E8%8F%8C">脑膜炎奈瑟菌</a></li>
 <li>培养特性和生化反应
@@ -3917,7 +4005,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <ul>
 <li>形态与染色
 <ul>
-<li>革兰氏阴性，直或微弯杆菌，有荚膜，单极鞭毛，运动活泼</li>
+<li>G<sup>-</sup>，直或微弯杆菌，有荚膜，单极鞭毛，运动活泼</li>
 </ul>
 </li>
 <li>抵抗力：强于其他革兰氏阴性菌，在恶劣的环境下也可存活</li>
@@ -3946,7 +4034,7 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
 <h3 id="预防和治疗-5">预防和治疗 <a class="markdownIt-Anchor" href="#预防和治疗-5">#</a></h3>
 <ul>
 <li>预防：伤口、手术器械等严格消毒</li>
-<li>治疗
+<li>治疗：
 <ul>
 <li>多种耐药，必须进行药敏试验</li>
 <li>庆大霉素、多粘菌素等</li>
@@ -3964,89 +4052,144 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>医学免疫学</title>
-    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
+    <title>厌氧性细菌</title>
+    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
     <content><![CDATA[<dl>
-<dt>免疫</dt>
-<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
+<dt>厌氧性细菌（anaerobic bacteria）</dt>
+<dd>一群必须在厌氧条件下才能生长繁殖的细菌，根据其是否能形成芽孢，可将厌氧性细菌分为两大类：
+<ul>
+<li><strong>厌氧芽孢梭菌属</strong>：<a href="#%E7%A0%B4%E4%BC%A4%E9%A3%8E%E6%A2%AD%E8%8F%8C">破伤风梭菌</a>、<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>、<a href="#%E8%82%89%E6%AF%92%E6%A2%AD%E8%8F%8C">肉毒梭菌</a>、<a href="#%E8%89%B0%E9%9A%BE%E6%A2%AD%E8%8F%8C">艰难梭菌</a></li>
+<li><em>无芽孢厌氧菌</em></li>
+</ul>
+</dd>
 </dl>
 <span id="more"></span>
-<ul>
-<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
-<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
-<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
-<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
-<li>主要组织相容性复合体</li>
+<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">厌氧芽孢梭菌属</div><ul>
+<li>严格厌氧菌，抵抗力强</li>
+<li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>等极少数外，均有周身鞭毛、无荚膜</li>
+<li>致病性：强，能产生多种外毒素和侵袭性酶</li>
+<li>防治：类毒素疫苗和抗毒素</li>
 </ul>
-<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
+</div>
+<h2 id="破伤风梭菌">破伤风梭菌 <a class="markdownIt-Anchor" href="#破伤风梭菌">#</a></h2>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
-<li>免疫器官
+<li>形态与染色：芽孢正圆形，位于菌体顶端，使细菌呈 <mark>鼓槌状</mark></li>
+<li>培养特性和生化反应：血平板上培养，呈<strong>β 溶血</strong></li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<p>致病因子（外毒素）：</p>
 <ul>
-<li>中枢：胸腺、骨髓</li>
-<li>外周：脾脏、淋巴结</li>
+<li><mark>破伤风痉孪毒素</mark>：<strong>神经毒素</strong>，毒性极强；为蛋白质，不耐热</li>
+<li>破伤风溶血素：对氧敏感</li>
+</ul>
+<p>所致疾病：<strong>破伤风</strong></p>
+<ul>
+<li>致病条件：伤口形成<strong>厌氧微环境</strong>，如：
+<ol>
+<li>伤口窄而深，有泥土或异物污染；</li>
+<li>大面积创伤，坏死组织多，局部组织缺血；</li>
+<li>同时有需氧菌和兼性厌氧菌混合感染形成的伤口。</li>
+</ol>
+</li>
+<li>致病特点：<strong>无侵袭力</strong>，仅在局部繁殖，致病作用完全依赖于<strong>外毒素</strong>经运动神经终板吸收，沿神经纤维到达脑干；或经淋巴液或血液到达中枢神经系统</li>
+<li>临床表现：
+<ul>
+<li><strong>苦笑面容</strong>、牙关紧闭：咀嚼肌痉孪</li>
+<li><strong>角弓反转</strong>：持续性背部痉孪</li>
 </ul>
 </li>
-<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
-<li>免疫分子
+</ul>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<p>主要依靠抗毒素中和细菌产生的外毒素，一般病后不会获得牢固免疫力。<br/>
+获得有效抗毒素的途径是进行人工免疫。</p>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>一般不进行涂片镜检和分离培养，凭典型症状和病史即可做出诊断。</p>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <ul>
-<li>膜型分子</li>
-<li>分泌型分子</li>
+<li>非特异性治疗：正确处理伤口及清创、扩创，防治厌氧微环境形成；</li>
+<li>特异性紧急预防：<strong>破伤风免疫球蛋白</strong>（TIG）（不需皮试）或<strong>破伤风抗毒素</strong>（TAT），迅速获得被动免疫；</li>
+<li>特异性预防：<strong>百白破三联疫苗</strong>（含破伤风类毒素）；</li>
+<li>特异性治疗：
+<ul>
+<li>抗毒素：早期、足量使用 TIG 或 TAT；</li>
+<li>抗生素：首选<strong>青霉素</strong>，也可用四环素、红霉素等。</li>
 </ul>
 </li>
 </ul>
-<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
-<dl>
-<dt><mark>免疫防御</mark>（immune defense）</dt>
-<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
-<dt><mark>免疫监视</mark>（immune surveillance）</dt>
-<dd>随时发现和清除体内出现的“非己”成分。</dd>
-<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
-<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
-</dl>
-<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
-<dl>
-<dt>免疫应答（immune response）</dt>
-<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
-<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
-<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
-<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
-<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
-<dd>相比固有免疫，有三个主要特点：
+<h2 id="产气荚膜梭菌">产气荚膜梭菌 <a class="markdownIt-Anchor" href="#产气荚膜梭菌">#</a></h2>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
 <ul>
-<li><strong>特异性</strong></li>
-<li><strong>耐受性</strong></li>
-<li><strong>记忆性</strong></li>
-</ul>
-</dd>
-<dd>适应性免疫应答可分为两类：
+<li>形态与染色：两端平切的粗大杆状，芽孢比菌体细，位于次极端，在人或动物体内可见明显的 <mark>荚膜</mark></li>
+<li>抗原组成和分类：根据 4 种主要毒素的抗原性分为 A~E 5 种血清型，对人致病的主要是 A 型</li>
+<li>培养特性和生化反应：
 <ul>
-<li><strong>体液免疫</strong></li>
-<li><strong>细胞免疫</strong></li>
+<li>生长迅速（繁殖周期仅为 8min）</li>
+<li>血琼脂平板上可见<strong>双层溶血环</strong>，内环是由于 <em>θ 毒素</em>（溶血素、细胞毒素）引起的完全溶血，外环是由 <strong>α 毒素</strong>（卵磷脂酶）引起的不完全溶血</li>
+<li><strong>蛋黄琼脂平板</strong>上，菌落周围出现乳白色浑浊圈，是由于 <strong>α 毒素</strong>分解卵磷脂所致，若加入 α 毒素的抗血清，则不会出现浑浊，此现象称 <mark>Nagler 反应</mark>，是本菌的特点</li>
+<li>在<strong>牛乳培养基</strong>中分解乳糖产酸，使酪蛋白凝固；同时产生大量地气体，将凝固的酪蛋白冲成蜂窝状，称==“汹涌发酵”现象==，是鉴别本菌的主要特征。</li>
 </ul>
-</dd>
-<dt>体液免疫（humoral immunity）</dt>
-<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
-<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
-<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
-</dl>
-<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
-<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
-<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
-<!-- UPDATING -->
-<dl>
-<dt>免疫性疾病</dt>
-<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
-<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
-</dl>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：菌体成分（<strong>荚膜</strong>）、侵袭性酶和多种<strong>外毒素</strong>，有些外毒素同时是侵袭性酶</p>
+<ul>
+<li><strong>α 毒素</strong>（卵磷脂酶）：A 型产量最大，增加血管通透性，引起溶血和组织坏死，在<em>气性坏疽</em>的形成中其主要作用</li>
+<li>β、ε、ι 毒素：仅部分型别可产生，引起坏死损伤和血管通透型增加</li>
+<li>肠毒素：肠毒素毒性（呕吐、腹泻），细胞毒性</li>
+</ul>
+<p>所致疾病：</p>
+<ul>
+<li><strong>气性坏疽</strong>：主要由 A 型产气荚膜杆菌引起，以组织坏死、气肿和全身中毒为特征，致病条件与破伤风杆菌类似，即需要形成厌氧微环境</li>
+<li><strong>食物中毒</strong></li>
+<li><strong>坏死性肠炎</strong></li>
+</ul>
+<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
+<ul>
+<li>标本：深部创口取样</li>
+<li>直接涂片镜检：革兰氏阳性大杆菌，白细胞少且不典型（被毒素杀死），伴有其他杂菌</li>
+</ul>
+<h2 id="肉毒梭菌">肉毒梭菌 <a class="markdownIt-Anchor" href="#肉毒梭菌">#</a></h2>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：芽孢椭圆形，粗于菌体，位于次极端，是细胞呈<strong>汤匙状</strong>或<strong>网球拍状</strong>；</li>
+<li>抗原结构和分类：根据神经毒素的抗原性分为 A~G 7 个型</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：<mark>肉毒毒素</mark>，已知毒性最强的<strong>神经毒素</strong>，作用于外周神经肌肉接头，抑制<strong>乙酰胆碱</strong>释放，导致弛缓性麻痹。肉毒毒素<strong>不耐热</strong>，煮沸 20min 即可被破坏。</p>
+<p>所致疾病：</p>
+<ul>
+<li>食物中毒：
+<ul>
+<li>病因：食入<ins>毒素</ins></li>
+<li>临床症状：少见胃肠道症状，主要为松弛型<strong>神经末梢麻痹</strong></li>
+</ul>
+</li>
+<li><strong>婴儿肉毒病</strong>：
+<ul>
+<li>食入肉毒梭菌<ins>芽孢</ins>，芽孢发芽、繁殖，产生毒素</li>
+<li>临床症状：类似于肉毒毒素食物中毒，早期表现为便秘、吸乳无力，病死率不高</li>
+</ul>
+</li>
+<li>创伤感染中毒：伤口被肉毒梭菌芽孢污染，偶尔见于机体抵抗力低下患者</li>
+</ul>
+<h2 id="艰难梭菌">艰难梭菌 <a class="markdownIt-Anchor" href="#艰难梭菌">#</a></h2>
+<p><strong>艰难梭菌</strong>（<em>C. difficile</em>）是人肠道中的正常菌群之一，对氧十分敏感，很难分离培养，故得名。</p>
+<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
+<p>一般不致病，当临床长期使用或不正当使用某些抗生素后，引起菌群失调，导致艰难梭菌大量繁殖而致病。</p>
+<ul>
+<li>致病物质：A 毒素（肠毒素）、B 毒素（细胞毒素）</li>
+<li>所致疾病：伪/假膜性肠炎</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Medicine</category>
-        <category>医学免疫学</category>
+        <category>病原生物学</category>
       </categories>
       <tags>
-        <tag>Index</tag>
-        <tag>医学免疫学</tag>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4690,147 +4833,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>厌氧性细菌</title>
-    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>厌氧性细菌（anaerobic bacteria）</dt>
-<dd>一群必须在厌氧条件下才能生长繁殖的细菌，根据其是否能形成芽孢，可将厌氧性细菌分为两大类：
-<ul>
-<li><strong>厌氧芽孢梭菌属</strong>：<a href="#%E7%A0%B4%E4%BC%A4%E9%A3%8E%E6%A2%AD%E8%8F%8C">破伤风梭菌</a>、<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>、<a href="#%E8%82%89%E6%AF%92%E6%A2%AD%E8%8F%8C">肉毒梭菌</a>、<a href="#%E8%89%B0%E9%9A%BE%E6%A2%AD%E8%8F%8C">艰难梭菌</a></li>
-<li><em>无芽孢厌氧菌</em></li>
-</ul>
-</dd>
-</dl>
-<span id="more"></span>
-<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">厌氧芽孢梭菌属</div><ul>
-<li>严格厌氧菌，抵抗力强</li>
-<li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除 <a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a> 等极少数外，均有周身鞭毛、无荚膜</li>
-<li>致病性：强，能产生多种外毒素和侵袭性酶</li>
-<li>防治：类毒素疫苗和抗毒素</li>
-</ul>
-</div>
-<h2 id="破伤风梭菌">破伤风梭菌 <a class="markdownIt-Anchor" href="#破伤风梭菌">#</a></h2>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：芽孢正圆形，位于菌体顶端，使细菌呈 <mark>鼓槌状</mark></li>
-<li>培养特性和生化反应：血平板上培养，呈<strong>β 溶血</strong></li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
-<p>致病因子（外毒素）：</p>
-<ul>
-<li><mark>破伤风痉孪毒素</mark>：<strong>神经毒素</strong>，毒性极强；为蛋白质，不耐热</li>
-<li>破伤风溶血素：对氧敏感</li>
-</ul>
-<p>所致疾病：<strong>破伤风</strong></p>
-<ul>
-<li>致病条件：伤口形成<strong>厌氧微环境</strong>，如：
-<ol>
-<li>伤口窄而深，有泥土或异物污染；</li>
-<li>大面积创伤，坏死组织多，局部组织缺血；</li>
-<li>同时有需氧菌和兼性厌氧菌混合感染形成的伤口。</li>
-</ol>
-</li>
-<li>致病特点：<strong>无侵袭力</strong>，仅在局部繁殖，致病作用完全依赖于<strong>外毒素</strong>经运动神经终板吸收，沿神经纤维到达脑干；或经淋巴液或血液到达中枢神经系统</li>
-<li>临床表现：
-<ul>
-<li><strong>苦笑面容</strong>、牙关紧闭：咀嚼肌痉孪</li>
-<li><strong>角弓反转</strong>：持续性背部痉孪</li>
-</ul>
-</li>
-</ul>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<p>主要依靠抗毒素中和细菌产生的外毒素，一般病后不会获得牢固免疫力。<br/>
-获得有效抗毒素的途径是进行人工免疫。</p>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>一般不进行涂片镜检和分离培养，凭典型症状和病史即可做出诊断。</p>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>非特异性治疗：正确处理伤口及清创、扩创，防治厌氧微环境形成；</li>
-<li>特异性紧急预防：<strong>破伤风免疫球蛋白</strong>（TIG）（不需皮试）或<strong>破伤风抗毒素</strong>（TAT），迅速获得被动免疫；</li>
-<li>特异性预防：<strong>百白破三联疫苗</strong>（含破伤风类毒素）；</li>
-<li>特异性治疗：
-<ul>
-<li>抗毒素：早期、足量使用 TIG 或 TAT；</li>
-<li>抗生素：首选<strong>青霉素</strong>，也可用四环素、红霉素等。</li>
-</ul>
-</li>
-</ul>
-<h2 id="产气荚膜梭菌">产气荚膜梭菌 <a class="markdownIt-Anchor" href="#产气荚膜梭菌">#</a></h2>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：两端平切的粗大杆状，芽孢比菌体细，位于次极端，在人或动物体内可见明显的 <mark>荚膜</mark></li>
-<li>抗原组成和分类：根据 4 种主要毒素的抗原性分为 A~E 5 种血清型，对人致病的主要是 A 型</li>
-<li>培养特性和生化反应：
-<ul>
-<li>生长迅速（繁殖周期仅为 8min）</li>
-<li>血琼脂平板上可见<strong>双层溶血环</strong>，内环是由于 <em>θ 毒素</em>（溶血素、细胞毒素）引起的完全溶血，外环是由 <strong>α 毒素</strong>（卵磷脂酶）引起的不完全溶血</li>
-<li><strong>蛋黄琼脂平板</strong>上，菌落周围出现乳白色浑浊圈，是由于 <strong>α 毒素</strong>分解卵磷脂所致，若加入 α 毒素的抗血清，则不会出现浑浊，此现象称 <mark>Nagler 反应</mark>，是本菌的特点</li>
-<li>在<strong>牛乳培养基</strong>中分解乳糖产酸，使酪蛋白凝固；同时产生大量地气体，将凝固的酪蛋白冲成蜂窝状，称==“汹涌发酵”现象==，是鉴别本菌的主要特征。</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：菌体成分（<strong>荚膜</strong>）、侵袭性酶和多种<strong>外毒素</strong>，有些外毒素同时是侵袭性酶</p>
-<ul>
-<li><strong>α 毒素</strong>（卵磷脂酶）：A 型产量最大，增加血管通透性，引起溶血和组织坏死，在<em>气性坏疽</em>的形成中其主要作用</li>
-<li>β、ε、ι 毒素：仅部分型别可产生，引起坏死损伤和血管通透型增加</li>
-<li>肠毒素：肠毒素毒性（呕吐、腹泻），细胞毒性</li>
-</ul>
-<p>所致疾病：</p>
-<ul>
-<li><strong>气性坏疽</strong>：主要由 A 型产气荚膜杆菌引起，以组织坏死、气肿和全身中毒为特征，致病条件与破伤风杆菌类似，即需要形成厌氧微环境</li>
-<li><strong>食物中毒</strong></li>
-<li><strong>坏死性肠炎</strong></li>
-</ul>
-<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<ul>
-<li>标本：深部创口取样</li>
-<li>直接涂片镜检：革兰氏阳性大杆菌，白细胞少且不典型（被毒素杀死），伴有其他杂菌</li>
-</ul>
-<h2 id="肉毒梭菌">肉毒梭菌 <a class="markdownIt-Anchor" href="#肉毒梭菌">#</a></h2>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：芽孢椭圆形，粗于菌体，位于次极端，是细胞呈<strong>汤匙状</strong>或<strong>网球拍状</strong>；</li>
-<li>抗原结构和分类：根据神经毒素的抗原性分为 A~G 7 个型</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：<mark>肉毒毒素</mark>，已知毒性最强的<strong>神经毒素</strong>，作用于外周神经肌肉接头，抑制<strong>乙酰胆碱</strong>释放，导致弛缓性麻痹。肉毒毒素<strong>不耐热</strong>，煮沸 20min 即可被破坏。</p>
-<p>所致疾病：</p>
-<ul>
-<li>食物中毒：
-<ul>
-<li>病因：食入<ins>毒素</ins></li>
-<li>临床症状：少见胃肠道症状，主要为松弛型<strong>神经末梢麻痹</strong></li>
-</ul>
-</li>
-<li><strong>婴儿肉毒病</strong>：
-<ul>
-<li>食入肉毒梭菌<ins>芽孢</ins>，芽孢发芽、繁殖，产生毒素</li>
-<li>临床症状：类似于肉毒毒素食物中毒，早期表现为便秘、吸乳无力，病死率不高</li>
-</ul>
-</li>
-<li>创伤感染中毒：伤口被肉毒梭菌芽孢污染，偶尔见于机体抵抗力低下患者</li>
-</ul>
-<h2 id="艰难梭菌">艰难梭菌 <a class="markdownIt-Anchor" href="#艰难梭菌">#</a></h2>
-<p><strong>艰难梭菌</strong>（<em>C. difficile</em>）是人肠道中的正常菌群之一，对氧十分敏感，很难分离培养，故得名。</p>
-<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
-<p>一般不致病，当临床长期使用或不正当使用某些抗生素后，引起菌群失调，导致艰难梭菌大量繁殖而致病。</p>
-<ul>
-<li>致病物质：A 毒素（肠毒素）、B 毒素（细胞毒素）</li>
-<li>所致疾病：伪/假膜性肠炎</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>吸虫</title>
     <url>/2021/07/04/%E5%90%B8%E8%99%AB/</url>
     <content><![CDATA[<table>
@@ -5250,6 +5252,114 @@ T 细胞，当再次遇到抗原后，刺激致敏的 T 细胞产生各种淋巴
       </tags>
   </entry>
   <entry>
+    <title>器官、系统的发生与先天性畸形</title>
+    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多基因遗传病</title>
+    <url>/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
+    <content><![CDATA[<dl>
+<dt>多基因遗传（polygenic inheritance）| 多因素遗传（multifactorial inheritance）</dt>
+<dd>由多对等位基因的<strong>微效作用</strong>及<strong>累积效应</strong>导致遗传性状或疾病的遗传方式。
+<ul>
+<li><strong>主基因</strong>（major gene）：起主要作用</li>
+<li><strong>微效基因</strong>（minor gene）：起微效作用</li>
+</ul>
+</dd>
+<dd>此外，多基因性状或疾病还受<strong>环境因素</strong>的影响。</dd>
+</dl>
+<blockquote>
+<p>一般而言，多基因遗传病没有“致病基因”的说法，取而代之的是“相关基因”。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="多基因遗传病的特点">多基因遗传病的特点 <a class="markdownIt-Anchor" href="#多基因遗传病的特点">#</a></h2>
+<p><strong>多基因病</strong>（polygenic disease）的遗传易感性是多个基因座遗传变异的积累效应。</p>
+<blockquote>
+<p>这类疾病是由多个基因相互作用所致，还与不同的环境因素相互作用才发病，因此又称为
+<strong>多因素疾病</strong>（multifactorial disease）。</p>
+</blockquote>
+<ul>
+<li><strong>数量性状</strong>，而非质量性状</li>
+<li>近似<strong>正态分布</strong></li>
+</ul>
+<img data-src="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E8%A7%84%E5%BE%8B.png" class="right" title="多基因遗传规律" alt="多基因遗传规律">
+<p>多基因遗传规律：</p>
+<ol>
+<li>两个极端变异杂交，子一代都是中间类型，存在变异；</li>
+<li>中间表型子一代杂交，子二代多为中间表型，变异范围广泛，可出现极端变异；</li>
+<li>随机杂交的群体中，变异范围广泛，大多数接近中间表型，极端变异很少。</li>
+</ol>
+<h2 id="多基因遗传病的易患性与阈值模式">多基因遗传病的易患性与阈值模式 <a class="markdownIt-Anchor" href="#多基因遗传病的易患性与阈值模式">#</a></h2>
+<h3 id="易患性与阈值模式">易患性与阈值模式 <a class="markdownIt-Anchor" href="#易患性与阈值模式">#</a></h3>
+<dl>
+<dt><em>易感性</em>（susceptibility）</dt>
+<dd>多基因遗传病中，由<strong>遗传基础</strong>决定的一个个体患病的风险。</dd>
+</dl>
+<img data-src="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/%E6%98%93%E6%82%A3%E6%80%A7%E9%98%88%E5%80%BC%E6%A8%A1%E5%BC%8F.png" class="right" title="易患性阈值模式" alt="易患性阈值模式">
+<dl>
+<dt>易患性（liability）</dt>
+<dd>多基因遗传病中，由<strong>遗传因素</strong>和<strong>环境因素</strong>共同决定的一个个体患病的风险。</dd>
+</dl>
+<p>易患性变异同一般多基因性状一样，在群体中呈<strong>正态分布</strong>。</p>
+<dl>
+<dt>阈值（theshold）</dt>
+<dd>由<strong>易患性</strong>决定的多基因遗传病发病的<strong>最低限度</strong>。</dd>
+</dl>
+<h3 id="遗传度">遗传度 <a class="markdownIt-Anchor" href="#遗传度">#</a></h3>
+<dl>
+<dt>遗传性（Heritability，H）</dt>
+<dd>多基因的累加效应对疾病易患性的作用大小，一般用百分率（%）表示。</dd>
+</dl>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mfrac><msub><mi>V</mi><mi>G</mi></msub><msub><mi>V</mi><mi>P</mi></msub></mfrac><mo>×</mo><mn>100</mn><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">H=\frac{V_G}{V_P}\times 100%
+\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
+<p>其中</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>P</mi></msub><mo>=</mo><msub><mi>V</mi><mi>G</mi></msub><mo>+</mo><msub><mi>V</mi><mi>E</mi></msub><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">V_P=V_G+V_E
+\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">V_G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为遗传方差，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>P</mi></msub></mrow><annotation encoding="application/x-tex">V_P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为表型方差，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">V_E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为环境方差。</p>
+<p>遗传度越大，表明遗传因素对病因的作用越大。</p>
+<h2 id="多基因遗传病再发风险的预测">多基因遗传病再发风险的预测 <a class="markdownIt-Anchor" href="#多基因遗传病再发风险的预测">#</a></h2>
+<ol>
+<li>多基因遗传病的发病风险与遗传度密切相关；</li>
+<li>平均再发风险预测由经验数据，不是由特定的遗传模式决定；</li>
+<li>患病风险随受累亲属数目的增加而升高；</li>
+<li>多基因病患者的病情越重，其亲属患病风险越高；</li>
+<li>某种疾病随着群体发病率的降低，患者亲属的患病风险增加；</li>
+<li>当某种多基因病的发病率有性别差异时，发病率低的性别，其后代发病的风险相对较高；发病率高的性别，其后代发病的风险相对较低。</li>
+</ol>
+<p>多基因遗传病患病率为 0.1%~1%，遗传度为 70%~80% 时，可用 Edward 公式来估计发病风险：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><msqrt><mi>P</mi></msqrt><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f=\sqrt{P}
+\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.06445999999999996em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9755400000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span><span style="top:-2.93554em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.06445999999999996em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>呼吸道感染细菌</title>
     <url>/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/</url>
     <content><![CDATA[<p><strong>呼吸道感染细菌</strong>指能侵犯呼吸道、引起呼吸道局部病变或以呼吸道为侵入门户，引起呼吸道及其他组织器官病变的病原菌。</p>
@@ -5558,114 +5668,6 @@ T 细胞，当再次遇到抗原后，刺激致敏的 T 细胞产生各种淋巴
       </categories>
       <tags>
         <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>器官、系统的发生与先天性畸形</title>
-    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多基因遗传病</title>
-    <url>/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
-    <content><![CDATA[<dl>
-<dt>多基因遗传（polygenic inheritance）| 多因素遗传（multifactorial inheritance）</dt>
-<dd>由多对等位基因的<strong>微效作用</strong>及<strong>累积效应</strong>导致遗传性状或疾病的遗传方式。
-<ul>
-<li><strong>主基因</strong>（major gene）：起主要作用</li>
-<li><strong>微效基因</strong>（minor gene）：起微效作用</li>
-</ul>
-</dd>
-<dd>此外，多基因性状或疾病还受<strong>环境因素</strong>的影响。</dd>
-</dl>
-<blockquote>
-<p>一般而言，多基因遗传病没有“致病基因”的说法，取而代之的是“相关基因”。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="多基因遗传病的特点">多基因遗传病的特点 <a class="markdownIt-Anchor" href="#多基因遗传病的特点">#</a></h2>
-<p><strong>多基因病</strong>（polygenic disease）的遗传易感性是多个基因座遗传变异的积累效应。</p>
-<blockquote>
-<p>这类疾病是由多个基因相互作用所致，还与不同的环境因素相互作用才发病，因此又称为
-<strong>多因素疾病</strong>（multifactorial disease）。</p>
-</blockquote>
-<ul>
-<li><strong>数量性状</strong>，而非质量性状</li>
-<li>近似<strong>正态分布</strong></li>
-</ul>
-<img data-src="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E8%A7%84%E5%BE%8B.png" class="right" title="多基因遗传规律" alt="多基因遗传规律">
-<p>多基因遗传规律：</p>
-<ol>
-<li>两个极端变异杂交，子一代都是中间类型，存在变异；</li>
-<li>中间表型子一代杂交，子二代多为中间表型，变异范围广泛，可出现极端变异；</li>
-<li>随机杂交的群体中，变异范围广泛，大多数接近中间表型，极端变异很少。</li>
-</ol>
-<h2 id="多基因遗传病的易患性与阈值模式">多基因遗传病的易患性与阈值模式 <a class="markdownIt-Anchor" href="#多基因遗传病的易患性与阈值模式">#</a></h2>
-<h3 id="易患性与阈值模式">易患性与阈值模式 <a class="markdownIt-Anchor" href="#易患性与阈值模式">#</a></h3>
-<dl>
-<dt><em>易感性</em>（susceptibility）</dt>
-<dd>多基因遗传病中，由<strong>遗传基础</strong>决定的一个个体患病的风险。</dd>
-</dl>
-<img data-src="/2021/05/14/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/%E6%98%93%E6%82%A3%E6%80%A7%E9%98%88%E5%80%BC%E6%A8%A1%E5%BC%8F.png" class="right" title="易患性阈值模式" alt="易患性阈值模式">
-<dl>
-<dt>易患性（liability）</dt>
-<dd>多基因遗传病中，由<strong>遗传因素</strong>和<strong>环境因素</strong>共同决定的一个个体患病的风险。</dd>
-</dl>
-<p>易患性变异同一般多基因性状一样，在群体中呈<strong>正态分布</strong>。</p>
-<dl>
-<dt>阈值（theshold）</dt>
-<dd>由<strong>易患性</strong>决定的多基因遗传病发病的<strong>最低限度</strong>。</dd>
-</dl>
-<h3 id="遗传度">遗传度 <a class="markdownIt-Anchor" href="#遗传度">#</a></h3>
-<dl>
-<dt>遗传性（Heritability，H）</dt>
-<dd>多基因的累加效应对疾病易患性的作用大小，一般用百分率（%）表示。</dd>
-</dl>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mfrac><msub><mi>V</mi><mi>G</mi></msub><msub><mi>V</mi><mi>P</mi></msub></mfrac><mo>×</mo><mn>100</mn><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">H=\frac{V_G}{V_P}\times 100%
-\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
-<p>其中</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>P</mi></msub><mo>=</mo><msub><mi>V</mi><mi>G</mi></msub><mo>+</mo><msub><mi>V</mi><mi>E</mi></msub><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">V_P=V_G+V_E
-\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">V_G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为遗传方差，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>P</mi></msub></mrow><annotation encoding="application/x-tex">V_P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为表型方差，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">V_E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为环境方差。</p>
-<p>遗传度越大，表明遗传因素对病因的作用越大。</p>
-<h2 id="多基因遗传病再发风险的预测">多基因遗传病再发风险的预测 <a class="markdownIt-Anchor" href="#多基因遗传病再发风险的预测">#</a></h2>
-<ol>
-<li>多基因遗传病的发病风险与遗传度密切相关；</li>
-<li>平均再发风险预测由经验数据，不是由特定的遗传模式决定；</li>
-<li>患病风险随受累亲属数目的增加而升高；</li>
-<li>多基因病患者的病情越重，其亲属患病风险越高；</li>
-<li>某种疾病随着群体发病率的降低，患者亲属的患病风险增加；</li>
-<li>当某种多基因病的发病率有性别差异时，发病率低的性别，其后代发病的风险相对较高；发病率高的性别，其后代发病的风险相对较低。</li>
-</ol>
-<p>多基因遗传病患病率为 0.1%~1%，遗传度为 70%~80% 时，可用 Edward 公式来估计发病风险：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><msqrt><mi>P</mi></msqrt><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f=\sqrt{P}
-\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.06445999999999996em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9755400000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span><span style="top:-2.93554em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.06445999999999996em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -7523,7 +7525,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
-<li><strong>形态与染色</strong>：革兰氏阴性（G<sup>-</sup>）杆菌，多数有鞭毛，有菌毛，无芽孢</li>
+<li><strong>形态与染色</strong>：<mark>G<sup>-</sup> 杆菌</mark>，多数有鞭毛，有菌毛，无芽孢</li>
 <li>抗原构造复杂</li>
 <li>抵抗力：不强，60℃ 30min 即可灭活</li>
 <li>培养特性
@@ -7869,7 +7871,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <h2 id="霍乱弧菌">霍乱弧菌 <a class="markdownIt-Anchor" href="#霍乱弧菌">#</a></h2>
 <h3 id="生物学特性-6">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-6">#</a></h3>
 <ul>
-<li>形态与染色：革兰染色阴性，弧型或逗点状，单鞭毛，排列规则（“鱼群样排布”）</li>
+<li>形态与染色：G<sup>-</sup> 弧菌，弧型或逗点状，单鞭毛，排列规则（“鱼群样排布”）</li>
 <li>抗原结构和分类：O 抗原分群，<strong>O1</strong>、<strong>O139</strong> 引起霍乱；O1 可根据表型差异分为古典生物型和 El Tor 生物型</li>
 <li>抵抗力</li>
 <li>培养特性和生化反应
@@ -7919,8 +7921,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </div>
 <h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
 <h3 id="副溶血性弧菌">副溶血性弧菌 <a class="markdownIt-Anchor" href="#副溶血性弧菌">#</a></h3>
-<p>生物学特性</p>
+<p>生物学特性：</p>
 <ul>
+<li>G<sup>-</sup> 菌</li>
 <li>嗜盐，3.5% NaCl 最为适宜</li>
 <li>不耐热、不耐酸</li>
 <li><mark>神奈川现象</mark></li>
@@ -7935,14 +7938,14 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>传播：该菌经烹饪不当的海产品或盐腌制品所传播</li>
 </ul>
 <h3 id="弯曲菌属">弯曲菌属 <a class="markdownIt-Anchor" href="#弯曲菌属">#</a></h3>
-<p>生物学特性</p>
+<p>生物学特性：</p>
 <ul>
-<li>形态细长，呈弧形、螺旋形、S 型或海鸥形</li>
+<li>G<sup>-</sup>，形态细长，呈弧形、螺旋形、S 型或海鸥形</li>
 <li>单鞭毛、运动活泼</li>
 <li>微需氧，42℃ 能生长，营养要求高</li>
 <li>抵抗力弱</li>
 </ul>
-<p>致病性</p>
+<p>致病性：</p>
 <ul>
 <li>产生细胞毒素和一种不耐热肠毒素，<strong>散发性细菌性肠炎</strong></li>
 <li>症状：腹痛、腹泻、<mark>黏液脓血便（“果酱样便”）甚至黑便</mark>、头痛，病程 5～8 天，可自愈</li>
@@ -9849,7 +9852,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <p>使用<em>革兰氏染色法</em>可将细菌分为<strong>革兰氏阳性菌</strong>（G<sup>+</sup>）和<strong>革兰氏阴性菌</strong>（G<sup>-</sup>）两大类。
 两者染色不同的原因在于<em>细胞壁组成不同</em>，除了共有的肽聚糖成分之外，各自还有<em>特殊组分</em>。</p>
 <img data-src="/2021/03/21/%E7%BB%86%E8%8F%8C/Gram-stain.jpg" class="" title="Gram stain" alt="Gram stain">
-<div class="tabs" id="tabs_革兰氏阳性菌和革兰氏阴性菌"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_革兰氏阳性菌和革兰氏阴性菌-1">革兰氏阳性菌</a></li><li class="tab"><a href="#tabs_革兰氏阳性菌和革兰氏阴性菌-2">革兰氏阴性菌</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_革兰氏阳性菌和革兰氏阴性菌-1"><p>革兰氏阳性菌细胞壁：<em>三维立体结构</em>，较厚（15~50 层）</p>
+<div class="tabs" id="tabs_革兰氏阳性菌和革兰氏阴性菌"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_革兰氏阳性菌和革兰氏阴性菌-1">革兰氏阳性菌</a></li><li class="tab"><a href="#tabs_革兰氏阳性菌和革兰氏阴性菌-2">革兰氏阴性菌</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_革兰氏阳性菌和革兰氏阴性菌-1"><p>革兰氏阳性菌细胞壁：<em>三维立体结构</em></p>
 <ul>
 <li>结构：
 <ul>
@@ -9860,7 +9863,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 <li>组成（由内到外）：
 <ul>
-<li><em>肽聚糖</em></li>
+<li><em>肽聚糖</em>：较厚（15~50 层）</li>
 <li><strong>磷壁酸</strong>：膜磷壁酸、壁磷壁酸
 <ul>
 <li>功能
@@ -9875,7 +9878,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 </ul>
 </li>
-</ul></div><div class="tab-pane" id="tabs_革兰氏阳性菌和革兰氏阴性菌-2"><p>革兰氏阴性菌细胞壁：<em>二维平面结构</em>，较薄（1~2 层）</p>
+</ul></div><div class="tab-pane" id="tabs_革兰氏阳性菌和革兰氏阴性菌-2"><p>革兰氏阴性菌细胞壁：<em>二维平面结构</em></p>
 <ul>
 <li>结构：
 <ul>
@@ -9886,7 +9889,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </li>
 <li>组成（由内到外）：
 <ul>
-<li><em>肽聚糖</em></li>
+<li><em>肽聚糖</em>：较薄（1~2 层）</li>
 <li><strong>脂蛋白</strong>：连接肽聚糖的四肽侧链和外膜脂质双层的磷脂</li>
 <li><strong>外膜</strong></li>
 <li><strong>脂多糖</strong>（lipopolysaccharide，LPS）：即 G<sup>-</sup> 的<strong>内毒素</strong>，包括（由内向外）
@@ -9899,11 +9902,25 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ul>
 </li>
 </ul></div></div></div>
-<p>对细胞壁的灭菌物质</p>
+<p>对细胞壁的灭菌物质：</p>
 <ul>
 <li>溶菌酶：破坏<strong>聚糖骨架</strong> M 和 G 之间的连接</li>
 <li>青霉素：干扰肽聚糖<strong>侧链和交联桥</strong>之间的连接</li>
 </ul>
+<div class="note primary "><p>在所学的细菌中：</p>
+<ul>
+<li>化脓性细菌：
+<ul>
+<li>G<sup>+</sup>：葡萄球菌、链球菌、肺炎链球菌</li>
+<li>G<sup>-</sup>：奈瑟菌属（脑膜炎奈瑟菌、淋病奈瑟菌）、铜绿假单胞菌</li>
+</ul>
+</li>
+<li>消化道感染细菌：均为 G<sup>-</sup> 菌</li>
+<li>呼吸道感染细菌：除白喉棒状杆菌外都是 G<sup>-</sup> 菌</li>
+<li>厌氧性细菌：厌氧芽孢梭菌属均为 G<sup>+</sup> 菌，<em>无芽孢杆菌</em>既有 G<sup>+</sup> 菌也有 G<sup>-</sup> 菌</li>
+<li>动物源性细菌：炭疽芽孢杆菌为 G<sup>+</sup> 菌，布鲁斯菌、鼠疫耶尔森菌为 G<sup>-</sup> 菌</li>
+</ul>
+</div>
 <dl>
 <dt><mark>L 型细菌</mark>（L-form bacteria）| 细胞壁缺陷型细菌</dt>
 <dd>由于某些药物作用，抑制肽聚糖合成或破坏细胞壁结构，形成的一种细胞壁缺失或缺陷的细菌。</dd>
@@ -9969,7 +9986,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>形成：受遗传控制和环境影响，一般在动物体内或营养丰富的培养基中才可形成</li>
 <li>功能：增强致病性
 <ol>
-<li>保护菌体：抗干燥、抗有害物质的损伤作用</li>
+<li>保护菌体：抗干燥；抗有害物质的损伤作用；<strong>抵抗吞噬细胞的吞噬和消化</strong></li>
 <li><strong>黏附作用</strong></li>
 <li>储存营养、堆积代谢废物</li>
 </ol>
@@ -10013,7 +10030,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>致病性：发芽后形成繁殖体</li>
 <li>鉴别意义：芽孢位置、大小等</li>
 </ol>
-<h2 id="细菌的代谢产物">细菌的代谢产物 <a class="markdownIt-Anchor" href="#细菌的代谢产物">#</a></h2>
+<h2 id="细菌的生长代谢">细菌的生长代谢 <a class="markdownIt-Anchor" href="#细菌的生长代谢">#</a></h2>
 <h3 id="分解性代谢产物和生化反应">分解性代谢产物和生化反应 <a class="markdownIt-Anchor" href="#分解性代谢产物和生化反应">#</a></h3>
 <p>细菌的<strong>生化反应</strong>（biochemical reaction）指检测细菌对各种基质的代谢作用及代谢产物，借此区别和鉴别细菌种类的生化实验。</p>
 <ol>
@@ -10066,7 +10083,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <dt>细菌素（bacteriocin）</dt>
 <dd>某些细菌产生的一类具有抗菌作用的<em>蛋白质</em>，如大肠杆菌产生的大肠菌素。</dd>
 </dl>
-<p>细菌素与抗生素相比作用范围窄，仅对与产生菌由亲缘关系的细菌有杀伤作用。</p></div><div class="tab-pane" id="tabs_细菌的合成性代谢产物-6"><p>细菌分泌的维生素是人体维生素的来源之一。</p></div></div></div>
+<p>细菌素与抗生素相比作用范围窄，仅对与产生菌有亲缘关系的细菌有杀伤作用。</p></div><div class="tab-pane" id="tabs_细菌的合成性代谢产物-6"><p>细菌分泌的维生素是人体维生素的来源之一。</p></div></div></div>
 <h3 id="细菌生长繁殖的条件">细菌生长繁殖的条件 <a class="markdownIt-Anchor" href="#细菌生长繁殖的条件">#</a></h3>
 <ol>
 <li>充足的<strong>营养物质</strong></li>
@@ -11146,8 +11163,8 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
         <category>Softwares</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Index</tag>
+        <tag>Linux</tag>
         <tag>TTY</tag>
       </tags>
   </entry>
