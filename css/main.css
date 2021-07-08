@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff32ff;
+  background: #6bff6f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3498,9 +3498,9 @@ dd {
     color: #707070ee;
 }
 
-strong, em, ins {
-    color: var(--text-color) !important;
-}
+/* dd strong, em, ins { */
+/*     color: var(--text-color); */
+/* } */
 
 dd::before {
     content: "# ";
@@ -3698,6 +3698,7 @@ p.sidebar-quote-from {
 }
 
 /**************************************************************************************/
+
 div.aplayer-list {
     text-align: left;
 }
@@ -3791,5 +3792,19 @@ div.table-container::-webkit-scrollbar-track {
 
 div.table-container::-webkit-scrollbar-thumb {
   background-color: rgb(85, 85, 85);    /* color of the scroll thumb */
+}
+
+/**************************************************************************************/
+
+* {
+    text-decoration-thickness: 0.2em;
+}
+
+/**************************************************************************************/
+
+.post-body a {
+    --link-color: #FC642390;
+    --link-hover-color: #FC6423; 
+    border-bottom: none;
 }
 
