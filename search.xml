@@ -2911,67 +2911,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>其他病毒</title>
-    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<ul>
-<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
-<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
-<ul>
-<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
-</ul>
-<div class="note success "><dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
-<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
-</dl>
-</div>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
-<li>传染源：狂犬、猫、蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-<li>临床症状：
-<ul>
-<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
-<li>麻痹型：20 不到，不出现典型症状，直接进入麻痹期</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>英文简称 <strong>HPV</strong>。</p>
-<ul>
-<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
-<li>所致疾病：
-<ul>
-<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
-<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
-<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>免疫器官和组织</title>
     <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
     <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
@@ -3161,6 +3100,67 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>其他病毒</title>
+    <url>/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<ul>
+<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
+<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
+</ul>
+<div class="note success "><dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
+<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
+</dl>
+</div>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
+<li>传染源：狂犬、猫、蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+<li>临床症状：
+<ul>
+<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
+<li>麻痹型：20 不到，不出现典型症状，直接进入麻痹期</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>英文简称 <strong>HPV</strong>。</p>
+<ul>
+<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
+<li>所致疾病：
+<ul>
+<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
+<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
+<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -5668,135 +5668,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
       </tags>
   </entry>
   <entry>
-    <title>心血管系统的发生</title>
-    <url>/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/</url>
-    <content><![CDATA[<p>心血管系统是<strong>最早</strong>形成并执行功能的系统，约发生与第 3 周末，至第 4 周末血液循环开始。<br/>
-心血管系统由<strong>中胚层</strong>分化而来，首先形成原始心血管，再进一步经过生长、合并、扩大和萎缩等过程逐渐完善。</p>
-<span id="more"></span>
-<!-- <details class="note info "><summary><p>重点</p>
-</summary><p>–&gt;</p>
-<!-- 1. 简述 [心房的分隔](#心房的分隔)； -->
-<!-- 2. [卵圆孔](?highlight=卵圆孔#心房的分隔)； -->
-<!-- 3. 简述 [法洛四联症](#法洛四联症) 的构成及其形成原因； -->
-<!-- </details> -->
-<h2 id="原始心血管系统的建立">原始心血管系统的建立 <a class="markdownIt-Anchor" href="#原始心血管系统的建立">#</a></h2>
-<p>人胚第 2 周末，来自<strong>卵黄囊</strong>、体蒂和绒毛膜的<strong>胚外中胚层</strong>增殖分化形成的细胞索或团，称 <mark>血岛</mark>（blood island）。<br/>
-不久，血岛周边细胞分化为扁平的内皮细胞，并围成管道，即<strong>原始血管</strong>；<br/>
-血岛中央部的细胞则分化为<strong>原始血细胞</strong>（primary blood cell），又称<strong>造血干细胞</strong>。</p>
-<p>原始血管不断延伸，相邻血岛形成血管相互连接，形成<strong>胚外中胚层毛细血管网</strong>。<br/>
-随后，胚体各处<em>间充质</em>出现裂隙，形成<strong>胚内毛细血管网</strong>。</p>
-<p>第 3 周，胚内和胚外血管相连，形成了由<strong>心管</strong>和动静脉组成的 <mark>胚胎早期血管通路</mark>。</p>
-<h2 id="心脏的形成">心脏的形成 <a class="markdownIt-Anchor" href="#心脏的形成">#</a></h2>
-<h3 id="心脏的发生">心脏的发生 <a class="markdownIt-Anchor" href="#心脏的发生">#</a></h3>
-<h4 id="原始心脏的发生">原始心脏的发生 <a class="markdownIt-Anchor" href="#原始心脏的发生">#</a></h4>
-<p>第 18~19 天，<mark>口咽膜头端中胚层</mark> 形成<strong>生心区</strong>（心脏的原基），随后出现腔隙，称为
-<strong>围心腔</strong>（pericardiac coelom），以后演变为<em>心包腔</em>。<br/>
-在围心腔腹侧，一些细胞聚集成一对长条状的细胞索，称<strong>生心索</strong>（cardiogenic cord）。<br/>
-生心索中空，形成左右两条纵管，称<strong>心管</strong>（cardiac tube）。</p>
-<p>心管周围间充质逐渐增厚，形成<strong>心肌外套层</strong>（myoepicardial mantle），以后分化为<em>心肌膜</em>和<em>心外膜</em>。<br/>
-心管内皮和心管外套膜之间的疏松组织，称<strong>心胶质</strong>（cardiac jelly），将参与形成<em>心内膜</em>。</p>
-<h4 id="心脏外形的建立">心脏外形的建立 <a class="markdownIt-Anchor" href="#心脏外形的建立">#</a></h4>
-<div class="tabs" id="tabs_心脏外形的建立"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_心脏外形的建立-1">BiliBili</a></li><li class="tab"><a href="#tabs_心脏外形的建立-2">YouTube</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_心脏外形的建立-1"><iframe src="//player.bilibili.com/player.html?aid=376238340&bvid=BV1ao4y1k7Eo&cid=355229820&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="tab-pane" id="tabs_心脏外形的建立-2"><iframe width="560" height="315" src="https://www.youtube.com/embed/a0qyagIgBPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div>
-<p>心管由于<em>各部分不均等生长</em>，形成了三个膨大，从头端至尾端依次为<strong>心球</strong>（bulbus cordis）、<strong>心室</strong>（ventricle）和<strong>心房</strong>（atrium）。<br/>
-随后心球头端延伸，形成<strong>动脉干</strong>（truncus arteriosus）；心房尾部膨大，形成<strong>静脉窦</strong>（sinus venosus）。</p>
-<p>心管头、尾端分别与静脉和动脉相连，两端固定于心包。<br/>
-心管游离部（心球和心室）由于生长速度大于心包腔的扩大速度而发生弯曲，形成**“U”形<strong>的球室袢，进而形成</strong>“S”形**弯曲。<br/>
-同时，心房由于心球和食管的限制，只能向左、右两侧扩展，膨出于心球的两侧。</p>
-<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E5%BF%83%E8%84%8F%E5%A4%96%E5%BD%A2%E6%BC%94%E5%8F%98.png" class="" title="心脏外形演变" alt="心脏外形演变">
-<h4 id="心脏的内部分隔">心脏的内部分隔 <a class="markdownIt-Anchor" href="#心脏的内部分隔">#</a></h4>
-<p>心脏的内部分隔伴随心脏外形建立同时进行。</p>
-<div class="tabs" id="tabs_心脏的内部分隔"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_心脏的内部分隔-1">BiliBili</a></li><li class="tab"><a href="#tabs_心脏的内部分隔-2">YouTube</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_心脏的内部分隔-1"><iframe src="//player.bilibili.com/player.html?aid=888674553&bvid=BV1hK4y1u7ZE&cid=355892945&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="tab-pane" id="tabs_心脏的内部分隔-2"><iframe width="560" height="315" src="https://www.youtube.com/embed/8nw9N5-HPkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div>
-<h5 id="房室管的分隔">房室管的分隔 <a class="markdownIt-Anchor" href="#房室管的分隔">#</a></h5>
-<dl>
-<dt>房室管（atrioventricular canal）</dt>
-<dd>心房与心室之间的结构，外面观为一窄缩环，内面观为一狭窄管道。</dd>
-</dl>
-<p>房室管背、腹侧的心内膜组织增厚各形成一个隆起，称<strong>心内膜垫</strong>（endocardial cushion）。<br/>
-两个心内膜垫相对生长，向中间靠拢并融合，将房室管分隔形成左、右房室管，以后演变为<strong>二尖瓣</strong>（左房室瓣）和<strong>三尖瓣</strong>（右房室瓣）。</p>
-<h5 id="心房的分隔">心房的分隔 <a class="markdownIt-Anchor" href="#心房的分隔">#</a></h5>
-<p>心房头端背侧壁正中线处发生一镰状薄膜，称<strong>第一房间隔</strong>（septum primum）。其下缘与心内膜垫之间暂留一孔，称为<strong>第一房间孔</strong> / 原发孔（ostium/foramen primum）。<br/>
-随后第一房室隔与心内膜垫融合，第一房室孔封闭，但第一房室隔上部中央处同时变薄，并进一步形成<strong>第二房间孔</strong> / 继发孔（ostium/foramen secundum）。<br/>
-同时，于第一房室隔右侧，心房头端腹侧壁发生一镰状、较厚的隔膜，称<strong>第二房间隔</strong>，其下方留有一孔，称为<strong>卵圆孔</strong>（foramen ovale），第一房间隔覆盖其左侧，相当于<strong>卵圆孔瓣</strong>。</p>
-<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E5%BF%83%E6%88%BF%E5%88%86%E9%9A%94.png" class="" title="心房分隔" alt="心房分隔">
-<p>出生前肺循环未启动，右心房血液通过卵圆孔流入左心房。出生后肺循环开始，左心房压力增大，使第一房间隔与第二房间隔相贴并逐渐融合，卵圆孔即被封闭。</p>
-<h5 id="心室的分隔">心室的分隔 <a class="markdownIt-Anchor" href="#心室的分隔">#</a></h5>
-<p>首先于心室底部的心尖处，形成一较厚的半月形肌性瓣膜，称<strong>肌性室间隔</strong>（muscular ventricular septum）。<br/>
-肌性室间隔向心内膜垫方向生长，两者之间的孔称为<strong>室间孔</strong>（interventricular foramen）。<br/>
-随后，心球内形成<strong>左、右心球嵴</strong>，与心内膜垫及肌性室间隔游离缘组织一起形成<strong>膜性室间隔</strong>（membranous ventricular septum）。</p>
-<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E8%86%9C%E6%80%A7%E5%AE%A4%E9%97%B4%E9%9A%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="膜性室间隔的形成" alt="膜性室间隔的形成">
-<h5 id="心球与动脉干的分隔">心球与动脉干的分隔 <a class="markdownIt-Anchor" href="#心球与动脉干的分隔">#</a></h5>
-<div style='display:table'>
-<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E5%BF%83%E7%90%83%E5%8F%8A%E5%8A%A8%E8%84%89%E5%B9%B2%E7%9A%84%E5%88%86%E9%9A%94.jpg" class="left" title="心球及动脉干的分隔" alt="心球及动脉干的分隔">
-<p>心球和动脉干的心内膜组织局部增厚，分别形成一对螺旋状走位、相对生长的<strong>心球嵴</strong>和<strong>肺动脉嵴</strong>。嵴愈合后形成<strong>主动脉肺动脉隔</strong>（aortico-pulmonary septum）。将心球和动脉干分隔为<em>主动脉</em>和<em>肺动脉</em>（见左图<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>）。</p>
-<p>在主动脉和肺动脉开口处，心内膜组织局部增厚、隆起，发育为袋状的<em>半月瓣</em>。</p>
-</div>
-<h2 id="常见畸形">常见畸形 <a class="markdownIt-Anchor" href="#常见畸形">#</a></h2>
-<h3 id="房间隔缺损">房间隔缺损 <a class="markdownIt-Anchor" href="#房间隔缺损">#</a></h3>
-<ul>
-<li>常见部位：<mark>卵圆孔未闭</mark></li>
-<li>主要原因：
-<ol>
-<li>第二房间孔过大或位置异常；</li>
-<li>第二房间隔发育异常，卵圆孔过大；</li>
-<li>心内膜垫发育不全。</li>
-</ol>
-</li>
-</ul>
-<h3 id="室间隔缺损">室间隔缺损 <a class="markdownIt-Anchor" href="#室间隔缺损">#</a></h3>
-<ul>
-<li>常见部位：<mark>室间隔膜部</mark></li>
-<li>主要原因：
-<ol>
-<li>心内膜垫未与主动脉肺动脉隔、室间隔肌部愈合；</li>
-<li>室间隔肌部缺损（较少见）。</li>
-</ol>
-</li>
-</ul>
-<h3 id="动脉干与心球分离异常">动脉干与心球分离异常 <a class="markdownIt-Anchor" href="#动脉干与心球分离异常">#</a></h3>
-<ul>
-<li><strong>大动脉移位</strong>：主动脉肺动脉隔不呈螺旋状走位，而是形成直的间隔，导致主动脉发自右心室而肺动脉干发自左心室；</li>
-<li><strong>大动脉狭窄</strong>：主动脉肺动脉隔发生部位偏向一侧，使一侧动脉粗大而另一侧狭小，常伴有室间隔膜部缺损。</li>
-</ul>
-<h3 id="法洛四联症">法洛四联症 <a class="markdownIt-Anchor" href="#法洛四联症">#</a></h3>
-<dl>
-<dt><mark>法洛四联症</mark>（tetralogy of Fallot）</dt>
-<dd>主要原因为 <a href="?highlight=%E4%B8%BB%E5%8A%A8%E8%84%89%E8%82%BA%E5%8A%A8%E8%84%89%E9%9A%94#%E5%BF%83%E7%90%83%E4%B8%8E%E5%8A%A8%E8%84%89%E5%B9%B2%E7%9A%84%E5%88%86%E9%9A%94">主动脉肺动脉隔</a> 偏移，导致肺动脉狭窄，同时使主动脉向右偏移而骑跨于两个心室。
-由于肺动脉狭窄，右心室排血阻力增大，导致右心室逐渐肥大。</dd>
-</dl>
-<p>法洛四联症主要特征<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>：</p>
-<ol>
-<li>肺动脉狭窄（Pulmonic stenosis）</li>
-<li>室间隔缺损（Ventricular septal defect）</li>
-<li>主动脉骑跨（Overriding aorta）</li>
-<li>右心室肥大（Right ventricular hypertrophy）</li>
-</ol>
-<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/Tetralogy_of_Fallot.svg" class="" title="正常心脏（左）与法洛四联症患者的心脏" alt="正常心脏（左）与法洛四联症患者的心脏">
-<h3 id="动脉导管未闭">动脉导管未闭 <a class="markdownIt-Anchor" href="#动脉导管未闭">#</a></h3>
-<p>较多见，可能是由于出生后动脉导管壁平滑肌未能收缩，使肺动脉和主动脉保持相通。</p>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly9kaXNjb3ZlcnkubGlmZW1hcHNjLmNvbS9saWJyYXJ5L3Jldmlldy1vZi1tZWRpY2FsLWVtYnJ5b2xvZ3kvY2hhcHRlci0xMjAtc2VwdGF0aW9uLW9mLXZlbnRyaWNsZXMtdHJ1bmN1cy1hcnRlcmlvc3VzLWFuZC1jb251cy1jb3JkaXM=">https://discovery.lifemapsc.com/library/review-of-medical-embryology/chapter-120-septation-of-ventricles-truncus-arteriosus-and-conus-cordis<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>由Mariana Ruiz LadyofHats - the image i made myself using adobe ilustrator using this images as source: [1], [2] ,[3], [4] , [5],[6] .and a diagram found on the book &quot;Pädiatrie&quot; from Karl Heinz Niessen.，公有领域，<span class="exturl" data-url="aHR0cHM6Ly9jb21tb25zLndpa2ltZWRpYS5vcmcvdy9pbmRleC5waHA/Y3VyaWQ9ODYwNzQ4">https://commons.wikimedia.org/w/index.php?curid=860748<i class="fa fa-external-link-alt"></i></span> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>抗体</title>
     <url>/2021/05/10/%E6%8A%97%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -6145,6 +6016,135 @@ FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其�
       </categories>
       <tags>
         <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>心血管系统的发生</title>
+    <url>/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/</url>
+    <content><![CDATA[<p>心血管系统是<strong>最早</strong>形成并执行功能的系统，约发生与第 3 周末，至第 4 周末血液循环开始。<br/>
+心血管系统由<strong>中胚层</strong>分化而来，首先形成原始心血管，再进一步经过生长、合并、扩大和萎缩等过程逐渐完善。</p>
+<span id="more"></span>
+<!-- <details class="note info "><summary><p>重点</p>
+</summary><p>–&gt;</p>
+<!-- 1. 简述 [心房的分隔](#心房的分隔)； -->
+<!-- 2. [卵圆孔](?highlight=卵圆孔#心房的分隔)； -->
+<!-- 3. 简述 [法洛四联症](#法洛四联症) 的构成及其形成原因； -->
+<!-- </details> -->
+<h2 id="原始心血管系统的建立">原始心血管系统的建立 <a class="markdownIt-Anchor" href="#原始心血管系统的建立">#</a></h2>
+<p>人胚第 2 周末，来自<strong>卵黄囊</strong>、体蒂和绒毛膜的<strong>胚外中胚层</strong>增殖分化形成的细胞索或团，称 <mark>血岛</mark>（blood island）。<br/>
+不久，血岛周边细胞分化为扁平的内皮细胞，并围成管道，即<strong>原始血管</strong>；<br/>
+血岛中央部的细胞则分化为<strong>原始血细胞</strong>（primary blood cell），又称<strong>造血干细胞</strong>。</p>
+<p>原始血管不断延伸，相邻血岛形成血管相互连接，形成<strong>胚外中胚层毛细血管网</strong>。<br/>
+随后，胚体各处<em>间充质</em>出现裂隙，形成<strong>胚内毛细血管网</strong>。</p>
+<p>第 3 周，胚内和胚外血管相连，形成了由<strong>心管</strong>和动静脉组成的 <mark>胚胎早期血管通路</mark>。</p>
+<h2 id="心脏的形成">心脏的形成 <a class="markdownIt-Anchor" href="#心脏的形成">#</a></h2>
+<h3 id="心脏的发生">心脏的发生 <a class="markdownIt-Anchor" href="#心脏的发生">#</a></h3>
+<h4 id="原始心脏的发生">原始心脏的发生 <a class="markdownIt-Anchor" href="#原始心脏的发生">#</a></h4>
+<p>第 18~19 天，<mark>口咽膜头端中胚层</mark> 形成<strong>生心区</strong>（心脏的原基），随后出现腔隙，称为
+<strong>围心腔</strong>（pericardiac coelom），以后演变为<em>心包腔</em>。<br/>
+在围心腔腹侧，一些细胞聚集成一对长条状的细胞索，称<strong>生心索</strong>（cardiogenic cord）。<br/>
+生心索中空，形成左右两条纵管，称<strong>心管</strong>（cardiac tube）。</p>
+<p>心管周围间充质逐渐增厚，形成<strong>心肌外套层</strong>（myoepicardial mantle），以后分化为<em>心肌膜</em>和<em>心外膜</em>。<br/>
+心管内皮和心管外套膜之间的疏松组织，称<strong>心胶质</strong>（cardiac jelly），将参与形成<em>心内膜</em>。</p>
+<h4 id="心脏外形的建立">心脏外形的建立 <a class="markdownIt-Anchor" href="#心脏外形的建立">#</a></h4>
+<div class="tabs" id="tabs_心脏外形的建立"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_心脏外形的建立-1">BiliBili</a></li><li class="tab"><a href="#tabs_心脏外形的建立-2">YouTube</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_心脏外形的建立-1"><iframe src="//player.bilibili.com/player.html?aid=376238340&bvid=BV1ao4y1k7Eo&cid=355229820&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="tab-pane" id="tabs_心脏外形的建立-2"><iframe width="560" height="315" src="https://www.youtube.com/embed/a0qyagIgBPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div>
+<p>心管由于<em>各部分不均等生长</em>，形成了三个膨大，从头端至尾端依次为<strong>心球</strong>（bulbus cordis）、<strong>心室</strong>（ventricle）和<strong>心房</strong>（atrium）。<br/>
+随后心球头端延伸，形成<strong>动脉干</strong>（truncus arteriosus）；心房尾部膨大，形成<strong>静脉窦</strong>（sinus venosus）。</p>
+<p>心管头、尾端分别与静脉和动脉相连，两端固定于心包。<br/>
+心管游离部（心球和心室）由于生长速度大于心包腔的扩大速度而发生弯曲，形成**“U”形<strong>的球室袢，进而形成</strong>“S”形**弯曲。<br/>
+同时，心房由于心球和食管的限制，只能向左、右两侧扩展，膨出于心球的两侧。</p>
+<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E5%BF%83%E8%84%8F%E5%A4%96%E5%BD%A2%E6%BC%94%E5%8F%98.png" class="" title="心脏外形演变" alt="心脏外形演变">
+<h4 id="心脏的内部分隔">心脏的内部分隔 <a class="markdownIt-Anchor" href="#心脏的内部分隔">#</a></h4>
+<p>心脏的内部分隔伴随心脏外形建立同时进行。</p>
+<div class="tabs" id="tabs_心脏的内部分隔"><ul class="nav-tabs"><li class="tab active"><a href="#tabs_心脏的内部分隔-1">BiliBili</a></li><li class="tab"><a href="#tabs_心脏的内部分隔-2">YouTube</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs_心脏的内部分隔-1"><iframe src="//player.bilibili.com/player.html?aid=888674553&bvid=BV1hK4y1u7ZE&cid=355892945&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="tab-pane" id="tabs_心脏的内部分隔-2"><iframe width="560" height="315" src="https://www.youtube.com/embed/8nw9N5-HPkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div>
+<h5 id="房室管的分隔">房室管的分隔 <a class="markdownIt-Anchor" href="#房室管的分隔">#</a></h5>
+<dl>
+<dt>房室管（atrioventricular canal）</dt>
+<dd>心房与心室之间的结构，外面观为一窄缩环，内面观为一狭窄管道。</dd>
+</dl>
+<p>房室管背、腹侧的心内膜组织增厚各形成一个隆起，称<strong>心内膜垫</strong>（endocardial cushion）。<br/>
+两个心内膜垫相对生长，向中间靠拢并融合，将房室管分隔形成左、右房室管，以后演变为<strong>二尖瓣</strong>（左房室瓣）和<strong>三尖瓣</strong>（右房室瓣）。</p>
+<h5 id="心房的分隔">心房的分隔 <a class="markdownIt-Anchor" href="#心房的分隔">#</a></h5>
+<p>心房头端背侧壁正中线处发生一镰状薄膜，称<strong>第一房间隔</strong>（septum primum）。其下缘与心内膜垫之间暂留一孔，称为<strong>第一房间孔</strong> / 原发孔（ostium/foramen primum）。<br/>
+随后第一房室隔与心内膜垫融合，第一房室孔封闭，但第一房室隔上部中央处同时变薄，并进一步形成<strong>第二房间孔</strong> / 继发孔（ostium/foramen secundum）。<br/>
+同时，于第一房室隔右侧，心房头端腹侧壁发生一镰状、较厚的隔膜，称<strong>第二房间隔</strong>，其下方留有一孔，称为<strong>卵圆孔</strong>（foramen ovale），第一房间隔覆盖其左侧，相当于<strong>卵圆孔瓣</strong>。</p>
+<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E5%BF%83%E6%88%BF%E5%88%86%E9%9A%94.png" class="" title="心房分隔" alt="心房分隔">
+<p>出生前肺循环未启动，右心房血液通过卵圆孔流入左心房。出生后肺循环开始，左心房压力增大，使第一房间隔与第二房间隔相贴并逐渐融合，卵圆孔即被封闭。</p>
+<h5 id="心室的分隔">心室的分隔 <a class="markdownIt-Anchor" href="#心室的分隔">#</a></h5>
+<p>首先于心室底部的心尖处，形成一较厚的半月形肌性瓣膜，称<strong>肌性室间隔</strong>（muscular ventricular septum）。<br/>
+肌性室间隔向心内膜垫方向生长，两者之间的孔称为<strong>室间孔</strong>（interventricular foramen）。<br/>
+随后，心球内形成<strong>左、右心球嵴</strong>，与心内膜垫及肌性室间隔游离缘组织一起形成<strong>膜性室间隔</strong>（membranous ventricular septum）。</p>
+<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E8%86%9C%E6%80%A7%E5%AE%A4%E9%97%B4%E9%9A%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="膜性室间隔的形成" alt="膜性室间隔的形成">
+<h5 id="心球与动脉干的分隔">心球与动脉干的分隔 <a class="markdownIt-Anchor" href="#心球与动脉干的分隔">#</a></h5>
+<div style='display:table'>
+<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/%E5%BF%83%E7%90%83%E5%8F%8A%E5%8A%A8%E8%84%89%E5%B9%B2%E7%9A%84%E5%88%86%E9%9A%94.jpg" class="left" title="心球及动脉干的分隔" alt="心球及动脉干的分隔">
+<p>心球和动脉干的心内膜组织局部增厚，分别形成一对螺旋状走位、相对生长的<strong>心球嵴</strong>和<strong>肺动脉嵴</strong>。嵴愈合后形成<strong>主动脉肺动脉隔</strong>（aortico-pulmonary septum）。将心球和动脉干分隔为<em>主动脉</em>和<em>肺动脉</em>（见左图<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>）。</p>
+<p>在主动脉和肺动脉开口处，心内膜组织局部增厚、隆起，发育为袋状的<em>半月瓣</em>。</p>
+</div>
+<h2 id="常见畸形">常见畸形 <a class="markdownIt-Anchor" href="#常见畸形">#</a></h2>
+<h3 id="房间隔缺损">房间隔缺损 <a class="markdownIt-Anchor" href="#房间隔缺损">#</a></h3>
+<ul>
+<li>常见部位：<mark>卵圆孔未闭</mark></li>
+<li>主要原因：
+<ol>
+<li>第二房间孔过大或位置异常；</li>
+<li>第二房间隔发育异常，卵圆孔过大；</li>
+<li>心内膜垫发育不全。</li>
+</ol>
+</li>
+</ul>
+<h3 id="室间隔缺损">室间隔缺损 <a class="markdownIt-Anchor" href="#室间隔缺损">#</a></h3>
+<ul>
+<li>常见部位：<mark>室间隔膜部</mark></li>
+<li>主要原因：
+<ol>
+<li>心内膜垫未与主动脉肺动脉隔、室间隔肌部愈合；</li>
+<li>室间隔肌部缺损（较少见）。</li>
+</ol>
+</li>
+</ul>
+<h3 id="动脉干与心球分离异常">动脉干与心球分离异常 <a class="markdownIt-Anchor" href="#动脉干与心球分离异常">#</a></h3>
+<ul>
+<li><strong>大动脉移位</strong>：主动脉肺动脉隔不呈螺旋状走位，而是形成直的间隔，导致主动脉发自右心室而肺动脉干发自左心室；</li>
+<li><strong>大动脉狭窄</strong>：主动脉肺动脉隔发生部位偏向一侧，使一侧动脉粗大而另一侧狭小，常伴有室间隔膜部缺损。</li>
+</ul>
+<h3 id="法洛四联症">法洛四联症 <a class="markdownIt-Anchor" href="#法洛四联症">#</a></h3>
+<dl>
+<dt><mark>法洛四联症</mark>（tetralogy of Fallot）</dt>
+<dd>主要原因为 <a href="?highlight=%E4%B8%BB%E5%8A%A8%E8%84%89%E8%82%BA%E5%8A%A8%E8%84%89%E9%9A%94#%E5%BF%83%E7%90%83%E4%B8%8E%E5%8A%A8%E8%84%89%E5%B9%B2%E7%9A%84%E5%88%86%E9%9A%94">主动脉肺动脉隔</a> 偏移，导致肺动脉狭窄，同时使主动脉向右偏移而骑跨于两个心室。
+由于肺动脉狭窄，右心室排血阻力增大，导致右心室逐渐肥大。</dd>
+</dl>
+<p>法洛四联症主要特征<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>：</p>
+<ol>
+<li>肺动脉狭窄（Pulmonic stenosis）</li>
+<li>室间隔缺损（Ventricular septal defect）</li>
+<li>主动脉骑跨（Overriding aorta）</li>
+<li>右心室肥大（Right ventricular hypertrophy）</li>
+</ol>
+<img data-src="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/Tetralogy_of_Fallot.svg" class="" title="正常心脏（左）与法洛四联症患者的心脏" alt="正常心脏（左）与法洛四联症患者的心脏">
+<h3 id="动脉导管未闭">动脉导管未闭 <a class="markdownIt-Anchor" href="#动脉导管未闭">#</a></h3>
+<p>较多见，可能是由于出生后动脉导管壁平滑肌未能收缩，使肺动脉和主动脉保持相通。</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly9kaXNjb3ZlcnkubGlmZW1hcHNjLmNvbS9saWJyYXJ5L3Jldmlldy1vZi1tZWRpY2FsLWVtYnJ5b2xvZ3kvY2hhcHRlci0xMjAtc2VwdGF0aW9uLW9mLXZlbnRyaWNsZXMtdHJ1bmN1cy1hcnRlcmlvc3VzLWFuZC1jb251cy1jb3JkaXM=">https://discovery.lifemapsc.com/library/review-of-medical-embryology/chapter-120-septation-of-ventricles-truncus-arteriosus-and-conus-cordis<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>由Mariana Ruiz LadyofHats - the image i made myself using adobe ilustrator using this images as source: [1], [2] ,[3], [4] , [5],[6] .and a diagram found on the book &quot;Pädiatrie&quot; from Karl Heinz Niessen.，公有领域，<span class="exturl" data-url="aHR0cHM6Ly9jb21tb25zLndpa2ltZWRpYS5vcmcvdy9pbmRleC5waHA/Y3VyaWQ9ODYwNzQ4">https://commons.wikimedia.org/w/index.php?curid=860748<i class="fa fa-external-link-alt"></i></span> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -6504,7 +6504,7 @@ T 细胞辅助。</p>
     <url>/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/</url>
     <content><![CDATA[<dl>
 <dt>支原体（<em>Mycoplasma</em>）</dt>
-<dd>一类缺乏细胞壁、呈高度多形性、<ins>可通过细菌滤器</ins>、能在<strong>无生命培养基</strong>中生长繁殖的<strong>最小的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a></strong>。</dd>
+<dd>一类缺乏细胞壁、呈高度多形性、<ins>可通过细菌滤器</ins>、能在<ins>无生命培养基</ins>中生长繁殖的<strong>最小的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a></strong>。</dd>
 <dd>归属 柔膜体门 柔膜体纲 支原体目 支原体科 的<strong>支原体属</strong>和<strong>脲原体属</strong>。</dd>
 </dl>
 <p>对人体致病的支原体有<span class="horizontal-list"><span class="horizontal-list-item"><a href="#%E8%82%BA%E7%82%8E%E6%94%AF%E5%8E%9F%E4%BD%93">肺炎支原体</a></span><span class="horizontal-list-item">人型支原体</span><span class="horizontal-list-item">生殖器支原体</span><span class="horizontal-list-item"><a href="#%E7%A9%BF%E9%80%8F%E6%94%AF%E5%8E%9F%E4%BD%93">穿透支原体</a></span><span class="horizontal-list-item"><a href="#%E8%A7%A3%E8%84%B2%E8%84%B2%E5%8E%9F%E4%BD%93">解脲脲原体</a></span></span>等。</p>
@@ -6674,7 +6674,7 @@ T 细胞辅助。</p>
 <p><strong>放线菌属</strong>（<em>Actinomyces</em>）属于人体正常菌群，主要引起<strong>内源性感染</strong>。人类放线菌感染中 90% 的病原体为 <mark>衣氏放线菌</mark>，其对人类致病性最强。</p>
 <h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
 <ul>
-<li>形态与染色：与 <a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a> 相似——无荚膜、无芽孢、无鞭毛</li>
+<li>形态与染色：与 <a href="/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a> 相似——G<sup>+</sup>，无荚膜、无芽孢、无鞭毛</li>
 <li>培养特性和生化反应：<strong>专性厌氧</strong></li>
 </ul>
 <h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
@@ -6704,7 +6704,7 @@ T 细胞辅助。</p>
 <h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
 <h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
 <ul>
-<li>形态与染色：形态与放线菌属类似但菌丝末端不膨大，G<sup>+</sup></li>
+<li>形态与染色：G<sup>+</sup>，形态与放线菌属类似但菌丝末端不膨大</li>
 <li>培养特性：<strong>专性需氧</strong></li>
 </ul>
 <h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
@@ -7960,6 +7960,136 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
+    <title>病原生物学</title>
+    <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
+    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<span class="horizontal-list"><span class="horizontal-list-item"><em>生物学规律</em></span><span class="horizontal-list-item"><em>致病机制</em></span><span class="horizontal-list-conjunction">及</span><span class="horizontal-list-item"><em>其和宿主之间相互作用</em></span></span>的学科。</p>
+<dl>
+<dt>生物 | 生命体 | 有机体（organism）</dt>
+<dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能再一定程度上适应和影响环境。</dd>
+<dt>病原生物（pathogenic organism）</dt>
+<dd>能给人类、动植物带来疾患的生物。</dd>
+</dl>
+<span id="more"></span>
+<h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
+<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
+<ul>
+<li><strong>非细胞型微生物</strong>（acellular microbe），如<a href="/2021/03/21/%E7%97%85%E6%AF%92/">病毒</a>、<a href="/2021/03/21/%E7%97%85%E6%AF%92/#朊粒">朊粒</a></li>
+<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
+<ul>
+<li>
+<a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a>（代表）、<a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a>
+</li>
+<li><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a>、<a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a>、<a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/">立克次（氏）体</a>、<a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></li>
+</ul>
+</li>
+<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a>、<a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">原虫</a></li>
+</ul>
+<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
+<ul>
+<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
+<li><a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
+<li><em>医学节肢动物</em></li>
+</ul>
+<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
+<dl>
+<dt>共栖（commensalism）</dt>
+<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
+<dt>互利共生（mutualism）</dt>
+<dd>两种生活在一起的生物均获得益处。</dd>
+<dt><mark>寄生</mark>（parasitism）</dt>
+<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
+<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
+</dl>
+<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
+<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
+<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
+<ul>
+<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
+<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
+</ul>
+<dl>
+<dt>世代交替（alternation of generations）</dt>
+<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
+</dl>
+<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
+<dl>
+<dt>机会致病性寄生虫（opportunistic parasite）</dt>
+<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
+</dl>
+<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
+<dl>
+<dt>终宿主（definitive host）</dt>
+<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>中间宿主（intermediate host）</dt>
+<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>保虫宿主（reservoir host）| 储存宿主</dt>
+<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
+<dt>转续宿主（paratenic host，transport host）</dt>
+<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
+</dl>
+<details class="note success "><summary><p>寄生虫对宿主的作用</p>
+</summary><ol>
+<li><strong>夺取营养</strong>：营养不良、贫血；</li>
+<li><strong>机械性损伤</strong>；</li>
+<li><strong>毒性作用与免疫病理损伤</strong>。</li>
+</ol>
+</details>
+<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
+<ol>
+<li>先天性免疫</li>
+<li>获得性免疫：
+<ol>
+<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
+<li><strong>非消除性免疫</strong>（non-sterilizing immunity）（较常见）：<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span>
+<ol>
+<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的<a href="#"><ins>原虫</ins></a>引起的非消除性免疫，可致<em>临床治愈</em>；</li>
+<li><strong>伴随免疫</strong>（concomitant immunity）：某些<a href="#"><ins>蠕虫</ins></a>引起的非消除性免疫，对再感染的幼虫由一定免疫力，但对体内的成虫没有影响。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
+<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
+<ol>
+<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
+<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
+<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
+</ol>
+<dl>
+<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
+<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
+</dl>
+<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
+<ol>
+<li>带虫者、慢性感染与隐性感染；</li>
+<li>多寄生现象；</li>
+<li>幼虫移行与幼虫移行症：
+<ul>
+<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
+<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
+<ul>
+<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
+<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
+<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>生殖内分泌</title>
     <url>/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/</url>
     <content><![CDATA[<p><a href="#%E8%83%8E%E5%84%BF%E9%99%84%E5%B1%9E%E7%89%A9">胎儿附属物</a>、<a href="#%E7%94%9F%E6%AE%96%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2">生殖系统发育</a>，以及常见畸形……</p>
@@ -8381,124 +8511,124 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>病原生物学</title>
-    <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<span class="horizontal-list"><span class="horizontal-list-item"><em>生物学规律</em></span><span class="horizontal-list-item"><em>致病机制</em></span><span class="horizontal-list-conjunction">及</span><span class="horizontal-list-item"><em>其和宿主之间相互作用</em></span></span>的学科。</p>
-<dl>
-<dt>生物 | 生命体 | 有机体（organism）</dt>
-<dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能再一定程度上适应和影响环境。</dd>
-<dt>病原生物（pathogenic organism）</dt>
-<dd>能给人类、动植物带来疾患的生物。</dd>
-</dl>
+    <title>真菌</title>
+    <url>/2021/03/21/%E7%9C%9F%E8%8F%8C/</url>
+    <content><![CDATA[<p><strong>真菌</strong>（fungus）在生物分类学上属于真菌界，是真核细胞型微生物，有典型的细胞核和完善的细胞器；不含有叶绿素，无根、茎、叶的分化；以寄生或腐生方式生存，能进行无性或有性生殖。</p>
 <span id="more"></span>
-<h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
-<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
-<ul>
-<li><strong>非细胞型微生物</strong>（acellular microbe），如<a href="/2021/03/21/%E7%97%85%E6%AF%92/">病毒</a>、<a href="/2021/03/21/%E7%97%85%E6%AF%92/#朊粒">朊粒</a></li>
-<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
-<ul>
-<li>
-<a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a>（代表）、<a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a>
+<h2 id="真菌的生物学性状">真菌的生物学性状 <a class="markdownIt-Anchor" href="#真菌的生物学性状">#</a></h2>
+<h3 id="形态和结构">形态和结构 <a class="markdownIt-Anchor" href="#形态和结构">#</a></h3>
+<p>真菌可分为两类：</p>
+<ol>
+<li><strong>单细胞真菌</strong>/<strong>酵母菌</strong>（yeast）
+<ol>
+<li><strong>酵母型真菌</strong>：不产生菌丝，菌落和细菌类似，如<em>新生隐球菌</em>；</li>
+<li><strong>类酵母型细菌</strong>：产生<strong>假菌丝</strong>（pseudohypha），菌落与酵母型细菌类似，但是可见假菌丝连接形成的<strong>假菌丝体</strong>，如<em>白假丝念球菌</em>。</li>
+</ol>
 </li>
-<li><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a>、<a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a>、<a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/">立克次（氏）体</a>、<a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></li>
+<li><strong>多细胞真菌</strong>/<strong>霉菌</strong>（mold）/<strong>丝状菌</strong>（filamentous fungus）</li>
+</ol>
+<p>多细胞真菌由两部分组成：</p>
+<ol>
+<li><strong>菌丝</strong>（hypha）：菌丝分枝，交错成团，形成<strong>菌丝体</strong>（mycelium）
+<ul>
+<li>按功能分为：<span class="horizontal-list"><span class="horizontal-list-item">营养菌丝</span><span class="horizontal-list-item">气生菌丝（可产生孢子者称为生殖菌丝）</span></span></li>
+<li>按结构分为：<span class="horizontal-list"><span class="horizontal-list-item">有隔菌丝</span><span class="horizontal-list-item">无隔菌丝</span></span></li>
 </ul>
 </li>
-<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a>、<a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">原虫</a></li>
-</ul>
-<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
-<ul>
-<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
-<li><a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
-<li><em>医学节肢动物</em></li>
-</ul>
-<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
-<dl>
-<dt>共栖（commensalism）</dt>
-<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
-<dt>互利共生（mutualism）</dt>
-<dd>两种生活在一起的生物均获得益处。</dd>
-<dt><mark>寄生</mark>（parasitism）</dt>
-<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
-<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
-</dl>
-<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
-<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
-<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
-<ul>
-<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
-<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
-</ul>
-<dl>
-<dt>世代交替（alternation of generations）</dt>
-<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
-</dl>
-<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
-<dl>
-<dt>机会致病性寄生虫（opportunistic parasite）</dt>
-<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
-</dl>
-<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
-<dl>
-<dt>终宿主（definitive host）</dt>
-<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
-<dt>中间宿主（intermediate host）</dt>
-<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
-<dt>保虫宿主（reservoir host）| 储存宿主</dt>
-<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
-<dt>转续宿主（paratenic host，transport host）</dt>
-<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
-</dl>
-<details class="note success "><summary><p>寄生虫对宿主的作用</p>
+<li><strong>孢子</strong>（spore）：按繁殖方式，可分为<span class="horizontal-list"><span class="horizontal-list-item">有性孢子</span><span class="horizontal-list-item">无性孢子</span></span>，无性孢子按形态可分为 3 种：
+<ol>
+<li>叶状孢子：<span class="horizontal-list"><span class="horizontal-list-item">芽生孢子</span><span class="horizontal-list-item"><strong>厚膜孢子</strong></span><span class="horizontal-list-item">关节孢子</span></span>；</li>
+<li>分生孢子：<span class="horizontal-list"><span class="horizontal-list-item"><strong>小分生孢子</strong></span><span class="horizontal-list-item"><strong>大分生孢子</strong></span></span>；</li>
+<li><strong>孢子囊孢子</strong>。</li>
+</ol>
+</li>
+</ol>
+<h3 id="真菌的培养和抵抗力">真菌的培养和抵抗力 <a class="markdownIt-Anchor" href="#真菌的培养和抵抗力">#</a></h3>
+<p>为同一标准，通过鉴定真菌时以<strong>沙保弱培养基</strong>/沙氏培养基上生长的真菌形态为准。</p>
+<details class="note success "><summary><p>举例说明沙保弱培养基上的真菌菌落类型</p>
 </summary><ol>
-<li><strong>夺取营养</strong>：营养不良、贫血；</li>
-<li><strong>机械性损伤</strong>；</li>
-<li><strong>毒性作用与免疫病理损伤</strong>。</li>
+<li><strong>酵母型菌落</strong>（yeast colony），如 <a href="#新生隐球菌"><em>新生隐球菌</em></a>，菌落光滑湿润、柔软而致密；</li>
+<li><strong>类酵母型菌落</strong>（yeast like colony）/酵母样菌落，如 <a href="#白假丝念珠菌"><em>白假丝念珠菌</em></a>，与酵母型菌落类似，但显微镜下可见假菌丝；</li>
+<li><strong>丝状型菌落</strong>（filamentous colony），如<em>毛霉菌</em>，由许多疏松的菌丝体组成，菌落呈绒毛状、棉絮状或粉末状等。</li>
 </ol>
 </details>
-<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
+<h2 id="真菌的致病类型">真菌的致病类型 <a class="markdownIt-Anchor" href="#真菌的致病类型">#</a></h2>
+<div class="note success "><ol>
+<li>真菌感染
 <ol>
-<li>先天性免疫</li>
-<li>获得性免疫：
-<ol>
-<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
-<li><strong>非消除性免疫</strong>（non-sterilizing immunity）（较常见）：<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span>
-<ol>
-<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的<a href="#"><ins>原虫</ins></a>引起的非消除性免疫，可致<em>临床治愈</em>；</li>
-<li><strong>伴随免疫</strong>（concomitant immunity）：某些<a href="#"><ins>蠕虫</ins></a>引起的非消除性免疫，对再感染的幼虫由一定免疫力，但对体内的成虫没有影响。</li>
+<li><strong>致病性真菌感染</strong>，主要由<em>外源性真菌</em>引起</li>
+<li><strong>条件致病性真菌感染</strong>，主要由<em>内源性细菌</em>引起</li>
 </ol>
 </li>
+<li><strong>真菌超敏反应</strong>：皮肤、呼吸系统、消化道超敏反应</li>
+<li><strong>真菌性中毒</strong>：某些毒性真菌代谢产物（<em>真菌毒素</em>）可引起<em>真菌中度症</em></li>
+<li><strong>真菌毒素致癌</strong>：<strong>黄曲霉素</strong></li>
 </ol>
+</div>
+<h2 id="病原生物学分类">病原生物学分类 <a class="markdownIt-Anchor" href="#病原生物学分类">#</a></h2>
+<h3 id="皮肤感染真菌">皮肤感染真菌 <a class="markdownIt-Anchor" href="#皮肤感染真菌">#</a></h3>
+<p><strong>皮肤感染真菌</strong>寄生于角蛋白组织，主要引起皮肤各种<em>癣病</em>（tinea），通常不侵犯皮下等深部组织和内脏器官，也不侵入血流引起全身感染。</p>
+<ul>
+<li>致病特点：<strong>嗜角质性</strong>，主要侵犯<span class="horizontal-list"><span class="horizontal-list-item">表皮角质层</span><span class="horizontal-list-item">毛发</span><span class="horizontal-list-item">甲板</span></span></li>
+<li>传播方式：接触传播</li>
+<li>所致疾病：<span class="horizontal-list"><span class="horizontal-list-item">皮肤癣（足癣、手癣、股癣、体癣）</span><span class="horizontal-list-item">甲癣</span><span class="horizontal-list-item">头癣</span></span></li>
+</ul>
+<h3 id="深部感染真菌">深部感染真菌 <a class="markdownIt-Anchor" href="#深部感染真菌">#</a></h3>
+<p><strong>深部感染真菌</strong>指可以引起机体深部组织和内脏疾病的一群真菌，包括两大类：</p>
+<ol>
+<li><strong>机会致病性真菌</strong>：<span class="horizontal-list"><span class="horizontal-list-item"><a href="#%E7%99%BD%E5%81%87%E4%B8%9D%E5%BF%B5%E7%8F%A0%E8%8F%8C">白假丝念珠菌</a></span><span class="horizontal-list-item"><a href="#%E6%96%B0%E7%94%9F%E9%9A%90%E7%90%83%E8%8F%8C">新生隐球菌</a></span><span class="horizontal-list-item"><a href="#%E8%82%BA%E5%AD%A2%E5%AD%90%E8%8F%8C">肺孢子菌</a></span><span class="horizontal-list-item"><em>曲霉</em></span><span class="horizontal-list-item"><em>毛霉</em></span></span>等</li>
+<li><em>致病性真菌</em></li>
+</ol>
+<h4 id="白假丝念珠菌">白假丝念珠菌 <a class="markdownIt-Anchor" href="#白假丝念珠菌">#</a></h4>
+<ul>
+<li>生物学性状：<strong>G<sup>+</sup></strong>，形成<strong>假菌丝</strong>和<em>厚膜孢子</em>，培养呈<em>酵母型菌落</em></li>
+<li>致病性：属于人腔道的<strong>正常菌群</strong>，为<ins>最常见的机会性致病菌</ins>
+<ul>
+<li><strong>感染性疾病</strong>：
+<ul>
+<li>黏膜：<strong>鹅口疮</strong>（AIDS 常见伴发症）、阴道炎</li>
+<li>皮肤：湿疹样症状</li>
+<li>内脏：呼吸道、消化系统、泌尿系统、<strong>中枢神经系统</strong>（脑膜炎、脑膜脑炎）念珠菌病</li>
+</ul>
 </li>
+<li><strong>超敏反应性疾病</strong>：呼吸道、消化道过敏性症状</li>
+</ul>
+</li>
+</ul>
+<details class="note success "><summary><p>白色念珠菌的微生物学检查法</p>
+</summary><ol>
+<li>直接镜检：<strong>革兰氏染色</strong>，<em>假菌丝</em>；</li>
+<li>分离培养：<em>沙保弱培养基</em>，<strong>假菌丝体</strong>。</li>
 </ol>
-<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
-<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
-<ol>
-<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
-<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
-<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
-</ol>
-<dl>
-<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
-<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
-</dl>
-<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
-<ol>
-<li>带虫者、慢性感染与隐性感染；</li>
-<li>多寄生现象；</li>
-<li>幼虫移行与幼虫移行症：
+</details>
+<h4 id="新生隐球菌">新生隐球菌 <a class="markdownIt-Anchor" href="#新生隐球菌">#</a></h4>
 <ul>
-<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
-<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
+<li>形态与染色：菌体外周有胶质样的<strong>肥厚荚膜</strong>，<mark>墨汁负染法</mark>可见圆形或卵圆形的透亮菌体，形成芽生孢子，不形成假菌丝，沙氏培养基上为<strong>酵母型菌落</strong></li>
+<li>致病性：<strong>外源性机会致病性真菌</strong>
 <ul>
-<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
-<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
+<li>传染源：<strong>鸽子</strong>（粪便）</li>
+<li>感染方式：<strong>呼吸道吸入孢子</strong></li>
+<li>所致疾病：
+<ul>
+<li>肺部原发感染：<strong>肺炎</strong></li>
+<li>扩散至脑：<strong>脑膜炎</strong></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
-<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
+</ul>
+<details class="note success "><summary><p>新生隐球菌的微生物学检查法</p>
+</summary><ol>
+<li>直接镜检：<strong>墨汁负染法</strong>，有<strong>肥厚荚膜</strong>的典型菌落</li>
+<li>分离培养：<em>沙保弱培养基</em>，<strong>酵母型菌落</strong></li>
 </ol>
+</details>
+<h4 id="肺孢子菌">肺孢子菌 <a class="markdownIt-Anchor" href="#肺孢子菌">#</a></h4>
+<ul>
+<li>致病特点：<strong>宿主特异性</strong>，<strong>耶氏肺孢子菌</strong>适宜人体寄生；</li>
+<li>所致疾病：<strong>肺孢子菌肺炎</strong>（PCP，AIDS 最常见的标志病）、<em>肺孢子菌病</em>（扩散至其他部位）</li>
+<li>传播途径：呼吸道传播（咳嗽或飞沫）</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -8506,7 +8636,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
         <category>病原生物学</category>
       </categories>
       <tags>
-        <tag>Index</tag>
         <tag>病原生物学</tag>
       </tags>
   </entry>
@@ -8917,135 +9046,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
         <tag>Index</tag>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>真菌</title>
-    <url>/2021/03/21/%E7%9C%9F%E8%8F%8C/</url>
-    <content><![CDATA[<p><strong>真菌</strong>（fungus）在生物分类学上属于真菌界，是真核细胞型微生物，有典型的细胞核和完善的细胞器；不含有叶绿素，无根、茎、叶的分化；以寄生或腐生方式生存，能进行无性或有性生殖。</p>
-<span id="more"></span>
-<h2 id="真菌的生物学性状">真菌的生物学性状 <a class="markdownIt-Anchor" href="#真菌的生物学性状">#</a></h2>
-<h3 id="形态和结构">形态和结构 <a class="markdownIt-Anchor" href="#形态和结构">#</a></h3>
-<p>真菌可分为两类：</p>
-<ol>
-<li><strong>单细胞真菌</strong>/<strong>酵母菌</strong>（yeast）
-<ol>
-<li><strong>酵母型真菌</strong>：不产生菌丝，菌落和细菌类似，如<em>新生隐球菌</em>；</li>
-<li><strong>类酵母型细菌</strong>：产生<strong>假菌丝</strong>（pseudohypha），菌落与酵母型细菌类似，但是可见假菌丝连接形成的<strong>假菌丝体</strong>，如<em>白假丝念球菌</em>。</li>
-</ol>
-</li>
-<li><strong>多细胞真菌</strong>/<strong>霉菌</strong>（mold）/<strong>丝状菌</strong>（filamentous fungus）</li>
-</ol>
-<p>多细胞真菌由两部分组成：</p>
-<ol>
-<li><strong>菌丝</strong>（hypha）：菌丝分枝，交错成团，形成<strong>菌丝体</strong>（mycelium）
-<ul>
-<li>按功能分为：<span class="horizontal-list"><span class="horizontal-list-item">营养菌丝</span><span class="horizontal-list-item">气生菌丝（可产生孢子者称为生殖菌丝）</span></span></li>
-<li>按结构分为：<span class="horizontal-list"><span class="horizontal-list-item">有隔菌丝</span><span class="horizontal-list-item">无隔菌丝</span></span></li>
-</ul>
-</li>
-<li><strong>孢子</strong>（spore）：按繁殖方式，可分为<span class="horizontal-list"><span class="horizontal-list-item">有性孢子</span><span class="horizontal-list-item">无性孢子</span></span>，无性孢子按形态可分为 3 种：
-<ol>
-<li>叶状孢子：<span class="horizontal-list"><span class="horizontal-list-item">芽生孢子</span><span class="horizontal-list-item"><strong>厚膜孢子</strong></span><span class="horizontal-list-item">关节孢子</span></span>；</li>
-<li>分生孢子：<span class="horizontal-list"><span class="horizontal-list-item"><strong>小分生孢子</strong></span><span class="horizontal-list-item"><strong>大分生孢子</strong></span></span>；</li>
-<li><strong>孢子囊孢子</strong>。</li>
-</ol>
-</li>
-</ol>
-<h3 id="真菌的培养和抵抗力">真菌的培养和抵抗力 <a class="markdownIt-Anchor" href="#真菌的培养和抵抗力">#</a></h3>
-<p>为同一标准，通过鉴定真菌时以<strong>沙保弱培养基</strong>/沙氏培养基上生长的真菌形态为准。</p>
-<details class="note success "><summary><p>举例说明沙保弱培养基上的真菌菌落类型</p>
-</summary><ol>
-<li><strong>酵母型菌落</strong>（yeast colony），如 <a href="#新生隐球菌"><em>新生隐球菌</em></a>，菌落光滑湿润、柔软而致密；</li>
-<li><strong>类酵母型菌落</strong>（yeast like colony）/酵母样菌落，如 <a href="#白假丝念珠菌"><em>白假丝念珠菌</em></a>，与酵母型菌落类似，但显微镜下可见假菌丝；</li>
-<li><strong>丝状型菌落</strong>（filamentous colony），如<em>毛霉菌</em>，由许多疏松的菌丝体组成，菌落呈绒毛状、棉絮状或粉末状等。</li>
-</ol>
-</details>
-<h2 id="真菌的致病类型">真菌的致病类型 <a class="markdownIt-Anchor" href="#真菌的致病类型">#</a></h2>
-<div class="note success "><ol>
-<li>真菌感染
-<ol>
-<li><strong>致病性真菌感染</strong>，主要由<em>外源性真菌</em>引起</li>
-<li><strong>条件致病性真菌感染</strong>，主要由<em>内源性细菌</em>引起</li>
-</ol>
-</li>
-<li><strong>真菌超敏反应</strong>：皮肤、呼吸系统、消化道超敏反应</li>
-<li><strong>真菌性中毒</strong>：某些毒性真菌代谢产物（<em>真菌毒素</em>）可引起<em>真菌中度症</em></li>
-<li><strong>真菌毒素致癌</strong>：<strong>黄曲霉素</strong></li>
-</ol>
-</div>
-<h2 id="病原生物学分类">病原生物学分类 <a class="markdownIt-Anchor" href="#病原生物学分类">#</a></h2>
-<h3 id="皮肤感染真菌">皮肤感染真菌 <a class="markdownIt-Anchor" href="#皮肤感染真菌">#</a></h3>
-<p><strong>皮肤感染真菌</strong>寄生于角蛋白组织，主要引起皮肤各种<em>癣病</em>（tinea），通常不侵犯皮下等深部组织和内脏器官，也不侵入血流引起全身感染。</p>
-<ul>
-<li>致病特点：<strong>嗜角质性</strong>，主要侵犯<span class="horizontal-list"><span class="horizontal-list-item">表皮角质层</span><span class="horizontal-list-item">毛发</span><span class="horizontal-list-item">甲板</span></span></li>
-<li>传播方式：接触传播</li>
-<li>所致疾病：<span class="horizontal-list"><span class="horizontal-list-item">皮肤癣（足癣、手癣、股癣、体癣）</span><span class="horizontal-list-item">甲癣</span><span class="horizontal-list-item">头癣</span></span></li>
-</ul>
-<h3 id="深部感染真菌">深部感染真菌 <a class="markdownIt-Anchor" href="#深部感染真菌">#</a></h3>
-<p><strong>深部感染真菌</strong>指可以引起机体深部组织和内脏疾病的一群真菌，包括两大类：</p>
-<ol>
-<li><strong>机会致病性真菌</strong>：<span class="horizontal-list"><span class="horizontal-list-item"><a href="#%E7%99%BD%E5%81%87%E4%B8%9D%E5%BF%B5%E7%8F%A0%E8%8F%8C">白假丝念珠菌</a></span><span class="horizontal-list-item"><a href="#%E6%96%B0%E7%94%9F%E9%9A%90%E7%90%83%E8%8F%8C">新生隐球菌</a></span><span class="horizontal-list-item"><a href="#%E8%82%BA%E5%AD%A2%E5%AD%90%E8%8F%8C">肺孢子菌</a></span><span class="horizontal-list-item"><em>曲霉</em></span><span class="horizontal-list-item"><em>毛霉</em></span></span>等</li>
-<li><em>致病性真菌</em></li>
-</ol>
-<h4 id="白假丝念珠菌">白假丝念珠菌 <a class="markdownIt-Anchor" href="#白假丝念珠菌">#</a></h4>
-<ul>
-<li>生物学性状：<strong>G<sup>+</sup></strong>，形成<strong>假菌丝</strong>和<em>厚膜孢子</em>，培养呈<em>酵母型菌落</em></li>
-<li>致病性：属于人腔道的<strong>正常菌群</strong>，为<ins>最常见的机会性致病菌</ins>
-<ul>
-<li><strong>感染性疾病</strong>：
-<ul>
-<li>黏膜：<strong>鹅口疮</strong>（AIDS 常见伴发症）、阴道炎</li>
-<li>皮肤：湿疹样症状</li>
-<li>内脏：呼吸道、消化系统、泌尿系统、<strong>中枢神经系统</strong>（脑膜炎、脑膜脑炎）念珠菌病</li>
-</ul>
-</li>
-<li><strong>超敏反应性疾病</strong>：呼吸道、消化道过敏性症状</li>
-</ul>
-</li>
-</ul>
-<details class="note success "><summary><p>白色念珠菌的微生物学检查法</p>
-</summary><ol>
-<li>直接镜检：<strong>革兰氏染色</strong>，<em>假菌丝</em>；</li>
-<li>分离培养：<em>沙保弱培养基</em>，<strong>假菌丝体</strong>。</li>
-</ol>
-</details>
-<h4 id="新生隐球菌">新生隐球菌 <a class="markdownIt-Anchor" href="#新生隐球菌">#</a></h4>
-<ul>
-<li>形态与染色：菌体外周有胶质样的<strong>肥厚荚膜</strong>，<mark>墨汁负染法</mark>可见圆形或卵圆形的透亮菌体，形成芽生孢子，不形成假菌丝，沙氏培养基上为<strong>酵母型菌落</strong></li>
-<li>致病性：<strong>外源性机会致病性真菌</strong>
-<ul>
-<li>传染源：<strong>鸽子</strong>（粪便）</li>
-<li>感染方式：<strong>呼吸道吸入孢子</strong></li>
-<li>所致疾病：
-<ul>
-<li>肺部原发感染：<strong>肺炎</strong></li>
-<li>扩散至脑：<strong>脑膜炎</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<details class="note success "><summary><p>新生隐球菌的微生物学检查法</p>
-</summary><ol>
-<li>直接镜检：<strong>墨汁负染法</strong>，有<strong>肥厚荚膜</strong>的典型菌落</li>
-<li>分离培养：<em>沙保弱培养基</em>，<strong>酵母型菌落</strong></li>
-</ol>
-</details>
-<h4 id="肺孢子菌">肺孢子菌 <a class="markdownIt-Anchor" href="#肺孢子菌">#</a></h4>
-<ul>
-<li>致病特点：<strong>宿主特异性</strong>，<strong>耶氏肺孢子菌</strong>适宜人体寄生；</li>
-<li>所致疾病：<strong>肺孢子菌肺炎</strong>（PCP，AIDS 最常见的标志病）、<em>肺孢子菌病</em>（扩散至其他部位）</li>
-<li>传播途径：呼吸道传播（咳嗽或飞沫）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -11297,7 +11297,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <td><a href="#%E6%A2%85%E6%AF%92%E8%9E%BA%E6%97%8B%E4%BD%93">梅毒螺旋体</a></td>
 </tr>
 <tr>
-<td><a href="#%E4%BC%AF%E6%B0%8F%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93">疏螺旋体属</a></td>
+<td><a href="#%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93%E5%B1%9E">疏螺旋体属</a></td>
 <td>螺旋 3~10 个、不规则</td>
 <td><a href="#%E4%BC%AF%E6%B0%8F%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93">伯氏疏螺旋体</a>、<a href="#%E5%9B%9E%E5%BD%92%E7%83%AD%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93">回归热疏螺旋体</a></td>
 </tr>
@@ -11356,7 +11356,10 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 </ul>
 <h3 id="致病性与免疫性-2">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性-2">#</a></h3>
 <h4 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h4>
-<p>所致疾病：<strong>梅毒</strong>（人是梅毒的唯一传染源），是性传播疾病中危害性较严重的一种，根据感染方式分为两类：</p>
+<ul>
+<li>所致疾病：<strong>梅毒</strong></li>
+<li>传染源：<strong>人</strong>是梅毒的唯一传染源</li>
+<li>感染方式：<strong>性传播</strong>、<strong>垂直传播</strong>，根据感染方式分为两类：
 <ul>
 <li><strong>先天性梅毒</strong>（胎传梅毒）：母体通过胎盘垂直传播给婴儿
 <ul>
@@ -11368,6 +11371,8 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <ul>
 <li>早期梅毒：<strong>Ⅰ 期梅毒</strong>、<strong>Ⅱ 期梅毒</strong></li>
 <li>晚期梅毒：<strong>Ⅲ 期梅毒</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -11414,8 +11419,8 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 </ul>
 <p>血清学诊断：</p>
 <ul>
-<li>非特异性——非密螺旋体抗原试验：适用于大量过筛</li>
-<li>特异性——密螺旋体抗原试验：特异性强，可用作梅毒证实试验</li>
+<li>非特异性——<strong>非密螺旋体抗原试验</strong>：适用于大量过筛</li>
+<li>特异性——<strong>密螺旋体抗原试验</strong>：特异性强，可用作梅毒证实试验</li>
 </ul>
 <h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
 <p>确诊后使用<strong>青霉素</strong>（首选）等药物及早彻底治疗。</p>
@@ -11424,13 +11429,12 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <dt>伯氏疏螺旋体（<em>B. burgdorefri</em>）</dt>
 <dd><strong>莱姆病</strong>病原体存在异质性，分类尚未统一，目前将伯氏疏螺旋体作为<strong>莱姆病</strong>病原体的统称。</dd>
 </dl>
-<details class="note info "><summary><p>疏螺旋菌体属</p>
-</summary><dl>
+<div class="note info titled"><div class='note-title' id='疏螺旋体属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">疏螺旋体属</div><dl>
 <dt>疏螺旋菌体属（Borrelia）| 包柔螺旋菌体属</dt>
 <dd>有 3~10 个稀疏而不规则的螺旋，呈波状。</dd>
 <dd>对人体致病的主要有 <a href="#%E4%BC%AF%E6%B0%8F%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93"><strong>伯氏疏螺旋体</strong></a> 和 <a href="#%E5%9B%9E%E5%BD%92%E7%83%AD%E7%96%8F%E8%9E%BA%E6%97%8B%E4%BD%93"><strong>回归热疏螺旋体</strong></a>，它们均通过<strong>吸血昆虫</strong>传播，分别致<strong>莱姆病</strong>和<strong>回归热</strong>。</dd>
 </dl>
-</details>
+</div>
 <h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
 <ul>
 <li>形态：疏螺旋体，两端稍尖，运动活泼</li>
@@ -11438,23 +11442,24 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
 <p>所致疾病：<strong>莱姆病</strong>（Lyme disease）一种自然疫源性传染病</p>
 <ul>
-<li>传染源：储存宿主主要是野生和驯养的哺乳动物</li>
+<li>传染源（储存宿主）：主要是野生和驯养的哺乳动物</li>
 <li>传播媒介：主要是 <mark>硬蜱</mark></li>
-<li>临床表现
+<li>临床表现：以<strong>神经系统损害</strong>为主
 <ul>
 <li>早期局部性感染：经 3~30 天潜伏期，出现<strong>皮肤慢性游走性红斑</strong>（erythema chronicum migrans, ECM）；</li>
 <li>早期播散性感染：继发性红斑、面神经麻痹、脑膜炎等；</li>
-<li>晚期持续性感染：慢性关节炎、周围神经炎、慢性萎缩性匹炎。</li>
+<li>晚期持续性感染：慢性关节炎、周围神经炎、慢性萎缩性皮炎。</li>
 </ul>
 </li>
 </ul>
 <h2 id="回归热疏螺旋体">回归热疏螺旋体 <a class="markdownIt-Anchor" href="#回归热疏螺旋体">#</a></h2>
 <p><strong>回归热疏螺旋体</strong>（<em>B. recurrentis</em>）是<strong>回归热</strong>的主要病原体，可引起<strong>虱传回归热</strong>（流行性回归热）。</p>
-<dl>
-<dt>回归热（relapsing fever）</dt>
-<dd>由多种疏螺旋体引起的急性传染病。其临床特点为急起急退的高热，全身肌肉酸痛，1 次或多次复发，肝、脾肿大，重症可出现黄疸和出血倾向。</dd>
-<dd>分为<em>虱传回归热</em>（流行性回归热）和<em>脾传回归热</em>（地方性回归热）。</dd>
-</dl>
+<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
+<ul>
+<li>所致疾病：<strong>回归热</strong>（relapsing fever）</li>
+<li>临床表现：<span class="horizontal-list"><span class="horizontal-list-item">急起急退的反复周期性高热</span><span class="horizontal-list-item">全身肌肉酸痛</span><span class="horizontal-list-item">肝脾肿大</span></span>；重症可出现黄疸和出血倾向。</li>
+<li>分类：<span class="horizontal-list"><span class="horizontal-list-item"><strong>虱传回归热</strong>（流行性回归热）</span><span class="horizontal-list-item"><strong>蜱传回归热</strong>（地方性回归热）</span></span></li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -15572,6 +15577,410 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+
+
+    <link rel="stylesheet" href="viewer.css">
+
+
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
+
+
+  <script src="viewer.js"></script>
+
+  </head>
+
+  <body tabindex="1">
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div class="splitToolbarButton toggled">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+            <span id="findResultsCount" class="toolbarLabel hidden"></span>
+          </div>
+
+          <div id="findbarMessageContainer">
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+            </button>
+            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+            </button>
+            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+            </button>
+            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
+
+            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div class="clearBoth"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+            </div>
+            <div class="row">
+              <input type="password" id="password" class="toolbarField">
+            </div>
+            <div class="buttonRow">
+              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
+            </div>
+            <div class="buttonRow">
+              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+            </div>
+            <div class="row">
+              <progress value="0" max="100"></progress>
+              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+            </div>
+            <div class="buttonRow">
+              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- overlayContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+  </body>
+</html>
 ]]></content>
   </entry>
   <entry>
@@ -30125,410 +30534,6 @@ const pdfjsBuild = '3538ef0';
 ;
 });
 //# sourceMappingURL=pdf.js.map]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<!--
-Copyright 2012 Mozilla Foundation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Adobe CMap resources are covered by their own copyright but the same license:
-
-    Copyright 1990-2015 Adobe Systems Incorporated.
-
-See https://github.com/adobe-type-tools/cmap-resources
--->
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PDF.js viewer</title>
-
-
-    <link rel="stylesheet" href="viewer.css">
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="../build/pdf.js"></script>
-
-
-  <script src="viewer.js"></script>
-
-  </head>
-
-  <body tabindex="1">
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div class="splitToolbarButton toggled">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
-
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
-              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-            </button>
-            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
-              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
-              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-            </button>
-            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
-              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-            </button>
-            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
-              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
-
-            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
-              <span data-l10n-id="spread_none_label">No Spreads</span>
-            </button>
-            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
-              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-            </button>
-            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
-              <span data-l10n-id="spread_even_label">Even Spreads</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
-                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-                </button>
-
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
-                  <span data-l10n-id="bookmark_label">Current View</span>
-                </a>
-
-                <div class="verticalToolbarSeparator hiddenSmallView"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-
-        <div id="errorWrapper" hidden='true'>
-          <div id="errorMessageLeft">
-            <span id="errorMessage"></span>
-            <button id="errorShowMore" data-l10n-id="error_more_info">
-              More Information
-            </button>
-            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
-              Less Information
-            </button>
-          </div>
-          <div id="errorMessageRight">
-            <button id="errorClose" data-l10n-id="error_close">
-              Close
-            </button>
-          </div>
-          <div class="clearBoth"></div>
-          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="overlayContainer" class="hidden">
-        <div id="passwordOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
-            </div>
-            <div class="row">
-              <input type="password" id="password" class="toolbarField">
-            </div>
-            <div class="buttonRow">
-              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="documentPropertiesOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
-            </div>
-            <div class="buttonRow">
-              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="printServiceOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-            </div>
-            <div class="row">
-              <progress value="0" max="100"></progress>
-              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
-            </div>
-            <div class="buttonRow">
-              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- overlayContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-  </body>
-</html>
-]]></content>
   </entry>
   <entry>
     <title></title>
