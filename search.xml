@@ -2057,111 +2057,6 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success "><summary><p>举例说明 HHV 的感染类型</p>
-</summary><ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人类发育的细胞学和遗传学基础</title>
     <url>/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>细胞增殖，遗传物质和遗传信息的传递以及一些基因分析技术。</p>
@@ -2655,6 +2550,303 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success "><summary><p>举例说明 HHV 的感染类型</p>
+</summary><ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免疫器官和组织</title>
+    <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
+    <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
+<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
+<ul>
+<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
+<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="中枢免疫器官">中枢免疫器官 <a class="markdownIt-Anchor" href="#中枢免疫器官">#</a></h2>
+<dl>
+<dt>中枢免疫器官（central immune organ）| 初级淋巴器官（primary lymphoid organ）</dt>
+<dd>免疫细胞发生、分化、发育和成熟的场所。</dd>
+</dl>
+<h3 id="骨髓">骨髓 <a class="markdownIt-Anchor" href="#骨髓">#</a></h3>
+<dl>
+<dt>骨髓（bone marrow）</dt>
+<dd>各类血细胞（包括免疫细胞）的发源地</dd>
+<dd>人类和其他哺乳动物 B 细胞发育成熟的场所</dd>
+</dl>
+<h4 id="骨髓的结构和细胞组成">骨髓的结构和细胞组成 <a class="markdownIt-Anchor" href="#骨髓的结构和细胞组成">#</a></h4>
+<dl>
+<dt>红骨髓</dt>
+<dd>造血功能活跃，由<strong>造血组织</strong>和血窦组成。</dd>
+</dl>
+<p>造血组织</p>
+<ul>
+<li>造血细胞</li>
+<li>基质细胞：网状细胞、成纤维细胞、血窦内皮细胞、巨噬细胞……</li>
+</ul>
+<dl>
+<dt>黄骨髓</dt>
+<dd>含有大量脂肪组织，特定条件下可转换为红骨髓。</dd>
+</dl>
+<p><strong>造血诱导微环境（HIM）</strong></p>
+<ul>
+<li>细胞外基质</li>
+<li>骨髓基质细胞</li>
+<li>多种细胞因子</li>
+</ul>
+<h4 id="骨髓的功能">骨髓的功能 <a class="markdownIt-Anchor" href="#骨髓的功能">#</a></h4>
+<ol>
+<li>各类血细胞、免疫细胞发生的场所</li>
+<li>B 细胞 NK 细胞分化成熟的场所</li>
+<li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
+</ol>
+<details class="note info "><summary><p>mIgM</p>
+</summary><p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
+<blockquote>
+<p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
+</blockquote>
+</details>
+<h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
+<dl>
+<dt>胸腺（thymus）</dt>
+<dd>由胸腺细胞和胸腺基质细胞组成，是 T 细胞发育、分化、成熟的场所。</dd>
+</dl>
+<h4 id="胸腺的结构">胸腺的结构 <a class="markdownIt-Anchor" href="#胸腺的结构">#</a></h4>
+<ul>
+<li>皮质：深皮质、浅皮质</li>
+<li>髓质：散在分布的成熟胸腺细胞、巨噬细胞、树突状细胞</li>
+</ul>
+<p>细胞组成</p>
+<ul>
+<li>胸腺细胞：处于不同分化阶段的 T 细胞</li>
+<li>胸腺基质细胞（thymus stromal cell, TSC）
+<ul>
+<li>胸腺上皮细胞</li>
+<li>巨噬细胞</li>
+<li>树突状细胞</li>
+</ul>
+</li>
+</ul>
+<h4 id="胸腺微环境">胸腺微环境 <a class="markdownIt-Anchor" href="#胸腺微环境">#</a></h4>
+<dl>
+<dt>胸腺微环境（thymic microenvironment）</dt>
+<dd>决定 T 细胞分化、增殖和选择性发育的重要条件。
+<ul>
+<li>胸腺基质细胞</li>
+<li>细胞外基质</li>
+<li>局部活性因子</li>
+</ul>
+</dd>
+<dd><strong>细胞外基质</strong>也是胸腺微环境的重要组成部分。</dd>
+</dl>
+<p>胸腺上皮细胞影响胸腺细胞分化的两种方式</p>
+<ul>
+<li>细胞-细胞间相互接触</li>
+<li>分泌细胞因子和胸腺肽类因子</li>
+</ul>
+<h4 id="胸腺的功能">胸腺的功能 <a class="markdownIt-Anchor" href="#胸腺的功能">#</a></h4>
+<ol>
+<li>T 细胞分化、成熟的场所：T 细胞迁移、阳性选择、阴性选择</li>
+<li>免疫调节作用：细胞因子、胸腺肽类因子</li>
+<li>自身免疫耐受的建立与维持：通过阴性选择形成中枢免疫耐受</li>
+</ol>
+<h2 id="外周免疫器官和组织">外周免疫器官和组织 <a class="markdownIt-Anchor" href="#外周免疫器官和组织">#</a></h2>
+<ul>
+<li>成熟淋巴细胞定居的场所</li>
+<li>淋巴细胞对外来抗原产生免疫应答的主要部位</li>
+</ul>
+<h3 id="淋巴结">淋巴结 <a class="markdownIt-Anchor" href="#淋巴结">#</a></h3>
+<h4 id="淋巴结的结构">淋巴结的结构 <a class="markdownIt-Anchor" href="#淋巴结的结构">#</a></h4>
+<ul>
+<li>皮质：浅皮质区、深皮质区</li>
+<li>髓质：髓索、髓窦</li>
+</ul>
+<hr />
+<dl>
+<dt>浅皮质区 | 非胸腺依赖区（thymus-indepentent area）</dt>
+<dd>靠近被膜下的皮质区，为** B 细胞区**，是 B 细胞定居的场所。</dd>
+<dt>初级淋巴滤泡（primary lymphoid follicle）| 淋巴小结（lymphoid nodule）</dt>
+<dd>浅皮质区中，大量 B 细胞聚集而成。</dd>
+<dt>次级淋巴滤泡（secondary lymphoid follicle）</dt>
+<dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
+<dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
+</dl>
+<div class="note default "><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
+</div>
+<hr />
+<dl>
+<dt>深皮质区 | 副皮质区 | 胸腺依赖区（thymus-depentent area）</dt>
+<dd>浅皮质区与髓质之间的皮质区，为 <strong>T 细胞区</strong>，是 T 细胞定居的场所。</dd>
+<dt>高内皮微静脉（high endothelial venule, HEV）</dt>
+<dd>副皮质区中的由内皮细胞组成的、呈非连续状的<strong>毛细血管后微静脉</strong>。</dd>
+</dl>
+<hr />
+<dl>
+<dt>髓索</dt>
+<dd>由密集的淋巴细胞组成，主要为 B 细胞和浆细胞，也有部分 T 细胞和 Mϕ。</dd>
+<dt>髓窦</dt>
+<dd>富含 Mϕ，有较强的捕捉、清除抗原体的功能。</dd>
+</dl>
+<h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
+<ol>
+<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
+<li>适应性免疫应答的主要场所</li>
+<li>过滤作用：过滤组织来源的抗原</li>
+<li>参与淋巴细胞再循环</li>
+</ol>
+<h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
+<h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
+<ul>
+<li>白髄：动脉周围淋巴鞘（PALS）、脾小结、边缘区</li>
+<li>红髓：脾索、脾血窦</li>
+</ul>
+<h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
+<ol>
+<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
+<li>免疫应答发生的场所</li>
+<li>生成生物活性物质，如补体、细胞因子</li>
+<li>过滤作用：清除血液来源的抗原</li>
+</ol>
+<h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
+<dl>
+<dt>黏膜相关淋巴组织（MALT）</dt>
+<dd>胃肠道、呼吸道、泌尿生殖道黏膜固有层和上皮细胞下散在的淋巴组织，以及带有生发中心的淋巴组织。</dd>
+</dl>
+<h4 id="黏膜相关淋巴组织的组成">黏膜相关淋巴组织的组成 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的组成">#</a></h4>
+<ul>
+<li>肠相关淋巴结（GALT）
+<ul>
+<li>派氏集合淋巴结（PP）</li>
+<li>上皮内淋巴结（IEL）</li>
+</ul>
+</li>
+<li>鼻相关淋巴结（NALT）</li>
+<li>支气管相关淋巴组织（BALT）</li>
+</ul>
+<h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
+<ul>
+<li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
+<li>产生分泌型 IgA（SIgA）</li>
+</ul>
+<h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
+<dl>
+<dt>淋巴细胞归巢（lymphocyte homing）</dt>
+<dd>血液中淋巴细胞选择性取向迁移并定居与外周免疫器官的特定区域或特定组织的过程。</dd>
+<dt>淋巴细胞再循环（lymphocyte recirculation）</dt>
+<dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人胚发生和早期发育</title>
     <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
     <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
@@ -2908,198 +3100,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
         <tag>人类发育与遗传学</tag>
         <tag>组织学与胚胎学</tag>
         <tag>胚胎学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免疫器官和组织</title>
-    <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
-    <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
-<p><strong>免疫器官（immune organ）| 淋巴器官（lymphoid organ）</strong></p>
-<ul>
-<li><a href="#%E4%B8%AD%E6%9E%A2%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">中枢免疫器官</a></li>
-<li><a href="#%E5%A4%96%E5%91%A8%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98">外周免疫器官</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="中枢免疫器官">中枢免疫器官 <a class="markdownIt-Anchor" href="#中枢免疫器官">#</a></h2>
-<dl>
-<dt>中枢免疫器官（central immune organ）| 初级淋巴器官（primary lymphoid organ）</dt>
-<dd>免疫细胞发生、分化、发育和成熟的场所。</dd>
-</dl>
-<h3 id="骨髓">骨髓 <a class="markdownIt-Anchor" href="#骨髓">#</a></h3>
-<dl>
-<dt>骨髓（bone marrow）</dt>
-<dd>各类血细胞（包括免疫细胞）的发源地</dd>
-<dd>人类和其他哺乳动物 B 细胞发育成熟的场所</dd>
-</dl>
-<h4 id="骨髓的结构和细胞组成">骨髓的结构和细胞组成 <a class="markdownIt-Anchor" href="#骨髓的结构和细胞组成">#</a></h4>
-<dl>
-<dt>红骨髓</dt>
-<dd>造血功能活跃，由<strong>造血组织</strong>和血窦组成。</dd>
-</dl>
-<p>造血组织</p>
-<ul>
-<li>造血细胞</li>
-<li>基质细胞：网状细胞、成纤维细胞、血窦内皮细胞、巨噬细胞……</li>
-</ul>
-<dl>
-<dt>黄骨髓</dt>
-<dd>含有大量脂肪组织，特定条件下可转换为红骨髓。</dd>
-</dl>
-<p><strong>造血诱导微环境（HIM）</strong></p>
-<ul>
-<li>细胞外基质</li>
-<li>骨髓基质细胞</li>
-<li>多种细胞因子</li>
-</ul>
-<h4 id="骨髓的功能">骨髓的功能 <a class="markdownIt-Anchor" href="#骨髓的功能">#</a></h4>
-<ol>
-<li>各类血细胞、免疫细胞发生的场所</li>
-<li>B 细胞 NK 细胞分化成熟的场所</li>
-<li>发生再次体液免疫应答后，抗体产生的主要部位（成熟浆细胞分化及再次应答抗体产生的场所）</li>
-</ol>
-<details class="note info "><summary><p>mIgM</p>
-</summary><p>即膜型 IgM（mIgM），成熟和未成熟的 B 细胞都可产生。</p>
-<blockquote>
-<p>成熟后 B 细胞还会产生** mIgD**，可作为鉴定标志。</p>
-</blockquote>
-</details>
-<h3 id="胸腺">胸腺 <a class="markdownIt-Anchor" href="#胸腺">#</a></h3>
-<dl>
-<dt>胸腺（thymus）</dt>
-<dd>由胸腺细胞和胸腺基质细胞组成，是 T 细胞发育、分化、成熟的场所。</dd>
-</dl>
-<h4 id="胸腺的结构">胸腺的结构 <a class="markdownIt-Anchor" href="#胸腺的结构">#</a></h4>
-<ul>
-<li>皮质：深皮质、浅皮质</li>
-<li>髓质：散在分布的成熟胸腺细胞、巨噬细胞、树突状细胞</li>
-</ul>
-<p>细胞组成</p>
-<ul>
-<li>胸腺细胞：处于不同分化阶段的 T 细胞</li>
-<li>胸腺基质细胞（thymus stromal cell, TSC）
-<ul>
-<li>胸腺上皮细胞</li>
-<li>巨噬细胞</li>
-<li>树突状细胞</li>
-</ul>
-</li>
-</ul>
-<h4 id="胸腺微环境">胸腺微环境 <a class="markdownIt-Anchor" href="#胸腺微环境">#</a></h4>
-<dl>
-<dt>胸腺微环境（thymic microenvironment）</dt>
-<dd>决定 T 细胞分化、增殖和选择性发育的重要条件。
-<ul>
-<li>胸腺基质细胞</li>
-<li>细胞外基质</li>
-<li>局部活性因子</li>
-</ul>
-</dd>
-<dd><strong>细胞外基质</strong>也是胸腺微环境的重要组成部分。</dd>
-</dl>
-<p>胸腺上皮细胞影响胸腺细胞分化的两种方式</p>
-<ul>
-<li>细胞-细胞间相互接触</li>
-<li>分泌细胞因子和胸腺肽类因子</li>
-</ul>
-<h4 id="胸腺的功能">胸腺的功能 <a class="markdownIt-Anchor" href="#胸腺的功能">#</a></h4>
-<ol>
-<li>T 细胞分化、成熟的场所：T 细胞迁移、阳性选择、阴性选择</li>
-<li>免疫调节作用：细胞因子、胸腺肽类因子</li>
-<li>自身免疫耐受的建立与维持：通过阴性选择形成中枢免疫耐受</li>
-</ol>
-<h2 id="外周免疫器官和组织">外周免疫器官和组织 <a class="markdownIt-Anchor" href="#外周免疫器官和组织">#</a></h2>
-<ul>
-<li>成熟淋巴细胞定居的场所</li>
-<li>淋巴细胞对外来抗原产生免疫应答的主要部位</li>
-</ul>
-<h3 id="淋巴结">淋巴结 <a class="markdownIt-Anchor" href="#淋巴结">#</a></h3>
-<h4 id="淋巴结的结构">淋巴结的结构 <a class="markdownIt-Anchor" href="#淋巴结的结构">#</a></h4>
-<ul>
-<li>皮质：浅皮质区、深皮质区</li>
-<li>髓质：髓索、髓窦</li>
-</ul>
-<hr />
-<dl>
-<dt>浅皮质区 | 非胸腺依赖区（thymus-indepentent area）</dt>
-<dd>靠近被膜下的皮质区，为** B 细胞区**，是 B 细胞定居的场所。</dd>
-<dt>初级淋巴滤泡（primary lymphoid follicle）| 淋巴小结（lymphoid nodule）</dt>
-<dd>浅皮质区中，大量 B 细胞聚集而成。</dd>
-<dt>次级淋巴滤泡（secondary lymphoid follicle）</dt>
-<dd><strong>初级淋巴滤泡</strong>受抗原刺激后，出现<strong>生发中心</strong>（germinal center, <strong>GC</strong>），称为<strong>次级淋巴滤泡</strong>。</dd>
-<dd>内含大量增殖分化的** B 淋巴母细胞**，可转移至髓质分化为浆细胞并产生抗体。</dd>
-</dl>
-<div class="note default "><p>B 细胞缺陷时，皮质缺乏初级淋巴滤泡和生发中心。</p>
-</div>
-<hr />
-<dl>
-<dt>深皮质区 | 副皮质区 | 胸腺依赖区（thymus-depentent area）</dt>
-<dd>浅皮质区与髓质之间的皮质区，为 <strong>T 细胞区</strong>，是 T 细胞定居的场所。</dd>
-<dt>高内皮微静脉（high endothelial venule, HEV）</dt>
-<dd>副皮质区中的由内皮细胞组成的、呈非连续状的<strong>毛细血管后微静脉</strong>。</dd>
-</dl>
-<hr />
-<dl>
-<dt>髓索</dt>
-<dd>由密集的淋巴细胞组成，主要为 B 细胞和浆细胞，也有部分 T 细胞和 Mϕ。</dd>
-<dt>髓窦</dt>
-<dd>富含 Mϕ，有较强的捕捉、清除抗原体的功能。</dd>
-</dl>
-<h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
-<ol>
-<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
-<li>适应性免疫应答的主要场所</li>
-<li>过滤作用：过滤组织来源的抗原</li>
-<li>参与淋巴细胞再循环</li>
-</ol>
-<h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
-<h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
-<ul>
-<li>白髄：动脉周围淋巴鞘（PALS）、脾小结、边缘区</li>
-<li>红髓：脾索、脾血窦</li>
-</ul>
-<h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
-<ol>
-<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
-<li>免疫应答发生的场所</li>
-<li>生成生物活性物质，如补体、细胞因子</li>
-<li>过滤作用：清除血液来源的抗原</li>
-</ol>
-<h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
-<dl>
-<dt>黏膜相关淋巴组织（MALT）</dt>
-<dd>胃肠道、呼吸道、泌尿生殖道黏膜固有层和上皮细胞下散在的淋巴组织，以及带有生发中心的淋巴组织。</dd>
-</dl>
-<h4 id="黏膜相关淋巴组织的组成">黏膜相关淋巴组织的组成 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的组成">#</a></h4>
-<ul>
-<li>肠相关淋巴结（GALT）
-<ul>
-<li>派氏集合淋巴结（PP）</li>
-<li>上皮内淋巴结（IEL）</li>
-</ul>
-</li>
-<li>鼻相关淋巴结（NALT）</li>
-<li>支气管相关淋巴组织（BALT）</li>
-</ul>
-<h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
-<ul>
-<li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
-<li>产生分泌型 IgA（SIgA）</li>
-</ul>
-<h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
-<dl>
-<dt>淋巴细胞归巢（lymphocyte homing）</dt>
-<dd>血液中淋巴细胞选择性取向迁移并定居与外周免疫器官的特定区域或特定组织的过程。</dd>
-<dt>淋巴细胞再循环（lymphocyte recirculation）</dt>
-<dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -4325,147 +4325,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </tags>
   </entry>
   <entry>
-    <title>厌氧性细菌</title>
-    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>厌氧性细菌（anaerobic bacteria）</dt>
-<dd>一群必须在厌氧条件下才能生长繁殖的细菌，根据其是否能形成芽孢，可将厌氧性细菌分为两大类：
-<ul>
-<li><strong>厌氧芽孢梭菌属</strong>：<a href="#%E7%A0%B4%E4%BC%A4%E9%A3%8E%E6%A2%AD%E8%8F%8C">破伤风梭菌</a>、<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>、<a href="#%E8%82%89%E6%AF%92%E6%A2%AD%E8%8F%8C">肉毒梭菌</a>、<a href="#%E8%89%B0%E9%9A%BE%E6%A2%AD%E8%8F%8C">艰难梭菌</a></li>
-<li><em>无芽孢厌氧菌</em></li>
-</ul>
-</dd>
-</dl>
-<span id="more"></span>
-<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">厌氧芽孢梭菌属</div><ul>
-<li>严格厌氧菌，抵抗力强</li>
-<li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>等极少数外，均有周身鞭毛、无荚膜</li>
-<li>致病性：强，能产生多种外毒素和侵袭性酶</li>
-<li>防治：类毒素疫苗和抗毒素</li>
-</ul>
-</div>
-<h2 id="破伤风梭菌">破伤风梭菌 <a class="markdownIt-Anchor" href="#破伤风梭菌">#</a></h2>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：芽孢正圆形，位于菌体顶端，使细菌呈 <mark>鼓槌状</mark></li>
-<li>培养特性和生化反应：血平板上培养，呈 <strong>β 溶血</strong></li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
-<p>致病因子（外毒素）：</p>
-<ul>
-<li><mark>破伤风痉挛毒素</mark>：<strong>神经毒素</strong>，阻止抑制性神经介质的释放，毒性极强，致死量小于 1μg</li>
-<li>破伤风溶血素：对氧敏感</li>
-</ul>
-<p>所致疾病：<strong>破伤风</strong></p>
-<ul>
-<li>致病条件：伤口形成<strong>厌氧微环境</strong>，如：
-<ol>
-<li><ins>伤口窄而深</ins>，有泥土或异物污染；</li>
-<li><ins>大面积创伤</ins>，坏死组织多，局部组织缺血；</li>
-<li>同时有<ins>需氧菌或兼性厌氧菌</ins>混合感染形成的伤口。</li>
-</ol>
-</li>
-<li>致病特点：<strong>无侵袭力</strong>，仅在局部繁殖，致病作用完全依赖于<strong>外毒素</strong><span class="horizontal-list"><span class="horizontal-list-item">经运动神经终板吸收，沿神经纤维间隙逆行至脊髓前角细胞，上行至脑干</span><span class="horizontal-list-conjunction">或</span><span class="horizontal-list-item">经淋巴液或血液到达中枢神经系统</span></span></li>
-<li>临床表现：
-<ul>
-<li><strong>苦笑面容</strong>、牙关紧闭：咀嚼肌痉挛</li>
-<li><strong>角弓反转</strong>：持续性背部痉挛</li>
-</ul>
-</li>
-</ul>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<p>主要依靠抗毒素中和细菌产生的外毒素，一般病后不会获得牢固免疫力。<br/>
-获得有效抗毒素的途径是进行人工免疫。</p>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>一般不进行涂片镜检和分离培养，凭典型症状和病史即可做出诊断。</p>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>非特异性治疗：正确处理伤口及清创、扩创，防治厌氧微环境形成；</li>
-<li>特异性紧急预防：<strong>破伤风抗毒素</strong>（TAT，需要皮肤过敏试验）或<em>破伤风免疫球蛋白</em>（TIG），迅速获得被动免疫；</li>
-<li>特异性预防：<strong>百白破三联疫苗</strong>（含破伤风类毒素）；</li>
-<li>特异性治疗：
-<ul>
-<li>抗毒素：早期、足量使用 TIG 或 TAT；</li>
-<li>抗生素：首选<strong>青霉素</strong>，也可用四环素、红霉素等。</li>
-</ul>
-</li>
-</ul>
-<h2 id="产气荚膜梭菌">产气荚膜梭菌 <a class="markdownIt-Anchor" href="#产气荚膜梭菌">#</a></h2>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：两端平切的粗大杆状，芽孢比菌体细，位于次极端，在人或动物体内可见明显的 <mark>荚膜</mark></li>
-<li>抗原组成和分类：根据 4 种主要毒素的抗原性分为 A~E 5 种血清型，对人致病的主要是 A 型</li>
-<li>培养特性和生化反应：
-<ul>
-<li>生长迅速（繁殖周期仅为 8min）</li>
-<li>血琼脂平板上可见<strong>双层溶血环</strong>，内环是由于 <em>θ 毒素</em>（溶血素、细胞毒素）引起的完全溶血，外环是由 <strong>α 毒素</strong>（卵磷脂酶）引起的不完全溶血</li>
-<li><strong>蛋黄琼脂平板</strong>上，菌落周围出现乳白色浑浊圈，是由于 <strong>α 毒素</strong>分解卵磷脂所致，若加入 α 毒素的抗血清，则不会出现浑浊，此现象称 <mark>Nagler 反应</mark>，是本菌的特点</li>
-<li>在<strong>牛乳培养基</strong>中分解乳糖产酸，使酪蛋白凝固；同时产生大量地气体，将凝固的酪蛋白冲成蜂窝状，称<mark>汹涌发酵现象</mark>，是鉴别本菌的主要特征。</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：菌体成分（<strong>荚膜</strong>）、侵袭性酶和多种<strong>外毒素</strong>，有些外毒素同时是侵袭性酶</p>
-<ul>
-<li><strong>α 毒素</strong>（卵磷脂酶）：A 型产量最大，增加血管通透性，引起溶血和组织坏死，在<em>气性坏疽</em>的形成中其主要作用</li>
-<li>β、ε、ι 毒素：仅部分型别可产生，引起坏死损伤和血管通透型增加</li>
-<li>肠毒素：肠毒素毒性（呕吐、腹泻），细胞毒性</li>
-</ul>
-<p>所致疾病：</p>
-<ul>
-<li><strong>气性坏疽</strong>：主要由 A 型产气荚膜杆菌引起，以组织坏死、气肿和全身中毒为特征，致病条件与破伤风杆菌类似，即需要形成厌氧微环境</li>
-<li><strong>坏死性肠炎</strong></li>
-<li><strong>食物中毒</strong></li>
-</ul>
-<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<ul>
-<li>标本：深部创口取样</li>
-<li>直接涂片镜检：革兰氏阳性大杆菌，白细胞少且不典型（被毒素杀死），伴有其他杂菌</li>
-</ul>
-<h2 id="肉毒梭菌">肉毒梭菌 <a class="markdownIt-Anchor" href="#肉毒梭菌">#</a></h2>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：芽孢椭圆形，粗于菌体，位于次极端，是细胞呈<strong>汤匙状</strong>或<strong>网球拍状</strong>；</li>
-<li>抗原结构和分类：根据神经毒素的抗原性分为 A~G 7 个型</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：<mark>肉毒毒素</mark>，已知毒性最强的<strong>神经毒素</strong>，致死量约为 0.1μg，作用于外周神经肌肉接头，抑制<strong>乙酰胆碱</strong>释放，导致弛缓性麻痹。肉毒毒素<strong>不耐热</strong>，煮沸 20min 即可被破坏。</p>
-<p>所致疾病：</p>
-<ul>
-<li>食物中毒：
-<ul>
-<li>病因：食入<ins>毒素</ins></li>
-<li>临床症状：以<s>胃肠道症状</s>神经系统症状为主，主要为松弛型<strong>神经末梢麻痹</strong></li>
-</ul>
-</li>
-<li><strong>婴儿肉毒病</strong>：
-<ul>
-<li>食入肉毒梭菌<ins>芽孢</ins>，芽孢发芽、繁殖，产生毒素</li>
-<li>临床症状：类似于肉毒毒素食物中毒，早期表现为便秘、吸乳无力，病死率不高</li>
-</ul>
-</li>
-<li>创伤感染中毒：伤口被肉毒梭菌芽孢污染，偶尔见于机体抵抗力低下患者</li>
-</ul>
-<h2 id="艰难梭菌">艰难梭菌 <a class="markdownIt-Anchor" href="#艰难梭菌">#</a></h2>
-<p><strong>艰难梭菌</strong>（<em>C. difficile</em>）是人肠道中的正常菌群之一，对氧十分敏感，很难分离培养，故得名。</p>
-<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
-<p>一般不致病，当临床长期使用或不正当使用某些抗生素后，引起菌群失调，导致艰难梭菌大量繁殖而致病。</p>
-<ul>
-<li>致病物质：A 毒素（肠毒素）、B 毒素（细胞毒素）</li>
-<li>所致疾病：假膜性肠炎</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>单基因遗传病</title>
     <url>/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -4832,6 +4691,147 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>厌氧性细菌</title>
+    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<dl>
+<dt>厌氧性细菌（anaerobic bacteria）</dt>
+<dd>一群必须在厌氧条件下才能生长繁殖的细菌，根据其是否能形成芽孢，可将厌氧性细菌分为两大类：
+<ul>
+<li><strong>厌氧芽孢梭菌属</strong>：<a href="#%E7%A0%B4%E4%BC%A4%E9%A3%8E%E6%A2%AD%E8%8F%8C">破伤风梭菌</a>、<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>、<a href="#%E8%82%89%E6%AF%92%E6%A2%AD%E8%8F%8C">肉毒梭菌</a>、<a href="#%E8%89%B0%E9%9A%BE%E6%A2%AD%E8%8F%8C">艰难梭菌</a></li>
+<li><em>无芽孢厌氧菌</em></li>
+</ul>
+</dd>
+</dl>
+<span id="more"></span>
+<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">厌氧芽孢梭菌属</div><ul>
+<li>严格厌氧菌，抵抗力强</li>
+<li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>等极少数外，均有周身鞭毛、无荚膜</li>
+<li>致病性：强，能产生多种外毒素和侵袭性酶</li>
+<li>防治：类毒素疫苗和抗毒素</li>
+</ul>
+</div>
+<h2 id="破伤风梭菌">破伤风梭菌 <a class="markdownIt-Anchor" href="#破伤风梭菌">#</a></h2>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：芽孢正圆形，位于菌体顶端，使细菌呈 <mark>鼓槌状</mark></li>
+<li>培养特性和生化反应：血平板上培养，呈 <strong>β 溶血</strong></li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<p>致病因子（外毒素）：</p>
+<ul>
+<li><mark>破伤风痉挛毒素</mark>：<strong>神经毒素</strong>，阻止抑制性神经介质的释放，毒性极强，致死量小于 1μg</li>
+<li>破伤风溶血素：对氧敏感</li>
+</ul>
+<p>所致疾病：<strong>破伤风</strong></p>
+<ul>
+<li>致病条件：伤口形成<strong>厌氧微环境</strong>，如：
+<ol>
+<li><ins>伤口窄而深</ins>，有泥土或异物污染；</li>
+<li><ins>大面积创伤</ins>，坏死组织多，局部组织缺血；</li>
+<li>同时有<ins>需氧菌或兼性厌氧菌</ins>混合感染形成的伤口。</li>
+</ol>
+</li>
+<li>致病特点：<strong>无侵袭力</strong>，仅在局部繁殖，致病作用完全依赖于<strong>外毒素</strong><span class="horizontal-list"><span class="horizontal-list-item">经运动神经终板吸收，沿神经纤维间隙逆行至脊髓前角细胞，上行至脑干</span><span class="horizontal-list-conjunction">或</span><span class="horizontal-list-item">经淋巴液或血液到达中枢神经系统</span></span></li>
+<li>临床表现：
+<ul>
+<li><strong>苦笑面容</strong>、牙关紧闭：咀嚼肌痉挛</li>
+<li><strong>角弓反转</strong>：持续性背部痉挛</li>
+</ul>
+</li>
+</ul>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<p>主要依靠抗毒素中和细菌产生的外毒素，一般病后不会获得牢固免疫力。<br/>
+获得有效抗毒素的途径是进行人工免疫。</p>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>一般不进行涂片镜检和分离培养，凭典型症状和病史即可做出诊断。</p>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>非特异性治疗：正确处理伤口及清创、扩创，防治厌氧微环境形成；</li>
+<li>特异性紧急预防：<strong>破伤风抗毒素</strong>（TAT，需要皮肤过敏试验）或<em>破伤风免疫球蛋白</em>（TIG），迅速获得被动免疫；</li>
+<li>特异性预防：<strong>百白破三联疫苗</strong>（含破伤风类毒素）；</li>
+<li>特异性治疗：
+<ul>
+<li>抗毒素：早期、足量使用 TIG 或 TAT；</li>
+<li>抗生素：首选<strong>青霉素</strong>，也可用四环素、红霉素等。</li>
+</ul>
+</li>
+</ul>
+<h2 id="产气荚膜梭菌">产气荚膜梭菌 <a class="markdownIt-Anchor" href="#产气荚膜梭菌">#</a></h2>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：两端平切的粗大杆状，芽孢比菌体细，位于次极端，在人或动物体内可见明显的 <mark>荚膜</mark></li>
+<li>抗原组成和分类：根据 4 种主要毒素的抗原性分为 A~E 5 种血清型，对人致病的主要是 A 型</li>
+<li>培养特性和生化反应：
+<ul>
+<li>生长迅速（繁殖周期仅为 8min）</li>
+<li>血琼脂平板上可见<strong>双层溶血环</strong>，内环是由于 <em>θ 毒素</em>（溶血素、细胞毒素）引起的完全溶血，外环是由 <strong>α 毒素</strong>（卵磷脂酶）引起的不完全溶血</li>
+<li><strong>蛋黄琼脂平板</strong>上，菌落周围出现乳白色浑浊圈，是由于 <strong>α 毒素</strong>分解卵磷脂所致，若加入 α 毒素的抗血清，则不会出现浑浊，此现象称 <mark>Nagler 反应</mark>，是本菌的特点</li>
+<li>在<strong>牛乳培养基</strong>中分解乳糖产酸，使酪蛋白凝固；同时产生大量地气体，将凝固的酪蛋白冲成蜂窝状，称<mark>汹涌发酵现象</mark>，是鉴别本菌的主要特征。</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：菌体成分（<strong>荚膜</strong>）、侵袭性酶和多种<strong>外毒素</strong>，有些外毒素同时是侵袭性酶</p>
+<ul>
+<li><strong>α 毒素</strong>（卵磷脂酶）：A 型产量最大，增加血管通透性，引起溶血和组织坏死，在<em>气性坏疽</em>的形成中其主要作用</li>
+<li>β、ε、ι 毒素：仅部分型别可产生，引起坏死损伤和血管通透型增加</li>
+<li>肠毒素：肠毒素毒性（呕吐、腹泻），细胞毒性</li>
+</ul>
+<p>所致疾病：</p>
+<ul>
+<li><strong>气性坏疽</strong>：主要由 A 型产气荚膜杆菌引起，以组织坏死、气肿和全身中毒为特征，致病条件与破伤风杆菌类似，即需要形成厌氧微环境</li>
+<li><strong>坏死性肠炎</strong></li>
+<li><strong>食物中毒</strong></li>
+</ul>
+<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
+<ul>
+<li>标本：深部创口取样</li>
+<li>直接涂片镜检：革兰氏阳性大杆菌，白细胞少且不典型（被毒素杀死），伴有其他杂菌</li>
+</ul>
+<h2 id="肉毒梭菌">肉毒梭菌 <a class="markdownIt-Anchor" href="#肉毒梭菌">#</a></h2>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：芽孢椭圆形，粗于菌体，位于次极端，是细胞呈<strong>汤匙状</strong>或<strong>网球拍状</strong>；</li>
+<li>抗原结构和分类：根据神经毒素的抗原性分为 A~G 7 个型</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：<mark>肉毒毒素</mark>，已知毒性最强的<strong>神经毒素</strong>，致死量约为 0.1μg，作用于外周神经肌肉接头，抑制<strong>乙酰胆碱</strong>释放，导致弛缓性麻痹。肉毒毒素<strong>不耐热</strong>，煮沸 20min 即可被破坏。</p>
+<p>所致疾病：</p>
+<ul>
+<li>食物中毒：
+<ul>
+<li>病因：食入<ins>毒素</ins></li>
+<li>临床症状：以<s>胃肠道症状</s>神经系统症状为主，主要为松弛型<strong>神经末梢麻痹</strong></li>
+</ul>
+</li>
+<li><strong>婴儿肉毒病</strong>：
+<ul>
+<li>食入肉毒梭菌<ins>芽孢</ins>，芽孢发芽、繁殖，产生毒素</li>
+<li>临床症状：类似于肉毒毒素食物中毒，早期表现为便秘、吸乳无力，病死率不高</li>
+</ul>
+</li>
+<li>创伤感染中毒：伤口被肉毒梭菌芽孢污染，偶尔见于机体抵抗力低下患者</li>
+</ul>
+<h2 id="艰难梭菌">艰难梭菌 <a class="markdownIt-Anchor" href="#艰难梭菌">#</a></h2>
+<p><strong>艰难梭菌</strong>（<em>C. difficile</em>）是人肠道中的正常菌群之一，对氧十分敏感，很难分离培养，故得名。</p>
+<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
+<p>一般不致病，当临床长期使用或不正当使用某些抗生素后，引起菌群失调，导致艰难梭菌大量繁殖而致病。</p>
+<ul>
+<li>致病物质：A 毒素（肠毒素）、B 毒素（细胞毒素）</li>
+<li>所致疾病：假膜性肠炎</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -6616,10 +6616,15 @@ T 细胞辅助。</p>
 </dl>
 <h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
 <p>常用<strong>冷凝集试验</strong>辅助诊断。</p>
-<p><strong>冷凝集试验</strong>：检验人体非特异性凝集素，从而辅助诊断支原体肺炎的一种血清学诊断方法。</p>
+<p><mark>冷凝集试验</mark>：检验人体非特异性凝集素，从而辅助诊断支原体肺炎的一种血清学诊断方法。</p>
 <ul>
 <li>原理：MP 感染后使 RBC 抗原发生变性，产生自身抗体（IgM，非特异性凝集素），在 4℃ 下凝聚 RBC，37℃ 时凝集解离。</li>
-<li>注意：冷凝集试验为非特异性试验，不能排除其他病毒感染。</li>
+<li>注意：
+<ul>
+<li>仅 50% 左右患者试验结果为阳性</li>
+<li>冷凝集试验为非特异性试验，不能排除其他病毒感染。</li>
+</ul>
+</li>
 </ul>
 <h2 id="解脲脲原体">解脲脲原体 <a class="markdownIt-Anchor" href="#解脲脲原体">#</a></h2>
 <dl>
@@ -6636,9 +6641,9 @@ T 细胞辅助。</p>
 <p>传播途径及所致疾病：</p>
 <ul>
 <li><strong>垂直传播</strong>：自然流产、出生缺陷、死胎</li>
-<li><strong>性传播</strong>
+<li><strong>性传播</strong>：
 <ul>
-<li>非淋菌性尿道炎（NGU）</li>
+<li><strong>非淋菌性尿道炎</strong>（NGU）</li>
 <li>输卵管炎、盆腔感染等</li>
 <li>不育症（脲原体可附着在精子表面，阻碍其运动、诱导其凋亡、影响与卵子结合）</li>
 </ul>
@@ -7504,138 +7509,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>病原生物学</title>
-    <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<span class="horizontal-list"><span class="horizontal-list-item"><em>生物学规律</em></span><span class="horizontal-list-item"><em>致病机制</em></span><span class="horizontal-list-conjunction">及</span><span class="horizontal-list-item"><em>其和宿主之间相互作用</em></span></span>的学科。</p>
-<dl>
-<dt>生物 | 生命体 | 有机体（organism）</dt>
-<dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能再一定程度上适应和影响环境。</dd>
-<dt>病原生物（pathogenic organism）</dt>
-<dd>能给人类、动植物带来疾患的生物。</dd>
-</dl>
-<span id="more"></span>
-<h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
-<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
-<ul>
-<li><strong>非细胞型微生物</strong>（acellular microbe），如<a href="/2021/03/21/%E7%97%85%E6%AF%92/">病毒</a>、<a href="/2021/03/21/%E7%97%85%E6%AF%92/#朊粒">朊粒</a></li>
-<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
-<ul>
-<li>
-<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a>（代表）</span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a></span></span>
-</li>
-<li>
-<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a></span><span class="horizontal-list-item"><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/">立克次（氏）体</a></span></span>
-</li>
-</ul>
-</li>
-<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a>、<a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">原虫</a></li>
-</ul>
-<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
-<ul>
-<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
-<li><a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
-<li><em>医学节肢动物</em></li>
-</ul>
-<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
-<dl>
-<dt>共栖（commensalism）</dt>
-<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
-<dt>互利共生（mutualism）</dt>
-<dd>两种生活在一起的生物均获得益处。</dd>
-<dt><mark>寄生</mark>（parasitism）</dt>
-<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
-<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
-</dl>
-<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
-<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
-<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
-<ul>
-<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
-<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
-</ul>
-<dl>
-<dt>世代交替（alternation of generations）</dt>
-<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
-</dl>
-<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
-<dl>
-<dt>机会致病性寄生虫（opportunistic parasite）</dt>
-<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
-</dl>
-<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
-<dl>
-<dt>终宿主（definitive host）</dt>
-<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
-<dt>中间宿主（intermediate host）</dt>
-<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
-<dt>保虫宿主（reservoir host）| 储存宿主</dt>
-<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
-<dt>转续宿主（paratenic host，transport host）</dt>
-<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
-</dl>
-<details class="note success "><summary><p>寄生虫对宿主的作用</p>
-</summary><ol>
-<li><strong>夺取营养</strong>：营养不良、贫血；</li>
-<li><strong>机械性损伤</strong>；</li>
-<li><strong>毒性作用与免疫病理损伤</strong>。</li>
-</ol>
-</details>
-<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
-<ol>
-<li>先天性免疫</li>
-<li>获得性免疫：
-<ol>
-<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
-<li><strong>非消除性免疫</strong>（non-sterilizing immunity）（较常见）：<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span>
-<ol>
-<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的<a href="#"><ins>原虫</ins></a>引起的非消除性免疫，可致<em>临床治愈</em>；</li>
-<li><strong>伴随免疫</strong>（concomitant immunity）：某些<a href="#"><ins>蠕虫</ins></a>引起的非消除性免疫，对再感染的幼虫由一定免疫力，但对体内的成虫没有影响。</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
-<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
-<ol>
-<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
-<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
-<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
-</ol>
-<dl>
-<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
-<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
-</dl>
-<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
-<ol>
-<li>带虫者、慢性感染与隐性感染；</li>
-<li>多寄生现象；</li>
-<li>幼虫移行与幼虫移行症：
-<ul>
-<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
-<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
-<ul>
-<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
-<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
-<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>消化道感染细菌</title>
     <url>/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/</url>
     <content><![CDATA[<dl>
@@ -8083,6 +7956,13 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>产生细胞毒素和一种不耐热肠毒素 → <strong>散发性细菌性肠炎</strong></li>
 <li>症状：腹痛、腹泻、<mark>黏液脓血便（“果酱样便”）甚至黑便</mark>、头痛，病程 5～8 天，可自愈</li>
 </ul>
+<h3 id="变形杆菌"><em>变形杆菌</em> <a class="markdownIt-Anchor" href="#变形杆菌">#</a></h3>
+<p>生物学特性：</p>
+<ul>
+<li>在湿润的固体培养基上呈扩散生长，形成一层波纹状薄膜，称迁徙生长现象</li>
+<li>迅速分解尿素</li>
+<li><a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/?highlight=外斐试验#">外斐试验</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -8512,6 +8392,138 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>病原生物学</title>
+    <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
+    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<span class="horizontal-list"><span class="horizontal-list-item"><em>生物学规律</em></span><span class="horizontal-list-item"><em>致病机制</em></span><span class="horizontal-list-conjunction">及</span><span class="horizontal-list-item"><em>其和宿主之间相互作用</em></span></span>的学科。</p>
+<dl>
+<dt>生物 | 生命体 | 有机体（organism）</dt>
+<dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能再一定程度上适应和影响环境。</dd>
+<dt>病原生物（pathogenic organism）</dt>
+<dd>能给人类、动植物带来疾患的生物。</dd>
+</dl>
+<span id="more"></span>
+<h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
+<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
+<ul>
+<li><strong>非细胞型微生物</strong>（acellular microbe），如<a href="/2021/03/21/%E7%97%85%E6%AF%92/">病毒</a>、<a href="/2021/03/21/%E7%97%85%E6%AF%92/#朊粒">朊粒</a></li>
+<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
+<ul>
+<li>
+<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a>（代表）</span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a></span></span>
+</li>
+<li>
+<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/">立克次（氏）体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a></span></span>
+</li>
+</ul>
+</li>
+<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a>、<a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">原虫</a></li>
+</ul>
+<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
+<ul>
+<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
+<li><a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
+<li><em>医学节肢动物</em></li>
+</ul>
+<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
+<dl>
+<dt>共栖（commensalism）</dt>
+<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
+<dt>互利共生（mutualism）</dt>
+<dd>两种生活在一起的生物均获得益处。</dd>
+<dt><mark>寄生</mark>（parasitism）</dt>
+<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
+<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
+</dl>
+<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
+<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
+<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
+<ul>
+<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
+<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
+</ul>
+<dl>
+<dt>世代交替（alternation of generations）</dt>
+<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
+</dl>
+<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
+<dl>
+<dt>机会致病性寄生虫（opportunistic parasite）</dt>
+<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
+</dl>
+<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
+<dl>
+<dt>终宿主（definitive host）</dt>
+<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>中间宿主（intermediate host）</dt>
+<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>保虫宿主（reservoir host）| 储存宿主</dt>
+<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
+<dt>转续宿主（paratenic host，transport host）</dt>
+<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
+</dl>
+<details class="note success "><summary><p>寄生虫对宿主的作用</p>
+</summary><ol>
+<li><strong>夺取营养</strong>：营养不良、贫血；</li>
+<li><strong>机械性损伤</strong>；</li>
+<li><strong>毒性作用与免疫病理损伤</strong>。</li>
+</ol>
+</details>
+<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
+<ol>
+<li>先天性免疫</li>
+<li>获得性免疫：
+<ol>
+<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
+<li><strong>非消除性免疫</strong>（non-sterilizing immunity）（较常见）：<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span>
+<ol>
+<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的<a href="#"><ins>原虫</ins></a>引起的非消除性免疫，可致<em>临床治愈</em>；</li>
+<li><strong>伴随免疫</strong>（concomitant immunity）：某些<a href="#"><ins>蠕虫</ins></a>引起的非消除性免疫，对再感染的幼虫由一定免疫力，但对体内的成虫没有影响。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
+<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
+<ol>
+<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
+<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
+<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
+</ol>
+<dl>
+<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
+<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
+</dl>
+<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
+<ol>
+<li>带虫者、慢性感染与隐性感染；</li>
+<li>多寄生现象；</li>
+<li>幼虫移行与幼虫移行症：
+<ul>
+<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
+<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
+<ul>
+<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
+<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
+<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -9426,17 +9438,17 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <td style="text-align:center">流行性斑疹伤寒</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>斑疹伤寒立克次体</strong></td>
+<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
 <td style="text-align:center">鼠虱、鼠蚤</td>
-<td style="text-align:center">斑疹热斑疹伤寒/鼠型斑疹伤寒</td>
+<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>恙虫病立克次体</strong></td>
+<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
 <td style="text-align:center">恙螨</td>
 <td style="text-align:center">恙虫病</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>贝纳柯克斯体</strong></td>
+<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
 <td style="text-align:center">蜱</td>
 <td style="text-align:center">Q 热</td>
 </tr>
@@ -9463,7 +9475,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>二分裂繁殖</li>
 <li>含两种核酸</li>
 <li>对多种抗生素敏感</li>
-<li><em>革兰氏染色阴性</em></li>
+<li><ins>革兰氏染色阴性</ins></li>
 </ul>
 </li>
 </ul>
@@ -9474,6 +9486,9 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
 <li>细胞膜：类脂双分子层</li>
 </ul>
+<p>临床诊断：<strong>外斐试验</strong></p>
+<div class="note info titled"><div class='note-title' id='外斐试验' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<strong>变形杆菌</strong> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
+</div>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -10598,326 +10613,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>肝炎病毒</title>
-    <url>/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒</th>
-<th style="text-align:center">核酸类型</th>
-<th style="text-align:center">包膜</th>
-<th style="text-align:center">传播途径</th>
-<th style="text-align:center">慢性肝炎</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="#%E7%94%B2%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="甲型肝炎病毒">HAV</abbr></a></td>
-<td style="text-align:center">+ssRNA</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">粪-口途径</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="#%E4%B9%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="乙型肝炎病毒">HBV</abbr></a></td>
-<td style="text-align:center">dsDNA</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">血液、母婴、性传播</td>
-<td style="text-align:center">+</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="#%E4%B8%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="丙型肝炎病毒">HCV</abbr></a></td>
-<td style="text-align:center">+ssRNA</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">血液、母婴、性传播</td>
-<td style="text-align:center">+</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="#%E4%B8%81%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="丁型肝炎病毒">HDV</abbr></a></td>
-<td style="text-align:center">-ssRNA</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">血液、母婴、性传播</td>
-<td style="text-align:center">+</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="#%E6%88%8A%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="戊型肝炎病毒">HEV</abbr></a></td>
-<td style="text-align:center">+ssRNA</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">粪-口途径</td>
-<td style="text-align:center">-</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-<h2 id="甲型肝炎病毒">甲型肝炎病毒 <a class="markdownIt-Anchor" href="#甲型肝炎病毒">#</a></h2>
-<ul>
-<li>生物学特性：<strong>RNA 无包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li>传染源：患者和隐性感染者</li>
-<li>传播方式：<strong>粪-口途径</strong></li>
-<li>所致疾病：<strong>甲肝</strong>（<strong>传染型肝炎</strong>，为<ins>自限性疾病</ins>）</li>
-</ul>
-</li>
-<li>诊断方法：血清学诊断
-<ul>
-<li>IgM：早期感染诊断指标</li>
-<li>IgG：急性肝炎恢复期后期、隐性感染或疫苗接种</li>
-</ul>
-</li>
-<li>疫苗：减毒活疫苗</li>
-</ul>
-<h2 id="乙型肝炎病毒">乙型肝炎病毒 <a class="markdownIt-Anchor" href="#乙型肝炎病毒">#</a></h2>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<details class="note success "><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
-</summary><ol>
-<li><strong>大球形颗粒</strong>：即 <strong>Dane 颗粒</strong>，为 HBV 的完整<strong>病毒体</strong></li>
-<li><strong>小球形颗粒</strong>：HBV 增殖合成过剩的 <strong><mark>HBsAg</mark></strong>（乙型肝炎病毒的<strong>表面抗原</strong>，即包膜上的糖蛋白）</li>
-<li><strong>管形颗粒</strong>：<strong>小球形颗粒的串联物</strong></li>
-</ol>
-</details>
-<ul>
-<li>形态结构：<strong>核酸为 DNA</strong>，有双层衣壳［<strong>外衣壳</strong>（相当于包膜）、内衣壳］
-<ul>
-<li>外衣壳：
-<ol>
-<li><strong>主蛋白</strong>（即 HBsAg）</li>
-<li><strong>中蛋白</strong>（由 HBsAg、PreS<sub>1</sub> Ag 组成）</li>
-<li><strong>大蛋白</strong>（由 HBsAg、PreS<sub>1</sub> Ag、PreS<sub>2</sub> Ag 组成）</li>
-</ol>
-</li>
-<li>内衣壳：HBcAg、HbeAg</li>
-<li>核心：DNA、DNA 聚合酶</li>
-</ul>
-</li>
-<li>基因组：<strong>双股不完全闭合 DNA</strong></li>
-<li>抵抗力：强，强于甲型肝炎病毒</li>
-</ul>
-<details class="note success "><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
-</summary><p class="align-text-center table-caption ">
-      乙型肝炎病毒基因组的结构及其功能
-    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">区</th>
-<th>基因</th>
-<th>编码蛋白</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>S</strong></td>
-<td><em>S</em>、<em>PreS1</em>、<em>PreS2</em></td>
-<td>HBsAg、PreS1Ag、PreS2Ag</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>C</strong></td>
-<td><em>C</em>、<em>PreC</em></td>
-<td>HBcAg、HBeAg</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>P</strong></td>
-<td><em>P</em></td>
-<td>DNA 聚合酶</td>
-</tr>
-<tr>
-<td style="text-align:center">X</td>
-<td><em>X</em></td>
-<td>HBxAg</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>HBxAg 为反式激活蛋白，是一种致癌蛋白，与原发性肝癌发生发展有关，不作为临床血清学诊断。</p>
-</blockquote>
-</details>
-<details class="note success "><summary><p>HBV 的三个重要抗原及其意义</p>
-</summary><ol>
-<li><strong>HbsAg</strong>：
-<ul>
-<li>划分亚型：adr/adw、ayr/ayw，a 为共同抗原决定簇，d/y、w/r 为亚型决定簇，一对亚型决定簇之间互斥</li>
-<li><strong>意义</strong>：HBV 感染的重要标志</li>
-</ul>
-</li>
-<li><strong>HBcAg</strong>：可在感染的肝细胞表面表达，为 CD8<sup>+</sup>T 细胞作用的靶抗原</li>
-<li><strong>HBeAg</strong>：消长与病毒体及 DNA 聚合酶的消长一致，可作为体内有 HBV 复制及血清具有强感染性的指标</li>
-</ol>
-</details>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>所致疾病：乙型肝炎（血清型肝炎），慢性肝炎 → 肝硬化 → 肝癌</li>
-</ul>
-<details class="note success "><summary><p>HBV 的传染源及传播途径</p>
-</summary><ul>
-<li>传染源：<strong>乙肝患者</strong>和<strong>表面抗原阳性阳性的携带者</strong></li>
-<li>传播途径：
-<ol>
-<li><strong>血液及医源性传播</strong></li>
-<li><strong>垂直传播</strong>（不引起先天畸形）</li>
-<li><strong>性传播</strong></li>
-</ol>
-</li>
-</ul>
-</details>
-<details class="note success "><summary><p>HBV 感染的常见临床表现类型</p>
-</summary><ol>
-<li><strong>急性肝炎</strong>：1% 黄疸性肝炎患者发生重症肝炎</li>
-<li><strong>慢性肝炎</strong>：5%~10% 的 HBV 感染者，其中 10% 转变为肝硬化，并继而发展为肝功能衰竭</li>
-<li><strong>原发性肝细胞癌</strong>：80% 归因于慢性肝炎</li>
-<li><strong>无症状携带者</strong></li>
-</ol>
-<blockquote>
-<p>临床表现主要由肝细胞是否裂解决定。</p>
-</blockquote>
-</details>
-<h3 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h3>
-<ul>
-<li>细胞免疫：CD8<sup>+</sup>T 细胞</li>
-<li>体液免疫：主要依靠<strong>抗-Hbs</strong> 和抗-Hbe，抗-Hbc 可作为 <abbr title="乙型肝炎病毒">HBV</abbr> 感染的指标</li>
-</ul>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<details class="note success "><summary><p>HBV 感染的血清学检测指标及其意义</p>
-</summary><p class="align-text-center table-caption ">
-      两对半抗原抗体检测系统（肝炎五项）
-    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">指标</th>
-<th>单项阳性意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">乙肝表面抗原（HBsAg）</td>
-<td>乙肝病毒抗原感染</td>
-</tr>
-<tr>
-<td style="text-align:center">乙肝表面抗体（HBsAb）</td>
-<td>隐性感染者、急性感染恢复期、疫苗接种者</td>
-</tr>
-<tr>
-<td style="text-align:center">乙肝 e 抗原（HBeAg）</td>
-<td>病毒复制，传染性强</td>
-</tr>
-<tr>
-<td style="text-align:center">乙肝 e 抗体（HBeAb）</td>
-<td>恢复阶段，预后良好</td>
-</tr>
-<tr>
-<td style="text-align:center">乙肝核心抗体（HbcAb）</td>
-<td>IgM：同 HbeAG；IgG：处于<strong>窗口期</strong>（传染性强）或既往感染过</td>
-</tr>
-</tbody>
-</table>
-<p class="align-text-center table-caption ">
-      HBV 抗原抗体结果分析
-    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">HBsAg</th>
-<th style="text-align:center">HBsAb</th>
-<th style="text-align:center">HBeAg</th>
-<th style="text-align:center">HBeAb</th>
-<th style="text-align:center">HbcAb</th>
-<th>结果分析</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td>肝功正常为携带者；肝功异常为患者</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td>同第一条，“大三阳”，传染性最强</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">+</td>
-<td>同第一条，“小三阳”，急性感染趋向恢复</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td>感染过 HBV、处于<strong>窗口期</strong></td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td>接种疫苗、感染过 HBV 并已恢复</td>
-</tr>
-</tbody>
-</table>
-</details>
-<div class="note default "><p>肝炎八项还包括甲肝、丙肝、戊肝各一项。</p>
-</div>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>疫苗：乙型肝炎病毒基因工程疫苗</li>
-<li>紧急预防：抗-HBs 的免疫球蛋白</li>
-</ul>
-<h2 id="丙型肝炎病毒">丙型肝炎病毒 <a class="markdownIt-Anchor" href="#丙型肝炎病毒">#</a></h2>
-<ul>
-<li>形态结构：<strong>RNA 有包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li>所致疾病：丙型肝炎，又称<strong>输血型肝炎</strong></li>
-<li>传染源：患者、病毒携带者</li>
-<li>传播途径：同 <a href="#%E4%B9%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92">乙型肝炎病毒</a></li>
-</ul>
-</li>
-<li><em>免疫性</em>：病毒包膜抗原容易变异，免疫力不牢固</li>
-<li><em>检查方法</em>：检测抗体</li>
-</ul>
-<h2 id="丁型肝炎病毒">丁型肝炎病毒 <a class="markdownIt-Anchor" href="#丁型肝炎病毒">#</a></h2>
-<ul>
-<li>生物学性状：<strong>RNA 有包膜病毒</strong>，自身缺乏合成包膜的基因（即为<strong>缺陷病毒</strong>），其包膜由 <abbr title="乙型肝炎病毒">HBV</abbr>（即其辅助病毒）提供（合成过剩的表面抗原）</li>
-<li>致病性：只发生与 <abbr title="乙型肝炎病毒">HBV</abbr> 感染者，可直接损伤细胞</li>
-</ul>
-<h2 id="戊型肝炎病毒">戊型肝炎病毒 <a class="markdownIt-Anchor" href="#戊型肝炎病毒">#</a></h2>
-<ul>
-<li>生物学特性：<strong>RNA 无包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li>传播方式：<strong>粪-口途径</strong></li>
-<li>所致疾病：<strong>戊型肝炎</strong>，为<ins>人畜共患病</ins></li>
-</ul>
-</li>
-<li>诊断方法：检测抗 <abbr title="戊型肝炎病毒">HEV</abbr> IgM</li>
-<li>疫苗：重组戊肝病毒</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>肿瘤遗传学</title>
     <url>/2021/06/15/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
     <content><![CDATA[<p><i>肿瘤发生发展相关的环境因素和遗传因素、肿瘤细胞的细胞和分子遗传学基础，以及肿瘤发生的遗传学说。</i></p>
@@ -11954,6 +11649,326 @@ C3，在多种辅助因子的参与下激活补体。</p>
       </tags>
   </entry>
   <entry>
+    <title>肝炎病毒</title>
+    <url>/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒</th>
+<th style="text-align:center">核酸类型</th>
+<th style="text-align:center">包膜</th>
+<th style="text-align:center">传播途径</th>
+<th style="text-align:center">慢性肝炎</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="#%E7%94%B2%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="甲型肝炎病毒">HAV</abbr></a></td>
+<td style="text-align:center">+ssRNA</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">粪-口途径</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#%E4%B9%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="乙型肝炎病毒">HBV</abbr></a></td>
+<td style="text-align:center">dsDNA</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">血液、母婴、性传播</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#%E4%B8%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="丙型肝炎病毒">HCV</abbr></a></td>
+<td style="text-align:center">+ssRNA</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">血液、母婴、性传播</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#%E4%B8%81%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="丁型肝炎病毒">HDV</abbr></a></td>
+<td style="text-align:center">-ssRNA</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">血液、母婴、性传播</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#%E6%88%8A%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92"><abbr title="戊型肝炎病毒">HEV</abbr></a></td>
+<td style="text-align:center">+ssRNA</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">粪-口途径</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="甲型肝炎病毒">甲型肝炎病毒 <a class="markdownIt-Anchor" href="#甲型肝炎病毒">#</a></h2>
+<ul>
+<li>生物学特性：<strong>RNA 无包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li>传染源：患者和隐性感染者</li>
+<li>传播方式：<strong>粪-口途径</strong></li>
+<li>所致疾病：<strong>甲肝</strong>（<strong>传染型肝炎</strong>，为<ins>自限性疾病</ins>）</li>
+</ul>
+</li>
+<li>诊断方法：血清学诊断
+<ul>
+<li>IgM：早期感染诊断指标</li>
+<li>IgG：急性肝炎恢复期后期、隐性感染或疫苗接种</li>
+</ul>
+</li>
+<li>疫苗：减毒活疫苗</li>
+</ul>
+<h2 id="乙型肝炎病毒">乙型肝炎病毒 <a class="markdownIt-Anchor" href="#乙型肝炎病毒">#</a></h2>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<details class="note success "><summary><p>HBV 感染者血清中常见的颗粒类型及意义</p>
+</summary><ol>
+<li><strong>大球形颗粒</strong>：即 <strong>Dane 颗粒</strong>，为 HBV 的完整<strong>病毒体</strong></li>
+<li><strong>小球形颗粒</strong>：HBV 增殖合成过剩的 <strong><mark>HBsAg</mark></strong>（乙型肝炎病毒的<strong>表面抗原</strong>，即包膜上的糖蛋白）</li>
+<li><strong>管形颗粒</strong>：<strong>小球形颗粒的串联物</strong></li>
+</ol>
+</details>
+<ul>
+<li>形态结构：<strong>核酸为 DNA</strong>，有双层衣壳［<strong>外衣壳</strong>（相当于包膜）、内衣壳］
+<ul>
+<li>外衣壳：
+<ol>
+<li><strong>主蛋白</strong>（即 HBsAg）</li>
+<li><strong>中蛋白</strong>（由 HBsAg、PreS<sub>1</sub> Ag 组成）</li>
+<li><strong>大蛋白</strong>（由 HBsAg、PreS<sub>1</sub> Ag、PreS<sub>2</sub> Ag 组成）</li>
+</ol>
+</li>
+<li>内衣壳：HBcAg、HbeAg</li>
+<li>核心：DNA、DNA 聚合酶</li>
+</ul>
+</li>
+<li>基因组：<strong>双股不完全闭合 DNA</strong></li>
+<li>抵抗力：强，强于甲型肝炎病毒</li>
+</ul>
+<details class="note success "><summary><p>乙型肝炎病毒基因组的结构及其功能</p>
+</summary><p class="align-text-center table-caption ">
+      乙型肝炎病毒基因组的结构及其功能
+    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">区</th>
+<th>基因</th>
+<th>编码蛋白</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>S</strong></td>
+<td><em>S</em>、<em>PreS1</em>、<em>PreS2</em></td>
+<td>HBsAg、PreS1Ag、PreS2Ag</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>C</strong></td>
+<td><em>C</em>、<em>PreC</em></td>
+<td>HBcAg、HBeAg</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>P</strong></td>
+<td><em>P</em></td>
+<td>DNA 聚合酶</td>
+</tr>
+<tr>
+<td style="text-align:center">X</td>
+<td><em>X</em></td>
+<td>HBxAg</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>HBxAg 为反式激活蛋白，是一种致癌蛋白，与原发性肝癌发生发展有关，不作为临床血清学诊断。</p>
+</blockquote>
+</details>
+<details class="note success "><summary><p>HBV 的三个重要抗原及其意义</p>
+</summary><ol>
+<li><strong>HbsAg</strong>：
+<ul>
+<li>划分亚型：adr/adw、ayr/ayw，a 为共同抗原决定簇，d/y、w/r 为亚型决定簇，一对亚型决定簇之间互斥</li>
+<li><strong>意义</strong>：HBV 感染的重要标志</li>
+</ul>
+</li>
+<li><strong>HBcAg</strong>：可在感染的肝细胞表面表达，为 CD8<sup>+</sup>T 细胞作用的靶抗原</li>
+<li><strong>HBeAg</strong>：消长与病毒体及 DNA 聚合酶的消长一致，可作为体内有 HBV 复制及血清具有强感染性的指标</li>
+</ol>
+</details>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>所致疾病：乙型肝炎（血清型肝炎），慢性肝炎 → 肝硬化 → 肝癌</li>
+</ul>
+<details class="note success "><summary><p>HBV 的传染源及传播途径</p>
+</summary><ul>
+<li>传染源：<strong>乙肝患者</strong>和<strong>表面抗原阳性阳性的携带者</strong></li>
+<li>传播途径：
+<ol>
+<li><strong>血液及医源性传播</strong></li>
+<li><strong>垂直传播</strong>（不引起先天畸形）</li>
+<li><strong>性传播</strong></li>
+</ol>
+</li>
+</ul>
+</details>
+<details class="note success "><summary><p>HBV 感染的常见临床表现类型</p>
+</summary><ol>
+<li><strong>急性肝炎</strong>：1% 黄疸性肝炎患者发生重症肝炎</li>
+<li><strong>慢性肝炎</strong>：5%~10% 的 HBV 感染者，其中 10% 转变为肝硬化，并继而发展为肝功能衰竭</li>
+<li><strong>原发性肝细胞癌</strong>：80% 归因于慢性肝炎</li>
+<li><strong>无症状携带者</strong></li>
+</ol>
+<blockquote>
+<p>临床表现主要由肝细胞是否裂解决定。</p>
+</blockquote>
+</details>
+<h3 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h3>
+<ul>
+<li>细胞免疫：CD8<sup>+</sup>T 细胞</li>
+<li>体液免疫：主要依靠<strong>抗-Hbs</strong> 和抗-Hbe，抗-Hbc 可作为 <abbr title="乙型肝炎病毒">HBV</abbr> 感染的指标</li>
+</ul>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<details class="note success "><summary><p>HBV 感染的血清学检测指标及其意义</p>
+</summary><p class="align-text-center table-caption ">
+      两对半抗原抗体检测系统（肝炎五项）
+    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">指标</th>
+<th>单项阳性意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">乙肝表面抗原（HBsAg）</td>
+<td>乙肝病毒抗原感染</td>
+</tr>
+<tr>
+<td style="text-align:center">乙肝表面抗体（HBsAb）</td>
+<td>隐性感染者、急性感染恢复期、疫苗接种者</td>
+</tr>
+<tr>
+<td style="text-align:center">乙肝 e 抗原（HBeAg）</td>
+<td>病毒复制，传染性强</td>
+</tr>
+<tr>
+<td style="text-align:center">乙肝 e 抗体（HBeAb）</td>
+<td>恢复阶段，预后良好</td>
+</tr>
+<tr>
+<td style="text-align:center">乙肝核心抗体（HbcAb）</td>
+<td>IgM：同 HbeAG；IgG：处于<strong>窗口期</strong>（传染性强）或既往感染过</td>
+</tr>
+</tbody>
+</table>
+<p class="align-text-center table-caption ">
+      HBV 抗原抗体结果分析
+    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HBsAg</th>
+<th style="text-align:center">HBsAb</th>
+<th style="text-align:center">HBeAg</th>
+<th style="text-align:center">HBeAb</th>
+<th style="text-align:center">HbcAb</th>
+<th>结果分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>肝功正常为携带者；肝功异常为患者</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+<td>同第一条，“大三阳”，传染性最强</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td>同第一条，“小三阳”，急性感染趋向恢复</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+<td>感染过 HBV、处于<strong>窗口期</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>接种疫苗、感染过 HBV 并已恢复</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="note default "><p>肝炎八项还包括甲肝、丙肝、戊肝各一项。</p>
+</div>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>疫苗：乙型肝炎病毒基因工程疫苗</li>
+<li>紧急预防：抗-HBs 的免疫球蛋白</li>
+</ul>
+<h2 id="丙型肝炎病毒">丙型肝炎病毒 <a class="markdownIt-Anchor" href="#丙型肝炎病毒">#</a></h2>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li>所致疾病：丙型肝炎，又称<strong>输血型肝炎</strong></li>
+<li>传染源：患者、病毒携带者</li>
+<li>传播途径：同 <a href="#%E4%B9%99%E5%9E%8B%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92">乙型肝炎病毒</a></li>
+</ul>
+</li>
+<li><em>免疫性</em>：病毒包膜抗原容易变异，免疫力不牢固</li>
+<li><em>检查方法</em>：检测抗体</li>
+</ul>
+<h2 id="丁型肝炎病毒">丁型肝炎病毒 <a class="markdownIt-Anchor" href="#丁型肝炎病毒">#</a></h2>
+<ul>
+<li>生物学性状：<strong>RNA 有包膜病毒</strong>，自身缺乏合成包膜的基因（即为<strong>缺陷病毒</strong>），其包膜由 <abbr title="乙型肝炎病毒">HBV</abbr>（即其辅助病毒）提供（合成过剩的表面抗原）</li>
+<li>致病性：只发生与 <abbr title="乙型肝炎病毒">HBV</abbr> 感染者，可直接损伤细胞</li>
+</ul>
+<h2 id="戊型肝炎病毒">戊型肝炎病毒 <a class="markdownIt-Anchor" href="#戊型肝炎病毒">#</a></h2>
+<ul>
+<li>生物学特性：<strong>RNA 无包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li>传播方式：<strong>粪-口途径</strong></li>
+<li>所致疾病：<strong>戊型肝炎</strong>，为<ins>人畜共患病</ins></li>
+</ul>
+</li>
+<li>诊断方法：检测抗 <abbr title="戊型肝炎病毒">HEV</abbr> IgM</li>
+<li>疫苗：重组戊肝病毒</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>配子的发生与受精</title>
     <url>/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/</url>
     <content><![CDATA[<p>配子（生殖细胞）发生的主要时相：</p>
@@ -12392,6 +12407,627 @@ plate）。<br/>
 <p>Enjoy it!</p>
 <h2 id="update">Update <a class="markdownIt-Anchor" href="#update">#</a></h2>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/<span class="built_in">source</span>/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.js</url>
+    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+"use strict";
+
+// eslint-disable-next-line no-var
+var FontInspector = (function FontInspectorClosure() {
+  let fonts;
+  let active = false;
+  const fontAttribute = "data-font-name";
+  function removeSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "";
+    }
+  }
+  function resetSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "debuggerHideText";
+    }
+  }
+  function selectFont(fontName, show) {
+    const divs = document.querySelectorAll(
+      `span[${fontAttribute}=${fontName}]`
+    );
+    for (const div of divs) {
+      div.className = show ? "debuggerShowText" : "debuggerHideText";
+    }
+  }
+  function textLayerClick(e) {
+    if (
+      !e.target.dataset.fontName ||
+      e.target.tagName.toUpperCase() !== "SPAN"
+    ) {
+      return;
+    }
+    const fontName = e.target.dataset.fontName;
+    const selects = document.getElementsByTagName("input");
+    for (let i = 0; i < selects.length; ++i) {
+      const select = selects[i];
+      if (select.dataset.fontName !== fontName) {
+        continue;
+      }
+      select.checked = !select.checked;
+      selectFont(fontName, select.checked);
+      select.scrollIntoView();
+    }
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "FontInspector",
+    name: "Font Inspector",
+    panel: null,
+    manager: null,
+    init: function init(pdfjsLib) {
+      const panel = this.panel;
+      const tmp = document.createElement("button");
+      tmp.addEventListener("click", resetSelection);
+      tmp.textContent = "Refresh";
+      panel.appendChild(tmp);
+
+      fonts = document.createElement("div");
+      panel.appendChild(fonts);
+    },
+    cleanup: function cleanup() {
+      fonts.textContent = "";
+    },
+    enabled: false,
+    get active() {
+      return active;
+    },
+    set active(value) {
+      active = value;
+      if (active) {
+        document.body.addEventListener("click", textLayerClick, true);
+        resetSelection();
+      } else {
+        document.body.removeEventListener("click", textLayerClick, true);
+        removeSelection();
+      }
+    },
+    // FontInspector specific functions.
+    fontAdded: function fontAdded(fontObj, url) {
+      function properties(obj, list) {
+        const moreInfo = document.createElement("table");
+        for (let i = 0; i < list.length; i++) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = list[i];
+          tr.appendChild(td1);
+          const td2 = document.createElement("td");
+          td2.textContent = obj[list[i]].toString();
+          tr.appendChild(td2);
+          moreInfo.appendChild(tr);
+        }
+        return moreInfo;
+      }
+      const moreInfo = properties(fontObj, ["name", "type"]);
+      const fontName = fontObj.loadedName;
+      const font = document.createElement("div");
+      const name = document.createElement("span");
+      name.textContent = fontName;
+      const download = document.createElement("a");
+      if (url) {
+        url = /url\(['"]?([^)"']+)/.exec(url);
+        download.href = url[1];
+      } else if (fontObj.data) {
+        download.href = URL.createObjectURL(
+          new Blob([fontObj.data], { type: fontObj.mimeType })
+        );
+      }
+      download.textContent = "Download";
+      const logIt = document.createElement("a");
+      logIt.href = "";
+      logIt.textContent = "Log";
+      logIt.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(fontObj);
+      });
+      const select = document.createElement("input");
+      select.setAttribute("type", "checkbox");
+      select.dataset.fontName = fontName;
+      select.addEventListener("click", function () {
+        selectFont(fontName, select.checked);
+      });
+      font.appendChild(select);
+      font.appendChild(name);
+      font.appendChild(document.createTextNode(" "));
+      font.appendChild(download);
+      font.appendChild(document.createTextNode(" "));
+      font.appendChild(logIt);
+      font.appendChild(moreInfo);
+      fonts.appendChild(font);
+      // Somewhat of a hack, should probably add a hook for when the text layer
+      // is done rendering.
+      setTimeout(() => {
+        if (this.active) {
+          resetSelection();
+        }
+      }, 2000);
+    },
+  };
+})();
+
+let opMap;
+
+// Manages all the page steppers.
+//
+// eslint-disable-next-line no-var
+var StepperManager = (function StepperManagerClosure() {
+  let steppers = [];
+  let stepperDiv = null;
+  let stepperControls = null;
+  let stepperChooser = null;
+  let breakPoints = Object.create(null);
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stepper",
+    name: "Stepper",
+    panel: null,
+    manager: null,
+    init: function init(pdfjsLib) {
+      const self = this;
+      stepperControls = document.createElement("div");
+      stepperChooser = document.createElement("select");
+      stepperChooser.addEventListener("change", function (event) {
+        self.selectStepper(this.value);
+      });
+      stepperControls.appendChild(stepperChooser);
+      stepperDiv = document.createElement("div");
+      this.panel.appendChild(stepperControls);
+      this.panel.appendChild(stepperDiv);
+      if (sessionStorage.getItem("pdfjsBreakPoints")) {
+        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
+      }
+
+      opMap = Object.create(null);
+      for (const key in pdfjsLib.OPS) {
+        opMap[pdfjsLib.OPS[key]] = key;
+      }
+    },
+    cleanup: function cleanup() {
+      stepperChooser.textContent = "";
+      stepperDiv.textContent = "";
+      steppers = [];
+    },
+    enabled: false,
+    active: false,
+    // Stepper specific functions.
+    create: function create(pageIndex) {
+      const debug = document.createElement("div");
+      debug.id = "stepper" + pageIndex;
+      debug.hidden = true;
+      debug.className = "stepper";
+      stepperDiv.appendChild(debug);
+      const b = document.createElement("option");
+      b.textContent = "Page " + (pageIndex + 1);
+      b.value = pageIndex;
+      stepperChooser.appendChild(b);
+      const initBreakPoints = breakPoints[pageIndex] || [];
+      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
+      steppers.push(stepper);
+      if (steppers.length === 1) {
+        this.selectStepper(pageIndex, false);
+      }
+      return stepper;
+    },
+    selectStepper: function selectStepper(pageIndex, selectPanel) {
+      let i;
+      pageIndex = pageIndex | 0;
+      if (selectPanel) {
+        this.manager.selectPanel(this);
+      }
+      for (i = 0; i < steppers.length; ++i) {
+        const stepper = steppers[i];
+        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
+      }
+      const options = stepperChooser.options;
+      for (i = 0; i < options.length; ++i) {
+        const option = options[i];
+        option.selected = (option.value | 0) === pageIndex;
+      }
+    },
+    saveBreakPoints: function saveBreakPoints(pageIndex, bps) {
+      breakPoints[pageIndex] = bps;
+      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
+    },
+  };
+})();
+
+// The stepper for each page's operatorList.
+const Stepper = (function StepperClosure() {
+  // Shorter way to create element and optionally set textContent.
+  function c(tag, textContent) {
+    const d = document.createElement(tag);
+    if (textContent) {
+      d.textContent = textContent;
+    }
+    return d;
+  }
+
+  function simplifyArgs(args) {
+    if (typeof args === "string") {
+      const MAX_STRING_LENGTH = 75;
+      return args.length <= MAX_STRING_LENGTH
+        ? args
+        : args.substring(0, MAX_STRING_LENGTH) + "...";
+    }
+    if (typeof args !== "object" || args === null) {
+      return args;
+    }
+    if ("length" in args) {
+      // array
+      const MAX_ITEMS = 10,
+        simpleArgs = [];
+      let i, ii;
+      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i < ii; i++) {
+        simpleArgs.push(simplifyArgs(args[i]));
+      }
+      if (i < args.length) {
+        simpleArgs.push("...");
+      }
+      return simpleArgs;
+    }
+    const simpleObj = {};
+    for (const key in args) {
+      simpleObj[key] = simplifyArgs(args[key]);
+    }
+    return simpleObj;
+  }
+
+  // eslint-disable-next-line no-shadow
+  class Stepper {
+    constructor(panel, pageIndex, initialBreakPoints) {
+      this.panel = panel;
+      this.breakPoint = 0;
+      this.nextBreakPoint = null;
+      this.pageIndex = pageIndex;
+      this.breakPoints = initialBreakPoints;
+      this.currentIdx = -1;
+      this.operatorListIdx = 0;
+    }
+
+    init(operatorList) {
+      const panel = this.panel;
+      const content = c("div", "c=continue, s=step");
+      const table = c("table");
+      content.appendChild(table);
+      table.cellSpacing = 0;
+      const headerRow = c("tr");
+      table.appendChild(headerRow);
+      headerRow.appendChild(c("th", "Break"));
+      headerRow.appendChild(c("th", "Idx"));
+      headerRow.appendChild(c("th", "fn"));
+      headerRow.appendChild(c("th", "args"));
+      panel.appendChild(content);
+      this.table = table;
+      this.updateOperatorList(operatorList);
+    }
+
+    updateOperatorList(operatorList) {
+      const self = this;
+
+      function cboxOnClick() {
+        const x = +this.dataset.idx;
+        if (this.checked) {
+          self.breakPoints.push(x);
+        } else {
+          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
+        }
+        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
+      }
+
+      const MAX_OPERATORS_COUNT = 15000;
+      if (this.operatorListIdx > MAX_OPERATORS_COUNT) {
+        return;
+      }
+
+      const chunk = document.createDocumentFragment();
+      const operatorsToDisplay = Math.min(
+        MAX_OPERATORS_COUNT,
+        operatorList.fnArray.length
+      );
+      for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
+        const line = c("tr");
+        line.className = "line";
+        line.dataset.idx = i;
+        chunk.appendChild(line);
+        const checked = this.breakPoints.includes(i);
+        const args = operatorList.argsArray[i] || [];
+
+        const breakCell = c("td");
+        const cbox = c("input");
+        cbox.type = "checkbox";
+        cbox.className = "points";
+        cbox.checked = checked;
+        cbox.dataset.idx = i;
+        cbox.onclick = cboxOnClick;
+
+        breakCell.appendChild(cbox);
+        line.appendChild(breakCell);
+        line.appendChild(c("td", i.toString()));
+        const fn = opMap[operatorList.fnArray[i]];
+        let decArgs = args;
+        if (fn === "showText") {
+          const glyphs = args[0];
+          const newArgs = [];
+          let str = [];
+          for (let j = 0; j < glyphs.length; j++) {
+            const glyph = glyphs[j];
+            if (typeof glyph === "object" && glyph !== null) {
+              str.push(glyph.fontChar);
+            } else {
+              if (str.length > 0) {
+                newArgs.push(str.join(""));
+                str = [];
+              }
+              newArgs.push(glyph); // null or number
+            }
+          }
+          if (str.length > 0) {
+            newArgs.push(str.join(""));
+          }
+          decArgs = [newArgs];
+        }
+        line.appendChild(c("td", fn));
+        line.appendChild(c("td", JSON.stringify(simplifyArgs(decArgs))));
+      }
+      if (operatorsToDisplay < operatorList.fnArray.length) {
+        const lastCell = c("td", "...");
+        lastCell.colspan = 4;
+        chunk.appendChild(lastCell);
+      }
+      this.operatorListIdx = operatorList.fnArray.length;
+      this.table.appendChild(chunk);
+    }
+
+    getNextBreakPoint() {
+      this.breakPoints.sort(function (a, b) {
+        return a - b;
+      });
+      for (let i = 0; i < this.breakPoints.length; i++) {
+        if (this.breakPoints[i] > this.currentIdx) {
+          return this.breakPoints[i];
+        }
+      }
+      return null;
+    }
+
+    breakIt(idx, callback) {
+      StepperManager.selectStepper(this.pageIndex, true);
+      this.currentIdx = idx;
+
+      const listener = evt => {
+        switch (evt.keyCode) {
+          case 83: // step
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.currentIdx + 1;
+            this.goTo(-1);
+            callback();
+            break;
+          case 67: // continue
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.getNextBreakPoint();
+            this.goTo(-1);
+            callback();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      this.goTo(idx);
+    }
+
+    goTo(idx) {
+      const allRows = this.panel.getElementsByClassName("line");
+      for (let x = 0, xx = allRows.length; x < xx; ++x) {
+        const row = allRows[x];
+        if ((row.dataset.idx | 0) === idx) {
+          row.style.backgroundColor = "rgb(251,250,207)";
+          row.scrollIntoView();
+        } else {
+          row.style.backgroundColor = null;
+        }
+      }
+    }
+  }
+  return Stepper;
+})();
+
+// eslint-disable-next-line no-var
+var Stats = (function Stats() {
+  let stats = [];
+  function clear(node) {
+    while (node.hasChildNodes()) {
+      node.removeChild(node.lastChild);
+    }
+  }
+  function getStatIndex(pageNumber) {
+    for (let i = 0, ii = stats.length; i < ii; ++i) {
+      if (stats[i].pageNumber === pageNumber) {
+        return i;
+      }
+    }
+    return false;
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stats",
+    name: "Stats",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {},
+    enabled: false,
+    active: false,
+    // Stats specific functions.
+    add(pageNumber, stat) {
+      if (!stat) {
+        return;
+      }
+      const statsIndex = getStatIndex(pageNumber);
+      if (statsIndex !== false) {
+        const b = stats[statsIndex];
+        this.panel.removeChild(b.div);
+        stats.splice(statsIndex, 1);
+      }
+      const wrapper = document.createElement("div");
+      wrapper.className = "stats";
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = "Page: " + pageNumber;
+      const statsDiv = document.createElement("div");
+      statsDiv.textContent = stat.toString();
+      wrapper.appendChild(title);
+      wrapper.appendChild(statsDiv);
+      stats.push({ pageNumber, div: wrapper });
+      stats.sort(function (a, b) {
+        return a.pageNumber - b.pageNumber;
+      });
+      clear(this.panel);
+      for (let i = 0, ii = stats.length; i < ii; ++i) {
+        this.panel.appendChild(stats[i].div);
+      }
+    },
+    cleanup() {
+      stats = [];
+      clear(this.panel);
+    },
+  };
+})();
+
+// Manages all the debugging tools.
+window.PDFBug = (function PDFBugClosure() {
+  const panelWidth = 300;
+  const buttons = [];
+  let activePanel = null;
+
+  return {
+    tools: [FontInspector, StepperManager, Stats],
+    enable(ids) {
+      const all = ids.length === 1 && ids[0] === "all";
+      const tools = this.tools;
+      for (let i = 0; i < tools.length; ++i) {
+        const tool = tools[i];
+        if (all || ids.includes(tool.id)) {
+          tool.enabled = true;
+        }
+      }
+      if (!all) {
+        // Sort the tools by the order they are enabled.
+        tools.sort(function (a, b) {
+          let indexA = ids.indexOf(a.id);
+          indexA = indexA < 0 ? tools.length : indexA;
+          let indexB = ids.indexOf(b.id);
+          indexB = indexB < 0 ? tools.length : indexB;
+          return indexA - indexB;
+        });
+      }
+    },
+    init(pdfjsLib, container) {
+      /*
+       * Basic Layout:
+       * PDFBug
+       *  Controls
+       *  Panels
+       *    Panel
+       *    Panel
+       *    ...
+       */
+      const ui = document.createElement("div");
+      ui.id = "PDFBug";
+
+      const controls = document.createElement("div");
+      controls.setAttribute("class", "controls");
+      ui.appendChild(controls);
+
+      const panels = document.createElement("div");
+      panels.setAttribute("class", "panels");
+      ui.appendChild(panels);
+
+      container.appendChild(ui);
+      container.style.right = panelWidth + "px";
+
+      // Initialize all the debugging tools.
+      const tools = this.tools;
+      const self = this;
+      for (let i = 0; i < tools.length; ++i) {
+        const tool = tools[i];
+        const panel = document.createElement("div");
+        const panelButton = document.createElement("button");
+        panelButton.textContent = tool.name;
+        panelButton.addEventListener(
+          "click",
+          (function (selected) {
+            return function (event) {
+              event.preventDefault();
+              self.selectPanel(selected);
+            };
+          })(i)
+        );
+        controls.appendChild(panelButton);
+        panels.appendChild(panel);
+        tool.panel = panel;
+        tool.manager = this;
+        if (tool.enabled) {
+          tool.init(pdfjsLib);
+        } else {
+          panel.textContent =
+            tool.name +
+            " is disabled. To enable add " +
+            ' "' +
+            tool.id +
+            '" to the pdfBug parameter ' +
+            "and refresh (separate multiple by commas).";
+        }
+        buttons.push(panelButton);
+      }
+      this.selectPanel(0);
+    },
+    cleanup() {
+      for (let i = 0, ii = this.tools.length; i < ii; i++) {
+        if (this.tools[i].enabled) {
+          this.tools[i].cleanup();
+        }
+      }
+    },
+    selectPanel(index) {
+      if (typeof index !== "number") {
+        index = this.tools.indexOf(index);
+      }
+      if (index === activePanel) {
+        return;
+      }
+      activePanel = index;
+      const tools = this.tools;
+      for (let j = 0; j < tools.length; ++j) {
+        const isActive = j === index;
+        buttons[j].classList.toggle("active", isActive);
+        tools[j].active = isActive;
+        tools[j].panel.hidden = !isActive;
+      }
+    },
+  };
+})();
 ]]></content>
   </entry>
   <entry>
@@ -26948,623 +27584,406 @@ const pdfjsBuild = '3538ef0';
   </entry>
   <entry>
     <title></title>
-    <url>/lib/pdf/web/debugger.js</url>
-    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
 
-"use strict";
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-// eslint-disable-next-line no-var
-var FontInspector = (function FontInspectorClosure() {
-  let fonts;
-  let active = false;
-  const fontAttribute = "data-font-name";
-  function removeSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "";
-    }
-  }
-  function resetSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "debuggerHideText";
-    }
-  }
-  function selectFont(fontName, show) {
-    const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
-    );
-    for (const div of divs) {
-      div.className = show ? "debuggerShowText" : "debuggerHideText";
-    }
-  }
-  function textLayerClick(e) {
-    if (
-      !e.target.dataset.fontName ||
-      e.target.tagName.toUpperCase() !== "SPAN"
-    ) {
-      return;
-    }
-    const fontName = e.target.dataset.fontName;
-    const selects = document.getElementsByTagName("input");
-    for (let i = 0; i < selects.length; ++i) {
-      const select = selects[i];
-      if (select.dataset.fontName !== fontName) {
-        continue;
-      }
-      select.checked = !select.checked;
-      selectFont(fontName, select.checked);
-      select.scrollIntoView();
-    }
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "FontInspector",
-    name: "Font Inspector",
-    panel: null,
-    manager: null,
-    init: function init(pdfjsLib) {
-      const panel = this.panel;
-      const tmp = document.createElement("button");
-      tmp.addEventListener("click", resetSelection);
-      tmp.textContent = "Refresh";
-      panel.appendChild(tmp);
+    http://www.apache.org/licenses/LICENSE-2.0
 
-      fonts = document.createElement("div");
-      panel.appendChild(fonts);
-    },
-    cleanup: function cleanup() {
-      fonts.textContent = "";
-    },
-    enabled: false,
-    get active() {
-      return active;
-    },
-    set active(value) {
-      active = value;
-      if (active) {
-        document.body.addEventListener("click", textLayerClick, true);
-        resetSelection();
-      } else {
-        document.body.removeEventListener("click", textLayerClick, true);
-        removeSelection();
-      }
-    },
-    // FontInspector specific functions.
-    fontAdded: function fontAdded(fontObj, url) {
-      function properties(obj, list) {
-        const moreInfo = document.createElement("table");
-        for (let i = 0; i < list.length; i++) {
-          const tr = document.createElement("tr");
-          const td1 = document.createElement("td");
-          td1.textContent = list[i];
-          tr.appendChild(td1);
-          const td2 = document.createElement("td");
-          td2.textContent = obj[list[i]].toString();
-          tr.appendChild(td2);
-          moreInfo.appendChild(tr);
-        }
-        return moreInfo;
-      }
-      const moreInfo = properties(fontObj, ["name", "type"]);
-      const fontName = fontObj.loadedName;
-      const font = document.createElement("div");
-      const name = document.createElement("span");
-      name.textContent = fontName;
-      const download = document.createElement("a");
-      if (url) {
-        url = /url\(['"]?([^)"']+)/.exec(url);
-        download.href = url[1];
-      } else if (fontObj.data) {
-        download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimeType })
-        );
-      }
-      download.textContent = "Download";
-      const logIt = document.createElement("a");
-      logIt.href = "";
-      logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log(fontObj);
-      });
-      const select = document.createElement("input");
-      select.setAttribute("type", "checkbox");
-      select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
-        selectFont(fontName, select.checked);
-      });
-      font.appendChild(select);
-      font.appendChild(name);
-      font.appendChild(document.createTextNode(" "));
-      font.appendChild(download);
-      font.appendChild(document.createTextNode(" "));
-      font.appendChild(logIt);
-      font.appendChild(moreInfo);
-      fonts.appendChild(font);
-      // Somewhat of a hack, should probably add a hook for when the text layer
-      // is done rendering.
-      setTimeout(() => {
-        if (this.active) {
-          resetSelection();
-        }
-      }, 2000);
-    },
-  };
-})();
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
-let opMap;
+Adobe CMap resources are covered by their own copyright but the same license:
 
-// Manages all the page steppers.
-//
-// eslint-disable-next-line no-var
-var StepperManager = (function StepperManagerClosure() {
-  let steppers = [];
-  let stepperDiv = null;
-  let stepperControls = null;
-  let stepperChooser = null;
-  let breakPoints = Object.create(null);
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stepper",
-    name: "Stepper",
-    panel: null,
-    manager: null,
-    init: function init(pdfjsLib) {
-      const self = this;
-      stepperControls = document.createElement("div");
-      stepperChooser = document.createElement("select");
-      stepperChooser.addEventListener("change", function (event) {
-        self.selectStepper(this.value);
-      });
-      stepperControls.appendChild(stepperChooser);
-      stepperDiv = document.createElement("div");
-      this.panel.appendChild(stepperControls);
-      this.panel.appendChild(stepperDiv);
-      if (sessionStorage.getItem("pdfjsBreakPoints")) {
-        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
-      }
+    Copyright 1990-2015 Adobe Systems Incorporated.
 
-      opMap = Object.create(null);
-      for (const key in pdfjsLib.OPS) {
-        opMap[pdfjsLib.OPS[key]] = key;
-      }
-    },
-    cleanup: function cleanup() {
-      stepperChooser.textContent = "";
-      stepperDiv.textContent = "";
-      steppers = [];
-    },
-    enabled: false,
-    active: false,
-    // Stepper specific functions.
-    create: function create(pageIndex) {
-      const debug = document.createElement("div");
-      debug.id = "stepper" + pageIndex;
-      debug.hidden = true;
-      debug.className = "stepper";
-      stepperDiv.appendChild(debug);
-      const b = document.createElement("option");
-      b.textContent = "Page " + (pageIndex + 1);
-      b.value = pageIndex;
-      stepperChooser.appendChild(b);
-      const initBreakPoints = breakPoints[pageIndex] || [];
-      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
-      steppers.push(stepper);
-      if (steppers.length === 1) {
-        this.selectStepper(pageIndex, false);
-      }
-      return stepper;
-    },
-    selectStepper: function selectStepper(pageIndex, selectPanel) {
-      let i;
-      pageIndex = pageIndex | 0;
-      if (selectPanel) {
-        this.manager.selectPanel(this);
-      }
-      for (i = 0; i < steppers.length; ++i) {
-        const stepper = steppers[i];
-        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
-      }
-      const options = stepperChooser.options;
-      for (i = 0; i < options.length; ++i) {
-        const option = options[i];
-        option.selected = (option.value | 0) === pageIndex;
-      }
-    },
-    saveBreakPoints: function saveBreakPoints(pageIndex, bps) {
-      breakPoints[pageIndex] = bps;
-      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
-    },
-  };
-})();
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
 
-// The stepper for each page's operatorList.
-const Stepper = (function StepperClosure() {
-  // Shorter way to create element and optionally set textContent.
-  function c(tag, textContent) {
-    const d = document.createElement(tag);
-    if (textContent) {
-      d.textContent = textContent;
-    }
-    return d;
-  }
 
-  function simplifyArgs(args) {
-    if (typeof args === "string") {
-      const MAX_STRING_LENGTH = 75;
-      return args.length <= MAX_STRING_LENGTH
-        ? args
-        : args.substring(0, MAX_STRING_LENGTH) + "...";
-    }
-    if (typeof args !== "object" || args === null) {
-      return args;
-    }
-    if ("length" in args) {
-      // array
-      const MAX_ITEMS = 10,
-        simpleArgs = [];
-      let i, ii;
-      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i < ii; i++) {
-        simpleArgs.push(simplifyArgs(args[i]));
-      }
-      if (i < args.length) {
-        simpleArgs.push("...");
-      }
-      return simpleArgs;
-    }
-    const simpleObj = {};
-    for (const key in args) {
-      simpleObj[key] = simplifyArgs(args[key]);
-    }
-    return simpleObj;
-  }
+    <link rel="stylesheet" href="viewer.css">
 
-  // eslint-disable-next-line no-shadow
-  class Stepper {
-    constructor(panel, pageIndex, initialBreakPoints) {
-      this.panel = panel;
-      this.breakPoint = 0;
-      this.nextBreakPoint = null;
-      this.pageIndex = pageIndex;
-      this.breakPoints = initialBreakPoints;
-      this.currentIdx = -1;
-      this.operatorListIdx = 0;
-    }
 
-    init(operatorList) {
-      const panel = this.panel;
-      const content = c("div", "c=continue, s=step");
-      const table = c("table");
-      content.appendChild(table);
-      table.cellSpacing = 0;
-      const headerRow = c("tr");
-      table.appendChild(headerRow);
-      headerRow.appendChild(c("th", "Break"));
-      headerRow.appendChild(c("th", "Idx"));
-      headerRow.appendChild(c("th", "fn"));
-      headerRow.appendChild(c("th", "args"));
-      panel.appendChild(content);
-      this.table = table;
-      this.updateOperatorList(operatorList);
-    }
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
 
-    updateOperatorList(operatorList) {
-      const self = this;
 
-      function cboxOnClick() {
-        const x = +this.dataset.idx;
-        if (this.checked) {
-          self.breakPoints.push(x);
-        } else {
-          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
-        }
-        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
-      }
+  <script src="viewer.js"></script>
 
-      const MAX_OPERATORS_COUNT = 15000;
-      if (this.operatorListIdx > MAX_OPERATORS_COUNT) {
-        return;
-      }
+  </head>
 
-      const chunk = document.createDocumentFragment();
-      const operatorsToDisplay = Math.min(
-        MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
-      );
-      for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
-        const line = c("tr");
-        line.className = "line";
-        line.dataset.idx = i;
-        chunk.appendChild(line);
-        const checked = this.breakPoints.includes(i);
-        const args = operatorList.argsArray[i] || [];
+  <body tabindex="1">
+    <div id="outerContainer">
 
-        const breakCell = c("td");
-        const cbox = c("input");
-        cbox.type = "checkbox";
-        cbox.className = "points";
-        cbox.checked = checked;
-        cbox.dataset.idx = i;
-        cbox.onclick = cboxOnClick;
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div class="splitToolbarButton toggled">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
 
-        breakCell.appendChild(cbox);
-        line.appendChild(breakCell);
-        line.appendChild(c("td", i.toString()));
-        const fn = opMap[operatorList.fnArray[i]];
-        let decArgs = args;
-        if (fn === "showText") {
-          const glyphs = args[0];
-          const newArgs = [];
-          let str = [];
-          for (let j = 0; j < glyphs.length; j++) {
-            const glyph = glyphs[j];
-            if (typeof glyph === "object" && glyph !== null) {
-              str.push(glyph.fontChar);
-            } else {
-              if (str.length > 0) {
-                newArgs.push(str.join(""));
-                str = [];
-              }
-              newArgs.push(glyph); // null or number
-            }
-          }
-          if (str.length > 0) {
-            newArgs.push(str.join(""));
-          }
-          decArgs = [newArgs];
-        }
-        line.appendChild(c("td", fn));
-        line.appendChild(c("td", JSON.stringify(simplifyArgs(decArgs))));
-      }
-      if (operatorsToDisplay < operatorList.fnArray.length) {
-        const lastCell = c("td", "...");
-        lastCell.colspan = 4;
-        chunk.appendChild(lastCell);
-      }
-      this.operatorListIdx = operatorList.fnArray.length;
-      this.table.appendChild(chunk);
-    }
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
 
-    getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
-      for (let i = 0; i < this.breakPoints.length; i++) {
-        if (this.breakPoints[i] > this.currentIdx) {
-          return this.breakPoints[i];
-        }
-      }
-      return null;
-    }
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
 
-    breakIt(idx, callback) {
-      StepperManager.selectStepper(this.pageIndex, true);
-      this.currentIdx = idx;
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
 
-      const listener = evt => {
-        switch (evt.keyCode) {
-          case 83: // step
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.currentIdx + 1;
-            this.goTo(-1);
-            callback();
-            break;
-          case 67: // continue
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.getNextBreakPoint();
-            this.goTo(-1);
-            callback();
-            break;
-        }
-      };
-      document.addEventListener("keydown", listener);
-      this.goTo(idx);
-    }
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+            <span id="findResultsCount" class="toolbarLabel hidden"></span>
+          </div>
 
-    goTo(idx) {
-      const allRows = this.panel.getElementsByClassName("line");
-      for (let x = 0, xx = allRows.length; x < xx; ++x) {
-        const row = allRows[x];
-        if ((row.dataset.idx | 0) === idx) {
-          row.style.backgroundColor = "rgb(251,250,207)";
-          row.scrollIntoView();
-        } else {
-          row.style.backgroundColor = null;
-        }
-      }
-    }
-  }
-  return Stepper;
-})();
+          <div id="findbarMessageContainer">
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
 
-// eslint-disable-next-line no-var
-var Stats = (function Stats() {
-  let stats = [];
-  function clear(node) {
-    while (node.hasChildNodes()) {
-      node.removeChild(node.lastChild);
-    }
-  }
-  function getStatIndex(pageNumber) {
-    for (let i = 0, ii = stats.length; i < ii; ++i) {
-      if (stats[i].pageNumber === pageNumber) {
-        return i;
-      }
-    }
-    return false;
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stats",
-    name: "Stats",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {},
-    enabled: false,
-    active: false,
-    // Stats specific functions.
-    add(pageNumber, stat) {
-      if (!stat) {
-        return;
-      }
-      const statsIndex = getStatIndex(pageNumber);
-      if (statsIndex !== false) {
-        const b = stats[statsIndex];
-        this.panel.removeChild(b.div);
-        stats.splice(statsIndex, 1);
-      }
-      const wrapper = document.createElement("div");
-      wrapper.className = "stats";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = "Page: " + pageNumber;
-      const statsDiv = document.createElement("div");
-      statsDiv.textContent = stat.toString();
-      wrapper.appendChild(title);
-      wrapper.appendChild(statsDiv);
-      stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
-      clear(this.panel);
-      for (let i = 0, ii = stats.length; i < ii; ++i) {
-        this.panel.appendChild(stats[i].div);
-      }
-    },
-    cleanup() {
-      stats = [];
-      clear(this.panel);
-    },
-  };
-})();
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
 
-// Manages all the debugging tools.
-window.PDFBug = (function PDFBugClosure() {
-  const panelWidth = 300;
-  const buttons = [];
-  let activePanel = null;
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
 
-  return {
-    tools: [FontInspector, StepperManager, Stats],
-    enable(ids) {
-      const all = ids.length === 1 && ids[0] === "all";
-      const tools = this.tools;
-      for (let i = 0; i < tools.length; ++i) {
-        const tool = tools[i];
-        if (all || ids.includes(tool.id)) {
-          tool.enabled = true;
-        }
-      }
-      if (!all) {
-        // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
-          let indexA = ids.indexOf(a.id);
-          indexA = indexA < 0 ? tools.length : indexA;
-          let indexB = ids.indexOf(b.id);
-          indexB = indexB < 0 ? tools.length : indexB;
-          return indexA - indexB;
-        });
-      }
-    },
-    init(pdfjsLib, container) {
-      /*
-       * Basic Layout:
-       * PDFBug
-       *  Controls
-       *  Panels
-       *    Panel
-       *    Panel
-       *    ...
-       */
-      const ui = document.createElement("div");
-      ui.id = "PDFBug";
+            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
 
-      const controls = document.createElement("div");
-      controls.setAttribute("class", "controls");
-      ui.appendChild(controls);
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
 
-      const panels = document.createElement("div");
-      panels.setAttribute("class", "panels");
-      ui.appendChild(panels);
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
 
-      container.appendChild(ui);
-      container.style.right = panelWidth + "px";
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
 
-      // Initialize all the debugging tools.
-      const tools = this.tools;
-      const self = this;
-      for (let i = 0; i < tools.length; ++i) {
-        const tool = tools[i];
-        const panel = document.createElement("div");
-        const panelButton = document.createElement("button");
-        panelButton.textContent = tool.name;
-        panelButton.addEventListener(
-          "click",
-          (function (selected) {
-            return function (event) {
-              event.preventDefault();
-              self.selectPanel(selected);
-            };
-          })(i)
-        );
-        controls.appendChild(panelButton);
-        panels.appendChild(panel);
-        tool.panel = panel;
-        tool.manager = this;
-        if (tool.enabled) {
-          tool.init(pdfjsLib);
-        } else {
-          panel.textContent =
-            tool.name +
-            " is disabled. To enable add " +
-            ' "' +
-            tool.id +
-            '" to the pdfBug parameter ' +
-            "and refresh (separate multiple by commas).";
-        }
-        buttons.push(panelButton);
-      }
-      this.selectPanel(0);
-    },
-    cleanup() {
-      for (let i = 0, ii = this.tools.length; i < ii; i++) {
-        if (this.tools[i].enabled) {
-          this.tools[i].cleanup();
-        }
-      }
-    },
-    selectPanel(index) {
-      if (typeof index !== "number") {
-        index = this.tools.indexOf(index);
-      }
-      if (index === activePanel) {
-        return;
-      }
-      activePanel = index;
-      const tools = this.tools;
-      for (let j = 0; j < tools.length; ++j) {
-        const isActive = j === index;
-        buttons[j].classList.toggle("active", isActive);
-        tools[j].active = isActive;
-        tools[j].panel.hidden = !isActive;
-      }
-    },
-  };
-})();
+            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+            </button>
+            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+            </button>
+            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+            </button>
+            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
+
+            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div class="clearBoth"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+            </div>
+            <div class="row">
+              <input type="password" id="password" class="toolbarField">
+            </div>
+            <div class="buttonRow">
+              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
+            </div>
+            <div class="buttonRow">
+              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+            </div>
+            <div class="row">
+              <progress value="0" max="100"></progress>
+              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+            </div>
+            <div class="buttonRow">
+              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- overlayContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+  </body>
+</html>
 ]]></content>
   </entry>
   <entry>
@@ -30131,410 +30550,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<!--
-Copyright 2012 Mozilla Foundation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Adobe CMap resources are covered by their own copyright but the same license:
-
-    Copyright 1990-2015 Adobe Systems Incorporated.
-
-See https://github.com/adobe-type-tools/cmap-resources
--->
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PDF.js viewer</title>
-
-
-    <link rel="stylesheet" href="viewer.css">
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="../build/pdf.js"></script>
-
-
-  <script src="viewer.js"></script>
-
-  </head>
-
-  <body tabindex="1">
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div class="splitToolbarButton toggled">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
-
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
-              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-            </button>
-            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
-              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
-              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-            </button>
-            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
-              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-            </button>
-            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
-              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
-
-            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
-              <span data-l10n-id="spread_none_label">No Spreads</span>
-            </button>
-            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
-              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-            </button>
-            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
-              <span data-l10n-id="spread_even_label">Even Spreads</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
-                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-                </button>
-
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
-                  <span data-l10n-id="bookmark_label">Current View</span>
-                </a>
-
-                <div class="verticalToolbarSeparator hiddenSmallView"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-
-        <div id="errorWrapper" hidden='true'>
-          <div id="errorMessageLeft">
-            <span id="errorMessage"></span>
-            <button id="errorShowMore" data-l10n-id="error_more_info">
-              More Information
-            </button>
-            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
-              Less Information
-            </button>
-          </div>
-          <div id="errorMessageRight">
-            <button id="errorClose" data-l10n-id="error_close">
-              Close
-            </button>
-          </div>
-          <div class="clearBoth"></div>
-          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="overlayContainer" class="hidden">
-        <div id="passwordOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
-            </div>
-            <div class="row">
-              <input type="password" id="password" class="toolbarField">
-            </div>
-            <div class="buttonRow">
-              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="documentPropertiesOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
-            </div>
-            <div class="buttonRow">
-              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="printServiceOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-            </div>
-            <div class="row">
-              <progress value="0" max="100"></progress>
-              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
-            </div>
-            <div class="buttonRow">
-              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- overlayContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-  </body>
-</html>
 ]]></content>
   </entry>
   <entry>
