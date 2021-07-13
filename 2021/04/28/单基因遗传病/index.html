@@ -56,6 +56,9 @@
 
 
 
+
+  <!-- <script src="/js/hoverdetail.js"></script> -->
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -406,14 +409,16 @@
 <dt>复合杂合子</dt>
 <dd>一个特定位点伤有<em>两个不同突变</em>等位基因的个体。</dd>
 </dl>
-<div class="note warning "><p>隐性遗传病的杂合子（复合杂合子）也可能表现出症状。</p>
+<div class="note warning"><p>隐性遗传病的杂合子（复合杂合子）也可能表现出症状。</p>
 </div>
 <dl>
 <dt>双重杂合子</dt>
 <dd>在<em>两个不同位点上</em>每个位点各带有一种突变基因的个体。</dd>
 </dl>
-<details class="note info "><summary><p>系谱绘制</p>
-</summary><dl>
+<details class="note info" open>
+<summary id='系谱绘制'><p>系谱绘制</p>
+</summary>
+<dl>
 <dt>系谱（pedigree）</dt>
 <dd>从<strong>先证者</strong>入手，追溯调查其家系所有成员的<strong>亲属关系</strong>以及某种遗传病的<strong>发病情况</strong>（或某种性状的分布），用特定的符号按一定方式绘制而成的图解。</dd>
 <dt>先证者（proband）</dt>
@@ -547,7 +552,7 @@
 <div class="tabs" id="延迟显性遗传病"><ul class="nav-tabs"><li class="tab active"><a href="#延迟显性遗传病-1">多囊肾病</a></li><li class="tab"><a href="#延迟显性遗传病-2">亨亭顿舞蹈症</a></li></ul><div class="tab-content"><div class="tab-pane active" id="延迟显性遗传病-1"><p><strong>多囊肾病</strong>（Polycystic kidney disease 1，<abbr title="Polycystic kidney disease 1，多囊肾病">PKD1</abbr>）特征是双侧肾肿大，并有许多囊肿、血尿、高血压、腹痛和进行性肾衰竭，许多患者直到 40 岁甚至更晚才出现临床症状。</p></div><div class="tab-pane" id="延迟显性遗传病-2"><p><mark>Huntington 病</mark>（Huntington disease，<abbr title="Huntington disease，Huntington 病，亨亭顿舞蹈症">HD</abbr>）（<strong>亨亭顿舞蹈症</strong>）是一种进行性神经病变，临床表现为<strong>进行性不自主舞蹈样动作</strong>。该病通常 30~40 岁发病，最终演变为<strong>痴呆</strong>。<br/>
 <abbr title="Huntington disease，Huntington 病，亨亭顿舞蹈症">HD</abbr> 是由于 <a href="/2021/03/24/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=动态突变#动态突变"><mark>动态突变</mark></a> 引起的。<abbr title="Huntington disease，Huntington 病，亨亭顿舞蹈症">HD</abbr> 的致病基因为 4p16.3 上的 <em>HTT</em>，其 5’ 端有 (CAG)<sub>n</sub> 三核苷酸重复，正常人重复拷贝数范围为 9~34 次，患者的重复拷贝数扩展到 37~100 次。<br/></p>
 <p>如果 <em>HTT</em> 是由父亲传来的，患者可在 20 岁之前发病且病情严重；若是从母亲传来的，则多在 40 岁以后发病且病情轻，这种现象称为<strong>遗传印记</strong>。</p>
-<div class="note info "><dl>
+<div class="note info"><dl>
 <dt>遗传印记（genetic imprinting）</dt>
 <dd>由于基因来自来自父方或母方而产生不同表型的现象。</dd>
 <dd>是一种依赖于配子起源的某些等位基因的修饰现象，一些基因在精子/卵子的形成过程中被印记（如甲基化），表达受到影响。</dd>
@@ -594,7 +599,7 @@
 <li>近亲婚配明显提告 <abbr title="autosomal recessive，常染色体隐性遗传">AR</abbr> 遗传病的发病风险。</li>
 </ul>
 <img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/%E4%B8%8D%E5%AE%8C%E5%85%A8%E7%A1%AE%E8%AE%A4.png" class="" title="不完全确认" alt="不完全确认">
-<div class="note info "><p><strong>近亲婚配</strong>（Consanguineous Mating）指在 3~4 代之内有共同祖先的个体之间的婚配，会<em>明显提高 AR 遗传病的患病风险</em>。</p>
+<div class="note info"><p><strong>近亲婚配</strong>（Consanguineous Mating）指在 3~4 代之内有共同祖先的个体之间的婚配，会<em>明显提高 AR 遗传病的患病风险</em>。</p>
 <p><mark>亲缘系数</mark>（coefficient of relationship，r）见 <a href="/2021/05/12/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/?highlight=亲缘系数#非随机婚配">非随机婚配</a>。</p>
 <table>
 <thead>
@@ -681,16 +686,20 @@
 <li><strong>Duchenne 型肌营养不良症</strong>：较 <abbr title="Becker muscular dystrophy，Backer 型肌营养不良症">BMD</abbr> 型病情较重，患者<strong>腓肠肌假性肥大</strong>、从卧位到站立表现有 <mark>Gower 征</mark>（Gowers’s sign，以 William Richard <em>Gowers</em> 的名字命名）。</li>
 </ul>
 <img data-src="/2021/04/28/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/Gower's%20sign.png" class="" title="Gowers&#39;s sign" alt="Gowers&#39;s sign">
-<details class="note info "><summary><p>假肥大型肌营养不良症</p>
-</summary><p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的<strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
+<details class="note info" open>
+<summary id='假肥大型肌营养不良症'><p>假肥大型肌营养不良症</p>
+</summary>
+<p>假肥大型肌营养不良症包括 Duchenne 和 Becker 两种类型，都是由相同的<strong>抗肌萎缩蛋白</strong>（<em>Dystrophin</em>）基因突变所致（<a href="?highlight=%E7%AD%89%E4%BD%8D%E5%9F%BA%E5%9B%A0%E5%BC%82%E8%B4%A8%E6%80%A7%20%E9%81%97%E4%BC%A0%E5%BC%82%E8%B4%A8%E6%80%A7#%E5%B8%B8%E6%9F%93%E8%89%B2%E4%BD%93%E9%9A%90%E6%80%A7%E9%81%97%E4%BC%A0%E7%97%85">等位基因异质性</a>）。</p>
 <ul>
 <li><strong>Duchenne 型肌营养不良症</strong>（Duchenne muscular dystrophy，DMD）：发病早，病情重，抗肌萎缩蛋白不表达或表达无功能的蛋白</li>
 <li><strong>Backer 型肌营养不良症</strong>（Becker muscular dystrophy，BMD）：发病晚、病情轻，抗肌萎缩蛋白质量减少或蛋白质长度变化</li>
 </ul>
 </details>
 <p><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr> 的致病基因 <em><abbr title="Duchenne muscular dystrophy，Duchenne 型肌营养不良症">DMD</abbr></em> 基因克隆是<strong>定位克隆</strong>（positional cloning）的典型例子。</p>
-<details class="note default "><summary><p>定位克隆</p>
-</summary><p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
+<details class="note default" open>
+<summary id='定位克隆'><p>定位克隆</p>
+</summary>
+<p>在其他信息未知的情况下，将与某一表型相关的基因定位于染色体的某一位点并进一步缩小候选区域，根据这一位置信息再从相关区域的“邻接克隆群”（contig）中筛选可表达的结构基因，然后比较正常人和患者结构基因的区别，即在患者的结构基因中筛查出突变，最终确定疾病相关基因。</p>
 </details>
 <h2 id="x-连锁显性遗传病">X 连锁显性遗传病 <a class="markdownIt-Anchor" href="#x-连锁显性遗传病">#</a></h2>
 <dl>
@@ -815,7 +824,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">198k</span>
+    <span title="Symbols count total">199k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

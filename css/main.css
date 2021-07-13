@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #00d278;
+  background: #20968b;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3297,7 +3297,7 @@ div.img-wrap-right { float: right; }
 
 .center {
     text-align: center;
-    text-shadow: 1px 1px #777;
+    text-shadow: 1px 1px;
     font-size: 30px;
 }
 
@@ -3721,16 +3721,17 @@ blockquote {
 
 /**************************************************************************************/
 
-div.sidebar-panel-container,
-body,
-post-toc-wrap {
+body {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
-div.sidebar-panel-container::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 5px;               /* width of the entire scrollbar */
+}
+
+div.sidebar-panel-container::-webkit-scrollbar {
+    width: 0;
 }
 
 div.sidebar-panel-container::-webkit-scrollbar-track,

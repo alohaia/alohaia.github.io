@@ -56,6 +56,9 @@
 
 
 
+
+  <!-- <script src="/js/hoverdetail.js"></script> -->
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -398,8 +401,10 @@ Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方�
 <h2 id="基础">基础 <a class="markdownIt-Anchor" href="#基础">#</a></h2>
 <p>最基本的 Hello World CMakeLists.txt 文件：</p>
 <figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
-<details class="note info "><summary><p>Note</p>
-</summary><p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
+<details class="note info" open>
+<summary id='note'><p>Note</p>
+</summary>
+<p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
 然后就可以像下面这样写：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
@@ -472,7 +477,7 @@ build）和源外构建（out-of-source build）。</p>
 <h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
 <p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
-<div class="note warning "><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
+<div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
 </div>
 <p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
@@ -509,8 +514,10 @@ build）和源外构建（out-of-source build）。</p>
 <h4 id="链接库和目标">链接库和目标 <a class="markdownIt-Anchor" href="#链接库和目标">#</a></h4>
 <p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<details class="note info "><summary><p>目标别名</p>
-</summary><p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
+<details class="note info" open>
+<summary id='目标别名'><p>目标别名</p>
+</summary>
+<p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
 <p>如为库创建别名：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>当然，也可以为可执行文件创建别名：</p>
@@ -523,7 +530,7 @@ CMake 中的 target）的功能。<br/>
 <p>安装由 <a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/install.html"><code>install()</code></a> 函数控制。</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst_bin</span><br><span class="line">    DESTINATION bin)</span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib)</span><br></pre></td></tr></table></figure>
 <p>上面的代码会将 <code>cmake_examples_inst_bin</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下，将 <code>cmake_examples_inst</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下。</p>
-<div class="note warning "><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
+<div class="note warning"><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure></div>
 <p>使用 <code>DIRECTORY</code> 以安装目录：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/</span><br><span class="line">    DESTINATION <span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
@@ -604,7 +611,7 @@ CMake 中的 target）的功能。<br/>
 <p><code>CMAKE_CXX_FLAGS</code> 要么为空，要么包含所选构建类型的对应标志。<br/>
 要设置<strong>额外</strong>的编译标志，可以在顶层 CMakeLists.txt 中添加如下内容：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -DEX2&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;Set C++ Compiler Flags&quot;</span> FORCE)</span><br></pre></td></tr></table></figure>
-<div class="note info "><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
+<div class="note info"><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
 </div>
 <p>类似地，<code>CMAKE_C_FLAGS</code> 等变量也可以以同样的方式设置。其他变量见 <a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a>。<br/>
 一旦设置了这些变量，CMake 会为此目录及其子目录下的所有目标设置编译器标志，因此更推荐使用 <code>target_compile_definitions</code> 函数。</p>
@@ -730,7 +737,7 @@ CMake 中的 target）的功能。<br/>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">198k</span>
+    <span title="Symbols count total">199k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
