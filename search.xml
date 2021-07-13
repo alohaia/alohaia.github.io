@@ -289,6 +289,461 @@ CMake 中的 target）的功能。<br/>
       </tags>
   </entry>
   <entry>
+    <title>Create Snippets for UltiSnips</title>
+    <url>/2021/03/28/Create-Snippets-for-Ultisnips/</url>
+    <content><![CDATA[<p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
+<p>My snippets: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvbnZpbWNmZy90cmVlL2x1YS9VbHRpU25pcHM=">https://github.com/alohaia/nvimcfg/tree/lua/UltiSnips<i class="fa fa-external-link-alt"></i></span></p>
+<span id="more"></span>
+<h2 id="include-other-snippet-files">Include Other Snippet Files <a class="markdownIt-Anchor" href="#include-other-snippet-files">#</a></h2>
+<p>Add c snippets for cpp files for example.</p>
+<ol>
+<li><code>UltiSnipsAddFiletypes</code>: <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">au</span> FileType cpp UltiSnipsAddFiletypes cpp.<span class="keyword">c</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><code>extends</code>: For example, in <code>cpp.snippets</code>, add: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">extends c</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="keywords">Keywords <a class="markdownIt-Anchor" href="#keywords">#</a></h2>
+<ol>
+<li><code>extends</code>: See above.</li>
+<li><code>priority</code>: Set priority for all snippet defined in the current file.</li>
+<li><code>snippets</code> <code>endsnippet</code>: Define a snippet.</li>
+<li><code>global</code> <code>endglobal</code>: Define a <a href="#global-snippets">global snippet</a>(only supports python currently).</li>
+<li><code>pre_expand</code> <code>post_expand</code> <code>post_jump</code>: Declare snippet actions.</li>
+</ol>
+<h2 id="snippets-format">Snippets’ Format <a class="markdownIt-Anchor" href="#snippets-format">#</a></h2>
+<pre><code>snippet trigger_word [ &quot;description&quot; [ options ] ]
+...
+endsnippet
+</code></pre>
+<ul>
+<li><code>trigger_word</code>: The word to trigger the snippet. It can include spaces via wrap it in quotes or any other characters.<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet &quot;tab trigger&quot; [ &quot;description&quot; [ options ] ]</span><br><span class="line">snippet ltab triggerl [ &quot;description&quot; [ options ] ]</span><br></pre></td></tr></table></figure>
+Quotes can be included as part of the trigger by wrapping the trigger in
+another character.<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet !&quot;tab trigger&quot;! [ &quot;description&quot; [ options ] ]</span><br></pre></td></tr></table></figure>
+</li>
+<li><code>description</code>: A string describing the trigger.</li>
+<li><code>options</code>: See below.</li>
+</ul>
+<h2 id="snippet-options">Snippet Options <a class="markdownIt-Anchor" href="#snippet-options">#</a></h2>
+<ul>
+<li><code>b</code>: Beginning of line - A snippet with this option is expanded only if the tab trigger is the first word on the line. In other words, if only whitespace precedes the tab trigger, expand. The default is to expand snippets at any position regardless of the preceding non-whitespace characters.</li>
+<li><code>i</code>: In-word expansion - By default a snippet is expanded only if the tab trigger is the first word on the line or is preceded by one or more whitespace characters. A snippet with this option is expanded regardless of the preceding character. In other words, the snippet can be triggered in the middle of a word.</li>
+<li><code>w</code>: Word boundary - With this option, the snippet is expanded if the tab trigger start matches a word boundary and the tab trigger end matches a word boundary. In other words the tab trigger must be preceded and followed by non-word characters. Word characters are defined by the <code>iskeyword</code> setting. Use this option, for example, to permit expansion where the tab trigger follows punctuation without expanding suffixes of larger words.</li>
+<li><code>r</code>: Regular expression - With this option, the tab trigger is expected to be a python regular expression. The snippet is expanded if the recently typed characters match the regular expression. Note: The regular expression MUST be quoted (or surrounded with another character) like a multi-word tab trigger (see above) whether it has spaces or not. A resulting match is passed to any python code blocks in the snippet definition as the local variable “match”.</li>
+<li><code>t</code>: Do not expand tabs - If a snippet definition includes leading tab characters, by default UltiSnips expands the tab characters honoring the Vim <code>shiftwidth</code>, <code>softtabstop</code>, <code>expandtab</code> and <code>tabstop</code> indentation settings. (For example, if <code>expandtab</code> is set, the tab is replaced with spaces.) If this option is set, UltiSnips will ignore the Vim settings and insert the tab characters as is. This option is useful for snippets involved with tab delimited formats.</li>
+<li><code>s</code>: Remove whitespace immediately before the cursor at the end of a line before jumping to the next tabstop.  This is useful if there is a tabstop with optional text at the end of a line.</li>
+<li><code>m</code>: Trim all whitespaces from right side of snippet lines. Useful when snippet contains empty lines which should remain empty after expanding. Without this option empty lines in snippets definition will have indentation too.</li>
+<li><code>e</code>: Custom context snippet - With this option expansion of snippet can be controlled not only by previous characters in line, but by any given python expression. This option can be specified along with other options, like <code>b</code>. See UltiSnips-custom-context-snippets for more info.</li>
+<li><code>A</code>: Snippet will be triggered automatically, when condition matches. See UltiSnips-autotrigger for more info.</li>
+</ul>
+<h2 id="character-escaping">Character Escaping <a class="markdownIt-Anchor" href="#character-escaping">#</a></h2>
+<blockquote>
+<p>In snippet definitions, the characters <code>`</code>, <code>&#123;</code>, <code>$</code> and <code>\</code> have special
+meaning. If you want to insert one of these characters literally, escape them
+with a backslash, <code>\</code>.</p>
+</blockquote>
+<h2 id="plaintext-snippets">Plaintext Snippets <a class="markdownIt-Anchor" href="#plaintext-snippets">#</a></h2>
+<p>For example:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet bye &quot;My mail signature&quot;</span><br><span class="line">Good bye, Sir. Hope to talk to you soon.</span><br><span class="line">- Arthur, King of Britain</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+<h2 id="tabstop-and-placeholders">Tabstop and Placeholders <a class="markdownIt-Anchor" href="#tabstop-and-placeholders">#</a></h2>
+<p>A simplest tabstop looks like <code>$no</code>, <code>no</code> is a number starting from 1. <code>$0</code> is a special tabstop that is always the last tabstop no matter how many tabstops are defined.</p>
+<pre><code>snippet letter
+Dear $1,
+$0
+Yours sincerely,
+$2
+endsnippet
+</code></pre>
+<p>Default text:</p>
+<pre><code>snippet case
+case $&#123;1:word&#125; in
+    $&#123;2:pattern&#125; ) $0;;
+esac
+endsnippet
+</code></pre>
+<p>Have a tabstop within another tabstop:</p>
+<pre><code>snippet a
+&lt;a href=&quot;$&#123;1:http://www.$&#123;2:example.com&#125;&#125;&quot;
+    $0
+&lt;/a&gt;
+endsnippet
+</code></pre>
+<blockquote>
+<p>Typing any text at the first tabstop replaces the default
+value, including the second tabstop, with the typed text. So the second
+tabstop is essentially deleted.</p>
+</blockquote>
+<h2 id="visual-placeholder">Visual Placeholder <a class="markdownIt-Anchor" href="#visual-placeholder">#</a></h2>
+<p>Format:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$&#123;VISUAL:default/search/replace/option&#125;</span><br></pre></td></tr></table></figure>
+<p>Usage:</p>
+<ol>
+<li>Select some text in visual mode and press the trigger key, the text well be deleted.</li>
+<li>Enter the <code>trigger_word</code> and press the trigger key again, the text deleted will replace the <code>$&#123;VISUAL&#125;</code> placeholder.</li>
+</ol>
+<p>Details:</p>
+<ol>
+<li>Snippets containing Visual Placeholder can be used in insert mod. In the way, the <code>default</code> will be used as default text.</li>
+<li>With <code>/search/replace/option</code>, you can process the text like using <code>:s</code> command. See <a href="#transformations">Transformations</a>.</li>
+</ol>
+<h2 id="mirrors">Mirrors <a class="markdownIt-Anchor" href="#mirrors">#</a></h2>
+<p>Mirrors repeat the content of a <span class="exturl" data-url="aHR0cDovL3RhYnN0b3AuVG8=">tabstop.To<i class="fa fa-external-link-alt"></i></span> mirror a tabstop simply insert the tabstop again using the “dollar sign followed by a number” syntax, e.g., <code>$1</code>.</p>
+<pre><code>snippet ifndef
+#ifndef $&#123;1:SOME_DEFINE&#125;
+#define $1
+$0
+#endif /* $1 */
+endsnippet
+</code></pre>
+<h2 id="interpolation">Interpolation <a class="markdownIt-Anchor" href="#interpolation">#</a></h2>
+<h3 id="shellcode">Shellcode <a class="markdownIt-Anchor" href="#shellcode">#</a></h3>
+<p>An example may be the most helpful.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet today</span><br><span class="line">Today is the `date +%d.%m.%y`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+<p>The output of command <code>date +%d.%m%y</code> will replace the text wrapped by backticks. You`ll get something like “Today is the 19.08.20.”</p>
+<h3 id="vimscript">Vimscript <a class="markdownIt-Anchor" href="#vimscript">#</a></h3>
+<p>Similar to shellcode, but begins with `v.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet indent</span><br><span class="line">Indent is: `!v indent(&quot;.&quot;)`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(note the 4 spaces in front): indent&lt;trigger_key&gt; -&gt;</span><br><span class="line">(note the 4 spaces in front): Indent is: 4.</span><br></pre></td></tr></table></figure>
+<h3 id="python">Python <a class="markdownIt-Anchor" href="#python">#</a></h3>
+<p>There are two choices:</p>
+<ol>
+<li><strong>`#!/usr/bin/python …`</strong>: Normal python code.</li>
+<li><strong>`!p …`</strong>: Use python with some predefined objects and variables. The variables automatically defined in python code are:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>variable</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fn</td>
+<td>The current filename</td>
+</tr>
+<tr>
+<td>path</td>
+<td>The complete path to the current file</td>
+</tr>
+<tr>
+<td>t</td>
+<td>The values of the placeholders, <code>t[1]</code> is the text of <code>$&#123;1&#125;</code>, etc.</td>
+</tr>
+<tr>
+<td>snip</td>
+<td>UltiSnips.TextObjects.SnippetUtil object instance. Has methods that simplify indentation handling and owns the string that should be inserted for the snippet.</td>
+</tr>
+<tr>
+<td>context</td>
+<td>Result of context condition. See UltiSnips-custom-context-snippets.</td>
+</tr>
+<tr>
+<td>match</td>
+<td>Only in regular expression triggered snippets.<br> This is the return value of the match of the regular expression.<br> See <span class="exturl" data-url="aHR0cDovL2RvY3MucHl0aG9uLm9yZy9saWJyYXJ5L3JlLmh0bWwjbWF0Y2gtb2JqZWN0cw==">http://docs.python.org/library/re.html#match-objects<i class="fa fa-external-link-alt"></i></span></td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>snip</code> object</strong></p>
+<p>The <code>snip</code> object provides the following methods:</p>
+<ul>
+<li><code>snip.mkline(line=&quot;&quot;, indent=None)</code>:
+Returns a line ready to be appended to the result. If indent
+is None, then mkline prepends spaces and/or tabs appropriate to the
+current <code>tabstop</code> and <code>expandtab</code> variables.</li>
+<li><code>snip.shift(amount=1)</code>:
+Shifts the default indentation level used by mkline right by the
+number of spaces defined by <code>shiftwidth</code>, <code>amount</code> times.</li>
+<li><code>snip.unshift(amount=1)</code>:
+Shifts the default indentation level used by mkline left by the
+number of spaces defined by <code>shiftwidth</code>, <code>amount</code> times.</li>
+<li><code>snip.reset_indent()</code>:
+Resets the indentation level to its initial value.</li>
+<li><code>snip.opt(var, default)</code>:
+Checks if the Vim variable <code>var</code> has been set. If so, it returns the
+variable<code>s value; otherwise, it returns the value of</code>default`.</li>
+</ul>
+<p>The <code>snip</code> object provides some properties as well:</p>
+<ul>
+<li>
+<p><code>snip.rv</code>:
+<code>rv</code> is the return value, the text that will replace the python block
+in the snippet definition. It is initialized to the empty string. This
+deprecates the <code>res</code> variable.</p>
+</li>
+<li>
+<p><code>snip.c</code>:
+The text currently in the python block<code>s position within the snippet. It is set to empty string as soon as interpolation is completed. Thus you can check</code>if <code>snip.c</code> is != “”` to make sure that the interpolation
+is only done once. This deprecates the “cur” variable.</p>
+</li>
+<li>
+<p><code>snip.v</code>:
+Data related to the <code>$&#123;VISUAL&#125;</code> placeholder. This has two attributes:
+<code>snip.v.mode</code>   (<code>v</code>, <code>V</code>, <code>^V</code>, see |visual-mode| )
+<code>snip.v.text</code>   The text that was selected.</p>
+</li>
+<li>
+<p><code>snip.fn</code>:
+The current filename.</p>
+</li>
+<li>
+<p><code>snip.basename</code>:
+The current filename with the extension removed.</p>
+</li>
+<li>
+<p><code>snip.ft</code>:
+The current filetype.</p>
+</li>
+<li>
+<p><code>snip.p</code>:
+Last selected placeholder. Will contain placeholder object with
+following properties:</p>
+<ul>
+<li><code>current_text</code> - text in the placeholder on the moment of selection;</li>
+<li><code>start</code> - placeholder start on the moment of selection;</li>
+<li><code>end</code> - placeholder end on the moment of selection;</li>
+</ul>
+</li>
+</ul>
+<p>For your convenience, the <code>snip</code> object also provides the following
+operators:</p>
+<ul>
+<li><code>snip &gt;&gt; amount</code>:
+Equivalent to <code>snip.shift(amount)</code></li>
+<li><code>snip &lt;&lt; amount</code>:
+Equivalent to <code>snip.unshift(amount)</code></li>
+<li><code>snip += line</code>:
+Equivalent to “<code>snip.rv +=</code>\n<code>+ snip.mkline(line)</code>”</li>
+</ul>
+<blockquote>
+<p>Any variables defined in a python block can be used in other python blocks
+that follow within the same snippet. Also, the python modules <code>vim</code>, <code>re</code>,
+<code>os</code>, <code>string</code> and <code>random</code> are pre-imported within the scope of snippet code.
+Other modules can be imported using the python <code>import</code> command.</p>
+</blockquote>
+<blockquote>
+<p>Python code allows for very flexible snippets. For example, the following
+snippet mirrors the first tabstop value on the same line but right aligned and
+in uppercase.</p>
+</blockquote>
+<h2 id="global-snippets">Global Snippets <a class="markdownIt-Anchor" href="#global-snippets">#</a></h2>
+<p>Use <code>global</code> and <code>endglobal</code> to define Global snippets.</p>
+<p>You can define functions or use import command inside.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">def upper_right(inp):</span><br><span class="line">    return (75 - 2 * len(inp))*` ` + inp.upper()</span><br><span class="line">endglobal</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">from my_snippet_helpers import *</span><br><span class="line">endglobal</span><br></pre></td></tr></table></figure>
+<h2 id="transformations">Transformations <a class="markdownIt-Anchor" href="#transformations">#</a></h2>
+<blockquote>
+<p>Transformations are like mirrors but instead of just copying text from the
+original tabstop verbatim, a regular expression is matched to the content of
+the referenced tabstop and a transformation is then applied to the matched
+pattern.</p>
+</blockquote>
+<pre><code>$&#123;&lt;tab_stop_no/regular_expression/replacement/options&#125;
+</code></pre>
+<p>The <strong>components</strong> are defined as follows:</p>
+<ul>
+<li><code>tab_stop_no</code>: The number of the tabstop to reference</li>
+<li><code>regular_expression</code>: The regular expression the value of the referenced tabstop is matched on</li>
+<li><code>replacement</code>: The replacement string, explained in detail below</li>
+<li><code>options</code>: Options for the regular expression</li>
+</ul>
+<h3 id="regular-expression">Regular Expression <a class="markdownIt-Anchor" href="#regular-expression">#</a></h3>
+<p>See <span class="exturl" data-url="aHR0cDovL2RvY3MucHl0aG9uLm9yZy9saWJyYXJ5L3JlLmh0bWw=">http://docs.python.org/library/re.html<i class="fa fa-external-link-alt"></i></span>.</p>
+<h3 id="replacement-string">Replacement String <a class="markdownIt-Anchor" href="#replacement-string">#</a></h3>
+<p>The <strong>replacement string</strong> can contain <code>$no</code> variables, e.g., <code>$1</code>, which reference matched groups in the regular expression. The <code>$0</code> variable is special and yields the whole match. The replacement string can also contain special escape sequences:</p>
+<ul>
+<li><code>\u</code>: Uppercase next letter</li>
+<li><code>\l</code>: Lowercase next letter</li>
+<li><code>\U</code>: Uppercase everything till the next \E</li>
+<li><code>\L</code>: Lowercase everything till the next \E</li>
+<li><code>\E</code>: End upper or lowercase started with \L or \U</li>
+<li><code>\n</code>: A newline</li>
+<li><code>\t</code>: A literal tab</li>
+</ul>
+<p>Finally, the <strong>replacement string</strong> can contain conditional replacements using the syntax (<strong>?no:text:other text</strong>). This reads as follows: if the group <code>$no</code> has
+matched, insert “text”, otherwise insert “other text”. “other text” is
+optional and if not provided defaults to the empty string, “”. This feature
+is very powerful. It allows you to add optional text into snippets.</p>
+<h3 id="options">Options <a class="markdownIt-Anchor" href="#options">#</a></h3>
+<p>The <strong>options</strong> can be any combination of</p>
+<ul>
+<li>
+<p><code>g</code>: <strong>global replace</strong></p>
+<p>By default, only the first match of the regular expression is
+replaced. With this option all matches are replaced.</p>
+</li>
+<li>
+<p><code>i</code>: <strong>case insensitive</strong></p>
+<p>By default, regular expression matching is case sensitive. With this
+option, matching is done without regard to case.</p>
+</li>
+<li>
+<p><code>m</code>: <strong>multiline</strong></p>
+<p>By default, the <code>\^</code> and <code>\$</code> special characters only apply to the
+start and end of the entire string; so if you select multiple lines,
+transformations are made on them entirely as a whole single line
+string. With this option, <code>^</code> and <code>\$</code> special characters match the
+start or end of any line within a string ( separated by newline
+character - <code>\n</code> ).</p>
+</li>
+<li>
+<p><code>a</code>: <strong>ascii conversion</strong></p>
+<p>By default, transformation are made on the raw utf-8 string. With
+this option, matching is done on the corresponding ASCII string
+instead, for example <code>à</code> will become <code>a</code>.
+This option required the python package <code>unidecode</code>.</p>
+</li>
+</ul>
+<h2 id="cleardisable-snippets">Clear(Disable) Snippets <a class="markdownIt-Anchor" href="#cleardisable-snippets">#</a></h2>
+<p>Add <code>clearsnippets</code> to snippet files to disable some specified snippets.</p>
+<ol>
+<li>
+<p>Disable by priority.</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">priority 6</span><br><span class="line">clearsnippets</span><br></pre></td></tr></table></figure>
+<p>Disable all snippets have priority not bigger than 6.</p>
+</li>
+<li>
+<p>Disable by trigger.</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">clearsnippets printf title box</span><br></pre></td></tr></table></figure>
+<p>Disable snippets whose trigger word is <code>printf</code>, <code>title</code> or <code>box</code>. To do this, the priority of <code>clearsnippets</code> must not be smaller than other snippets`.</p>
+</li>
+</ol>
+<h2 id="context">Context <a class="markdownIt-Anchor" href="#context">#</a></h2>
+<p>Custom context snippets can be enabled by using the <code>e</code> option in the snippet
+definition.</p>
+<p>In that case snippet should be defined using this syntax:</p>
+<pre><code>snippet trigger_word &quot;description&quot; &quot;expression&quot; options
+</code></pre>
+<p>The context can be defined using a special header:</p>
+<pre><code>context &quot;python_expression&quot;
+snippet trigger_word &quot;description&quot; options
+</code></pre>
+<p>The <code>expression</code> can be any python expression. If <code>expression</code> evaluates to
+<code>True</code>, then this snippet will be eligible for expansion. The <code>expression</code>
+must be wrapped with <strong>double-quotes</strong>.</p>
+<p>The following <strong>python modules</strong> are automatically imported into the scope before
+<code>expression</code> is evaluated: <strong><code>re</code>, <code>os</code>, <code>vim</code>, <code>string</code>, <code>random</code></strong>.</p>
+<p>Global variable <code>snip</code> will be available with following properties:</p>
+<ul>
+<li>
+<p><code>snip.window</code>: alias for <code>vim.current.window</code></p>
+</li>
+<li>
+<p><code>snip.buffer</code>: alias for <code>vim.current.window.buffer</code></p>
+<blockquote>
+<p>Note: special variable called <code>snip.buffer</code> should be used for all buffer
+modifications. Not <code>vim.current.buffer</code> and not <code>vim.command(&quot;...&quot;)</code>, because
+in that case UltiSnips will not be able to track changes to the buffer correctly.</p>
+<p><code>snip.buffer</code> has the same interface as <code>vim.current.window.buffer</code>.</p>
+</blockquote>
+</li>
+<li>
+<p><code>snip.cursor</code>: cursor object, which behaves like <code>vim.current.window.cursor</code>, but zero-indexed and with following additional methods:</p>
+<ul>
+<li><code>preserve()</code>: special method for executing pre/post/jump actions;</li>
+<li><code>set(line, column)</code>: sets cursor to specified line and column;</li>
+<li><code>to_vim_cursor()</code>: returns 1-indexed cursor, suitable for assigning to <code>vim.current.window.cursor</code>;</li>
+</ul>
+</li>
+<li>
+<p><code>snip.contex</code>: evaluated value of the expression in <strong>context</strong>;</p>
+</li>
+<li>
+<p><code>snip.line</code> and <code>snip.column</code>: aliases for cursor position (zero-indexed);</p>
+</li>
+<li>
+<p><code>snip.visual_mode</code>: (<code>v</code>, <code>V</code>, <code>^V</code>, see visual-mode);</p>
+</li>
+<li>
+<p><code>snip.visual_text</code>: last visually-selected text;</p>
+</li>
+<li>
+<p><code>snip.last_placeholder</code>: last active placeholder from previous snippet with following properties:</p>
+<ul>
+<li><code>current_text</code>: text in the placeholder on the moment of selection;</li>
+<li><code>start</code>: placeholder start on the moment of selection;</li>
+<li><code>end</code>: placeholder end on the moment of selection;</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet i &quot;if err != nil&quot; &quot;re.match(`^\s+[^=]*err\s*:?=`, snip.buffer[snip.line-1])&quot; be</span><br><span class="line">if err != nil &#123;</span><br><span class="line">    $1</span><br><span class="line">&#125;</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">import my_utils</span><br><span class="line">endglobal</span><br><span class="line"></span><br><span class="line">snippet , &quot;return ..., nil/err&quot; &quot;my_utils.is_return_argument(snip)&quot; ie</span><br><span class="line">, `!p if my_utils.is_in_err_condition():</span><br><span class="line">    snip.rv = &quot;err&quot;</span><br><span class="line">else:</span><br><span class="line">    snip.rv = &quot;nil&quot;`</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+<h2 id="snippet-actions">Snippet Actions <a class="markdownIt-Anchor" href="#snippet-actions">#</a></h2>
+<ul>
+<li>Pre-expand: invoked just after trigger condition was matched, but before snippet actually expanded;</li>
+<li>Post-expand: invoked after snippet was expanded and interpolations were applied for the first time, but before jump on the first placeholder.</li>
+<li>Jump: invoked just after a jump to the next/prev placeholder.</li>
+</ul>
+<blockquote>
+<p>Specified code will be evaluated at stages defined above and same global
+variables and modules will be available that are stated in
+the UltiSnips-custom-context-snippets section.</p>
+</blockquote>
+<p><code>snip.visual_content</code> will be also declared and will contain text that was selected before snippet expansion (similar to <code>$VISUAL</code> placeholder).</p>
+<pre><code>pre_expand &quot;snip.buffer[snip.line] = ``; snip.cursor.set(snip.line, len(snip.visual_content))&quot;
+snippet &quot;nothing done here&quot;
+$&#123;VISUAL&#125;
+endsnippet
+</code></pre>
+<h3 id="pre-expand-and-post-expand-actions">Pre-expand and Post-expand Actions <a class="markdownIt-Anchor" href="#pre-expand-and-post-expand-actions">#</a></h3>
+<p>Buffer can be modified in pre-expand action code through variable called
+<code>snip.buffer</code>, snippet expansion position will be automatically adjusted.</p>
+<pre><code>pre_expand &quot;snip.buffer[snip.line] = ` `*4; snip.cursor.set(snip.line, 4)&quot;
+snippet d
+def $1():
+    $0
+endsnippet
+
+post_expand &quot;snip.buffer[snip.snippet_end[0]+1:snip.snippet_end[0]+1] = [``]&quot;
+snippet d &quot;Description&quot; b
+def $1():
+    $2
+endsnippet
+</code></pre>
+<h3 id="post-jump-actions">Post-jump Actions <a class="markdownIt-Anchor" href="#post-jump-actions">#</a></h3>
+<p>Post-jump actions can be used to trigger some code based on user input into the placeholders.</p>
+<p>Notable use <strong>cases</strong>:</p>
+<ul>
+<li>Expand another snippet after jump or anonymous snippet after last jump (e.g. perform move method refactoring and
+then insert new method invokation);</li>
+<li>Insert heading into TOC after last jump.</li>
+</ul>
+<p><strong>Variables</strong> and <strong>methods</strong> below will be also defined in the action code scope:</p>
+<ul>
+<li><code>snip.tabstop</code>: zero-indexed number of tabstop jumped onto;
+<ul>
+<li><code>start</code>: (line, column) of the starting position of the tabstop (also accessible as <code>tabstop.line</code> and <code>tabstop.col</code>).</li>
+<li><code>end</code>: (line, column) of the ending position;</li>
+<li><code>current_text</code>: text inside the tabstop.</li>
+</ul>
+</li>
+<li><code>snip.jump_direction</code>: <code>1</code> if jumped forward and <code>-1</code> otherwise;</li>
+<li><code>snip.tabstops</code>: list with tabstop objects, see above;</li>
+<li><code>snip.snippet_start</code>: (line, column) of start of the expanded snippet;</li>
+<li><code>snip.snippet_end</code>: (line, column) of end of the expanded snippet;</li>
+<li><code>snip.expand_anon()</code>: alias for <code>UltiSnips_Manager.expand_anon()</code>;</li>
+</ul>
+<blockquote>
+<p>Also note that you should use <code>snip.buffer</code>, rather than than any other way, to edit buffer content.</p>
+</blockquote>
+<p>Following snippet will insert section in the Table of Contents in the vim-help file:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_jump &quot;if snip.tabstop == 0: insert_toc_item(snip.tabstops[1], snip.buffer)&quot;</span><br><span class="line">snippet s &quot;section&quot; b</span><br><span class="line">`!p insert_delimiter_0(snip, t)`$1`!p insert_section_title(snip, t)`</span><br><span class="line">`!p insert_delimiter_1(snip, t)`</span><br><span class="line">$0</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>The functions called in this snippet are not defined by Ultisnips.</p>
+</blockquote>
+<p>Following example will insert method call at the end of file after user jump out of method declaration snippet.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">def insert_method_call(name):</span><br><span class="line">	vim.command(`normal G`)</span><br><span class="line">	snip.expand_anon(name + `($1)\n`)</span><br><span class="line">endglobal</span><br><span class="line"></span><br><span class="line">post_jump &quot;if snip.tabstop == 0: insert_method_call(snip.tabstops[1].current_text)&quot;</span><br><span class="line">snippet d &quot;method declaration&quot; b</span><br><span class="line">def $1():</span><br><span class="line">	$2</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Electron+Vue 开发笔记软件</title>
     <url>/2021/04/28/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<ul>
@@ -682,43 +1137,37 @@ What’s this?</p>
 <h3 id="next-tags">NexT tags <a class="markdownIt-Anchor" href="#next-tags">#</a></h3>
 <h4 id="call-out">Call Out <a class="markdownIt-Anchor" href="#call-out">#</a></h4>
 <details class="note default titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-default</div>'><p>default</p>
+<summary id='default'><p>default</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 default</div><p>default</p>
 </details>
 <details class="note primary titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-primary</div>'><p>primary</p>
+<summary id='primary'><p>primary</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 primary</div><p>primary</p>
 </details>
 <details class="note success titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-success</div>'><p>success</p>
+<summary id='success'><p>success</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 success</div><p>success</p>
 </details>
 <details class="note info titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-info</div>'><p>info</p>
+<summary id='info'><p>info</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 info</div><p>info</p>
 </details>
 <details class="note warning titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-warning</div>'><p>warning</p>
+<summary id='warning'><p>warning</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 warning</div><p>warning</p>
 </details>
 <details class="note danger titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-danger</div>'><p>danger</p>
+<summary id='danger'><p>danger</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 danger</div><p>danger</p>
@@ -1137,6 +1586,126 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 学习记录</title>
+    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
+<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
+<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
+<p>安装 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
+<p>安装 cnpm（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
+<p>安装 yarn（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
+<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
+<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
+<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
+<p>使用 Linux 软件包管理器安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
+<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
+<blockquote>
+<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
+<p>准备两个基本文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
+<p>初始化 <code>packages.json</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Front end</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
+<span id="more"></span>
+<p>HLA 基因复合体分为三个基因区</p>
+<p>MHC 基因分两种类型</p>
+<ul>
+<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
+<li>免疫功能相关基因
+<ul>
+<li>血清补体成分的编码基因</li>
+<li>抗原加工相关基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The TTY Demystified</title>
     <url>/2021/03/15/The-TTY-Demystified/</url>
     <content><![CDATA[<p>原文：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51c2FrZXNzb24ubmV0L3Byb2dyYW1taW5nL3R0eS8=">http://www.linusakesson.net/programming/tty/<i class="fa fa-external-link-alt"></i></span></p>
@@ -1409,126 +1978,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 学习记录</title>
-    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
-<ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
-<ul>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
-<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
-<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
-<p>安装 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
-<p>安装 cnpm（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
-<p>安装 yarn（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
-<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
-<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
-<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
-<p>使用 Linux 软件包管理器安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
-<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
-<blockquote>
-<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
-<p>准备两个基本文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
-<p>初始化 <code>packages.json</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Front end</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
-<span id="more"></span>
-<p>HLA 基因复合体分为三个基因区</p>
-<p>MHC 基因分两种类型</p>
-<ul>
-<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
-<li>免疫功能相关基因
-<ul>
-<li>血清补体成分的编码基因</li>
-<li>抗原加工相关基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
-</ul>
-</li>
-</ul>
-<p>MHC 遗传特点</p>
-<ol>
-<li>MHC 多态性</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人类发育与遗传学</title>
     <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
     <content><![CDATA[<blockquote>
@@ -1637,6 +2086,113 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       <tags>
         <tag>Index</tag>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success" open>
+<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -2130,113 +2686,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success" open>
-<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -2751,6 +3200,167 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
+    <title>动物源性细菌</title>
+    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
+<span id="more"></span>
+<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
+<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
+<li>培养特性和生化反应：需氧，营养要求较高</li>
+<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<ul>
+<li><strong>感染途径</strong>：
+<ul>
+<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
+<li>经呼吸道或眼结膜</li>
+<li>经皮肤</li>
+</ul>
+</li>
+<li><strong>常见患者</strong>：
+<ul>
+<li>和动物密切接触者</li>
+<li>饮用生奶者</li>
+</ul>
+</li>
+<li>致病物质：内毒素、荚膜、侵袭性酶</li>
+<li>所致疾病：
+<ul>
+<li>人类：反复发生的<strong>菌血症</strong>导致患者发生<strong>波浪热</strong>；人类胎盘不含<em>赤藓糖醇</em>，故人类感染后不会引起<s>流产</s></li>
+<li>感染家畜：母畜<strong>流产</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<ul>
+<li><strong>带菌免疫</strong>，即体内有布鲁斯菌存在时，对再次感染有较强免疫力。</li>
+<li>细胞免疫与迟发型超敏反应交织存在。</li>
+</ul>
+<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+芽孢杆菌属</div><ul>
+<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
+<li>培养特性：需氧，多数在有氧条件下形成芽孢</li>
+<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
+</ul>
+</div>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，<strong>有荚膜</strong>，无鞭毛，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
+<li>培养特性和生化反应：
+<ul>
+<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
+<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>黏液性菌落</mark></li>
+</ul>
+</li>
+<li>抵抗力：
+<ul>
+<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
+<li>对青霉素等多种抗生素敏感</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>荚膜：抗吞噬</li>
+<li><strong>炭疽毒素</strong>：
+<ul>
+<li><strong>水肿因子</strong>（EF）、<strong>保护性抗原</strong>（PA）、<strong>致死因子</strong>（LF）</li>
+<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
+</ul>
+</li>
+</ul>
+<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
+<ul>
+<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
+<li><strong>感染途径及所致疾病</strong>：
+<ul>
+<li>接触 → 皮肤炭疽</li>
+<li>食入 → 肠炭疽</li>
+<li>吸入 → 肺炭疽（最严重）</li>
+</ul>
+</li>
+</ul>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<ul>
+<li>标本：严禁在室外剖检病体</li>
+<li>直接涂片镜检：荚膜，竹节状排布</li>
+<li>分离培养与鉴定：
+<ul>
+<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
+<li>青霉素串珠实验、噬菌体裂解实验</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>疫苗</li>
+<li>抗生素：首选<strong>青霉素</strong></li>
+</ul>
+<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
+<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
+<ol>
+<li>鼠疫耶尔森菌：鼠疫；</li>
+<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
+<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
+</ol>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，<strong>有荚膜</strong>，无鞭毛、芽孢，菌体形态、大小变化较大</li>
+<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
+<li>抗原构造：
+<ul>
+<li>F1 抗原：荚膜抗原</li>
+<li>V/W 抗原：菌体表面抗原</li>
+<li>鼠毒素</li>
+<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
+<li>内毒素：与肠道杆菌内毒素相似</li>
+</ul>
+</li>
+<li>抵抗力：较弱</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
+<li>外毒素：<strong>鼠毒素</strong>（MT，主要致病物质）</li>
+<li>内毒素</li>
+</ul>
+<p>所致疾病：<strong>鼠疫</strong></p>
+<ul>
+<li>传染源：鼠，患病者</li>
+<li>传播途径及所致疾病：
+<ul>
+<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
+<li>染菌的尘埃进入<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
+<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则-2">防治原则 <a class="markdownIt-Anchor" href="#防治原则-2">#</a></h3>
+<ul>
+<li>消灭传染源：灭鼠灭蚤</li>
+<li>疫苗：无毒株活菌疫苗接种</li>
+<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分子病和先天性代谢病</title>
     <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -2955,253 +3565,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动物源性细菌</title>
-    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
-<span id="more"></span>
-<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
-<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
-<li>培养特性和生化反应：需氧，营养要求较高</li>
-<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
-<ul>
-<li><strong>感染途径</strong>：
-<ul>
-<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
-<li>经呼吸道或眼结膜</li>
-<li>经皮肤</li>
-</ul>
-</li>
-<li><strong>常见患者</strong>：
-<ul>
-<li>和动物密切接触者</li>
-<li>饮用生奶者</li>
-</ul>
-</li>
-<li>致病物质：内毒素、荚膜、侵袭性酶</li>
-<li>所致疾病：
-<ul>
-<li>人类：反复发生的<strong>菌血症</strong>导致患者发生<strong>波浪热</strong>；人类胎盘不含<em>赤藓糖醇</em>，故人类感染后不会引起<s>流产</s></li>
-<li>感染家畜：母畜<strong>流产</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<ul>
-<li><strong>带菌免疫</strong>，即体内有布鲁斯菌存在时，对再次感染有较强免疫力。</li>
-<li>细胞免疫与迟发型超敏反应交织存在。</li>
-</ul>
-<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info titled"><div class='note-title' id='芽孢杆菌属'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-芽孢杆菌属</div><ul>
-<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
-<li>培养特性：需氧，多数在有氧条件下形成芽孢</li>
-<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
-</ul>
-</div>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，<strong>有荚膜</strong>，无鞭毛，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
-<li>培养特性和生化反应：
-<ul>
-<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
-<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>黏液性菌落</mark></li>
-</ul>
-</li>
-<li>抵抗力：
-<ul>
-<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
-<li>对青霉素等多种抗生素敏感</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>荚膜：抗吞噬</li>
-<li><strong>炭疽毒素</strong>：
-<ul>
-<li><strong>水肿因子</strong>（EF）、<strong>保护性抗原</strong>（PA）、<strong>致死因子</strong>（LF）</li>
-<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
-</ul>
-</li>
-</ul>
-<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
-<ul>
-<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
-<li><strong>感染途径及所致疾病</strong>：
-<ul>
-<li>接触 → 皮肤炭疽</li>
-<li>食入 → 肠炭疽</li>
-<li>吸入 → 肺炭疽（最严重）</li>
-</ul>
-</li>
-</ul>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<ul>
-<li>标本：严禁在室外剖检病体</li>
-<li>直接涂片镜检：荚膜，竹节状排布</li>
-<li>分离培养与鉴定：
-<ul>
-<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
-<li>青霉素串珠实验、噬菌体裂解实验</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>疫苗</li>
-<li>抗生素：首选<strong>青霉素</strong></li>
-</ul>
-<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
-<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
-<ol>
-<li>鼠疫耶尔森菌：鼠疫；</li>
-<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
-<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
-</ol>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，<strong>有荚膜</strong>，无鞭毛、芽孢，菌体形态、大小变化较大</li>
-<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
-<li>抗原构造：
-<ul>
-<li>F1 抗原：荚膜抗原</li>
-<li>V/W 抗原：菌体表面抗原</li>
-<li>鼠毒素</li>
-<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
-<li>内毒素：与肠道杆菌内毒素相似</li>
-</ul>
-</li>
-<li>抵抗力：较弱</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
-<li>外毒素：<strong>鼠毒素</strong>（MT，主要致病物质）</li>
-<li>内毒素</li>
-</ul>
-<p>所致疾病：<strong>鼠疫</strong></p>
-<ul>
-<li>传染源：鼠，患病者</li>
-<li>传播途径及所致疾病：
-<ul>
-<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
-<li>染菌的尘埃进入<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
-<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则-2">防治原则 <a class="markdownIt-Anchor" href="#防治原则-2">#</a></h3>
-<ul>
-<li>消灭传染源：灭鼠灭蚤</li>
-<li>疫苗：无毒株活菌疫苗接种</li>
-<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医学免疫学</title>
-    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>免疫</dt>
-<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
-</dl>
-<span id="more"></span>
-<ul>
-<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
-<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
-<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
-<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
-<li>主要组织相容性复合体</li>
-</ul>
-<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
-<ul>
-<li>免疫器官
-<ul>
-<li>中枢：胸腺、骨髓</li>
-<li>外周：脾脏、淋巴结</li>
-</ul>
-</li>
-<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
-<li>免疫分子
-<ul>
-<li>膜型分子</li>
-<li>分泌型分子</li>
-</ul>
-</li>
-</ul>
-<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
-<dl>
-<dt><mark>免疫防御</mark>（immune defense）</dt>
-<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
-<dt><mark>免疫监视</mark>（immune surveillance）</dt>
-<dd>随时发现和清除体内出现的“非己”成分。</dd>
-<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
-<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
-</dl>
-<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
-<dl>
-<dt>免疫应答（immune response）</dt>
-<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
-<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
-<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
-<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
-<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
-<dd>相比固有免疫，有三个主要特点：
-<ul>
-<li><strong>特异性</strong></li>
-<li><strong>耐受性</strong></li>
-<li><strong>记忆性</strong></li>
-</ul>
-</dd>
-<dd>适应性免疫应答可分为两类：
-<ul>
-<li><strong>体液免疫</strong></li>
-<li><strong>细胞免疫</strong></li>
-</ul>
-</dd>
-<dt>体液免疫（humoral immunity）</dt>
-<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
-<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
-<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
-</dl>
-<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
-<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
-<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
-<!-- UPDATING -->
-<dl>
-<dt>免疫性疾病</dt>
-<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
-<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -3643,6 +4006,92 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
+    <title>医学免疫学</title>
+    <url>/2021/04/25/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>免疫</dt>
+<dd>机体识别和清除外来环境入侵抗原和体内的突变或衰老细胞，维持机体内环境稳定的功能。</dd>
+</dl>
+<span id="more"></span>
+<ul>
+<li><a href="/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/">免疫器官和组织</a></li>
+<li><a href="/2021/04/30/%E6%8A%97%E5%8E%9F/">抗原</a>、<a href="/2021/05/10/%E6%8A%97%E4%BD%93/">抗体</a></li>
+<li><a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a></li>
+<li><a href="/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/">细胞因子</a></li>
+<li>主要组织相容性复合体</li>
+</ul>
+<h2 id="免疫系统的组成">免疫系统的组成 <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
+<ul>
+<li>免疫器官
+<ul>
+<li>中枢：胸腺、骨髓</li>
+<li>外周：脾脏、淋巴结</li>
+</ul>
+</li>
+<li>免疫细胞：T 细胞、B 细胞、NK 细胞……</li>
+<li>免疫分子
+<ul>
+<li>膜型分子</li>
+<li>分泌型分子</li>
+</ul>
+</li>
+</ul>
+<h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
+<dl>
+<dt><mark>免疫防御</mark>（immune defense）</dt>
+<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
+<dt><mark>免疫监视</mark>（immune surveillance）</dt>
+<dd>随时发现和清除体内出现的“非己”成分。</dd>
+<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
+<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
+</dl>
+<h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
+<dl>
+<dt>免疫应答（immune response）</dt>
+<dd>免疫系统识别和清除“非己”物质的整个过程，可分为<strong>固有免疫</strong>和<strong>适应性免疫</strong>。</dd>
+<dt>固有免疫（innate immune）| 先天性免疫（natural immune or native immune）| 非特异性免疫（non-specific immune）</dt>
+<dd>生物在长期进化过程中形成的，是机体抵御病原体入侵的第一道防线。</dd>
+<dt>适应性免疫（adaptive immune）| 特异性免疫（specific immune）</dt>
+<dd>T、B 细胞接受“非己”物质刺激后，自身活化、增殖、分化为<strong>效应细胞</strong>，产生一系列生物学效应的全过程。</dd>
+<dd>相比固有免疫，有三个主要特点：
+<ul>
+<li><strong>特异性</strong></li>
+<li><strong>耐受性</strong></li>
+<li><strong>记忆性</strong></li>
+</ul>
+</dd>
+<dd>适应性免疫应答可分为两类：
+<ul>
+<li><strong>体液免疫</strong></li>
+<li><strong>细胞免疫</strong></li>
+</ul>
+</dd>
+<dt>体液免疫（humoral immunity）</dt>
+<dd>由 B 细胞产生的抗体介导，主要针对细胞外病原体和毒素。</dd>
+<dt>细胞免疫（cellular immunity）| 细胞介导的免疫（cell-mediated immunity）</dt>
+<dd>由 T 细胞介导，主要针对胞内病原体，如病毒。</dd>
+</dl>
+<p>固有免疫和适应性免疫关系密切：固有免疫是适应性免疫的<strong>先决条件</strong>和
+<strong>启动因素</strong>；适应性免疫的效应分子也可大幅度<strong>促进</strong>固有免疫应答。</p>
+<h2 id="免疫性疾病">免疫性疾病 <a class="markdownIt-Anchor" href="#免疫性疾病">#</a></h2>
+<!-- UPDATING -->
+<dl>
+<dt>免疫性疾病</dt>
+<dd>免疫系统的组成和功能发生异常导致的疾病。</dd>
+<dd>包括免疫缺陷病、超敏反应、自身免疫病、肿瘤、移植排斥反应等。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>医学原虫</title>
     <url>/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/</url>
     <content><![CDATA[<p><strong>原虫</strong>（protozoa）为<strong>单细胞真核生物</strong>，属原生动物界，分布极为广泛，大多营自由生活。寄生于人体和的动物的原虫有 40 余种，包括致病性原虫（<strong>医学原虫</strong>）和非致病性原虫。</p>
@@ -3921,149 +4370,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       <tags>
         <tag>病原生物学</tag>
         <tag>医学蠕虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>厌氧性细菌</title>
-    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>厌氧性细菌（anaerobic bacteria）</dt>
-<dd>一群必须在厌氧条件下才能生长繁殖的细菌，根据其是否能形成芽孢，可将厌氧性细菌分为两大类：
-<ul>
-<li><strong>厌氧芽孢梭菌属</strong>：<a href="#%E7%A0%B4%E4%BC%A4%E9%A3%8E%E6%A2%AD%E8%8F%8C">破伤风梭菌</a>、<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>、<a href="#%E8%82%89%E6%AF%92%E6%A2%AD%E8%8F%8C">肉毒梭菌</a>、<a href="#%E8%89%B0%E9%9A%BE%E6%A2%AD%E8%8F%8C">艰难梭菌</a></li>
-<li><em>无芽孢厌氧菌</em></li>
-</ul>
-</dd>
-</dl>
-<span id="more"></span>
-<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-厌氧芽孢梭菌属</div><ul>
-<li>严格厌氧菌，抵抗力强</li>
-<li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>等极少数外，均有周身鞭毛、无荚膜</li>
-<li>致病性：强，能产生多种外毒素和侵袭性酶</li>
-<li>防治：类毒素疫苗和抗毒素</li>
-</ul>
-</div>
-<h2 id="破伤风梭菌">破伤风梭菌 <a class="markdownIt-Anchor" href="#破伤风梭菌">#</a></h2>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：芽孢正圆形，位于菌体顶端，使细菌呈 <mark>鼓槌状</mark></li>
-<li>培养特性和生化反应：血平板上培养，呈 <strong>β 溶血</strong></li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
-<p>致病因子（外毒素）：</p>
-<ul>
-<li><mark>破伤风痉挛毒素</mark>：<strong>神经毒素</strong>，阻止抑制性神经介质的释放，毒性极强，致死量小于 1μg</li>
-<li>破伤风溶血素：对氧敏感</li>
-</ul>
-<p>所致疾病：<strong>破伤风</strong></p>
-<ul>
-<li>致病条件：伤口形成<strong>厌氧微环境</strong>，如：
-<ol>
-<li><ins>伤口窄而深</ins>，有泥土或异物污染；</li>
-<li><ins>大面积创伤</ins>，坏死组织多，局部组织缺血；</li>
-<li>同时有<ins>需氧菌或兼性厌氧菌</ins>混合感染形成的伤口。</li>
-</ol>
-</li>
-<li>致病特点：<strong>无侵袭力</strong>，仅在局部繁殖，致病作用完全依赖于<strong>外毒素</strong><span class="horizontal-list"><span class="horizontal-list-item">经运动神经终板吸收，沿神经纤维间隙逆行至脊髓前角细胞，上行至脑干</span><span class="horizontal-list-conjunction">或</span><span class="horizontal-list-item">经淋巴液或血液到达中枢神经系统</span></span></li>
-<li>临床表现：
-<ul>
-<li><strong>苦笑面容</strong>、牙关紧闭：咀嚼肌痉挛</li>
-<li><strong>角弓反转</strong>：持续性背部痉挛</li>
-</ul>
-</li>
-</ul>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<p>主要依靠抗毒素中和细菌产生的外毒素，一般病后不会获得牢固免疫力。<br/>
-获得有效抗毒素的途径是进行人工免疫。</p>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>一般不进行涂片镜检和分离培养，凭典型症状和病史即可做出诊断。</p>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>非特异性治疗：正确处理伤口及清创、扩创，防治厌氧微环境形成；</li>
-<li>特异性紧急预防：<strong>破伤风抗毒素</strong>（TAT，需要皮肤过敏试验）或<em>破伤风免疫球蛋白</em>（TIG），迅速获得被动免疫；</li>
-<li>特异性预防：<strong>百白破三联疫苗</strong>（含破伤风类毒素）；</li>
-<li>特异性治疗：
-<ul>
-<li>抗毒素：早期、足量使用 TIG 或 TAT；</li>
-<li>抗生素：首选<strong>青霉素</strong>，也可用四环素、红霉素等。</li>
-</ul>
-</li>
-</ul>
-<h2 id="产气荚膜梭菌">产气荚膜梭菌 <a class="markdownIt-Anchor" href="#产气荚膜梭菌">#</a></h2>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：两端平切的粗大杆状，芽孢比菌体细，位于次极端，在人或动物体内可见明显的 <mark>荚膜</mark></li>
-<li>抗原组成和分类：根据 4 种主要毒素的抗原性分为 A~E 5 种血清型，对人致病的主要是 A 型</li>
-<li>培养特性和生化反应：
-<ul>
-<li>生长迅速（繁殖周期仅为 8min）</li>
-<li>血琼脂平板上可见<strong>双层溶血环</strong>，内环是由于 <em>θ 毒素</em>（溶血素、细胞毒素）引起的完全溶血，外环是由 <strong>α 毒素</strong>（卵磷脂酶）引起的不完全溶血</li>
-<li><strong>蛋黄琼脂平板</strong>上，菌落周围出现乳白色浑浊圈，是由于 <strong>α 毒素</strong>分解卵磷脂所致，若加入 α 毒素的抗血清，则不会出现浑浊，此现象称 <mark>Nagler 反应</mark>，是本菌的特点</li>
-<li>在<strong>牛乳培养基</strong>中分解乳糖产酸，使酪蛋白凝固；同时产生大量地气体，将凝固的酪蛋白冲成蜂窝状，称<mark>汹涌发酵现象</mark>，是鉴别本菌的主要特征。</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：菌体成分（<strong>荚膜</strong>）、侵袭性酶和多种<strong>外毒素</strong>，有些外毒素同时是侵袭性酶</p>
-<ul>
-<li><strong>α 毒素</strong>（卵磷脂酶）：A 型产量最大，增加血管通透性，引起溶血和组织坏死，在<em>气性坏疽</em>的形成中其主要作用</li>
-<li>β、ε、ι 毒素：仅部分型别可产生，引起坏死损伤和血管通透型增加</li>
-<li>肠毒素：肠毒素毒性（呕吐、腹泻），细胞毒性</li>
-</ul>
-<p>所致疾病：</p>
-<ul>
-<li><strong>气性坏疽</strong>：主要由 A 型产气荚膜杆菌引起，以组织坏死、气肿和全身中毒为特征，致病条件与破伤风杆菌类似，即需要形成厌氧微环境</li>
-<li><strong>坏死性肠炎</strong></li>
-<li><strong>食物中毒</strong></li>
-</ul>
-<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<ul>
-<li>标本：深部创口取样</li>
-<li>直接涂片镜检：革兰氏阳性大杆菌，白细胞少且不典型（被毒素杀死），伴有其他杂菌</li>
-</ul>
-<h2 id="肉毒梭菌">肉毒梭菌 <a class="markdownIt-Anchor" href="#肉毒梭菌">#</a></h2>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：芽孢椭圆形，粗于菌体，位于次极端，是细胞呈<strong>汤匙状</strong>或<strong>网球拍状</strong>；</li>
-<li>抗原结构和分类：根据神经毒素的抗原性分为 A~G 7 个型</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：<mark>肉毒毒素</mark>，已知毒性最强的<strong>神经毒素</strong>，致死量约为 0.1μg，作用于外周神经肌肉接头，抑制<strong>乙酰胆碱</strong>释放，导致弛缓性麻痹。肉毒毒素<strong>不耐热</strong>，煮沸 20min 即可被破坏。</p>
-<p>所致疾病：</p>
-<ul>
-<li>食物中毒：
-<ul>
-<li>病因：食入<ins>毒素</ins></li>
-<li>临床症状：以<s>胃肠道症状</s>神经系统症状为主，主要为松弛型<strong>神经末梢麻痹</strong></li>
-</ul>
-</li>
-<li><strong>婴儿肉毒病</strong>：
-<ul>
-<li>食入肉毒梭菌<ins>芽孢</ins>，芽孢发芽、繁殖，产生毒素</li>
-<li>临床症状：类似于肉毒毒素食物中毒，早期表现为便秘、吸乳无力，病死率不高</li>
-</ul>
-</li>
-<li>创伤感染中毒：伤口被肉毒梭菌芽孢污染，偶尔见于机体抵抗力低下患者</li>
-</ul>
-<h2 id="艰难梭菌">艰难梭菌 <a class="markdownIt-Anchor" href="#艰难梭菌">#</a></h2>
-<p><strong>艰难梭菌</strong>（<em>C. difficile</em>）是人肠道中的正常菌群之一，对氧十分敏感，很难分离培养，故得名。</p>
-<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
-<p>一般不致病，当临床长期使用或不正当使用某些抗生素后，引起菌群失调，导致艰难梭菌大量繁殖而致病。</p>
-<ul>
-<li>致病物质：A 毒素（肠毒素）、B 毒素（细胞毒素）</li>
-<li>所致疾病：假膜性肠炎</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4439,6 +4745,149 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>厌氧性细菌</title>
+    <url>/2021/06/23/%E5%8E%8C%E6%B0%A7%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<dl>
+<dt>厌氧性细菌（anaerobic bacteria）</dt>
+<dd>一群必须在厌氧条件下才能生长繁殖的细菌，根据其是否能形成芽孢，可将厌氧性细菌分为两大类：
+<ul>
+<li><strong>厌氧芽孢梭菌属</strong>：<a href="#%E7%A0%B4%E4%BC%A4%E9%A3%8E%E6%A2%AD%E8%8F%8C">破伤风梭菌</a>、<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>、<a href="#%E8%82%89%E6%AF%92%E6%A2%AD%E8%8F%8C">肉毒梭菌</a>、<a href="#%E8%89%B0%E9%9A%BE%E6%A2%AD%E8%8F%8C">艰难梭菌</a></li>
+<li><em>无芽孢厌氧菌</em></li>
+</ul>
+</dd>
+</dl>
+<span id="more"></span>
+<div class="note info titled"><div class='note-title' id='厌氧芽孢梭菌属'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+厌氧芽孢梭菌属</div><ul>
+<li>严格厌氧菌，抵抗力强</li>
+<li>形态与染色：<strong>G<sup>+</sup></strong>，能形成<strong>芽孢</strong>，芽孢直径比菌体宽大，使菌体膨大呈梭状，除<a href="#%E4%BA%A7%E6%B0%94%E8%8D%9A%E8%86%9C%E6%A2%AD%E8%8F%8C">产气荚膜梭菌</a>等极少数外，均有周身鞭毛、无荚膜</li>
+<li>致病性：强，能产生多种外毒素和侵袭性酶</li>
+<li>防治：类毒素疫苗和抗毒素</li>
+</ul>
+</div>
+<h2 id="破伤风梭菌">破伤风梭菌 <a class="markdownIt-Anchor" href="#破伤风梭菌">#</a></h2>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：芽孢正圆形，位于菌体顶端，使细菌呈 <mark>鼓槌状</mark></li>
+<li>培养特性和生化反应：血平板上培养，呈 <strong>β 溶血</strong></li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<p>致病因子（外毒素）：</p>
+<ul>
+<li><mark>破伤风痉挛毒素</mark>：<strong>神经毒素</strong>，阻止抑制性神经介质的释放，毒性极强，致死量小于 1μg</li>
+<li>破伤风溶血素：对氧敏感</li>
+</ul>
+<p>所致疾病：<strong>破伤风</strong></p>
+<ul>
+<li>致病条件：伤口形成<strong>厌氧微环境</strong>，如：
+<ol>
+<li><ins>伤口窄而深</ins>，有泥土或异物污染；</li>
+<li><ins>大面积创伤</ins>，坏死组织多，局部组织缺血；</li>
+<li>同时有<ins>需氧菌或兼性厌氧菌</ins>混合感染形成的伤口。</li>
+</ol>
+</li>
+<li>致病特点：<strong>无侵袭力</strong>，仅在局部繁殖，致病作用完全依赖于<strong>外毒素</strong><span class="horizontal-list"><span class="horizontal-list-item">经运动神经终板吸收，沿神经纤维间隙逆行至脊髓前角细胞，上行至脑干</span><span class="horizontal-list-conjunction">或</span><span class="horizontal-list-item">经淋巴液或血液到达中枢神经系统</span></span></li>
+<li>临床表现：
+<ul>
+<li><strong>苦笑面容</strong>、牙关紧闭：咀嚼肌痉挛</li>
+<li><strong>角弓反转</strong>：持续性背部痉挛</li>
+</ul>
+</li>
+</ul>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<p>主要依靠抗毒素中和细菌产生的外毒素，一般病后不会获得牢固免疫力。<br/>
+获得有效抗毒素的途径是进行人工免疫。</p>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>一般不进行涂片镜检和分离培养，凭典型症状和病史即可做出诊断。</p>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>非特异性治疗：正确处理伤口及清创、扩创，防治厌氧微环境形成；</li>
+<li>特异性紧急预防：<strong>破伤风抗毒素</strong>（TAT，需要皮肤过敏试验）或<em>破伤风免疫球蛋白</em>（TIG），迅速获得被动免疫；</li>
+<li>特异性预防：<strong>百白破三联疫苗</strong>（含破伤风类毒素）；</li>
+<li>特异性治疗：
+<ul>
+<li>抗毒素：早期、足量使用 TIG 或 TAT；</li>
+<li>抗生素：首选<strong>青霉素</strong>，也可用四环素、红霉素等。</li>
+</ul>
+</li>
+</ul>
+<h2 id="产气荚膜梭菌">产气荚膜梭菌 <a class="markdownIt-Anchor" href="#产气荚膜梭菌">#</a></h2>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：两端平切的粗大杆状，芽孢比菌体细，位于次极端，在人或动物体内可见明显的 <mark>荚膜</mark></li>
+<li>抗原组成和分类：根据 4 种主要毒素的抗原性分为 A~E 5 种血清型，对人致病的主要是 A 型</li>
+<li>培养特性和生化反应：
+<ul>
+<li>生长迅速（繁殖周期仅为 8min）</li>
+<li>血琼脂平板上可见<strong>双层溶血环</strong>，内环是由于 <em>θ 毒素</em>（溶血素、细胞毒素）引起的完全溶血，外环是由 <strong>α 毒素</strong>（卵磷脂酶）引起的不完全溶血</li>
+<li><strong>蛋黄琼脂平板</strong>上，菌落周围出现乳白色浑浊圈，是由于 <strong>α 毒素</strong>分解卵磷脂所致，若加入 α 毒素的抗血清，则不会出现浑浊，此现象称 <mark>Nagler 反应</mark>，是本菌的特点</li>
+<li>在<strong>牛乳培养基</strong>中分解乳糖产酸，使酪蛋白凝固；同时产生大量地气体，将凝固的酪蛋白冲成蜂窝状，称<mark>汹涌发酵现象</mark>，是鉴别本菌的主要特征。</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：菌体成分（<strong>荚膜</strong>）、侵袭性酶和多种<strong>外毒素</strong>，有些外毒素同时是侵袭性酶</p>
+<ul>
+<li><strong>α 毒素</strong>（卵磷脂酶）：A 型产量最大，增加血管通透性，引起溶血和组织坏死，在<em>气性坏疽</em>的形成中其主要作用</li>
+<li>β、ε、ι 毒素：仅部分型别可产生，引起坏死损伤和血管通透型增加</li>
+<li>肠毒素：肠毒素毒性（呕吐、腹泻），细胞毒性</li>
+</ul>
+<p>所致疾病：</p>
+<ul>
+<li><strong>气性坏疽</strong>：主要由 A 型产气荚膜杆菌引起，以组织坏死、气肿和全身中毒为特征，致病条件与破伤风杆菌类似，即需要形成厌氧微环境</li>
+<li><strong>坏死性肠炎</strong></li>
+<li><strong>食物中毒</strong></li>
+</ul>
+<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
+<ul>
+<li>标本：深部创口取样</li>
+<li>直接涂片镜检：革兰氏阳性大杆菌，白细胞少且不典型（被毒素杀死），伴有其他杂菌</li>
+</ul>
+<h2 id="肉毒梭菌">肉毒梭菌 <a class="markdownIt-Anchor" href="#肉毒梭菌">#</a></h2>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：芽孢椭圆形，粗于菌体，位于次极端，是细胞呈<strong>汤匙状</strong>或<strong>网球拍状</strong>；</li>
+<li>抗原结构和分类：根据神经毒素的抗原性分为 A~G 7 个型</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：<mark>肉毒毒素</mark>，已知毒性最强的<strong>神经毒素</strong>，致死量约为 0.1μg，作用于外周神经肌肉接头，抑制<strong>乙酰胆碱</strong>释放，导致弛缓性麻痹。肉毒毒素<strong>不耐热</strong>，煮沸 20min 即可被破坏。</p>
+<p>所致疾病：</p>
+<ul>
+<li>食物中毒：
+<ul>
+<li>病因：食入<ins>毒素</ins></li>
+<li>临床症状：以<s>胃肠道症状</s>神经系统症状为主，主要为松弛型<strong>神经末梢麻痹</strong></li>
+</ul>
+</li>
+<li><strong>婴儿肉毒病</strong>：
+<ul>
+<li>食入肉毒梭菌<ins>芽孢</ins>，芽孢发芽、繁殖，产生毒素</li>
+<li>临床症状：类似于肉毒毒素食物中毒，早期表现为便秘、吸乳无力，病死率不高</li>
+</ul>
+</li>
+<li>创伤感染中毒：伤口被肉毒梭菌芽孢污染，偶尔见于机体抵抗力低下患者</li>
+</ul>
+<h2 id="艰难梭菌">艰难梭菌 <a class="markdownIt-Anchor" href="#艰难梭菌">#</a></h2>
+<p><strong>艰难梭菌</strong>（<em>C. difficile</em>）是人肠道中的正常菌群之一，对氧十分敏感，很难分离培养，故得名。</p>
+<h3 id="致病性-4">致病性 <a class="markdownIt-Anchor" href="#致病性-4">#</a></h3>
+<p>一般不致病，当临床长期使用或不正当使用某些抗生素后，引起菌群失调，导致艰难梭菌大量繁殖而致病。</p>
+<ul>
+<li>致病物质：A 毒素（肠毒素）、B 毒素（细胞毒素）</li>
+<li>所致疾病：假膜性肠炎</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4882,6 +5331,24 @@ T 细胞，当再次遇到抗原后，刺激致敏的 T 细胞产生各种淋巴
       </tags>
   </entry>
   <entry>
+    <title>器官、系统的发生与先天性畸形</title>
+    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>呼吸道感染细菌</title>
     <url>/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/</url>
     <content><![CDATA[<p><strong>呼吸道感染细菌</strong>指能侵犯呼吸道、引起呼吸道局部病变或以呼吸道为侵入门户，引起呼吸道及其他组织器官病变的病原菌。</p>
@@ -4981,8 +5448,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 </dl>
 </div>
 <details class="note info titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-结核菌素试验</div>'><p>结核菌素试验</p>
+<summary id='结核菌素试验'><p>结核菌素试验</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 结核菌素试验</div><dl>
@@ -5194,24 +5660,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>器官、系统的发生与先天性畸形</title>
-    <url>/2021/04/10/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -5784,626 +6232,6 @@ FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其�
       </tags>
   </entry>
   <entry>
-    <title>Create Snippets for UltiSnips</title>
-    <url>/2021/03/28/Create-Snippets-for-Ultisnips/</url>
-    <content><![CDATA[<p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
-<p>My snippets: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvbnZpbWNmZy90cmVlL2x1YS9VbHRpU25pcHM=">https://github.com/alohaia/nvimcfg/tree/lua/UltiSnips<i class="fa fa-external-link-alt"></i></span></p>
-<span id="more"></span>
-<h2 id="include-other-snippet-files">Include Other Snippet Files <a class="markdownIt-Anchor" href="#include-other-snippet-files">#</a></h2>
-<p>Add c snippets for cpp files for example.</p>
-<ol>
-<li><code>UltiSnipsAddFiletypes</code>: <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">au</span> FileType cpp UltiSnipsAddFiletypes cpp.<span class="keyword">c</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><code>extends</code>: For example, in <code>cpp.snippets</code>, add: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">extends c</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="keywords">Keywords <a class="markdownIt-Anchor" href="#keywords">#</a></h2>
-<ol>
-<li><code>extends</code>: See above.</li>
-<li><code>priority</code>: Set priority for all snippet defined in the current file.</li>
-<li><code>snippets</code> <code>endsnippet</code>: Define a snippet.</li>
-<li><code>global</code> <code>endglobal</code>: Define a <a href="#global-snippets">global snippet</a>(only supports python currently).</li>
-<li><code>pre_expand</code> <code>post_expand</code> <code>post_jump</code>: Declare snippet actions.</li>
-</ol>
-<h2 id="snippets-format">Snippets’ Format <a class="markdownIt-Anchor" href="#snippets-format">#</a></h2>
-<pre><code>snippet trigger_word [ &quot;description&quot; [ options ] ]
-...
-endsnippet
-</code></pre>
-<ul>
-<li><code>trigger_word</code>: The word to trigger the snippet. It can include spaces via wrap it in quotes or any other characters.<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet &quot;tab trigger&quot; [ &quot;description&quot; [ options ] ]</span><br><span class="line">snippet ltab triggerl [ &quot;description&quot; [ options ] ]</span><br></pre></td></tr></table></figure>
-Quotes can be included as part of the trigger by wrapping the trigger in
-another character.<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet !&quot;tab trigger&quot;! [ &quot;description&quot; [ options ] ]</span><br></pre></td></tr></table></figure>
-</li>
-<li><code>description</code>: A string describing the trigger.</li>
-<li><code>options</code>: See below.</li>
-</ul>
-<h2 id="snippet-options">Snippet Options <a class="markdownIt-Anchor" href="#snippet-options">#</a></h2>
-<ul>
-<li><code>b</code>: Beginning of line - A snippet with this option is expanded only if the tab trigger is the first word on the line. In other words, if only whitespace precedes the tab trigger, expand. The default is to expand snippets at any position regardless of the preceding non-whitespace characters.</li>
-<li><code>i</code>: In-word expansion - By default a snippet is expanded only if the tab trigger is the first word on the line or is preceded by one or more whitespace characters. A snippet with this option is expanded regardless of the preceding character. In other words, the snippet can be triggered in the middle of a word.</li>
-<li><code>w</code>: Word boundary - With this option, the snippet is expanded if the tab trigger start matches a word boundary and the tab trigger end matches a word boundary. In other words the tab trigger must be preceded and followed by non-word characters. Word characters are defined by the <code>iskeyword</code> setting. Use this option, for example, to permit expansion where the tab trigger follows punctuation without expanding suffixes of larger words.</li>
-<li><code>r</code>: Regular expression - With this option, the tab trigger is expected to be a python regular expression. The snippet is expanded if the recently typed characters match the regular expression. Note: The regular expression MUST be quoted (or surrounded with another character) like a multi-word tab trigger (see above) whether it has spaces or not. A resulting match is passed to any python code blocks in the snippet definition as the local variable “match”.</li>
-<li><code>t</code>: Do not expand tabs - If a snippet definition includes leading tab characters, by default UltiSnips expands the tab characters honoring the Vim <code>shiftwidth</code>, <code>softtabstop</code>, <code>expandtab</code> and <code>tabstop</code> indentation settings. (For example, if <code>expandtab</code> is set, the tab is replaced with spaces.) If this option is set, UltiSnips will ignore the Vim settings and insert the tab characters as is. This option is useful for snippets involved with tab delimited formats.</li>
-<li><code>s</code>: Remove whitespace immediately before the cursor at the end of a line before jumping to the next tabstop.  This is useful if there is a tabstop with optional text at the end of a line.</li>
-<li><code>m</code>: Trim all whitespaces from right side of snippet lines. Useful when snippet contains empty lines which should remain empty after expanding. Without this option empty lines in snippets definition will have indentation too.</li>
-<li><code>e</code>: Custom context snippet - With this option expansion of snippet can be controlled not only by previous characters in line, but by any given python expression. This option can be specified along with other options, like <code>b</code>. See UltiSnips-custom-context-snippets for more info.</li>
-<li><code>A</code>: Snippet will be triggered automatically, when condition matches. See UltiSnips-autotrigger for more info.</li>
-</ul>
-<h2 id="character-escaping">Character Escaping <a class="markdownIt-Anchor" href="#character-escaping">#</a></h2>
-<blockquote>
-<p>In snippet definitions, the characters <code>`</code>, <code>&#123;</code>, <code>$</code> and <code>\</code> have special
-meaning. If you want to insert one of these characters literally, escape them
-with a backslash, <code>\</code>.</p>
-</blockquote>
-<h2 id="plaintext-snippets">Plaintext Snippets <a class="markdownIt-Anchor" href="#plaintext-snippets">#</a></h2>
-<p>For example:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet bye &quot;My mail signature&quot;</span><br><span class="line">Good bye, Sir. Hope to talk to you soon.</span><br><span class="line">- Arthur, King of Britain</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<h2 id="tabstop-and-placeholders">Tabstop and Placeholders <a class="markdownIt-Anchor" href="#tabstop-and-placeholders">#</a></h2>
-<p>A simplest tabstop looks like <code>$no</code>, <code>no</code> is a number starting from 1. <code>$0</code> is a special tabstop that is always the last tabstop no matter how many tabstops are defined.</p>
-<pre><code>snippet letter
-Dear $1,
-$0
-Yours sincerely,
-$2
-endsnippet
-</code></pre>
-<p>Default text:</p>
-<pre><code>snippet case
-case $&#123;1:word&#125; in
-    $&#123;2:pattern&#125; ) $0;;
-esac
-endsnippet
-</code></pre>
-<p>Have a tabstop within another tabstop:</p>
-<pre><code>snippet a
-&lt;a href=&quot;$&#123;1:http://www.$&#123;2:example.com&#125;&#125;&quot;
-    $0
-&lt;/a&gt;
-endsnippet
-</code></pre>
-<blockquote>
-<p>Typing any text at the first tabstop replaces the default
-value, including the second tabstop, with the typed text. So the second
-tabstop is essentially deleted.</p>
-</blockquote>
-<h2 id="visual-placeholder">Visual Placeholder <a class="markdownIt-Anchor" href="#visual-placeholder">#</a></h2>
-<p>Format:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$&#123;VISUAL:default/search/replace/option&#125;</span><br></pre></td></tr></table></figure>
-<p>Usage:</p>
-<ol>
-<li>Select some text in visual mode and press the trigger key, the text well be deleted.</li>
-<li>Enter the <code>trigger_word</code> and press the trigger key again, the text deleted will replace the <code>$&#123;VISUAL&#125;</code> placeholder.</li>
-</ol>
-<p>Details:</p>
-<ol>
-<li>Snippets containing Visual Placeholder can be used in insert mod. In the way, the <code>default</code> will be used as default text.</li>
-<li>With <code>/search/replace/option</code>, you can process the text like using <code>:s</code> command. See <a href="#transformations">Transformations</a>.</li>
-</ol>
-<h2 id="mirrors">Mirrors <a class="markdownIt-Anchor" href="#mirrors">#</a></h2>
-<p>Mirrors repeat the content of a <span class="exturl" data-url="aHR0cDovL3RhYnN0b3AuVG8=">tabstop.To<i class="fa fa-external-link-alt"></i></span> mirror a tabstop simply insert the tabstop again using the “dollar sign followed by a number” syntax, e.g., <code>$1</code>.</p>
-<pre><code>snippet ifndef
-#ifndef $&#123;1:SOME_DEFINE&#125;
-#define $1
-$0
-#endif /* $1 */
-endsnippet
-</code></pre>
-<h2 id="interpolation">Interpolation <a class="markdownIt-Anchor" href="#interpolation">#</a></h2>
-<h3 id="shellcode">Shellcode <a class="markdownIt-Anchor" href="#shellcode">#</a></h3>
-<p>An example may be the most helpful.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet today</span><br><span class="line">Today is the `date +%d.%m.%y`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<p>The output of command <code>date +%d.%m%y</code> will replace the text wrapped by backticks. You`ll get something like “Today is the 19.08.20.”</p>
-<h3 id="vimscript">Vimscript <a class="markdownIt-Anchor" href="#vimscript">#</a></h3>
-<p>Similar to shellcode, but begins with `v.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet indent</span><br><span class="line">Indent is: `!v indent(&quot;.&quot;)`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(note the 4 spaces in front): indent&lt;trigger_key&gt; -&gt;</span><br><span class="line">(note the 4 spaces in front): Indent is: 4.</span><br></pre></td></tr></table></figure>
-<h3 id="python">Python <a class="markdownIt-Anchor" href="#python">#</a></h3>
-<p>There are two choices:</p>
-<ol>
-<li><strong>`#!/usr/bin/python …`</strong>: Normal python code.</li>
-<li><strong>`!p …`</strong>: Use python with some predefined objects and variables. The variables automatically defined in python code are:</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>variable</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fn</td>
-<td>The current filename</td>
-</tr>
-<tr>
-<td>path</td>
-<td>The complete path to the current file</td>
-</tr>
-<tr>
-<td>t</td>
-<td>The values of the placeholders, <code>t[1]</code> is the text of <code>$&#123;1&#125;</code>, etc.</td>
-</tr>
-<tr>
-<td>snip</td>
-<td>UltiSnips.TextObjects.SnippetUtil object instance. Has methods that simplify indentation handling and owns the string that should be inserted for the snippet.</td>
-</tr>
-<tr>
-<td>context</td>
-<td>Result of context condition. See UltiSnips-custom-context-snippets.</td>
-</tr>
-<tr>
-<td>match</td>
-<td>Only in regular expression triggered snippets.<br> This is the return value of the match of the regular expression.<br> See <span class="exturl" data-url="aHR0cDovL2RvY3MucHl0aG9uLm9yZy9saWJyYXJ5L3JlLmh0bWwjbWF0Y2gtb2JqZWN0cw==">http://docs.python.org/library/re.html#match-objects<i class="fa fa-external-link-alt"></i></span></td>
-</tr>
-</tbody>
-</table>
-<p><strong><code>snip</code> object</strong></p>
-<p>The <code>snip</code> object provides the following methods:</p>
-<ul>
-<li><code>snip.mkline(line=&quot;&quot;, indent=None)</code>:
-Returns a line ready to be appended to the result. If indent
-is None, then mkline prepends spaces and/or tabs appropriate to the
-current <code>tabstop</code> and <code>expandtab</code> variables.</li>
-<li><code>snip.shift(amount=1)</code>:
-Shifts the default indentation level used by mkline right by the
-number of spaces defined by <code>shiftwidth</code>, <code>amount</code> times.</li>
-<li><code>snip.unshift(amount=1)</code>:
-Shifts the default indentation level used by mkline left by the
-number of spaces defined by <code>shiftwidth</code>, <code>amount</code> times.</li>
-<li><code>snip.reset_indent()</code>:
-Resets the indentation level to its initial value.</li>
-<li><code>snip.opt(var, default)</code>:
-Checks if the Vim variable <code>var</code> has been set. If so, it returns the
-variable<code>s value; otherwise, it returns the value of</code>default`.</li>
-</ul>
-<p>The <code>snip</code> object provides some properties as well:</p>
-<ul>
-<li>
-<p><code>snip.rv</code>:
-<code>rv</code> is the return value, the text that will replace the python block
-in the snippet definition. It is initialized to the empty string. This
-deprecates the <code>res</code> variable.</p>
-</li>
-<li>
-<p><code>snip.c</code>:
-The text currently in the python block<code>s position within the snippet. It is set to empty string as soon as interpolation is completed. Thus you can check</code>if <code>snip.c</code> is != “”` to make sure that the interpolation
-is only done once. This deprecates the “cur” variable.</p>
-</li>
-<li>
-<p><code>snip.v</code>:
-Data related to the <code>$&#123;VISUAL&#125;</code> placeholder. This has two attributes:
-<code>snip.v.mode</code>   (<code>v</code>, <code>V</code>, <code>^V</code>, see |visual-mode| )
-<code>snip.v.text</code>   The text that was selected.</p>
-</li>
-<li>
-<p><code>snip.fn</code>:
-The current filename.</p>
-</li>
-<li>
-<p><code>snip.basename</code>:
-The current filename with the extension removed.</p>
-</li>
-<li>
-<p><code>snip.ft</code>:
-The current filetype.</p>
-</li>
-<li>
-<p><code>snip.p</code>:
-Last selected placeholder. Will contain placeholder object with
-following properties:</p>
-<ul>
-<li><code>current_text</code> - text in the placeholder on the moment of selection;</li>
-<li><code>start</code> - placeholder start on the moment of selection;</li>
-<li><code>end</code> - placeholder end on the moment of selection;</li>
-</ul>
-</li>
-</ul>
-<p>For your convenience, the <code>snip</code> object also provides the following
-operators:</p>
-<ul>
-<li><code>snip &gt;&gt; amount</code>:
-Equivalent to <code>snip.shift(amount)</code></li>
-<li><code>snip &lt;&lt; amount</code>:
-Equivalent to <code>snip.unshift(amount)</code></li>
-<li><code>snip += line</code>:
-Equivalent to “<code>snip.rv +=</code>\n<code>+ snip.mkline(line)</code>”</li>
-</ul>
-<blockquote>
-<p>Any variables defined in a python block can be used in other python blocks
-that follow within the same snippet. Also, the python modules <code>vim</code>, <code>re</code>,
-<code>os</code>, <code>string</code> and <code>random</code> are pre-imported within the scope of snippet code.
-Other modules can be imported using the python <code>import</code> command.</p>
-</blockquote>
-<blockquote>
-<p>Python code allows for very flexible snippets. For example, the following
-snippet mirrors the first tabstop value on the same line but right aligned and
-in uppercase.</p>
-</blockquote>
-<h2 id="global-snippets">Global Snippets <a class="markdownIt-Anchor" href="#global-snippets">#</a></h2>
-<p>Use <code>global</code> and <code>endglobal</code> to define Global snippets.</p>
-<p>You can define functions or use import command inside.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">def upper_right(inp):</span><br><span class="line">    return (75 - 2 * len(inp))*` ` + inp.upper()</span><br><span class="line">endglobal</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">from my_snippet_helpers import *</span><br><span class="line">endglobal</span><br></pre></td></tr></table></figure>
-<h2 id="transformations">Transformations <a class="markdownIt-Anchor" href="#transformations">#</a></h2>
-<blockquote>
-<p>Transformations are like mirrors but instead of just copying text from the
-original tabstop verbatim, a regular expression is matched to the content of
-the referenced tabstop and a transformation is then applied to the matched
-pattern.</p>
-</blockquote>
-<pre><code>$&#123;&lt;tab_stop_no/regular_expression/replacement/options&#125;
-</code></pre>
-<p>The <strong>components</strong> are defined as follows:</p>
-<ul>
-<li><code>tab_stop_no</code>: The number of the tabstop to reference</li>
-<li><code>regular_expression</code>: The regular expression the value of the referenced tabstop is matched on</li>
-<li><code>replacement</code>: The replacement string, explained in detail below</li>
-<li><code>options</code>: Options for the regular expression</li>
-</ul>
-<h3 id="regular-expression">Regular Expression <a class="markdownIt-Anchor" href="#regular-expression">#</a></h3>
-<p>See <span class="exturl" data-url="aHR0cDovL2RvY3MucHl0aG9uLm9yZy9saWJyYXJ5L3JlLmh0bWw=">http://docs.python.org/library/re.html<i class="fa fa-external-link-alt"></i></span>.</p>
-<h3 id="replacement-string">Replacement String <a class="markdownIt-Anchor" href="#replacement-string">#</a></h3>
-<p>The <strong>replacement string</strong> can contain <code>$no</code> variables, e.g., <code>$1</code>, which reference matched groups in the regular expression. The <code>$0</code> variable is special and yields the whole match. The replacement string can also contain special escape sequences:</p>
-<ul>
-<li><code>\u</code>: Uppercase next letter</li>
-<li><code>\l</code>: Lowercase next letter</li>
-<li><code>\U</code>: Uppercase everything till the next \E</li>
-<li><code>\L</code>: Lowercase everything till the next \E</li>
-<li><code>\E</code>: End upper or lowercase started with \L or \U</li>
-<li><code>\n</code>: A newline</li>
-<li><code>\t</code>: A literal tab</li>
-</ul>
-<p>Finally, the <strong>replacement string</strong> can contain conditional replacements using the syntax (<strong>?no:text:other text</strong>). This reads as follows: if the group <code>$no</code> has
-matched, insert “text”, otherwise insert “other text”. “other text” is
-optional and if not provided defaults to the empty string, “”. This feature
-is very powerful. It allows you to add optional text into snippets.</p>
-<h3 id="options">Options <a class="markdownIt-Anchor" href="#options">#</a></h3>
-<p>The <strong>options</strong> can be any combination of</p>
-<ul>
-<li>
-<p><code>g</code>: <strong>global replace</strong></p>
-<p>By default, only the first match of the regular expression is
-replaced. With this option all matches are replaced.</p>
-</li>
-<li>
-<p><code>i</code>: <strong>case insensitive</strong></p>
-<p>By default, regular expression matching is case sensitive. With this
-option, matching is done without regard to case.</p>
-</li>
-<li>
-<p><code>m</code>: <strong>multiline</strong></p>
-<p>By default, the <code>\^</code> and <code>\$</code> special characters only apply to the
-start and end of the entire string; so if you select multiple lines,
-transformations are made on them entirely as a whole single line
-string. With this option, <code>^</code> and <code>\$</code> special characters match the
-start or end of any line within a string ( separated by newline
-character - <code>\n</code> ).</p>
-</li>
-<li>
-<p><code>a</code>: <strong>ascii conversion</strong></p>
-<p>By default, transformation are made on the raw utf-8 string. With
-this option, matching is done on the corresponding ASCII string
-instead, for example <code>à</code> will become <code>a</code>.
-This option required the python package <code>unidecode</code>.</p>
-</li>
-</ul>
-<h2 id="cleardisable-snippets">Clear(Disable) Snippets <a class="markdownIt-Anchor" href="#cleardisable-snippets">#</a></h2>
-<p>Add <code>clearsnippets</code> to snippet files to disable some specified snippets.</p>
-<ol>
-<li>
-<p>Disable by priority.</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">priority 6</span><br><span class="line">clearsnippets</span><br></pre></td></tr></table></figure>
-<p>Disable all snippets have priority not bigger than 6.</p>
-</li>
-<li>
-<p>Disable by trigger.</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">clearsnippets printf title box</span><br></pre></td></tr></table></figure>
-<p>Disable snippets whose trigger word is <code>printf</code>, <code>title</code> or <code>box</code>. To do this, the priority of <code>clearsnippets</code> must not be smaller than other snippets`.</p>
-</li>
-</ol>
-<h2 id="context">Context <a class="markdownIt-Anchor" href="#context">#</a></h2>
-<p>Custom context snippets can be enabled by using the <code>e</code> option in the snippet
-definition.</p>
-<p>In that case snippet should be defined using this syntax:</p>
-<pre><code>snippet trigger_word &quot;description&quot; &quot;expression&quot; options
-</code></pre>
-<p>The context can be defined using a special header:</p>
-<pre><code>context &quot;python_expression&quot;
-snippet trigger_word &quot;description&quot; options
-</code></pre>
-<p>The <code>expression</code> can be any python expression. If <code>expression</code> evaluates to
-<code>True</code>, then this snippet will be eligible for expansion. The <code>expression</code>
-must be wrapped with <strong>double-quotes</strong>.</p>
-<p>The following <strong>python modules</strong> are automatically imported into the scope before
-<code>expression</code> is evaluated: <strong><code>re</code>, <code>os</code>, <code>vim</code>, <code>string</code>, <code>random</code></strong>.</p>
-<p>Global variable <code>snip</code> will be available with following properties:</p>
-<ul>
-<li>
-<p><code>snip.window</code>: alias for <code>vim.current.window</code></p>
-</li>
-<li>
-<p><code>snip.buffer</code>: alias for <code>vim.current.window.buffer</code></p>
-<blockquote>
-<p>Note: special variable called <code>snip.buffer</code> should be used for all buffer
-modifications. Not <code>vim.current.buffer</code> and not <code>vim.command(&quot;...&quot;)</code>, because
-in that case UltiSnips will not be able to track changes to the buffer correctly.</p>
-<p><code>snip.buffer</code> has the same interface as <code>vim.current.window.buffer</code>.</p>
-</blockquote>
-</li>
-<li>
-<p><code>snip.cursor</code>: cursor object, which behaves like <code>vim.current.window.cursor</code>, but zero-indexed and with following additional methods:</p>
-<ul>
-<li><code>preserve()</code>: special method for executing pre/post/jump actions;</li>
-<li><code>set(line, column)</code>: sets cursor to specified line and column;</li>
-<li><code>to_vim_cursor()</code>: returns 1-indexed cursor, suitable for assigning to <code>vim.current.window.cursor</code>;</li>
-</ul>
-</li>
-<li>
-<p><code>snip.contex</code>: evaluated value of the expression in <strong>context</strong>;</p>
-</li>
-<li>
-<p><code>snip.line</code> and <code>snip.column</code>: aliases for cursor position (zero-indexed);</p>
-</li>
-<li>
-<p><code>snip.visual_mode</code>: (<code>v</code>, <code>V</code>, <code>^V</code>, see visual-mode);</p>
-</li>
-<li>
-<p><code>snip.visual_text</code>: last visually-selected text;</p>
-</li>
-<li>
-<p><code>snip.last_placeholder</code>: last active placeholder from previous snippet with following properties:</p>
-<ul>
-<li><code>current_text</code>: text in the placeholder on the moment of selection;</li>
-<li><code>start</code>: placeholder start on the moment of selection;</li>
-<li><code>end</code>: placeholder end on the moment of selection;</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">snippet i &quot;if err != nil&quot; &quot;re.match(`^\s+[^=]*err\s*:?=`, snip.buffer[snip.line-1])&quot; be</span><br><span class="line">if err != nil &#123;</span><br><span class="line">    $1</span><br><span class="line">&#125;</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">import my_utils</span><br><span class="line">endglobal</span><br><span class="line"></span><br><span class="line">snippet , &quot;return ..., nil/err&quot; &quot;my_utils.is_return_argument(snip)&quot; ie</span><br><span class="line">, `!p if my_utils.is_in_err_condition():</span><br><span class="line">    snip.rv = &quot;err&quot;</span><br><span class="line">else:</span><br><span class="line">    snip.rv = &quot;nil&quot;`</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<h2 id="snippet-actions">Snippet Actions <a class="markdownIt-Anchor" href="#snippet-actions">#</a></h2>
-<ul>
-<li>Pre-expand: invoked just after trigger condition was matched, but before snippet actually expanded;</li>
-<li>Post-expand: invoked after snippet was expanded and interpolations were applied for the first time, but before jump on the first placeholder.</li>
-<li>Jump: invoked just after a jump to the next/prev placeholder.</li>
-</ul>
-<blockquote>
-<p>Specified code will be evaluated at stages defined above and same global
-variables and modules will be available that are stated in
-the UltiSnips-custom-context-snippets section.</p>
-</blockquote>
-<p><code>snip.visual_content</code> will be also declared and will contain text that was selected before snippet expansion (similar to <code>$VISUAL</code> placeholder).</p>
-<pre><code>pre_expand &quot;snip.buffer[snip.line] = ``; snip.cursor.set(snip.line, len(snip.visual_content))&quot;
-snippet &quot;nothing done here&quot;
-$&#123;VISUAL&#125;
-endsnippet
-</code></pre>
-<h3 id="pre-expand-and-post-expand-actions">Pre-expand and Post-expand Actions <a class="markdownIt-Anchor" href="#pre-expand-and-post-expand-actions">#</a></h3>
-<p>Buffer can be modified in pre-expand action code through variable called
-<code>snip.buffer</code>, snippet expansion position will be automatically adjusted.</p>
-<pre><code>pre_expand &quot;snip.buffer[snip.line] = ` `*4; snip.cursor.set(snip.line, 4)&quot;
-snippet d
-def $1():
-    $0
-endsnippet
-
-post_expand &quot;snip.buffer[snip.snippet_end[0]+1:snip.snippet_end[0]+1] = [``]&quot;
-snippet d &quot;Description&quot; b
-def $1():
-    $2
-endsnippet
-</code></pre>
-<h3 id="post-jump-actions">Post-jump Actions <a class="markdownIt-Anchor" href="#post-jump-actions">#</a></h3>
-<p>Post-jump actions can be used to trigger some code based on user input into the placeholders.</p>
-<p>Notable use <strong>cases</strong>:</p>
-<ul>
-<li>Expand another snippet after jump or anonymous snippet after last jump (e.g. perform move method refactoring and
-then insert new method invokation);</li>
-<li>Insert heading into TOC after last jump.</li>
-</ul>
-<p><strong>Variables</strong> and <strong>methods</strong> below will be also defined in the action code scope:</p>
-<ul>
-<li><code>snip.tabstop</code>: zero-indexed number of tabstop jumped onto;
-<ul>
-<li><code>start</code>: (line, column) of the starting position of the tabstop (also accessible as <code>tabstop.line</code> and <code>tabstop.col</code>).</li>
-<li><code>end</code>: (line, column) of the ending position;</li>
-<li><code>current_text</code>: text inside the tabstop.</li>
-</ul>
-</li>
-<li><code>snip.jump_direction</code>: <code>1</code> if jumped forward and <code>-1</code> otherwise;</li>
-<li><code>snip.tabstops</code>: list with tabstop objects, see above;</li>
-<li><code>snip.snippet_start</code>: (line, column) of start of the expanded snippet;</li>
-<li><code>snip.snippet_end</code>: (line, column) of end of the expanded snippet;</li>
-<li><code>snip.expand_anon()</code>: alias for <code>UltiSnips_Manager.expand_anon()</code>;</li>
-</ul>
-<blockquote>
-<p>Also note that you should use <code>snip.buffer</code>, rather than than any other way, to edit buffer content.</p>
-</blockquote>
-<p>Following snippet will insert section in the Table of Contents in the vim-help file:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_jump &quot;if snip.tabstop == 0: insert_toc_item(snip.tabstops[1], snip.buffer)&quot;</span><br><span class="line">snippet s &quot;section&quot; b</span><br><span class="line">`!p insert_delimiter_0(snip, t)`$1`!p insert_section_title(snip, t)`</span><br><span class="line">`!p insert_delimiter_1(snip, t)`</span><br><span class="line">$0</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>The functions called in this snippet are not defined by Ultisnips.</p>
-</blockquote>
-<p>Following example will insert method call at the end of file after user jump out of method declaration snippet.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global !p</span><br><span class="line">def insert_method_call(name):</span><br><span class="line">	vim.command(`normal G`)</span><br><span class="line">	snip.expand_anon(name + `($1)\n`)</span><br><span class="line">endglobal</span><br><span class="line"></span><br><span class="line">post_jump &quot;if snip.tabstop == 0: insert_method_call(snip.tabstops[1].current_text)&quot;</span><br><span class="line">snippet d &quot;method declaration&quot; b</span><br><span class="line">def $1():</span><br><span class="line">	$2</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>支原体</title>
-    <url>/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>支原体（<em>Mycoplasma</em>）</dt>
-<dd>一类缺乏细胞壁、呈高度多形性、<ins>可通过细菌滤器</ins>、能在<ins>无生命培养基</ins>中生长繁殖的<strong>最小的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a></strong>。</dd>
-<dd>归属 柔膜体门 柔膜体纲 支原体目 支原体科 的<strong>支原体属</strong>和<strong>脲原体属</strong>。</dd>
-</dl>
-<p>对人体致病的支原体有<span class="horizontal-list"><span class="horizontal-list-item"><a href="#%E8%82%BA%E7%82%8E%E6%94%AF%E5%8E%9F%E4%BD%93">肺炎支原体</a></span><span class="horizontal-list-item">人型支原体</span><span class="horizontal-list-item">生殖器支原体</span><span class="horizontal-list-item"><a href="#%E7%A9%BF%E9%80%8F%E6%94%AF%E5%8E%9F%E4%BD%93">穿透支原体</a></span><span class="horizontal-list-item"><a href="#%E8%A7%A3%E8%84%B2%E8%84%B2%E5%8E%9F%E4%BD%93">解脲脲原体</a></span></span>等。</p>
-<span id="more"></span>
-<h2 id="支原体概述">支原体概述 <a class="markdownIt-Anchor" href="#支原体概述">#</a></h2>
-<div class="note warning"><p>支原体是引起细胞培养污染的一个重要因素。</p>
-</div>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态：菌体小，呈高度多形性，可呈球、杆、丝状</li>
-<li>特殊结构：荚膜，顶端结构，微丝
-<ul>
-<li>荚膜：抗吞噬，重要的毒力因子</li>
-<li>顶端结构：黏附定植，重要致病物质</li>
-</ul>
-</li>
-<li>繁殖方式：二分裂、出芽</li>
-<li>染色：Giemsa 染色呈淡紫色；革兰氏染色阴性</li>
-<li>培养特性：
-<ul>
-<li>营养要求高，生长缓慢；</li>
-<li>菌落小，液体培养基中不易见到浑浊</li>
-<li><strong>“油煎蛋样”菌落</strong>（同 <a href="/2021/03/21/%E7%BB%86%E8%8F%8C/?highlight=荷包蛋样菌落#细胞壁">L 型细菌</a>）；解脲脲原体菌落为直径 15~30μm 的“油煎蛋样”或“桑椹样”微小菌落，称 <strong>T 株</strong>（tiny strain）</li>
-</ul>
-</li>
-<li>抵抗力
-<ul>
-<li>对<ins>青霉素</ins>耐药（没有细胞壁），对<ins>干扰蛋白质合成的抗生素</ins>敏感</li>
-<li>对乙酸铊（脲原体敏感）、结晶紫、亚碲酸钾抵抗</li>
-</ul>
-</li>
-</ul>
-<p class="align-text-center table-caption ">
-      支原体和 L 型细菌的区别
-    </p>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>支原体</th>
-<th>L 型细菌</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>遗传</td>
-<td>遗传上与细菌无关</td>
-<td>与原菌相关，常可以回复</td>
-</tr>
-<tr>
-<td>细胞膜</td>
-<td>细胞膜含高浓度胆固醇</td>
-<td>细胞膜不含胆固醇</td>
-</tr>
-<tr>
-<td>培养基</td>
-<td>在一般培养基中稳定</td>
-<td>大多需高渗培养基</td>
-</tr>
-<tr>
-<td>培养基浑浊度</td>
-<td>液体培养基浑浊度低</td>
-<td>液体培养基有一定浑浊度</td>
-</tr>
-<tr>
-<td>生长特性</td>
-<td>生长慢、菌落小</td>
-<td>菌落稍大</td>
-</tr>
-</tbody>
-</table>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<p>致病机制：</p>
-<ul>
-<li>顶端结构（含黏附蛋白/黏附素）：黏附于上皮细胞导致<strong>细胞损伤</strong></li>
-<li>荚膜或微荚膜：抗吞噬</li>
-<li>毒性代谢产物</li>
-<li>超抗原：刺激炎症细胞，产生大量细胞因子，引起组织损伤。</li>
-<li>穿透支原体可导致<strong>免疫损伤</strong></li>
-</ul>
-<h2 id="肺炎支原体">肺炎支原体 <a class="markdownIt-Anchor" href="#肺炎支原体">#</a></h2>
-<dl>
-<dt>肺炎支原体（<em>Mycoplasma pneumoniae</em>，MP）</dt>
-<dd>寄居于人和动物呼吸道黏膜表面，局部抵抗力降低时可致<strong>原发性非典型肺炎</strong>（primary atypical pneumonia），是下呼吸道的主要机会致病性支原体。</dd>
-</dl>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>黏附蛋白（P1、P30 等）：黏附于呼吸道黏膜上皮细胞表面</li>
-<li>超抗原：免疫损伤</li>
-<li>代谢产物及酶类的直接毒性</li>
-<li>菌体物质（脂质、多糖抗原）：与人体组织有共同抗原，可引起迟发性超敏反应</li>
-</ul>
-<p>所致疾病：<strong>支原体肺炎</strong>，一种<strong>间质性肺炎</strong>，占非细菌型肺炎的 50% 左右</p>
-<ul>
-<li>致病特点：多见于 5~15 岁儿童，夏未秋初为好发季节</li>
-<li>传播途径：主要经<strong>飞沫传播</strong></li>
-<li>临床表现：类似病毒性肺炎
-<ul>
-<li>发热、咳嗽、WBC 低、咳嗽剧烈而持久</li>
-<li>症状较轻，<ins>自限性</ins>，不用抗生素可自愈</li>
-</ul>
-</li>
-</ul>
-<dl>
-<dt>间质性肺炎</dt>
-<dd>是一群主要侵犯肺泡上皮细胞，肺微血管内皮细胞、基底膜以及肺内血管及淋巴周围组织的微生物引起的疾病。</dd>
-<dd>多数的间质肺病末期时会产生肺纤维化。</dd>
-</dl>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>常用<strong>冷凝集试验</strong>辅助诊断。</p>
-<p><mark>冷凝集试验</mark>：检验人体非特异性凝集素，从而辅助诊断支原体肺炎的一种血清学诊断方法。</p>
-<ul>
-<li>原理：MP 感染后使 RBC 抗原发生变性，产生自身抗体（IgM，非特异性凝集素），在 4℃ 下凝聚 RBC，37℃ 时凝集解离。</li>
-<li>注意：
-<ul>
-<li>仅 50% 左右患者试验结果为阳性</li>
-<li>冷凝集试验为非特异性试验，不能排除其他病毒感染。</li>
-</ul>
-</li>
-</ul>
-<h2 id="解脲脲原体">解脲脲原体 <a class="markdownIt-Anchor" href="#解脲脲原体">#</a></h2>
-<dl>
-<dt>解脲脲原体（<em>Ureaplasma urealyticum</em>）| 溶脲脲原体</dt>
-<dd><strong>人类泌尿生殖道的正常寄生菌</strong>，<strong>脲酶</strong>丰富，可分解尿素产生 NH<sub>3</sub>，可在特定环境下致病，是性传播疾病的主要病原体之一。</dd>
-</dl>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：见 <a href="#%E6%94%AF%E5%8E%9F%E4%BD%93%E6%A6%82%E8%BF%B0">支原体</a></li>
-<li>培养特性：形成直径 15~30μm 的“油煎蛋样”或“桑椹样”微小菌落，称 <strong>T 株</strong>（tiny strain）</li>
-<li>抵抗力：对乙酸铊、红霉素敏感</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>传播途径及所致疾病：</p>
-<ul>
-<li><strong>垂直传播</strong>：自然流产、出生缺陷、死胎</li>
-<li><strong>性传播</strong>：
-<ul>
-<li>泌尿生殖道疾病：输卵管炎、盆腔感染、<strong>非淋菌性尿道炎</strong>（NGU）等</li>
-<li>不孕、不育（脲原体可附着在精子表面，阻碍其运动、诱导其凋亡、影响与卵子结合）</li>
-</ul>
-</li>
-</ul>
-<h2 id="穿透支原体">穿透支原体 <a class="markdownIt-Anchor" href="#穿透支原体">#</a></h2>
-<dl>
-<dt>穿透支原体（<em>Mycoplasma penetrans</em>）</dt>
-<dd>1990 年首次从 1 例 HIV 阳性艾滋病患者尿中分离出的一种新支原体。穿透支原体感染是<strong>艾滋病</strong>的辅助致病因素。</dd>
-<dd>致病性与其尖形结构有关，具粘附和穿入作用，引起细胞损伤。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>抗原</title>
     <url>/2021/04/30/%E6%8A%97%E5%8E%9F/</url>
     <content><![CDATA[<dl>
@@ -6753,6 +6581,171 @@ T 细胞辅助。</p>
       </categories>
       <tags>
         <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>支原体</title>
+    <url>/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>支原体（<em>Mycoplasma</em>）</dt>
+<dd>一类缺乏细胞壁、呈高度多形性、<ins>可通过细菌滤器</ins>、能在<ins>无生命培养基</ins>中生长繁殖的<strong>最小的<a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a></strong>。</dd>
+<dd>归属 柔膜体门 柔膜体纲 支原体目 支原体科 的<strong>支原体属</strong>和<strong>脲原体属</strong>。</dd>
+</dl>
+<p>对人体致病的支原体有<span class="horizontal-list"><span class="horizontal-list-item"><a href="#%E8%82%BA%E7%82%8E%E6%94%AF%E5%8E%9F%E4%BD%93">肺炎支原体</a></span><span class="horizontal-list-item">人型支原体</span><span class="horizontal-list-item">生殖器支原体</span><span class="horizontal-list-item"><a href="#%E7%A9%BF%E9%80%8F%E6%94%AF%E5%8E%9F%E4%BD%93">穿透支原体</a></span><span class="horizontal-list-item"><a href="#%E8%A7%A3%E8%84%B2%E8%84%B2%E5%8E%9F%E4%BD%93">解脲脲原体</a></span></span>等。</p>
+<span id="more"></span>
+<h2 id="支原体概述">支原体概述 <a class="markdownIt-Anchor" href="#支原体概述">#</a></h2>
+<div class="note warning"><p>支原体是引起细胞培养污染的一个重要因素。</p>
+</div>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态：菌体小，呈高度多形性，可呈球、杆、丝状</li>
+<li>特殊结构：荚膜，顶端结构，微丝
+<ul>
+<li>荚膜：抗吞噬，重要的毒力因子</li>
+<li>顶端结构：黏附定植，重要致病物质</li>
+</ul>
+</li>
+<li>繁殖方式：二分裂、出芽</li>
+<li>染色：Giemsa 染色呈淡紫色；革兰氏染色阴性</li>
+<li>培养特性：
+<ul>
+<li>营养要求高，生长缓慢；</li>
+<li>菌落小，液体培养基中不易见到浑浊</li>
+<li><strong>“油煎蛋样”菌落</strong>（同 <a href="/2021/03/21/%E7%BB%86%E8%8F%8C/?highlight=荷包蛋样菌落#细胞壁">L 型细菌</a>）；解脲脲原体菌落为直径 15~30μm 的“油煎蛋样”或“桑椹样”微小菌落，称 <strong>T 株</strong>（tiny strain）</li>
+</ul>
+</li>
+<li>抵抗力
+<ul>
+<li>对<ins>青霉素</ins>耐药（没有细胞壁），对<ins>干扰蛋白质合成的抗生素</ins>敏感</li>
+<li>对乙酸铊（脲原体敏感）、结晶紫、亚碲酸钾抵抗</li>
+</ul>
+</li>
+</ul>
+<p class="align-text-center table-caption ">
+      支原体和 L 型细菌的区别
+    </p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>支原体</th>
+<th>L 型细菌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遗传</td>
+<td>遗传上与细菌无关</td>
+<td>与原菌相关，常可以回复</td>
+</tr>
+<tr>
+<td>细胞膜</td>
+<td>细胞膜含高浓度胆固醇</td>
+<td>细胞膜不含胆固醇</td>
+</tr>
+<tr>
+<td>培养基</td>
+<td>在一般培养基中稳定</td>
+<td>大多需高渗培养基</td>
+</tr>
+<tr>
+<td>培养基浑浊度</td>
+<td>液体培养基浑浊度低</td>
+<td>液体培养基有一定浑浊度</td>
+</tr>
+<tr>
+<td>生长特性</td>
+<td>生长慢、菌落小</td>
+<td>菌落稍大</td>
+</tr>
+</tbody>
+</table>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<p>致病机制：</p>
+<ul>
+<li>顶端结构（含黏附蛋白/黏附素）：黏附于上皮细胞导致<strong>细胞损伤</strong></li>
+<li>荚膜或微荚膜：抗吞噬</li>
+<li>毒性代谢产物</li>
+<li>超抗原：刺激炎症细胞，产生大量细胞因子，引起组织损伤。</li>
+<li>穿透支原体可导致<strong>免疫损伤</strong></li>
+</ul>
+<h2 id="肺炎支原体">肺炎支原体 <a class="markdownIt-Anchor" href="#肺炎支原体">#</a></h2>
+<dl>
+<dt>肺炎支原体（<em>Mycoplasma pneumoniae</em>，MP）</dt>
+<dd>寄居于人和动物呼吸道黏膜表面，局部抵抗力降低时可致<strong>原发性非典型肺炎</strong>（primary atypical pneumonia），是下呼吸道的主要机会致病性支原体。</dd>
+</dl>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>黏附蛋白（P1、P30 等）：黏附于呼吸道黏膜上皮细胞表面</li>
+<li>超抗原：免疫损伤</li>
+<li>代谢产物及酶类的直接毒性</li>
+<li>菌体物质（脂质、多糖抗原）：与人体组织有共同抗原，可引起迟发性超敏反应</li>
+</ul>
+<p>所致疾病：<strong>支原体肺炎</strong>，一种<strong>间质性肺炎</strong>，占非细菌型肺炎的 50% 左右</p>
+<ul>
+<li>致病特点：多见于 5~15 岁儿童，夏未秋初为好发季节</li>
+<li>传播途径：主要经<strong>飞沫传播</strong></li>
+<li>临床表现：类似病毒性肺炎
+<ul>
+<li>发热、咳嗽、WBC 低、咳嗽剧烈而持久</li>
+<li>症状较轻，<ins>自限性</ins>，不用抗生素可自愈</li>
+</ul>
+</li>
+</ul>
+<dl>
+<dt>间质性肺炎</dt>
+<dd>是一群主要侵犯肺泡上皮细胞，肺微血管内皮细胞、基底膜以及肺内血管及淋巴周围组织的微生物引起的疾病。</dd>
+<dd>多数的间质肺病末期时会产生肺纤维化。</dd>
+</dl>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>常用<strong>冷凝集试验</strong>辅助诊断。</p>
+<p><mark>冷凝集试验</mark>：检验人体非特异性凝集素，从而辅助诊断支原体肺炎的一种血清学诊断方法。</p>
+<ul>
+<li>原理：MP 感染后使 RBC 抗原发生变性，产生自身抗体（IgM，非特异性凝集素），在 4℃ 下凝聚 RBC，37℃ 时凝集解离。</li>
+<li>注意：
+<ul>
+<li>仅 50% 左右患者试验结果为阳性</li>
+<li>冷凝集试验为非特异性试验，不能排除其他病毒感染。</li>
+</ul>
+</li>
+</ul>
+<h2 id="解脲脲原体">解脲脲原体 <a class="markdownIt-Anchor" href="#解脲脲原体">#</a></h2>
+<dl>
+<dt>解脲脲原体（<em>Ureaplasma urealyticum</em>）| 溶脲脲原体</dt>
+<dd><strong>人类泌尿生殖道的正常寄生菌</strong>，<strong>脲酶</strong>丰富，可分解尿素产生 NH<sub>3</sub>，可在特定环境下致病，是性传播疾病的主要病原体之一。</dd>
+</dl>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：见 <a href="#%E6%94%AF%E5%8E%9F%E4%BD%93%E6%A6%82%E8%BF%B0">支原体</a></li>
+<li>培养特性：形成直径 15~30μm 的“油煎蛋样”或“桑椹样”微小菌落，称 <strong>T 株</strong>（tiny strain）</li>
+<li>抵抗力：对乙酸铊、红霉素敏感</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>传播途径及所致疾病：</p>
+<ul>
+<li><strong>垂直传播</strong>：自然流产、出生缺陷、死胎</li>
+<li><strong>性传播</strong>：
+<ul>
+<li>泌尿生殖道疾病：输卵管炎、盆腔感染、<strong>非淋菌性尿道炎</strong>（NGU）等</li>
+<li>不孕、不育（脲原体可附着在精子表面，阻碍其运动、诱导其凋亡、影响与卵子结合）</li>
+</ul>
+</li>
+</ul>
+<h2 id="穿透支原体">穿透支原体 <a class="markdownIt-Anchor" href="#穿透支原体">#</a></h2>
+<dl>
+<dt>穿透支原体（<em>Mycoplasma penetrans</em>）</dt>
+<dd>1990 年首次从 1 例 HIV 阳性艾滋病患者尿中分离出的一种新支原体。穿透支原体感染是<strong>艾滋病</strong>的辅助致病因素。</dd>
+<dd>致病性与其尖形结构有关，具粘附和穿入作用，引起细胞损伤。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -8070,140 +8063,6 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
-    <title>病原生物学</title>
-    <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<span class="horizontal-list"><span class="horizontal-list-item"><em>生物学规律</em></span><span class="horizontal-list-item"><em>致病机制</em></span><span class="horizontal-list-conjunction">及</span><span class="horizontal-list-item"><em>其和宿主之间相互作用</em></span></span>的学科。</p>
-<dl>
-<dt>生物 | 生命体 | 有机体（organism）</dt>
-<dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能在一定程度上适应和影响环境。</dd>
-<dt>病原生物（pathogenic organism）</dt>
-<dd>能给人类、动植物带来疾患的生物。</dd>
-</dl>
-<span id="more"></span>
-<h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
-<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
-<ul>
-<li><strong>非细胞型微生物</strong>（acellular microbe），如<a href="/2021/03/21/%E7%97%85%E6%AF%92/">病毒</a>、<a href="/2021/03/21/%E7%97%85%E6%AF%92/#朊粒">朊粒</a></li>
-<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
-<ul>
-<li>
-<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a>（代表）</span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a></span></span>
-</li>
-<li>
-<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/">立克次（氏）体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a></span></span>
-</li>
-</ul>
-</li>
-<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a>、<a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">原虫</a></li>
-</ul>
-<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
-<ul>
-<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
-<li><a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
-<li><em>医学节肢动物</em></li>
-</ul>
-<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
-<dl>
-<dt>共栖（commensalism）</dt>
-<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
-<dt>互利共生（mutualism）</dt>
-<dd>两种生活在一起的生物均获得益处。</dd>
-<dt><mark>寄生</mark>（parasitism）</dt>
-<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
-<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
-</dl>
-<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
-<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
-<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
-<ul>
-<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
-<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
-</ul>
-<dl>
-<dt>世代交替（alternation of generations）</dt>
-<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
-</dl>
-<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
-<dl>
-<dt>机会致病性寄生虫（opportunistic parasite）</dt>
-<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
-</dl>
-<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
-<dl>
-<dt>终宿主（definitive host）</dt>
-<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
-<dt>中间宿主（intermediate host）</dt>
-<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
-<dt>保虫宿主（reservoir host）| 储存宿主</dt>
-<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
-<dt>转续宿主（paratenic host，transport host）</dt>
-<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
-</dl>
-<details class="note success" open>
-<summary id='寄生虫对宿主的作用'><p>寄生虫对宿主的作用</p>
-</summary>
-<ol>
-<li><strong>夺取营养</strong>：营养不良、贫血；</li>
-<li><strong>机械性损伤</strong>；</li>
-<li><strong>毒性作用与免疫病理损伤</strong>。</li>
-</ol>
-</details>
-<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
-<ol>
-<li>先天性免疫</li>
-<li>获得性免疫：
-<ol>
-<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
-<li><strong>非消除性免疫</strong>（non-sterilizing immunity）（较常见）：<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span>
-<ol>
-<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的<a href="#"><ins>原虫</ins></a>引起的非消除性免疫，可致<em>临床治愈</em>；</li>
-<li><strong>伴随免疫</strong>（concomitant immunity）：某些<a href="#"><ins>蠕虫</ins></a>引起的非消除性免疫，对再感染的幼虫有一定免疫力，但对体内的成虫没有影响。</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
-<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
-<ol>
-<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
-<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
-<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
-</ol>
-<dl>
-<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
-<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
-</dl>
-<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
-<ol>
-<li>带虫者、慢性感染与隐性感染；</li>
-<li>多寄生现象；</li>
-<li>幼虫移行与幼虫移行症：
-<ul>
-<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
-<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
-<ul>
-<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
-<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
-<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>生殖内分泌</title>
     <url>/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/</url>
     <content><![CDATA[<p><a href="#%E8%83%8E%E5%84%BF%E9%99%84%E5%B1%9E%E7%89%A9">胎儿附属物</a>、<a href="#%E7%94%9F%E6%AE%96%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2">生殖系统发育</a>，以及常见畸形……</p>
@@ -8629,6 +8488,140 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
       </tags>
   </entry>
   <entry>
+    <title>病原生物学</title>
+    <url>/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
+    <content><![CDATA[<p><strong>病原生物学</strong>（pathogen biology）是研究病原生物的<span class="horizontal-list"><span class="horizontal-list-item"><em>生物学规律</em></span><span class="horizontal-list-item"><em>致病机制</em></span><span class="horizontal-list-conjunction">及</span><span class="horizontal-list-item"><em>其和宿主之间相互作用</em></span></span>的学科。</p>
+<dl>
+<dt>生物 | 生命体 | 有机体（organism）</dt>
+<dd>能进行新陈代谢、能生长、具有应激性、能生殖发育、遗传变异，能在一定程度上适应和影响环境。</dd>
+<dt>病原生物（pathogenic organism）</dt>
+<dd>能给人类、动植物带来疾患的生物。</dd>
+</dl>
+<span id="more"></span>
+<h2 id="微生物">微生物 <a class="markdownIt-Anchor" href="#微生物">#</a></h2>
+<p><strong>微生物</strong>（microorganism，microbe）指肉眼不可见的微小生物的总称，个体微小、结构简单、繁殖迅速、容易变异、种类繁多、分布广泛 。</p>
+<ul>
+<li><strong>非细胞型微生物</strong>（acellular microbe），如<a href="/2021/03/21/%E7%97%85%E6%AF%92/">病毒</a>、<a href="/2021/03/21/%E7%97%85%E6%AF%92/#朊粒">朊粒</a></li>
+<li><strong>原核细胞型微生物</strong>（prokaryotic microbe）：<em>两菌四体</em>
+<ul>
+<li>
+<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/03/21/%E7%BB%86%E8%8F%8C/" title="细菌">细菌</a>（代表）</span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%BE%E7%BA%BF%E8%8F%8C/">放线菌</a></span></span>
+</li>
+<li>
+<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/04/15/%E8%9E%BA%E6%97%8B%E4%BD%93/">螺旋体</a></span><span class="horizontal-list-item"><a href="/2021/04/15/%E6%94%AF%E5%8E%9F%E4%BD%93/">支原体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/">立克次（氏）体</a></span><span class="horizontal-list-item"><a href="/2021/04/19/%E8%A1%A3%E5%8E%9F%E4%BD%93/">衣原体</a></span></span>
+</li>
+</ul>
+</li>
+<li><strong>真核细胞型微生物</strong>（eukaryotic microbe），如 <a href="/2021/03/21/%E7%9C%9F%E8%8F%8C/" title="真菌">真菌</a>、<a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">原虫</a></li>
+</ul>
+<h2 id="寄生虫">寄生虫 <a class="markdownIt-Anchor" href="#寄生虫">#</a></h2>
+<ul>
+<li>医学蠕虫：<span class="horizontal-list"><span class="horizontal-list-item"><a href="/2021/07/04/%E7%BA%BF%E8%99%AB/">线虫</a></span><span class="horizontal-list-item"><a href="/2021/07/04/%E5%90%B8%E8%99%AB/">吸虫</a></span><span class="horizontal-list-item"><a href="/2021/07/05/%E7%BB%A6%E8%99%AB/">绦虫</a></span></span></li>
+<li><a href="/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/">医学原虫</a>：<span class="horizontal-list"><span class="horizontal-list-item">叶足虫</span><span class="horizontal-list-item">鞭毛虫</span><span class="horizontal-list-item">孢子虫</span><span class="horizontal-list-item"><em>纤毛虫</em></span></span></li>
+<li><em>医学节肢动物</em></li>
+</ul>
+<p>一种生物在其生命中的一个时期或终生与另一种生物存在密切关系，即称为<strong>共生</strong>。根据两种生物间的利害关系，可将共生分为 3 种类型：</p>
+<dl>
+<dt>共栖（commensalism）</dt>
+<dd>两种生物在一起共同生活，一方受益，另一方既不受益也不受害。</dd>
+<dt>互利共生（mutualism）</dt>
+<dd>两种生活在一起的生物均获得益处。</dd>
+<dt><mark>寄生</mark>（parasitism）</dt>
+<dd>两种生物在一起生活，一方受益，另一方受害。</dd>
+<dd>受益的一方称为<em>寄生物</em>（parasite），受害的一方称为<em>宿主</em>（host）。</dd>
+</dl>
+<h3 id="寄生虫生活史及宿主类型">寄生虫生活史及宿主类型 <a class="markdownIt-Anchor" href="#寄生虫生活史及宿主类型">#</a></h3>
+<h4 id="寄生虫生活史">寄生虫生活史 <a class="markdownIt-Anchor" href="#寄生虫生活史">#</a></h4>
+<p>依据以否需要中间宿主，可将生活史和寄生虫分为：</p>
+<ul>
+<li><strong>直接型生活史</strong>，<strong>土源性蠕虫</strong>：幼虫或虫卵在外界发育到<em>感染期</em>后不需要中间宿主，可直接感染人；</li>
+<li><strong>间接型生活史</strong>，<strong>生物源性蠕虫</strong>：幼虫或虫卵需要在中间宿主体内发育到<em>感染期</em>后经中间宿主才能感染人。</li>
+</ul>
+<dl>
+<dt>世代交替（alternation of generations）</dt>
+<dd>某些虫种即有无性生殖又有有性生殖，两者交替进行。</dd>
+</dl>
+<p>寄生虫可分为 7 类：<span class="horizontal-list"><span class="horizontal-list-item">专性寄生虫</span><span class="horizontal-list-item">兼性寄生虫</span><span class="horizontal-list-item">偶然寄生虫</span><span class="horizontal-list-item">体内寄生虫</span><span class="horizontal-list-item">体外寄生虫</span><span class="horizontal-list-item">长期寄生虫</span><span class="horizontal-list-item"><strong>机会致病性寄生虫</strong></span></span>。</p>
+<dl>
+<dt>机会致病性寄生虫（opportunistic parasite）</dt>
+<dd>一些在宿主免疫功能正常时处于隐性感染状态，当宿主免疫功能低下时，会大量增殖，致病力增强，导致宿主出现临床症状和体征的寄生虫，如<em>刚地弓形虫</em>、<em>隐孢子虫</em>。</dd>
+</dl>
+<h4 id="宿主的类别"><mark>宿主的类别</mark> <a class="markdownIt-Anchor" href="#宿主的类别">#</a></h4>
+<dl>
+<dt>终宿主（definitive host）</dt>
+<dd>寄生虫<ins>成虫</ins>或<ins>有性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>中间宿主（intermediate host）</dt>
+<dd>寄生虫<ins>幼虫</ins>或<ins>无性生殖阶段</ins>所寄生的宿主。</dd>
+<dt>保虫宿主（reservoir host）| 储存宿主</dt>
+<dd>有些寄生虫既可以寄生于人也可以寄生于其他脊椎动物，这些寄生虫所寄生的可将寄生虫传给人的<ins>其他脊椎动物</ins>即称为<em>保虫宿主</em>。</dd>
+<dt>转续宿主（paratenic host，transport host）</dt>
+<dd>某些寄生虫侵入的<ins>非正常宿主</ins>，寄生虫不能继续发育，可长期处于幼虫阶段，当有机会进入正常宿主体内时，才可发育为成虫。</dd>
+</dl>
+<details class="note success" open>
+<summary id='寄生虫对宿主的作用'><p>寄生虫对宿主的作用</p>
+</summary>
+<ol>
+<li><strong>夺取营养</strong>：营养不良、贫血；</li>
+<li><strong>机械性损伤</strong>；</li>
+<li><strong>毒性作用与免疫病理损伤</strong>。</li>
+</ol>
+</details>
+<h3 id="寄生虫感染和免疫">寄生虫感染和免疫 <a class="markdownIt-Anchor" href="#寄生虫感染和免疫">#</a></h3>
+<ol>
+<li>先天性免疫</li>
+<li>获得性免疫：
+<ol>
+<li><strong>消除性免疫</strong>（sterilizing immunity）：既能清除体内寄生虫，又能对再感染具有完全的、稳定的抵抗力；</li>
+<li><strong>非消除性免疫</strong>（non-sterilizing immunity）（较常见）：<span class="horizontal-list"><span class="horizontal-list-item">机体对再感染有一定抵抗力；</span><span class="horizontal-list-item">不能完全清除寄生虫，只能使其维持在低虫荷水平；</span><span class="horizontal-list-item">用药物清除后，宿主获得的免疫力也随之消失。</span></span>
+<ol>
+<li><strong>带虫免疫</strong>（premunition）：某些血液内寄生的<a href="#"><ins>原虫</ins></a>引起的非消除性免疫，可致<em>临床治愈</em>；</li>
+<li><strong>伴随免疫</strong>（concomitant immunity）：某些<a href="#"><ins>蠕虫</ins></a>引起的非消除性免疫，对再感染的幼虫有一定免疫力，但对体内的成虫没有影响。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="寄生虫病的流行与防治">寄生虫病的流行与防治 <a class="markdownIt-Anchor" href="#寄生虫病的流行与防治">#</a></h3>
+<h4 id="寄生虫流行的基本环节">寄生虫流行的基本环节 <a class="markdownIt-Anchor" href="#寄生虫流行的基本环节">#</a></h4>
+<ol>
+<li><strong>传染源</strong>：患者、带虫者、保虫宿主；</li>
+<li><strong>传播途径</strong>：寄生虫从体内排除，在外界或中间宿主体内发育至<strong>感染阶段</strong>后进入另一宿主的整个过程；</li>
+<li><strong>易感人群</strong>：对某种寄生虫缺乏免疫力或免疫力低下而处于易感状态的人群。</li>
+</ol>
+<dl>
+<dt><mark>感染阶段</mark>/感染期（infective stage）</dt>
+<dd>寄生虫生活史中能感染人体的发育阶段。</dd>
+</dl>
+<h4 id="寄生虫感染">寄生虫感染 <a class="markdownIt-Anchor" href="#寄生虫感染">#</a></h4>
+<ol>
+<li>带虫者、慢性感染与隐性感染；</li>
+<li>多寄生现象；</li>
+<li>幼虫移行与幼虫移行症：
+<ul>
+<li><strong>幼虫移行</strong>：某些蠕虫在感染期进入<ins>正常宿主</ins>后需要移行到寄生部位以进行生长发育；</li>
+<li><strong>幼虫移行症</strong>：某些蠕虫幼虫侵入<ins>非正常宿主</ins>（<a href="?highlight=%E8%BD%AC%E7%BB%AD%E5%AE%BF%E4%B8%BB#%E5%AE%BF%E4%B8%BB%E7%9A%84%E7%B1%BB%E5%88%AB">转续宿主</a>），不能发育为成虫，但可在宿主体内长期存活并移行，引起局部或全身性病变。常见的能引起幼虫移行症的寄生虫有：
+<ul>
+<li><em>内脏幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫吸虫</strong></span><span class="horizontal-list-item"><strong>犬弓首线虫</strong></span><span class="horizontal-list-item"><strong>广州管圆线虫</strong></span></span></li>
+<li><em>皮肤幼虫移行症</em>：<span class="horizontal-list"><span class="horizontal-list-item"><strong>斯氏狸殖吸虫</strong></span><span class="horizontal-list-item"><strong>曼氏迭宫绦虫</strong></span><span class="horizontal-list-item"><strong>犬钩虫</strong></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>异位寄生</strong>：寄生虫在常见寄生部位外的器官和组织内的寄生。由异位寄生引起的损害称为<em>异位损害</em>。</li>
+<li>嗜酸性粒细胞增多、IgE 水平升高、高球蛋白血症。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>病毒</title>
     <url>/2021/03/21/%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<dl>
@@ -8644,7 +8637,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 <li>对<em>抗生素</em>不敏感，对<strong>干扰素</strong>敏感</li>
 </ol>
 <span id="more"></span>
-<details class="note default" open>
+<details class="note default">
 <summary id='病原生物学分类（toc）'><p>病原生物学分类（TOC）</p>
 </summary>
 <ol>
@@ -8658,8 +8651,7 @@ loop），之后随胃的旋转转向左侧，并通过背系膜固定在右侧�
 </ol>
 </details>
 <details class="note info titled" open>
-<summary id='<div class='note-title' onclick="if (window.getselection() == '') { this.parentelement.open = false; }">
-病毒是生命吗？</div>'><p>病毒是生命吗？</p>
+<summary id='病毒是生命吗？'><p>病毒是生命吗？</p>
 </summary>
 <div class='note-title' onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 病毒是生命吗？</div><p><strong>什么是生命？</strong></p>
@@ -11313,8 +11305,8 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
         <category>Softwares</category>
       </categories>
       <tags>
-        <tag>Index</tag>
         <tag>Linux</tag>
+        <tag>Index</tag>
         <tag>TTY</tag>
       </tags>
   </entry>
