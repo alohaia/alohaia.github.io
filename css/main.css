@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #78ba4d;
+  background: #a3a1fa;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3650,9 +3650,6 @@ summary+ol, summary+ul {
 /**************************************************************************************/
 
 div.sidebar-quote {
-
-}
-div.sidebar-quote {
   border-left: none;
   margin: 40px 0;
   padding: 0;
@@ -3688,6 +3685,7 @@ p.sidebar-quote-content {
     text-align: left;
     margin: 0;
     height: auto;
+    cursor: pointer;
 }
 
 p.sidebar-quote-from {
