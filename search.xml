@@ -792,31 +792,6 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p>语法测试用。</p>
@@ -1228,6 +1203,31 @@ danger</div><p>danger</p>
 ]]></content>
   </entry>
   <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux 配置记录</title>
     <url>/2021/04/06/Linux-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>记录 Linux 使用过程中遇到的坑、软件和开发环境的安装和配置等。</p>
@@ -1586,126 +1586,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 学习记录</title>
-    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
-<ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
-<ul>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
-<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
-<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
-<p>安装 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
-<p>安装 cnpm（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
-<p>安装 yarn（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
-<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
-<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
-<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
-<p>使用 Linux 软件包管理器安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
-<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
-<blockquote>
-<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
-<p>准备两个基本文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
-<p>初始化 <code>packages.json</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Front end</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
-<span id="more"></span>
-<p>HLA 基因复合体分为三个基因区</p>
-<p>MHC 基因分两种类型</p>
-<ul>
-<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
-<li>免疫功能相关基因
-<ul>
-<li>血清补体成分的编码基因</li>
-<li>抗原加工相关基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
-</ul>
-</li>
-</ul>
-<p>MHC 遗传特点</p>
-<ol>
-<li>MHC 多态性</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The TTY Demystified</title>
     <url>/2021/03/15/The-TTY-Demystified/</url>
     <content><![CDATA[<p>原文：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51c2FrZXNzb24ubmV0L3Byb2dyYW1taW5nL3R0eS8=">http://www.linusakesson.net/programming/tty/<i class="fa fa-external-link-alt"></i></span></p>
@@ -1978,6 +1858,126 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 学习记录</title>
+    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
+<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
+<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
+<p>安装 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
+<p>安装 cnpm（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
+<p>安装 yarn（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
+<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
+<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
+<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
+<p>使用 Linux 软件包管理器安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
+<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
+<blockquote>
+<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
+<p>准备两个基本文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
+<p>初始化 <code>packages.json</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Front end</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
+<span id="more"></span>
+<p>HLA 基因复合体分为三个基因区</p>
+<p>MHC 基因分两种类型</p>
+<ul>
+<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
+<li>免疫功能相关基因
+<ul>
+<li>血清补体成分的编码基因</li>
+<li>抗原加工相关基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人类发育与遗传学</title>
     <url>/2021/04/10/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
     <content><![CDATA[<blockquote>
@@ -2086,369 +2086,6 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       <tags>
         <tag>Index</tag>
         <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success" open>
-<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人胚发生和早期发育</title>
-    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
-    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
-<p>人胚发育共经历 38 周（约 266 天）：</p>
-<ul>
-<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong>即指胚期；</li>
-<li><strong>胎期</strong>：9W 至出生。</li>
-</ul>
-<dl>
-<dt>围生期</dt>
-<dd><a href="#%E8%83%9A%E8%83%8E%E9%BE%84%E7%9A%84%E6%8E%A8%E7%AE%97">受精龄</a> 第 26 周至出生后 4 周。</dd>
-</dl>
-<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为<strong>围生医学</strong>。</p>
-<span id="more"></span>
-<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
-<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
-<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
-<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
-<dl>
-<dt>卵裂（cleavage)</dt>
-<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
-<dd>此时产生的子细胞称为<strong>卵裂球</strong>。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
-<dl>
-<dt>桑椹胚（morula）</dt>
-<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
-<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
-<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成<strong>胚泡</strong>。</dd>
-<dd>胚泡由<strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong>三部份组成。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
-<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
-<dl>
-<dt>植入（implantation）| 着床（imbed）</dt>
-<dd>胚泡逐渐埋入子宫内膜的过程。
-<ul>
-<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
-<li>部位：子宫体前后壁或子宫底的内膜。</li>
-</ul>
-</dd>
-</dl>
-<blockquote>
-<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
-</blockquote>
-<p>植入条件：</p>
-<ol>
-<li>受精卵在输卵管中运行正常；</li>
-<li>透明带准时消失；</li>
-<li>母体性激素分泌正常；</li>
-<li>子宫内膜处于分泌期。</li>
-</ol>
-<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
-<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
-<strong>合体滋养层</strong>和<strong>细胞滋养层</strong>。</p>
-<dl>
-<dt>合体滋养层（syncytiotrophoblast）</dt>
-<dd>表层滋养层，细胞互相融合，界限消失。</dd>
-<dt>细胞滋养层（cytotrophoblast）</dt>
-<dd>内层滋养层，细胞界限明显。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
-<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
-<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
-<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
-<dl>
-<dt>蜕膜（decidua）</dt>
-<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
-<dd>蜕膜会在分娩时脱落，故得名。</dd>
-</dl>
-<p>蜕膜可分为<strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong>三部分。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
-<dl>
-<dt>底蜕膜（decidua basalis）</dt>
-<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
-<dt>包蜕膜（decidua capsularis）</dt>
-<dd>覆盖于胚宫腔侧的蜕膜。</dd>
-<dt>壁蜕膜（decidua parietalis）</dt>
-<dd>子宫其余部分的蜕膜，与包蜕膜围成<strong>子宫腔</strong>。</dd>
-</dl>
-<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
-<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
-<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
-<dl>
-<dt>二胚层胚盘（bilaminar germ disc）</dt>
-<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
-</dl>
-<p>二胚层胚盘由<strong>下胚层</strong>和<strong>上胚层</strong>组成。</p>
-<dl>
-<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
-<dd>二胚层胚盘中靠近<strong>胚泡腔</strong>的一层立方形细胞。</dd>
-<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
-<dd>二胚层胚盘中靠近<strong>滋养层</strong>的一层柱状细胞。</dd>
-</dl>
-<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
-<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
-<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
-<strong>初级卵黄囊</strong>（primary yolk sac）或<strong>外体腔</strong>（outer coelom）。</p>
-<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为<strong>羊膜</strong>（amniotic membrane）。<br/>
-上胚层与羊膜之间的间隙称为<strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为<strong>羊水</strong>。<br/>
-羊膜与上胚层共同包绕羊膜腔形成<mark>羊膜囊</mark>（amniotic cyst）。</p>
-<p>另见 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
-<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
-<mark>次级卵黄囊</mark>（secondary yolk sac）。由胚外体腔膜构成的<em>初级卵黄囊</em>则逐渐退化。</p>
-<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
-<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为<mark>胚外中胚层</mark>（extra-embryonic mesoderm）。</p>
-<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为<mark>胚外体腔</mark>。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
-<dl>
-<dt>体蒂（body stalk）</dt>
-<dd>胚外中胚层持续扩大，仅有的少部分连接<em>胚盘尾端</em>和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/#脐带"><strong>脐带</strong></a>。</dd>
-</dl>
-<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
-<dl>
-<dt>原条（primitive streak）</dt>
-<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
-</dl>
-<div class="note info"><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
-<dl>
-<dt>畸胎瘤（teratoma）</dt>
-<dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
-</dl>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTk1JUI4JUU4JTgzJThFJUU3JTk4JUE0">https://zh.wikipedia.org/wiki/畸胎瘤<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</div>
-<p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
-<p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
-<div class="note warning"><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
-</div>
-<dl>
-<dt>内胚层（endoderm）</dt>
-<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
-<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
-<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
-<dt>外胚层（ectoderm）</dt>
-<dd>原来的上胚层的改称。</dd>
-</dl>
-<hr />
-<dl>
-<dt>原结（primitive node）</dt>
-<dd>原条头部的细胞增殖较快，形成的结节状肥厚区。</dd>
-<dt>原沟（primitive groove）</dt>
-<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
-<dt>原凹（primitive pit）</dt>
-<dd><strong>原结</strong>中心的凹陷。</dd>
-<dt>脊索（notochord）</dt>
-<dd><strong>原凹</strong>处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
-</dl>
-<p>脊索在胚胎早期起<strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的<strong>髓核</strong>。</p>
-<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
-<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
-<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
-<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
-<dl>
-<dt>神经板（neural plate）</dt>
-<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称<strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
-</dl>
-<p>神经板中央凹陷，称<strong>神经沟</strong>（neural groove）；<br/>
-沟两侧部分隆起，称<strong>神经褶</strong>（neural fold）。</p>
-<dl>
-<dt>神经管（neural tube）</dt>
-<dd>第 3 周末，<strong>神经沟</strong>加深，<strong>神经褶</strong>愈合（神经板边缘融合）形成神经管。</dd>
-</dl>
-<p><strong>神经管分化</strong>：神经管是<strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
-<dl>
-<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
-<dd>神经管头端和尾端的孔。</dd>
-</dl>
-<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致<strong>无脑儿</strong>和<strong>脊髓脊柱裂</strong>。</p>
-<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
-<dl>
-<dt>神经嵴（neural crest）</dt>
-<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管形成过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
-</dl>
-<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
-<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
-<ul>
-<li><strong>表皮及其附属器</strong></li>
-<li>牙釉质</li>
-<li>角膜上皮、晶状体</li>
-<li>内耳迷路</li>
-<li>……</li>
-</ul>
-<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
-<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
-<dl>
-<dt>轴旁中胚层（paraxial mesoderm）</dt>
-<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
-<dt>间介中胚层（intermediate mesoderm）</dt>
-<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
-<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
-<dd>初为单一薄层结构，后出现间隙，称为<strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的<strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的<strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
-<dl>
-<dt>间充质（mesenchyme）</dt>
-<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
-</dl>
-<p><strong>中胚层三部分的分化</strong>：</p>
-<ul>
-<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
-<li><strong>间介中胚层</strong>：泌尿生殖系统的原基</li>
-<li><strong>侧中胚层</strong> →
-<ul>
-<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
-<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
-<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
-</ul>
-</li>
-</ul>
-<p><strong>体节</strong>（somite）是轴旁中胚层断裂形成的左右成对的立方体细胞团。<br/>
-体节是<em>脊柱、背部皮肤真皮和骨骼肌</em>的原基，从头端开始生成，逐渐向尾端推进，可根据体节数目推算早期胚龄。</p>
-<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
-<p>卵黄囊顶壁的内胚层被卷入胚体内形成<strong>原始消化管</strong>（primitive gut）。<br/>
-原始消化管分为<strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和<strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
-<p><strong>内胚层的分化</strong>：</p>
-<ul>
-<li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
-<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
-<li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
-</ul>
-<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
-<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
-<dl>
-<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
-<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
-</dl>
-<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的<strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
-<p>第 5~8 周称为<strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8 周末时初具人形，主要器官、系统在此时期形成。</p>
-<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
-<dl>
-<dt>受精龄</dt>
-<dd>从受精到胎儿出生，约 38 周，包括<strong>胚期</strong>和<strong>胎期</strong>。</dd>
-<dt>月经龄</dt>
-<dd>从末次月经到婴儿出生，约 40 周。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -2942,6 +2579,369 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success" open>
+<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人胚发生和早期发育</title>
+    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
+    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
+<p>人胚发育共经历 38 周（约 266 天）：</p>
+<ul>
+<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong>即指胚期；</li>
+<li><strong>胎期</strong>：9W 至出生。</li>
+</ul>
+<dl>
+<dt>围生期</dt>
+<dd><a href="#%E8%83%9A%E8%83%8E%E9%BE%84%E7%9A%84%E6%8E%A8%E7%AE%97">受精龄</a> 第 26 周至出生后 4 周。</dd>
+</dl>
+<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为<strong>围生医学</strong>。</p>
+<span id="more"></span>
+<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
+<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
+<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
+<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
+<dl>
+<dt>卵裂（cleavage)</dt>
+<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
+<dd>此时产生的子细胞称为<strong>卵裂球</strong>。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
+<dl>
+<dt>桑椹胚（morula）</dt>
+<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
+<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
+<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成<strong>胚泡</strong>。</dd>
+<dd>胚泡由<strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong>三部份组成。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
+<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
+<dl>
+<dt>植入（implantation）| 着床（imbed）</dt>
+<dd>胚泡逐渐埋入子宫内膜的过程。
+<ul>
+<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
+<li>部位：子宫体前后壁或子宫底的内膜。</li>
+</ul>
+</dd>
+</dl>
+<blockquote>
+<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
+</blockquote>
+<p>植入条件：</p>
+<ol>
+<li>受精卵在输卵管中运行正常；</li>
+<li>透明带准时消失；</li>
+<li>母体性激素分泌正常；</li>
+<li>子宫内膜处于分泌期。</li>
+</ol>
+<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
+<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
+<strong>合体滋养层</strong>和<strong>细胞滋养层</strong>。</p>
+<dl>
+<dt>合体滋养层（syncytiotrophoblast）</dt>
+<dd>表层滋养层，细胞互相融合，界限消失。</dd>
+<dt>细胞滋养层（cytotrophoblast）</dt>
+<dd>内层滋养层，细胞界限明显。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
+<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
+<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
+<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
+<dl>
+<dt>蜕膜（decidua）</dt>
+<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
+<dd>蜕膜会在分娩时脱落，故得名。</dd>
+</dl>
+<p>蜕膜可分为<strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong>三部分。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
+<dl>
+<dt>底蜕膜（decidua basalis）</dt>
+<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
+<dt>包蜕膜（decidua capsularis）</dt>
+<dd>覆盖于胚宫腔侧的蜕膜。</dd>
+<dt>壁蜕膜（decidua parietalis）</dt>
+<dd>子宫其余部分的蜕膜，与包蜕膜围成<strong>子宫腔</strong>。</dd>
+</dl>
+<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
+<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
+<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
+<dl>
+<dt>二胚层胚盘（bilaminar germ disc）</dt>
+<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
+</dl>
+<p>二胚层胚盘由<strong>下胚层</strong>和<strong>上胚层</strong>组成。</p>
+<dl>
+<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
+<dd>二胚层胚盘中靠近<strong>胚泡腔</strong>的一层立方形细胞。</dd>
+<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
+<dd>二胚层胚盘中靠近<strong>滋养层</strong>的一层柱状细胞。</dd>
+</dl>
+<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
+<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
+<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
+<strong>初级卵黄囊</strong>（primary yolk sac）或<strong>外体腔</strong>（outer coelom）。</p>
+<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为<strong>羊膜</strong>（amniotic membrane）。<br/>
+上胚层与羊膜之间的间隙称为<strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为<strong>羊水</strong>。<br/>
+羊膜与上胚层共同包绕羊膜腔形成<mark>羊膜囊</mark>（amniotic cyst）。</p>
+<p>另见 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
+<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
+<mark>次级卵黄囊</mark>（secondary yolk sac）。由胚外体腔膜构成的<em>初级卵黄囊</em>则逐渐退化。</p>
+<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
+<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为<mark>胚外中胚层</mark>（extra-embryonic mesoderm）。</p>
+<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为<mark>胚外体腔</mark>。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
+<dl>
+<dt>体蒂（body stalk）</dt>
+<dd>胚外中胚层持续扩大，仅有的少部分连接<em>胚盘尾端</em>和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/#脐带"><strong>脐带</strong></a>。</dd>
+</dl>
+<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
+<dl>
+<dt>原条（primitive streak）</dt>
+<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
+</dl>
+<div class="note info"><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
+<dl>
+<dt>畸胎瘤（teratoma）</dt>
+<dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
+</dl>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTk1JUI4JUU4JTgzJThFJUU3JTk4JUE0">https://zh.wikipedia.org/wiki/畸胎瘤<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+<p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
+<p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
+<div class="note warning"><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
+</div>
+<dl>
+<dt>内胚层（endoderm）</dt>
+<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
+<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
+<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
+<dt>外胚层（ectoderm）</dt>
+<dd>原来的上胚层的改称。</dd>
+</dl>
+<hr />
+<dl>
+<dt>原结（primitive node）</dt>
+<dd>原条头部的细胞增殖较快，形成的结节状肥厚区。</dd>
+<dt>原沟（primitive groove）</dt>
+<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
+<dt>原凹（primitive pit）</dt>
+<dd><strong>原结</strong>中心的凹陷。</dd>
+<dt>脊索（notochord）</dt>
+<dd><strong>原凹</strong>处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
+</dl>
+<p>脊索在胚胎早期起<strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的<strong>髓核</strong>。</p>
+<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
+<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
+<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
+<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
+<dl>
+<dt>神经板（neural plate）</dt>
+<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称<strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
+</dl>
+<p>神经板中央凹陷，称<strong>神经沟</strong>（neural groove）；<br/>
+沟两侧部分隆起，称<strong>神经褶</strong>（neural fold）。</p>
+<dl>
+<dt>神经管（neural tube）</dt>
+<dd>第 3 周末，<strong>神经沟</strong>加深，<strong>神经褶</strong>愈合（神经板边缘融合）形成神经管。</dd>
+</dl>
+<p><strong>神经管分化</strong>：神经管是<strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
+<dl>
+<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
+<dd>神经管头端和尾端的孔。</dd>
+</dl>
+<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致<strong>无脑儿</strong>和<strong>脊髓脊柱裂</strong>。</p>
+<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
+<dl>
+<dt>神经嵴（neural crest）</dt>
+<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管形成过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
+</dl>
+<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
+<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
+<ul>
+<li><strong>表皮及其附属器</strong></li>
+<li>牙釉质</li>
+<li>角膜上皮、晶状体</li>
+<li>内耳迷路</li>
+<li>……</li>
+</ul>
+<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
+<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
+<dl>
+<dt>轴旁中胚层（paraxial mesoderm）</dt>
+<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
+<dt>间介中胚层（intermediate mesoderm）</dt>
+<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
+<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
+<dd>初为单一薄层结构，后出现间隙，称为<strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的<strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的<strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
+<dl>
+<dt>间充质（mesenchyme）</dt>
+<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
+</dl>
+<p><strong>中胚层三部分的分化</strong>：</p>
+<ul>
+<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
+<li><strong>间介中胚层</strong>：泌尿生殖系统的原基</li>
+<li><strong>侧中胚层</strong> →
+<ul>
+<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
+<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
+<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
+</ul>
+</li>
+</ul>
+<p><strong>体节</strong>（somite）是轴旁中胚层断裂形成的左右成对的立方体细胞团。<br/>
+体节是<em>脊柱、背部皮肤真皮和骨骼肌</em>的原基，从头端开始生成，逐渐向尾端推进，可根据体节数目推算早期胚龄。</p>
+<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
+<p>卵黄囊顶壁的内胚层被卷入胚体内形成<strong>原始消化管</strong>（primitive gut）。<br/>
+原始消化管分为<strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和<strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
+<p><strong>内胚层的分化</strong>：</p>
+<ul>
+<li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
+<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
+<li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
+</ul>
+<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
+<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
+<dl>
+<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
+<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
+</dl>
+<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的<strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
+<p>第 5~8 周称为<strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8 周末时初具人形，主要器官、系统在此时期形成。</p>
+<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
+<dl>
+<dt>受精龄</dt>
+<dd>从受精到胎儿出生，约 38 周，包括<strong>胚期</strong>和<strong>胎期</strong>。</dd>
+<dt>月经龄</dt>
+<dd>从末次月经到婴儿出生，约 40 周。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -5885,354 +5885,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
       </tags>
   </entry>
   <entry>
-    <title>抗体</title>
-    <url>/2021/05/10/%E6%8A%97%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>抗体（antibody，<abbr title="抗体">Ab</abbr>）</dt>
-<dd>介导体液免疫的重要效应分子</dd>
-<dd>免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
-可与相应抗原发生特异性结合的<strong>免疫球蛋白</strong>（<abbr title="免疫球蛋白">Ig</abbr>）。</dd>
-<dd>主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</dd>
-</dl>
-<dl>
-<dt>免疫球蛋白（immunoglobulin，<abbr title="免疫球蛋白">Ig</abbr>）</dt>
-<dd>具有抗体活性或化学结构与抗体相似的球蛋白的统称。</dd>
-<dd>存在形式
-<ul>
-<li><strong>膜型</strong>（membrane immunoglobulin，mIg），如 BCR（B 细胞受体）</li>
-<li><strong>分泌型</strong>（secreted immunoglobulin，sIg），如抗体</li>
-</ul>
-</dd>
-</dl>
-<span id="more"></span>
-<h2 id="抗体的结构">抗体的结构 <a class="markdownIt-Anchor" href="#抗体的结构">#</a></h2>
-<p>抗体的<strong>基本结构</strong>是由两条完全相同的<strong>重链</strong>和<strong>轻链</strong>通过二硫键链接的“Y”形单体。</p>
-<h3 id="抗体的分类和分型">抗体的分类和分型 <a class="markdownIt-Anchor" href="#抗体的分类和分型">#</a></h3>
-<h4 id="类和亚类">类和亚类 <a class="markdownIt-Anchor" href="#类和亚类">#</a></h4>
-<ul>
-<li>类：根据 <strong>H 链</strong> C 区抗原性的差异</li>
-<li>亚类：铰链区氨基酸的组成和重链二硫键的数目、位置</li>
-</ul>
-<p>根据重链的种类，可将完整的抗体分子分为对应的五类（见下表“抗体”列）。</p>
-<p class="align-text-center table-caption ">
-      抗体的<strong>类</strong>和<strong>亚类</strong>
-    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">类</th>
-<th style="text-align:center">抗体</th>
-<th style="text-align:center">亚类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">μ(mu)</td>
-<td style="text-align:center">IgM</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center">γ(gamma)</td>
-<td style="text-align:center">IgG</td>
-<td style="text-align:center">IgG1~IgG4</td>
-</tr>
-<tr>
-<td style="text-align:center">α(alpha)</td>
-<td style="text-align:center">IgA</td>
-<td style="text-align:center">IgA1、IgA2</td>
-</tr>
-<tr>
-<td style="text-align:center">δ(delta)</td>
-<td style="text-align:center">IgD</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center">ε(epsilon)</td>
-<td style="text-align:center">IgE</td>
-<td style="text-align:center">无</td>
-</tr>
-</tbody>
-</table>
-<h4 id="型和亚型">型和亚型 <a class="markdownIt-Anchor" href="#型和亚型">#</a></h4>
-<p><strong>型</strong>：根据 <strong>L 链</strong> C 区氨基酸的组成和排列顺序</p>
-<ul>
-<li>κ（kappa）型</li>
-<li>λ（lambda）型</li>
-</ul>
-<p><strong>亚型</strong>：根据 λ 链 C 区个别氨基酸的不同：λ1/OZ(+)、λ2/OZ(-)、λ3/Kern(+)、λ4/Kern(-)</p>
-<h3 id="可变区和恒定区">可变区和恒定区 <a class="markdownIt-Anchor" href="#可变区和恒定区">#</a></h3>
-<img data-src="/2021/05/10/%E6%8A%97%E4%BD%93/%E6%8A%97%E4%BD%93%E7%BB%93%E6%9E%84%E5%9F%9F.jpg" class="" title="抗体分子 V 区和 C 区结构示意图" alt="抗体分子 V 区和 C 区结构示意图">
-<dl>
-<dt>可变区（variable region，<mark><abbr title="可变区">V 区</abbr></mark>）</dt>
-<dd>抗体分子中轻链和重链靠近 N 端的氨基酸形成的结构，此处氨基酸序列变化较大，具有独特的空间构型。
-<ul>
-<li>高变区</li>
-<li>骨架区</li>
-</ul>
-</dd>
-<dd>占 1/4 重链和 1/2 轻链。</dd>
-</dl>
-<p>轻链和重链的 V 区分别称为 V<sub>H</sub> 和 V<sub>L</sub>，各有三个 <strong><abbr title="高变区（互补决定区）">HVR</abbr></strong>，分别为 CDR1、CDR2、CDR3（或 HVRn，n=1,2,3）。<br/>
-V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变区）">CDR</abbr> 共同构成 <abbr title="抗体">Ab</abbr> 的<strong>抗原结合部位</strong>（antigen-binding site），决定抗体的特异性。</p>
-<dl>
-<dt>高变区（hypervariable region，<abbr title="高变区（互补决定区）">HVR</abbr>）| 互补决定区（<abbr title="互补决定区（高变区）">CDR</abbr>）</dt>
-<dd>氨基酸组成和排列高度可变的区域。</dd>
-</dl>
-<dl>
-<dt>骨架区（<abbr title="骨架区">FR</abbr>）</dt>
-<dd><abbr title="可变区">V 区</abbr> <abbr title="高变区（互补决定区）">HVR</abbr> 外的区域，氨基酸组成的排列顺序相对变化不大。</dd>
-</dl>
-<hr />
-<dl>
-<dt>恒定区（constant region，<mark><abbr title="恒定区">C 区</abbr></mark>）</dt>
-<dd>靠近 C 端的相对恒定的区域。</dd>
-<dd>占 3/4 重链和 1/2 轻链。</dd>
-</dl>
-<p>轻链和重链的 C 区分别称为 C<sub>H</sub> 和 C<sub>L</sub>。</p>
-<p>不同型 <abbr title="抗体">Ab</abbr> 的 C<sub>L</sub> 区的长度基本一致，但是不同<strong>类</strong> <abbr title="抗体">Ab</abbr> 的 C<sub>H</sub> 区长度不一。</p>
-<ul>
-<li>IgG/IgA/IgD：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3</li>
-<li>IgM/IgE：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3、C<sub>H</sub>4</li>
-</ul>
-<h3 id="铰链区">铰链区 <a class="markdownIt-Anchor" href="#铰链区">#</a></h3>
-<dl>
-<dt>铰链区（hinge region）</dt>
-<dd>位于 C<sub>H</sub>1 和 C<sub>H</sub>2 之间，含有丰富的脯氨酸，易弯曲伸展，能改变”Y“形两个臂之间的距离，有利于两个臂同时结合两个相同的抗原表位。</dd>
-<dd>铰链区易被蛋白水解酶降解，见 <a href="#%E6%8A%97%E4%BD%93%E5%88%86%E5%AD%90%E7%9A%84%E6%B0%B4%E8%A7%A3%E7%89%87%E6%AE%B5">抗体分子的水解片段</a>。</dd>
-</dl>
-<blockquote>
-<p>IgM 和 IgE 无铰链区</p>
-</blockquote>
-<h3 id="抗体的辅助成分">抗体的辅助成分 <a class="markdownIt-Anchor" href="#抗体的辅助成分">#</a></h3>
-<dl>
-<dt>J 链（joining chain）</dt>
-<dd>由<strong>浆细胞</strong>合成的富含半胱氨酸的酸性糖蛋白，主要功能是<strong>将单体 <abbr title="抗体">Ab</abbr> 连接形成二聚体或多聚体</strong>。</dd>
-<dt>分泌片（secretory piece，<abbr title="分泌片（分泌成分）">SP</abbr>）| 分泌成分（secretory component，<abbr title="分泌成分（分泌片）">SC</abbr>）</dt>
-<dd>由<strong>黏膜上皮细胞</strong>合成、分泌的一种 <abbr title="分泌型 IgA">SIgA</abbr>（分泌型 IgA）的辅助因子。</dd>
-</dl>
-<p>分泌片的功能</p>
-<ul>
-<li>保护 <abbr title="分泌型 IgA">SIgA</abbr> 铰链区免受蛋白水解酶降解</li>
-<li>可介导 <abbr title="分泌型 IgA">SIgA</abbr> 从黏膜下通过黏膜上皮细胞转运到黏膜表面（另见 <a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">穿过胎盘和黏膜</a>）</li>
-</ul>
-<h3 id="抗体分子的水解片段">抗体分子的水解片段 <a class="markdownIt-Anchor" href="#抗体分子的水解片段">#</a></h3>
-<p>常用<strong>木瓜蛋白酶</strong>和<strong>胃蛋白酶</strong>水解蛋白质，借此研究 <abbr title="抗体">Ab</abbr> 的结构和功能。</p>
-<ul>
-<li><strong>木瓜蛋白酶</strong>：将重链于铰链区<strong>近 N 端</strong>切断，产生两个 <abbr title="抗原结合片段">Fab</abbr> 和一个 <abbr title="可结晶片段">Fc</abbr></li>
-<li><strong>胃蛋白酶</strong>：将重链于铰链区<strong>近 C 端</strong>切断，产生一个 F(ab’)<sub>2</sub>（双价）和一些 pFc’（无生物学活性）</li>
-</ul>
-<dl>
-<dt>抗原结合片段（fragment of antigen-binding，<abbr title="抗原结合片段">Fab</abbr>）</dt>
-<dd>可与抗原结合，具有单价抗原活性。</dd>
-<dt>可结晶片段（fragment crystallizable，<abbr title="可结晶片段">Fc</abbr>）</dt>
-<dd>不可与抗原结合，但可执行免疫球蛋白的其他生物学功能。</dd>
-</dl>
-<h3 id="超免疫球蛋白家族">超免疫球蛋白家族 <a class="markdownIt-Anchor" href="#超免疫球蛋白家族">#</a></h3>
-<dl>
-<dt>免疫球蛋白折叠（immunoglobulin fold）</dt>
-<dd>抗体分子中 <abbr title="互补决定区（高变区）">CDR</abbr> 外的结构域氨基酸序列相对保守（有较高的同源性），折叠成特定的球状结构。</dd>
-<dt>免疫球蛋白基因超家族、免疫球蛋白超家族（immunoglobulin superfamily，<abbr title="免疫球蛋白超家族（immunoglobulin superfamily）">IgSF</abbr>）</dt>
-<dd>编码具有<strong>免疫球蛋白折叠</strong>的蛋白质的基因称为<strong>免疫球蛋白基因超家族</strong>，这种蛋白质称为
-<strong>免疫球蛋白超家族</strong>。</dd>
-</dl>
-<h2 id="抗体的多样性和免疫原性">抗体的多样性和免疫原性 <a class="markdownIt-Anchor" href="#抗体的多样性和免疫原性">#</a></h2>
-<blockquote>
-<p>多样性抗原表位的存在是导致 <strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>（即具有不同的抗原特异性）的外源因素，是
-<strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>的物质基础。<br/>
-抗体的多样性是由<strong>免疫球蛋白基因重排</strong>决定并经<strong>抗原选择</strong>
-表现出来的，反映了机体对抗原精细结构的识别和应答。</p>
-</blockquote>
-<p>抗体本身也具有 <a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原的基本特征">免疫原性</a>，即包含<strong>抗原表位</strong>，可激活机体产生特异性免疫应答。</p>
-<dl>
-<dt>同种型（isotype）</dt>
-<dd>存在于<strong>同种</strong>抗体分子中的抗原表位。</dd>
-<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，为<strong>种属型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
-<dt>同种异型（allotype）</dt>
-<dd>存在于<strong>同种属中不同个体</strong> <abbr title="抗体">Ab</abbr> 中的抗原表位。</dd>
-<dd>是同一种属不同个体 <abbr title="抗体">Ab</abbr> 分子所具有的不同抗原特异性标志，为<strong>个体型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
-<dt>独特型（idiotype，Id）</dt>
-<dd>每个<strong>抗体分子</strong>所特有的抗原特异性标志，其表位被称为<strong>独特位</strong>（idiotope）。</dd>
-<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
-</dl>
-<h2 id="抗体的功能">抗体的功能 <a class="markdownIt-Anchor" href="#抗体的功能">#</a></h2>
-<h3 id="抗体-v-区的作用">抗体 V 区的作用 <a class="markdownIt-Anchor" href="#抗体-v-区的作用">#</a></h3>
-<p>V<sub>L</sub> 和 V<sub>H</sub> 是抗原结合的部位</p>
-<ol>
-<li>识别并特异性结合抗原，<abbr title="互补决定区（高变区）">CDR</abbr> 起决定性作用；</li>
-<li>中和毒素、阻断病原入侵等免疫防御功能。</li>
-</ol>
-<dl>
-<dt>抗原结合价</dt>
-<dd><abbr title="抗体">Ab</abbr> 结合抗原表位的个数。</dd>
-<dd>单抗原为双价，<abbr title="抗原结合片段">Fab</abbr> 为单价，五聚体理论上为 10 价，但是由于空间位阻的原因，实际上为 5 价。</dd>
-</dl>
-<h3 id="抗体-c-区的作用">抗体 C 区的作用 <a class="markdownIt-Anchor" href="#抗体-c-区的作用">#</a></h3>
-<h4 id="激活补体">激活补体 <a class="markdownIt-Anchor" href="#激活补体">#</a></h4>
-<ul>
-<li>IgG1、IgG3、IgM：激活补体能力强，通过<strong>经典途径</strong>激活</li>
-<li>IgG2：也通过<strong>经典途径</strong>，但能力较弱</li>
-<li>IgG4、IgΑ、IgE：本身难以激活补体系统，需依赖<strong>旁路途径</strong></li>
-</ul>
-<dl>
-<dt>补体依赖的细胞毒作用（complement dependent cytotoxicity，<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）</dt>
-<dd>补体（C1q）参与的细胞毒作用。</dd>
-<dd>IgG 和 IgM 与病毒感染细胞或细菌细胞膜表面抗原结合，而后
-<strong>C1q</strong>（Complement component 1q）通过与抗体结合激活
-<strong>经典途径</strong>，导致<strong>攻膜复合物</strong>（membrane attack complex）形成并对靶细胞发挥裂解效应。</dd>
-</dl>
-<p>另见 <a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a>。</p>
-<h4 id="结合-fc-受体">结合 <abbr title="可结晶片段">Fc</abbr> 受体 <a class="markdownIt-Anchor" href="#结合-fc-受体">#</a></h4>
-<p><strong>IgG、IgA、IgE</strong> 有此功能的 <abbr title="可结晶片段">Fc</abbr> 段可与表面具有相应 <abbr title="可结晶片段">Fc</abbr> 受体（<abbr title="Fc 受体">FcR</abbr>）的细胞结合，产生不同的生物学效应。<br/>
-三类抗原的 <abbr title="可结晶片段">Fc</abbr> 受体分别称为 <abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>。</p>
-<h5 id="调理作用opsonization">调理作用（opsonization） <a class="markdownIt-Anchor" href="#调理作用opsonization">#</a></h5>
-<p>由 <strong>IgG</strong>（特别是 IgG1、IgG3）介导，IgG <abbr title="抗原结合片段">Fab</abbr> 段与相应细菌的抗原表位结合，<abbr title="可结晶片段">Fc</abbr> 段与巨噬细胞或中性粒细胞表面的 FcγR 结合，通过
-IgG 的“桥联”作用，促进吞噬细胞对细菌的吞噬。</p>
-<h5 id="抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity，<mark><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></mark>） <a class="markdownIt-Anchor" href="#抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">#</a></h5>
-<p>由 <strong>IgG</strong> 介导，抗体 <abbr title="抗原结合片段">Fab</abbr> 段结合病毒感染细胞或肿瘤细胞表面抗原，其 <abbr title="可结晶片段">Fc</abbr>
-段与杀伤细胞（<strong>NK 细胞</strong>、巨噬细胞等）表面 FcγR 结合，介导杀伤细胞直接杀伤靶细胞。</p>
-<blockquote>
-<p>抗体与靶细胞上抗原的结合是特异性的，而表达 <abbr title="Fc 受体">FcR</abbr> 细胞的杀伤作用是非特异性的。</p>
-</blockquote>
-<h5 id="介导-i-型超敏反应">介导 Ⅰ 型超敏反应 <a class="markdownIt-Anchor" href="#介导-i-型超敏反应">#</a></h5>
-<p>主要由 <strong>IgE</strong> 介导，IgE 通过其 <abbr title="可结晶片段">Fc</abbr> 段与肥大细胞或嗜碱性粒细胞表面高亲和力 IgE <abbr title="可结晶片段">Fc</abbr>
-受体（FcεR Ⅰ）结合，并使其致敏。<br/>
-若相同<strong>应变原</strong>再次进入机体与致敏靶细胞表面特异性 IgE 结合，即可引起 Ⅰ 型超敏反应。</p>
-<div class="note info"><dl>
-<dt>Ⅰ 型超敏反应 | 过敏反应（anaphylaxis）| 变态反应（allergy）</dt>
-<dd>机体受到某些抗原刺激时，引起的由特异性 IgE 抗体介导产生的一种发生快消退亦快的免疫应答。</dd>
-<dd>表现为局部或全身的生理功能紊乱，具有明显个体差异和遗传倾向。</dd>
-<dt>变应原（allergen）| 过敏原</dt>
-<dd>引起超敏反应的物质。</dd>
-</dl>
-</div>
-<h4 id="穿过胎盘和黏膜">穿过胎盘和黏膜 <a class="markdownIt-Anchor" href="#穿过胎盘和黏膜">#</a></h4>
-<p>人类中，<mark>IgG</mark> 是唯一能通过胎盘的细胞。IgG 穿过胎盘是一种重要的 <mark>自然被动免疫机制</mark>。<br/>
-胚盘母体一侧的滋养层细胞表达一种 IgG 输送蛋白，称为
-<strong>新生儿 <abbr title="可结晶片段">Fc</abbr> 段受体</strong>（neonatal <abbr title="Fc 受体">FcR</abbr>，<strong>FcRn</strong>）。<br/>
-FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其进入胎儿血液。<br/></p>
-<p><a href="#iga"><abbr title="分泌型 IgA">SIgA</abbr></a> 也可通过 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 的介导转运到呼吸道或消化道黏膜表面，在黏膜局部免疫中发挥作用。</p>
-<h2 id="各类抗体的特性与功能">各类抗体的特性与功能 <a class="markdownIt-Anchor" href="#各类抗体的特性与功能">#</a></h2>
-<h3 id="igg">IgG <a class="markdownIt-Anchor" href="#igg">#</a></h3>
-<dl>
-<dt>IgG（免疫球蛋白 G）</dt>
-<dd>IgG 从出生后 3 月后开始合成，3~5 岁接近成人水平，是血清和胞外液中<strong>含量最高</strong>（75%~80%的 <abbr title="免疫球蛋白">Ig</abbr>。</dd>
-<dd>IgG 半衰期约 20~23 天，是<strong>再次免疫应答产生</strong>的主要抗体；其亲和力高，是机体抗感染免疫的“主力军”。</dd>
-<dd>IgG 的亚类见 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
-</dl>
-<p>生物学活性</p>
-<ul>
-<li><a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">通过胎盘</a>（新生儿抗感染）：IgG1、3、4</li>
-<li><a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">激活补体</a>（裂解细胞）：IgG1、2、3</li>
-<li><a href="#%E8%B0%83%E7%90%86%E4%BD%9C%E7%94%A8opsonization">调理作用</a>（促进吞噬）：IgG1、2、3</li>
-<li>介导 <a href="#%E6%8A%97%E4%BD%93%E4%BE%9D%E8%B5%96%E7%9A%84%E7%BB%86%E8%83%9E%E4%BB%8B%E5%AF%BC%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%92%E4%BD%9C%E7%94%A8antibody-dependent-cell-mediated-cytotoxicityadcc"><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></a>（细胞毒作用）：IgG1、2、3</li>
-<li><abbr title="可结晶片段">Fc</abbr> 段与 <a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/#葡萄球菌">葡萄球菌蛋白 A</a>（SPA）结合（免疫诊断、纯化抗体）：IgG1、2、4</li>
-</ul>
-<p>实际功能：</p>
-<ul>
-<li>抗感染</li>
-<li>自身抗体（自身免疫病）</li>
-<li>介导 Ⅱ、Ⅲ 型变态反应</li>
-<li>亲合层析法，用于抗体纯化</li>
-<li>免疫学检测和诊断</li>
-</ul>
-<h3 id="igm">IgM <a class="markdownIt-Anchor" href="#igm">#</a></h3>
-<dl>
-<dt>IgM（免疫球蛋白 M）</dt>
-<dd>占血清球蛋白的 5%~10%，分为膜结合性 IgM（mIgM）和分泌型 IgM（SIgM）。</dd>
-</dl>
-<ul>
-<li>mIgM：单体，表达于 B 细胞表面，构成 B 细胞表面抗原受体（BCR）只表达 mIgM 是<strong>未成熟 B 细胞的标志</strong>。</li>
-<li>SIgM：<strong>五聚体</strong>，是<strong>分子量最大的 <abbr title="免疫球蛋白">Ig</abbr></strong>，称为<strong>巨球蛋白</strong>（macroglobulin），一般不能通过血管壁，主要存在于血液中。<br/>
-抗原结合能力（<abbr title="抗原结合片段">Fab</abbr>）和激活补体的能力（<abbr title="可结晶片段">Fc</abbr>）均较高。</li>
-</ul>
-<p>IgM 是个体发育过程中<strong>最早合成和分泌的抗体</strong>，胚胎发育晚期的婴儿即可产生 IgM。<br/>
-脐带血某些病毒特异性 IgM 水平升高提示胎儿有<strong>宫内感染</strong>。</p>
-<p>IgM 也是<strong>初次体液免疫应答</strong>中最早出现的抗体，而且半衰期短（5 天）。血清中检出病原体特异性 IgM 提示新近发生感染，可用于感染的早期诊断。</p>
-<h3 id="iga">IgA <a class="markdownIt-Anchor" href="#iga">#</a></h3>
-<dl>
-<dt>IgA（免疫球蛋白 A）</dt>
-<dd>分为<strong>血清型</strong>（IgA1）和<strong>分泌型</strong>（IgA2）两种，另见<a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
-<dd>聚合 IgA（<s><abbr title="分泌型 IgA">SIgA</abbr></s>）可激活 <a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">补体替代途径</a>。</dd>
-</dl>
-<ul>
-<li>血清型：单体，主要存在于血清中；</li>
-<li><strong>分泌型</strong></li>
-</ul>
-<dl>
-<dt>分泌型 IgA（secretory IgA，<mark><abbr title="分泌型 IgA">SIgA</abbr></mark>）</dt>
-<dd><strong>二聚体</strong>，由<strong>黏膜局部浆细胞</strong>分泌。
-<ul>
-<li>可借助 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 转运到呼吸道和消化道黏膜表面，参与局部抗感染免疫，阻止病原微生物黏附。</li>
-<li>新生儿可从母乳中获得 <abbr title="分泌型 IgA">SIgA</abbr>，是重要的 <mark>自然被动免疫</mark>。</li>
-</ul>
-</dd>
-</dl>
-<h3 id="igd">IgD <a class="markdownIt-Anchor" href="#igd">#</a></h3>
-<dl>
-<dt>IgD（免疫球蛋白 D）</dt>
-<dd>为<strong>单体分子</strong>，有分泌型和膜结合型两种。分泌型的功能尚未确定，mIgD 是 B 细胞分化发育为成熟 B 细胞（<strong>初始 B 细胞</strong>）的标志。</dd>
-<dd>B 细胞活化后其表面的 IgD 逐渐消失。</dd>
-<dd>IgD 铰链区较长，易被水解，半衰期只有 3 天。</dd>
-</dl>
-<h3 id="ige">IgE <a class="markdownIt-Anchor" href="#ige">#</a></h3>
-<dl>
-<dt>IgE（免疫球蛋白 E）</dt>
-<dd><strong>单体分子</strong>主要由黏膜下淋巴组织中的浆细胞分泌，血清中<strong>含量最低</strong>（0.002%）。</dd>
-<dd>IgE 是一类 <mark>亲细胞抗体</mark>，其 C<sub>H</sub>2 和 C<sub>H</sub>3 可与肥大细胞和嗜碱性粒细胞上的高亲和力 <strong>FcεR Ⅰ</strong>
-结合，当结合再次进入机体的抗原后可引起 <strong>Ⅰ 型超敏反应</strong>。</dd>
-<dd>过敏性疾病和某些<strong>寄生虫病</strong>患者体内的特异性 IgE 水平增高。</dd>
-</dl>
-<h2 id="人工制备抗体">人工制备抗体 <a class="markdownIt-Anchor" href="#人工制备抗体">#</a></h2>
-<h3 id="多克隆抗体">多克隆抗体 <a class="markdownIt-Anchor" href="#多克隆抗体">#</a></h3>
-<dl>
-<dt>多克隆抗体（polyclonal antibody，pAb）</dt>
-<dd>以天然抗体（<a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原特异性与抗原表位">多价抗体</a>）刺激机体免疫系统而产生的针对多种不同抗原表位的抗体总和。</dd>
-<dd>主要来源于动物免疫血清、恢复期患者血清、免疫接种人群血清。</dd>
-</dl>
-<ul>
-<li>优点
-<ul>
-<li><strong>作用全面</strong>：中和抗原，免疫调理，介导补体依赖的细胞毒作用（<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）、<abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></li>
-<li>来源广泛，易制备</li>
-</ul>
-</li>
-<li>缺点：特异性不高、易发生交叉反应，不易大量制备</li>
-</ul>
-<h3 id="单克隆抗体">单克隆抗体 <a class="markdownIt-Anchor" href="#单克隆抗体">#</a></h3>
-<dl>
-<dt>单克隆抗体（monoclonal antibody，mAb）</dt>
-<dd>由单一克隆 B 细胞<strong>杂交瘤</strong>所产生的、针对单一抗原表位的、具有<strong>高度特异性</strong>的抗体。</dd>
-</dl>
-<p>优点：结构均一、纯度高、特异性强、易于制备</p>
-<dl>
-<dt>杂交瘤（hybridoma）</dt>
-<dd>将可产生特异性抗体的 B 细胞和无特异性但永生化的骨髓瘤细胞融合形成的杂交细胞系。</dd>
-<dd>即具有免疫 B 细胞合成和分泌特异性抗体的能力，又具有骨髓瘤细胞大量扩增和永生的特性。</dd>
-</dl>
-<h3 id="基因工程抗体">基因工程抗体 <a class="markdownIt-Anchor" href="#基因工程抗体">#</a></h3>
-<dl>
-<dt>基因工程抗体（genetic engineering antibody）</dt>
-<dd>通过基因工程技术制备的抗体或抗原片段。</dd>
-<dd>即保持 mAb 的均一性，又能克服鼠源性的缺点。</dd>
-</dl>
-<ul>
-<li>人-鼠嵌合抗体</li>
-<li>人源化抗体</li>
-<li>双特异性抗体</li>
-<li>小分子抗体</li>
-<li>人抗体</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>抗原</title>
     <url>/2021/04/30/%E6%8A%97%E5%8E%9F/</url>
     <content><![CDATA[<dl>
@@ -6574,6 +6226,354 @@ T 细胞辅助。</p>
 <dd>属于非特异性淋巴细胞多克隆激活剂，通过与淋巴细胞表面<strong>丝裂原受体</strong>
 结合，刺激静止淋巴细胞转化为淋巴母细胞并进行有丝分裂，从而激活一类淋巴细胞的全部克隆。</dd>
 </dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>抗体</title>
+    <url>/2021/05/10/%E6%8A%97%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>抗体（antibody，<abbr title="抗体">Ab</abbr>）</dt>
+<dd>介导体液免疫的重要效应分子</dd>
+<dd>免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
+可与相应抗原发生特异性结合的<strong>免疫球蛋白</strong>（<abbr title="免疫球蛋白">Ig</abbr>）。</dd>
+<dd>主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</dd>
+</dl>
+<dl>
+<dt>免疫球蛋白（immunoglobulin，<abbr title="免疫球蛋白">Ig</abbr>）</dt>
+<dd>具有抗体活性或化学结构与抗体相似的球蛋白的统称。</dd>
+<dd>存在形式
+<ul>
+<li><strong>膜型</strong>（membrane immunoglobulin，mIg），如 BCR（B 细胞受体）</li>
+<li><strong>分泌型</strong>（secreted immunoglobulin，sIg），如抗体</li>
+</ul>
+</dd>
+</dl>
+<span id="more"></span>
+<h2 id="抗体的结构">抗体的结构 <a class="markdownIt-Anchor" href="#抗体的结构">#</a></h2>
+<p>抗体的<strong>基本结构</strong>是由两条完全相同的<strong>重链</strong>和<strong>轻链</strong>通过二硫键链接的“Y”形单体。</p>
+<h3 id="抗体的分类和分型">抗体的分类和分型 <a class="markdownIt-Anchor" href="#抗体的分类和分型">#</a></h3>
+<h4 id="类和亚类">类和亚类 <a class="markdownIt-Anchor" href="#类和亚类">#</a></h4>
+<ul>
+<li>类：根据 <strong>H 链</strong> C 区抗原性的差异</li>
+<li>亚类：铰链区氨基酸的组成和重链二硫键的数目、位置</li>
+</ul>
+<p>根据重链的种类，可将完整的抗体分子分为对应的五类（见下表“抗体”列）。</p>
+<p class="align-text-center table-caption ">
+      抗体的<strong>类</strong>和<strong>亚类</strong>
+    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类</th>
+<th style="text-align:center">抗体</th>
+<th style="text-align:center">亚类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">μ(mu)</td>
+<td style="text-align:center">IgM</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">γ(gamma)</td>
+<td style="text-align:center">IgG</td>
+<td style="text-align:center">IgG1~IgG4</td>
+</tr>
+<tr>
+<td style="text-align:center">α(alpha)</td>
+<td style="text-align:center">IgA</td>
+<td style="text-align:center">IgA1、IgA2</td>
+</tr>
+<tr>
+<td style="text-align:center">δ(delta)</td>
+<td style="text-align:center">IgD</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">ε(epsilon)</td>
+<td style="text-align:center">IgE</td>
+<td style="text-align:center">无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="型和亚型">型和亚型 <a class="markdownIt-Anchor" href="#型和亚型">#</a></h4>
+<p><strong>型</strong>：根据 <strong>L 链</strong> C 区氨基酸的组成和排列顺序</p>
+<ul>
+<li>κ（kappa）型</li>
+<li>λ（lambda）型</li>
+</ul>
+<p><strong>亚型</strong>：根据 λ 链 C 区个别氨基酸的不同：λ1/OZ(+)、λ2/OZ(-)、λ3/Kern(+)、λ4/Kern(-)</p>
+<h3 id="可变区和恒定区">可变区和恒定区 <a class="markdownIt-Anchor" href="#可变区和恒定区">#</a></h3>
+<img data-src="/2021/05/10/%E6%8A%97%E4%BD%93/%E6%8A%97%E4%BD%93%E7%BB%93%E6%9E%84%E5%9F%9F.jpg" class="" title="抗体分子 V 区和 C 区结构示意图" alt="抗体分子 V 区和 C 区结构示意图">
+<dl>
+<dt>可变区（variable region，<mark><abbr title="可变区">V 区</abbr></mark>）</dt>
+<dd>抗体分子中轻链和重链靠近 N 端的氨基酸形成的结构，此处氨基酸序列变化较大，具有独特的空间构型。
+<ul>
+<li>高变区</li>
+<li>骨架区</li>
+</ul>
+</dd>
+<dd>占 1/4 重链和 1/2 轻链。</dd>
+</dl>
+<p>轻链和重链的 V 区分别称为 V<sub>H</sub> 和 V<sub>L</sub>，各有三个 <strong><abbr title="高变区（互补决定区）">HVR</abbr></strong>，分别为 CDR1、CDR2、CDR3（或 HVRn，n=1,2,3）。<br/>
+V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变区）">CDR</abbr> 共同构成 <abbr title="抗体">Ab</abbr> 的<strong>抗原结合部位</strong>（antigen-binding site），决定抗体的特异性。</p>
+<dl>
+<dt>高变区（hypervariable region，<abbr title="高变区（互补决定区）">HVR</abbr>）| 互补决定区（<abbr title="互补决定区（高变区）">CDR</abbr>）</dt>
+<dd>氨基酸组成和排列高度可变的区域。</dd>
+</dl>
+<dl>
+<dt>骨架区（<abbr title="骨架区">FR</abbr>）</dt>
+<dd><abbr title="可变区">V 区</abbr> <abbr title="高变区（互补决定区）">HVR</abbr> 外的区域，氨基酸组成的排列顺序相对变化不大。</dd>
+</dl>
+<hr />
+<dl>
+<dt>恒定区（constant region，<mark><abbr title="恒定区">C 区</abbr></mark>）</dt>
+<dd>靠近 C 端的相对恒定的区域。</dd>
+<dd>占 3/4 重链和 1/2 轻链。</dd>
+</dl>
+<p>轻链和重链的 C 区分别称为 C<sub>H</sub> 和 C<sub>L</sub>。</p>
+<p>不同型 <abbr title="抗体">Ab</abbr> 的 C<sub>L</sub> 区的长度基本一致，但是不同<strong>类</strong> <abbr title="抗体">Ab</abbr> 的 C<sub>H</sub> 区长度不一。</p>
+<ul>
+<li>IgG/IgA/IgD：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3</li>
+<li>IgM/IgE：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3、C<sub>H</sub>4</li>
+</ul>
+<h3 id="铰链区">铰链区 <a class="markdownIt-Anchor" href="#铰链区">#</a></h3>
+<dl>
+<dt>铰链区（hinge region）</dt>
+<dd>位于 C<sub>H</sub>1 和 C<sub>H</sub>2 之间，含有丰富的脯氨酸，易弯曲伸展，能改变”Y“形两个臂之间的距离，有利于两个臂同时结合两个相同的抗原表位。</dd>
+<dd>铰链区易被蛋白水解酶降解，见 <a href="#%E6%8A%97%E4%BD%93%E5%88%86%E5%AD%90%E7%9A%84%E6%B0%B4%E8%A7%A3%E7%89%87%E6%AE%B5">抗体分子的水解片段</a>。</dd>
+</dl>
+<blockquote>
+<p>IgM 和 IgE 无铰链区</p>
+</blockquote>
+<h3 id="抗体的辅助成分">抗体的辅助成分 <a class="markdownIt-Anchor" href="#抗体的辅助成分">#</a></h3>
+<dl>
+<dt>J 链（joining chain）</dt>
+<dd>由<strong>浆细胞</strong>合成的富含半胱氨酸的酸性糖蛋白，主要功能是<strong>将单体 <abbr title="抗体">Ab</abbr> 连接形成二聚体或多聚体</strong>。</dd>
+<dt>分泌片（secretory piece，<abbr title="分泌片（分泌成分）">SP</abbr>）| 分泌成分（secretory component，<abbr title="分泌成分（分泌片）">SC</abbr>）</dt>
+<dd>由<strong>黏膜上皮细胞</strong>合成、分泌的一种 <abbr title="分泌型 IgA">SIgA</abbr>（分泌型 IgA）的辅助因子。</dd>
+</dl>
+<p>分泌片的功能</p>
+<ul>
+<li>保护 <abbr title="分泌型 IgA">SIgA</abbr> 铰链区免受蛋白水解酶降解</li>
+<li>可介导 <abbr title="分泌型 IgA">SIgA</abbr> 从黏膜下通过黏膜上皮细胞转运到黏膜表面（另见 <a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">穿过胎盘和黏膜</a>）</li>
+</ul>
+<h3 id="抗体分子的水解片段">抗体分子的水解片段 <a class="markdownIt-Anchor" href="#抗体分子的水解片段">#</a></h3>
+<p>常用<strong>木瓜蛋白酶</strong>和<strong>胃蛋白酶</strong>水解蛋白质，借此研究 <abbr title="抗体">Ab</abbr> 的结构和功能。</p>
+<ul>
+<li><strong>木瓜蛋白酶</strong>：将重链于铰链区<strong>近 N 端</strong>切断，产生两个 <abbr title="抗原结合片段">Fab</abbr> 和一个 <abbr title="可结晶片段">Fc</abbr></li>
+<li><strong>胃蛋白酶</strong>：将重链于铰链区<strong>近 C 端</strong>切断，产生一个 F(ab’)<sub>2</sub>（双价）和一些 pFc’（无生物学活性）</li>
+</ul>
+<dl>
+<dt>抗原结合片段（fragment of antigen-binding，<abbr title="抗原结合片段">Fab</abbr>）</dt>
+<dd>可与抗原结合，具有单价抗原活性。</dd>
+<dt>可结晶片段（fragment crystallizable，<abbr title="可结晶片段">Fc</abbr>）</dt>
+<dd>不可与抗原结合，但可执行免疫球蛋白的其他生物学功能。</dd>
+</dl>
+<h3 id="超免疫球蛋白家族">超免疫球蛋白家族 <a class="markdownIt-Anchor" href="#超免疫球蛋白家族">#</a></h3>
+<dl>
+<dt>免疫球蛋白折叠（immunoglobulin fold）</dt>
+<dd>抗体分子中 <abbr title="互补决定区（高变区）">CDR</abbr> 外的结构域氨基酸序列相对保守（有较高的同源性），折叠成特定的球状结构。</dd>
+<dt>免疫球蛋白基因超家族、免疫球蛋白超家族（immunoglobulin superfamily，<abbr title="免疫球蛋白超家族（immunoglobulin superfamily）">IgSF</abbr>）</dt>
+<dd>编码具有<strong>免疫球蛋白折叠</strong>的蛋白质的基因称为<strong>免疫球蛋白基因超家族</strong>，这种蛋白质称为
+<strong>免疫球蛋白超家族</strong>。</dd>
+</dl>
+<h2 id="抗体的多样性和免疫原性">抗体的多样性和免疫原性 <a class="markdownIt-Anchor" href="#抗体的多样性和免疫原性">#</a></h2>
+<blockquote>
+<p>多样性抗原表位的存在是导致 <strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>（即具有不同的抗原特异性）的外源因素，是
+<strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>的物质基础。<br/>
+抗体的多样性是由<strong>免疫球蛋白基因重排</strong>决定并经<strong>抗原选择</strong>
+表现出来的，反映了机体对抗原精细结构的识别和应答。</p>
+</blockquote>
+<p>抗体本身也具有 <a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原的基本特征">免疫原性</a>，即包含<strong>抗原表位</strong>，可激活机体产生特异性免疫应答。</p>
+<dl>
+<dt>同种型（isotype）</dt>
+<dd>存在于<strong>同种</strong>抗体分子中的抗原表位。</dd>
+<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，为<strong>种属型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dt>同种异型（allotype）</dt>
+<dd>存在于<strong>同种属中不同个体</strong> <abbr title="抗体">Ab</abbr> 中的抗原表位。</dd>
+<dd>是同一种属不同个体 <abbr title="抗体">Ab</abbr> 分子所具有的不同抗原特异性标志，为<strong>个体型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dt>独特型（idiotype，Id）</dt>
+<dd>每个<strong>抗体分子</strong>所特有的抗原特异性标志，其表位被称为<strong>独特位</strong>（idiotope）。</dd>
+<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+</dl>
+<h2 id="抗体的功能">抗体的功能 <a class="markdownIt-Anchor" href="#抗体的功能">#</a></h2>
+<h3 id="抗体-v-区的作用">抗体 V 区的作用 <a class="markdownIt-Anchor" href="#抗体-v-区的作用">#</a></h3>
+<p>V<sub>L</sub> 和 V<sub>H</sub> 是抗原结合的部位</p>
+<ol>
+<li>识别并特异性结合抗原，<abbr title="互补决定区（高变区）">CDR</abbr> 起决定性作用；</li>
+<li>中和毒素、阻断病原入侵等免疫防御功能。</li>
+</ol>
+<dl>
+<dt>抗原结合价</dt>
+<dd><abbr title="抗体">Ab</abbr> 结合抗原表位的个数。</dd>
+<dd>单抗原为双价，<abbr title="抗原结合片段">Fab</abbr> 为单价，五聚体理论上为 10 价，但是由于空间位阻的原因，实际上为 5 价。</dd>
+</dl>
+<h3 id="抗体-c-区的作用">抗体 C 区的作用 <a class="markdownIt-Anchor" href="#抗体-c-区的作用">#</a></h3>
+<h4 id="激活补体">激活补体 <a class="markdownIt-Anchor" href="#激活补体">#</a></h4>
+<ul>
+<li>IgG1、IgG3、IgM：激活补体能力强，通过<strong>经典途径</strong>激活</li>
+<li>IgG2：也通过<strong>经典途径</strong>，但能力较弱</li>
+<li>IgG4、IgΑ、IgE：本身难以激活补体系统，需依赖<strong>旁路途径</strong></li>
+</ul>
+<dl>
+<dt>补体依赖的细胞毒作用（complement dependent cytotoxicity，<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）</dt>
+<dd>补体（C1q）参与的细胞毒作用。</dd>
+<dd>IgG 和 IgM 与病毒感染细胞或细菌细胞膜表面抗原结合，而后
+<strong>C1q</strong>（Complement component 1q）通过与抗体结合激活
+<strong>经典途径</strong>，导致<strong>攻膜复合物</strong>（membrane attack complex）形成并对靶细胞发挥裂解效应。</dd>
+</dl>
+<p>另见 <a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a>。</p>
+<h4 id="结合-fc-受体">结合 <abbr title="可结晶片段">Fc</abbr> 受体 <a class="markdownIt-Anchor" href="#结合-fc-受体">#</a></h4>
+<p><strong>IgG、IgA、IgE</strong> 有此功能的 <abbr title="可结晶片段">Fc</abbr> 段可与表面具有相应 <abbr title="可结晶片段">Fc</abbr> 受体（<abbr title="Fc 受体">FcR</abbr>）的细胞结合，产生不同的生物学效应。<br/>
+三类抗原的 <abbr title="可结晶片段">Fc</abbr> 受体分别称为 <abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>。</p>
+<h5 id="调理作用opsonization">调理作用（opsonization） <a class="markdownIt-Anchor" href="#调理作用opsonization">#</a></h5>
+<p>由 <strong>IgG</strong>（特别是 IgG1、IgG3）介导，IgG <abbr title="抗原结合片段">Fab</abbr> 段与相应细菌的抗原表位结合，<abbr title="可结晶片段">Fc</abbr> 段与巨噬细胞或中性粒细胞表面的 FcγR 结合，通过
+IgG 的“桥联”作用，促进吞噬细胞对细菌的吞噬。</p>
+<h5 id="抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity，<mark><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></mark>） <a class="markdownIt-Anchor" href="#抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">#</a></h5>
+<p>由 <strong>IgG</strong> 介导，抗体 <abbr title="抗原结合片段">Fab</abbr> 段结合病毒感染细胞或肿瘤细胞表面抗原，其 <abbr title="可结晶片段">Fc</abbr>
+段与杀伤细胞（<strong>NK 细胞</strong>、巨噬细胞等）表面 FcγR 结合，介导杀伤细胞直接杀伤靶细胞。</p>
+<blockquote>
+<p>抗体与靶细胞上抗原的结合是特异性的，而表达 <abbr title="Fc 受体">FcR</abbr> 细胞的杀伤作用是非特异性的。</p>
+</blockquote>
+<h5 id="介导-i-型超敏反应">介导 Ⅰ 型超敏反应 <a class="markdownIt-Anchor" href="#介导-i-型超敏反应">#</a></h5>
+<p>主要由 <strong>IgE</strong> 介导，IgE 通过其 <abbr title="可结晶片段">Fc</abbr> 段与肥大细胞或嗜碱性粒细胞表面高亲和力 IgE <abbr title="可结晶片段">Fc</abbr>
+受体（FcεR Ⅰ）结合，并使其致敏。<br/>
+若相同<strong>应变原</strong>再次进入机体与致敏靶细胞表面特异性 IgE 结合，即可引起 Ⅰ 型超敏反应。</p>
+<div class="note info"><dl>
+<dt>Ⅰ 型超敏反应 | 过敏反应（anaphylaxis）| 变态反应（allergy）</dt>
+<dd>机体受到某些抗原刺激时，引起的由特异性 IgE 抗体介导产生的一种发生快消退亦快的免疫应答。</dd>
+<dd>表现为局部或全身的生理功能紊乱，具有明显个体差异和遗传倾向。</dd>
+<dt>变应原（allergen）| 过敏原</dt>
+<dd>引起超敏反应的物质。</dd>
+</dl>
+</div>
+<h4 id="穿过胎盘和黏膜">穿过胎盘和黏膜 <a class="markdownIt-Anchor" href="#穿过胎盘和黏膜">#</a></h4>
+<p>人类中，<mark>IgG</mark> 是唯一能通过胎盘的细胞。IgG 穿过胎盘是一种重要的 <mark>自然被动免疫机制</mark>。<br/>
+胚盘母体一侧的滋养层细胞表达一种 IgG 输送蛋白，称为
+<strong>新生儿 <abbr title="可结晶片段">Fc</abbr> 段受体</strong>（neonatal <abbr title="Fc 受体">FcR</abbr>，<strong>FcRn</strong>）。<br/>
+FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其进入胎儿血液。<br/></p>
+<p><a href="#iga"><abbr title="分泌型 IgA">SIgA</abbr></a> 也可通过 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 的介导转运到呼吸道或消化道黏膜表面，在黏膜局部免疫中发挥作用。</p>
+<h2 id="各类抗体的特性与功能">各类抗体的特性与功能 <a class="markdownIt-Anchor" href="#各类抗体的特性与功能">#</a></h2>
+<h3 id="igg">IgG <a class="markdownIt-Anchor" href="#igg">#</a></h3>
+<dl>
+<dt>IgG（免疫球蛋白 G）</dt>
+<dd>IgG 从出生后 3 月后开始合成，3~5 岁接近成人水平，是血清和胞外液中<strong>含量最高</strong>（75%~80%的 <abbr title="免疫球蛋白">Ig</abbr>。</dd>
+<dd>IgG 半衰期约 20~23 天，是<strong>再次免疫应答产生</strong>的主要抗体；其亲和力高，是机体抗感染免疫的“主力军”。</dd>
+<dd>IgG 的亚类见 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
+</dl>
+<p>生物学活性</p>
+<ul>
+<li><a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">通过胎盘</a>（新生儿抗感染）：IgG1、3、4</li>
+<li><a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">激活补体</a>（裂解细胞）：IgG1、2、3</li>
+<li><a href="#%E8%B0%83%E7%90%86%E4%BD%9C%E7%94%A8opsonization">调理作用</a>（促进吞噬）：IgG1、2、3</li>
+<li>介导 <a href="#%E6%8A%97%E4%BD%93%E4%BE%9D%E8%B5%96%E7%9A%84%E7%BB%86%E8%83%9E%E4%BB%8B%E5%AF%BC%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%92%E4%BD%9C%E7%94%A8antibody-dependent-cell-mediated-cytotoxicityadcc"><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></a>（细胞毒作用）：IgG1、2、3</li>
+<li><abbr title="可结晶片段">Fc</abbr> 段与 <a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/#葡萄球菌">葡萄球菌蛋白 A</a>（SPA）结合（免疫诊断、纯化抗体）：IgG1、2、4</li>
+</ul>
+<p>实际功能：</p>
+<ul>
+<li>抗感染</li>
+<li>自身抗体（自身免疫病）</li>
+<li>介导 Ⅱ、Ⅲ 型变态反应</li>
+<li>亲合层析法，用于抗体纯化</li>
+<li>免疫学检测和诊断</li>
+</ul>
+<h3 id="igm">IgM <a class="markdownIt-Anchor" href="#igm">#</a></h3>
+<dl>
+<dt>IgM（免疫球蛋白 M）</dt>
+<dd>占血清球蛋白的 5%~10%，分为膜结合性 IgM（mIgM）和分泌型 IgM（SIgM）。</dd>
+</dl>
+<ul>
+<li>mIgM：单体，表达于 B 细胞表面，构成 B 细胞表面抗原受体（BCR）只表达 mIgM 是<strong>未成熟 B 细胞的标志</strong>。</li>
+<li>SIgM：<strong>五聚体</strong>，是<strong>分子量最大的 <abbr title="免疫球蛋白">Ig</abbr></strong>，称为<strong>巨球蛋白</strong>（macroglobulin），一般不能通过血管壁，主要存在于血液中。<br/>
+抗原结合能力（<abbr title="抗原结合片段">Fab</abbr>）和激活补体的能力（<abbr title="可结晶片段">Fc</abbr>）均较高。</li>
+</ul>
+<p>IgM 是个体发育过程中<strong>最早合成和分泌的抗体</strong>，胚胎发育晚期的婴儿即可产生 IgM。<br/>
+脐带血某些病毒特异性 IgM 水平升高提示胎儿有<strong>宫内感染</strong>。</p>
+<p>IgM 也是<strong>初次体液免疫应答</strong>中最早出现的抗体，而且半衰期短（5 天）。血清中检出病原体特异性 IgM 提示新近发生感染，可用于感染的早期诊断。</p>
+<h3 id="iga">IgA <a class="markdownIt-Anchor" href="#iga">#</a></h3>
+<dl>
+<dt>IgA（免疫球蛋白 A）</dt>
+<dd>分为<strong>血清型</strong>（IgA1）和<strong>分泌型</strong>（IgA2）两种，另见<a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
+<dd>聚合 IgA（<s><abbr title="分泌型 IgA">SIgA</abbr></s>）可激活 <a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">补体替代途径</a>。</dd>
+</dl>
+<ul>
+<li>血清型：单体，主要存在于血清中；</li>
+<li><strong>分泌型</strong></li>
+</ul>
+<dl>
+<dt>分泌型 IgA（secretory IgA，<mark><abbr title="分泌型 IgA">SIgA</abbr></mark>）</dt>
+<dd><strong>二聚体</strong>，由<strong>黏膜局部浆细胞</strong>分泌。
+<ul>
+<li>可借助 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 转运到呼吸道和消化道黏膜表面，参与局部抗感染免疫，阻止病原微生物黏附。</li>
+<li>新生儿可从母乳中获得 <abbr title="分泌型 IgA">SIgA</abbr>，是重要的 <mark>自然被动免疫</mark>。</li>
+</ul>
+</dd>
+</dl>
+<h3 id="igd">IgD <a class="markdownIt-Anchor" href="#igd">#</a></h3>
+<dl>
+<dt>IgD（免疫球蛋白 D）</dt>
+<dd>为<strong>单体分子</strong>，有分泌型和膜结合型两种。分泌型的功能尚未确定，mIgD 是 B 细胞分化发育为成熟 B 细胞（<strong>初始 B 细胞</strong>）的标志。</dd>
+<dd>B 细胞活化后其表面的 IgD 逐渐消失。</dd>
+<dd>IgD 铰链区较长，易被水解，半衰期只有 3 天。</dd>
+</dl>
+<h3 id="ige">IgE <a class="markdownIt-Anchor" href="#ige">#</a></h3>
+<dl>
+<dt>IgE（免疫球蛋白 E）</dt>
+<dd><strong>单体分子</strong>主要由黏膜下淋巴组织中的浆细胞分泌，血清中<strong>含量最低</strong>（0.002%）。</dd>
+<dd>IgE 是一类 <mark>亲细胞抗体</mark>，其 C<sub>H</sub>2 和 C<sub>H</sub>3 可与肥大细胞和嗜碱性粒细胞上的高亲和力 <strong>FcεR Ⅰ</strong>
+结合，当结合再次进入机体的抗原后可引起 <strong>Ⅰ 型超敏反应</strong>。</dd>
+<dd>过敏性疾病和某些<strong>寄生虫病</strong>患者体内的特异性 IgE 水平增高。</dd>
+</dl>
+<h2 id="人工制备抗体">人工制备抗体 <a class="markdownIt-Anchor" href="#人工制备抗体">#</a></h2>
+<h3 id="多克隆抗体">多克隆抗体 <a class="markdownIt-Anchor" href="#多克隆抗体">#</a></h3>
+<dl>
+<dt>多克隆抗体（polyclonal antibody，pAb）</dt>
+<dd>以天然抗体（<a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原特异性与抗原表位">多价抗体</a>）刺激机体免疫系统而产生的针对多种不同抗原表位的抗体总和。</dd>
+<dd>主要来源于动物免疫血清、恢复期患者血清、免疫接种人群血清。</dd>
+</dl>
+<ul>
+<li>优点
+<ul>
+<li><strong>作用全面</strong>：中和抗原，免疫调理，介导补体依赖的细胞毒作用（<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）、<abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></li>
+<li>来源广泛，易制备</li>
+</ul>
+</li>
+<li>缺点：特异性不高、易发生交叉反应，不易大量制备</li>
+</ul>
+<h3 id="单克隆抗体">单克隆抗体 <a class="markdownIt-Anchor" href="#单克隆抗体">#</a></h3>
+<dl>
+<dt>单克隆抗体（monoclonal antibody，mAb）</dt>
+<dd>由单一克隆 B 细胞<strong>杂交瘤</strong>所产生的、针对单一抗原表位的、具有<strong>高度特异性</strong>的抗体。</dd>
+</dl>
+<p>优点：结构均一、纯度高、特异性强、易于制备</p>
+<dl>
+<dt>杂交瘤（hybridoma）</dt>
+<dd>将可产生特异性抗体的 B 细胞和无特异性但永生化的骨髓瘤细胞融合形成的杂交细胞系。</dd>
+<dd>即具有免疫 B 细胞合成和分泌特异性抗体的能力，又具有骨髓瘤细胞大量扩增和永生的特性。</dd>
+</dl>
+<h3 id="基因工程抗体">基因工程抗体 <a class="markdownIt-Anchor" href="#基因工程抗体">#</a></h3>
+<dl>
+<dt>基因工程抗体（genetic engineering antibody）</dt>
+<dd>通过基因工程技术制备的抗体或抗原片段。</dd>
+<dd>即保持 mAb 的均一性，又能克服鼠源性的缺点。</dd>
+</dl>
+<ul>
+<li>人-鼠嵌合抗体</li>
+<li>人源化抗体</li>
+<li>双特异性抗体</li>
+<li>小分子抗体</li>
+<li>人抗体</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -9180,80 +9180,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
-    <title>立克次体</title>
-    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>立克次体（<em>Rickettsia</em>）</dt>
-<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>其生物学性状与细菌相似。</dd>
-</dl>
-<span id="more"></span>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">立克次体</th>
-<th style="text-align:center">传播途径</th>
-<th style="text-align:center">所致疾病</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>普氏立克次体</strong></td>
-<td style="text-align:center">体虱/人虱</td>
-<td style="text-align:center">流行性斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
-<td style="text-align:center">鼠蚤、鼠虱</td>
-<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
-<td style="text-align:center">恙螨</td>
-<td style="text-align:center">恙虫病</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
-<td style="text-align:center">蜱</td>
-<td style="text-align:center">Q 热</td>
-</tr>
-<tr>
-<td style="text-align:center"><em>汉赛巴通体</em></td>
-<td style="text-align:center">猫</td>
-<td style="text-align:center">猫抓病</td>
-</tr>
-</tbody>
-</table>
-<p>生物学特性：</p>
-<ul>
-<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
-<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
-<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
-<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
-</ul>
-<p><em>结构和组成</em>（由外到内）：</p>
-<ul>
-<li>黏液层：多糖</li>
-<li>微荚膜：脂多糖或多糖</li>
-<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
-<li>细胞膜：类脂双分子层</li>
-</ul>
-<p>临床诊断：<strong>外斐试验</strong></p>
-<div class="note info titled"><div class='note-title' id='外斐试验'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
-</div>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>社会医学</title>
     <url>/2021/05/11/%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6/</url>
     <content><![CDATA[<p>社会医学知识点总结。</p>
@@ -9603,6 +9529,80 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>社会医学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>立克次体</title>
+    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>立克次体（<em>Rickettsia</em>）</dt>
+<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>其生物学性状与细菌相似。</dd>
+</dl>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">立克次体</th>
+<th style="text-align:center">传播途径</th>
+<th style="text-align:center">所致疾病</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>普氏立克次体</strong></td>
+<td style="text-align:center">体虱/人虱</td>
+<td style="text-align:center">流行性斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
+<td style="text-align:center">鼠蚤、鼠虱</td>
+<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
+<td style="text-align:center">恙螨</td>
+<td style="text-align:center">恙虫病</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
+<td style="text-align:center">蜱</td>
+<td style="text-align:center">Q 热</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>汉赛巴通体</em></td>
+<td style="text-align:center">猫</td>
+<td style="text-align:center">猫抓病</td>
+</tr>
+</tbody>
+</table>
+<p>生物学特性：</p>
+<ul>
+<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
+<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
+<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
+<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
+</ul>
+<p><em>结构和组成</em>（由外到内）：</p>
+<ul>
+<li>黏液层：多糖</li>
+<li>微荚膜：脂多糖或多糖</li>
+<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
+<li>细胞膜：类脂双分子层</li>
+</ul>
+<p>临床诊断：<strong>外斐试验</strong></p>
+<div class="note info titled"><div class='note-title' id='外斐试验'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
+</div>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -12479,11 +12479,6 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About Me</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
@@ -12522,6 +12517,11 @@ plate）。<br/>
 <li>你也可以直接在下方评论留言</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
