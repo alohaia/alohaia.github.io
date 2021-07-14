@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.aloha.org.cn/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</loc>
+    
+    <lastmod>2021-07-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/</loc>
+    
+    <lastmod>2021-07-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.aloha.org.cn/2021/05/10/%E8%82%9D%E7%82%8E%E7%97%85%E6%AF%92/</loc>
     
     <lastmod>2021-07-14</lastmod>
@@ -80,13 +94,6 @@
   
   <url>
     <loc>https://www.aloha.org.cn/2021/04/01/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/</loc>
-    
-    <lastmod>2021-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/2021/05/13/%E8%99%AB%E5%AA%92%E7%97%85%E6%AF%92%E5%92%8C%E5%87%BA%E8%A1%80%E7%83%AD%E7%97%85%E6%AF%92/</loc>
     
     <lastmod>2021-07-11</lastmod>
     
@@ -201,13 +208,6 @@
     <loc>https://www.aloha.org.cn/2021/05/20/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</loc>
     
     <lastmod>2021-07-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</loc>
-    
-    <lastmod>2021-07-02</lastmod>
     
   </url>
   
@@ -543,13 +543,6 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/Git/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.aloha.org.cn/tags/Electron/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
@@ -565,6 +558,13 @@
   
   <url>
     <loc>https://www.aloha.org.cn/tags/Index/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/tags/Git/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -592,14 +592,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/TTY/</loc>
+    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/tags/TTY/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -685,13 +685,6 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.aloha.org.cn/categories/Projects/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
@@ -699,28 +692,7 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/uncategorized/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/C-C/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Vim-NeoVim/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Front-end/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -734,14 +706,7 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Lua/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Vim-NeoVim/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -755,21 +720,42 @@
   </url>
   
   <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Front-end/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/C-C/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/uncategorized/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Lua/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/categories/Projects/Programming/</loc>
-    <lastmod>2021-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.aloha.org.cn/categories/Projects/Contests/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -783,6 +769,20 @@
   </url>
   
   <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Projects/Contests/</loc>
+    <lastmod>2021-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
@@ -790,7 +790,7 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/categories/Projects/Programming/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -811,14 +811,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Projects/Programming/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/categories/Projects/Programming/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/</loc>
     <lastmod>2021-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

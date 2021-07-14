@@ -744,6 +744,54 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
+    <title>Electron+Vue 开发笔记软件</title>
+    <url>/2021/04/28/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<ul>
+<li><a href="/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
+<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
+<ul>
+<li>node、npm（cnpm、yarn）</li>
+<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
+<p>如在 electron-vue 目录下创建项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
+<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
+<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
+</div>
+<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
+<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
+<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
+<p>要构建应用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
+</div>
+<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
+<p>文档：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Softwares</category>
+      </categories>
+      <tags>
+        <tag>Electron</tag>
+        <tag>Vue</tag>
+        <tag>Index</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git 实战</title>
     <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
     <content><![CDATA[<p>实用 Git 操作技巧。</p>
@@ -1180,54 +1228,6 @@ danger</div><p>danger</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Electron+Vue 开发笔记软件</title>
-    <url>/2021/04/28/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<ul>
-<li><a href="/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
-<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
-<ul>
-<li>node、npm（cnpm、yarn）</li>
-<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ul>
-<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
-<p>如在 electron-vue 目录下创建项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
-<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
-<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
-</div>
-<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
-<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
-<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
-<p>要构建应用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
-</div>
-<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
-<p>文档：</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Softwares</category>
-      </categories>
-      <tags>
-        <tag>Electron</tag>
-        <tag>Vue</tag>
-        <tag>Index</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux 配置记录</title>
     <url>/2021/04/06/Linux-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>记录 Linux 使用过程中遇到的坑、软件和开发环境的安装和配置等。</p>
@@ -1586,6 +1586,126 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
+    <title>Vim Syntax</title>
+    <url>/2021/03/16/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 学习记录</title>
+    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
+<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
+<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
+<p>安装 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
+<p>安装 cnpm（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
+<p>安装 yarn（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
+<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
+<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
+<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
+<p>使用 Linux 软件包管理器安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
+<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
+<blockquote>
+<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
+<p>准备两个基本文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
+<p>初始化 <code>packages.json</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Front end</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
+<span id="more"></span>
+<p>HLA 基因复合体分为三个基因区</p>
+<p>MHC 基因分两种类型</p>
+<ul>
+<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
+<li>免疫功能相关基因
+<ul>
+<li>血清补体成分的编码基因</li>
+<li>抗原加工相关基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The TTY Demystified</title>
     <url>/2021/03/15/The-TTY-Demystified/</url>
     <content><![CDATA[<p>原文：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51c2FrZXNzb24ubmV0L3Byb2dyYW1taW5nL3R0eS8=">http://www.linusakesson.net/programming/tty/<i class="fa fa-external-link-alt"></i></span></p>
@@ -1846,8 +1966,8 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
 ]]></content>
       <categories>
         <category>Learning</category>
-        <category>Computer</category>
         <category>Projects</category>
+        <category>Computer</category>
         <category>uncategorized</category>
         <category>Programming</category>
         <category>自制伪终端</category>
@@ -1855,126 +1975,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       <tags>
         <tag>Linux</tag>
         <tag>TTY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim Syntax</title>
-    <url>/2021/03/16/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 学习记录</title>
-    <url>/2021/04/28/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
-<ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
-<ul>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
-<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
-<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
-<p>安装 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
-<p>安装 cnpm（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
-<p>安装 yarn（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
-<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
-<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
-<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
-<p>使用 Linux 软件包管理器安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
-<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
-<blockquote>
-<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
-<p>准备两个基本文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
-<p>初始化 <code>packages.json</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Front end</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/2021/05/21/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
-<span id="more"></span>
-<p>HLA 基因复合体分为三个基因区</p>
-<p>MHC 基因分两种类型</p>
-<ul>
-<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
-<li>免疫功能相关基因
-<ul>
-<li>血清补体成分的编码基因</li>
-<li>抗原加工相关基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
-</ul>
-</li>
-</ul>
-<p>MHC 遗传特点</p>
-<ol>
-<li>MHC 多态性</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
       </tags>
   </entry>
   <entry>
@@ -2086,6 +2086,369 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       <tags>
         <tag>Index</tag>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success" open>
+<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人胚发生和早期发育</title>
+    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
+    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
+<p>人胚发育共经历 38 周（约 266 天）：</p>
+<ul>
+<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong>即指胚期；</li>
+<li><strong>胎期</strong>：9W 至出生。</li>
+</ul>
+<dl>
+<dt>围生期</dt>
+<dd><a href="#%E8%83%9A%E8%83%8E%E9%BE%84%E7%9A%84%E6%8E%A8%E7%AE%97">受精龄</a> 第 26 周至出生后 4 周。</dd>
+</dl>
+<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为<strong>围生医学</strong>。</p>
+<span id="more"></span>
+<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
+<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
+<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
+<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
+<dl>
+<dt>卵裂（cleavage)</dt>
+<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
+<dd>此时产生的子细胞称为<strong>卵裂球</strong>。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
+<dl>
+<dt>桑椹胚（morula）</dt>
+<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
+<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
+<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成<strong>胚泡</strong>。</dd>
+<dd>胚泡由<strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong>三部份组成。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
+<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
+<dl>
+<dt>植入（implantation）| 着床（imbed）</dt>
+<dd>胚泡逐渐埋入子宫内膜的过程。
+<ul>
+<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
+<li>部位：子宫体前后壁或子宫底的内膜。</li>
+</ul>
+</dd>
+</dl>
+<blockquote>
+<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
+</blockquote>
+<p>植入条件：</p>
+<ol>
+<li>受精卵在输卵管中运行正常；</li>
+<li>透明带准时消失；</li>
+<li>母体性激素分泌正常；</li>
+<li>子宫内膜处于分泌期。</li>
+</ol>
+<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
+<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
+<strong>合体滋养层</strong>和<strong>细胞滋养层</strong>。</p>
+<dl>
+<dt>合体滋养层（syncytiotrophoblast）</dt>
+<dd>表层滋养层，细胞互相融合，界限消失。</dd>
+<dt>细胞滋养层（cytotrophoblast）</dt>
+<dd>内层滋养层，细胞界限明显。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
+<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
+<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
+<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
+<dl>
+<dt>蜕膜（decidua）</dt>
+<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
+<dd>蜕膜会在分娩时脱落，故得名。</dd>
+</dl>
+<p>蜕膜可分为<strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong>三部分。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
+<dl>
+<dt>底蜕膜（decidua basalis）</dt>
+<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
+<dt>包蜕膜（decidua capsularis）</dt>
+<dd>覆盖于胚宫腔侧的蜕膜。</dd>
+<dt>壁蜕膜（decidua parietalis）</dt>
+<dd>子宫其余部分的蜕膜，与包蜕膜围成<strong>子宫腔</strong>。</dd>
+</dl>
+<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
+<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
+<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
+<dl>
+<dt>二胚层胚盘（bilaminar germ disc）</dt>
+<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
+</dl>
+<p>二胚层胚盘由<strong>下胚层</strong>和<strong>上胚层</strong>组成。</p>
+<dl>
+<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
+<dd>二胚层胚盘中靠近<strong>胚泡腔</strong>的一层立方形细胞。</dd>
+<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
+<dd>二胚层胚盘中靠近<strong>滋养层</strong>的一层柱状细胞。</dd>
+</dl>
+<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
+<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
+<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
+<strong>初级卵黄囊</strong>（primary yolk sac）或<strong>外体腔</strong>（outer coelom）。</p>
+<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为<strong>羊膜</strong>（amniotic membrane）。<br/>
+上胚层与羊膜之间的间隙称为<strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为<strong>羊水</strong>。<br/>
+羊膜与上胚层共同包绕羊膜腔形成<mark>羊膜囊</mark>（amniotic cyst）。</p>
+<p>另见 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
+<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
+<mark>次级卵黄囊</mark>（secondary yolk sac）。由胚外体腔膜构成的<em>初级卵黄囊</em>则逐渐退化。</p>
+<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
+<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为<mark>胚外中胚层</mark>（extra-embryonic mesoderm）。</p>
+<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为<mark>胚外体腔</mark>。</p>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
+<dl>
+<dt>体蒂（body stalk）</dt>
+<dd>胚外中胚层持续扩大，仅有的少部分连接<em>胚盘尾端</em>和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/#脐带"><strong>脐带</strong></a>。</dd>
+</dl>
+<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
+<dl>
+<dt>原条（primitive streak）</dt>
+<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
+</dl>
+<div class="note info"><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
+<dl>
+<dt>畸胎瘤（teratoma）</dt>
+<dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
+</dl>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTk1JUI4JUU4JTgzJThFJUU3JTk4JUE0">https://zh.wikipedia.org/wiki/畸胎瘤<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+<p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
+<p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
+<div class="note warning"><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
+</div>
+<dl>
+<dt>内胚层（endoderm）</dt>
+<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
+<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
+<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
+<dt>外胚层（ectoderm）</dt>
+<dd>原来的上胚层的改称。</dd>
+</dl>
+<hr />
+<dl>
+<dt>原结（primitive node）</dt>
+<dd>原条头部的细胞增殖较快，形成的结节状肥厚区。</dd>
+<dt>原沟（primitive groove）</dt>
+<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
+<dt>原凹（primitive pit）</dt>
+<dd><strong>原结</strong>中心的凹陷。</dd>
+<dt>脊索（notochord）</dt>
+<dd><strong>原凹</strong>处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
+</dl>
+<p>脊索在胚胎早期起<strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的<strong>髓核</strong>。</p>
+<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
+<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
+<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
+<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
+<dl>
+<dt>神经板（neural plate）</dt>
+<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称<strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
+</dl>
+<p>神经板中央凹陷，称<strong>神经沟</strong>（neural groove）；<br/>
+沟两侧部分隆起，称<strong>神经褶</strong>（neural fold）。</p>
+<dl>
+<dt>神经管（neural tube）</dt>
+<dd>第 3 周末，<strong>神经沟</strong>加深，<strong>神经褶</strong>愈合（神经板边缘融合）形成神经管。</dd>
+</dl>
+<p><strong>神经管分化</strong>：神经管是<strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
+<dl>
+<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
+<dd>神经管头端和尾端的孔。</dd>
+</dl>
+<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致<strong>无脑儿</strong>和<strong>脊髓脊柱裂</strong>。</p>
+<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
+<dl>
+<dt>神经嵴（neural crest）</dt>
+<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管形成过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
+</dl>
+<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
+<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
+<ul>
+<li><strong>表皮及其附属器</strong></li>
+<li>牙釉质</li>
+<li>角膜上皮、晶状体</li>
+<li>内耳迷路</li>
+<li>……</li>
+</ul>
+<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
+<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
+<dl>
+<dt>轴旁中胚层（paraxial mesoderm）</dt>
+<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
+<dt>间介中胚层（intermediate mesoderm）</dt>
+<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
+<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
+<dd>初为单一薄层结构，后出现间隙，称为<strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的<strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的<strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
+</dl>
+<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
+<dl>
+<dt>间充质（mesenchyme）</dt>
+<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
+</dl>
+<p><strong>中胚层三部分的分化</strong>：</p>
+<ul>
+<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
+<li><strong>间介中胚层</strong>：泌尿生殖系统的原基</li>
+<li><strong>侧中胚层</strong> →
+<ul>
+<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
+<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
+<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
+</ul>
+</li>
+</ul>
+<p><strong>体节</strong>（somite）是轴旁中胚层断裂形成的左右成对的立方体细胞团。<br/>
+体节是<em>脊柱、背部皮肤真皮和骨骼肌</em>的原基，从头端开始生成，逐渐向尾端推进，可根据体节数目推算早期胚龄。</p>
+<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
+<p>卵黄囊顶壁的内胚层被卷入胚体内形成<strong>原始消化管</strong>（primitive gut）。<br/>
+原始消化管分为<strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和<strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
+<p><strong>内胚层的分化</strong>：</p>
+<ul>
+<li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
+<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
+<li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
+</ul>
+<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
+<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
+<dl>
+<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
+<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
+</dl>
+<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的<strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
+<p>第 5~8 周称为<strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8 周末时初具人形，主要器官、系统在此时期形成。</p>
+<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
+<dl>
+<dt>受精龄</dt>
+<dd>从受精到胎儿出生，约 38 周，包括<strong>胚期</strong>和<strong>胎期</strong>。</dd>
+<dt>月经龄</dt>
+<dd>从末次月经到婴儿出生，约 40 周。</dd>
+</dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -2582,369 +2945,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/2021/05/17/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success" open>
-<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅰ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触和<em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em>和性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/2021/04/26/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人胚发生和早期发育</title>
-    <url>/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
-    <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
-<p>人胚发育共经历 38 周（约 266 天）：</p>
-<ul>
-<li><strong>胚期</strong>：受精卵形成至 8W 末，<strong>人胚早期发生</strong>即指胚期；</li>
-<li><strong>胎期</strong>：9W 至出生。</li>
-</ul>
-<dl>
-<dt>围生期</dt>
-<dd><a href="#%E8%83%9A%E8%83%8E%E9%BE%84%E7%9A%84%E6%8E%A8%E7%AE%97">受精龄</a> 第 26 周至出生后 4 周。</dd>
-</dl>
-<p>临床上，围生期的母体、胎儿及新生儿的保健医学称为<strong>围生医学</strong>。</p>
-<span id="more"></span>
-<h2 id="生殖细胞和受精">生殖细胞和受精 <a class="markdownIt-Anchor" href="#生殖细胞和受精">#</a></h2>
-<p>见 <a href="/2021/03/31/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a>。</p>
-<h2 id="卵泡形成与植入">卵泡形成与植入 <a class="markdownIt-Anchor" href="#卵泡形成与植入">#</a></h2>
-<h3 id="卵裂和胚泡形成">卵裂和胚泡形成 <a class="markdownIt-Anchor" href="#卵裂和胚泡形成">#</a></h3>
-<dl>
-<dt>卵裂（cleavage)</dt>
-<dd>受精卵形成后，在向子宫方向移动时，同时进行的细胞分裂。</dd>
-<dd>此时产生的子细胞称为<strong>卵裂球</strong>。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E5%8D%B5%E8%A3%82.png" class="" title="卵裂" alt="卵裂">
-<dl>
-<dt>桑椹胚（morula）</dt>
-<dd>受精后约 72h 后，合子分裂形成的一个由 <strong>16</strong> 个卵裂球所组成的圆形实体。</dd>
-<dt>胚泡（blastocyst) | 囊胚（blastula）</dt>
-<dd>桑椹胚进入子宫腔继续分裂，卵裂球数量达 100 左右时，细胞按一定规律排布，形成<strong>胚泡</strong>。</dd>
-<dd>胚泡由<strong>滋养层</strong>、<strong>胚泡腔</strong>、<strong>内细胞群</strong>三部份组成。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E6%B3%A1.png" class="" title="胚泡" alt="胚泡">
-<h3 id="植入">植入 <a class="markdownIt-Anchor" href="#植入">#</a></h3>
-<dl>
-<dt>植入（implantation）| 着床（imbed）</dt>
-<dd>胚泡逐渐埋入子宫内膜的过程。
-<ul>
-<li><mark>时间：受精后 5~6 天开始，11~12 天完成</mark>；</li>
-<li>部位：子宫体前后壁或子宫底的内膜。</li>
-</ul>
-</dd>
-</dl>
-<blockquote>
-<p>在《人类发育与遗传学》中，着床仅为植入的第一阶段——<em>胚泡定位、识别、接触、黏附、融合的过程</em>。</p>
-</blockquote>
-<p>植入条件：</p>
-<ol>
-<li>受精卵在输卵管中运行正常；</li>
-<li>透明带准时消失；</li>
-<li>母体性激素分泌正常；</li>
-<li>子宫内膜处于分泌期。</li>
-</ol>
-<h4 id="植入后的滋养层的变化">植入后的滋养层的变化 <a class="markdownIt-Anchor" href="#植入后的滋养层的变化">#</a></h4>
-<p>胚泡植入后，滋养层细胞迅速分裂增殖，由单层变为复层，表层和内层细胞分别形成
-<strong>合体滋养层</strong>和<strong>细胞滋养层</strong>。</p>
-<dl>
-<dt>合体滋养层（syncytiotrophoblast）</dt>
-<dd>表层滋养层，细胞互相融合，界限消失。</dd>
-<dt>细胞滋养层（cytotrophoblast）</dt>
-<dd>内层滋养层，细胞界限明显。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E6%A4%8D%E5%85%A5%E5%90%8E%E7%9A%84%E6%BB%8B%E5%85%BB%E5%B1%82.png" class="" title="植入后的滋养层" alt="植入后的滋养层">
-<p>滋养层细胞增殖迅速。合体滋养层内形成一些小的腔隙，称为
-<strong>滋养层陷窝</strong>，内含来自子宫内膜的母体血，可进行物质交换。</p>
-<h4 id="植入后的子宫内膜的变化">植入后的子宫内膜的变化 <a class="markdownIt-Anchor" href="#植入后的子宫内膜的变化">#</a></h4>
-<dl>
-<dt>蜕膜（decidua）</dt>
-<dd>是受精卵着床之后，在孕激素作用下，经历增厚和血供增加过程的子宫内膜（的功能层）。</dd>
-<dd>蜕膜会在分娩时脱落，故得名。</dd>
-</dl>
-<p>蜕膜可分为<strong>底蜕膜</strong>、<strong>包蜕膜</strong>、<strong>壁蜕膜</strong>三部分。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%9C%95%E8%86%9C.png" class="" title="蜕膜" alt="蜕膜">
-<dl>
-<dt>底蜕膜（decidua basalis）</dt>
-<dd>位于胚泡与子宫内膜之间，参与胚盘的形成。</dd>
-<dt>包蜕膜（decidua capsularis）</dt>
-<dd>覆盖于胚宫腔侧的蜕膜。</dd>
-<dt>壁蜕膜（decidua parietalis）</dt>
-<dd>子宫其余部分的蜕膜，与包蜕膜围成<strong>子宫腔</strong>。</dd>
-</dl>
-<h2 id="胚层的形成">胚层的形成 <a class="markdownIt-Anchor" href="#胚层的形成">#</a></h2>
-<h3 id="二胚层胚盘及相关结构的发生">二胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#二胚层胚盘及相关结构的发生">#</a></h3>
-<h4 id="二胚层胚盘的形成">二胚层胚盘的形成 <a class="markdownIt-Anchor" href="#二胚层胚盘的形成">#</a></h4>
-<dl>
-<dt>二胚层胚盘（bilaminar germ disc）</dt>
-<dd><mark>第 2 周</mark> 胚泡植入过程中，内细胞群增殖分化形成的圆盘状结构。</dd>
-</dl>
-<p>二胚层胚盘由<strong>下胚层</strong>和<strong>上胚层</strong>组成。</p>
-<dl>
-<dt>下胚层（hypoblast）| 初级内胚层（primitive endoderm）</dt>
-<dd>二胚层胚盘中靠近<strong>胚泡腔</strong>的一层立方形细胞。</dd>
-<dt>上胚层（epiblast）| 初级外胚层（primitive entoderm）</dt>
-<dd>二胚层胚盘中靠近<strong>滋养层</strong>的一层柱状细胞。</dd>
-</dl>
-<h4 id="羊膜囊和卵黄囊的形成">羊膜囊和卵黄囊的形成 <a class="markdownIt-Anchor" href="#羊膜囊和卵黄囊的形成">#</a></h4>
-<p>在细胞滋养层内面形成一层扁平细胞构成的膜，称
-<strong>胚外体腔膜</strong>（exocoelomic membrane），该膜与下胚层相连接，形成
-<strong>初级卵黄囊</strong>（primary yolk sac）或<strong>外体腔</strong>（outer coelom）。</p>
-<p>上、下胚层形成的同时，上胚层细胞之间出现了一个小腔，随着小腔不断扩大，一层细胞被推向滋养层，形成滋养层内面的膜，称为<strong>羊膜</strong>（amniotic membrane）。<br/>
-上胚层与羊膜之间的间隙称为<strong>羊膜腔</strong>（amniotic cavity），腔内的液体称为<strong>羊水</strong>。<br/>
-羊膜与上胚层共同包绕羊膜腔形成<mark>羊膜囊</mark>（amniotic cyst）。</p>
-<p>另见 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/?highlight=羊膜#胎盘">胎盘</a>。</p>
-<p>第二周末，下胚层周缘细胞向下生长，形成一个由立方上皮细胞围成的囊，称为
-<mark>次级卵黄囊</mark>（secondary yolk sac）。由胚外体腔膜构成的<em>初级卵黄囊</em>则逐渐退化。</p>
-<h4 id="胚外中胚层和胚外体腔的形成">胚外中胚层和胚外体腔的形成 <a class="markdownIt-Anchor" href="#胚外中胚层和胚外体腔的形成">#</a></h4>
-<p>在羊膜囊和卵黄囊形成的同时，胚泡腔中出现了一些疏松排列的星状细胞和细胞外基质，分布于细胞滋养层和羊膜、卵黄囊之间，称为<mark>胚外中胚层</mark>（extra-embryonic mesoderm）。</p>
-<p>胚外中胚层内会出现一些小的腔隙，并逐渐融合成一个大腔，称为<mark>胚外体腔</mark>。</p>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E8%83%9A%E5%A4%96%E4%B8%AD%E8%83%9A%E5%B1%82%E5%92%8C%E8%83%9A%E5%A4%96%E4%BD%93%E8%85%94%E7%9A%84%E5%BD%A2%E6%88%90.png" class="" title="胚外中胚层和胚外体腔的形成" alt="胚外中胚层和胚外体腔的形成">
-<dl>
-<dt>体蒂（body stalk）</dt>
-<dd>胚外中胚层持续扩大，仅有的少部分连接<em>胚盘尾端</em>和滋养层的胚外中胚层，将来演变为 <a href="/2021/04/17/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/#脐带"><strong>脐带</strong></a>。</dd>
-</dl>
-<h3 id="三胚层胚盘及相关结构的发生">三胚层胚盘及相关结构的发生 <a class="markdownIt-Anchor" href="#三胚层胚盘及相关结构的发生">#</a></h3>
-<dl>
-<dt>原条（primitive streak）</dt>
-<dd>在 <mark>第 3 周</mark> 初，胚盘部分 <mark>上胚层</mark> 细胞增殖迅速，并由两侧向中间迁移，形成的一条细胞增厚区，第 4 周原条已完全退化消失。</dd>
-</dl>
-<div class="note info"><p>若原条残余，常在胎儿出生后的骶尾部形成<strong>畸胎瘤</strong>。</p>
-<dl>
-<dt>畸胎瘤（teratoma）</dt>
-<dd>畸胎瘤主要为实心或囊心、被膜包覆的肿瘤，在肿瘤中可以看到许多类似正常的器官组织，比如毛发、软骨与腺体等。这些组织可能源自三个胚层。尽管这些特殊组织看似正常，但经常与周围组织无关（比如在软骨的周围形成角质）。在过往医学报告中，毛发、牙齿、硬骨甚至是高度分化的器官如眼、手、脚、肢体等，都曾在畸胎瘤中发现，但形成完整器官的比率不高。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></dd>
-</dl>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTk1JUI4JUU4JTgzJThFJUU3JTk4JUE0">https://zh.wikipedia.org/wiki/畸胎瘤<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</div>
-<p>原条位置和朝向：原条所在的一端为胚体的尾端，前为胚体的头端。</p>
-<p>原条细胞增殖、分化、扩散形成了<strong>三胚层胚盘</strong>。</p>
-<div class="note warning"><p>三胚层胚盘的三个胚层均起源于<strong>上胚层</strong>。</p>
-</div>
-<dl>
-<dt>内胚层（endoderm）</dt>
-<dd>原沟底部部分细胞进入下胚层，并逐渐置换了下胚层细胞，形成内胚层。</dd>
-<dt>中胚层（mesoderm）| 胚内中胚层（intraembryonic mesoderm）</dt>
-<dd>上胚层迁出的另一部分细胞在上下胚层之间形成的一夹层。</dd>
-<dt>外胚层（ectoderm）</dt>
-<dd>原来的上胚层的改称。</dd>
-</dl>
-<hr />
-<dl>
-<dt>原结（primitive node）</dt>
-<dd>原条头部的细胞增殖较快，形成的结节状肥厚区。</dd>
-<dt>原沟（primitive groove）</dt>
-<dd>原条细胞增殖并向深处迁移形成的沟状凹陷。</dd>
-<dt>原凹（primitive pit）</dt>
-<dd><strong>原结</strong>中心的凹陷。</dd>
-<dt>脊索（notochord）</dt>
-<dd><strong>原凹</strong>处细胞向下增殖，并向头端增生迁移，在内、外胚层之间形成的一细胞索。</dd>
-</dl>
-<p>脊索在胚胎早期起<strong>支持作用</strong>，以后逐渐退化，最终形成椎间盘中央的<strong>髓核</strong>。</p>
-<h2 id="三胚层分化和胚体形成">三胚层分化和胚体形成 <a class="markdownIt-Anchor" href="#三胚层分化和胚体形成">#</a></h2>
-<h3 id="三胚层分化">三胚层分化 <a class="markdownIt-Anchor" href="#三胚层分化">#</a></h3>
-<h4 id="外胚层的分化">外胚层的分化 <a class="markdownIt-Anchor" href="#外胚层的分化">#</a></h4>
-<h5 id="神经管的形成和分化">神经管的形成和分化 <a class="markdownIt-Anchor" href="#神经管的形成和分化">#</a></h5>
-<dl>
-<dt>神经板（neural plate）</dt>
-<dd>在脊索的诱导下，沿着脊索背部的外胚层（此时也称<strong>神经外胚层</strong>）细胞增厚形成的细胞板。</dd>
-</dl>
-<p>神经板中央凹陷，称<strong>神经沟</strong>（neural groove）；<br/>
-沟两侧部分隆起，称<strong>神经褶</strong>（neural fold）。</p>
-<dl>
-<dt>神经管（neural tube）</dt>
-<dd>第 3 周末，<strong>神经沟</strong>加深，<strong>神经褶</strong>愈合（神经板边缘融合）形成神经管。</dd>
-</dl>
-<p><strong>神经管分化</strong>：神经管是<strong>中枢神经系统</strong>（脑、脊髓）的原基，神经管还可以分化为松果体、神经垂体和视网膜等。</p>
-<dl>
-<dt>前神经孔（anterior neuropore）、后神经管（posterior neuropore）</dt>
-<dd>神经管头端和尾端的孔。</dd>
-</dl>
-<p>前、后神经孔分别在约第 25、27 天闭合。未闭合会分别导致<strong>无脑儿</strong>和<strong>脊髓脊柱裂</strong>。</p>
-<h5 id="神经嵴的形成和分化">神经嵴的形成和分化 <a class="markdownIt-Anchor" href="#神经嵴的形成和分化">#</a></h5>
-<dl>
-<dt>神经嵴（neural crest）</dt>
-<dd><strong>神经板缘</strong>（neural plate border）的一些细胞在神经管形成过程中迁移到其背侧，最终分裂成两条，位于神经管背外侧，称为神经嵴。</dd>
-</dl>
-<p><strong>神经嵴分化</strong>：<strong>周围神经系统</strong>（脑神经节、脊神经节及周围神经节）的原基，还可以分化为肾上腺髓质和某些 APUD 细胞。</p>
-<h5 id="表面外胚层的分化">表面外胚层的分化 <a class="markdownIt-Anchor" href="#表面外胚层的分化">#</a></h5>
-<ul>
-<li><strong>表皮及其附属器</strong></li>
-<li>牙釉质</li>
-<li>角膜上皮、晶状体</li>
-<li>内耳迷路</li>
-<li>……</li>
-</ul>
-<h4 id="中胚层的分化">中胚层的分化 <a class="markdownIt-Anchor" href="#中胚层的分化">#</a></h4>
-<p>脊索两侧中胚层细胞增殖快，由内向外分为：</p>
-<dl>
-<dt>轴旁中胚层（paraxial mesoderm）</dt>
-<dd>邻近脊索两侧的中胚层迅速增殖形成的一对纵行细胞索。</dd>
-<dt>间介中胚层（intermediate mesoderm）</dt>
-<dd>轴旁中胚层和侧中胚层之间的狭长区域，是泌尿生殖系统的原基。</dd>
-<dt>侧中胚层（lateral mesoderm）| 侧板中胚层（lateral plate mesoderm）</dt>
-<dd>初为单一薄层结构，后出现间隙，称为<strong>胚内体腔</strong>（intraembryonic coelom），由此被分为与外胚层相贴的<strong>体壁中胚层</strong>（somatic mesoderm）和与内胚层相贴的<strong>脏壁中胚层</strong>（splanchnic mesoderm）。</dd>
-</dl>
-<img data-src="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/%E4%B8%AD%E8%83%9A%E5%B1%82.png" class="" title="中胚层" alt="中胚层">
-<dl>
-<dt>间充质（mesenchyme）</dt>
-<dd>散在的中胚层细胞，称<strong>间充质</strong>，分化为结缔组织、血管、肌组织。</dd>
-</dl>
-<p><strong>中胚层三部分的分化</strong>：</p>
-<ul>
-<li><strong>轴旁中胚层</strong> → <strong>体节</strong> → 脊柱、背部皮肤真皮和骨骼肌</li>
-<li><strong>间介中胚层</strong>：泌尿生殖系统的原基</li>
-<li><strong>侧中胚层</strong> →
-<ul>
-<li><strong>胚内体腔</strong> → 心包腔、胸膜腔、腹膜腔</li>
-<li><strong>体壁中胚层</strong> → 浆膜壁层、体壁肌肉、骨骼</li>
-<li><strong>脏壁中胚层</strong> → 浆膜脏层、内脏平滑肌与结缔组织</li>
-</ul>
-</li>
-</ul>
-<p><strong>体节</strong>（somite）是轴旁中胚层断裂形成的左右成对的立方体细胞团。<br/>
-体节是<em>脊柱、背部皮肤真皮和骨骼肌</em>的原基，从头端开始生成，逐渐向尾端推进，可根据体节数目推算早期胚龄。</p>
-<h4 id="内胚层的分化">内胚层的分化 <a class="markdownIt-Anchor" href="#内胚层的分化">#</a></h4>
-<p>卵黄囊顶壁的内胚层被卷入胚体内形成<strong>原始消化管</strong>（primitive gut）。<br/>
-原始消化管分为<strong>前肠</strong>（foregut）、<strong>中肠</strong>（midgut） 和<strong>后肠</strong>（hindgut）。前肠头端和后肠末端分别由口咽膜和泄殖腔膜封闭（见 <a href="#%E4%B8%89%E8%83%9A%E5%B1%82%E8%83%9A%E7%9B%98%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E7%94%9F">三胚层胚盘及相关结构的发生</a>）。</p>
-<p><strong>内胚层的分化</strong>：</p>
-<ul>
-<li><strong>消化管消化腺</strong>（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#消化系统的发生">消化系统的发生</a>）；</li>
-<li>呼吸道和肺的上皮（另见 <a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/#呼吸系统的发生">呼吸系统的发生</a>）；</li>
-<li>中耳、甲状腺、胸腺等的上皮（另见 <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/?highlight=鳃器#鳃器的发生和演化">鳃器的发生和演化</a>）。</li>
-</ul>
-<h3 id="胚体形成">胚体形成 <a class="markdownIt-Anchor" href="#胚体形成">#</a></h3>
-<p>早期胚盘呈扁平盘状，第四周初，由于体节、神经管生长迅速，胚盘中部生长生长速度较周缘快，导致胚盘向羊膜腔中隆起。</p>
-<dl>
-<dt>头褶（head fold）、尾褶（tail fold）、侧褶（lateral fold）</dt>
-<dd>胚盘周缘头端、尾端、两侧缘的卷褶。</dd>
-</dl>
-<p>随着胚的生长，头褶、尾褶和侧褶逐渐加深，胚盘由圆盘状变为圆柱状的<strong>胚体</strong>。第四周末，胚体呈“C”字形。</p>
-<p>第 5~8 周称为<strong>器官发生期</strong>（organogenetic period）此时期胚体外形发生明显变化，至第 8 周末时初具人形，主要器官、系统在此时期形成。</p>
-<h2 id="胚胎龄的推算">胚胎龄的推算 <a class="markdownIt-Anchor" href="#胚胎龄的推算">#</a></h2>
-<dl>
-<dt>受精龄</dt>
-<dd>从受精到胎儿出生，约 38 周，包括<strong>胚期</strong>和<strong>胎期</strong>。</dd>
-<dt>月经龄</dt>
-<dd>从末次月经到婴儿出生，约 40 周。</dd>
-</dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>免疫器官和组织</title>
     <url>/2021/04/26/%E5%85%8D%E7%96%AB%E5%99%A8%E5%AE%98%E5%92%8C%E7%BB%84%E7%BB%87/</url>
     <content><![CDATA[<p><strong>免疫组织（immune tissue）| 淋巴组织（lymphoid tissue）</strong>：弥散淋巴组织、淋巴小结</p>
@@ -3200,167 +3200,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>动物源性细菌</title>
-    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
-<span id="more"></span>
-<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
-<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
-<li>培养特性和生化反应：需氧，营养要求较高</li>
-<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
-<ul>
-<li><strong>感染途径</strong>：
-<ul>
-<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
-<li>经呼吸道或眼结膜</li>
-<li>经皮肤</li>
-</ul>
-</li>
-<li><strong>常见患者</strong>：
-<ul>
-<li>和动物密切接触者</li>
-<li>饮用生奶者</li>
-</ul>
-</li>
-<li>致病物质：内毒素、荚膜、侵袭性酶</li>
-<li>所致疾病：
-<ul>
-<li>人类：反复发生的<strong>菌血症</strong>导致患者发生<strong>波浪热</strong>；人类胎盘不含<em>赤藓糖醇</em>，故人类感染后不会引起<s>流产</s></li>
-<li>感染家畜：母畜<strong>流产</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<ul>
-<li><strong>带菌免疫</strong>，即体内有布鲁斯菌存在时，对再次感染有较强免疫力。</li>
-<li>细胞免疫与迟发型超敏反应交织存在。</li>
-</ul>
-<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info titled"><div class='note-title' id='芽孢杆菌属'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-芽孢杆菌属</div><ul>
-<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
-<li>培养特性：需氧，多数在有氧条件下形成芽孢</li>
-<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
-</ul>
-</div>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，<strong>有荚膜</strong>，无鞭毛，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
-<li>培养特性和生化反应：
-<ul>
-<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
-<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>黏液性菌落</mark></li>
-</ul>
-</li>
-<li>抵抗力：
-<ul>
-<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
-<li>对青霉素等多种抗生素敏感</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>荚膜：抗吞噬</li>
-<li><strong>炭疽毒素</strong>：
-<ul>
-<li><strong>水肿因子</strong>（EF）、<strong>保护性抗原</strong>（PA）、<strong>致死因子</strong>（LF）</li>
-<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
-</ul>
-</li>
-</ul>
-<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
-<ul>
-<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
-<li><strong>感染途径及所致疾病</strong>：
-<ul>
-<li>接触 → 皮肤炭疽</li>
-<li>食入 → 肠炭疽</li>
-<li>吸入 → 肺炭疽（最严重）</li>
-</ul>
-</li>
-</ul>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<ul>
-<li>标本：严禁在室外剖检病体</li>
-<li>直接涂片镜检：荚膜，竹节状排布</li>
-<li>分离培养与鉴定：
-<ul>
-<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
-<li>青霉素串珠实验、噬菌体裂解实验</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>疫苗</li>
-<li>抗生素：首选<strong>青霉素</strong></li>
-</ul>
-<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
-<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
-<ol>
-<li>鼠疫耶尔森菌：鼠疫；</li>
-<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
-<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
-</ol>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，<strong>有荚膜</strong>，无鞭毛、芽孢，菌体形态、大小变化较大</li>
-<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
-<li>抗原构造：
-<ul>
-<li>F1 抗原：荚膜抗原</li>
-<li>V/W 抗原：菌体表面抗原</li>
-<li>鼠毒素</li>
-<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
-<li>内毒素：与肠道杆菌内毒素相似</li>
-</ul>
-</li>
-<li>抵抗力：较弱</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
-<li>外毒素：<strong>鼠毒素</strong>（MT，主要致病物质）</li>
-<li>内毒素</li>
-</ul>
-<p>所致疾病：<strong>鼠疫</strong></p>
-<ul>
-<li>传染源：鼠，患病者</li>
-<li>传播途径及所致疾病：
-<ul>
-<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
-<li>染菌的尘埃进入<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
-<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则-2">防治原则 <a class="markdownIt-Anchor" href="#防治原则-2">#</a></h3>
-<ul>
-<li>消灭传染源：灭鼠灭蚤</li>
-<li>疫苗：无毒株活菌疫苗接种</li>
-<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>分子病和先天性代谢病</title>
     <url>/2021/05/07/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/</url>
     <content><![CDATA[<dl>
@@ -3565,6 +3404,167 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动物源性细菌</title>
+    <url>/2021/04/19/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
+<span id="more"></span>
+<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
+<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
+<li>培养特性和生化反应：需氧，营养要求较高</li>
+<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<ul>
+<li><strong>感染途径</strong>：
+<ul>
+<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
+<li>经呼吸道或眼结膜</li>
+<li>经皮肤</li>
+</ul>
+</li>
+<li><strong>常见患者</strong>：
+<ul>
+<li>和动物密切接触者</li>
+<li>饮用生奶者</li>
+</ul>
+</li>
+<li>致病物质：内毒素、荚膜、侵袭性酶</li>
+<li>所致疾病：
+<ul>
+<li>人类：反复发生的<strong>菌血症</strong>导致患者发生<strong>波浪热</strong>；人类胎盘不含<em>赤藓糖醇</em>，故人类感染后不会引起<s>流产</s></li>
+<li>感染家畜：母畜<strong>流产</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<ul>
+<li><strong>带菌免疫</strong>，即体内有布鲁斯菌存在时，对再次感染有较强免疫力。</li>
+<li>细胞免疫与迟发型超敏反应交织存在。</li>
+</ul>
+<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+芽孢杆菌属</div><ul>
+<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
+<li>培养特性：需氧，多数在有氧条件下形成芽孢</li>
+<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
+</ul>
+</div>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，<strong>有荚膜</strong>，无鞭毛，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
+<li>培养特性和生化反应：
+<ul>
+<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
+<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>黏液性菌落</mark></li>
+</ul>
+</li>
+<li>抵抗力：
+<ul>
+<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
+<li>对青霉素等多种抗生素敏感</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>荚膜：抗吞噬</li>
+<li><strong>炭疽毒素</strong>：
+<ul>
+<li><strong>水肿因子</strong>（EF）、<strong>保护性抗原</strong>（PA）、<strong>致死因子</strong>（LF）</li>
+<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
+</ul>
+</li>
+</ul>
+<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
+<ul>
+<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
+<li><strong>感染途径及所致疾病</strong>：
+<ul>
+<li>接触 → 皮肤炭疽</li>
+<li>食入 → 肠炭疽</li>
+<li>吸入 → 肺炭疽（最严重）</li>
+</ul>
+</li>
+</ul>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<ul>
+<li>标本：严禁在室外剖检病体</li>
+<li>直接涂片镜检：荚膜，竹节状排布</li>
+<li>分离培养与鉴定：
+<ul>
+<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
+<li>青霉素串珠实验、噬菌体裂解实验</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>疫苗</li>
+<li>抗生素：首选<strong>青霉素</strong></li>
+</ul>
+<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
+<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
+<ol>
+<li>鼠疫耶尔森菌：鼠疫；</li>
+<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
+<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
+</ol>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，<strong>有荚膜</strong>，无鞭毛、芽孢，菌体形态、大小变化较大</li>
+<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
+<li>抗原构造：
+<ul>
+<li>F1 抗原：荚膜抗原</li>
+<li>V/W 抗原：菌体表面抗原</li>
+<li>鼠毒素</li>
+<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
+<li>内毒素：与肠道杆菌内毒素相似</li>
+</ul>
+</li>
+<li>抵抗力：较弱</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
+<li>外毒素：<strong>鼠毒素</strong>（MT，主要致病物质）</li>
+<li>内毒素</li>
+</ul>
+<p>所致疾病：<strong>鼠疫</strong></p>
+<ul>
+<li>传染源：鼠，患病者</li>
+<li>传播途径及所致疾病：
+<ul>
+<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
+<li>染菌的尘埃进入<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
+<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则-2">防治原则 <a class="markdownIt-Anchor" href="#防治原则-2">#</a></h3>
+<ul>
+<li>消灭传染源：灭鼠灭蚤</li>
+<li>疫苗：无毒株活菌疫苗接种</li>
+<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -9180,6 +9180,80 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
+    <title>立克次体</title>
+    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>立克次体（<em>Rickettsia</em>）</dt>
+<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>其生物学性状与细菌相似。</dd>
+</dl>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">立克次体</th>
+<th style="text-align:center">传播途径</th>
+<th style="text-align:center">所致疾病</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>普氏立克次体</strong></td>
+<td style="text-align:center">体虱/人虱</td>
+<td style="text-align:center">流行性斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
+<td style="text-align:center">鼠蚤、鼠虱</td>
+<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
+<td style="text-align:center">恙螨</td>
+<td style="text-align:center">恙虫病</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
+<td style="text-align:center">蜱</td>
+<td style="text-align:center">Q 热</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>汉赛巴通体</em></td>
+<td style="text-align:center">猫</td>
+<td style="text-align:center">猫抓病</td>
+</tr>
+</tbody>
+</table>
+<p>生物学特性：</p>
+<ul>
+<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
+<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
+<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
+<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
+</ul>
+<p><em>结构和组成</em>（由外到内）：</p>
+<ul>
+<li>黏液层：多糖</li>
+<li>微荚膜：脂多糖或多糖</li>
+<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
+<li>细胞膜：类脂双分子层</li>
+</ul>
+<p>临床诊断：<strong>外斐试验</strong></p>
+<div class="note info titled"><div class='note-title' id='外斐试验'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
+</div>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>社会医学</title>
     <url>/2021/05/11/%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6/</url>
     <content><![CDATA[<p>社会医学知识点总结。</p>
@@ -9532,80 +9606,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
-    <title>立克次体</title>
-    <url>/2021/04/19/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>立克次体（<em>Rickettsia</em>）</dt>
-<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/2021/03/16/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>其生物学性状与细菌相似。</dd>
-</dl>
-<span id="more"></span>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">立克次体</th>
-<th style="text-align:center">传播途径</th>
-<th style="text-align:center">所致疾病</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>普氏立克次体</strong></td>
-<td style="text-align:center">体虱/人虱</td>
-<td style="text-align:center">流行性斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
-<td style="text-align:center">鼠蚤、鼠虱</td>
-<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
-<td style="text-align:center">恙螨</td>
-<td style="text-align:center">恙虫病</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
-<td style="text-align:center">蜱</td>
-<td style="text-align:center">Q 热</td>
-</tr>
-<tr>
-<td style="text-align:center"><em>汉赛巴通体</em></td>
-<td style="text-align:center">猫</td>
-<td style="text-align:center">猫抓病</td>
-</tr>
-</tbody>
-</table>
-<p>生物学特性：</p>
-<ul>
-<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
-<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
-<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
-<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
-</ul>
-<p><em>结构和组成</em>（由外到内）：</p>
-<ul>
-<li>黏液层：多糖</li>
-<li>微荚膜：脂多糖或多糖</li>
-<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
-<li>细胞膜：类脂双分子层</li>
-</ul>
-<p>临床诊断：<strong>外斐试验</strong></p>
-<div class="note info titled"><div class='note-title' id='外斐试验'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/2021/03/29/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
-</div>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线虫</title>
     <url>/2021/07/04/%E7%BA%BF%E8%99%AB/</url>
     <content><![CDATA[<table>
@@ -9813,22 +9813,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
-    <title>细胞生物学</title>
-    <url>/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<p class="center">Empty</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>细胞生物学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>细胞生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>细胞因子</title>
     <url>/2021/05/21/%E7%BB%86%E8%83%9E%E5%9B%A0%E5%AD%90/</url>
     <content><![CDATA[<dl>
@@ -9939,6 +9923,22 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>细胞生物学</title>
+    <url>/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
+    <content><![CDATA[<p class="center">Empty</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>细胞生物学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>细胞生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -10887,7 +10887,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 </details>
 <h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
 <ul>
-<li>所致疾病：乙型肝炎（血清型肝炎）（慢性肝炎 → 肝硬化 → 肝癌）</li>
+<li>所致疾病：乙型肝炎（血清型肝炎）（慢性肝炎 → 肝硬化 → 肝癌））</li>
 </ul>
 <details class="note success" open>
 <summary id='hbv 的传染源及传播途径'><p>HBV 的传染源及传播途径</p>
@@ -10938,11 +10938,11 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <tbody>
 <tr>
 <td style="text-align:center">乙肝表面抗原（HBsAg）</td>
-<td>乙肝病毒抗原感染</td>
+<td>乙肝病毒感染</td>
 </tr>
 <tr>
 <td style="text-align:center">乙肝表面抗体（HBsAb）</td>
-<td>隐性感染者、急性感染恢复期、疫苗接种者</td>
+<td>急性感染恢复期、疫苗接种者</td>
 </tr>
 <tr>
 <td style="text-align:center">乙肝 e 抗原（HBeAg）</td>
@@ -10950,11 +10950,11 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 </tr>
 <tr>
 <td style="text-align:center">乙肝 e 抗体（HBeAb）</td>
-<td>恢复阶段，预后良好</td>
+<td>恢复阶段，预后良好，传染性弱</td>
 </tr>
 <tr>
 <td style="text-align:center">乙肝核心抗体（HBcAb）</td>
-<td>IgM：同 HBeAG；IgG：处于<strong>窗口期</strong>（传染性强）或既往感染过</td>
+<td><i>IgM：同 HBeAg；</i>IgG：处于<strong>窗口期</strong>（传染性强）或<strong>既往感染过</strong></td>
 </tr>
 </tbody>
 </table>
@@ -10995,7 +10995,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <td style="text-align:center">-</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">+</td>
-<td>同第一条，“小三阳”，急性感染趋向恢复</td>
+<td>“小三阳”，急性感染趋向恢复</td>
 </tr>
 <tr>
 <td style="text-align:center">-</td>
@@ -11062,36 +11062,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>胚胎学</title>
-    <url>/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/</url>
-    <content><![CDATA[<dl>
-<dt>胚胎学（embryology）</dt>
-<dd>研究个体发生、发育及其机制的科学。</dd>
-<dd>研究内容包括生殖细胞的形成、受精胚胎早期发育、器官与系统的发生、胚胎与母体的关系、先天性畸形、环境因素对胚胎发育的影响等。</dd>
-</dl>
-<span id="more"></span>
-<p>TODO: 胚胎学时间线</p>
-<ul>
-<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">人胚发生和早期发育</a></li>
-<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
-<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-        <category>组织学与胚胎学</category>
-        <category>胚胎学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
-        <tag>组织学与胚胎学</tag>
-        <tag>胚胎学</tag>
       </tags>
   </entry>
   <entry>
@@ -11287,6 +11257,36 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
       </tags>
   </entry>
   <entry>
+    <title>胚胎学</title>
+    <url>/2021/05/26/%E8%83%9A%E8%83%8E%E5%AD%A6/</url>
+    <content><![CDATA[<dl>
+<dt>胚胎学（embryology）</dt>
+<dd>研究个体发生、发育及其机制的科学。</dd>
+<dd>研究内容包括生殖细胞的形成、受精胚胎早期发育、器官与系统的发生、胚胎与母体的关系、先天性畸形、环境因素对胚胎发育的影响等。</dd>
+</dl>
+<span id="more"></span>
+<p>TODO: 胚胎学时间线</p>
+<ul>
+<li><a href="/2021/05/26/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">人胚发生和早期发育</a></li>
+<li><a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">颜面、颈和四肢的发生</a></li>
+<li><a href="/2021/05/29/%E6%B6%88%E5%8C%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%91%BC%E5%90%B8%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">消化系统和呼吸系统的发生</a>，<a href="/2021/05/29/%E5%BF%83%E8%A1%80%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F/">心血管系统的发生</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+        <category>组织学与胚胎学</category>
+        <category>胚胎学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
+        <tag>组织学与胚胎学</tag>
+        <tag>胚胎学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自制伪终端</title>
     <url>/2021/04/12/%E8%87%AA%E5%88%B6%E4%BC%AA%E7%BB%88%E7%AB%AF/</url>
     <content><![CDATA[<p>参见：<a href="/2021/03/15/The-TTY-Demystified/">The TTY Demystified</a></p>
@@ -11339,7 +11339,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <li><em>所致疾病</em>：
 <ul>
 <li>低热、斑丘疹、关节疼痛，症状轻微，可自愈</li>
-<li>孕妇感染可能导致<em>新生儿小头畸形</em></li>
+<li>孕妇感染可能导致<strong>新生儿小头畸形</strong></li>
 </ul>
 </li>
 </ul>
@@ -11375,7 +11375,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 <li>传染源：多种啮齿动物（姬鼠、田鼠）</li>
 <li>传播途径
 <ul>
-<li><strong>动物源性传播</strong>：<span class="horizontal-list"><span class="horizontal-list-item">消化道 呼吸道 破损皮肤黏膜</span></span></li>
+<li><strong>动物源性传播</strong>：<span class="horizontal-list"><span class="horizontal-list-item">消化道</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">破损皮肤黏膜</span></span></li>
 <li><em>母婴传播</em></li>
 <li><em>虫媒传播</em></li>
 </ul>
@@ -11384,7 +11384,7 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
 </details>
 <p>所致疾病：</p>
 <ul>
-<li><strong>肾病综合症出血热</strong>（<mark>HRFS</mark>）：<span class="horizontal-list"><span class="horizontal-list-item"><strong>出血现象</strong></span><span class="horizontal-list-item"><strong>发热</strong></span><span class="horizontal-list-item"><strong>肾损害</strong></span></span></li>
+<li><strong>肾病综合症出血热</strong>（<mark>HRFS</mark>）：<span class="horizontal-list"><span class="horizontal-list-item">出血现象</span><span class="horizontal-list-item">发热</span><span class="horizontal-list-item">肾损害</span></span></li>
 <li>汉坦病毒肺综合征（<strong>HPS</strong>）</li>
 </ul>
 <p>免疫性：</p>
