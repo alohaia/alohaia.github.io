@@ -792,6 +792,31 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
+    <title>Git 实战</title>
+    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grammar Testing</title>
     <url>/2021/03/15/Grammar-Testing/</url>
     <content><![CDATA[<p>语法测试用。</p>
@@ -1201,31 +1226,6 @@ danger</div><p>danger</p>
 </ol>
 </section>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Git 实战</title>
-    <url>/2021/05/25/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
   </entry>
   <entry>
     <title>Linux 配置记录</title>
@@ -3165,7 +3165,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li>临床症状：
 <ul>
 <li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
-<li>麻痹型：20 不到，不出现典型症状，直接进入麻痹期</li>
+<li>麻痹型：20% 不到，不出现典型症状，直接进入麻痹期</li>
 </ul>
 </li>
 </ul>
@@ -4127,7 +4127,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <td style="text-align:center">经口</td>
 </tr>
 <tr>
-<td style="text-align:center">体内移行</td>
+<td style="text-align:center"><s>体内移行</s></td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
@@ -4332,7 +4332,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <li><strong>直接破坏</strong>，红细胞内期原虫裂体增殖；</li>
 <li><strong>脾功亢进</strong>，脾巨噬细胞吞噬正常红细胞；</li>
 <li><strong>免疫病理性损伤</strong>，红细胞膜隐蔽抗原暴露；</li>
-<li>骨髓中红细胞生成受到抑制<span class="hide">PPT 和书上都有，但老师上课没提</span>。</li>
+<li><strong>骨髓中红细胞生成受到抑制</strong><span class="hide">PPT 和书上都有，但老师上课没提</span>。</li>
 </ol>
 </details>
 <h4 id="流行">流行 <a class="markdownIt-Anchor" href="#流行">#</a></h4>
@@ -5885,6 +5885,354 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
       </tags>
   </entry>
   <entry>
+    <title>抗体</title>
+    <url>/2021/05/10/%E6%8A%97%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>抗体（antibody，<abbr title="抗体">Ab</abbr>）</dt>
+<dd>介导体液免疫的重要效应分子</dd>
+<dd>免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
+可与相应抗原发生特异性结合的<strong>免疫球蛋白</strong>（<abbr title="免疫球蛋白">Ig</abbr>）。</dd>
+<dd>主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</dd>
+</dl>
+<dl>
+<dt>免疫球蛋白（immunoglobulin，<abbr title="免疫球蛋白">Ig</abbr>）</dt>
+<dd>具有抗体活性或化学结构与抗体相似的球蛋白的统称。</dd>
+<dd>存在形式
+<ul>
+<li><strong>膜型</strong>（membrane immunoglobulin，mIg），如 BCR（B 细胞受体）</li>
+<li><strong>分泌型</strong>（secreted immunoglobulin，sIg），如抗体</li>
+</ul>
+</dd>
+</dl>
+<span id="more"></span>
+<h2 id="抗体的结构">抗体的结构 <a class="markdownIt-Anchor" href="#抗体的结构">#</a></h2>
+<p>抗体的<strong>基本结构</strong>是由两条完全相同的<strong>重链</strong>和<strong>轻链</strong>通过二硫键链接的“Y”形单体。</p>
+<h3 id="抗体的分类和分型">抗体的分类和分型 <a class="markdownIt-Anchor" href="#抗体的分类和分型">#</a></h3>
+<h4 id="类和亚类">类和亚类 <a class="markdownIt-Anchor" href="#类和亚类">#</a></h4>
+<ul>
+<li>类：根据 <strong>H 链</strong> C 区抗原性的差异</li>
+<li>亚类：铰链区氨基酸的组成和重链二硫键的数目、位置</li>
+</ul>
+<p>根据重链的种类，可将完整的抗体分子分为对应的五类（见下表“抗体”列）。</p>
+<p class="align-text-center table-caption ">
+      抗体的<strong>类</strong>和<strong>亚类</strong>
+    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类</th>
+<th style="text-align:center">抗体</th>
+<th style="text-align:center">亚类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">μ(mu)</td>
+<td style="text-align:center">IgM</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">γ(gamma)</td>
+<td style="text-align:center">IgG</td>
+<td style="text-align:center">IgG1~IgG4</td>
+</tr>
+<tr>
+<td style="text-align:center">α(alpha)</td>
+<td style="text-align:center">IgA</td>
+<td style="text-align:center">IgA1、IgA2</td>
+</tr>
+<tr>
+<td style="text-align:center">δ(delta)</td>
+<td style="text-align:center">IgD</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">ε(epsilon)</td>
+<td style="text-align:center">IgE</td>
+<td style="text-align:center">无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="型和亚型">型和亚型 <a class="markdownIt-Anchor" href="#型和亚型">#</a></h4>
+<p><strong>型</strong>：根据 <strong>L 链</strong> C 区氨基酸的组成和排列顺序</p>
+<ul>
+<li>κ（kappa）型</li>
+<li>λ（lambda）型</li>
+</ul>
+<p><strong>亚型</strong>：根据 λ 链 C 区个别氨基酸的不同：λ1/OZ(+)、λ2/OZ(-)、λ3/Kern(+)、λ4/Kern(-)</p>
+<h3 id="可变区和恒定区">可变区和恒定区 <a class="markdownIt-Anchor" href="#可变区和恒定区">#</a></h3>
+<img data-src="/2021/05/10/%E6%8A%97%E4%BD%93/%E6%8A%97%E4%BD%93%E7%BB%93%E6%9E%84%E5%9F%9F.jpg" class="" title="抗体分子 V 区和 C 区结构示意图" alt="抗体分子 V 区和 C 区结构示意图">
+<dl>
+<dt>可变区（variable region，<mark><abbr title="可变区">V 区</abbr></mark>）</dt>
+<dd>抗体分子中轻链和重链靠近 N 端的氨基酸形成的结构，此处氨基酸序列变化较大，具有独特的空间构型。
+<ul>
+<li>高变区</li>
+<li>骨架区</li>
+</ul>
+</dd>
+<dd>占 1/4 重链和 1/2 轻链。</dd>
+</dl>
+<p>轻链和重链的 V 区分别称为 V<sub>H</sub> 和 V<sub>L</sub>，各有三个 <strong><abbr title="高变区（互补决定区）">HVR</abbr></strong>，分别为 CDR1、CDR2、CDR3（或 HVRn，n=1,2,3）。<br/>
+V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变区）">CDR</abbr> 共同构成 <abbr title="抗体">Ab</abbr> 的<strong>抗原结合部位</strong>（antigen-binding site），决定抗体的特异性。</p>
+<dl>
+<dt>高变区（hypervariable region，<abbr title="高变区（互补决定区）">HVR</abbr>）| 互补决定区（<abbr title="互补决定区（高变区）">CDR</abbr>）</dt>
+<dd>氨基酸组成和排列高度可变的区域。</dd>
+</dl>
+<dl>
+<dt>骨架区（<abbr title="骨架区">FR</abbr>）</dt>
+<dd><abbr title="可变区">V 区</abbr> <abbr title="高变区（互补决定区）">HVR</abbr> 外的区域，氨基酸组成的排列顺序相对变化不大。</dd>
+</dl>
+<hr />
+<dl>
+<dt>恒定区（constant region，<mark><abbr title="恒定区">C 区</abbr></mark>）</dt>
+<dd>靠近 C 端的相对恒定的区域。</dd>
+<dd>占 3/4 重链和 1/2 轻链。</dd>
+</dl>
+<p>轻链和重链的 C 区分别称为 C<sub>H</sub> 和 C<sub>L</sub>。</p>
+<p>不同型 <abbr title="抗体">Ab</abbr> 的 C<sub>L</sub> 区的长度基本一致，但是不同<strong>类</strong> <abbr title="抗体">Ab</abbr> 的 C<sub>H</sub> 区长度不一。</p>
+<ul>
+<li>IgG/IgA/IgD：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3</li>
+<li>IgM/IgE：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3、C<sub>H</sub>4</li>
+</ul>
+<h3 id="铰链区">铰链区 <a class="markdownIt-Anchor" href="#铰链区">#</a></h3>
+<dl>
+<dt>铰链区（hinge region）</dt>
+<dd>位于 C<sub>H</sub>1 和 C<sub>H</sub>2 之间，含有丰富的脯氨酸，易弯曲伸展，能改变”Y“形两个臂之间的距离，有利于两个臂同时结合两个相同的抗原表位。</dd>
+<dd>铰链区易被蛋白水解酶降解，见 <a href="#%E6%8A%97%E4%BD%93%E5%88%86%E5%AD%90%E7%9A%84%E6%B0%B4%E8%A7%A3%E7%89%87%E6%AE%B5">抗体分子的水解片段</a>。</dd>
+</dl>
+<blockquote>
+<p>IgM 和 IgE 无铰链区</p>
+</blockquote>
+<h3 id="抗体的辅助成分">抗体的辅助成分 <a class="markdownIt-Anchor" href="#抗体的辅助成分">#</a></h3>
+<dl>
+<dt>J 链（joining chain）</dt>
+<dd>由<strong>浆细胞</strong>合成的富含半胱氨酸的酸性糖蛋白，主要功能是<strong>将单体 <abbr title="抗体">Ab</abbr> 连接形成二聚体或多聚体</strong>。</dd>
+<dt>分泌片（secretory piece，<abbr title="分泌片（分泌成分）">SP</abbr>）| 分泌成分（secretory component，<abbr title="分泌成分（分泌片）">SC</abbr>）</dt>
+<dd>由<strong>黏膜上皮细胞</strong>合成、分泌的一种 <abbr title="分泌型 IgA">SIgA</abbr>（分泌型 IgA）的辅助因子。</dd>
+</dl>
+<p>分泌片的功能</p>
+<ul>
+<li>保护 <abbr title="分泌型 IgA">SIgA</abbr> 铰链区免受蛋白水解酶降解</li>
+<li>可介导 <abbr title="分泌型 IgA">SIgA</abbr> 从黏膜下通过黏膜上皮细胞转运到黏膜表面（另见 <a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">穿过胎盘和黏膜</a>）</li>
+</ul>
+<h3 id="抗体分子的水解片段">抗体分子的水解片段 <a class="markdownIt-Anchor" href="#抗体分子的水解片段">#</a></h3>
+<p>常用<strong>木瓜蛋白酶</strong>和<strong>胃蛋白酶</strong>水解蛋白质，借此研究 <abbr title="抗体">Ab</abbr> 的结构和功能。</p>
+<ul>
+<li><strong>木瓜蛋白酶</strong>：将重链于铰链区<strong>近 N 端</strong>切断，产生两个 <abbr title="抗原结合片段">Fab</abbr> 和一个 <abbr title="可结晶片段">Fc</abbr></li>
+<li><strong>胃蛋白酶</strong>：将重链于铰链区<strong>近 C 端</strong>切断，产生一个 F(ab’)<sub>2</sub>（双价）和一些 pFc’（无生物学活性）</li>
+</ul>
+<dl>
+<dt>抗原结合片段（fragment of antigen-binding，<abbr title="抗原结合片段">Fab</abbr>）</dt>
+<dd>可与抗原结合，具有单价抗原活性。</dd>
+<dt>可结晶片段（fragment crystallizable，<abbr title="可结晶片段">Fc</abbr>）</dt>
+<dd>不可与抗原结合，但可执行免疫球蛋白的其他生物学功能。</dd>
+</dl>
+<h3 id="超免疫球蛋白家族">超免疫球蛋白家族 <a class="markdownIt-Anchor" href="#超免疫球蛋白家族">#</a></h3>
+<dl>
+<dt>免疫球蛋白折叠（immunoglobulin fold）</dt>
+<dd>抗体分子中 <abbr title="互补决定区（高变区）">CDR</abbr> 外的结构域氨基酸序列相对保守（有较高的同源性），折叠成特定的球状结构。</dd>
+<dt>免疫球蛋白基因超家族、免疫球蛋白超家族（immunoglobulin superfamily，<abbr title="免疫球蛋白超家族（immunoglobulin superfamily）">IgSF</abbr>）</dt>
+<dd>编码具有<strong>免疫球蛋白折叠</strong>的蛋白质的基因称为<strong>免疫球蛋白基因超家族</strong>，这种蛋白质称为
+<strong>免疫球蛋白超家族</strong>。</dd>
+</dl>
+<h2 id="抗体的多样性和免疫原性">抗体的多样性和免疫原性 <a class="markdownIt-Anchor" href="#抗体的多样性和免疫原性">#</a></h2>
+<blockquote>
+<p>多样性抗原表位的存在是导致 <strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>（即具有不同的抗原特异性）的外源因素，是
+<strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>的物质基础。<br/>
+抗体的多样性是由<strong>免疫球蛋白基因重排</strong>决定并经<strong>抗原选择</strong>
+表现出来的，反映了机体对抗原精细结构的识别和应答。</p>
+</blockquote>
+<p>抗体本身也具有 <a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原的基本特征">免疫原性</a>，即包含<strong>抗原表位</strong>，可激活机体产生特异性免疫应答。</p>
+<dl>
+<dt>同种型（isotype）</dt>
+<dd>存在于<strong>同种</strong>抗体分子中的抗原表位。</dd>
+<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，为<strong>种属型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dt>同种异型（allotype）</dt>
+<dd>存在于<strong>同种属中不同个体</strong> <abbr title="抗体">Ab</abbr> 中的抗原表位。</dd>
+<dd>是同一种属不同个体 <abbr title="抗体">Ab</abbr> 分子所具有的不同抗原特异性标志，为<strong>个体型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dt>独特型（idiotype，Id）</dt>
+<dd>每个<strong>抗体分子</strong>所特有的抗原特异性标志，其表位被称为<strong>独特位</strong>（idiotope）。</dd>
+<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+</dl>
+<h2 id="抗体的功能">抗体的功能 <a class="markdownIt-Anchor" href="#抗体的功能">#</a></h2>
+<h3 id="抗体-v-区的作用">抗体 V 区的作用 <a class="markdownIt-Anchor" href="#抗体-v-区的作用">#</a></h3>
+<p>V<sub>L</sub> 和 V<sub>H</sub> 是抗原结合的部位</p>
+<ol>
+<li>识别并特异性结合抗原，<abbr title="互补决定区（高变区）">CDR</abbr> 起决定性作用；</li>
+<li>中和毒素、阻断病原入侵等免疫防御功能。</li>
+</ol>
+<dl>
+<dt>抗原结合价</dt>
+<dd><abbr title="抗体">Ab</abbr> 结合抗原表位的个数。</dd>
+<dd>单抗原为双价，<abbr title="抗原结合片段">Fab</abbr> 为单价，五聚体理论上为 10 价，但是由于空间位阻的原因，实际上为 5 价。</dd>
+</dl>
+<h3 id="抗体-c-区的作用">抗体 C 区的作用 <a class="markdownIt-Anchor" href="#抗体-c-区的作用">#</a></h3>
+<h4 id="激活补体">激活补体 <a class="markdownIt-Anchor" href="#激活补体">#</a></h4>
+<ul>
+<li>IgG1、IgG3、IgM：激活补体能力强，通过<strong>经典途径</strong>激活</li>
+<li>IgG2：也通过<strong>经典途径</strong>，但能力较弱</li>
+<li>IgG4、IgΑ、IgE：本身难以激活补体系统，需依赖<strong>旁路途径</strong></li>
+</ul>
+<dl>
+<dt>补体依赖的细胞毒作用（complement dependent cytotoxicity，<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）</dt>
+<dd>补体（C1q）参与的细胞毒作用。</dd>
+<dd>IgG 和 IgM 与病毒感染细胞或细菌细胞膜表面抗原结合，而后
+<strong>C1q</strong>（Complement component 1q）通过与抗体结合激活
+<strong>经典途径</strong>，导致<strong>攻膜复合物</strong>（membrane attack complex）形成并对靶细胞发挥裂解效应。</dd>
+</dl>
+<p>另见 <a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a>。</p>
+<h4 id="结合-fc-受体">结合 <abbr title="可结晶片段">Fc</abbr> 受体 <a class="markdownIt-Anchor" href="#结合-fc-受体">#</a></h4>
+<p><strong>IgG、IgA、IgE</strong> 有此功能的 <abbr title="可结晶片段">Fc</abbr> 段可与表面具有相应 <abbr title="可结晶片段">Fc</abbr> 受体（<abbr title="Fc 受体">FcR</abbr>）的细胞结合，产生不同的生物学效应。<br/>
+三类抗原的 <abbr title="可结晶片段">Fc</abbr> 受体分别称为 <abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>。</p>
+<h5 id="调理作用opsonization">调理作用（opsonization） <a class="markdownIt-Anchor" href="#调理作用opsonization">#</a></h5>
+<p>由 <strong>IgG</strong>（特别是 IgG1、IgG3）介导，IgG <abbr title="抗原结合片段">Fab</abbr> 段与相应细菌的抗原表位结合，<abbr title="可结晶片段">Fc</abbr> 段与巨噬细胞或中性粒细胞表面的 FcγR 结合，通过
+IgG 的“桥联”作用，促进吞噬细胞对细菌的吞噬。</p>
+<h5 id="抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity，<mark><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></mark>） <a class="markdownIt-Anchor" href="#抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">#</a></h5>
+<p>由 <strong>IgG</strong> 介导，抗体 <abbr title="抗原结合片段">Fab</abbr> 段结合病毒感染细胞或肿瘤细胞表面抗原，其 <abbr title="可结晶片段">Fc</abbr>
+段与杀伤细胞（<strong>NK 细胞</strong>、巨噬细胞等）表面 FcγR 结合，介导杀伤细胞直接杀伤靶细胞。</p>
+<blockquote>
+<p>抗体与靶细胞上抗原的结合是特异性的，而表达 <abbr title="Fc 受体">FcR</abbr> 细胞的杀伤作用是非特异性的。</p>
+</blockquote>
+<h5 id="介导-i-型超敏反应">介导 Ⅰ 型超敏反应 <a class="markdownIt-Anchor" href="#介导-i-型超敏反应">#</a></h5>
+<p>主要由 <strong>IgE</strong> 介导，IgE 通过其 <abbr title="可结晶片段">Fc</abbr> 段与肥大细胞或嗜碱性粒细胞表面高亲和力 IgE <abbr title="可结晶片段">Fc</abbr>
+受体（FcεR Ⅰ）结合，并使其致敏。<br/>
+若相同<strong>应变原</strong>再次进入机体与致敏靶细胞表面特异性 IgE 结合，即可引起 Ⅰ 型超敏反应。</p>
+<div class="note info"><dl>
+<dt>Ⅰ 型超敏反应 | 过敏反应（anaphylaxis）| 变态反应（allergy）</dt>
+<dd>机体受到某些抗原刺激时，引起的由特异性 IgE 抗体介导产生的一种发生快消退亦快的免疫应答。</dd>
+<dd>表现为局部或全身的生理功能紊乱，具有明显个体差异和遗传倾向。</dd>
+<dt>变应原（allergen）| 过敏原</dt>
+<dd>引起超敏反应的物质。</dd>
+</dl>
+</div>
+<h4 id="穿过胎盘和黏膜">穿过胎盘和黏膜 <a class="markdownIt-Anchor" href="#穿过胎盘和黏膜">#</a></h4>
+<p>人类中，<mark>IgG</mark> 是唯一能通过胎盘的细胞。IgG 穿过胎盘是一种重要的 <mark>自然被动免疫机制</mark>。<br/>
+胚盘母体一侧的滋养层细胞表达一种 IgG 输送蛋白，称为
+<strong>新生儿 <abbr title="可结晶片段">Fc</abbr> 段受体</strong>（neonatal <abbr title="Fc 受体">FcR</abbr>，<strong>FcRn</strong>）。<br/>
+FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其进入胎儿血液。<br/></p>
+<p><a href="#iga"><abbr title="分泌型 IgA">SIgA</abbr></a> 也可通过 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 的介导转运到呼吸道或消化道黏膜表面，在黏膜局部免疫中发挥作用。</p>
+<h2 id="各类抗体的特性与功能">各类抗体的特性与功能 <a class="markdownIt-Anchor" href="#各类抗体的特性与功能">#</a></h2>
+<h3 id="igg">IgG <a class="markdownIt-Anchor" href="#igg">#</a></h3>
+<dl>
+<dt>IgG（免疫球蛋白 G）</dt>
+<dd>IgG 从出生后 3 月后开始合成，3~5 岁接近成人水平，是血清和胞外液中<strong>含量最高</strong>（75%~80%的 <abbr title="免疫球蛋白">Ig</abbr>。</dd>
+<dd>IgG 半衰期约 20~23 天，是<strong>再次免疫应答产生</strong>的主要抗体；其亲和力高，是机体抗感染免疫的“主力军”。</dd>
+<dd>IgG 的亚类见 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
+</dl>
+<p>生物学活性</p>
+<ul>
+<li><a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">通过胎盘</a>（新生儿抗感染）：IgG1、3、4</li>
+<li><a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">激活补体</a>（裂解细胞）：IgG1、2、3</li>
+<li><a href="#%E8%B0%83%E7%90%86%E4%BD%9C%E7%94%A8opsonization">调理作用</a>（促进吞噬）：IgG1、2、3</li>
+<li>介导 <a href="#%E6%8A%97%E4%BD%93%E4%BE%9D%E8%B5%96%E7%9A%84%E7%BB%86%E8%83%9E%E4%BB%8B%E5%AF%BC%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%92%E4%BD%9C%E7%94%A8antibody-dependent-cell-mediated-cytotoxicityadcc"><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></a>（细胞毒作用）：IgG1、2、3</li>
+<li><abbr title="可结晶片段">Fc</abbr> 段与 <a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/#葡萄球菌">葡萄球菌蛋白 A</a>（SPA）结合（免疫诊断、纯化抗体）：IgG1、2、4</li>
+</ul>
+<p>实际功能：</p>
+<ul>
+<li>抗感染</li>
+<li>自身抗体（自身免疫病）</li>
+<li>介导 Ⅱ、Ⅲ 型变态反应</li>
+<li>亲合层析法，用于抗体纯化</li>
+<li>免疫学检测和诊断</li>
+</ul>
+<h3 id="igm">IgM <a class="markdownIt-Anchor" href="#igm">#</a></h3>
+<dl>
+<dt>IgM（免疫球蛋白 M）</dt>
+<dd>占血清球蛋白的 5%~10%，分为膜结合性 IgM（mIgM）和分泌型 IgM（SIgM）。</dd>
+</dl>
+<ul>
+<li>mIgM：单体，表达于 B 细胞表面，构成 B 细胞表面抗原受体（BCR）只表达 mIgM 是<strong>未成熟 B 细胞的标志</strong>。</li>
+<li>SIgM：<strong>五聚体</strong>，是<strong>分子量最大的 <abbr title="免疫球蛋白">Ig</abbr></strong>，称为<strong>巨球蛋白</strong>（macroglobulin），一般不能通过血管壁，主要存在于血液中。<br/>
+抗原结合能力（<abbr title="抗原结合片段">Fab</abbr>）和激活补体的能力（<abbr title="可结晶片段">Fc</abbr>）均较高。</li>
+</ul>
+<p>IgM 是个体发育过程中<strong>最早合成和分泌的抗体</strong>，胚胎发育晚期的婴儿即可产生 IgM。<br/>
+脐带血某些病毒特异性 IgM 水平升高提示胎儿有<strong>宫内感染</strong>。</p>
+<p>IgM 也是<strong>初次体液免疫应答</strong>中最早出现的抗体，而且半衰期短（5 天）。血清中检出病原体特异性 IgM 提示新近发生感染，可用于感染的早期诊断。</p>
+<h3 id="iga">IgA <a class="markdownIt-Anchor" href="#iga">#</a></h3>
+<dl>
+<dt>IgA（免疫球蛋白 A）</dt>
+<dd>分为<strong>血清型</strong>（IgA1）和<strong>分泌型</strong>（IgA2）两种，另见<a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
+<dd>聚合 IgA（<s><abbr title="分泌型 IgA">SIgA</abbr></s>）可激活 <a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">补体替代途径</a>。</dd>
+</dl>
+<ul>
+<li>血清型：单体，主要存在于血清中；</li>
+<li><strong>分泌型</strong></li>
+</ul>
+<dl>
+<dt>分泌型 IgA（secretory IgA，<mark><abbr title="分泌型 IgA">SIgA</abbr></mark>）</dt>
+<dd><strong>二聚体</strong>，由<strong>黏膜局部浆细胞</strong>分泌。
+<ul>
+<li>可借助 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 转运到呼吸道和消化道黏膜表面，参与局部抗感染免疫，阻止病原微生物黏附。</li>
+<li>新生儿可从母乳中获得 <abbr title="分泌型 IgA">SIgA</abbr>，是重要的 <mark>自然被动免疫</mark>。</li>
+</ul>
+</dd>
+</dl>
+<h3 id="igd">IgD <a class="markdownIt-Anchor" href="#igd">#</a></h3>
+<dl>
+<dt>IgD（免疫球蛋白 D）</dt>
+<dd>为<strong>单体分子</strong>，有分泌型和膜结合型两种。分泌型的功能尚未确定，mIgD 是 B 细胞分化发育为成熟 B 细胞（<strong>初始 B 细胞</strong>）的标志。</dd>
+<dd>B 细胞活化后其表面的 IgD 逐渐消失。</dd>
+<dd>IgD 铰链区较长，易被水解，半衰期只有 3 天。</dd>
+</dl>
+<h3 id="ige">IgE <a class="markdownIt-Anchor" href="#ige">#</a></h3>
+<dl>
+<dt>IgE（免疫球蛋白 E）</dt>
+<dd><strong>单体分子</strong>主要由黏膜下淋巴组织中的浆细胞分泌，血清中<strong>含量最低</strong>（0.002%）。</dd>
+<dd>IgE 是一类 <mark>亲细胞抗体</mark>，其 C<sub>H</sub>2 和 C<sub>H</sub>3 可与肥大细胞和嗜碱性粒细胞上的高亲和力 <strong>FcεR Ⅰ</strong>
+结合，当结合再次进入机体的抗原后可引起 <strong>Ⅰ 型超敏反应</strong>。</dd>
+<dd>过敏性疾病和某些<strong>寄生虫病</strong>患者体内的特异性 IgE 水平增高。</dd>
+</dl>
+<h2 id="人工制备抗体">人工制备抗体 <a class="markdownIt-Anchor" href="#人工制备抗体">#</a></h2>
+<h3 id="多克隆抗体">多克隆抗体 <a class="markdownIt-Anchor" href="#多克隆抗体">#</a></h3>
+<dl>
+<dt>多克隆抗体（polyclonal antibody，pAb）</dt>
+<dd>以天然抗体（<a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原特异性与抗原表位">多价抗体</a>）刺激机体免疫系统而产生的针对多种不同抗原表位的抗体总和。</dd>
+<dd>主要来源于动物免疫血清、恢复期患者血清、免疫接种人群血清。</dd>
+</dl>
+<ul>
+<li>优点
+<ul>
+<li><strong>作用全面</strong>：中和抗原，免疫调理，介导补体依赖的细胞毒作用（<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）、<abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></li>
+<li>来源广泛，易制备</li>
+</ul>
+</li>
+<li>缺点：特异性不高、易发生交叉反应，不易大量制备</li>
+</ul>
+<h3 id="单克隆抗体">单克隆抗体 <a class="markdownIt-Anchor" href="#单克隆抗体">#</a></h3>
+<dl>
+<dt>单克隆抗体（monoclonal antibody，mAb）</dt>
+<dd>由单一克隆 B 细胞<strong>杂交瘤</strong>所产生的、针对单一抗原表位的、具有<strong>高度特异性</strong>的抗体。</dd>
+</dl>
+<p>优点：结构均一、纯度高、特异性强、易于制备</p>
+<dl>
+<dt>杂交瘤（hybridoma）</dt>
+<dd>将可产生特异性抗体的 B 细胞和无特异性但永生化的骨髓瘤细胞融合形成的杂交细胞系。</dd>
+<dd>即具有免疫 B 细胞合成和分泌特异性抗体的能力，又具有骨髓瘤细胞大量扩增和永生的特性。</dd>
+</dl>
+<h3 id="基因工程抗体">基因工程抗体 <a class="markdownIt-Anchor" href="#基因工程抗体">#</a></h3>
+<dl>
+<dt>基因工程抗体（genetic engineering antibody）</dt>
+<dd>通过基因工程技术制备的抗体或抗原片段。</dd>
+<dd>即保持 mAb 的均一性，又能克服鼠源性的缺点。</dd>
+</dl>
+<ul>
+<li>人-鼠嵌合抗体</li>
+<li>人源化抗体</li>
+<li>双特异性抗体</li>
+<li>小分子抗体</li>
+<li>人抗体</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>抗原</title>
     <url>/2021/04/30/%E6%8A%97%E5%8E%9F/</url>
     <content><![CDATA[<dl>
@@ -6226,354 +6574,6 @@ T 细胞辅助。</p>
 <dd>属于非特异性淋巴细胞多克隆激活剂，通过与淋巴细胞表面<strong>丝裂原受体</strong>
 结合，刺激静止淋巴细胞转化为淋巴母细胞并进行有丝分裂，从而激活一类淋巴细胞的全部克隆。</dd>
 </dl>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>抗体</title>
-    <url>/2021/05/10/%E6%8A%97%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>抗体（antibody，<abbr title="抗体">Ab</abbr>）</dt>
-<dd>介导体液免疫的重要效应分子</dd>
-<dd>免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
-可与相应抗原发生特异性结合的<strong>免疫球蛋白</strong>（<abbr title="免疫球蛋白">Ig</abbr>）。</dd>
-<dd>主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</dd>
-</dl>
-<dl>
-<dt>免疫球蛋白（immunoglobulin，<abbr title="免疫球蛋白">Ig</abbr>）</dt>
-<dd>具有抗体活性或化学结构与抗体相似的球蛋白的统称。</dd>
-<dd>存在形式
-<ul>
-<li><strong>膜型</strong>（membrane immunoglobulin，mIg），如 BCR（B 细胞受体）</li>
-<li><strong>分泌型</strong>（secreted immunoglobulin，sIg），如抗体</li>
-</ul>
-</dd>
-</dl>
-<span id="more"></span>
-<h2 id="抗体的结构">抗体的结构 <a class="markdownIt-Anchor" href="#抗体的结构">#</a></h2>
-<p>抗体的<strong>基本结构</strong>是由两条完全相同的<strong>重链</strong>和<strong>轻链</strong>通过二硫键链接的“Y”形单体。</p>
-<h3 id="抗体的分类和分型">抗体的分类和分型 <a class="markdownIt-Anchor" href="#抗体的分类和分型">#</a></h3>
-<h4 id="类和亚类">类和亚类 <a class="markdownIt-Anchor" href="#类和亚类">#</a></h4>
-<ul>
-<li>类：根据 <strong>H 链</strong> C 区抗原性的差异</li>
-<li>亚类：铰链区氨基酸的组成和重链二硫键的数目、位置</li>
-</ul>
-<p>根据重链的种类，可将完整的抗体分子分为对应的五类（见下表“抗体”列）。</p>
-<p class="align-text-center table-caption ">
-      抗体的<strong>类</strong>和<strong>亚类</strong>
-    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">类</th>
-<th style="text-align:center">抗体</th>
-<th style="text-align:center">亚类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">μ(mu)</td>
-<td style="text-align:center">IgM</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center">γ(gamma)</td>
-<td style="text-align:center">IgG</td>
-<td style="text-align:center">IgG1~IgG4</td>
-</tr>
-<tr>
-<td style="text-align:center">α(alpha)</td>
-<td style="text-align:center">IgA</td>
-<td style="text-align:center">IgA1、IgA2</td>
-</tr>
-<tr>
-<td style="text-align:center">δ(delta)</td>
-<td style="text-align:center">IgD</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center">ε(epsilon)</td>
-<td style="text-align:center">IgE</td>
-<td style="text-align:center">无</td>
-</tr>
-</tbody>
-</table>
-<h4 id="型和亚型">型和亚型 <a class="markdownIt-Anchor" href="#型和亚型">#</a></h4>
-<p><strong>型</strong>：根据 <strong>L 链</strong> C 区氨基酸的组成和排列顺序</p>
-<ul>
-<li>κ（kappa）型</li>
-<li>λ（lambda）型</li>
-</ul>
-<p><strong>亚型</strong>：根据 λ 链 C 区个别氨基酸的不同：λ1/OZ(+)、λ2/OZ(-)、λ3/Kern(+)、λ4/Kern(-)</p>
-<h3 id="可变区和恒定区">可变区和恒定区 <a class="markdownIt-Anchor" href="#可变区和恒定区">#</a></h3>
-<img data-src="/2021/05/10/%E6%8A%97%E4%BD%93/%E6%8A%97%E4%BD%93%E7%BB%93%E6%9E%84%E5%9F%9F.jpg" class="" title="抗体分子 V 区和 C 区结构示意图" alt="抗体分子 V 区和 C 区结构示意图">
-<dl>
-<dt>可变区（variable region，<mark><abbr title="可变区">V 区</abbr></mark>）</dt>
-<dd>抗体分子中轻链和重链靠近 N 端的氨基酸形成的结构，此处氨基酸序列变化较大，具有独特的空间构型。
-<ul>
-<li>高变区</li>
-<li>骨架区</li>
-</ul>
-</dd>
-<dd>占 1/4 重链和 1/2 轻链。</dd>
-</dl>
-<p>轻链和重链的 V 区分别称为 V<sub>H</sub> 和 V<sub>L</sub>，各有三个 <strong><abbr title="高变区（互补决定区）">HVR</abbr></strong>，分别为 CDR1、CDR2、CDR3（或 HVRn，n=1,2,3）。<br/>
-V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变区）">CDR</abbr> 共同构成 <abbr title="抗体">Ab</abbr> 的<strong>抗原结合部位</strong>（antigen-binding site），决定抗体的特异性。</p>
-<dl>
-<dt>高变区（hypervariable region，<abbr title="高变区（互补决定区）">HVR</abbr>）| 互补决定区（<abbr title="互补决定区（高变区）">CDR</abbr>）</dt>
-<dd>氨基酸组成和排列高度可变的区域。</dd>
-</dl>
-<dl>
-<dt>骨架区（<abbr title="骨架区">FR</abbr>）</dt>
-<dd><abbr title="可变区">V 区</abbr> <abbr title="高变区（互补决定区）">HVR</abbr> 外的区域，氨基酸组成的排列顺序相对变化不大。</dd>
-</dl>
-<hr />
-<dl>
-<dt>恒定区（constant region，<mark><abbr title="恒定区">C 区</abbr></mark>）</dt>
-<dd>靠近 C 端的相对恒定的区域。</dd>
-<dd>占 3/4 重链和 1/2 轻链。</dd>
-</dl>
-<p>轻链和重链的 C 区分别称为 C<sub>H</sub> 和 C<sub>L</sub>。</p>
-<p>不同型 <abbr title="抗体">Ab</abbr> 的 C<sub>L</sub> 区的长度基本一致，但是不同<strong>类</strong> <abbr title="抗体">Ab</abbr> 的 C<sub>H</sub> 区长度不一。</p>
-<ul>
-<li>IgG/IgA/IgD：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3</li>
-<li>IgM/IgE：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3、C<sub>H</sub>4</li>
-</ul>
-<h3 id="铰链区">铰链区 <a class="markdownIt-Anchor" href="#铰链区">#</a></h3>
-<dl>
-<dt>铰链区（hinge region）</dt>
-<dd>位于 C<sub>H</sub>1 和 C<sub>H</sub>2 之间，含有丰富的脯氨酸，易弯曲伸展，能改变”Y“形两个臂之间的距离，有利于两个臂同时结合两个相同的抗原表位。</dd>
-<dd>铰链区易被蛋白水解酶降解，见 <a href="#%E6%8A%97%E4%BD%93%E5%88%86%E5%AD%90%E7%9A%84%E6%B0%B4%E8%A7%A3%E7%89%87%E6%AE%B5">抗体分子的水解片段</a>。</dd>
-</dl>
-<blockquote>
-<p>IgM 和 IgE 无铰链区</p>
-</blockquote>
-<h3 id="抗体的辅助成分">抗体的辅助成分 <a class="markdownIt-Anchor" href="#抗体的辅助成分">#</a></h3>
-<dl>
-<dt>J 链（joining chain）</dt>
-<dd>由<strong>浆细胞</strong>合成的富含半胱氨酸的酸性糖蛋白，主要功能是<strong>将单体 <abbr title="抗体">Ab</abbr> 连接形成二聚体或多聚体</strong>。</dd>
-<dt>分泌片（secretory piece，<abbr title="分泌片（分泌成分）">SP</abbr>）| 分泌成分（secretory component，<abbr title="分泌成分（分泌片）">SC</abbr>）</dt>
-<dd>由<strong>黏膜上皮细胞</strong>合成、分泌的一种 <abbr title="分泌型 IgA">SIgA</abbr>（分泌型 IgA）的辅助因子。</dd>
-</dl>
-<p>分泌片的功能</p>
-<ul>
-<li>保护 <abbr title="分泌型 IgA">SIgA</abbr> 铰链区免受蛋白水解酶降解</li>
-<li>可介导 <abbr title="分泌型 IgA">SIgA</abbr> 从黏膜下通过黏膜上皮细胞转运到黏膜表面（另见 <a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">穿过胎盘和黏膜</a>）</li>
-</ul>
-<h3 id="抗体分子的水解片段">抗体分子的水解片段 <a class="markdownIt-Anchor" href="#抗体分子的水解片段">#</a></h3>
-<p>常用<strong>木瓜蛋白酶</strong>和<strong>胃蛋白酶</strong>水解蛋白质，借此研究 <abbr title="抗体">Ab</abbr> 的结构和功能。</p>
-<ul>
-<li><strong>木瓜蛋白酶</strong>：将重链于铰链区<strong>近 N 端</strong>切断，产生两个 <abbr title="抗原结合片段">Fab</abbr> 和一个 <abbr title="可结晶片段">Fc</abbr></li>
-<li><strong>胃蛋白酶</strong>：将重链于铰链区<strong>近 C 端</strong>切断，产生一个 F(ab’)<sub>2</sub>（双价）和一些 pFc’（无生物学活性）</li>
-</ul>
-<dl>
-<dt>抗原结合片段（fragment of antigen-binding，<abbr title="抗原结合片段">Fab</abbr>）</dt>
-<dd>可与抗原结合，具有单价抗原活性。</dd>
-<dt>可结晶片段（fragment crystallizable，<abbr title="可结晶片段">Fc</abbr>）</dt>
-<dd>不可与抗原结合，但可执行免疫球蛋白的其他生物学功能。</dd>
-</dl>
-<h3 id="超免疫球蛋白家族">超免疫球蛋白家族 <a class="markdownIt-Anchor" href="#超免疫球蛋白家族">#</a></h3>
-<dl>
-<dt>免疫球蛋白折叠（immunoglobulin fold）</dt>
-<dd>抗体分子中 <abbr title="互补决定区（高变区）">CDR</abbr> 外的结构域氨基酸序列相对保守（有较高的同源性），折叠成特定的球状结构。</dd>
-<dt>免疫球蛋白基因超家族、免疫球蛋白超家族（immunoglobulin superfamily，<abbr title="免疫球蛋白超家族（immunoglobulin superfamily）">IgSF</abbr>）</dt>
-<dd>编码具有<strong>免疫球蛋白折叠</strong>的蛋白质的基因称为<strong>免疫球蛋白基因超家族</strong>，这种蛋白质称为
-<strong>免疫球蛋白超家族</strong>。</dd>
-</dl>
-<h2 id="抗体的多样性和免疫原性">抗体的多样性和免疫原性 <a class="markdownIt-Anchor" href="#抗体的多样性和免疫原性">#</a></h2>
-<blockquote>
-<p>多样性抗原表位的存在是导致 <strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>（即具有不同的抗原特异性）的外源因素，是
-<strong><abbr title="免疫球蛋白">Ig</abbr> 异质性</strong>的物质基础。<br/>
-抗体的多样性是由<strong>免疫球蛋白基因重排</strong>决定并经<strong>抗原选择</strong>
-表现出来的，反映了机体对抗原精细结构的识别和应答。</p>
-</blockquote>
-<p>抗体本身也具有 <a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原的基本特征">免疫原性</a>，即包含<strong>抗原表位</strong>，可激活机体产生特异性免疫应答。</p>
-<dl>
-<dt>同种型（isotype）</dt>
-<dd>存在于<strong>同种</strong>抗体分子中的抗原表位。</dd>
-<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，为<strong>种属型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
-<dt>同种异型（allotype）</dt>
-<dd>存在于<strong>同种属中不同个体</strong> <abbr title="抗体">Ab</abbr> 中的抗原表位。</dd>
-<dd>是同一种属不同个体 <abbr title="抗体">Ab</abbr> 分子所具有的不同抗原特异性标志，为<strong>个体型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
-<dt>独特型（idiotype，Id）</dt>
-<dd>每个<strong>抗体分子</strong>所特有的抗原特异性标志，其表位被称为<strong>独特位</strong>（idiotope）。</dd>
-<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
-</dl>
-<h2 id="抗体的功能">抗体的功能 <a class="markdownIt-Anchor" href="#抗体的功能">#</a></h2>
-<h3 id="抗体-v-区的作用">抗体 V 区的作用 <a class="markdownIt-Anchor" href="#抗体-v-区的作用">#</a></h3>
-<p>V<sub>L</sub> 和 V<sub>H</sub> 是抗原结合的部位</p>
-<ol>
-<li>识别并特异性结合抗原，<abbr title="互补决定区（高变区）">CDR</abbr> 起决定性作用；</li>
-<li>中和毒素、阻断病原入侵等免疫防御功能。</li>
-</ol>
-<dl>
-<dt>抗原结合价</dt>
-<dd><abbr title="抗体">Ab</abbr> 结合抗原表位的个数。</dd>
-<dd>单抗原为双价，<abbr title="抗原结合片段">Fab</abbr> 为单价，五聚体理论上为 10 价，但是由于空间位阻的原因，实际上为 5 价。</dd>
-</dl>
-<h3 id="抗体-c-区的作用">抗体 C 区的作用 <a class="markdownIt-Anchor" href="#抗体-c-区的作用">#</a></h3>
-<h4 id="激活补体">激活补体 <a class="markdownIt-Anchor" href="#激活补体">#</a></h4>
-<ul>
-<li>IgG1、IgG3、IgM：激活补体能力强，通过<strong>经典途径</strong>激活</li>
-<li>IgG2：也通过<strong>经典途径</strong>，但能力较弱</li>
-<li>IgG4、IgΑ、IgE：本身难以激活补体系统，需依赖<strong>旁路途径</strong></li>
-</ul>
-<dl>
-<dt>补体依赖的细胞毒作用（complement dependent cytotoxicity，<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）</dt>
-<dd>补体（C1q）参与的细胞毒作用。</dd>
-<dd>IgG 和 IgM 与病毒感染细胞或细菌细胞膜表面抗原结合，而后
-<strong>C1q</strong>（Complement component 1q）通过与抗体结合激活
-<strong>经典途径</strong>，导致<strong>攻膜复合物</strong>（membrane attack complex）形成并对靶细胞发挥裂解效应。</dd>
-</dl>
-<p>另见 <a href="/2021/05/17/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/">补体系统</a>。</p>
-<h4 id="结合-fc-受体">结合 <abbr title="可结晶片段">Fc</abbr> 受体 <a class="markdownIt-Anchor" href="#结合-fc-受体">#</a></h4>
-<p><strong>IgG、IgA、IgE</strong> 有此功能的 <abbr title="可结晶片段">Fc</abbr> 段可与表面具有相应 <abbr title="可结晶片段">Fc</abbr> 受体（<abbr title="Fc 受体">FcR</abbr>）的细胞结合，产生不同的生物学效应。<br/>
-三类抗原的 <abbr title="可结晶片段">Fc</abbr> 受体分别称为 <abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>、<abbr title="Fc 受体">FcR</abbr>。</p>
-<h5 id="调理作用opsonization">调理作用（opsonization） <a class="markdownIt-Anchor" href="#调理作用opsonization">#</a></h5>
-<p>由 <strong>IgG</strong>（特别是 IgG1、IgG3）介导，IgG <abbr title="抗原结合片段">Fab</abbr> 段与相应细菌的抗原表位结合，<abbr title="可结晶片段">Fc</abbr> 段与巨噬细胞或中性粒细胞表面的 FcγR 结合，通过
-IgG 的“桥联”作用，促进吞噬细胞对细菌的吞噬。</p>
-<h5 id="抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity，<mark><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></mark>） <a class="markdownIt-Anchor" href="#抗体依赖的细胞介导的细胞毒作用antibody-dependent-cell-mediated-cytotoxicityadcc">#</a></h5>
-<p>由 <strong>IgG</strong> 介导，抗体 <abbr title="抗原结合片段">Fab</abbr> 段结合病毒感染细胞或肿瘤细胞表面抗原，其 <abbr title="可结晶片段">Fc</abbr>
-段与杀伤细胞（<strong>NK 细胞</strong>、巨噬细胞等）表面 FcγR 结合，介导杀伤细胞直接杀伤靶细胞。</p>
-<blockquote>
-<p>抗体与靶细胞上抗原的结合是特异性的，而表达 <abbr title="Fc 受体">FcR</abbr> 细胞的杀伤作用是非特异性的。</p>
-</blockquote>
-<h5 id="介导-i-型超敏反应">介导 Ⅰ 型超敏反应 <a class="markdownIt-Anchor" href="#介导-i-型超敏反应">#</a></h5>
-<p>主要由 <strong>IgE</strong> 介导，IgE 通过其 <abbr title="可结晶片段">Fc</abbr> 段与肥大细胞或嗜碱性粒细胞表面高亲和力 IgE <abbr title="可结晶片段">Fc</abbr>
-受体（FcεR Ⅰ）结合，并使其致敏。<br/>
-若相同<strong>应变原</strong>再次进入机体与致敏靶细胞表面特异性 IgE 结合，即可引起 Ⅰ 型超敏反应。</p>
-<div class="note info"><dl>
-<dt>Ⅰ 型超敏反应 | 过敏反应（anaphylaxis）| 变态反应（allergy）</dt>
-<dd>机体受到某些抗原刺激时，引起的由特异性 IgE 抗体介导产生的一种发生快消退亦快的免疫应答。</dd>
-<dd>表现为局部或全身的生理功能紊乱，具有明显个体差异和遗传倾向。</dd>
-<dt>变应原（allergen）| 过敏原</dt>
-<dd>引起超敏反应的物质。</dd>
-</dl>
-</div>
-<h4 id="穿过胎盘和黏膜">穿过胎盘和黏膜 <a class="markdownIt-Anchor" href="#穿过胎盘和黏膜">#</a></h4>
-<p>人类中，<mark>IgG</mark> 是唯一能通过胎盘的细胞。IgG 穿过胎盘是一种重要的 <mark>自然被动免疫机制</mark>。<br/>
-胚盘母体一侧的滋养层细胞表达一种 IgG 输送蛋白，称为
-<strong>新生儿 <abbr title="可结晶片段">Fc</abbr> 段受体</strong>（neonatal <abbr title="Fc 受体">FcR</abbr>，<strong>FcRn</strong>）。<br/>
-FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其进入胎儿血液。<br/></p>
-<p><a href="#iga"><abbr title="分泌型 IgA">SIgA</abbr></a> 也可通过 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 的介导转运到呼吸道或消化道黏膜表面，在黏膜局部免疫中发挥作用。</p>
-<h2 id="各类抗体的特性与功能">各类抗体的特性与功能 <a class="markdownIt-Anchor" href="#各类抗体的特性与功能">#</a></h2>
-<h3 id="igg">IgG <a class="markdownIt-Anchor" href="#igg">#</a></h3>
-<dl>
-<dt>IgG（免疫球蛋白 G）</dt>
-<dd>IgG 从出生后 3 月后开始合成，3~5 岁接近成人水平，是血清和胞外液中<strong>含量最高</strong>（75%~80%的 <abbr title="免疫球蛋白">Ig</abbr>。</dd>
-<dd>IgG 半衰期约 20~23 天，是<strong>再次免疫应答产生</strong>的主要抗体；其亲和力高，是机体抗感染免疫的“主力军”。</dd>
-<dd>IgG 的亚类见 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
-</dl>
-<p>生物学活性</p>
-<ul>
-<li><a href="#%E7%A9%BF%E8%BF%87%E8%83%8E%E7%9B%98%E5%92%8C%E9%BB%8F%E8%86%9C">通过胎盘</a>（新生儿抗感染）：IgG1、3、4</li>
-<li><a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">激活补体</a>（裂解细胞）：IgG1、2、3</li>
-<li><a href="#%E8%B0%83%E7%90%86%E4%BD%9C%E7%94%A8opsonization">调理作用</a>（促进吞噬）：IgG1、2、3</li>
-<li>介导 <a href="#%E6%8A%97%E4%BD%93%E4%BE%9D%E8%B5%96%E7%9A%84%E7%BB%86%E8%83%9E%E4%BB%8B%E5%AF%BC%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%92%E4%BD%9C%E7%94%A8antibody-dependent-cell-mediated-cytotoxicityadcc"><abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></a>（细胞毒作用）：IgG1、2、3</li>
-<li><abbr title="可结晶片段">Fc</abbr> 段与 <a href="/2021/03/25/%E5%8C%96%E8%84%93%E6%80%A7%E7%BB%86%E8%8F%8C/#葡萄球菌">葡萄球菌蛋白 A</a>（SPA）结合（免疫诊断、纯化抗体）：IgG1、2、4</li>
-</ul>
-<p>实际功能：</p>
-<ul>
-<li>抗感染</li>
-<li>自身抗体（自身免疫病）</li>
-<li>介导 Ⅱ、Ⅲ 型变态反应</li>
-<li>亲合层析法，用于抗体纯化</li>
-<li>免疫学检测和诊断</li>
-</ul>
-<h3 id="igm">IgM <a class="markdownIt-Anchor" href="#igm">#</a></h3>
-<dl>
-<dt>IgM（免疫球蛋白 M）</dt>
-<dd>占血清球蛋白的 5%~10%，分为膜结合性 IgM（mIgM）和分泌型 IgM（SIgM）。</dd>
-</dl>
-<ul>
-<li>mIgM：单体，表达于 B 细胞表面，构成 B 细胞表面抗原受体（BCR）只表达 mIgM 是<strong>未成熟 B 细胞的标志</strong>。</li>
-<li>SIgM：<strong>五聚体</strong>，是<strong>分子量最大的 <abbr title="免疫球蛋白">Ig</abbr></strong>，称为<strong>巨球蛋白</strong>（macroglobulin），一般不能通过血管壁，主要存在于血液中。<br/>
-抗原结合能力（<abbr title="抗原结合片段">Fab</abbr>）和激活补体的能力（<abbr title="可结晶片段">Fc</abbr>）均较高。</li>
-</ul>
-<p>IgM 是个体发育过程中<strong>最早合成和分泌的抗体</strong>，胚胎发育晚期的婴儿即可产生 IgM。<br/>
-脐带血某些病毒特异性 IgM 水平升高提示胎儿有<strong>宫内感染</strong>。</p>
-<p>IgM 也是<strong>初次体液免疫应答</strong>中最早出现的抗体，而且半衰期短（5 天）。血清中检出病原体特异性 IgM 提示新近发生感染，可用于感染的早期诊断。</p>
-<h3 id="iga">IgA <a class="markdownIt-Anchor" href="#iga">#</a></h3>
-<dl>
-<dt>IgA（免疫球蛋白 A）</dt>
-<dd>分为<strong>血清型</strong>（IgA1）和<strong>分泌型</strong>（IgA2）两种，另见<a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%9E%8B">抗体的分类和分型</a>。</dd>
-<dd>聚合 IgA（<s><abbr title="分泌型 IgA">SIgA</abbr></s>）可激活 <a href="#%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%BD%93">补体替代途径</a>。</dd>
-</dl>
-<ul>
-<li>血清型：单体，主要存在于血清中；</li>
-<li><strong>分泌型</strong></li>
-</ul>
-<dl>
-<dt>分泌型 IgA（secretory IgA，<mark><abbr title="分泌型 IgA">SIgA</abbr></mark>）</dt>
-<dd><strong>二聚体</strong>，由<strong>黏膜局部浆细胞</strong>分泌。
-<ul>
-<li>可借助 <a href="#%E6%8A%97%E4%BD%93%E7%9A%84%E8%BE%85%E5%8A%A9%E6%88%90%E5%88%86"><strong>分泌片</strong></a> 转运到呼吸道和消化道黏膜表面，参与局部抗感染免疫，阻止病原微生物黏附。</li>
-<li>新生儿可从母乳中获得 <abbr title="分泌型 IgA">SIgA</abbr>，是重要的 <mark>自然被动免疫</mark>。</li>
-</ul>
-</dd>
-</dl>
-<h3 id="igd">IgD <a class="markdownIt-Anchor" href="#igd">#</a></h3>
-<dl>
-<dt>IgD（免疫球蛋白 D）</dt>
-<dd>为<strong>单体分子</strong>，有分泌型和膜结合型两种。分泌型的功能尚未确定，mIgD 是 B 细胞分化发育为成熟 B 细胞（<strong>初始 B 细胞</strong>）的标志。</dd>
-<dd>B 细胞活化后其表面的 IgD 逐渐消失。</dd>
-<dd>IgD 铰链区较长，易被水解，半衰期只有 3 天。</dd>
-</dl>
-<h3 id="ige">IgE <a class="markdownIt-Anchor" href="#ige">#</a></h3>
-<dl>
-<dt>IgE（免疫球蛋白 E）</dt>
-<dd><strong>单体分子</strong>主要由黏膜下淋巴组织中的浆细胞分泌，血清中<strong>含量最低</strong>（0.002%）。</dd>
-<dd>IgE 是一类 <mark>亲细胞抗体</mark>，其 C<sub>H</sub>2 和 C<sub>H</sub>3 可与肥大细胞和嗜碱性粒细胞上的高亲和力 <strong>FcεR Ⅰ</strong>
-结合，当结合再次进入机体的抗原后可引起 <strong>Ⅰ 型超敏反应</strong>。</dd>
-<dd>过敏性疾病和某些<strong>寄生虫病</strong>患者体内的特异性 IgE 水平增高。</dd>
-</dl>
-<h2 id="人工制备抗体">人工制备抗体 <a class="markdownIt-Anchor" href="#人工制备抗体">#</a></h2>
-<h3 id="多克隆抗体">多克隆抗体 <a class="markdownIt-Anchor" href="#多克隆抗体">#</a></h3>
-<dl>
-<dt>多克隆抗体（polyclonal antibody，pAb）</dt>
-<dd>以天然抗体（<a href="/2021/04/30/%E6%8A%97%E5%8E%9F/#抗原特异性与抗原表位">多价抗体</a>）刺激机体免疫系统而产生的针对多种不同抗原表位的抗体总和。</dd>
-<dd>主要来源于动物免疫血清、恢复期患者血清、免疫接种人群血清。</dd>
-</dl>
-<ul>
-<li>优点
-<ul>
-<li><strong>作用全面</strong>：中和抗原，免疫调理，介导补体依赖的细胞毒作用（<abbr title="补体依赖的细胞毒作用（complement dependent cytotoxicity）">CDC</abbr>）、<abbr title="抗体依赖的细胞介导的细胞毒作用（antibody-dependent cell-mediated cytotoxicity）">ADCC</abbr></li>
-<li>来源广泛，易制备</li>
-</ul>
-</li>
-<li>缺点：特异性不高、易发生交叉反应，不易大量制备</li>
-</ul>
-<h3 id="单克隆抗体">单克隆抗体 <a class="markdownIt-Anchor" href="#单克隆抗体">#</a></h3>
-<dl>
-<dt>单克隆抗体（monoclonal antibody，mAb）</dt>
-<dd>由单一克隆 B 细胞<strong>杂交瘤</strong>所产生的、针对单一抗原表位的、具有<strong>高度特异性</strong>的抗体。</dd>
-</dl>
-<p>优点：结构均一、纯度高、特异性强、易于制备</p>
-<dl>
-<dt>杂交瘤（hybridoma）</dt>
-<dd>将可产生特异性抗体的 B 细胞和无特异性但永生化的骨髓瘤细胞融合形成的杂交细胞系。</dd>
-<dd>即具有免疫 B 细胞合成和分泌特异性抗体的能力，又具有骨髓瘤细胞大量扩增和永生的特性。</dd>
-</dl>
-<h3 id="基因工程抗体">基因工程抗体 <a class="markdownIt-Anchor" href="#基因工程抗体">#</a></h3>
-<dl>
-<dt>基因工程抗体（genetic engineering antibody）</dt>
-<dd>通过基因工程技术制备的抗体或抗原片段。</dd>
-<dd>即保持 mAb 的均一性，又能克服鼠源性的缺点。</dd>
-</dl>
-<ul>
-<li>人-鼠嵌合抗体</li>
-<li>人源化抗体</li>
-<li>双特异性抗体</li>
-<li>小分子抗体</li>
-<li>人抗体</li>
-</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -9640,7 +9640,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <td style="text-align:center">寄生部位</td>
 <td style="text-align:center">小肠</td>
 <td style="text-align:center">小肠</td>
-<td style="text-align:center">小肠（成虫，终宿主）<br/>横纹肌细胞（幼虫，中间宿主/保虫宿主）</td>
+<td style="text-align:center">小肠（成虫，终宿主）<br/>横纹肌细胞（幼虫，保虫宿主）</td>
 </tr>
 <tr>
 <td style="text-align:center">离体途径</td>
@@ -9923,22 +9923,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>细胞生物学</title>
-    <url>/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<p class="center">Empty</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>细胞生物学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>细胞生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -10412,6 +10396,22 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>细胞生物学</title>
+    <url>/2021/05/19/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
+    <content><![CDATA[<p class="center">Empty</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>细胞生物学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>细胞生物学</tag>
       </tags>
   </entry>
   <entry>

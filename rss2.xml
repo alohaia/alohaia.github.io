@@ -163,7 +163,7 @@
 &lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;体内移行&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;s&gt;体内移行&lt;/s&gt;&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
@@ -422,7 +422,7 @@
 &lt;td style=&quot;text-align:center&quot;&gt;寄生部位&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;小肠&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;小肠&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;小肠（成虫，终宿主）&lt;br/&gt;横纹肌细胞（幼虫，中间宿主/保虫宿主）&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;小肠（成虫，终宿主）&lt;br/&gt;横纹肌细胞（幼虫，保虫宿主）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;离体途径&lt;/td&gt;
