@@ -1947,18 +1947,45 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
 <dt>主要组织相容性复合体（MHC）</dt>
 <dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
 </dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>。</p>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</p>
 <span id="more"></span>
-<p>HLA 基因复合体分为三个基因区</p>
-<p>MHC 基因分两种类型</p>
+<blockquote>
+<p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的<strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。<br/>
+HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等位基因数量最多。</p>
+</blockquote>
+<p>HLA 基因复合体位于人 6 号染色体短臂，分为三个基因区：</p>
+<ol>
+<li><strong>HLA Ⅰ 类基因区</strong>：
+<ol>
+<li>经典 Ⅰ 类基因座（HLA Ⅰa）：A、B（等位基因数量最多）、C</li>
+<li>非经典 Ⅰ 类基因座（HLA Ⅰb）：Ε、F、G</li>
+</ol>
+</li>
+<li><strong>HLA Ⅱ 类基因区</strong>：经典的 DP、DQ、DR 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
+<li><strong>HLA Ⅲ 类基因区</strong>：补体基因 C2、B、C4 及参与炎症反应的 TNF、LTA、LTB、HSP 等。</li>
+</ol>
+<p>MHC 基因分两种类型：</p>
 <ul>
-<li>经典 HLA Ⅰ 类基因和 Ⅱ 类基因</li>
-<li>免疫功能相关基因
+<li>
+<p><strong>经典 HLA Ⅰ 类基因和经典 Ⅱ 类基因</strong>：产物具有<strong>抗原提呈作用</strong>，直接参与 T 细胞的激活和分化，参与<ins>调控适应性免疫应答作用</ins>，<ins>显示极为丰富的多态性</ins>；</p>
+</li>
+<li>
+<p><strong>免疫功能相关基因</strong>，包括传统的 Ⅲ 类基因及新近确定的多种基因：参与<ins>调控固有免疫应答或抗原加工</ins>，<ins>不显示或仅显示有限的多态性</ins>。</p>
+</li>
+<li>
+<p>HLA Ⅰ 类分子</p>
 <ul>
-<li>血清补体成分的编码基因</li>
-<li>抗原加工相关基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
+<li>组成：重链、β<sub>2</sub> 微球蛋白</li>
+<li>分布：所有有核细胞表面</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞提呈内源性抗原肽</li>
+</ul>
+</li>
+<li>
+<p>HLA Ⅱ 类分子：</p>
+<ul>
+<li>组成：a 链、b 链</li>
+<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞提呈外源性抗原肽</li>
 </ul>
 </li>
 </ul>
@@ -1967,6 +1994,12 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
 <li>MHC 多态性</li>
 <li></li>
 </ol>
+<ul>
+<li>抗原加工相关基因</li>
+<li>血清补体成分的编码基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -3100,10 +3133,10 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li>支气管相关淋巴组织（BALT）</li>
 </ul>
 <h4 id="黏膜相关淋巴组织的功能">黏膜相关淋巴组织的功能 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织的功能">#</a></h4>
-<ul>
+<ol>
 <li>黏膜局部免疫反应的主要部位、黏膜局部抗感染免疫防御、肠道问胎的维持</li>
 <li>产生分泌型 IgA（SIgA）</li>
-</ul>
+</ol>
 <h2 id="淋巴细胞归巢与再循环">淋巴细胞归巢与再循环 <a class="markdownIt-Anchor" href="#淋巴细胞归巢与再循环">#</a></h2>
 <dl>
 <dt><mark>淋巴细胞归巢</mark>（lymphocyte homing）</dt>
@@ -3111,6 +3144,383 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <dt><mark>淋巴细胞再循环</mark>（lymphocyte recirculation）</dt>
 <dd>定居在外周免疫器官的淋巴细胞重新分布到全身淋巴器官和组织的反复循环过程。</dd>
 </dl>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免疫大题重点</title>
+    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E5%85%8D%E7%96%AB%E5%A4%A7%E9%A2%98%E9%87%8D%E7%82%B9/</url>
+    <content><![CDATA[<p>免疫各章 PPT 后思考题。</p>
+<span id="more"></span>
+<h2 id="免疫学概述">免疫学概述 <a class="markdownIt-Anchor" href="#免疫学概述">#</a></h2>
+<ol>
+<li><strong>免疫系统的组成</strong>：
+<ol>
+<li>免疫器官：中枢免疫器官，包括胸腺、骨髓；外周免疫器官，包括脾脏、淋巴结和黏膜相关淋巴组织、<em>皮肤相关淋巴组织</em>；</li>
+<li>免疫分子：膜型分子、分泌型分子</li>
+<li>免疫细胞：T 细胞、B 细胞、吞噬细胞、DC、NK 细胞等</li>
+</ol>
+</li>
+<li><strong>举例说明免疫系统的三大功能</strong>：
+<ol>
+<li>免疫防御：防止病原体入侵及清除已入侵病原体及其他有害物质，如抗细菌、真菌、病毒等病原体的入侵。</li>
+<li>免疫监视：随时发现和清除体内出现的“非己”成分，如由基因突变产生的肿瘤细胞及衰老、死亡细胞等。</li>
+<li>免疫自稳：通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定，如机体对自身组织细胞不发生免疫应答，若免疫耐受被打破，免疫调节功能紊乱，会导致自身免疫病和过敏性疾病的发生。</li>
+</ol>
+</li>
+<li><strong>免疫应答的种类及其特点</strong>：
+<ul>
+<li>适应性免疫：<span class="horizontal-list"><span class="horizontal-list-item">特异性</span><span class="horizontal-list-item">耐受性</span><span class="horizontal-list-item">记忆性</span></span></li>
+<li>固有免疫：无以上特点</li>
+</ul>
+</li>
+</ol>
+<h2 id="免疫器官和组织">免疫器官和组织 <a class="markdownIt-Anchor" href="#免疫器官和组织">#</a></h2>
+<ol>
+<li><strong>简述中枢和外周免疫器官的组成和功能</strong>：
+<ul>
+<li>中枢免疫器官：
+<ol>
+<li>骨髓：
+<ol>
+<li>各类血细胞、免疫细胞发生的场所</li>
+<li>B 细胞 NK 细胞分化成熟的场所</li>
+<li>体液免疫应答发生的主要场所：<em>发生再次体液免疫应答后，抗体产生的主要部位</em></li>
+</ol>
+</li>
+<li>胸腺：
+<ol>
+<li>T 细胞分化、成熟的场所：<em>T 细胞迁移、阳性选择、阴性选择</em></li>
+<li>免疫调节作用：<em>细胞因子、胸腺肽类因子</em></li>
+<li>自身免疫耐受的建立与维持：<em>通过阴性选择形成中枢免疫耐受</em></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>外周免疫器官：
+<ol>
+<li>淋巴结：<span class="horizontal-list"><span class="horizontal-list-item">成熟 T 细胞（75%）、B 细胞（25%）定居的场所</span><span class="horizontal-list-item">适应性免疫应答的主要场所</span><span class="horizontal-list-item">过滤作用（淋巴液）</span><span class="horizontal-list-item">参与淋巴细胞再循环</span></span></li>
+<li>脾脏：<span class="horizontal-list"><span class="horizontal-list-item">T 细胞（40%）和 B 细胞（60%）定居的场所</span><span class="horizontal-list-item">免疫应答发生的场所</span><span class="horizontal-list-item">过滤作用（血液）</span><span class="horizontal-list-item">生成生物活性物质，<em>如补体、细胞因子</em></span></span></li>
+<li>黏膜相关淋巴组织：<span class="horizontal-list"><span class="horizontal-list-item">行使黏膜局部免疫应答</span><span class="horizontal-list-item">产生分泌型 IgA（SIgA）</span></span></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="抗原">抗原 <a class="markdownIt-Anchor" href="#抗原">#</a></h2>
+<ol>
+<li><strong>简述抗原的概念和基本性质</strong>：
+<ul>
+<li>概念：所有能激活和诱导免疫应答的物质。</li>
+<li>基本性质：
+<ul>
+<li>免疫原性：抗原被 TCR 或 BCR 识别及结合，诱导机体产生适应性免疫及产生抗体或特异性淋巴细胞的能力；</li>
+<li>免疫反应性：抗原与其诱导产生的免疫应答效应物质特异性结合的能力。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>抗原表位的概念</strong>：抗原分子中决定抗原特异性的特殊化学基团；是抗原与 TCR/BCR 或者抗体特异性结合的<strong>最小结构和功能单位</strong>。</li>
+<li><strong>超抗原与佐剂的概念</strong>：
+<ul>
+<li>超抗原：某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T 细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆抑制剂</strong>。</li>
+<li>佐剂：预先或与抗原同时注入体内，增强抗原特异性免疫应答或改变应答类型的非特异性免疫增强物质。</li>
+</ul>
+</li>
+</ol>
+<h2 id="抗体">抗体 <a class="markdownIt-Anchor" href="#抗体">#</a></h2>
+<ol>
+<li><strong>简述抗体的结构和功能</strong>：
+<ul>
+<li>基本结构：
+<ol>
+<li>重链（H）：根据<ins>重链恒定区抗原性</ins>差异分为 5 类（μ、γ、α、δ、ε），抗体分子也被分为对应的 5 类（IgM、IgG、IgA、IgD、IgE）</li>
+<li>轻链（L）：有 κ、λ 两种，将抗体分为 κ 型、λ 型</li>
+<li>可变区</li>
+<li>恒定区</li>
+<li>铰链区</li>
+</ol>
+</li>
+<li>辅助成分：
+<ol>
+<li>J 链：将单体分子连接为二聚体或多聚体</li>
+<li>分泌片：保护 SIgA 铰链区免受蛋白酶水解；介导 SIgA 二聚体从黏膜下通过黏膜转运到黏膜表面</li>
+</ol>
+</li>
+<li>水解片段：
+<ol>
+<li>木瓜蛋白酶水解片段：两个<strong>抗原结合片段</strong>（Fab）和一个<strong>可结晶片段</strong>（Fc）</li>
+<li>胃蛋白酶水解片段：一个 F(ab)<sub>2</sub> 和一些小片段 pFc’</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>多克隆与单克隆抗体的定义</strong>：
+<ul>
+<li>多克隆抗体：以天然抗原分子刺激机体免疫系统，产生的抗体中含有针对不同抗原表位的抗体；</li>
+<li>单克隆抗体：由单一杂交瘤细胞产生，针对单一抗原表位的特异性抗体。</li>
+</ul>
+</li>
+</ol>
+<h2 id="补体">补体 <a class="markdownIt-Anchor" href="#补体">#</a></h2>
+<ol>
+<li><strong>补体的激活途径及特点</strong>：
+<ol>
+<li>经典途径：在感染后期或再次感染中发挥作用；</li>
+<li>MBL 途径：在感染早期或初次感染中发挥作用；</li>
+<li>旁路途径：在感染早期或初次感染即可发挥作用。</li>
+</ol>
+</li>
+<li><strong>补体的生物学意义</strong>：
+<ol>
+<li>细胞毒作用；</li>
+<li>调理作用；</li>
+<li>炎症介质作用：<span class="horizontal-list"><span class="horizontal-list-item">过敏毒素作用</span><span class="horizontal-list-item">趋化作用</span><span class="horizontal-list-item">激肽样作用</span></span></li>
+<li>清除免疫复合物：免疫黏附。</li>
+</ol>
+</li>
+</ol>
+<h2 id="细胞因子">细胞因子 <a class="markdownIt-Anchor" href="#细胞因子">#</a></h2>
+<ol>
+<li><strong>细胞因子的概念</strong>：由免疫细胞及组织细胞分泌的在细胞间发挥相互调控作用的一类小分子可溶性蛋白质。</li>
+<li><strong>细胞因子的共同特点及分类</strong>：
+<ul>
+<li>共同特点：
+<ol>
+<li>小分子可溶性蛋白质，多为糖蛋白；</li>
+<li>高效性，一般在较低浓度下即有生物学效应；</li>
+<li>通过与受体结合发挥生物学作用；</li>
+<li>可诱导产生，且合成具有自限性；</li>
+<li>半寿期短；</li>
+<li>（绝大多数）效应范围小。</li>
+</ol>
+</li>
+<li>分类：<span class="horizontal-list"><span class="horizontal-list-item">白细胞介素</span><span class="horizontal-list-item">集落刺激因子</span><span class="horizontal-list-item">干扰素</span><span class="horizontal-list-item">肿瘤坏死因子</span><span class="horizontal-list-item">生长因子</span><span class="horizontal-list-item">趋化因子</span></span></li>
+</ul>
+</li>
+<li>细胞因子的作用方式：<span class="horizontal-list"><span class="horizontal-list-item">自分泌</span><span class="horizontal-list-item">旁分泌</span><span class="horizontal-list-item">内分泌</span></span></li>
+<li>细胞因子的功能特点：<span class="horizontal-list"><span class="horizontal-list-item">多效性</span><span class="horizontal-list-item">重叠性</span><span class="horizontal-list-item">协同性</span><span class="horizontal-list-item">拮抗性</span><span class="horizontal-list-item">网络性</span></span></li>
+<li>细胞因子受体共有链：<span class="horizontal-list"><span class="horizontal-list-item">共有 γ 链（γc）</span><span class="horizontal-list-item">共有 β 链（βc）</span><span class="horizontal-list-item">gp130</span></span></li>
+</ol>
+<h2 id="主要组织相容复合体">主要组织相容复合体 <a class="markdownIt-Anchor" href="#主要组织相容复合体">#</a></h2>
+<ol>
+<li><strong>MHC、HLA 的概念</strong>：
+<ul>
+<li><strong>主要组织相容性复合体</strong>（MHC）是一组与免疫应答密切相关、决定抑制组织是否相容、紧密连锁的基因群；</li>
+<li>人 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</li>
+</ul>
+</li>
+<li><strong>HLA-Ⅰ 类分子和 HLA-Ⅱ 类分子的结构、分布和功能</strong>：
+<ul>
+<li>HLA Ⅰ 类分子
+<ul>
+<li>组成：重链、β<sub>2</sub> 微球蛋白</li>
+<li>分布：所有有核细胞表面</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞提呈内源性抗原肽</li>
+</ul>
+</li>
+<li>HLA Ⅱ 类分子：
+<ul>
+<li>组成：a 链、b 链</li>
+<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞提呈外源性抗原肽</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>HLA 分子与适应性免疫的关系</strong>：HLA 与<span class="horizontal-list"><span class="horizontal-list-item">组织器官抑制排斥</span><span class="horizontal-list-item">自身免疫性疾病</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item">病毒感染性疾病</span></span>等临床疾病的发生、发展密切相关。</li>
+</ol>
+<h2 id="b-淋巴细胞">B 淋巴细胞 <a class="markdownIt-Anchor" href="#b-淋巴细胞">#</a></h2>
+<ol>
+<li><strong>B1 细胞与 B2 细胞亚群的比较</strong>：
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>B1 细胞</th>
+<th>B2 细胞</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>更新方式</td>
+<td>自我更新</td>
+<td>由骨髓产生</td>
+</tr>
+<tr>
+<td>自发产生 Ig</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>针对的抗原</td>
+<td>碳水化合物</td>
+<td>蛋白质类</td>
+</tr>
+<tr>
+<td>分泌的 Ig 种类</td>
+<td>IgM&gt;IgG</td>
+<td>IgG&gt;IgM</td>
+</tr>
+<tr>
+<td>特异性</td>
+<td>多反应性</td>
+<td>特异性</td>
+</tr>
+<tr>
+<td>体细胞高频突变</td>
+<td>低/无</td>
+<td>高</td>
+</tr>
+<tr>
+<td>免疫记忆</td>
+<td>少/无</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>BCR 复合物的组成</strong>：
+<ul>
+<li>膜免疫球蛋白（mIg）：识别和结合抗原</li>
+<li>Igα/Igβ（CD79a/CD79b）异二聚体：具有免疫受体酪氨酸活化基序（ITAM），传递抗原刺激信号（第一信号）</li>
+</ul>
+</li>
+<li><strong>B 细胞的功能</strong>：<span class="horizontal-list"><span class="horizontal-list-item">产生抗体介导体液免疫</span><span class="horizontal-list-item">呈递抗原</span><span class="horizontal-list-item">免疫调节</span></span></li>
+</ol>
+<h2 id="t-淋巴细胞">T 淋巴细胞 <a class="markdownIt-Anchor" href="#t-淋巴细胞">#</a></h2>
+<ol>
+<li><strong>αβT 淋巴细胞的主要功能亚群</strong>：
+<ol>
+<li><strong>辅助 T 细胞</strong>（Th）：Th1、Th2、Th9、Th17、Th22、Tfh</li>
+<li><strong>细胞毒性 T 细胞</strong>（CTL）</li>
+<li><strong>调节性 T 细胞</strong>（Treg）：CD4<sup>+</sup>CD25<sup>+</sup>Foxp3<sup>+</sup>T 细胞，<span class="horizontal-list"><span class="horizontal-list-item">自然调节性 T 细胞</span><span class="horizontal-list-item">诱导性调节性 T 细胞</span><span class="horizontal-list-item">其他调节性 T 细胞</span></span></li>
+</ol>
+</li>
+<li><strong>TCR 复合物的组成</strong>：
+<ol>
+<li>TCR：由 α、β 两条肽链组成，每条肽链膜外区各有一个可变（V）区和一个恒定（C）区，V 区含三个互补决定区；跨膜区带有正电，可与 CD3 形成盐桥；膜内区较短；</li>
+<li>CD3：有五种肽链，具有免疫受体酪氨酸活化基序（ITAM），功能是转导 TCR 识别抗原产生的活化信号。</li>
+</ol>
+</li>
+</ol>
+<h2 id="抗原提呈细胞">抗原提呈细胞 <a class="markdownIt-Anchor" href="#抗原提呈细胞">#</a></h2>
+<ol>
+<li><strong>DC 的功能</strong>：
+<ol>
+<li>识别、摄取、加工抗原，参与固有免疫；</li>
+<li>抗原呈递与免疫激活作用；</li>
+<li>免疫调节作用；</li>
+<li>免疫耐受的诱导与维持。</li>
+</ol>
+</li>
+<li><strong>MHC Ⅰ 类分子和 Ⅱ 类分子抗原提呈途径</strong>：
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MHC Ⅰ 类分子途径</th>
+<th>MHC Ⅱ 类分子途径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抗原来源</td>
+<td>内源性抗原</td>
+<td>外源性抗原</td>
+</tr>
+<tr>
+<td>降解抗原的场所</td>
+<td>免疫蛋白酶体</td>
+<td>M Ⅱ C、溶酶体</td>
+</tr>
+<tr>
+<td>抗原与 MHC 结合场所</td>
+<td>内质网</td>
+<td>M Ⅱ C</td>
+</tr>
+<tr>
+<td>提呈抗原肽的 MHC</td>
+<td>MHC Ⅰ 类分子</td>
+<td>MHC Ⅱ 类分子</td>
+</tr>
+<tr>
+<td>伴侣分子与抗原肽转运分子</td>
+<td>钙联蛋白、TAP 等</td>
+<td>Ii 链、钙联蛋白等</td>
+</tr>
+<tr>
+<td>加工与提呈抗原的细胞</td>
+<td>所有有核细胞</td>
+<td>专职性抗原提呈细胞</td>
+</tr>
+<tr>
+<td>识别和应答细胞</td>
+<td>CD8<sup>+</sup>T 细胞（CTL）</td>
+<td>CD4<sup>+</sup>T 细胞（Th）</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="t-淋巴细胞介导的适应性免疫应答">T 淋巴细胞介导的适应性免疫应答 <a class="markdownIt-Anchor" href="#t-淋巴细胞介导的适应性免疫应答">#</a></h2>
+<ol>
+<li><strong>T 细胞活化的双信号</strong>：</li>
+<li><strong>效应 T 细胞的亚群及免疫保护功能（教材表 12-1 免疫保护作用）</strong>：</li>
+<li><strong>CTL 杀伤靶细胞的机制</strong>：</li>
+</ol>
+<h2 id="b-淋巴细胞介导的适应性免疫应答">B 淋巴细胞介导的适应性免疫应答 <a class="markdownIt-Anchor" href="#b-淋巴细胞介导的适应性免疫应答">#</a></h2>
+<ol>
+<li><strong>B 细胞对 TI 和 TD 抗原应答的区别</strong>：</li>
+<li><strong>B 细胞受 TD 抗原刺激活化所需的信号</strong>：</li>
+<li><strong>抗体产生的一般规律</strong>：</li>
+</ol>
+<h2 id="固有免疫系统及其介导的应答">固有免疫系统及其介导的应答 <a class="markdownIt-Anchor" href="#固有免疫系统及其介导的应答">#</a></h2>
+<ol>
+<li><strong>固有免疫系统的组成和固有免疫细胞的分类</strong>：</li>
+<li><strong>模式识别受体和病原相关分子模式的概念</strong>：</li>
+<li><strong>巨噬细胞表面主要的模式识别受体</strong>：</li>
+<li><strong>固有免疫的作用特点（教材 p126）</strong>：</li>
+</ol>
+<h2 id="黏膜免疫的细胞及其功能">黏膜免疫的细胞及其功能 <a class="markdownIt-Anchor" href="#黏膜免疫的细胞及其功能">#</a></h2>
+<ol>
+<li><strong>黏膜免疫系统和黏膜相关淋巴组织的组成</strong>：</li>
+</ol>
+<h2 id="超敏反应">超敏反应 <a class="markdownIt-Anchor" href="#超敏反应">#</a></h2>
+<ol>
+<li><strong>超敏反应的概念和分型</strong>：</li>
+<li><strong>各类超敏反应的发生机制及典型疾病（教材表 18-1）</strong>：</li>
+</ol>
+<h2 id="免疫耐受">免疫耐受 <a class="markdownIt-Anchor" href="#免疫耐受">#</a></h2>
+<ol>
+<li><strong>免疫耐受的概念和形成机制</strong>：</li>
+</ol>
+<h2 id="免疫缺陷病">免疫缺陷病 <a class="markdownIt-Anchor" href="#免疫缺陷病">#</a></h2>
+<ol>
+<li><strong>免疫缺陷病的概念、分类及临床特点</strong>：</li>
+</ol>
+<h2 id="免疫学防治">免疫学防治 <a class="markdownIt-Anchor" href="#免疫学防治">#</a></h2>
+<ol>
+<li><strong>人工免疫的分类并举例</strong>：</li>
+<li><strong>疫苗的种类</strong>：</li>
+</ol>
+<h2 id="肿瘤免疫">肿瘤免疫 <a class="markdownIt-Anchor" href="#肿瘤免疫">#</a></h2>
+<ol>
+<li><strong>肿瘤细胞的免疫逃逸机制</strong>：</li>
+<li><strong>肿瘤免疫治疗的分类及举例</strong>：</li>
+</ol>
+<h2 id="移植免疫">移植免疫 <a class="markdownIt-Anchor" href="#移植免疫">#</a></h2>
+<ol>
+<li><strong>同种异型抑制排斥反应的分类</strong>：</li>
+<li><strong>宿主抗移植物反应的分类</strong>：</li>
+</ol>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -4004,35 +4414,24 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <li>主要组织相容性复合体</li>
 <li><a href="/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E8%B6%85%E6%95%8F%E5%8F%8D%E5%BA%94/">超敏反应</a></li>
 </ul>
-<details class="note default">
-<summary id='重点'><p>重点</p>
-</summary>
-<ol>
-<li>免疫系统的组成；</li>
-<li>举例说明免疫系统的三大功能；</li>
-<li>免疫系统的种类及其特点。</li>
-</ol>
-</details>
+<p><a href="/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E5%85%8D%E7%96%AB%E5%A4%A7%E9%A2%98%E9%87%8D%E7%82%B9/">免疫大题重点</a></p>
 <h2 id="免疫系统的组成"><mark>免疫系统的组成</mark> <a class="markdownIt-Anchor" href="#免疫系统的组成">#</a></h2>
 <ul>
 <li><strong>免疫器官</strong>：
 <ul>
 <li>中枢：胸腺、骨髓</li>
-<li>外周：脾脏、淋巴结</li>
+<li>外周：脾脏、淋巴结、黏膜相关淋巴组织、<em>皮肤相关淋巴组织</em></li>
 </ul>
 </li>
-<li><strong>免疫细胞</strong>：T 细胞、B 细胞、NK 细胞……</li>
+<li><strong>免疫细胞</strong>：T 细胞、B 细胞、吞噬细胞、DC、NK 细胞等</li>
 <li><strong>免疫分子</strong>：膜型分子、分泌型分子</li>
 </ul>
 <h2 id="免疫系统的基本功能">免疫系统的基本功能 <a class="markdownIt-Anchor" href="#免疫系统的基本功能">#</a></h2>
-<dl>
-<dt><mark>免疫防御</mark>（immune defense）</dt>
-<dd>防止病原体入侵及清除已入侵病原体及其他有害物质。</dd>
-<dt><mark>免疫监视</mark>（immune surveillance）</dt>
-<dd>随时发现和清除体内出现的“非己”成分。</dd>
-<dt><mark>免疫自稳</mark>（immune homeostasis）</dt>
-<dd>通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</dd>
-</dl>
+<ol>
+<li><mark>免疫防御</mark>（immune defense）：防止病原体入侵及清除已入侵病原体及其他有害物质。</li>
+<li><mark>免疫监视</mark>（immune surveillance）：随时发现和清除体内出现的“非己”成分。</li>
+<li><mark>免疫自稳</mark>（immune homeostasis）：通过<strong>免疫耐受</strong>（机体对自身组织细胞不产生免疫应答）和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定。</li>
+</ol>
 <h2 id="免疫应答的种类">免疫应答的种类 <a class="markdownIt-Anchor" href="#免疫应答的种类">#</a></h2>
 <dl>
 <dt>免疫应答（immune response）</dt>
@@ -5883,8 +6282,8 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <dd>介导体液免疫的重要效应分子。</dd>
 <dd>免疫系统在抗原刺激下，由 B 细胞或记忆 B 细胞增殖分化成的浆细胞所产生的、
 可与相应抗原发生特异性结合的<strong>免疫球蛋白</strong>（<abbr title="免疫球蛋白">Ig</abbr>）。</dd>
-<dd>主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</dd>
 </dl>
+<p>抗体主要存在于血清中，也存在于如呼吸道黏膜、小肠黏膜液、唾液、乳汁等其他体液中。</p>
 <dl>
 <dt>免疫球蛋白（immunoglobulin，<abbr title="免疫球蛋白">Ig</abbr>）</dt>
 <dd>具有抗体活性或化学结构与抗体相似的球蛋白的统称。</dd>
@@ -5896,9 +6295,13 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 </ul>
 <span id="more"></span>
 <h2 id="抗体的结构">抗体的结构 <a class="markdownIt-Anchor" href="#抗体的结构">#</a></h2>
-<p>抗体的<strong>基本结构</strong>是由两条完全相同的<strong>重链</strong>和<strong>轻链</strong>通过二硫键链接的“Y”形单体。</p>
-<h3 id="抗体的分类和分型">抗体的分类和分型 <a class="markdownIt-Anchor" href="#抗体的分类和分型">#</a></h3>
-<h4 id="类和亚类">类和亚类 <a class="markdownIt-Anchor" href="#类和亚类">#</a></h4>
+<h3 id="抗体的基本结构">抗体的基本结构 <a class="markdownIt-Anchor" href="#抗体的基本结构">#</a></h3>
+<h4 id="重链和轻链">重链和轻链 <a class="markdownIt-Anchor" href="#重链和轻链">#</a></h4>
+<p>抗体的<strong>基本结构</strong>是由两条完全相同的<strong>重链</strong>（<strong>H</strong>）和<strong>轻链</strong>（<strong>L</strong>）通过二硫键链接的“Y”形单体。</p>
+<details class="note info" open>
+<summary id='抗体的分类和分型'><p>抗体的分类和分型</p>
+</summary>
+<p>类和亚类：</p>
 <ul>
 <li>类：根据 <strong>H 链</strong> C 区抗原性的差异</li>
 <li>亚类：铰链区氨基酸的组成和重链二硫键的数目、位置</li>
@@ -5943,14 +6346,18 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 </tr>
 </tbody>
 </table>
-<h4 id="型和亚型">型和亚型 <a class="markdownIt-Anchor" href="#型和亚型">#</a></h4>
-<p><strong>型</strong>：根据 <strong>L 链</strong> C 区氨基酸的组成和排列顺序</p>
+<p>型和亚型：</p>
+<ul>
+<li><strong>型</strong>：根据 <strong>L 链</strong> C 区氨基酸的组成和排列顺序
 <ul>
 <li>κ（kappa）型</li>
 <li>λ（lambda）型</li>
 </ul>
-<p><strong>亚型</strong>：根据 λ 链 C 区个别氨基酸的不同：λ1/OZ(+)、λ2/OZ(-)、λ3/Kern(+)、λ4/Kern(-)</p>
-<h3 id="可变区和恒定区">可变区和恒定区 <a class="markdownIt-Anchor" href="#可变区和恒定区">#</a></h3>
+</li>
+<li><strong>亚型</strong>：根据 λ 链 C 区个别氨基酸的不同：λ1/OZ(+)、λ2/OZ(-)、λ3/Kern(+)、λ4/Kern(-)</li>
+</ul>
+</details>
+<h4 id="可变区和恒定区">可变区和恒定区 <a class="markdownIt-Anchor" href="#可变区和恒定区">#</a></h4>
 <img data-src="/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E6%8A%97%E4%BD%93/%E6%8A%97%E4%BD%93%E7%BB%93%E6%9E%84%E5%9F%9F.jpg" class="" title="抗体分子 V 区和 C 区结构示意图" alt="抗体分子 V 区和 C 区结构示意图">
 <dl>
 <dt>可变区（variable region，<mark><abbr title="可变区">V 区</abbr></mark>）</dt>
@@ -5984,7 +6391,7 @@ V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变�
 <li>IgG/IgA/IgD：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3</li>
 <li>IgM/IgE：C<sub>H</sub>1、C<sub>H</sub>2、C<sub>H</sub>3、C<sub>H</sub>4</li>
 </ul>
-<h3 id="铰链区">铰链区 <a class="markdownIt-Anchor" href="#铰链区">#</a></h3>
+<h4 id="铰链区">铰链区 <a class="markdownIt-Anchor" href="#铰链区">#</a></h4>
 <dl>
 <dt>铰链区（hinge region）</dt>
 <dd>位于 C<sub>H</sub>1 和 C<sub>H</sub>2 之间，含有丰富的脯氨酸，易弯曲伸展，能改变”Y“形两个臂之间的距离，有利于两个臂同时结合两个相同的抗原表位。</dd>
@@ -6017,7 +6424,7 @@ V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变�
 <dt>可结晶片段（fragment crystallizable，<abbr title="可结晶片段">Fc</abbr>）</dt>
 <dd>不可与抗原结合，但可执行免疫球蛋白的其他生物学功能。</dd>
 </dl>
-<h3 id="超免疫球蛋白家族">超免疫球蛋白家族 <a class="markdownIt-Anchor" href="#超免疫球蛋白家族">#</a></h3>
+<h3 id="免疫球蛋白超家族">免疫球蛋白超家族 <a class="markdownIt-Anchor" href="#免疫球蛋白超家族">#</a></h3>
 <dl>
 <dt>免疫球蛋白折叠（immunoglobulin fold）</dt>
 <dd>抗体分子中 <abbr title="互补决定区（高变区）">CDR</abbr> 外的结构域氨基酸序列相对保守（有较高的同源性），折叠成特定的球状结构。</dd>
@@ -6036,13 +6443,13 @@ V<sub>H</sub> 和 V<sub>L</sub> 共六个 <abbr title="互补决定区（高变�
 <dl>
 <dt>同种型（isotype）</dt>
 <dd>存在于<strong>同种</strong>抗体分子中的抗原表位。</dd>
-<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，为<strong>种属型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，为<strong>种属型标志</strong>，存在于 <ins><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></ins>。</dd>
 <dt>同种异型（allotype）</dt>
 <dd>存在于<strong>同种属中不同个体</strong> <abbr title="抗体">Ab</abbr> 中的抗原表位。</dd>
-<dd>是同一种属不同个体 <abbr title="抗体">Ab</abbr> 分子所具有的不同抗原特异性标志，为<strong>个体型标志</strong>，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dd>是同一种属不同个体 <abbr title="抗体">Ab</abbr> 分子所具有的不同抗原特异性标志，为<strong>个体型标志</strong>，存在于 <ins><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></ins>。</dd>
 <dt>独特型（idiotype，Id）</dt>
 <dd>每个<strong>抗体分子</strong>所特有的抗原特异性标志，其表位被称为<strong>独特位</strong>（idiotope）。</dd>
-<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，存在于 <strong><abbr title="抗体">Ab</abbr> 的 <abbr title="恒定区">C 区</abbr></strong>。</dd>
+<dd>是同一种属所有个体 <abbr title="抗体">Ab</abbr> 分子共有的抗原特异性标志，存在于 <ins><abbr title="可变区">V 区</abbr> 的互补决定区（<abbr title="互补决定区（高变区）">CDR</abbr>）</ins>。</dd>
 </dl>
 <h2 id="抗体的功能">抗体的功能 <a class="markdownIt-Anchor" href="#抗体的功能">#</a></h2>
 <h3 id="抗体-v-区的作用">抗体 V 区的作用 <a class="markdownIt-Anchor" href="#抗体-v-区的作用">#</a></h3>
@@ -6146,13 +6553,11 @@ FcRn 可与 IgG 特异性结合，将其转运到滋养层的另一侧，使其�
 <dd>IgD 铰链区较长，易被水解，半衰期只有 3 天。</dd>
 </dl>
 <h3 id="ige">IgE <a class="markdownIt-Anchor" href="#ige">#</a></h3>
-<dl>
-<dt>IgE（免疫球蛋白 E）</dt>
-<dd><strong>单体分子</strong>主要由黏膜下淋巴组织中的浆细胞分泌，血清中<strong>含量最低</strong>（0.002%）。</dd>
-<dd>IgE 是一类 <mark>亲细胞抗体</mark>，其 C<sub>H</sub>2 和 C<sub>H</sub>3 可与肥大细胞和嗜碱性粒细胞上的高亲和力 <strong>FcεR Ⅰ</strong>
-结合，当结合再次进入机体的抗原后可引起 <strong>Ⅰ 型超敏反应</strong>。</dd>
-<dd>过敏性疾病和某些<strong>寄生虫病</strong>患者体内的特异性 IgE 水平增高。</dd>
-</dl>
+<p>IgE（免疫球蛋白 E）：<strong>单体分子</strong>，主要由黏膜下淋巴组织中的浆细胞分泌，血清中<strong>含量最低</strong>（0.002%）。</p>
+<ul>
+<li>IgE 是一类 <mark>亲细胞抗体</mark>，其 C<sub>H</sub>2 和 C<sub>H</sub>3 可与肥大细胞和嗜碱性粒细胞上的高亲和力 <strong>FcεR Ⅰ</strong> 结合，当结合再次进入机体的抗原后可引起 <strong>Ⅰ 型超敏反应</strong>。</li>
+<li>过敏性疾病和某些<strong>寄生虫病</strong>患者体内的特异性 IgE 水平增高。</li>
+</ul>
 <h2 id="人工制备抗体">人工制备抗体 <a class="markdownIt-Anchor" href="#人工制备抗体">#</a></h2>
 <h3 id="多克隆抗体">多克隆抗体 <a class="markdownIt-Anchor" href="#多克隆抗体">#</a></h3>
 <dl>
@@ -6397,9 +6802,6 @@ CD4<sup>+</sup>T 细胞表位，活化 CD4<sup>+</sup>T 细胞。</p>
 <li><a href="/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E6%8A%97%E4%BD%93/?highlight=独特型#抗体的多样性和免疫原性"><strong>独特型</strong></a>（idiotype, Id）<strong>抗原</strong>（idiotypic antigen）：具有<strong>免疫原性</strong>，可刺激机体内的其他 B 细胞产生相应抗体的<strong>抗体</strong>，其所含的抗原表位称为<strong>独特型抗原</strong>。</li>
 </ol>
 <p>Id 抗原诱导产生的抗体（即<strong>抗抗体</strong>），称为<strong>抗独特型抗体</strong>（AId）。</p>
-<div class="note info"><p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的
-<strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。</p>
-</div>
 <h3 id="根据抗原提呈细胞内抗原的来源">根据抗原提呈细胞内抗原的来源 <a class="markdownIt-Anchor" href="#根据抗原提呈细胞内抗原的来源">#</a></h3>
 <ol>
 <li><strong>内源性抗原</strong>（endogenous antibody）：在 <abbr title="抗原提呈细胞">APC</abbr> 内新合成的抗原，如病毒感染细胞合成的病毒蛋白、肿瘤细胞合成的肿瘤抗原等。<br/>
@@ -6411,8 +6813,7 @@ CD4<sup>+</sup>T 细胞表位，活化 CD4<sup>+</sup>T 细胞。</p>
 <h3 id="超抗原">超抗原 <a class="markdownIt-Anchor" href="#超抗原">#</a></h3>
 <dl>
 <dt>超抗原（superantigen，SAg）</dt>
-<dd>某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T
-细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆抑制剂</strong>。</dd>
+<dd>某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T 细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆抑制剂</strong>。</dd>
 </dl>
 <p class="align-text-center table-caption ">
       超抗原和普通抗原的区别
@@ -6471,7 +6872,7 @@ CD4<sup>+</sup>T 细胞表位，活化 CD4<sup>+</sup>T 细胞。</p>
 <li><strong>有机物</strong>，如矿物油</li>
 <li><strong>脂质体</strong>，如免疫刺激复合物</li>
 </ol>
-<p>动物实验常用<strong>弗氏完全佐剂</strong>（Freund complete adjuvant，FCA） 和<strong>弗氏不完全佐剂</strong>（Freund incomplete adjuvant，FIA）。</p>
+<p>动物实验常用<strong>弗氏完全佐剂</strong>（Freund complete adjuvant，<strong>FCA</strong>） 和<strong>弗氏不完全佐剂</strong>（Freund incomplete adjuvant，<strong>FIA</strong>）。</p>
 <p class="align-text-center table-caption ">
       两种弗氏佐剂对比
     </p>
@@ -9760,12 +10161,12 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <h2 id="细胞因子的共同特点">细胞因子的共同特点 <a class="markdownIt-Anchor" href="#细胞因子的共同特点">#</a></h2>
 <h3 id="细胞因子的基本特性">细胞因子的基本特性 <a class="markdownIt-Anchor" href="#细胞因子的基本特性">#</a></h3>
 <ol>
-<li>小分子糖蛋白</li>
-<li>高效性</li>
-<li>通过与受体结合发挥生物学作用</li>
-<li>可诱导产生，且合成具有自限性</li>
-<li>半寿期短</li>
-<li>（多数）效应范围小</li>
+<li>小分子可溶性蛋白质，多为糖蛋白；</li>
+<li>高效性，一般在较低浓度下即有生物学效应；</li>
+<li>通过与受体结合发挥生物学作用；</li>
+<li>可诱导产生，且合成具有自限性；</li>
+<li>半寿期短；</li>
+<li>（绝大多数）效应范围小。</li>
 </ol>
 <h3 id="细胞因子的作用方式">细胞因子的作用方式 <a class="markdownIt-Anchor" href="#细胞因子的作用方式">#</a></h3>
 <ol>
@@ -11694,100 +12095,88 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
     <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<dl>
 <dt>补体系统（complement system）| 补体级联反应（complement cascade）</dt>
-<dd>是先天免疫系统的一部分，由存在于<strong>人和脊椎动物血清、组织液中及细包膜表面</strong>的一种<strong>活化后具有酶活性的蛋白质</strong>（补体固有成分）、调节蛋白和补体受体组成。</dd>
+<dd>是先天免疫系统的一部分，由存在于<strong>人和脊椎动物血清、组织液中及细胞膜表面</strong>的一种<strong>活化后具有酶活性的蛋白质</strong>（补体固有成分）、调节蛋白和补体受体组成。</dd>
 <dd>可增强抗体和吞噬细胞清除机体中的病原微生物和损伤细胞的能力，增强炎症反应，并攻击病原体的细胞膜。</dd>
 </dl>
 <span id="more"></span>
 <h2 id="补体的组成和生物学特性">补体的组成和生物学特性 <a class="markdownIt-Anchor" href="#补体的组成和生物学特性">#</a></h2>
 <h3 id="补体系统的组成">补体系统的组成 <a class="markdownIt-Anchor" href="#补体系统的组成">#</a></h3>
-<h4 id="补体固有成分">补体固有成分 <a class="markdownIt-Anchor" href="#补体固有成分">#</a></h4>
-<dl>
-<dt><strong>补体固有成分</strong></dt>
-<dd>存在于血浆及体液中，参与补体激活的蛋白质。</dd>
-</dl>
-<p>包括：</p>
+<ol>
+<li><strong>补体固有成分</strong>：存在于血浆及体液中，参与补体激活的蛋白质；
 <ol>
 <li>经典途径：C1q、C1r、C1s、C2、C4</li>
 <li>旁路途径：B 因子、D 因子、P 因子（properdin，备解素）、I 因子</li>
 <li>凝集素途径：<abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr>/<abbr title="纤维胶原素（ficolin）">FCN</abbr>、<abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr> 相关丝氨酸蛋白酶（<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr>）</li>
 <li>共同成分：C3、C5、C6、C7、C8、C9</li>
 </ol>
-<h4 id="补体调节蛋白">补体调节蛋白 <a class="markdownIt-Anchor" href="#补体调节蛋白">#</a></h4>
-<dl>
-<dt>补体调节蛋白（complement regulatory protein）</dt>
-<dd>存在于血浆和细胞膜表面、通过调节补体激活途径中关键酶而控制补体活化强度和范围的蛋白质。</dd>
-</dl>
-<p>包括 C1 抑制剂、I 因子、H 因子、D 因子、C4 结合蛋白等。</p>
-<h4 id="补体受体">补体受体 <a class="markdownIt-Anchor" href="#补体受体">#</a></h4>
-<dl>
-<dt>补体受体（complement receptor，<abbr title="补体受体（complement receptor）">CR</abbr>）</dt>
-<dd>存在于细包膜表面，能够与补体活化后所形成的活性片段相结合，介导多种生物效应的受体分子。</dd>
-</dl>
-<p>包括 CR1~5、C3aR、C2aR、C4aR 等。</p>
+</li>
+<li><strong>补体调节蛋白</strong>（complement regulatory protein）：存在于血浆和细胞膜表面、通过调节补体激活途径中关键酶而控制补体活化强度和范围的蛋白质，包括 C1 抑制剂、I 因子、H 因子、D 因子、C4 结合蛋白等；</li>
+<li><strong>补体受体</strong>（complement receptor，<strong><abbr title="补体受体（complement receptor）">CR</abbr></strong>）：存在于细包膜表面，能够与补体活化后所形成的活性片段相结合，介导多种生物效应的受体分子，包括 CR1~5、C3aR、C2aR、C4aR 等。</li>
+</ol>
 <h3 id="补体的理化性质">补体的理化性质 <a class="markdownIt-Anchor" href="#补体的理化性质">#</a></h3>
 <ul>
-<li>补体系统各成分均为<strong>糖蛋白</strong>，但有不同的肽链结构；</li>
-<li><strong>补体固有成分对热不稳定</strong>，56℃，30min 灭活，应保存在 -20℃ 以下；紫外线照射和机械振荡可使补体失活；</li>
-<li>正常生理情况下，以<strong>非活化</strong>形式存在；</li>
-<li>血清中 <strong>C3</strong> 含量最多，<strong>D 因子</strong>最少。</li>
+<li>补体系统各成分均为<ins>糖蛋白</ins>，但有不同的肽链结构；</li>
+<li><ins>补体固有成分对热不稳定</ins>，56℃，30min 灭活，应保存在 -20℃ 以下；紫外线照射和机械振荡可使补体失活；</li>
+<li>正常生理情况下，以<ins>非活化</ins>形式存在；</li>
+<li>血清中 <ins>C3</ins> 含量最多，<ins>D 因子</ins>最少。</li>
 </ul>
 <h3 id="补体的代谢">补体的代谢 <a class="markdownIt-Anchor" href="#补体的代谢">#</a></h3>
 <ol>
-<li>来源：
+<li>补体的来源：
 <ul>
-<li>肝细胞：血浆中大部份补体；</li>
-<li>巨噬细胞：在不同组织中，尤其是炎症灶中，巨噬细胞是补体的主要来源。</li>
+<li><ins>肝细胞</ins>：血浆中大部份补体；</li>
+<li><ins>巨噬细胞</ins>：在不同组织中，尤其是炎症灶中，巨噬细胞是补体的主要来源。</li>
 </ul>
 </li>
-<li>生物合成的调节：
+<li>补体生物合成的调节：
 <ul>
-<li>补体基因表达存在组织特异性：如家族性 C3 缺乏综合征患者肝细胞产生的 C3 含量减少，但巨噬细胞产生的 C3 可超正常水平。</li>
-<li>补体的合成受多种因素的影响</li>
+<li>补体基因表达存在<ins>组织特异性</ins>，如家族性 C3 缺乏综合征患者肝细胞产生的 C3 含量减少，但巨噬细胞产生的 C3 可超正常水平；</li>
+<li>补体的合成<ins>受多种因素的影响</ins>。</li>
 </ul>
 </li>
-<li>分解代谢：代谢率快，每天约有一般更新。</li>
+<li>补体的分解代谢：<ins>代谢率快</ins>，每天约有一半更新。</li>
 </ol>
 <h2 id="补体激活途径">补体激活途径 <a class="markdownIt-Anchor" href="#补体激活途径">#</a></h2>
 <p><strong>补体激活</strong>指补体从酶原状态转化为具有酶活性状态的过程。根据<strong>激活物</strong>的不同，可将补体激活途径分为<span class="horizontal-list"><span class="horizontal-list-item"><strong>经典途径</strong></span><span class="horizontal-list-item"><strong>MBL 途径</strong></span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item"><strong>旁路途径</strong></span></span>。</p>
-<p>三种激活途径中从 C3 转化酶形成开始，之后的过程基本相同。</p>
+<p>三种激活途径中 C5 激活至共膜复合物形成的过程相同：</p>
 <img data-src="/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB%E9%80%94%E5%BE%84%E7%9A%84%E5%85%B1%E5%90%8C%E7%82%B9.svg" class="" title="补体激活途径的共同点" alt="补体激活途径的共同点">
 <p>TODO: 三种激活途径的示意图<span class="hide">不要期待 TODO</span></p>
 <h3 id="经典途径">经典途径 <a class="markdownIt-Anchor" href="#经典途径">#</a></h3>
 <ol>
-<li>激活物：抗原-抗体复合物（IgG 或 IgM）</li>
+<li>激活物：<ins>抗原-抗体复合物（IgG 或 IgM）</ins></li>
 <li>参与成分：见 <a href="#%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90">补体系统的组成</a></li>
-<li>激活过程
+<li>激活过程：
 <ol>
-<li>识别阶段：C1q 与两个以上 Fc 段结合 → 活化 C1r → 激活 C1s → 形成 <strong>C1 脂酶（C1 复合物）</strong>（C1qr<sub>2</sub>s<sub>2</sub>）</li>
-<li>活化阶段：<strong>C3 转化酶</strong>（C4b2a）形成；<strong>C5 转化酶</strong>（C4b2a3b）形成</li>
-<li>膜攻击阶段：<abbr title="膜攻击复合物">MAC</abbr>（C5b6789<sub>n</sub>）</li>
+<li><strong>识别阶段</strong>：C1q 与两个以上抗体 Fc 段结合 → 激活 C1r → 激活 C1s → 形成 C1 脂酶（C1 复合物）（C1qr<sub>2</sub>s<sub>2</sub>）</li>
+<li><strong>活化阶段</strong>：<strong>C3 转化酶</strong>（<ins>C4b2a</ins>）形成；<strong>C5 转化酶</strong>（<ins>C4b2a3b</ins>）形成</li>
+<li><strong>膜攻击阶段</strong>：<abbr title="膜攻击复合物">MAC</abbr>（C5b6789<sub>n</sub>）</li>
 </ol>
 </li>
-<li>效应特点：在感染后期或再次感染中发挥作用</li>
+<li>效应特点：<ins>在感染后期或再次感染中发挥作用</ins></li>
 </ol>
 <p>TODO: C3 转化酶和 C5 转换酶的的形成图示</p>
 <h3 id="mbl-途径"><abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr> 途径 <a class="markdownIt-Anchor" href="#mbl-途径">#</a></h3>
 <ol>
-<li>激活物：微生物表面的糖结构</li>
-<li>参与成分：见 <a href="#%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90">补体系统的组成</a>，<abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr> 或 <abbr title="纤维胶原素（ficolin）">FCN</abbr> 和 <abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr>-1、<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr>-2
+<li>激活物：<ins>微生物表面的糖结构</ins></li>
+<li>参与成分：见 <a href="#%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90">补体系统的组成</a>，一个 <abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr> 或 <abbr title="纤维胶原素（ficolin）">FCN</abbr> 和 <abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr>-1、<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr>-2
 各两个结合形成 <abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr>-<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr> 或 <abbr title="纤维胶原素（ficolin）">FCN</abbr>-<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr> 复合物，相当于经典途径中的 C1 脂酶</li>
 <li>激活过程：除了以 <abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr>-<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr> 或 <abbr title="纤维胶原素（ficolin）">FCN</abbr>-<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr> 复合物 取代 C1 脂酶外，均与经典途径一致</li>
-<li>效应特点：在感染早期或初次感染中发挥作用</li>
+<li>效应特点：<ins>在感染早期或初次感染中发挥作用</ins></li>
 </ol>
 <h3 id="旁路途径">旁路途径 <a class="markdownIt-Anchor" href="#旁路途径">#</a></h3>
 <p>又称<strong>替代途径</strong>，其不依赖抗体，而是由微生物或外源异物直接激活
 C3，在多种辅助因子的参与下激活补体。</p>
 <ol>
-<li>激活物：细菌、真菌或病毒感染的细胞（或聚合 IgA、IgG4）</li>
+<li>激活物：<ins>细菌、真菌或病毒感染的细胞</ins>（或聚合 IgA、IgG4）</li>
 <li>参与成分：见 <a href="#%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90">补体系统的组成</a></li>
 <li>激活过程
 <ol>
-<li>准备阶段：旁路途径 C3 转化酶（C3bBb）形成</li>
-<li>激活阶段：膜表面结构保护 C3b，C3 转化酶（C3bBb）、C5 转化酶（C3bBb3b）形成</li>
+<li><strong>准备阶段</strong>：<strong>旁路途径 C3 转化酶</strong>（<ins>C3bBb</ins>）（低浓度 C3 转化酶）形成</li>
+<li><strong>激活阶段</strong>：膜表面结构保护 C3b，<strong>C3 转化酶</strong>（<ins>C3bBb</ins>）、<strong>C5 转化酶</strong>（<ins>C3bBb3b</ins>）形成</li>
 <li><strong>正反馈环路</strong>：C3 被裂解后与 B 因子形成更多的低浓度 C3 转化酶</li>
 </ol>
 </li>
-<li>效应特点：在感染早期或初次感染即可发挥作用</li>
+<li>效应特点：<ins>在感染早期或初次感染即可发挥作用</ins></li>
 </ol>
 <p><strong>备解素</strong>（P 因子）可结合细菌表面，稳定 C3b 与 Bb 结合形成 C3 转化酶，防止其被降解。</p>
 <h2 id="补体激活的调节">补体激活的调节 <a class="markdownIt-Anchor" href="#补体激活的调节">#</a></h2>
@@ -11819,7 +12208,7 @@ C3，在多种辅助因子的参与下激活补体。</p>
 <ol>
 <li><strong>细胞毒作用</strong>：<abbr title="膜攻击复合物">MAC</abbr> 攻击靶细胞（主要是 G<sup>-</sup> 菌），致细胞溶破</li>
 <li><strong>调理作用</strong>：C3b、C4b、iC3b 和抗体与细菌或颗粒物质结合，分别结合于<strong>吞噬细胞</strong>表面的 <abbr title="补体受体（complement receptor）">CR</abbr> 和 FcR，促进吞噬细胞的吞噬作用。</li>
-<li><strong>炎症介质作用</strong>
+<li><strong>炎症介质作用</strong>：
 <ol>
 <li>过敏毒素作用：C5a、C3a、C4a，与肥大细胞或嗜碱性粒细胞结合，使其释放活性物质，导致过敏性病理变化</li>
 <li>趋化作用：C5a、C3a、C4a、C5b67，使吞噬细胞向感染部位聚集，引发炎症反应</li>
@@ -15723,6 +16112,410 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+
+
+    <link rel="stylesheet" href="viewer.css">
+
+
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
+
+
+  <script src="viewer.js"></script>
+
+  </head>
+
+  <body tabindex="1">
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div class="splitToolbarButton toggled">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+            <span id="findResultsCount" class="toolbarLabel hidden"></span>
+          </div>
+
+          <div id="findbarMessageContainer">
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+            </button>
+            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+            </button>
+            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+            </button>
+            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
+
+            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div class="clearBoth"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+            </div>
+            <div class="row">
+              <input type="password" id="password" class="toolbarField">
+            </div>
+            <div class="buttonRow">
+              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
+            </div>
+            <div class="buttonRow">
+              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+            </div>
+            <div class="row">
+              <progress value="0" max="100"></progress>
+              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+            </div>
+            <div class="buttonRow">
+              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- overlayContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+  </body>
+</html>
 ]]></content>
   </entry>
   <entry>
@@ -30276,410 +31069,6 @@ const pdfjsBuild = '3538ef0';
 ;
 });
 //# sourceMappingURL=pdf.js.map]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<!--
-Copyright 2012 Mozilla Foundation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Adobe CMap resources are covered by their own copyright but the same license:
-
-    Copyright 1990-2015 Adobe Systems Incorporated.
-
-See https://github.com/adobe-type-tools/cmap-resources
--->
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PDF.js viewer</title>
-
-
-    <link rel="stylesheet" href="viewer.css">
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="../build/pdf.js"></script>
-
-
-  <script src="viewer.js"></script>
-
-  </head>
-
-  <body tabindex="1">
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div class="splitToolbarButton toggled">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
-
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
-              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-            </button>
-            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
-              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
-              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-            </button>
-            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
-              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-            </button>
-            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
-              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
-
-            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
-              <span data-l10n-id="spread_none_label">No Spreads</span>
-            </button>
-            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
-              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-            </button>
-            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
-              <span data-l10n-id="spread_even_label">Even Spreads</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
-                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-                </button>
-
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
-                  <span data-l10n-id="bookmark_label">Current View</span>
-                </a>
-
-                <div class="verticalToolbarSeparator hiddenSmallView"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-
-        <div id="errorWrapper" hidden='true'>
-          <div id="errorMessageLeft">
-            <span id="errorMessage"></span>
-            <button id="errorShowMore" data-l10n-id="error_more_info">
-              More Information
-            </button>
-            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
-              Less Information
-            </button>
-          </div>
-          <div id="errorMessageRight">
-            <button id="errorClose" data-l10n-id="error_close">
-              Close
-            </button>
-          </div>
-          <div class="clearBoth"></div>
-          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="overlayContainer" class="hidden">
-        <div id="passwordOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
-            </div>
-            <div class="row">
-              <input type="password" id="password" class="toolbarField">
-            </div>
-            <div class="buttonRow">
-              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="documentPropertiesOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
-            </div>
-            <div class="buttonRow">
-              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="printServiceOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-            </div>
-            <div class="row">
-              <progress value="0" max="100"></progress>
-              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
-            </div>
-            <div class="buttonRow">
-              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- overlayContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-  </body>
-</html>
-]]></content>
   </entry>
   <entry>
     <title></title>
