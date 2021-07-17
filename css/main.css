@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #260aff;
+  background: #ff0052;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3806,5 +3806,17 @@ div.table-container::-webkit-scrollbar-thumb {
     --link-color: #FC642390;
     --link-hover-color: #FC6423; 
     border-bottom: none;
+}
+
+/**************************************************************************************/
+
+.category-all-page .category-list-item {
+    margin: 0.5px 2em 0.5px;
+}
+
+/**************************************************************************************/
+
+abbr {
+    cursor: pointer;
 }
 
