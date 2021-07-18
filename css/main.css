@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #d0ffff;
+  background: #86e8ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3340,9 +3340,9 @@ div.img-wrap-right { float: right; }
     counter-reset: hzlistCounter;
 }
 
-.horizontal-list::before {
-    content: ' ';
-}
+/* .horizontal-list::before { */
+/*     content: ' '; */
+/* } */
 
 .horizontal-list-item {
     counter-increment: hzlistCounter;
@@ -3352,9 +3352,9 @@ div.img-wrap-right { float: right; }
     content: counter(hzlistCounter, circled-number)
 }
 
-.horizontal-list-item::after {
-    content: ' '
-}
+/* .horizontal-list-item::after { */
+/*     content: ' ' */
+/* } */
 
 .horizontal-list-conjunction {
     font-size: 50%;
