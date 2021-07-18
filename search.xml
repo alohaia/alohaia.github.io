@@ -744,31 +744,6 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
-    <title>Git 实战</title>
-    <url>/Learning/Computer/Git/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
-<span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Electron+Vue 开发笔记软件</title>
     <url>/Projects/Softwares/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<ul>
@@ -814,6 +789,31 @@ then insert new method invokation);</li>
         <tag>Electron</tag>
         <tag>Vue</tag>
         <tag>Index</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 实战</title>
+    <url>/Learning/Computer/Git/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -2122,6 +2122,113 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       </tags>
   </entry>
   <entry>
+    <title>人类疱疹病毒</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success" open>
+<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人类发育的细胞学和遗传学基础</title>
     <url>/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>细胞增殖，遗传物质和遗传信息的传递以及一些基因分析技术。</p>
@@ -2615,113 +2722,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success" open>
-<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人胚发生和早期发育</title>
     <url>/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
     <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
@@ -3155,610 +3155,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>免疫大题重点</title>
-    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E5%85%8D%E7%96%AB%E5%A4%A7%E9%A2%98%E9%87%8D%E7%82%B9/</url>
-    <content><![CDATA[<p>免疫各章 PPT 后思考题。</p>
-<span id="more"></span>
-<h2 id="免疫学概述">免疫学概述 <a class="markdownIt-Anchor" href="#免疫学概述">#</a></h2>
-<ol>
-<li><strong>免疫系统的组成</strong>：
-<ol>
-<li>免疫器官：中枢免疫器官，包括胸腺、骨髓；外周免疫器官，包括脾脏、淋巴结和黏膜相关淋巴组织、<em>皮肤相关淋巴组织</em>；</li>
-<li>免疫分子：膜型分子、分泌型分子</li>
-<li>免疫细胞：T 细胞、B 细胞、吞噬细胞、DC、NK 细胞等</li>
-</ol>
-</li>
-<li><strong>举例说明免疫系统的三大功能</strong>：
-<ol>
-<li>免疫防御：防止病原体入侵及清除已入侵病原体及其他有害物质，如抗细菌、真菌、病毒等病原体的入侵。</li>
-<li>免疫监视：随时发现和清除体内出现的“非己”成分，如由基因突变产生的肿瘤细胞及衰老、死亡细胞等。</li>
-<li>免疫自稳：通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定，如机体对自身组织细胞不发生免疫应答，若免疫耐受被打破，免疫调节功能紊乱，会导致自身免疫病和过敏性疾病的发生。</li>
-</ol>
-</li>
-<li><strong>免疫应答的种类及其特点</strong>：
-<ul>
-<li>适应性免疫：<span class="horizontal-list"><span class="horizontal-list-item">特异性</span><span class="horizontal-list-item">耐受性</span><span class="horizontal-list-item">记忆性</span></span></li>
-<li>固有免疫：无以上特点</li>
-</ul>
-</li>
-</ol>
-<h2 id="免疫器官和组织">免疫器官和组织 <a class="markdownIt-Anchor" href="#免疫器官和组织">#</a></h2>
-<ol>
-<li><strong>简述中枢和外周免疫器官的组成和功能</strong>：
-<ul>
-<li>中枢免疫器官：
-<ol>
-<li>骨髓：
-<ol>
-<li>各类血细胞、免疫细胞发生的场所</li>
-<li>B 细胞 NK 细胞分化成熟的场所</li>
-<li>体液免疫应答发生的主要场所：<em>发生再次体液免疫应答后，抗体产生的主要部位</em></li>
-</ol>
-</li>
-<li>胸腺：
-<ol>
-<li>T 细胞分化、成熟的场所：<em>T 细胞迁移、阳性选择、阴性选择</em></li>
-<li>免疫调节作用：<em>细胞因子、胸腺肽类因子</em></li>
-<li>自身免疫耐受的建立与维持：<em>通过阴性选择形成中枢免疫耐受</em></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>外周免疫器官：
-<ol>
-<li>淋巴结：<span class="horizontal-list"><span class="horizontal-list-item">成熟 T 细胞（75%）、B 细胞（25%）定居的场所</span><span class="horizontal-list-item">适应性免疫应答的主要场所</span><span class="horizontal-list-item">过滤作用（淋巴液）</span><span class="horizontal-list-item">参与淋巴细胞再循环</span></span></li>
-<li>脾脏：<span class="horizontal-list"><span class="horizontal-list-item">T 细胞（40%）和 B 细胞（60%）定居的场所</span><span class="horizontal-list-item">免疫应答发生的场所</span><span class="horizontal-list-item">过滤作用（血液）</span><span class="horizontal-list-item">生成生物活性物质，<em>如补体、细胞因子</em></span></span></li>
-<li>黏膜相关淋巴组织：<span class="horizontal-list"><span class="horizontal-list-item">行使黏膜局部免疫应答</span><span class="horizontal-list-item">产生分泌型 IgA（SIgA）</span></span></li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="抗原">抗原 <a class="markdownIt-Anchor" href="#抗原">#</a></h2>
-<ol>
-<li><strong>简述抗原的概念和基本性质</strong>：
-<ul>
-<li>概念：所有能激活和诱导免疫应答的物质。</li>
-<li>基本性质：
-<ul>
-<li>免疫原性：抗原被 TCR 或 BCR 识别及结合，诱导机体产生适应性免疫及产生抗体或特异性淋巴细胞的能力；</li>
-<li>免疫反应性：抗原与其诱导产生的免疫应答效应物质特异性结合的能力。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>抗原表位的概念</strong>：抗原分子中决定抗原特异性的特殊化学基团；是抗原与 TCR/BCR 或者抗体特异性结合的<strong>最小结构和功能单位</strong>。</li>
-<li><strong>超抗原与佐剂的概念</strong>：
-<ul>
-<li>超抗原：某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T 细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆抑制剂</strong>。</li>
-<li>佐剂：预先或与抗原同时注入体内，增强抗原特异性免疫应答或改变应答类型的非特异性免疫增强物质。</li>
-</ul>
-</li>
-</ol>
-<h2 id="抗体">抗体 <a class="markdownIt-Anchor" href="#抗体">#</a></h2>
-<ol>
-<li><strong>简述抗体的结构和功能</strong>：
-<ul>
-<li>基本结构：
-<ol>
-<li>重链（H）：根据<ins>重链恒定区抗原性</ins>差异分为 5 类（μ、γ、α、δ、ε），抗体分子也被分为对应的 5 类（IgM、IgG、IgA、IgD、IgE）</li>
-<li>轻链（L）：有 κ、λ 两种，将抗体分为 κ 型、λ 型</li>
-<li>可变区</li>
-<li>恒定区</li>
-<li>铰链区</li>
-</ol>
-</li>
-<li>辅助成分：
-<ol>
-<li>J 链：将单体分子连接为二聚体或多聚体</li>
-<li>分泌片：保护 SIgA 铰链区免受蛋白酶水解；介导 SIgA 二聚体从黏膜下通过黏膜转运到黏膜表面</li>
-</ol>
-</li>
-<li>水解片段：
-<ol>
-<li>木瓜蛋白酶水解片段：两个<strong>抗原结合片段</strong>（Fab）和一个<strong>可结晶片段</strong>（Fc）</li>
-<li>胃蛋白酶水解片段：一个 F(ab)<sub>2</sub> 和一些小片段 pFc’</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><strong>多克隆与单克隆抗体的定义</strong>：
-<ul>
-<li>多克隆抗体：以天然抗原分子刺激机体免疫系统，产生的抗体中含有针对不同抗原表位的抗体；</li>
-<li>单克隆抗体：由单一杂交瘤细胞产生，针对单一抗原表位的特异性抗体。</li>
-</ul>
-</li>
-</ol>
-<h2 id="补体">补体 <a class="markdownIt-Anchor" href="#补体">#</a></h2>
-<ol>
-<li><strong>补体的激活途径及特点</strong>：
-<ol>
-<li>经典途径：在感染后期或再次感染中发挥作用；</li>
-<li>MBL 途径：在感染早期或初次感染中发挥作用；</li>
-<li>旁路途径：在感染早期或初次感染即可发挥作用。</li>
-</ol>
-</li>
-<li><strong>补体的生物学意义</strong>：
-<ol>
-<li>细胞毒作用；</li>
-<li>调理作用；</li>
-<li>炎症介质作用：<span class="horizontal-list"><span class="horizontal-list-item">过敏毒素作用</span><span class="horizontal-list-item">趋化作用</span><span class="horizontal-list-item">激肽样作用</span></span></li>
-<li>清除免疫复合物：免疫黏附。</li>
-</ol>
-</li>
-</ol>
-<h2 id="细胞因子">细胞因子 <a class="markdownIt-Anchor" href="#细胞因子">#</a></h2>
-<ol>
-<li><strong>细胞因子的概念</strong>：由免疫细胞及组织细胞分泌的在细胞间发挥相互调控作用的一类小分子可溶性蛋白质。</li>
-<li><strong>细胞因子的共同特点及分类</strong>：
-<ul>
-<li>共同特点：
-<ol>
-<li>小分子可溶性蛋白质，多为糖蛋白；</li>
-<li>高效性，一般在较低浓度下即有生物学效应；</li>
-<li>通过与受体结合发挥生物学作用；</li>
-<li>可诱导产生，且合成具有自限性；</li>
-<li>半寿期短；</li>
-<li>（绝大多数）效应范围小。</li>
-</ol>
-</li>
-<li>分类：<span class="horizontal-list"><span class="horizontal-list-item">白细胞介素</span><span class="horizontal-list-item">集落刺激因子</span><span class="horizontal-list-item">干扰素</span><span class="horizontal-list-item">肿瘤坏死因子</span><span class="horizontal-list-item">生长因子</span><span class="horizontal-list-item">趋化因子</span></span></li>
-</ul>
-</li>
-<li>细胞因子的作用方式：<span class="horizontal-list"><span class="horizontal-list-item">自分泌</span><span class="horizontal-list-item">旁分泌</span><span class="horizontal-list-item">内分泌</span></span></li>
-<li>细胞因子的功能特点：<span class="horizontal-list"><span class="horizontal-list-item">多效性</span><span class="horizontal-list-item">重叠性</span><span class="horizontal-list-item">协同性</span><span class="horizontal-list-item">拮抗性</span><span class="horizontal-list-item">网络性</span></span></li>
-<li>细胞因子受体共有链：<span class="horizontal-list"><span class="horizontal-list-item">共有 γ 链（γc）</span><span class="horizontal-list-item">共有 β 链（βc）</span><span class="horizontal-list-item">gp130</span></span></li>
-</ol>
-<h2 id="主要组织相容复合体">主要组织相容复合体 <a class="markdownIt-Anchor" href="#主要组织相容复合体">#</a></h2>
-<ol>
-<li><strong>MHC、HLA 的概念</strong>：
-<ul>
-<li><strong>主要组织相容性复合体</strong>（MHC）是一组与免疫应答密切相关、决定抑制组织是否相容、紧密连锁的基因群；</li>
-<li>人 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</li>
-</ul>
-</li>
-<li><strong>HLA-Ⅰ 类分子和 HLA-Ⅱ 类分子的结构、分布和功能</strong>：
-<ul>
-<li>HLA Ⅰ 类分子
-<ul>
-<li>组成：重链、β<sub>2</sub> 微球蛋白</li>
-<li>分布：所有有核细胞表面</li>
-<li>功能：主要向 CD8<sup>+</sup>T 细胞提呈内源性抗原肽</li>
-</ul>
-</li>
-<li>HLA Ⅱ 类分子：
-<ul>
-<li>组成：a 链、b 链</li>
-<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
-<li>功能：主要向 CD4<sup>+</sup>T 细胞提呈外源性抗原肽</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>HLA 分子与适应性免疫的关系</strong>：HLA 与<span class="horizontal-list"><span class="horizontal-list-item">组织器官抑制排斥</span><span class="horizontal-list-item">自身免疫性疾病</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item">病毒感染性疾病</span></span>等临床疾病的发生、发展密切相关。</li>
-</ol>
-<h2 id="b-淋巴细胞">B 淋巴细胞 <a class="markdownIt-Anchor" href="#b-淋巴细胞">#</a></h2>
-<ol>
-<li><strong>B1 细胞与 B2 细胞亚群的比较</strong>：
-<table>
-<thead>
-<tr>
-<th>性质</th>
-<th>B1 细胞</th>
-<th>B2 细胞</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>更新方式</td>
-<td>自我更新</td>
-<td>由骨髓产生</td>
-</tr>
-<tr>
-<td>自发产生 Ig</td>
-<td>高</td>
-<td>低</td>
-</tr>
-<tr>
-<td>针对的抗原</td>
-<td>碳水化合物</td>
-<td>蛋白质类</td>
-</tr>
-<tr>
-<td>分泌的 Ig 种类</td>
-<td>IgM&gt;IgG</td>
-<td>IgG&gt;IgM</td>
-</tr>
-<tr>
-<td>特异性</td>
-<td>多反应性</td>
-<td>特异性</td>
-</tr>
-<tr>
-<td>体细胞高频突变</td>
-<td>低/无</td>
-<td>高</td>
-</tr>
-<tr>
-<td>免疫记忆</td>
-<td>少/无</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><strong>BCR 复合物的组成</strong>：
-<ul>
-<li>膜免疫球蛋白（mIg）：识别和结合抗原</li>
-<li>Igα/Igβ（CD79a/CD79b）异二聚体：具有免疫受体酪氨酸活化基序（ITAM），传递抗原刺激信号（第一信号）</li>
-</ul>
-</li>
-<li><strong>B 细胞的功能</strong>：<span class="horizontal-list"><span class="horizontal-list-item">产生抗体介导体液免疫</span><span class="horizontal-list-item">呈递抗原</span><span class="horizontal-list-item">免疫调节</span></span></li>
-</ol>
-<h2 id="t-淋巴细胞">T 淋巴细胞 <a class="markdownIt-Anchor" href="#t-淋巴细胞">#</a></h2>
-<ol>
-<li><strong>αβT 淋巴细胞的主要功能亚群</strong>：
-<ol>
-<li><strong>辅助 T 细胞</strong>（Th）：Th1、Th2、Th9、Th17、Th22、Tfh</li>
-<li><strong>细胞毒性 T 细胞</strong>（CTL）</li>
-<li><strong>调节性 T 细胞</strong>（Treg）：CD4<sup>+</sup>CD25<sup>+</sup>Foxp3<sup>+</sup>T 细胞，<span class="horizontal-list"><span class="horizontal-list-item">自然调节性 T 细胞</span><span class="horizontal-list-item">诱导性调节性 T 细胞</span><span class="horizontal-list-item">其他调节性 T 细胞</span></span></li>
-</ol>
-</li>
-<li><strong>TCR 复合物的组成</strong>：
-<ol>
-<li>TCR：由 α、β 两条肽链组成，每条肽链膜外区各有一个可变（V）区和一个恒定（C）区，V 区含三个互补决定区；跨膜区带有正电，可与 CD3 形成盐桥；膜内区较短；</li>
-<li>CD3：有五种肽链，具有免疫受体酪氨酸活化基序（ITAM），功能是转导 TCR 识别抗原产生的活化信号。</li>
-</ol>
-</li>
-</ol>
-<h2 id="抗原提呈细胞">抗原提呈细胞 <a class="markdownIt-Anchor" href="#抗原提呈细胞">#</a></h2>
-<ol>
-<li><strong>DC 的功能</strong>：
-<ol>
-<li>识别、摄取、加工抗原，参与固有免疫；</li>
-<li>抗原呈递与免疫激活作用；</li>
-<li>免疫调节作用；</li>
-<li>免疫耐受的诱导与维持。</li>
-</ol>
-</li>
-<li><strong>MHC Ⅰ 类分子和 Ⅱ 类分子抗原提呈途径</strong>：
-<table>
-<thead>
-<tr>
-<th></th>
-<th>MHC Ⅰ 类分子途径</th>
-<th>MHC Ⅱ 类分子途径</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>抗原来源</td>
-<td>内源性抗原</td>
-<td>外源性抗原</td>
-</tr>
-<tr>
-<td>降解抗原的场所</td>
-<td>免疫蛋白酶体</td>
-<td>M Ⅱ C、溶酶体</td>
-</tr>
-<tr>
-<td>抗原与 MHC 结合场所</td>
-<td>内质网</td>
-<td>M Ⅱ C</td>
-</tr>
-<tr>
-<td>提呈抗原肽的 MHC</td>
-<td>MHC Ⅰ 类分子</td>
-<td>MHC Ⅱ 类分子</td>
-</tr>
-<tr>
-<td>伴侣分子与抗原肽转运分子</td>
-<td>钙联蛋白、TAP 等</td>
-<td>Ii 链、钙联蛋白等</td>
-</tr>
-<tr>
-<td>加工与提呈抗原的细胞</td>
-<td>所有有核细胞</td>
-<td>专职性抗原提呈细胞</td>
-</tr>
-<tr>
-<td>识别和应答细胞</td>
-<td>CD8<sup>+</sup>T 细胞（CTL）</td>
-<td>CD4<sup>+</sup>T 细胞（Th）</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<h2 id="t-淋巴细胞介导的适应性免疫应答">T 淋巴细胞介导的适应性免疫应答 <a class="markdownIt-Anchor" href="#t-淋巴细胞介导的适应性免疫应答">#</a></h2>
-<ol>
-<li><strong>T 细胞活化的双信号</strong>：
-<ul>
-<li>TCR 特异性识别 pMHC 启动第一信号（抗原识别信号）；</li>
-<li>共刺激分子对相互作用形成 T 细胞活化的第二信号（共刺激信号）。</li>
-</ul>
-</li>
-<li><strong>效应 T 细胞的亚群及免疫保护功能</strong>：
-<ol>
-<li>CD4<sup>+</sup>Th1：抗胞内感染微生物</li>
-<li>CD4<sup>+</sup>Th2：清除蠕虫等</li>
-<li>CD4<sup>+</sup>Th17：抗细菌、真菌、病毒</li>
-<li>CD4<sup>+</sup>Thfh：自身免疫</li>
-<li>CD4<sup>+</sup>Treg：维持免疫应答适应性、防止自身免疫病</li>
-<li>CD8<sup>+</sup>CTL：杀伤病毒感染细胞和肿瘤细胞</li>
-</ol>
-</li>
-<li><strong>CTL 杀伤靶细胞的机制</strong>：
-<ol>
-<li>穿孔素/颗粒酶途径</li>
-<li>死亡受体途径</li>
-</ol>
-</li>
-</ol>
-<h2 id="b-淋巴细胞介导的适应性免疫应答">B 淋巴细胞介导的适应性免疫应答 <a class="markdownIt-Anchor" href="#b-淋巴细胞介导的适应性免疫应答">#</a></h2>
-<ol>
-<li><strong>B 细胞对 TI 和 TD 抗原应答的区别</strong>：
-<table>
-<thead>
-<tr>
-<th></th>
-<th>TI-1 抗原</th>
-<th>TI-2 抗原</th>
-<th>TD 抗原</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>抗原</td>
-<td>LPS</td>
-<td>多糖等</td>
-<td>蛋白质</td>
-</tr>
-<tr>
-<td>APC 提呈</td>
-<td>不需要</td>
-<td>不需要</td>
-<td><strong>需要</strong></td>
-</tr>
-<tr>
-<td>抗原识别受体</td>
-<td><strong>丝裂原受体</strong></td>
-<td>BCR</td>
-<td>BCR</td>
-</tr>
-<tr>
-<td>活化 B 细胞</td>
-<td>B1</td>
-<td>B1</td>
-<td><strong>B2</strong></td>
-</tr>
-<tr>
-<td>类别转换</td>
-<td>无</td>
-<td>多数无</td>
-<td><strong>有</strong></td>
-</tr>
-<tr>
-<td>T 细胞辅助</td>
-<td>不需要</td>
-<td>不需要</td>
-<td><strong>需要</strong></td>
-</tr>
-<tr>
-<td>诱导 Ig 类型</td>
-<td>IgM</td>
-<td>IgM、少数有其他 Ig</td>
-<td>各类 Ig</td>
-</tr>
-<tr>
-<td>记忆 B 细胞</td>
-<td>无</td>
-<td>大多数无</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><strong>B 细胞受 TD 抗原刺激活化所需的信号</strong>：
-<ul>
-<li>第一信号（抗原识别信号）由 BCR-CD79a/CD79b（BCR-Igα/Igβ）传递，BCR 共受体复合物（CD19/CD21/CDl81）起增强作用；</li>
-<li>第二信号（共刺激信号）由 Th 细胞与 B 细胞表面多对共刺激信号共同作用产生，其中 CD40/CD40L 最重要。</li>
-</ul>
-</li>
-<li><strong>抗体产生的一般规律</strong>：
-<ol>
-<li>初次应答：<span class="horizontal-list"><span class="horizontal-list-item">应答潜伏期相对较长；</span><span class="horizontal-list-item">产生抗体量较少，主要为低亲和力的 IgM；</span><span class="horizontal-list-item">可产生少量的针对特异性抗原类型的记忆性 B 细胞。</span></span></li>
-<li>再次应答：<span class="horizontal-list"><span class="horizontal-list-item">潜伏期短；</span><span class="horizontal-list-item">血清抗体浓度增加快，快速到达平台期，抗体滴度高；</span><span class="horizontal-list-item">抗体维持时间长；</span><span class="horizontal-list-item">诱发再次应答所需的抗原剂量少；</span><span class="horizontal-list-item">再次免疫应答主要产生高轻和力的 IgG。</span></span></li>
-</ol>
-</li>
-</ol>
-<h2 id="固有免疫系统及其介导的应答">固有免疫系统及其介导的应答 <a class="markdownIt-Anchor" href="#固有免疫系统及其介导的应答">#</a></h2>
-<ol>
-<li><strong>固有免疫系统的组成和固有免疫细胞的分类</strong>：
-<ul>
-<li>固有免疫系统的组成：
-<ol>
-<li>皮肤黏膜屏障，包括<span class="horizontal-list"><span class="horizontal-list-item">物理屏障、</span><span class="horizontal-list-item">化学屏障、</span><span class="horizontal-list-item">微生物屏障。</span></span></li>
-<li>体内屏障，包括<span class="horizontal-list"><span class="horizontal-list-item">血脑屏障、</span><span class="horizontal-list-item">血胎屏障。</span></span></li>
-</ol>
-</li>
-<li>固有免疫细胞种类：
-<ol>
-<li>来源于<ins>骨髓共同髓样前体</ins>的<ins>经典固有免疫细胞</ins>，</li>
-<li>来源于<ins>骨髓共同淋巴样前体</ins>的<ins>固有淋巴样细胞</ins>（ILCs）和<ins>固有淋巴细胞</ins>（ILLs）</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><strong>模式识别受体和病原相关分子模式的概念</strong>：
-<ul>
-<li>模式识别受体（PRR）指广泛存在于<span class="horizontal-list"><span class="horizontal-list-item">固有免疫细胞表面、</span><span class="horizontal-list-item">胞内器室膜上、</span><span class="horizontal-list-item">胞浆</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">血液</span></span>中的一类能直接识别外来病原体及其产物或宿主畸变和衰老凋亡细胞某些共有特定模式分子结构的受体，可分为<span class="horizontal-list"><span class="horizontal-list-item">胞膜型 PRR、</span><span class="horizontal-list-item">内膜型 PRR、</span><span class="horizontal-list-item">胞浆型 PRR</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">分泌型 PRR</span></span>。</li>
-<li>病原相关分子模式（PAMP）指某些病原体或其产物所共有的高度保守且对病原体生存和致病性不可或缺的特定分子结构。</li>
-</ul>
-</li>
-<li><strong>巨噬细胞表面主要的模式识别受体</strong>：<span class="horizontal-list"><span class="horizontal-list-item">甘露糖受体、</span><span class="horizontal-list-item">清道夫受体、</span><span class="horizontal-list-item">Toll 样受体</span></span>。</li>
-<li><strong>固有免疫的作用特点</strong>/<strong>固有免疫与适应性免疫对比</strong>：
-<table>
-<thead>
-<tr>
-<th></th>
-<th>固有免疫</th>
-<th>适应性免疫</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>获得形式</td>
-<td>先天性</td>
-<td>后天获得</td>
-</tr>
-<tr>
-<td>抗原参与</td>
-<td>无需抗原激发</td>
-<td>需抗原激发</td>
-</tr>
-<tr>
-<td>发挥作用时相</td>
-<td>早期、快速（数分钟至 4 天）</td>
-<td>4~5 天后发挥效应</td>
-</tr>
-<tr>
-<td>免疫原识别受体</td>
-<td>模式识别受体</td>
-<td>TCR、BCR</td>
-</tr>
-<tr>
-<td>免疫记忆</td>
-<td>无</td>
-<td>有（产生记忆细胞）</td>
-</tr>
-<tr>
-<td>参与成分</td>
-<td>抑菌/杀菌物质、补体、炎症因子、吞噬细胞、NK 细胞、NKT 细胞等</td>
-<td>抗体、T 细胞、B 细胞等</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<h2 id="黏膜免疫的细胞及其功能">黏膜免疫的细胞及其功能 <a class="markdownIt-Anchor" href="#黏膜免疫的细胞及其功能">#</a></h2>
-<ol>
-<li><strong>黏膜免疫系统和黏膜相关淋巴组织的组成</strong>：
-<ul>
-<li>黏膜免疫系统：<span class="horizontal-list"><span class="horizontal-list-item">黏膜上皮组织、</span><span class="horizontal-list-item"><ins>黏膜相关淋巴组织</ins>、</span><span class="horizontal-list-item">肠上皮细胞和免疫细胞及其产生的分子或分泌物</span><span class="horizontal-list-conjunction">以及</span><span class="horizontal-list-item">黏膜正常栖息微生物群或“共生菌群”</span></span></li>
-<li>黏膜相关淋巴组织（MALT）：
-<ol>
-<li>肠相关淋巴组织（GALT）：<span class="horizontal-list"><span class="horizontal-list-item">派氏集合淋巴管、</span><span class="horizontal-list-item">独立淋巴滤泡、</span><span class="horizontal-list-item">阑尾、</span><span class="horizontal-list-item">韦氏环</span></span></li>
-<li>鼻咽相关淋巴组织（NALT）</li>
-<li>支气管相关淋巴组织（BALT）</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="超敏反应">超敏反应 <a class="markdownIt-Anchor" href="#超敏反应">#</a></h2>
-<ol>
-<li><strong>超敏反应的概念和分型</strong>：超敏反应指机体受到某些抗原刺激时，出现生理功能紊乱或组织细胞损伤的异常适应性免疫应答，根据发生机制和临床特点分为 Ⅰ、Ⅱ、Ⅲ、Ⅳ 四型。</li>
-<li><strong>各类超敏反应的发生机制及典型疾病</strong>：教材表 18-1</li>
-</ol>
-<h2 id="免疫耐受">免疫耐受 <a class="markdownIt-Anchor" href="#免疫耐受">#</a></h2>
-<ol>
-<li><strong>免疫耐受的概念和形成机制</strong>：
-<ul>
-<li>概念：免疫系统对特定抗原的“免疫无反应”状态</li>
-<li>机制：
-<ol>
-<li>胚胎期及新生期接触抗原所致的免疫耐受（先天性免疫耐受）：胚胎发育过程中，未成熟淋巴细胞接触抗原，出生后再次遇到相同抗原时，机体呈现无反应状态；</li>
-<li>后天接触抗原导致的免疫耐受（后天性免疫耐受）：某些自身反应性淋巴细胞克隆在输出到外周后，通过活化诱导的细胞凋亡、失能、Treg 细胞介导的免疫抑制等多种途径，丧失对抗原刺激的反应性。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="自身免疫病">自身免疫病 <a class="markdownIt-Anchor" href="#自身免疫病">#</a></h2>
-<ol>
-<li><strong>自身免疫病的概念和形成机制</strong>：
-<ul>
-<li>概念：在某些遗传因素和环境因素诱发下自身免疫耐受状态被打破或自身免疫性细胞调节异常，免疫系统对<ins>自身抗原</ins>产生<ins>持续迁延</ins>的免疫应答，造成了<ins>自身组织细胞损伤或功能异常</ins>Ⅱ导致的临床病症。</li>
-<li>形成机制：
-<ol>
-<li>自身抗原的改变：<span class="horizontal-list"><span class="horizontal-list-item">免疫隔离部位抗原的释放；</span><span class="horizontal-list-item">自身抗原的改变；</span><span class="horizontal-list-item">分子模拟；</span><span class="horizontal-list-item">表位扩展。</span></span></li>
-<li>免疫系统的异常：<span class="horizontal-list"><span class="horizontal-list-item">自身反应性淋巴细胞清除异常；</span><span class="horizontal-list-item">免疫忽视的打破；</span><span class="horizontal-list-item">淋巴细胞的多克隆激活；</span><span class="horizontal-list-item">活化诱导细胞的死亡障碍；</span><span class="horizontal-list-item">调节性 T 细胞功能异常；</span><span class="horizontal-list-item">MHC Ⅱ 类分子表达异常。</span></span></li>
-<li>遗传因素：<span class="horizontal-list"><span class="horizontal-list-item">HLA 基因与自身免疫病的相关性；</span><span class="horizontal-list-item">非 HLA 基因与自身免疫病的相关性。</span></span></li>
-<li>其他因素：<span class="horizontal-list"><span class="horizontal-list-item">性别因素；</span><span class="horizontal-list-item">年龄因素。</span></span></li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="免疫缺陷病">免疫缺陷病 <a class="markdownIt-Anchor" href="#免疫缺陷病">#</a></h2>
-<ol>
-<li><strong>免疫缺陷病的概念、分类及临床特点</strong>：
-<ul>
-<li>概念：因遗传因素或其他因素造成免疫系统先天性发育障碍或后天损伤所致的综合征。</li>
-<li>分类：<span class="horizontal-list"><span class="horizontal-list-item">原发性免疫缺陷病（PIDD）、</span><span class="horizontal-list-item">获得性免疫缺陷病（AIDD）</span></span></li>
-<li>临床特点：
-<ol>
-<li>对病原体甚至条件性病原微生物高度易感；</li>
-<li>对自身免疫病及超敏反应性疾病易感；</li>
-<li>肿瘤，特别是淋巴细胞瘤的发生率增高。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="免疫学防治">免疫学防治 <a class="markdownIt-Anchor" href="#免疫学防治">#</a></h2>
-<ol>
-<li><strong>人工免疫的分类并举例</strong>：
-<ol>
-<li>人工主动免疫，如接种灭活疫苗</li>
-<li>人工被动免疫，如注射抗毒素</li>
-</ol>
-</li>
-<li><strong>疫苗的种类</strong>：<span class="horizontal-list"><span class="horizontal-list-item">灭活疫苗、</span><span class="horizontal-list-item">减毒活疫苗、</span><span class="horizontal-list-item">类毒素、</span><span class="horizontal-list-item">亚单位疫苗、</span><span class="horizontal-list-item">结合疫苗、</span><span class="horizontal-list-item">DNA 疫苗、</span><span class="horizontal-list-item">重组载体疫苗</span></span></li>
-</ol>
-<h2 id="肿瘤免疫">肿瘤免疫 <a class="markdownIt-Anchor" href="#肿瘤免疫">#</a></h2>
-<ol>
-<li><strong>肿瘤细胞的免疫逃逸机制</strong>：
-<ol>
-<li>肿瘤细胞的肿瘤抗原缺失和抗原调变；</li>
-<li>肿瘤细胞 MHC Ⅰ 类分子表达低下；</li>
-<li>肿瘤细胞共刺激信号异常；</li>
-<li>肿瘤细胞表达或分泌某些免疫分子抑制机体的抗肿瘤免疫功能；</li>
-<li>肿瘤细胞主动诱导 Treg 和 MDSC（骨髓源的抑制性细胞）的产生；</li>
-<li>肿瘤细胞的抗凋亡作用。</li>
-</ol>
-</li>
-<li><strong>肿瘤免疫治疗的分类及举例</strong>：
-<ol>
-<li>肿瘤的主动免疫治疗：给荷瘤宿主注射具有免疫原性的疫苗，如<span class="horizontal-list"><span class="horizontal-list-item">灭活的瘤苗、</span><span class="horizontal-list-item">异构的瘤苗、</span><span class="horizontal-list-item">抗独特型抗体瘤苗</span></span>等；</li>
-<li>肿瘤的被动免疫治疗：<span class="horizontal-list"><span class="horizontal-list-item">抗体的靶向治疗；</span><span class="horizontal-list-item">细胞因子疗法；</span><span class="horizontal-list-item">细胞免疫疗法［嵌合抗原受体（CAR）修饰的 T 细胞（CAR-T）在白细胞治疗中取得成功］。</span></span></li>
-<li>肿瘤的免疫检查点治疗：如针对 CTLA-4 和 PD-1 或其配体 PD-L1 研制的系列抗体在临床治疗肿瘤中取得良好成果。</li>
-</ol>
-</li>
-</ol>
-<h2 id="移植免疫">移植免疫 <a class="markdownIt-Anchor" href="#移植免疫">#</a></h2>
-<ol>
-<li><strong>同种异型移植排斥反应的分类</strong>：
-<ol>
-<li>宿主抗移植物反应（HVGR）：<span class="horizontal-list"><span class="horizontal-list-item">超急性排斥反应、</span><span class="horizontal-list-item">急性排斥反应、</span><span class="horizontal-list-item">慢性排斥反应</span></span></li>
-<li>移植物抗宿主反应（GVHR）：<span class="horizontal-list"><span class="horizontal-list-item">急性 GVHD（移植物抗宿主疾病）、</span><span class="horizontal-list-item">慢性 GVHD</span></span></li>
-</ol>
-</li>
-<li><strong>宿主抗移植物反应的分类</strong>：<span class="horizontal-list"><span class="horizontal-list-item">超急性排斥反应、</span><span class="horizontal-list-item">急性排斥反应、</span><span class="horizontal-list-item">慢性排斥反应</span></span></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-        <tag>考试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>其他病毒</title>
     <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<ul>
@@ -3817,6 +3213,167 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动物源性细菌</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
+    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
+<span id="more"></span>
+<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
+<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
+<li>培养特性和生化反应：需氧，营养要求较高</li>
+<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
+</ul>
+<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
+<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
+<ul>
+<li><strong>感染途径</strong>：
+<ul>
+<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
+<li>经呼吸道或眼结膜</li>
+<li>经皮肤</li>
+</ul>
+</li>
+<li><strong>常见患者</strong>：
+<ul>
+<li>和动物密切接触者</li>
+<li>饮用生奶者</li>
+</ul>
+</li>
+<li>致病物质：内毒素、荚膜、侵袭性酶</li>
+<li>所致疾病：
+<ul>
+<li>人类：反复发生的<strong>菌血症</strong>导致患者发生<strong>波浪热</strong>；人类胎盘不含<em>赤藓糖醇</em>，故人类感染后不会引起<s>流产</s></li>
+<li>感染家畜：母畜<strong>流产</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
+<ul>
+<li><strong>带菌免疫</strong>，即体内有布鲁斯菌存在时，对再次感染有较强免疫力。</li>
+<li>细胞免疫与迟发型超敏反应交织存在。</li>
+</ul>
+<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
+<div class="note info titled"><div class='note-title' id='芽孢杆菌属'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+芽孢杆菌属</div><ul>
+<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
+<li>培养特性：需氧，多数在有氧条件下形成芽孢</li>
+<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
+</ul>
+</div>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，<strong>有荚膜</strong>，无鞭毛，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
+<li>培养特性和生化反应：
+<ul>
+<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
+<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>黏液性菌落</mark></li>
+</ul>
+</li>
+<li>抵抗力：
+<ul>
+<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
+<li>对青霉素等多种抗生素敏感</li>
+</ul>
+</li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>荚膜：抗吞噬</li>
+<li><strong>炭疽毒素</strong>：
+<ul>
+<li><strong>水肿因子</strong>（EF）、<strong>保护性抗原</strong>（PA）、<strong>致死因子</strong>（LF）</li>
+<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
+</ul>
+</li>
+</ul>
+<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
+<ul>
+<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
+<li><strong>感染途径及所致疾病</strong>：
+<ul>
+<li>接触 → 皮肤炭疽</li>
+<li>食入 → 肠炭疽</li>
+<li>吸入 → 肺炭疽（最严重）</li>
+</ul>
+</li>
+</ul>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<ul>
+<li>标本：严禁在室外剖检病体</li>
+<li>直接涂片镜检：荚膜，竹节状排布</li>
+<li>分离培养与鉴定：
+<ul>
+<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
+<li>青霉素串珠实验、噬菌体裂解实验</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<ul>
+<li>疫苗</li>
+<li>抗生素：首选<strong>青霉素</strong></li>
+</ul>
+<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
+<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
+<ol>
+<li>鼠疫耶尔森菌：鼠疫；</li>
+<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
+<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
+</ol>
+<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，<strong>有荚膜</strong>，无鞭毛、芽孢，菌体形态、大小变化较大</li>
+<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
+<li>抗原构造：
+<ul>
+<li>F1 抗原：荚膜抗原</li>
+<li>V/W 抗原：菌体表面抗原</li>
+<li>鼠毒素</li>
+<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
+<li>内毒素：与肠道杆菌内毒素相似</li>
+</ul>
+</li>
+<li>抵抗力：较弱</li>
+</ul>
+<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
+<p>致病物质：</p>
+<ul>
+<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
+<li>外毒素：<strong>鼠毒素</strong>（MT，主要致病物质）</li>
+<li>内毒素</li>
+</ul>
+<p>所致疾病：<strong>鼠疫</strong></p>
+<ul>
+<li>传染源：鼠，患病者</li>
+<li>传播途径及所致疾病：
+<ul>
+<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
+<li>染菌的尘埃进入<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
+<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则-2">防治原则 <a class="markdownIt-Anchor" href="#防治原则-2">#</a></h3>
+<ul>
+<li>消灭传染源：灭鼠灭蚤</li>
+<li>疫苗：无毒株活菌疫苗接种</li>
+<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4024,167 +3581,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动物源性细菌</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%8A%A8%E7%89%A9%E6%BA%90%E6%80%A7%E7%BB%86%E8%8F%8C/</url>
-    <content><![CDATA[<p>若人类和动物的某一传染病是由同一病原菌引起，则称为<strong>人畜共患病</strong>（zoonosis），引起人畜共患病的病原菌即<strong>动物源性细菌</strong>。</p>
-<span id="more"></span>
-<h2 id="布鲁斯菌">布鲁斯菌 <a class="markdownIt-Anchor" href="#布鲁斯菌">#</a></h2>
-<p><strong>布鲁斯菌</strong>（<em>Brucella</em>）共有 6 个生物种，其中<em>羊布鲁斯菌</em>、<em>牛布鲁斯菌</em>、<em>猪布鲁斯菌</em>和<em>犬布鲁斯菌</em>对人致病，在我国主要流行的是<strong>羊布鲁斯菌</strong>。</p>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 小球杆菌或短杆菌</li>
-<li>培养特性和生化反应：需氧，营养要求较高</li>
-<li>抵抗力：较强，在土壤、毛皮、病畜的脏器肉及鲜奶中可存活数周及数月</li>
-</ul>
-<h3 id="致病性与免疫性">致病性与免疫性 <a class="markdownIt-Anchor" href="#致病性与免疫性">#</a></h3>
-<h4 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h4>
-<ul>
-<li><strong>感染途径</strong>：
-<ul>
-<li>经口：最常见，食入污染的动物制品，如牛奶及奶制品</li>
-<li>经呼吸道或眼结膜</li>
-<li>经皮肤</li>
-</ul>
-</li>
-<li><strong>常见患者</strong>：
-<ul>
-<li>和动物密切接触者</li>
-<li>饮用生奶者</li>
-</ul>
-</li>
-<li>致病物质：内毒素、荚膜、侵袭性酶</li>
-<li>所致疾病：
-<ul>
-<li>人类：反复发生的<strong>菌血症</strong>导致患者发生<strong>波浪热</strong>；人类胎盘不含<em>赤藓糖醇</em>，故人类感染后不会引起<s>流产</s></li>
-<li>感染家畜：母畜<strong>流产</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="免疫性">免疫性 <a class="markdownIt-Anchor" href="#免疫性">#</a></h4>
-<ul>
-<li><strong>带菌免疫</strong>，即体内有布鲁斯菌存在时，对再次感染有较强免疫力。</li>
-<li>细胞免疫与迟发型超敏反应交织存在。</li>
-</ul>
-<h2 id="炭疽芽孢杆菌">炭疽芽孢杆菌 <a class="markdownIt-Anchor" href="#炭疽芽孢杆菌">#</a></h2>
-<div class="note info titled"><div class='note-title' id='芽孢杆菌属'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-芽孢杆菌属</div><ul>
-<li>形态与染色：G<sup>+</sup> 大杆菌，可形成芽孢</li>
-<li>培养特性：需氧，多数在有氧条件下形成芽孢</li>
-<li>致病性：多数为非致病菌，少数如<strong>炭疽芽孢杆菌</strong>（最主要）和蜡样芽孢杆菌为致病菌</li>
-</ul>
-</div>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>+</sup> 粗大杆菌，两端平切，<strong>有荚膜</strong>，无鞭毛，芽孢呈椭圆形，小于菌体宽度，位于菌体中央，排列呈<strong>竹节状</strong>，是<strong>致病菌中最大的细菌</strong></li>
-<li>培养特性和生化反应：
-<ul>
-<li>在普通琼脂培养基上形成<mark>卷发状菌落</mark>——灰白色粗糙菌落，边缘不整齐</li>
-<li>有毒株在含 NaHCO<sub>3</sub> 的琼脂平板上产生荚膜，形成<mark>黏液性菌落</mark></li>
-</ul>
-</li>
-<li>抵抗力：
-<ul>
-<li>繁殖体同一般细菌；芽孢抵抗力强，可在干燥土壤中存活 20 余年，在皮革中也可存活数年</li>
-<li>对青霉素等多种抗生素敏感</li>
-</ul>
-</li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>荚膜：抗吞噬</li>
-<li><strong>炭疽毒素</strong>：
-<ul>
-<li><strong>水肿因子</strong>（EF）、<strong>保护性抗原</strong>（PA）、<strong>致死因子</strong>（LF）</li>
-<li>EF、LF 单独存活时无活性，但与 PA 结合后可分别形成水肿毒素和致死毒素</li>
-</ul>
-</li>
-</ul>
-<p>所致疾病：<strong>炭疽病</strong>，可并发败血症，导致急性出血性脑膜炎，死亡率极高</p>
-<ul>
-<li>传染源：患病的<strong>食草动物</strong>及其制品或被污染物</li>
-<li><strong>感染途径及所致疾病</strong>：
-<ul>
-<li>接触 → 皮肤炭疽</li>
-<li>食入 → 肠炭疽</li>
-<li>吸入 → 肺炭疽（最严重）</li>
-</ul>
-</li>
-</ul>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<ul>
-<li>标本：严禁在室外剖检病体</li>
-<li>直接涂片镜检：荚膜，竹节状排布</li>
-<li>分离培养与鉴定：
-<ul>
-<li>血琼脂平板或 NaHCO<sub>3</sub> 琼脂平板，观察菌落特点</li>
-<li>青霉素串珠实验、噬菌体裂解实验</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<ul>
-<li>疫苗</li>
-<li>抗生素：首选<strong>青霉素</strong></li>
-</ul>
-<h2 id="鼠疫耶尔森菌">鼠疫耶尔森菌 <a class="markdownIt-Anchor" href="#鼠疫耶尔森菌">#</a></h2>
-<p><strong>鼠疫耶尔森菌</strong>（<em>Y. pestis</em>）俗称鼠疫杆菌，归属耶尔森菌属，该属共有 11 个菌种，对人致病的主要有：</p>
-<ol>
-<li>鼠疫耶尔森菌：鼠疫；</li>
-<li>小肠结肠炎耶尔森菌：小肠炎、结肠炎、败血症等；</li>
-<li>假结核耶尔森菌：胃肠炎、肠系膜淋巴肉芽肿。</li>
-</ol>
-<h3 id="生物学特性-3">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-3">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>-</sup> 短杆菌，<mark>两端浓染</mark>，<strong>有荚膜</strong>，无鞭毛、芽孢，菌体形态、大小变化较大</li>
-<li>培养特性和生化反应：肉汤培养基中最初为<em>浑浊生长</em>，逐渐变为<em>沉淀生长</em>，48h 后形成<em>菌膜</em>，稍加摇动后菌膜呈 <mark>“钟乳石”状下沉</mark>，有鉴别意义</li>
-<li>抗原构造：
-<ul>
-<li>F1 抗原：荚膜抗原</li>
-<li>V/W 抗原：菌体表面抗原</li>
-<li>鼠毒素</li>
-<li>外膜抗原：鼠疫耶尔森菌的外膜蛋白（Yop）</li>
-<li>内毒素：与肠道杆菌内毒素相似</li>
-</ul>
-</li>
-<li>抵抗力：较弱</li>
-</ul>
-<h3 id="致病性-3">致病性 <a class="markdownIt-Anchor" href="#致病性-3">#</a></h3>
-<p>致病物质：</p>
-<ul>
-<li>菌体物质：荚膜、F1 抗原、V/W 抗原、外膜抗原</li>
-<li>外毒素：<strong>鼠毒素</strong>（MT，主要致病物质）</li>
-<li>内毒素</li>
-</ul>
-<p>所致疾病：<strong>鼠疫</strong></p>
-<ul>
-<li>传染源：鼠，患病者</li>
-<li>传播途径及所致疾病：
-<ul>
-<li><strong>鼠蚤/人蚤</strong> → <strong>腺鼠疫</strong>：导致淋巴结炎，引起淋巴结肿大、出血、坏死</li>
-<li>染菌的尘埃进入<strong>呼吸道</strong> → <strong>肺鼠疫</strong>（也可由腺鼠疫或败血症型鼠疫蔓延所致）：严重的支气管肺炎症状</li>
-<li><strong>败血症型鼠疫</strong>：多数为腺鼠疫或肺鼠疫发展而来，全身器官出血和坏死损伤，患者几乎全部死亡</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则-2">防治原则 <a class="markdownIt-Anchor" href="#防治原则-2">#</a></h3>
-<ul>
-<li>消灭传染源：灭鼠灭蚤</li>
-<li>疫苗：无毒株活菌疫苗接种</li>
-<li>治疗：早期（发病 48h 内）足量用药，首选链霉素和庆大霉素</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -4623,6 +4019,610 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </categories>
       <tags>
         <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免疫大题重点</title>
+    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E5%85%8D%E7%96%AB%E5%A4%A7%E9%A2%98%E9%87%8D%E7%82%B9/</url>
+    <content><![CDATA[<p>免疫各章 PPT 后思考题。</p>
+<span id="more"></span>
+<h2 id="免疫学概述">免疫学概述 <a class="markdownIt-Anchor" href="#免疫学概述">#</a></h2>
+<ol>
+<li><strong>免疫系统的组成</strong>：
+<ol>
+<li>免疫器官：中枢免疫器官，包括胸腺、骨髓；外周免疫器官，包括脾脏、淋巴结和黏膜相关淋巴组织、<em>皮肤相关淋巴组织</em>；</li>
+<li>免疫分子：膜型分子、分泌型分子</li>
+<li>免疫细胞：T 细胞、B 细胞、吞噬细胞、DC、NK 细胞等</li>
+</ol>
+</li>
+<li><strong>举例说明免疫系统的三大功能</strong>：
+<ol>
+<li>免疫防御：防止病原体入侵及清除已入侵病原体及其他有害物质，如抗细菌、真菌、病毒等病原体的入侵。</li>
+<li>免疫监视：随时发现和清除体内出现的“非己”成分，如由基因突变产生的肿瘤细胞及衰老、死亡细胞等。</li>
+<li>免疫自稳：通过<strong>免疫耐受</strong>和<strong>免疫调节</strong>两种重要机制来达到机体内环境的稳定，如机体对自身组织细胞不发生免疫应答，若免疫耐受被打破，免疫调节功能紊乱，会导致自身免疫病和过敏性疾病的发生。</li>
+</ol>
+</li>
+<li><strong>免疫应答的种类及其特点</strong>：
+<ul>
+<li>适应性免疫：<span class="horizontal-list"><span class="horizontal-list-item">特异性</span><span class="horizontal-list-item">耐受性</span><span class="horizontal-list-item">记忆性</span></span></li>
+<li>固有免疫：无以上特点</li>
+</ul>
+</li>
+</ol>
+<h2 id="免疫器官和组织">免疫器官和组织 <a class="markdownIt-Anchor" href="#免疫器官和组织">#</a></h2>
+<ol>
+<li><strong>简述中枢和外周免疫器官的组成和功能</strong>：
+<ul>
+<li>中枢免疫器官：
+<ol>
+<li>骨髓：
+<ol>
+<li>各类血细胞、免疫细胞发生的场所</li>
+<li>B 细胞 NK 细胞分化成熟的场所</li>
+<li>体液免疫应答发生的主要场所：<em>发生再次体液免疫应答后，抗体产生的主要部位</em></li>
+</ol>
+</li>
+<li>胸腺：
+<ol>
+<li>T 细胞分化、成熟的场所：<em>T 细胞迁移、阳性选择、阴性选择</em></li>
+<li>免疫调节作用：<em>细胞因子、胸腺肽类因子</em></li>
+<li>自身免疫耐受的建立与维持：<em>通过阴性选择形成中枢免疫耐受</em></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>外周免疫器官：
+<ol>
+<li>淋巴结：<span class="horizontal-list"><span class="horizontal-list-item">成熟 T 细胞（75%）、B 细胞（25%）定居的场所</span><span class="horizontal-list-item">适应性免疫应答的主要场所</span><span class="horizontal-list-item">过滤作用（淋巴液）</span><span class="horizontal-list-item">参与淋巴细胞再循环</span></span></li>
+<li>脾脏：<span class="horizontal-list"><span class="horizontal-list-item">T 细胞（40%）和 B 细胞（60%）定居的场所</span><span class="horizontal-list-item">免疫应答发生的场所</span><span class="horizontal-list-item">过滤作用（血液）</span><span class="horizontal-list-item">生成生物活性物质，<em>如补体、细胞因子</em></span></span></li>
+<li>黏膜相关淋巴组织：<span class="horizontal-list"><span class="horizontal-list-item">行使黏膜局部免疫应答</span><span class="horizontal-list-item">产生分泌型 IgA（SIgA）</span></span></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="抗原">抗原 <a class="markdownIt-Anchor" href="#抗原">#</a></h2>
+<ol>
+<li><strong>简述抗原的概念和基本性质</strong>：
+<ul>
+<li>概念：所有能激活和诱导免疫应答的物质。</li>
+<li>基本性质：
+<ul>
+<li>免疫原性：抗原被 TCR 或 BCR 识别及结合，诱导机体产生适应性免疫及产生抗体或特异性淋巴细胞的能力；</li>
+<li>免疫反应性：抗原与其诱导产生的免疫应答效应物质特异性结合的能力。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>抗原表位的概念</strong>：抗原分子中决定抗原特异性的特殊化学基团；是抗原与 TCR/BCR 或者抗体特异性结合的<strong>最小结构和功能单位</strong>。</li>
+<li><strong>超抗原与佐剂的概念</strong>：
+<ul>
+<li>超抗原：某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T 细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆抑制剂</strong>。</li>
+<li>佐剂：预先或与抗原同时注入体内，增强抗原特异性免疫应答或改变应答类型的非特异性免疫增强物质。</li>
+</ul>
+</li>
+</ol>
+<h2 id="抗体">抗体 <a class="markdownIt-Anchor" href="#抗体">#</a></h2>
+<ol>
+<li><strong>简述抗体的结构和功能</strong>：
+<ul>
+<li>基本结构：
+<ol>
+<li>重链（H）：根据<ins>重链恒定区抗原性</ins>差异分为 5 类（μ、γ、α、δ、ε），抗体分子也被分为对应的 5 类（IgM、IgG、IgA、IgD、IgE）</li>
+<li>轻链（L）：有 κ、λ 两种，将抗体分为 κ 型、λ 型</li>
+<li>可变区</li>
+<li>恒定区</li>
+<li>铰链区</li>
+</ol>
+</li>
+<li>辅助成分：
+<ol>
+<li>J 链：将单体分子连接为二聚体或多聚体</li>
+<li>分泌片：保护 SIgA 铰链区免受蛋白酶水解；介导 SIgA 二聚体从黏膜下通过黏膜转运到黏膜表面</li>
+</ol>
+</li>
+<li>水解片段：
+<ol>
+<li>木瓜蛋白酶水解片段：两个<strong>抗原结合片段</strong>（Fab）和一个<strong>可结晶片段</strong>（Fc）</li>
+<li>胃蛋白酶水解片段：一个 F(ab)<sub>2</sub> 和一些小片段 pFc’</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>多克隆与单克隆抗体的定义</strong>：
+<ul>
+<li>多克隆抗体：以天然抗原分子刺激机体免疫系统，产生的抗体中含有针对不同抗原表位的抗体；</li>
+<li>单克隆抗体：由单一杂交瘤细胞产生，针对单一抗原表位的特异性抗体。</li>
+</ul>
+</li>
+</ol>
+<h2 id="补体">补体 <a class="markdownIt-Anchor" href="#补体">#</a></h2>
+<ol>
+<li><strong>补体的激活途径及特点</strong>：
+<ol>
+<li>经典途径：在感染后期或再次感染中发挥作用；</li>
+<li>MBL 途径：在感染早期或初次感染中发挥作用；</li>
+<li>旁路途径：在感染早期或初次感染即可发挥作用。</li>
+</ol>
+</li>
+<li><strong>补体的生物学意义</strong>：
+<ol>
+<li>细胞毒作用；</li>
+<li>调理作用；</li>
+<li>炎症介质作用：<span class="horizontal-list"><span class="horizontal-list-item">过敏毒素作用</span><span class="horizontal-list-item">趋化作用</span><span class="horizontal-list-item">激肽样作用</span></span></li>
+<li>清除免疫复合物：免疫黏附。</li>
+</ol>
+</li>
+</ol>
+<h2 id="细胞因子">细胞因子 <a class="markdownIt-Anchor" href="#细胞因子">#</a></h2>
+<ol>
+<li><strong>细胞因子的概念</strong>：由免疫细胞及组织细胞分泌的在细胞间发挥相互调控作用的一类小分子可溶性蛋白质。</li>
+<li><strong>细胞因子的共同特点及分类</strong>：
+<ul>
+<li>共同特点：
+<ol>
+<li>小分子可溶性蛋白质，多为糖蛋白；</li>
+<li>高效性，一般在较低浓度下即有生物学效应；</li>
+<li>通过与受体结合发挥生物学作用；</li>
+<li>可诱导产生，且合成具有自限性；</li>
+<li>半寿期短；</li>
+<li>（绝大多数）效应范围小。</li>
+</ol>
+</li>
+<li>分类：<span class="horizontal-list"><span class="horizontal-list-item">白细胞介素</span><span class="horizontal-list-item">集落刺激因子</span><span class="horizontal-list-item">干扰素</span><span class="horizontal-list-item">肿瘤坏死因子</span><span class="horizontal-list-item">生长因子</span><span class="horizontal-list-item">趋化因子</span></span></li>
+</ul>
+</li>
+<li>细胞因子的作用方式：<span class="horizontal-list"><span class="horizontal-list-item">自分泌</span><span class="horizontal-list-item">旁分泌</span><span class="horizontal-list-item">内分泌</span></span></li>
+<li>细胞因子的功能特点：<span class="horizontal-list"><span class="horizontal-list-item">多效性</span><span class="horizontal-list-item">重叠性</span><span class="horizontal-list-item">协同性</span><span class="horizontal-list-item">拮抗性</span><span class="horizontal-list-item">网络性</span></span></li>
+<li>细胞因子受体共有链：<span class="horizontal-list"><span class="horizontal-list-item">共有 γ 链（γc）</span><span class="horizontal-list-item">共有 β 链（βc）</span><span class="horizontal-list-item">gp130</span></span></li>
+</ol>
+<h2 id="主要组织相容复合体">主要组织相容复合体 <a class="markdownIt-Anchor" href="#主要组织相容复合体">#</a></h2>
+<ol>
+<li><strong>MHC、HLA 的概念</strong>：
+<ul>
+<li><strong>主要组织相容性复合体</strong>（MHC）是一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群；</li>
+<li>人 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</li>
+</ul>
+</li>
+<li><strong>HLA-Ⅰ 类分子和 HLA-Ⅱ 类分子的结构、分布和功能</strong>：
+<ul>
+<li>HLA Ⅰ 类分子
+<ul>
+<li>组成：重链、β<sub>2</sub> 微球蛋白</li>
+<li>分布：所有有核细胞表面</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞提呈内源性抗原肽</li>
+</ul>
+</li>
+<li>HLA Ⅱ 类分子：
+<ul>
+<li>组成：a 链、b 链</li>
+<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞提呈外源性抗原肽</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>HLA 分子与适应性免疫的关系</strong>：HLA 与<span class="horizontal-list"><span class="horizontal-list-item">组织器官移植排斥</span><span class="horizontal-list-item">自身免疫性疾病</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item">病毒感染性疾病</span></span>等临床疾病的发生、发展密切相关。</li>
+</ol>
+<h2 id="b-淋巴细胞">B 淋巴细胞 <a class="markdownIt-Anchor" href="#b-淋巴细胞">#</a></h2>
+<ol>
+<li><strong>B1 细胞与 B2 细胞亚群的比较</strong>：
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>B1 细胞</th>
+<th>B2 细胞</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>更新方式</td>
+<td>自我更新</td>
+<td>由骨髓产生</td>
+</tr>
+<tr>
+<td>自发产生 Ig</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>针对的抗原</td>
+<td>碳水化合物</td>
+<td>蛋白质类</td>
+</tr>
+<tr>
+<td>分泌的 Ig 种类</td>
+<td>IgM&gt;IgG</td>
+<td>IgG&gt;IgM</td>
+</tr>
+<tr>
+<td>特异性</td>
+<td>多反应性</td>
+<td>特异性</td>
+</tr>
+<tr>
+<td>体细胞高频突变</td>
+<td>低/无</td>
+<td>高</td>
+</tr>
+<tr>
+<td>免疫记忆</td>
+<td>少/无</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>BCR 复合物的组成</strong>：
+<ul>
+<li>膜免疫球蛋白（mIg）：识别和结合抗原</li>
+<li>Igα/Igβ（CD79a/CD79b）异二聚体：具有免疫受体酪氨酸活化基序（ITAM），传递抗原刺激信号（第一信号）</li>
+</ul>
+</li>
+<li><strong>B 细胞的功能</strong>：<span class="horizontal-list"><span class="horizontal-list-item">产生抗体介导体液免疫</span><span class="horizontal-list-item">呈递抗原</span><span class="horizontal-list-item">免疫调节</span></span></li>
+</ol>
+<h2 id="t-淋巴细胞">T 淋巴细胞 <a class="markdownIt-Anchor" href="#t-淋巴细胞">#</a></h2>
+<ol>
+<li><strong>αβT 淋巴细胞的主要功能亚群</strong>：
+<ol>
+<li><strong>辅助 T 细胞</strong>（Th）：Th1、Th2、Th9、Th17、Th22、Tfh</li>
+<li><strong>细胞毒性 T 细胞</strong>（CTL）</li>
+<li><strong>调节性 T 细胞</strong>（Treg）：CD4<sup>+</sup>CD25<sup>+</sup>Foxp3<sup>+</sup>T 细胞，<span class="horizontal-list"><span class="horizontal-list-item">自然调节性 T 细胞</span><span class="horizontal-list-item">诱导性调节性 T 细胞</span><span class="horizontal-list-item">其他调节性 T 细胞</span></span></li>
+</ol>
+</li>
+<li><strong>TCR 复合物的组成</strong>：
+<ol>
+<li>TCR：由 α、β 两条肽链组成，每条肽链膜外区各有一个可变（V）区和一个恒定（C）区，V 区含三个互补决定区；跨膜区带有正电，可与 CD3 形成盐桥；膜内区较短；</li>
+<li>CD3：有五种肽链，具有免疫受体酪氨酸活化基序（ITAM），功能是转导 TCR 识别抗原产生的活化信号。</li>
+</ol>
+</li>
+</ol>
+<h2 id="抗原提呈细胞">抗原提呈细胞 <a class="markdownIt-Anchor" href="#抗原提呈细胞">#</a></h2>
+<ol>
+<li><strong>DC 的功能</strong>：
+<ol>
+<li>识别、摄取、加工抗原，参与固有免疫；</li>
+<li>抗原呈递与免疫激活作用；</li>
+<li>免疫调节作用；</li>
+<li>免疫耐受的诱导与维持。</li>
+</ol>
+</li>
+<li><strong>MHC Ⅰ 类分子和 Ⅱ 类分子抗原提呈途径</strong>：
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MHC Ⅰ 类分子途径</th>
+<th>MHC Ⅱ 类分子途径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抗原来源</td>
+<td>内源性抗原</td>
+<td>外源性抗原</td>
+</tr>
+<tr>
+<td>降解抗原的场所</td>
+<td>免疫蛋白酶体</td>
+<td>M Ⅱ C、溶酶体</td>
+</tr>
+<tr>
+<td>抗原与 MHC 结合场所</td>
+<td>内质网</td>
+<td>M Ⅱ C</td>
+</tr>
+<tr>
+<td>提呈抗原肽的 MHC</td>
+<td>MHC Ⅰ 类分子</td>
+<td>MHC Ⅱ 类分子</td>
+</tr>
+<tr>
+<td>伴侣分子与抗原肽转运分子</td>
+<td>钙联蛋白、TAP 等</td>
+<td>Ii 链、钙联蛋白等</td>
+</tr>
+<tr>
+<td>加工与提呈抗原的细胞</td>
+<td>所有有核细胞</td>
+<td>专职性抗原提呈细胞</td>
+</tr>
+<tr>
+<td>识别和应答细胞</td>
+<td>CD8<sup>+</sup>T 细胞（CTL）</td>
+<td>CD4<sup>+</sup>T 细胞（Th）</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="t-淋巴细胞介导的适应性免疫应答">T 淋巴细胞介导的适应性免疫应答 <a class="markdownIt-Anchor" href="#t-淋巴细胞介导的适应性免疫应答">#</a></h2>
+<ol>
+<li><strong>T 细胞活化的双信号</strong>：
+<ul>
+<li>TCR 特异性识别 pMHC 启动第一信号（抗原识别信号）；</li>
+<li>共刺激分子对相互作用形成 T 细胞活化的第二信号（共刺激信号）。</li>
+</ul>
+</li>
+<li><strong>效应 T 细胞的亚群及免疫保护功能</strong>：
+<ol>
+<li>CD4<sup>+</sup>Th1：抗胞内感染微生物</li>
+<li>CD4<sup>+</sup>Th2：清除蠕虫等</li>
+<li>CD4<sup>+</sup>Th17：抗细菌、真菌、病毒</li>
+<li>CD4<sup>+</sup>Tfh：自身免疫</li>
+<li>CD4<sup>+</sup>Treg：维持免疫应答适性、防止自身免疫病</li>
+<li>CD8<sup>+</sup>CTL：杀伤病毒感染细胞和肿瘤细胞</li>
+</ol>
+</li>
+<li><strong>CTL 杀伤靶细胞的机制</strong>：
+<ol>
+<li>穿孔素/颗粒酶途径</li>
+<li>死亡受体途径</li>
+</ol>
+</li>
+</ol>
+<h2 id="b-淋巴细胞介导的适应性免疫应答">B 淋巴细胞介导的适应性免疫应答 <a class="markdownIt-Anchor" href="#b-淋巴细胞介导的适应性免疫应答">#</a></h2>
+<ol>
+<li><strong>B 细胞对 TI 和 TD 抗原应答的区别</strong>：
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TI-1 抗原</th>
+<th>TI-2 抗原</th>
+<th>TD 抗原</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抗原</td>
+<td>LPS</td>
+<td>多糖等</td>
+<td>蛋白质</td>
+</tr>
+<tr>
+<td>APC 提呈</td>
+<td>不需要</td>
+<td>不需要</td>
+<td><strong>需要</strong></td>
+</tr>
+<tr>
+<td>抗原识别受体</td>
+<td><strong>丝裂原受体</strong></td>
+<td>BCR</td>
+<td>BCR</td>
+</tr>
+<tr>
+<td>活化 B 细胞</td>
+<td>B1</td>
+<td>B1</td>
+<td><strong>B2</strong></td>
+</tr>
+<tr>
+<td>类别转换</td>
+<td>无</td>
+<td>多数无</td>
+<td><strong>有</strong></td>
+</tr>
+<tr>
+<td>T 细胞辅助</td>
+<td>不需要</td>
+<td>不需要</td>
+<td><strong>需要</strong></td>
+</tr>
+<tr>
+<td>诱导 Ig 类型</td>
+<td>IgM</td>
+<td>IgM、少数有其他 Ig</td>
+<td>各类 Ig</td>
+</tr>
+<tr>
+<td>记忆 B 细胞</td>
+<td>无</td>
+<td>大多数无</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>B 细胞受 TD 抗原刺激活化所需的信号</strong>：
+<ul>
+<li>第一信号（抗原识别信号）由 BCR-CD79a/CD79b（BCR-Igα/Igβ）传递，BCR 共受体复合物（CD19/CD21/CDl81）起增强作用；</li>
+<li>第二信号（共刺激信号）由 Th 细胞与 B 细胞表面多对共刺激信号共同作用产生，其中 CD40/CD40L 最重要。</li>
+</ul>
+</li>
+<li><strong>抗体产生的一般规律</strong>：
+<ol>
+<li>初次应答：<span class="horizontal-list"><span class="horizontal-list-item">应答潜伏期相对较长；</span><span class="horizontal-list-item">产生抗体量较少，主要为低亲和力的 IgM；</span><span class="horizontal-list-item">可产生少量的针对特异性抗原类型的记忆性 B 细胞。</span></span></li>
+<li>再次应答：<span class="horizontal-list"><span class="horizontal-list-item">潜伏期短；</span><span class="horizontal-list-item">血清抗体浓度增加快，快速到达平台期，抗体滴度高；</span><span class="horizontal-list-item">抗体维持时间长；</span><span class="horizontal-list-item">诱发再次应答所需的抗原剂量少；</span><span class="horizontal-list-item">再次免疫应答主要产生高轻和力的 IgG。</span></span></li>
+</ol>
+</li>
+</ol>
+<h2 id="固有免疫系统及其介导的应答">固有免疫系统及其介导的应答 <a class="markdownIt-Anchor" href="#固有免疫系统及其介导的应答">#</a></h2>
+<ol>
+<li><strong>固有免疫系统的组成和固有免疫细胞的分类</strong>：
+<ul>
+<li>固有免疫系统的组成：
+<ol>
+<li>皮肤黏膜屏障，包括<span class="horizontal-list"><span class="horizontal-list-item">物理屏障、</span><span class="horizontal-list-item">化学屏障、</span><span class="horizontal-list-item">微生物屏障。</span></span></li>
+<li>体内屏障，包括<span class="horizontal-list"><span class="horizontal-list-item">血脑屏障、</span><span class="horizontal-list-item">血胎屏障。</span></span></li>
+</ol>
+</li>
+<li>固有免疫细胞种类：
+<ol>
+<li>来源于<ins>骨髓共同髓样前体</ins>的<ins>经典固有免疫细胞</ins>，</li>
+<li>来源于<ins>骨髓共同淋巴样前体</ins>的<ins>固有淋巴样细胞</ins>（ILCs）和<ins>固有淋巴细胞</ins>（ILLs）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>模式识别受体和病原相关分子模式的概念</strong>：
+<ul>
+<li>模式识别受体（PRR）指广泛存在于<span class="horizontal-list"><span class="horizontal-list-item">固有免疫细胞表面、</span><span class="horizontal-list-item">胞内器室膜上、</span><span class="horizontal-list-item">胞浆</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">血液</span></span>中的一类能直接识别外来病原体及其产物或宿主畸变和衰老凋亡细胞某些共有特定模式分子结构的受体，可分为<span class="horizontal-list"><span class="horizontal-list-item">胞膜型 PRR、</span><span class="horizontal-list-item">内膜型 PRR、</span><span class="horizontal-list-item">胞浆型 PRR</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">分泌型 PRR</span></span>。</li>
+<li>病原相关分子模式（PAMP）指某些病原体或其产物所共有的高度保守且对病原体生存和致病性不可或缺的特定分子结构。</li>
+</ul>
+</li>
+<li><strong>巨噬细胞表面主要的模式识别受体</strong>：<span class="horizontal-list"><span class="horizontal-list-item">甘露糖受体、</span><span class="horizontal-list-item">清道夫受体、</span><span class="horizontal-list-item">Toll 样受体</span></span>。</li>
+<li><strong>固有免疫的作用特点</strong>/<strong>固有免疫与适应性免疫对比</strong>：
+<table>
+<thead>
+<tr>
+<th></th>
+<th>固有免疫</th>
+<th>适应性免疫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>获得形式</td>
+<td>先天性</td>
+<td>后天获得</td>
+</tr>
+<tr>
+<td>抗原参与</td>
+<td>无需抗原激发</td>
+<td>需抗原激发</td>
+</tr>
+<tr>
+<td>发挥作用时相</td>
+<td>早期、快速（数分钟至 4 天）</td>
+<td>4~5 天后发挥效应</td>
+</tr>
+<tr>
+<td>免疫原识别受体</td>
+<td>模式识别受体</td>
+<td>TCR、BCR</td>
+</tr>
+<tr>
+<td>免疫记忆</td>
+<td>无</td>
+<td>有（产生记忆细胞）</td>
+</tr>
+<tr>
+<td>参与成分</td>
+<td>抑菌/杀菌物质、补体、炎症因子、吞噬细胞、NK 细胞、NKT 细胞等</td>
+<td>抗体、T 细胞、B 细胞等</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="黏膜免疫的细胞及其功能">黏膜免疫的细胞及其功能 <a class="markdownIt-Anchor" href="#黏膜免疫的细胞及其功能">#</a></h2>
+<ol>
+<li><strong>黏膜免疫系统和黏膜相关淋巴组织的组成</strong>：
+<ul>
+<li>黏膜免疫系统：<span class="horizontal-list"><span class="horizontal-list-item">黏膜上皮组织、</span><span class="horizontal-list-item"><ins>黏膜相关淋巴组织</ins>、</span><span class="horizontal-list-item">肠上皮细胞和免疫细胞及其产生的分子或分泌物</span><span class="horizontal-list-conjunction">以及</span><span class="horizontal-list-item">黏膜正常栖息微生物群或“共生菌群”</span></span></li>
+<li>黏膜相关淋巴组织（MALT）：
+<ol>
+<li>肠相关淋巴组织（GALT）：<span class="horizontal-list"><span class="horizontal-list-item">派氏集合淋巴管、</span><span class="horizontal-list-item">独立淋巴滤泡、</span><span class="horizontal-list-item">阑尾、</span><span class="horizontal-list-item">韦氏环</span></span></li>
+<li>鼻咽相关淋巴组织（NALT）</li>
+<li>支气管相关淋巴组织（BALT）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="超敏反应">超敏反应 <a class="markdownIt-Anchor" href="#超敏反应">#</a></h2>
+<ol>
+<li><strong>超敏反应的概念和分型</strong>：超敏反应指机体受到某些抗原刺激时，出现生理功能紊乱或组织细胞损伤的异常适应性免疫应答，根据发生机制和临床特点分为 Ⅰ、Ⅱ、Ⅲ、Ⅳ 四型。</li>
+<li><strong>各类超敏反应的发生机制及典型疾病</strong>：教材表 18-1</li>
+</ol>
+<h2 id="免疫耐受">免疫耐受 <a class="markdownIt-Anchor" href="#免疫耐受">#</a></h2>
+<ol>
+<li><strong>免疫耐受的概念和形成机制</strong>：
+<ul>
+<li>概念：免疫系统对特定抗原的“免疫无反应”状态</li>
+<li>机制：
+<ol>
+<li>胚胎期及新生期接触抗原所致的免疫耐受（先天性免疫耐受）：胚胎发育过程中，未成熟淋巴细胞接触抗原，出生后再次遇到相同抗原时，机体呈现无反应状态；</li>
+<li>后天接触抗原导致的免疫耐受（后天性免疫耐受）：某些自身反应性淋巴细胞克隆在输出到外周后，通过活化诱导的细胞凋亡、失能、Treg 细胞介导的免疫抑制等多种途径，丧失对抗原刺激的反应性。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="自身免疫病">自身免疫病 <a class="markdownIt-Anchor" href="#自身免疫病">#</a></h2>
+<ol>
+<li><strong>自身免疫病的概念和形成机制</strong>：
+<ul>
+<li>概念：在某些遗传因素和环境因素诱发下自身免疫耐受状态被打破或自身免疫性细胞调节异常，免疫系统对<ins>自身抗原</ins>产生<ins>持续迁延</ins>的免疫应答，造成了<ins>自身组织细胞损伤或功能异常</ins>Ⅱ导致的临床病症。</li>
+<li>形成机制：
+<ol>
+<li>自身抗原的改变：<span class="horizontal-list"><span class="horizontal-list-item">免疫隔离部位抗原的释放；</span><span class="horizontal-list-item">自身抗原的改变；</span><span class="horizontal-list-item">分子模拟；</span><span class="horizontal-list-item">表位扩展。</span></span></li>
+<li>免疫系统的异常：<span class="horizontal-list"><span class="horizontal-list-item">自身反应性淋巴细胞清除异常；</span><span class="horizontal-list-item">免疫忽视的打破；</span><span class="horizontal-list-item">淋巴细胞的多克隆激活；</span><span class="horizontal-list-item">活化诱导细胞的死亡障碍；</span><span class="horizontal-list-item">调节性 T 细胞功能异常；</span><span class="horizontal-list-item">MHC Ⅱ 类分子表达异常。</span></span></li>
+<li>遗传因素：<span class="horizontal-list"><span class="horizontal-list-item">HLA 基因与自身免疫病的相关性；</span><span class="horizontal-list-item">非 HLA 基因与自身免疫病的相关性。</span></span></li>
+<li>其他因素：<span class="horizontal-list"><span class="horizontal-list-item">性别因素；</span><span class="horizontal-list-item">年龄因素。</span></span></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="免疫缺陷病">免疫缺陷病 <a class="markdownIt-Anchor" href="#免疫缺陷病">#</a></h2>
+<ol>
+<li><strong>免疫缺陷病的概念、分类及临床特点</strong>：
+<ul>
+<li>概念：因遗传因素或其他因素造成免疫系统先天性发育障碍或后天损伤所致的综合征。</li>
+<li>分类：<span class="horizontal-list"><span class="horizontal-list-item">原发性免疫缺陷病（PIDD）、</span><span class="horizontal-list-item">获得性免疫缺陷病（AIDD）</span></span></li>
+<li>临床特点：
+<ol>
+<li>对病原体甚至条件性病原微生物高度易感；</li>
+<li>对自身免疫病及超敏反应性疾病易感；</li>
+<li>肿瘤，特别是淋巴细胞瘤的发生率增高。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="免疫学防治">免疫学防治 <a class="markdownIt-Anchor" href="#免疫学防治">#</a></h2>
+<ol>
+<li><strong>人工免疫的分类并举例</strong>：
+<ol>
+<li>人工主动免疫，如接种灭活疫苗</li>
+<li>人工被动免疫，如注射抗毒素</li>
+</ol>
+</li>
+<li><strong>疫苗的种类</strong>：<span class="horizontal-list"><span class="horizontal-list-item">灭活疫苗、</span><span class="horizontal-list-item">减毒活疫苗、</span><span class="horizontal-list-item">类毒素、</span><span class="horizontal-list-item">亚单位疫苗、</span><span class="horizontal-list-item">结合疫苗、</span><span class="horizontal-list-item">DNA 疫苗、</span><span class="horizontal-list-item">重组载体疫苗</span></span></li>
+</ol>
+<h2 id="肿瘤免疫">肿瘤免疫 <a class="markdownIt-Anchor" href="#肿瘤免疫">#</a></h2>
+<ol>
+<li><strong>肿瘤细胞的免疫逃逸机制</strong>：
+<ol>
+<li>肿瘤细胞的肿瘤抗原缺失和抗原调变；</li>
+<li>肿瘤细胞 MHC Ⅰ 类分子表达低下；</li>
+<li>肿瘤细胞共刺激信号异常；</li>
+<li>肿瘤细胞表达或分泌某些免疫分子抑制机体的抗肿瘤免疫功能；</li>
+<li>肿瘤细胞主动诱导 Treg 和 MDSC（骨髓源的抑制性细胞）的产生；</li>
+<li>肿瘤细胞的抗凋亡作用。</li>
+</ol>
+</li>
+<li><strong>肿瘤免疫治疗的分类及举例</strong>：
+<ol>
+<li>肿瘤的主动免疫治疗：给荷瘤宿主注射具有免疫原性的疫苗，如<span class="horizontal-list"><span class="horizontal-list-item">灭活的瘤苗、</span><span class="horizontal-list-item">异构的瘤苗、</span><span class="horizontal-list-item">抗独特型抗体瘤苗</span></span>等；</li>
+<li>肿瘤的被动免疫治疗：<span class="horizontal-list"><span class="horizontal-list-item">抗体的靶向治疗；</span><span class="horizontal-list-item">细胞因子疗法；</span><span class="horizontal-list-item">细胞免疫疗法［嵌合抗原受体（CAR）修饰的 T 细胞（CAR-T）在白细胞治疗中取得成功］。</span></span></li>
+<li>肿瘤的免疫检查点治疗：如针对 CTLA-4 和 PD-1 或其配体 PD-L1 研制的系列抗体在临床治疗肿瘤中取得良好成果。</li>
+</ol>
+</li>
+</ol>
+<h2 id="移植免疫">移植免疫 <a class="markdownIt-Anchor" href="#移植免疫">#</a></h2>
+<ol>
+<li><strong>同种异型移植排斥反应的分类</strong>：
+<ol>
+<li>宿主抗移植物反应（HVGR）：<span class="horizontal-list"><span class="horizontal-list-item">超急性排斥反应、</span><span class="horizontal-list-item">急性排斥反应、</span><span class="horizontal-list-item">慢性排斥反应</span></span></li>
+<li>移植物抗宿主反应（GVHR）：<span class="horizontal-list"><span class="horizontal-list-item">急性 GVHD（移植物抗宿主疾病）、</span><span class="horizontal-list-item">慢性 GVHD</span></span></li>
+</ol>
+</li>
+<li><strong>宿主抗移植物反应的分类</strong>：<span class="horizontal-list"><span class="horizontal-list-item">超急性排斥反应、</span><span class="horizontal-list-item">急性排斥反应、</span><span class="horizontal-list-item">慢性排斥反应</span></span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+        <tag>考试</tag>
       </tags>
   </entry>
   <entry>
