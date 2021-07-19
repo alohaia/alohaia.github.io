@@ -1,6 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CMake 学习记录</title>
+    <url>/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>GitHub repository: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3R0cm95NTAvY21ha2UtZXhhbXBsZXM=">https://github.com/ttroy50/cmake-examples<i class="fa fa-external-link-alt"></i></span></p>
+<p>CMake 是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个库。<br/>
+它用配置文件控制建构过程（build process）的方式和 Unix 的 make 相似，只是 CMake
+的配置文件取名为 CMakeLists.txt。<br/>
+CMake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile 或
+Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方式使用。</p>
+<span id="more"></span>
+<blockquote>
+<p>原文中将 CMake 命令称为“函数”。本文沿用了这种称法。</p>
+</blockquote>
+<h2 id="基础">基础 <a class="markdownIt-Anchor" href="#基础">#</a></h2>
+<p>最基本的 Hello World CMakeLists.txt 文件：</p>
+<figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
+<details class="note info" open>
+<summary id='note'><p>Note</p>
+</summary>
+<p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
+然后就可以像下面这样写：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
+</details>
+<h3 id="二进制目录">二进制目录 <a class="markdownIt-Anchor" href="#二进制目录">#</a></h3>
+<p>我们运行 <code>cmake</code>（可带参数）命令时所在的目录（即当前工作目录、<code>pwd</code> 显示的目录）被称为
+<code>CMAKE_BINARY_DIR</code>。这是你的生成的二进制文件所在的根目录（通常还会有一些其他文件）。</p>
+<p>CMake 支持两种生成二进制文件的方式——就地构建（in-place
+build）和源外构建（out-of-source build）。</p>
+<h4 id="就地构建">就地构建 <a class="markdownIt-Anchor" href="#就地构建">#</a></h4>
+<p>要以这种方式构建，只需在项目根目录（其实是 CMakeLists.txt 所在的目录）执行
+<code>cmake</code>（不指定项目根目录，见下）命令。这样做会使 CMake
+生成的临时文件和二进制文件和项目文件混在一起。</p>
+<h4 id="源外构建">源外构建 <a class="markdownIt-Anchor" href="#源外构建">#</a></h4>
+<p>要采用源外构建，在任一非项目根目录的目录中执行 <code>cmake &lt;project_root&gt;</code> 命令，其中
+<code>&lt;project_root&gt;</code> 为项目根目录。这种方式生成的临时文件和二进制文件等会被放在执行
+<code>cmake</code> 命令时所在的目录，而不会污染源目录（项目根目录），一般采用这种方式。</p>
+<p>习惯上这样做（假设当前目录已经为源目录）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir build &amp;&amp; cd build &amp;&amp; cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<h3 id="其他目录路径变量">其他目录路径变量 <a class="markdownIt-Anchor" href="#其他目录路径变量">#</a></h3>
+<p>完整变量列表见：<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvbWFudWFsL2NtYWtlLXZhcmlhYmxlcy43Lmh0bWw=">https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html<i class="fa fa-external-link-alt"></i></span></p>
+<p>一些术语：</p>
+<ul>
+<li><strong>源（码）树（source tree）<strong>和</strong>构建树（build tree）</strong>：分别指项目<em>源代码根目录</em>
+和<em>指定的生成二进制文件（等文件）的根目录</em>和各自的子目录形成的树状目录结构。</li>
+<li><strong>源（码）目录（source directory）<strong>和</strong>构建目录（build directory）</strong>：<em>源码树</em>和
+<em>构建树</em>中的位置，一般指顶层位置，但是可以移动，表示当前位置的变量一般含有 <code>CURRENT</code>。</li>
+<li>CMake 目录种类 TODO
+<ul>
+<li>顶层/根</li>
+<li>当前所处</li>
+<li>正在处理</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_SOURCE_DIR.html"><code>CMAKE_SOURCE_DIR</code></a></td>
+<td>源码树（source tree）顶层的路径</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_SOURCE_DIR.html"><code>CMAKE_CURRENT_SOURCE_DIR</code></a></td>
+<td>正在处理的源目录</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_SOURCE_DIR.html"><code>PROJECT_SOURCE_DIR</code></a></td>
+<td>当前项目的源目录</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_BINARY_DIR.html"><code>CMAKE_BINARY_DIR</code></a></td>
+<td>构建树（build tree）顶层的路径</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_BINARY_DIR.html"><code>CMAKE_CURRENT_BINARY_DIR</code></a></td>
+<td>当前所在的构建目录（build tree）</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_BINARY_DIR.html"><code>PROJECT_BINARY_DIR</code></a></td>
+<td>项目的构建目录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
+<p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
+<div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
+</div>
+<p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="包含目录">包含目录 <a class="markdownIt-Anchor" href="#包含目录">#</a></h3>
+<p>使用 <a href="https://cmake.org/cmake/help/latest/command/target_include_directories.html"><code>target_include_directories()</code></a> 函数为目标（target）添加包含目录（include path），这样添加的目录会在生成目标时以 <code>-I</code> 选项传递给编译器。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(<span class="keyword">target</span></span><br><span class="line">    PRIVATE</span><br><span class="line">        <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><code>INTERFACE</code>、<code>PUBLIC</code>、<code>PRIVATE</code> 关键字用来指定其后的参数的作用域（scope，也就是这三个关键字）</p>
+<ul>
+<li><code>PUBLIC</code>、<code>PRIVATE</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INCLUDE_DIRECTORIES.html#prop_tgt:INCLUDE_DIRECTORIES"><code>INCLUDE_DIRECTORIES</code></a> 属性（property）</li>
+<li><code>INTERFACE</code>、<code>PUBLIC</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.html#prop_tgt:INTERFACE_INCLUDE_DIRECTORIES"><code>INTERFACE_INCLUDE_DIRECTORIES</code></a> 属性</li>
+</ul>
+<p>详细解释见下面的<a href="#%E5%BA%93">库</a>。</p>
+<h3 id="库">库 <a class="markdownIt-Anchor" href="#库">#</a></h3>
+<h4 id="创建库">创建库 <a class="markdownIt-Anchor" href="#创建库">#</a></h4>
+<p><a href="">使用</a> <a href="https://cmake.org/cmake/help/latest/command/add_library.html"><code>add_library()</code></a> 函数以用指定源文件创建一个库文件。</p>
+<p>如要创建静态库，可以像这样写：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello_library STATIC</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>指定库的类型：</p>
+<ul>
+<li><code>STATIC</code>：静态库，编译时链接</li>
+<li><code>SHARED</code>：动态库，运行时链接</li>
+<li><code>MODULE</code>：不会链接到其他目标，但是可以在运行时通过 <em>dlopen-like</em> 功能
+（见 <span class="exturl" data-url="aHR0cHM6Ly9tYW43Lm9yZy9saW51eC9tYW4tcGFnZXMvbWFuMy9kbG9wZW4uMy5odG1s">man 3 dlopen<i class="fa fa-external-link-alt"></i></span>）手动加载</li>
+</ul>
+<blockquote>
+<p>像之前推荐的那样，这里直接在 <code>add_xxx()</code> 函数中写明了要使用的源文件。</p>
+</blockquote>
+<p><a href="#%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95">上一节</a>中作用域的含义：</p>
+<ul>
+<li><code>PRIVATE</code>：参数会被添加为<strong>目标</strong>的包含目录之一</li>
+<li><code>INTERFACE</code>：参数会被添加为<strong>与该库链接的所有的目标</strong>的包含目录之一</li>
+<li><code>PUBLIC</code>：相当于前两个作用域相加的效果</li>
+</ul>
+<h4 id="链接库和目标">链接库和目标 <a class="markdownIt-Anchor" href="#链接库和目标">#</a></h4>
+<p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<details class="note info" open>
+<summary id='目标别名'><p>目标别名</p>
+</summary>
+<p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
+<p>如为库创建别名：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>当然，也可以为可执行文件创建别名：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure></details>
+<h3 id="安装">安装 <a class="markdownIt-Anchor" href="#安装">#</a></h3>
+<p>CMake 提供了生成 <code>make install</code> 目标（是 Makefile 中的 target，而不是之前提到的
+CMake 中的 target）的功能。<br/>
+安装目录可以通过 <code>CMAKE_INSTALL_PREFIX</code> 指定，详见 <a href="#%E6%8C%87%E5%AE%9A%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">指定安装目录</a>。</p>
+<h4 id="install-函数">install 函数 <a class="markdownIt-Anchor" href="#install-函数">#</a></h4>
+<p>安装由 <a href="https://cmake.org/cmake/help/latest/command/install.html"><code>install()</code></a> 函数控制。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst_bin</span><br><span class="line">    DESTINATION bin)</span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib)</span><br></pre></td></tr></table></figure>
+<p>上面的代码会将 <code>cmake_examples_inst_bin</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下，将 <code>cmake_examples_inst</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下。</p>
+<div class="note warning"><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure></div>
+<p>使用 <code>DIRECTORY</code> 以安装目录：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/</span><br><span class="line">    DESTINATION <span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
+<p>使用 <code>FILES</code> 直接安装文件：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (FILES cmake-examples.conf</span><br><span class="line">    DESTINATION etc)</span><br></pre></td></tr></table></figure>
+<h4 id="install_manifesttxt">install_manifest.txt <a class="markdownIt-Anchor" href="#install_manifesttxt">#</a></h4>
+<p>运行完 <code>make install</code> 后，CMake 会生成一个名为 install_manifest.txt
+的文件，其中包含了所有安装文件的详细信息。</p>
+<p>如果以 root 运行 <code>make install</code>，install_manifest.txt 会为 root 所有。</p>
+<h4 id="指定安装目录">指定安装目录 <a class="markdownIt-Anchor" href="#指定安装目录">#</a></h4>
+<p><code>CMAKE_INSTALL_PREFIX</code> 的值默认为 <code>/usr/local/</code>，要改变其值，可以在添加
+<em>可执行文件和库文件</em>前在顶层（top level）CMakeLists.txt 中添加如下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )</span><br><span class="line">    <span class="keyword">message</span>(STATUS <span class="string">&quot;Setting default CMAKE_INSTALL_PREFIX path to $&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span>)</span><br><span class="line">    <span class="keyword">set</span>(CMAKE_INSTALL_PREFIX <span class="string">&quot;$&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;The path to use for make install&quot;</span> FORCE)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<p>也可以通过终端命令的参数（<code>-DCMAKE_INSTALL_PREFIX=/install/location</code>）设置该变量。</p>
+<hr />
+<p>还可以通过 make 的 <code>DESTDIR</code> 改变安装目录：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make install DESTDIR=/tmp/stage</span><br></pre></td></tr></table></figure>
+<p>这会创建 <code>$&#123;DESTDIR&#125;/$&#123;CMAKE_INSTALL_PREFIX&#125;</code> 作为安装目录。<br/>
+在这个例子中，安装目录为 <code>/tmp/stage/usr/local</code>。</p>
+<h4 id="卸载">卸载 <a class="markdownIt-Anchor" href="#卸载">#</a></h4>
+<p>CMake 默认不提供 <code>make uninstall</code> 对象。<br/>
+要添加 <code>make uninstall</code> 对象，可以参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRsYWIua2l0d2FyZS5jb20vY21ha2UvY29tbXVuaXR5Ly0vd2lraXMvRkFR">Can I do “make uninstall” with CMake?<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>一个简单的做法是利用 install_manifest.txt 文件：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo xargs rm &lt; install_manifest.txt</span><br></pre></td></tr></table></figure>
+<h3 id="构建类型">构建类型 <a class="markdownIt-Anchor" href="#构建类型">#</a></h3>
+<p>CMake 内置了几种构建类型，其原理就是向编译器传递一些标志（flags）：</p>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>Compiler Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Release</td>
+<td><code>-O3 -DNDEBUG</code></td>
+</tr>
+<tr>
+<td>Debug</td>
+<td><code>-g</code></td>
+</tr>
+<tr>
+<td>MinSizeRel</td>
+<td><code>-Os -DNDEBUG</code></td>
+</tr>
+<tr>
+<td>RelWithDebInfo</td>
+<td><code>-O2 -g -DNDEBUG</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>可以通过图形界面设置构建类型：</li>
+</ul>
+<img data-src="/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Configuring-Using-Cmake-GUI.png" class="" title="Configuring Using Cmake GUI" alt="Configuring Using Cmake GUI">
+<ul>
+<li>也可以在终端命令中定义变量：  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>CMake 提供的默认的构建类型不包含任何相关的编译器标志，以优化程序。<br/>
+但是有时可能会需要设置默认构建类型，可以在顶层 CMakeList.txt 中添加如下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">NOT</span> CMAKE_BUILD_TYPE <span class="keyword">AND</span> <span class="keyword">NOT</span> CMAKE_CONFIGURATION_TYPES)</span><br><span class="line">  <span class="keyword">message</span>(<span class="string">&quot;Setting build type to &#x27;RelWithDebInfo&#x27; as none was specified.&quot;</span>)</span><br><span class="line">  <span class="keyword">set</span>(CMAKE_BUILD_TYPE RelWithDebInfo CACHE <span class="keyword">STRING</span> <span class="string">&quot;Choose the type of build.&quot;</span> FORCE)</span><br><span class="line">  <span class="comment"># Set the possible values of build type for cmake-gui</span></span><br><span class="line">  <span class="keyword">set_property</span>(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS <span class="string">&quot;Debug&quot;</span> <span class="string">&quot;Release&quot;</span></span><br><span class="line">    <span class="string">&quot;MinSizeRel&quot;</span> <span class="string">&quot;RelWithDebInfo&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="编译器标志">编译器标志 <a class="markdownIt-Anchor" href="#编译器标志">#</a></h3>
+<p>CMake 支持用若干种方式设置编译器标志：</p>
+<ul>
+<li>使用函数 <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html"><code>target_compile_definitions()</code></a> 和 <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options()</code></a></li>
+<li>使用变量 <code>CMAKE_C_FLAGS</code> 和 <code>CMAKE_CXX_FLAGS</code>，见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a></li>
+</ul>
+<h4 id="为指定目标设置">为指定目标设置 <a class="markdownIt-Anchor" href="#为指定目标设置">#</a></h4>
+<p>在现代 CMake 中设置 C++ 标志的推荐方法是使用按对象标志（per-target flags），可以通过 <code>target_compile_definitions()</code> 函数将其填充到其他对象。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_compile_definitions</span>(cmake_examples_compile_flags</span><br><span class="line">     PRIVATE EX3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这会使编译器在变异目标（<code>cmake_examples_compile_flags</code>）时添加 <code>-DEX3</code> 标志。</p>
+<p>使用该函数会填充<strong>库</strong>的 <a href="https://cmake.org/cmake/help/v3.0/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.html#prop_tgt:INTERFACE_COMPILE_DEFINITIONS"><code>INTERFACE_COMPILE_DEFINITIONS</code></a>
+变量，并会根据作用域（scope）将定义传递给链接的对象。<br/>
+如果目标是一个库并且选择的作用域是 <code>PUBLIC</code> 或 <code>INTERFACE</code>，那么定义还会被包含在链接到该库的所有对象中。</p>
+<h4 id="设置编译器标志">设置编译器标志 <a class="markdownIt-Anchor" href="#设置编译器标志">#</a></h4>
+<p><code>CMAKE_CXX_FLAGS</code> 要么为空，要么包含所选构建类型的对应标志。<br/>
+要设置<strong>额外</strong>的编译标志，可以在顶层 CMakeLists.txt 中添加如下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -DEX2&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;Set C++ Compiler Flags&quot;</span> FORCE)</span><br></pre></td></tr></table></figure>
+<div class="note info"><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
+</div>
+<p>类似地，<code>CMAKE_C_FLAGS</code> 等变量也可以以同样的方式设置。其他变量见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a>。<br/>
+一旦设置了这些变量，CMake 会为此目录及其子目录下的所有目标设置编译器标志，因此更推荐使用 <code>target_compile_definitions</code> 函数。</p>
+<h4 id="设置链接器标志">设置链接器标志 <a class="markdownIt-Anchor" href="#设置链接器标志">#</a></h4>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTE3ODM5MzIvaG93LWRvLWktYWRkLWEtbGlua2VyLW9yLWNvbXBpbGUtZmxhZy1pbi1hLWNtYWtlLWZpbGU=">How do I add a linker or compile flag in a CMake file?<i class="fa fa-external-link-alt"></i></span></p>
+<p>先将标志储存为常量（现在不推荐这样做）：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_COMPILE_FLAGS <span class="string">&quot;-fprofile-arcs -ftest-coverage&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_LINK_FLAGS    <span class="string">&quot;-lgcov&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后可以通过几种方式添加它们：</p>
+<ol>
+<li>最简单的方式（not clean, but easy and convenient, and works only for compile flags, C &amp; C++ at once）： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_definitions</span>(<span class="variable">$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li>追加到现有的 CMake 变量： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS  <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; $&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(CMAKE_EXE_LINKER_FLAGS  <span class="string">&quot;$&#123;CMAKE_EXE_LINKER_FLAGS&#125; $&#123;GCC_COVERAGE_LINK_FLAGS&#125;&quot;</span>) </span><br></pre></td></tr></table></figure>
+</li>
+<li>使用目标属性（target properties）（需要指定目标名）<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvcHJvcF90Z3QvQ09NUElMRV9GTEFHUy5odG1s">COMPILE_FLAGS<i class="fa fa-external-link-alt"></i></span> <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get_target_property</span>(TEMP <span class="variable">$&#123;THE_TARGET&#125;</span> COMPILE_FLAGS)</span><br><span class="line"><span class="keyword">if</span>(TEMP <span class="keyword">STREQUAL</span> <span class="string">&quot;TEMP-NOTFOUND&quot;</span>)</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;&quot;</span>) <span class="comment"># Set to empty string</span></span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125; &quot;</span>) <span class="comment"># A space to cleanly separate from existing content</span></span><br><span class="line"><span class="keyword">endif</span>()</span><br><span class="line"><span class="comment"># Append our values</span></span><br><span class="line"><span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125;$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span> )</span><br><span class="line"><span class="keyword">set_target_properties</span>(<span class="variable">$&#123;THE_TARGET&#125;</span> PROPERTIES COMPILE_FLAGS <span class="variable">$&#123;TEMP&#125;</span> )</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="第三方库">第三方库 <a class="markdownIt-Anchor" href="#第三方库">#</a></h3>
+<p>CMake 提供了 <a href="https://cmake.org/cmake/help/latest/command/find_package.html"><code>find_package()</code></a> 函数来寻找第三方软件包文件所在路径。<br/>
+该函数会在 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_MODULE_PATH.html"><code>CMAKE_MODULE_PATH</code></a> 中的目录列表中的目录中寻找形似 “FindXXX.cmake” 的文件。Linux 中的默认搜索路径为 <code>/usr/share/cmake/Modules</code>（或者 <code>/usr/share/cmake-3.20/Modules</code>）。</p>
+<p>如要寻找 Boost：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(Boost <span class="number">1.46</span>.<span class="number">1</span> REQUIRED COMPONENTS filesystem system)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Boost</code>：包名，这会使 <code>find_package()</code> 函数寻找 FindBoost.cmake</li>
+<li><code>1.46.1</code>：Boost 的最小版本</li>
+<li><code>REQUIRED</code>：指定为必须，如果没找到符合要求的包则构建失败</li>
+<li><code>COMPONENTS &lt;...&gt;</code>：库的组件列表</li>
+</ul>
+<h4 id="检查是否找到软件包">检查是否找到软件包 <a class="markdownIt-Anchor" href="#检查是否找到软件包">#</a></h4>
+<p>大多数软件包（的 FindXXX.cmake 文件）会设置 <code>XXX_FOUND</code> 变量，可以通过检查该变量判断软件包是否被找到。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(Boost_FOUND)</span><br><span class="line">    <span class="keyword">message</span> (<span class="string">&quot;boost found&quot;</span>)</span><br><span class="line">    <span class="keyword">include_directories</span>(<span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">    <span class="keyword">message</span> (FATAL_ERROR <span class="string">&quot;Cannot find Boost&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<h4 id="暴露变量">暴露变量 <a class="markdownIt-Anchor" href="#暴露变量">#</a></h4>
+<p>找到指定的包（其实是加载了指定 FindXXX.cmake 文件）后，我们可以获得一些变量来帮助我们确定所需文件位置，如 <code>Boost_INCLUDE_DIRS</code> 就指明了 Boost 的包含文件所在目录。</p>
+<p>有时可以通过 ccmake 或 cmake-gui 查看环境变量以确定所需变量。</p>
+<h4 id="别名和导入目标">别名和导入目标 <a class="markdownIt-Anchor" href="#别名和导入目标">#</a></h4>
+<p>大多数 CMake 库，在其模块文件中导出别名目标。</p>
+<p>Boost 的所有导出目标以 <code>Boost::&lt;subsystem&gt;</code> 命名，如：</p>
+<ul>
+<li><code>Boost::boost</code>：仅头文件（header-only）的库</li>
+<li><code>Boost::system</code>：Boost system library</li>
+<li><code>Boost::filesystem</code>：文件系统相关的库</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">        Boost::filesystem</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这些目标会包含了它们的依赖，链接 <code>Boost::filesystem</code> 会自动添加 <code>Boost::boost</code> 和 <code>Boost::system</code> 依赖。</p>
+<h4 id="非别名目标">非别名目标 <a class="markdownIt-Anchor" href="#非别名目标">#</a></h4>
+<p>有些第三方库没有使用可导入的目标，这时就必须使用以下两个变量：</p>
+<ul>
+<li><code>xxx_INCLUDE_DIRS</code>：include directory</li>
+<li><code>xxx_LIBRARY</code>：library path</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Include the boost headers</span></span><br><span class="line"><span class="keyword">target_include_directories</span>( third_party_include</span><br><span class="line">    PRIVATE <span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># link against the boost libraries</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>( third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">    <span class="variable">$&#123;Boost_SYSTEM_LIBRARY&#125;</span></span><br><span class="line">    <span class="variable">$&#123;Boost_FILESYSTEM_LIBRARY&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>CMake</tag>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Electron+Vue 开发笔记软件</title>
+    <url>/Projects/Softwares/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<ul>
+<li><a href="/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
+<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
+<ul>
+<li>node、npm（cnpm、yarn）</li>
+<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
+<p>如在 electron-vue 目录下创建项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
+<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
+<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
+</div>
+<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
+<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
+<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
+<p>要构建应用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
+</div>
+<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
+<p>文档：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Softwares</category>
+      </categories>
+      <tags>
+        <tag>Electron</tag>
+        <tag>Vue</tag>
+        <tag>Index</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Create Snippets for UltiSnips</title>
     <url>/Learning/Computer/Vim-NeoVim/Create-Snippets-for-Ultisnips/</url>
     <content><![CDATA[<p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
@@ -453,342 +789,6 @@ then insert new method invokation);</li>
       <tags>
         <tag>Linux</tag>
         <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CMake 学习记录</title>
-    <url>/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>GitHub repository: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3R0cm95NTAvY21ha2UtZXhhbXBsZXM=">https://github.com/ttroy50/cmake-examples<i class="fa fa-external-link-alt"></i></span></p>
-<p>CMake 是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个库。<br/>
-它用配置文件控制建构过程（build process）的方式和 Unix 的 make 相似，只是 CMake
-的配置文件取名为 CMakeLists.txt。<br/>
-CMake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile 或
-Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方式使用。</p>
-<span id="more"></span>
-<blockquote>
-<p>原文中将 CMake 命令称为“函数”。本文沿用了这种称法。</p>
-</blockquote>
-<h2 id="基础">基础 <a class="markdownIt-Anchor" href="#基础">#</a></h2>
-<p>最基本的 Hello World CMakeLists.txt 文件：</p>
-<figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
-<details class="note info" open>
-<summary id='note'><p>Note</p>
-</summary>
-<p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
-然后就可以像下面这样写：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，<a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
-</details>
-<h3 id="二进制目录">二进制目录 <a class="markdownIt-Anchor" href="#二进制目录">#</a></h3>
-<p>我们运行 <code>cmake</code>（可带参数）命令时所在的目录（即当前工作目录、<code>pwd</code> 显示的目录）被称为
-<code>CMAKE_BINARY_DIR</code>。这是你的生成的二进制文件所在的根目录（通常还会有一些其他文件）。</p>
-<p>CMake 支持两种生成二进制文件的方式——就地构建（in-place
-build）和源外构建（out-of-source build）。</p>
-<h4 id="就地构建">就地构建 <a class="markdownIt-Anchor" href="#就地构建">#</a></h4>
-<p>要以这种方式构建，只需在项目根目录（其实是 CMakeLists.txt 所在的目录）执行
-<code>cmake</code>（不指定项目根目录，见下）命令。这样做会使 CMake
-生成的临时文件和二进制文件和项目文件混在一起。</p>
-<h4 id="源外构建">源外构建 <a class="markdownIt-Anchor" href="#源外构建">#</a></h4>
-<p>要采用源外构建，在任一非项目根目录的目录中执行 <code>cmake &lt;project_root&gt;</code> 命令，其中
-<code>&lt;project_root&gt;</code> 为项目根目录。这种方式生成的临时文件和二进制文件等会被放在执行
-<code>cmake</code> 命令时所在的目录，而不会污染源目录（项目根目录），一般采用这种方式。</p>
-<p>习惯上这样做（假设当前目录已经为源目录）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir build &amp;&amp; cd build &amp;&amp; cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<h3 id="其他目录路径变量">其他目录路径变量 <a class="markdownIt-Anchor" href="#其他目录路径变量">#</a></h3>
-<p>完整变量列表见：<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvbWFudWFsL2NtYWtlLXZhcmlhYmxlcy43Lmh0bWw=">https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html<i class="fa fa-external-link-alt"></i></span></p>
-<p>一些术语：</p>
-<ul>
-<li><strong>源（码）树（source tree）<strong>和</strong>构建树（build tree）</strong>：分别指项目<em>源代码根目录</em>
-和<em>指定的生成二进制文件（等文件）的根目录</em>和各自的子目录形成的树状目录结构。</li>
-<li><strong>源（码）目录（source directory）<strong>和</strong>构建目录（build directory）</strong>：<em>源码树</em>和
-<em>构建树</em>中的位置，一般指顶层位置，但是可以移动，表示当前位置的变量一般含有 <code>CURRENT</code>。</li>
-<li>CMake 目录种类 TODO
-<ul>
-<li>顶层/根</li>
-<li>当前所处</li>
-<li>正在处理</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_SOURCE_DIR.html"><code>CMAKE_SOURCE_DIR</code></a></td>
-<td>源码树（source tree）顶层的路径</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_SOURCE_DIR.html"><code>CMAKE_CURRENT_SOURCE_DIR</code></a></td>
-<td>正在处理的源目录</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_SOURCE_DIR.html"><code>PROJECT_SOURCE_DIR</code></a></td>
-<td>当前项目的源目录</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_BINARY_DIR.html"><code>CMAKE_BINARY_DIR</code></a></td>
-<td>构建树（build tree）顶层的路径</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_BINARY_DIR.html"><code>CMAKE_CURRENT_BINARY_DIR</code></a></td>
-<td>当前所在的构建目录（build tree）</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_BINARY_DIR.html"><code>PROJECT_BINARY_DIR</code></a></td>
-<td>项目的构建目录</td>
-</tr>
-</tbody>
-</table>
-<h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
-<p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
-</div>
-<p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="包含目录">包含目录 <a class="markdownIt-Anchor" href="#包含目录">#</a></h3>
-<p>使用 <a href="https://cmake.org/cmake/help/latest/command/target_include_directories.html"><code>target_include_directories()</code></a> 函数为目标（target）添加包含目录（include path），这样添加的目录会在生成目标时以 <code>-I</code> 选项传递给编译器。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(<span class="keyword">target</span></span><br><span class="line">    PRIVATE</span><br><span class="line">        <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p><code>INTERFACE</code>、<code>PUBLIC</code>、<code>PRIVATE</code> 关键字用来指定其后的参数的作用域（scope，也就是这三个关键字）</p>
-<ul>
-<li><code>PUBLIC</code>、<code>PRIVATE</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INCLUDE_DIRECTORIES.html#prop_tgt:INCLUDE_DIRECTORIES"><code>INCLUDE_DIRECTORIES</code></a> 属性（property）</li>
-<li><code>INTERFACE</code>、<code>PUBLIC</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.html#prop_tgt:INTERFACE_INCLUDE_DIRECTORIES"><code>INTERFACE_INCLUDE_DIRECTORIES</code></a> 属性</li>
-</ul>
-<p>详细解释见下面的<a href="#%E5%BA%93">库</a>。</p>
-<h3 id="库">库 <a class="markdownIt-Anchor" href="#库">#</a></h3>
-<h4 id="创建库">创建库 <a class="markdownIt-Anchor" href="#创建库">#</a></h4>
-<p><a href="">使用</a> <a href="https://cmake.org/cmake/help/latest/command/add_library.html"><code>add_library()</code></a> 函数以用指定源文件创建一个库文件。</p>
-<p>如要创建静态库，可以像这样写：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello_library STATIC</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>指定库的类型：</p>
-<ul>
-<li><code>STATIC</code>：静态库，编译时链接</li>
-<li><code>SHARED</code>：动态库，运行时链接</li>
-<li><code>MODULE</code>：不会链接到其他目标，但是可以在运行时通过 <em>dlopen-like</em> 功能
-（见 <span class="exturl" data-url="aHR0cHM6Ly9tYW43Lm9yZy9saW51eC9tYW4tcGFnZXMvbWFuMy9kbG9wZW4uMy5odG1s">man 3 dlopen<i class="fa fa-external-link-alt"></i></span>）手动加载</li>
-</ul>
-<blockquote>
-<p>像之前推荐的那样，这里直接在 <code>add_xxx()</code> 函数中写明了要使用的源文件。</p>
-</blockquote>
-<p><a href="#%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95">上一节</a>中作用域的含义：</p>
-<ul>
-<li><code>PRIVATE</code>：参数会被添加为<strong>目标</strong>的包含目录之一</li>
-<li><code>INTERFACE</code>：参数会被添加为<strong>与该库链接的所有的目标</strong>的包含目录之一</li>
-<li><code>PUBLIC</code>：相当于前两个作用域相加的效果</li>
-</ul>
-<h4 id="链接库和目标">链接库和目标 <a class="markdownIt-Anchor" href="#链接库和目标">#</a></h4>
-<p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<details class="note info" open>
-<summary id='目标别名'><p>目标别名</p>
-</summary>
-<p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
-<p>如为库创建别名：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>当然，也可以为可执行文件创建别名：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure></details>
-<h3 id="安装">安装 <a class="markdownIt-Anchor" href="#安装">#</a></h3>
-<p>CMake 提供了生成 <code>make install</code> 目标（是 Makefile 中的 target，而不是之前提到的
-CMake 中的 target）的功能。<br/>
-安装目录可以通过 <code>CMAKE_INSTALL_PREFIX</code> 指定，详见 <a href="#%E6%8C%87%E5%AE%9A%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">指定安装目录</a>。</p>
-<h4 id="install-函数">install 函数 <a class="markdownIt-Anchor" href="#install-函数">#</a></h4>
-<p>安装由 <a href="https://cmake.org/cmake/help/latest/command/install.html"><code>install()</code></a> 函数控制。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst_bin</span><br><span class="line">    DESTINATION bin)</span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib)</span><br></pre></td></tr></table></figure>
-<p>上面的代码会将 <code>cmake_examples_inst_bin</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下，将 <code>cmake_examples_inst</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下。</p>
-<div class="note warning"><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure></div>
-<p>使用 <code>DIRECTORY</code> 以安装目录：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/</span><br><span class="line">    DESTINATION <span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
-<p>使用 <code>FILES</code> 直接安装文件：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (FILES cmake-examples.conf</span><br><span class="line">    DESTINATION etc)</span><br></pre></td></tr></table></figure>
-<h4 id="install_manifesttxt">install_manifest.txt <a class="markdownIt-Anchor" href="#install_manifesttxt">#</a></h4>
-<p>运行完 <code>make install</code> 后，CMake 会生成一个名为 install_manifest.txt
-的文件，其中包含了所有安装文件的详细信息。</p>
-<p>如果以 root 运行 <code>make install</code>，install_manifest.txt 会为 root 所有。</p>
-<h4 id="指定安装目录">指定安装目录 <a class="markdownIt-Anchor" href="#指定安装目录">#</a></h4>
-<p><code>CMAKE_INSTALL_PREFIX</code> 的值默认为 <code>/usr/local/</code>，要改变其值，可以在添加
-<em>可执行文件和库文件</em>前在顶层（top level）CMakeLists.txt 中添加如下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )</span><br><span class="line">    <span class="keyword">message</span>(STATUS <span class="string">&quot;Setting default CMAKE_INSTALL_PREFIX path to $&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span>)</span><br><span class="line">    <span class="keyword">set</span>(CMAKE_INSTALL_PREFIX <span class="string">&quot;$&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;The path to use for make install&quot;</span> FORCE)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<p>也可以通过终端命令的参数（<code>-DCMAKE_INSTALL_PREFIX=/install/location</code>）设置该变量。</p>
-<hr />
-<p>还可以通过 make 的 <code>DESTDIR</code> 改变安装目录：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make install DESTDIR=/tmp/stage</span><br></pre></td></tr></table></figure>
-<p>这会创建 <code>$&#123;DESTDIR&#125;/$&#123;CMAKE_INSTALL_PREFIX&#125;</code> 作为安装目录。<br/>
-在这个例子中，安装目录为 <code>/tmp/stage/usr/local</code>。</p>
-<h4 id="卸载">卸载 <a class="markdownIt-Anchor" href="#卸载">#</a></h4>
-<p>CMake 默认不提供 <code>make uninstall</code> 对象。<br/>
-要添加 <code>make uninstall</code> 对象，可以参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRsYWIua2l0d2FyZS5jb20vY21ha2UvY29tbXVuaXR5Ly0vd2lraXMvRkFR">Can I do “make uninstall” with CMake?<i class="fa fa-external-link-alt"></i></span>。</p>
-<p>一个简单的做法是利用 install_manifest.txt 文件：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo xargs rm &lt; install_manifest.txt</span><br></pre></td></tr></table></figure>
-<h3 id="构建类型">构建类型 <a class="markdownIt-Anchor" href="#构建类型">#</a></h3>
-<p>CMake 内置了几种构建类型，其原理就是向编译器传递一些标志（flags）：</p>
-<table>
-<thead>
-<tr>
-<th>Levels</th>
-<th>Compiler Flags</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Release</td>
-<td><code>-O3 -DNDEBUG</code></td>
-</tr>
-<tr>
-<td>Debug</td>
-<td><code>-g</code></td>
-</tr>
-<tr>
-<td>MinSizeRel</td>
-<td><code>-Os -DNDEBUG</code></td>
-</tr>
-<tr>
-<td>RelWithDebInfo</td>
-<td><code>-O2 -g -DNDEBUG</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>可以通过图形界面设置构建类型：</li>
-</ul>
-<img data-src="/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Configuring-Using-Cmake-GUI.png" class="" title="Configuring Using Cmake GUI" alt="Configuring Using Cmake GUI">
-<ul>
-<li>也可以在终端命令中定义变量：  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>CMake 提供的默认的构建类型不包含任何相关的编译器标志，以优化程序。<br/>
-但是有时可能会需要设置默认构建类型，可以在顶层 CMakeList.txt 中添加如下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">NOT</span> CMAKE_BUILD_TYPE <span class="keyword">AND</span> <span class="keyword">NOT</span> CMAKE_CONFIGURATION_TYPES)</span><br><span class="line">  <span class="keyword">message</span>(<span class="string">&quot;Setting build type to &#x27;RelWithDebInfo&#x27; as none was specified.&quot;</span>)</span><br><span class="line">  <span class="keyword">set</span>(CMAKE_BUILD_TYPE RelWithDebInfo CACHE <span class="keyword">STRING</span> <span class="string">&quot;Choose the type of build.&quot;</span> FORCE)</span><br><span class="line">  <span class="comment"># Set the possible values of build type for cmake-gui</span></span><br><span class="line">  <span class="keyword">set_property</span>(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS <span class="string">&quot;Debug&quot;</span> <span class="string">&quot;Release&quot;</span></span><br><span class="line">    <span class="string">&quot;MinSizeRel&quot;</span> <span class="string">&quot;RelWithDebInfo&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<h3 id="编译器标志">编译器标志 <a class="markdownIt-Anchor" href="#编译器标志">#</a></h3>
-<p>CMake 支持用若干种方式设置编译器标志：</p>
-<ul>
-<li>使用函数 <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html"><code>target_compile_definitions()</code></a> 和 <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options()</code></a></li>
-<li>使用变量 <code>CMAKE_C_FLAGS</code> 和 <code>CMAKE_CXX_FLAGS</code>，见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a></li>
-</ul>
-<h4 id="为指定目标设置">为指定目标设置 <a class="markdownIt-Anchor" href="#为指定目标设置">#</a></h4>
-<p>在现代 CMake 中设置 C++ 标志的推荐方法是使用按对象标志（per-target flags），可以通过 <code>target_compile_definitions()</code> 函数将其填充到其他对象。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_compile_definitions</span>(cmake_examples_compile_flags</span><br><span class="line">     PRIVATE EX3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>这会使编译器在变异目标（<code>cmake_examples_compile_flags</code>）时添加 <code>-DEX3</code> 标志。</p>
-<p>使用该函数会填充<strong>库</strong>的 <a href="https://cmake.org/cmake/help/v3.0/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.html#prop_tgt:INTERFACE_COMPILE_DEFINITIONS"><code>INTERFACE_COMPILE_DEFINITIONS</code></a>
-变量，并会根据作用域（scope）将定义传递给链接的对象。<br/>
-如果目标是一个库并且选择的作用域是 <code>PUBLIC</code> 或 <code>INTERFACE</code>，那么定义还会被包含在链接到该库的所有对象中。</p>
-<h4 id="设置编译器标志">设置编译器标志 <a class="markdownIt-Anchor" href="#设置编译器标志">#</a></h4>
-<p><code>CMAKE_CXX_FLAGS</code> 要么为空，要么包含所选构建类型的对应标志。<br/>
-要设置<strong>额外</strong>的编译标志，可以在顶层 CMakeLists.txt 中添加如下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -DEX2&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;Set C++ Compiler Flags&quot;</span> FORCE)</span><br></pre></td></tr></table></figure>
-<div class="note info"><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
-</div>
-<p>类似地，<code>CMAKE_C_FLAGS</code> 等变量也可以以同样的方式设置。其他变量见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a>。<br/>
-一旦设置了这些变量，CMake 会为此目录及其子目录下的所有目标设置编译器标志，因此更推荐使用 <code>target_compile_definitions</code> 函数。</p>
-<h4 id="设置链接器标志">设置链接器标志 <a class="markdownIt-Anchor" href="#设置链接器标志">#</a></h4>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTE3ODM5MzIvaG93LWRvLWktYWRkLWEtbGlua2VyLW9yLWNvbXBpbGUtZmxhZy1pbi1hLWNtYWtlLWZpbGU=">How do I add a linker or compile flag in a CMake file?<i class="fa fa-external-link-alt"></i></span></p>
-<p>先将标志储存为常量（现在不推荐这样做）：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_COMPILE_FLAGS <span class="string">&quot;-fprofile-arcs -ftest-coverage&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_LINK_FLAGS    <span class="string">&quot;-lgcov&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后可以通过几种方式添加它们：</p>
-<ol>
-<li>最简单的方式（not clean, but easy and convenient, and works only for compile flags, C &amp; C++ at once）： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_definitions</span>(<span class="variable">$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li>追加到现有的 CMake 变量： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS  <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; $&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(CMAKE_EXE_LINKER_FLAGS  <span class="string">&quot;$&#123;CMAKE_EXE_LINKER_FLAGS&#125; $&#123;GCC_COVERAGE_LINK_FLAGS&#125;&quot;</span>) </span><br></pre></td></tr></table></figure>
-</li>
-<li>使用目标属性（target properties）（需要指定目标名）<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvcHJvcF90Z3QvQ09NUElMRV9GTEFHUy5odG1s">COMPILE_FLAGS<i class="fa fa-external-link-alt"></i></span> <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get_target_property</span>(TEMP <span class="variable">$&#123;THE_TARGET&#125;</span> COMPILE_FLAGS)</span><br><span class="line"><span class="keyword">if</span>(TEMP <span class="keyword">STREQUAL</span> <span class="string">&quot;TEMP-NOTFOUND&quot;</span>)</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;&quot;</span>) <span class="comment"># Set to empty string</span></span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125; &quot;</span>) <span class="comment"># A space to cleanly separate from existing content</span></span><br><span class="line"><span class="keyword">endif</span>()</span><br><span class="line"><span class="comment"># Append our values</span></span><br><span class="line"><span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125;$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span> )</span><br><span class="line"><span class="keyword">set_target_properties</span>(<span class="variable">$&#123;THE_TARGET&#125;</span> PROPERTIES COMPILE_FLAGS <span class="variable">$&#123;TEMP&#125;</span> )</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="第三方库">第三方库 <a class="markdownIt-Anchor" href="#第三方库">#</a></h3>
-<p>CMake 提供了 <a href="https://cmake.org/cmake/help/latest/command/find_package.html"><code>find_package()</code></a> 函数来寻找第三方软件包文件所在路径。<br/>
-该函数会在 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_MODULE_PATH.html"><code>CMAKE_MODULE_PATH</code></a> 中的目录列表中的目录中寻找形似 “FindXXX.cmake” 的文件。Linux 中的默认搜索路径为 <code>/usr/share/cmake/Modules</code>（或者 <code>/usr/share/cmake-3.20/Modules</code>）。</p>
-<p>如要寻找 Boost：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(Boost <span class="number">1.46</span>.<span class="number">1</span> REQUIRED COMPONENTS filesystem system)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>Boost</code>：包名，这会使 <code>find_package()</code> 函数寻找 FindBoost.cmake</li>
-<li><code>1.46.1</code>：Boost 的最小版本</li>
-<li><code>REQUIRED</code>：指定为必须，如果没找到符合要求的包则构建失败</li>
-<li><code>COMPONENTS &lt;...&gt;</code>：库的组件列表</li>
-</ul>
-<h4 id="检查是否找到软件包">检查是否找到软件包 <a class="markdownIt-Anchor" href="#检查是否找到软件包">#</a></h4>
-<p>大多数软件包（的 FindXXX.cmake 文件）会设置 <code>XXX_FOUND</code> 变量，可以通过检查该变量判断软件包是否被找到。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(Boost_FOUND)</span><br><span class="line">    <span class="keyword">message</span> (<span class="string">&quot;boost found&quot;</span>)</span><br><span class="line">    <span class="keyword">include_directories</span>(<span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">    <span class="keyword">message</span> (FATAL_ERROR <span class="string">&quot;Cannot find Boost&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<h4 id="暴露变量">暴露变量 <a class="markdownIt-Anchor" href="#暴露变量">#</a></h4>
-<p>找到指定的包（其实是加载了指定 FindXXX.cmake 文件）后，我们可以获得一些变量来帮助我们确定所需文件位置，如 <code>Boost_INCLUDE_DIRS</code> 就指明了 Boost 的包含文件所在目录。</p>
-<p>有时可以通过 ccmake 或 cmake-gui 查看环境变量以确定所需变量。</p>
-<h4 id="别名和导入目标">别名和导入目标 <a class="markdownIt-Anchor" href="#别名和导入目标">#</a></h4>
-<p>大多数 CMake 库，在其模块文件中导出别名目标。</p>
-<p>Boost 的所有导出目标以 <code>Boost::&lt;subsystem&gt;</code> 命名，如：</p>
-<ul>
-<li><code>Boost::boost</code>：仅头文件（header-only）的库</li>
-<li><code>Boost::system</code>：Boost system library</li>
-<li><code>Boost::filesystem</code>：文件系统相关的库</li>
-</ul>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">        Boost::filesystem</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>这些目标会包含了它们的依赖，链接 <code>Boost::filesystem</code> 会自动添加 <code>Boost::boost</code> 和 <code>Boost::system</code> 依赖。</p>
-<h4 id="非别名目标">非别名目标 <a class="markdownIt-Anchor" href="#非别名目标">#</a></h4>
-<p>有些第三方库没有使用可导入的目标，这时就必须使用以下两个变量：</p>
-<ul>
-<li><code>xxx_INCLUDE_DIRS</code>：include directory</li>
-<li><code>xxx_LIBRARY</code>：library path</li>
-</ul>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Include the boost headers</span></span><br><span class="line"><span class="keyword">target_include_directories</span>( third_party_include</span><br><span class="line">    PRIVATE <span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># link against the boost libraries</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>( third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">    <span class="variable">$&#123;Boost_SYSTEM_LIBRARY&#125;</span></span><br><span class="line">    <span class="variable">$&#123;Boost_FILESYSTEM_LIBRARY&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>C/C++</category>
-      </categories>
-      <tags>
-        <tag>CMake</tag>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Electron+Vue 开发笔记软件</title>
-    <url>/Projects/Softwares/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<ul>
-<li><a href="/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
-<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
-<ul>
-<li>node、npm（cnpm、yarn）</li>
-<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ul>
-<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
-<p>如在 electron-vue 目录下创建项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
-<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
-<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
-</div>
-<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
-<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
-<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
-<p>要构建应用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
-</div>
-<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
-<p>文档：</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Softwares</category>
-      </categories>
-      <tags>
-        <tag>Electron</tag>
-        <tag>Vue</tag>
-        <tag>Index</tag>
       </tags>
   </entry>
   <entry>
@@ -1586,36 +1586,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
-    <title>Vim Syntax</title>
-    <url>/Learning/Computer/Vim-NeoVim/Vim-Syntax/</url>
-    <content><![CDATA[<blockquote>
-<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
-<ol>
-<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
-<li>Keyword 优先级高于 Match 和 Region。</li>
-<li>在更靠前的位置起始的匹配项优先。</li>
-</ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
-<ul>
-<li>大小写：<code>:h syn-case</code></li>
-<li>折叠深度：<code>:h syn-foldlevel</code></li>
-<li>语法检查：<code>:h syn-spell</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Vim/NeoVim</category>
-      </categories>
-      <tags>
-        <tag>Vim/NeoVim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue 学习记录</title>
     <url>/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p><ul class="markdownIt-TOC">
@@ -1666,6 +1636,187 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </categories>
       <tags>
         <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</p>
+<span id="more"></span>
+<blockquote>
+<p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的<strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。<br/>
+HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等位基因数量最多。</p>
+</blockquote>
+<p>HLA 基因复合体位于人 6 号染色体短臂，分为三个基因区：</p>
+<ol>
+<li><strong>HLA Ⅰ 类基因区</strong>：
+<ol>
+<li><ins>经典 Ⅰ 类基因座（HLA Ⅰa）</ins>：A、B（等位基因数量最多）、C</li>
+<li>非经典 Ⅰ 类基因座（HLA Ⅰb）：Ε、F、G</li>
+</ol>
+</li>
+<li><strong>HLA Ⅱ 类基因区</strong>：<ins>经典的 DP、DQ、DR</ins> 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
+<li><strong>HLA Ⅲ 类基因区</strong>：补体基因 C2、B、C4 及参与炎症反应的 TNF、LTA、LTB、HSP 等。</li>
+</ol>
+<p>MHC 基因分两种类型：</p>
+<ul>
+<li>
+<p><strong>经典 HLA Ⅰ 类基因和经典 Ⅱ 类基因</strong>：产物具有<strong>抗原提呈作用</strong>，直接参与 T 细胞的激活和分化，参与<ins>调控适应性免疫应答作用</ins>，<ins>显示极为丰富的多态性</ins>；</p>
+</li>
+<li>
+<p><strong>免疫功能相关基因</strong>，包括传统的 Ⅲ 类基因及新近确定的多种基因：参与<ins>调控固有免疫应答或抗原加工</ins>，<ins>不显示或仅显示有限的多态性</ins>。</p>
+</li>
+<li>
+<p>HLA Ⅰ 类分子</p>
+<ul>
+<li>组成：重链（α 链）、β<sub>2</sub> 微球蛋白</li>
+<li>分布：所有有核细胞表面</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞（CTL）提呈内源性抗原肽</li>
+</ul>
+</li>
+<li>
+<p>HLA Ⅱ 类分子：</p>
+<ul>
+<li>组成：α 链、β 链</li>
+<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞（Th）提呈外源性抗原肽</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
+<li></li>
+</ol>
+<ul>
+<li>抗原加工相关基因</li>
+<li>血清补体成分的编码基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类发育与遗传学</title>
+    <url>/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
+    <content><![CDATA[<blockquote>
+<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
+differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
+</blockquote>
+<dl>
+<dt>遗传学（genetics）</dt>
+<dd>研究生物遗传物质及其变化规律的学科。</dd>
+<dt>医学遗传学（medical genetics）</dt>
+<dd>遗传学与医学结合产生的一门边缘学科。</dd>
+<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
+</dl>
+<span id="more"></span>
+<details class="note info" open>
+<summary id='**table of content**'><p><strong>Table of Content</strong></p>
+</summary>
+<ol>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
+<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
+<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
+</ol>
+<p>另见：<a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
+</details>
+<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
+<dl>
+<dt>遗传病（genetic disease）</dt>
+<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
+</dl>
+<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
+<a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
+<p>理解遗传病应注意下述两种情况：</p>
+<ol>
+<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
+<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
+</ol>
+<p><strong>遗传病的分类</strong>：</p>
+<ol>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
+<li><strong>体细胞遗传病</strong>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
+</ol>
+<dl>
+<dt>体细胞遗传病</dt>
+<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
+</dl>
+<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
+<ol>
+<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
+<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
+<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
+<li>1949 年，<strong>Pauling</strong> 发现 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
+<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
+<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
+<li>1977 年，Sanger 建立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
+<li>1985 年，Mullis 创立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
+<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
+</ol>
+<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
+<ul>
+<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
+<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
+<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
+<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
+</ul>
+<details class="note info" open>
+<summary id='关于 hpg 的两次“完成”'><p>关于 HPG 的两次“完成”</p>
+</summary>
+<blockquote>
+<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
+人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</blockquote>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</details>
+<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
+<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
+30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
+<p>基因组测序方法：</p>
+<ul>
+<li>基因组公共研究中心：分级霰弹法</li>
+<li>Celera 公司：全基因组霰弹法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,187 +2092,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</p>
-<span id="more"></span>
-<blockquote>
-<p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的<strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。<br/>
-HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等位基因数量最多。</p>
-</blockquote>
-<p>HLA 基因复合体位于人 6 号染色体短臂，分为三个基因区：</p>
-<ol>
-<li><strong>HLA Ⅰ 类基因区</strong>：
-<ol>
-<li><ins>经典 Ⅰ 类基因座（HLA Ⅰa）</ins>：A、B（等位基因数量最多）、C</li>
-<li>非经典 Ⅰ 类基因座（HLA Ⅰb）：Ε、F、G</li>
-</ol>
-</li>
-<li><strong>HLA Ⅱ 类基因区</strong>：<ins>经典的 DP、DQ、DR</ins> 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
-<li><strong>HLA Ⅲ 类基因区</strong>：补体基因 C2、B、C4 及参与炎症反应的 TNF、LTA、LTB、HSP 等。</li>
-</ol>
-<p>MHC 基因分两种类型：</p>
-<ul>
-<li>
-<p><strong>经典 HLA Ⅰ 类基因和经典 Ⅱ 类基因</strong>：产物具有<strong>抗原提呈作用</strong>，直接参与 T 细胞的激活和分化，参与<ins>调控适应性免疫应答作用</ins>，<ins>显示极为丰富的多态性</ins>；</p>
-</li>
-<li>
-<p><strong>免疫功能相关基因</strong>，包括传统的 Ⅲ 类基因及新近确定的多种基因：参与<ins>调控固有免疫应答或抗原加工</ins>，<ins>不显示或仅显示有限的多态性</ins>。</p>
-</li>
-<li>
-<p>HLA Ⅰ 类分子</p>
-<ul>
-<li>组成：重链（α 链）、β<sub>2</sub> 微球蛋白</li>
-<li>分布：所有有核细胞表面</li>
-<li>功能：主要向 CD8<sup>+</sup>T 细胞（CTL）提呈内源性抗原肽</li>
-</ul>
-</li>
-<li>
-<p>HLA Ⅱ 类分子：</p>
-<ul>
-<li>组成：α 链、β 链</li>
-<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
-<li>功能：主要向 CD4<sup>+</sup>T 细胞（Th）提呈外源性抗原肽</li>
-</ul>
-</li>
-</ul>
-<p>MHC 遗传特点</p>
-<ol>
-<li>MHC 多态性</li>
-<li></li>
-</ol>
-<ul>
-<li>抗原加工相关基因</li>
-<li>血清补体成分的编码基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类发育与遗传学</title>
-    <url>/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
-    <content><![CDATA[<blockquote>
-<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
-differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
-</blockquote>
-<dl>
-<dt>遗传学（genetics）</dt>
-<dd>研究生物遗传物质及其变化规律的学科。</dd>
-<dt>医学遗传学（medical genetics）</dt>
-<dd>遗传学与医学结合产生的一门边缘学科。</dd>
-<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
-</dl>
-<span id="more"></span>
-<details class="note info" open>
-<summary id='**table of content**'><p><strong>Table of Content</strong></p>
-</summary>
-<ol>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
-<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
-<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
-</ol>
-<p>另见：<a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
-</details>
-<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
-<dl>
-<dt>遗传病（genetic disease）</dt>
-<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
-</dl>
-<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
-<a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
-<p>理解遗传病应注意下述两种情况：</p>
-<ol>
-<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
-<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
-</ol>
-<p><strong>遗传病的分类</strong>：</p>
-<ol>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
-<li><strong>体细胞遗传病</strong>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
-</ol>
-<dl>
-<dt>体细胞遗传病</dt>
-<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
-</dl>
-<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
-<ol>
-<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
-<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
-<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
-<li>1949 年，<strong>Pauling</strong> 发现 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
-<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
-<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
-<li>1977 年，Sanger 建立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
-<li>1985 年，Mullis 创立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
-<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
-</ol>
-<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
-<ul>
-<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
-<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
-<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
-<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
-</ul>
-<details class="note info" open>
-<summary id='关于 hpg 的两次“完成”'><p>关于 HPG 的两次“完成”</p>
-</summary>
-<blockquote>
-<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
-人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-</blockquote>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</details>
-<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
-<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
-30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
-<p>基因组测序方法：</p>
-<ul>
-<li>基因组公共研究中心：分级霰弹法</li>
-<li>Celera 公司：全基因组霰弹法</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人类疱疹病毒</title>
     <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
     <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
@@ -2226,6 +2196,36 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       <tags>
         <tag>病原生物学</tag>
         <tag>病毒学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim Syntax</title>
+    <url>/Learning/Computer/Vim-NeoVim/Vim-Syntax/</url>
+    <content><![CDATA[<blockquote>
+<p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<ol>
+<li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
+<li>Keyword 优先级高于 Match 和 Region。</li>
+<li>在更靠前的位置起始的匹配项优先。</li>
+</ol>
+<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<ul>
+<li>大小写：<code>:h syn-case</code></li>
+<li>折叠深度：<code>:h syn-foldlevel</code></li>
+<li>语法检查：<code>:h syn-spell</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syn keyword vimCommand tag</span><br><span class="line">syn keyword vimSetting contained tag</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Vim/NeoVim</category>
+      </categories>
+      <tags>
+        <tag>Vim/NeoVim</tag>
       </tags>
   </entry>
   <entry>
@@ -3732,7 +3732,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li><strong>肿瘤免疫治疗的分类及举例</strong>：
 <ol>
 <li>肿瘤的主动免疫治疗：给荷瘤宿主注射具有免疫原性的瘤苗，如<span class="horizontal-list"><span class="horizontal-list-item">灭活的瘤苗、</span><span class="horizontal-list-item">异构的瘤苗、</span><span class="horizontal-list-item">抗独特型抗体瘤苗</span></span>等；</li>
-<li>肿瘤的被动免疫治疗：<span class="horizontal-list"><span class="horizontal-list-item">抗体的靶向治疗；</span><span class="horizontal-list-item">细胞因子疗法；</span><span class="horizontal-list-item">细胞免疫疗法［嵌合抗原受体（CAR）修饰的 T 细胞（CAR-T）在白细胞治疗中取得成功］。</span></span></li>
+<li>肿瘤的被动免疫治疗：<span class="horizontal-list"><span class="horizontal-list-item">抗体的靶向治疗；</span><span class="horizontal-list-item">细胞因子疗法；</span><span class="horizontal-list-item">细胞免疫疗法［嵌合抗原受体（CAR）修饰的 T 细胞（CAR-T）在白血病治疗中取得成功］。</span></span></li>
 <li>肿瘤的免疫检查点治疗：如针对 CTLA-4 和 PD-1 或其配体 PD-L1 研制的系列抗体在临床治疗肿瘤中取得良好成果。</li>
 </ol>
 </li>
@@ -3756,67 +3756,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       <tags>
         <tag>医学免疫学</tag>
         <tag>考试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>其他病毒</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<ul>
-<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
-<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
-<ul>
-<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
-</ul>
-<div class="note success"><dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
-<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
-</dl>
-</div>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
-<li>传染源：狂犬、猫、蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-<li>临床症状：
-<ul>
-<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
-<li>麻痹型：20% 不到，不出现典型症状，直接进入麻痹期</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>英文简称 <strong>HPV</strong>。</p>
-<ul>
-<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
-<li>所致疾病：
-<ul>
-<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
-<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
-<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -4024,6 +3963,67 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>其他病毒</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<ul>
+<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
+<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
+</ul>
+<div class="note success"><dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
+<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
+</dl>
+</div>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
+<li>传染源：狂犬、猫、蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+<li>临床症状：
+<ul>
+<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
+<li>麻痹型：20% 不到，不出现典型症状，直接进入麻痹期</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>英文简称 <strong>HPV</strong>。</p>
+<ul>
+<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
+<li>所致疾病：
+<ul>
+<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
+<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
+<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -10095,6 +10095,80 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
+    <title>立克次体</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>立克次体（<em>Rickettsia</em>）</dt>
+<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>其生物学性状与细菌相似。</dd>
+</dl>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">立克次体</th>
+<th style="text-align:center">传播途径</th>
+<th style="text-align:center">所致疾病</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>普氏立克次体</strong></td>
+<td style="text-align:center">体虱/人虱</td>
+<td style="text-align:center">流行性斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
+<td style="text-align:center">鼠蚤、鼠虱</td>
+<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
+<td style="text-align:center">恙螨</td>
+<td style="text-align:center">恙虫病</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
+<td style="text-align:center">蜱</td>
+<td style="text-align:center">Q 热</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>汉赛巴通体</em></td>
+<td style="text-align:center">猫</td>
+<td style="text-align:center">猫抓病</td>
+</tr>
+</tbody>
+</table>
+<p>生物学特性：</p>
+<ul>
+<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
+<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
+<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
+<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
+</ul>
+<p><em>结构和组成</em>（由外到内）：</p>
+<ul>
+<li>黏液层：多糖</li>
+<li>微荚膜：脂多糖或多糖</li>
+<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
+<li>细胞膜：类脂双分子层</li>
+</ul>
+<p>临床诊断：<strong>外斐试验</strong></p>
+<div class="note info titled"><div class='note-title' id='外斐试验'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
+</div>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线虫</title>
     <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BA%BF%E8%99%AB/</url>
     <content><![CDATA[<table>
@@ -10299,80 +10373,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       <tags>
         <tag>病原生物学</tag>
         <tag>医学蠕虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>立克次体</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>立克次体（<em>Rickettsia</em>）</dt>
-<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>其生物学性状与细菌相似。</dd>
-</dl>
-<span id="more"></span>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">立克次体</th>
-<th style="text-align:center">传播途径</th>
-<th style="text-align:center">所致疾病</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>普氏立克次体</strong></td>
-<td style="text-align:center">体虱/人虱</td>
-<td style="text-align:center">流行性斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
-<td style="text-align:center">鼠蚤、鼠虱</td>
-<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
-<td style="text-align:center">恙螨</td>
-<td style="text-align:center">恙虫病</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
-<td style="text-align:center">蜱</td>
-<td style="text-align:center">Q 热</td>
-</tr>
-<tr>
-<td style="text-align:center"><em>汉赛巴通体</em></td>
-<td style="text-align:center">猫</td>
-<td style="text-align:center">猫抓病</td>
-</tr>
-</tbody>
-</table>
-<p>生物学特性：</p>
-<ul>
-<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
-<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
-<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
-<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
-</ul>
-<p><em>结构和组成</em>（由外到内）：</p>
-<ul>
-<li>黏液层：多糖</li>
-<li>微荚膜：脂多糖或多糖</li>
-<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
-<li>细胞膜：类脂双分子层</li>
-</ul>
-<p>临床诊断：<strong>外斐试验</strong></p>
-<div class="note info titled"><div class='note-title' id='外斐试验'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
-</div>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -11873,8 +11873,8 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
         <category>Softwares</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Index</tag>
+        <tag>Linux</tag>
         <tag>TTY</tag>
       </tags>
   </entry>
@@ -13066,11 +13066,6 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About Me</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
@@ -13109,6 +13104,11 @@ plate）。<br/>
 <li>你也可以直接在下方评论留言</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
@@ -28330,6 +28330,410 @@ window.PDFBug = (function PDFBugClosure() {
   </entry>
   <entry>
     <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+
+
+    <link rel="stylesheet" href="viewer.css">
+
+
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
+
+
+  <script src="viewer.js"></script>
+
+  </head>
+
+  <body tabindex="1">
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div class="splitToolbarButton toggled">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
+            <span id="findResultsCount" class="toolbarLabel hidden"></span>
+          </div>
+
+          <div id="findbarMessageContainer">
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+            </button>
+            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+            </button>
+            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+            </button>
+            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
+
+            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div class="clearBoth"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+            </div>
+            <div class="row">
+              <input type="password" id="password" class="toolbarField">
+            </div>
+            <div class="buttonRow">
+              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
+            </div>
+            <div class="row">
+              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
+            </div>
+            <div class="buttonRow">
+              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
+            </div>
+          </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+          <div class="dialog">
+            <div class="row">
+              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+            </div>
+            <div class="row">
+              <progress value="0" max="100"></progress>
+              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+            </div>
+            <div class="buttonRow">
+              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- overlayContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+  </body>
+</html>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/lib/pdf/web/viewer.css</url>
     <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
@@ -30892,410 +31296,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<!--
-Copyright 2012 Mozilla Foundation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Adobe CMap resources are covered by their own copyright but the same license:
-
-    Copyright 1990-2015 Adobe Systems Incorporated.
-
-See https://github.com/adobe-type-tools/cmap-resources
--->
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PDF.js viewer</title>
-
-
-    <link rel="stylesheet" href="viewer.css">
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="../build/pdf.js"></script>
-
-
-  <script src="viewer.js"></script>
-
-  </head>
-
-  <body tabindex="1">
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div class="splitToolbarButton toggled">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton findPrevious" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="96">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole words</label>
-            <span id="findResultsCount" class="toolbarLabel hidden"></span>
-          </div>
-
-          <div id="findbarMessageContainer">
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
-              <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-            </button>
-            <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool">
-              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="scrollVertical" class="secondaryToolbarButton scrollModeButtons scrollVertical toggled" title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
-              <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-            </button>
-            <button id="scrollHorizontal" class="secondaryToolbarButton scrollModeButtons scrollHorizontal" title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
-              <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-            </button>
-            <button id="scrollWrapped" class="secondaryToolbarButton scrollModeButtons scrollWrapped" title="Use Wrapped Scrolling" tabindex="64" data-l10n-id="scroll_wrapped">
-              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator scrollModeButtons"></div>
-
-            <button id="spreadNone" class="secondaryToolbarButton spreadModeButtons spreadNone toggled" title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
-              <span data-l10n-id="spread_none_label">No Spreads</span>
-            </button>
-            <button id="spreadOdd" class="secondaryToolbarButton spreadModeButtons spreadOdd" title="Join page spreads starting with odd-numbered pages" tabindex="66" data-l10n-id="spread_odd">
-              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-            </button>
-            <button id="spreadEven" class="secondaryToolbarButton spreadModeButtons spreadEven" title="Join page spreads starting with even-numbered pages" tabindex="67" data-l10n-id="spread_even">
-              <span data-l10n-id="spread_even_label">Even Spreads</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator spreadModeButtons"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
-                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-                </button>
-
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
-                  <span data-l10n-id="bookmark_label">Current View</span>
-                </a>
-
-                <div class="verticalToolbarSeparator hiddenSmallView"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-
-        <div id="errorWrapper" hidden='true'>
-          <div id="errorMessageLeft">
-            <span id="errorMessage"></span>
-            <button id="errorShowMore" data-l10n-id="error_more_info">
-              More Information
-            </button>
-            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
-              Less Information
-            </button>
-          </div>
-          <div id="errorMessageRight">
-            <button id="errorClose" data-l10n-id="error_close">
-              Close
-            </button>
-          </div>
-          <div class="clearBoth"></div>
-          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="overlayContainer" class="hidden">
-        <div id="passwordOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
-            </div>
-            <div class="row">
-              <input type="password" id="password" class="toolbarField">
-            </div>
-            <div class="buttonRow">
-              <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-              <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="documentPropertiesOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="document_properties_file_name">File name:</span> <p id="fileNameField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_file_size">File size:</span> <p id="fileSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_title">Title:</span> <p id="titleField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_author">Author:</span> <p id="authorField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_subject">Subject:</span> <p id="subjectField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_keywords">Keywords:</span> <p id="keywordsField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creation_date">Creation Date:</span> <p id="creationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_modification_date">Modification Date:</span> <p id="modificationDateField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_creator">Creator:</span> <p id="creatorField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_producer">PDF Producer:</span> <p id="producerField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_version">PDF Version:</span> <p id="versionField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_count">Page Count:</span> <p id="pageCountField">-</p>
-            </div>
-            <div class="row">
-              <span data-l10n-id="document_properties_page_size">Page Size:</span> <p id="pageSizeField">-</p>
-            </div>
-            <div class="separator"></div>
-            <div class="row">
-              <span data-l10n-id="document_properties_linearized">Fast Web View:</span> <p id="linearizedField">-</p>
-            </div>
-            <div class="buttonRow">
-              <button id="documentPropertiesClose" class="overlayButton"><span data-l10n-id="document_properties_close">Close</span></button>
-            </div>
-          </div>
-        </div>
-        <div id="printServiceOverlay" class="container hidden">
-          <div class="dialog">
-            <div class="row">
-              <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-            </div>
-            <div class="row">
-              <progress value="0" max="100"></progress>
-              <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
-            </div>
-            <div class="buttonRow">
-              <button id="printCancel" class="overlayButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- overlayContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-  </body>
-</html>
 ]]></content>
   </entry>
   <entry>
