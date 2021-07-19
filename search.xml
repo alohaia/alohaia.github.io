@@ -289,54 +289,6 @@ CMake 中的 target）的功能。<br/>
       </tags>
   </entry>
   <entry>
-    <title>Electron+Vue 开发笔记软件</title>
-    <url>/Projects/Softwares/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<ul>
-<li><a href="/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
-<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
-<ul>
-<li>node、npm（cnpm、yarn）</li>
-<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ul>
-<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
-<p>如在 electron-vue 目录下创建项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
-<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
-<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
-</div>
-<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
-<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
-<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
-<p>要构建应用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
-</div>
-<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
-<p>文档：</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Softwares</category>
-      </categories>
-      <tags>
-        <tag>Electron</tag>
-        <tag>Vue</tag>
-        <tag>Index</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Create Snippets for UltiSnips</title>
     <url>/Learning/Computer/Vim-NeoVim/Create-Snippets-for-Ultisnips/</url>
     <content><![CDATA[<p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
@@ -789,6 +741,54 @@ then insert new method invokation);</li>
       <tags>
         <tag>Linux</tag>
         <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Electron+Vue 开发笔记软件</title>
+    <url>/Projects/Softwares/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<ul>
+<li><a href="/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Vue 学习记录</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="搭建基本项目">搭建基本项目 <a class="markdownIt-Anchor" href="#搭建基本项目">#</a></h2>
+<h3 id="相关依赖">相关依赖 <a class="markdownIt-Anchor" href="#相关依赖">#</a></h3>
+<ul>
+<li>node、npm（cnpm、yarn）</li>
+<li>vue-cli：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cnpm i -g @vue/cli</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h3 id="vue-基本项目">vue 基本项目 <a class="markdownIt-Anchor" href="#vue-基本项目">#</a></h3>
+<p>如在 electron-vue 目录下创建项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create electron-vue</span><br></pre></td></tr></table></figure>
+<p>这时就可以用 <code>yarn serve</code> 命令运行项目了。</p>
+<div class="note warning"><p>注意路由（router）不要启用 histroy 模式，否则最后打包时会出现问题。</p>
+</div>
+<h3 id="加入-electron">加入 electron <a class="markdownIt-Anchor" href="#加入-electron">#</a></h3>
+<p>安装 <span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci8=">vue-cli-plugin-electron-builder<i class="fa fa-external-link-alt"></i></span>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
+<p>然后即可通过 yran（推荐）或 npm 启动测试 server：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn election:serve</span><br><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
+<p>要构建应用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn electron:build</span><br><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>首次进行这两个步骤需要访问境外资源，可能会由于网络原因而失败（解决方法不便明说）。</p>
+</div>
+<h3 id="配置-electron-builder">配置 Electron Builder <a class="markdownIt-Anchor" href="#配置-electron-builder">#</a></h3>
+<p>文档：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ua2xheW1hbi5naXRodWIuaW8vdnVlLWNsaS1wbHVnaW4tZWxlY3Ryb24tYnVpbGRlci9ndWlkZS9jb25maWd1cmF0aW9uLmh0bWwjY29uZmlndXJpbmctZWxlY3Ryb24tYnVpbGRlcg==">https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxlY3Ryb24uYnVpbGQv">https://www.electron.build/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<figure class="highlight json"><figcaption><span>"vue.config.js"</span></figcaption><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  pluginOptions: &#123;</span><br><span class="line">    electronBuilder: &#123;</span><br><span class="line">      builderOptions: &#123;</span><br><span class="line">        <span class="comment">// options placed here will be merged with default configuration and passed to electron-builder</span></span><br><span class="line">        <span class="comment">// Windows 平台打包配置</span></span><br><span class="line">        <span class="comment">// https://www.electron.build/configuration/nsis</span></span><br><span class="line">        win: &#123;</span><br><span class="line">          target: &#x27;nsis&#x27;        <span class="comment">// 打包方式</span></span><br><span class="line">        &#125;,</span><br><span class="line">        nsis: &#123;</span><br><span class="line">          oneClick: <span class="literal">false</span>,      <span class="comment">// 禁用一键安装</span></span><br><span class="line">          allowToChangeInstallationDirectory: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Softwares</category>
+      </categories>
+      <tags>
+        <tag>Electron</tag>
+        <tag>Vue</tag>
+        <tag>Index</tag>
       </tags>
   </entry>
   <entry>
@@ -1335,68 +1335,6 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </tags>
   </entry>
   <entry>
-    <title>Lua 迭代器和泛型 for</title>
-    <url>/Learning/Computer/Lua/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
-    <content><![CDATA[<blockquote>
-<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
-本文也未刻意区分。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
-<dl>
-<dt>迭代器（iterator）</dt>
-<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
-<dt>闭包（closure）</dt>
-<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
-<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
-<dt>工厂（factory）</dt>
-<dd>用于创建闭包及其封装变量的函数。</dd>
-</dl>
-<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
-<p>泛型 for 的语法：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
-<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
-<ol>
-<li>迭代函数</li>
-<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
-<li>控制变量的初始值</li>
-</ol>
-<dl>
-<dt>控制变量（control variable）</dt>
-<dd>其值为 <code>nil</code> 时循环结束。</dd>
-</dl>
-<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
-其中只有最后一项能产生多个值。</p>
-<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
-<p>确切地说，形如</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>与以下代码等价：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
-<dl>
-<dt>无状态迭代器（stateless iterator）</dt>
-<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
-</dl>
-<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
-生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
-<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Lua 和 C</title>
     <url>/Learning/Computer/Lua/Lua-%E5%92%8C-C/</url>
     <content><![CDATA[<p>Lua 是一种</p>
@@ -1571,6 +1509,68 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </tags>
   </entry>
   <entry>
+    <title>Lua 迭代器和泛型 for</title>
+    <url>/Learning/Computer/Lua/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
+    <content><![CDATA[<blockquote>
+<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
+本文也未刻意区分。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<dl>
+<dt>迭代器（iterator）</dt>
+<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
+<dt>闭包（closure）</dt>
+<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
+<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
+<dt>工厂（factory）</dt>
+<dd>用于创建闭包及其封装变量的函数。</dd>
+</dl>
+<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
+<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<p>泛型 for 的语法：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
+<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
+<ol>
+<li>迭代函数</li>
+<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
+<li>控制变量的初始值</li>
+</ol>
+<dl>
+<dt>控制变量（control variable）</dt>
+<dd>其值为 <code>nil</code> 时循环结束。</dd>
+</dl>
+<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
+其中只有最后一项能产生多个值。</p>
+<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
+<p>确切地说，形如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>与以下代码等价：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
+<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<dl>
+<dt>无状态迭代器（stateless iterator）</dt>
+<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
+</dl>
+<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
+生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
+<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Lua</category>
+      </categories>
+      <tags>
+        <tag>Lua</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenGL</title>
     <url>/Learning/Computer/Computer-Graphics/OpenGL/</url>
     <content><![CDATA[]]></content>
@@ -1583,240 +1583,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
         <tag>Index</tag>
         <tag>Computer Graphics</tag>
         <tag>OpenGL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 学习记录</title>
-    <url>/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
-<ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
-<ul>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
-<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<span id="more"></span>
-<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
-<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
-<p>安装 npm：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
-<p>安装 cnpm（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
-<p>安装 yarn（可选）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
-<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
-<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
-<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
-<p>使用 Linux 软件包管理器安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
-<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
-<blockquote>
-<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
-<p>准备两个基本文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
-<p>初始化 <code>packages.json</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Front end</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主要组织相容性复合体</title>
-    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>主要组织相容性复合体（MHC）</dt>
-<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
-</dl>
-<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</p>
-<span id="more"></span>
-<blockquote>
-<p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的<strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。<br/>
-HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等位基因数量最多。</p>
-</blockquote>
-<p>HLA 基因复合体位于人 6 号染色体短臂，分为三个基因区：</p>
-<ol>
-<li><strong>HLA Ⅰ 类基因区</strong>：
-<ol>
-<li><ins>经典 Ⅰ 类基因座（HLA Ⅰa）</ins>：A、B（等位基因数量最多）、C</li>
-<li>非经典 Ⅰ 类基因座（HLA Ⅰb）：Ε、F、G</li>
-</ol>
-</li>
-<li><strong>HLA Ⅱ 类基因区</strong>：<ins>经典的 DP、DQ、DR</ins> 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
-<li><strong>HLA Ⅲ 类基因区</strong>：补体基因 C2、B、C4 及参与炎症反应的 TNF、LTA、LTB、HSP 等。</li>
-</ol>
-<p>MHC 基因分两种类型：</p>
-<ul>
-<li>
-<p><strong>经典 HLA Ⅰ 类基因和经典 Ⅱ 类基因</strong>：产物具有<strong>抗原提呈作用</strong>，直接参与 T 细胞的激活和分化，参与<ins>调控适应性免疫应答作用</ins>，<ins>显示极为丰富的多态性</ins>；</p>
-</li>
-<li>
-<p><strong>免疫功能相关基因</strong>，包括传统的 Ⅲ 类基因及新近确定的多种基因：参与<ins>调控固有免疫应答或抗原加工</ins>，<ins>不显示或仅显示有限的多态性</ins>。</p>
-</li>
-<li>
-<p>HLA Ⅰ 类分子</p>
-<ul>
-<li>组成：重链（α 链）、β<sub>2</sub> 微球蛋白</li>
-<li>分布：所有有核细胞表面</li>
-<li>功能：主要向 CD8<sup>+</sup>T 细胞（CTL）提呈内源性抗原肽</li>
-</ul>
-</li>
-<li>
-<p>HLA Ⅱ 类分子：</p>
-<ul>
-<li>组成：α 链、β 链</li>
-<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
-<li>功能：主要向 CD4<sup>+</sup>T 细胞（Th）提呈外源性抗原肽</li>
-</ul>
-</li>
-</ul>
-<p>MHC 遗传特点</p>
-<ol>
-<li>MHC 多态性</li>
-<li></li>
-</ol>
-<ul>
-<li>抗原加工相关基因</li>
-<li>血清补体成分的编码基因</li>
-<li>非经典 Ⅰ 类基因</li>
-<li>炎症相关基因</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>医学免疫学</category>
-      </categories>
-      <tags>
-        <tag>医学免疫学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人类发育与遗传学</title>
-    <url>/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
-    <content><![CDATA[<blockquote>
-<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
-differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
-</blockquote>
-<dl>
-<dt>遗传学（genetics）</dt>
-<dd>研究生物遗传物质及其变化规律的学科。</dd>
-<dt>医学遗传学（medical genetics）</dt>
-<dd>遗传学与医学结合产生的一门边缘学科。</dd>
-<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
-</dl>
-<span id="more"></span>
-<details class="note info" open>
-<summary id='**table of content**'><p><strong>Table of Content</strong></p>
-</summary>
-<ol>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
-<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
-<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
-</ol>
-<p>另见：<a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
-</details>
-<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
-<dl>
-<dt>遗传病（genetic disease）</dt>
-<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
-</dl>
-<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
-<a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
-<p>理解遗传病应注意下述两种情况：</p>
-<ol>
-<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
-<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
-</ol>
-<p><strong>遗传病的分类</strong>：</p>
-<ol>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
-<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
-<li><strong>体细胞遗传病</strong>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
-</ol>
-<dl>
-<dt>体细胞遗传病</dt>
-<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
-</dl>
-<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
-<ol>
-<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
-<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
-<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
-<li>1949 年，<strong>Pauling</strong> 发现 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
-<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
-<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
-<li>1977 年，Sanger 建立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
-<li>1985 年，Mullis 创立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
-<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
-</ol>
-<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
-<ul>
-<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
-<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
-<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
-<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
-</ul>
-<details class="note info" open>
-<summary id='关于 hpg 的两次“完成”'><p>关于 HPG 的两次“完成”</p>
-</summary>
-<blockquote>
-<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
-人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-</blockquote>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-</details>
-<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
-<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
-30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
-<p>基因组测序方法：</p>
-<ul>
-<li>基因组公共研究中心：分级霰弹法</li>
-<li>Celera 公司：全基因组霰弹法</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>人类发育与遗传学</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -2092,113 +1858,6 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success" open>
-<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim Syntax</title>
     <url>/Learning/Computer/Vim-NeoVim/Vim-Syntax/</url>
     <content><![CDATA[<blockquote>
@@ -2226,6 +1885,240 @@ TTY device 查询当前的终端大小，以填满整个窗口。现在，从另
       </categories>
       <tags>
         <tag>Vim/NeoVim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 学习记录</title>
+    <url>/Learning/Computer/Front-end/Vue-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%8E%E7%A9%BA%E7%9B%AE%E5%BD%95%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-electron-%E9%A1%B9%E7%9B%AE">从空目录开始搭建 Electron 项目</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">准备工具的安装</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BA-electron-%E7%8E%AF%E5%A2%83">搭建 Electron 环境</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
+<li><a href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85">为指定项目安装</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE">开始项目</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<span id="more"></span>
+<h2 id="从空目录开始搭建-electron-项目">从空目录开始搭建 Electron 项目 <a class="markdownIt-Anchor" href="#从空目录开始搭建-electron-项目">#</a></h2>
+<h3 id="准备工具的安装">准备工具的安装 <a class="markdownIt-Anchor" href="#准备工具的安装">#</a></h3>
+<p>安装 npm：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy npm</span><br></pre></td></tr></table></figure>
+<p>安装 cnpm（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install cnpm -g --registry=https://registry.nlark.com</span><br></pre></td></tr></table></figure>
+<p>安装 yarn（可选）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -Sy yarn</span><br></pre></td></tr></table></figure>
+<h3 id="搭建-electron-环境">搭建 Electron 环境 <a class="markdownIt-Anchor" href="#搭建-electron-环境">#</a></h3>
+<h4 id="全局安装">全局安装 <a class="markdownIt-Anchor" href="#全局安装">#</a></h4>
+<p>使用 npm（可用 cnpm 或者 yarn 代替）安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">npm i -D electron@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试版</span></span><br><span class="line">npm i -D electron@beta</span><br><span class="line"></span><br><span class="line"><span class="comment"># github 上的最新版</span></span><br><span class="line">npm i -D electron-nightly</span><br></pre></td></tr></table></figure>
+<p>使用 Linux 软件包管理器安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">paru -Sy electron</span><br></pre></td></tr></table></figure>
+<h4 id="为指定项目安装">为指定项目安装 <a class="markdownIt-Anchor" href="#为指定项目安装">#</a></h4>
+<blockquote>
+<p>非必需，但是可以使 LSP server 能提供相应的语法补全。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="开始项目">开始项目 <a class="markdownIt-Anchor" href="#开始项目">#</a></h3>
+<p>准备两个基本文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch main.js index.html</span><br></pre></td></tr></table></figure>
+<p>初始化 <code>packages.json</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm init --yes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Front end</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>主要组织相容性复合体（MHC）</dt>
+<dd>一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。</dd>
+</dl>
+<p>人类的 MHC 称为<strong>人类白细胞抗原</strong>（HLA）<strong>基因复合体</strong>，其编码产物称为 HLA 分子或 HLA 抗原。</p>
+<span id="more"></span>
+<blockquote>
+<p>HLA（人白细胞抗原）是人群中多态性最高的同种异型抗原，成为个体区别于他人的<strong>独特遗传标志</strong>，是介导人体间<strong>移植排斥反应</strong>的主要移植抗原。<br/>
+HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等位基因数量最多。</p>
+</blockquote>
+<p>HLA 基因复合体位于人 6 号染色体短臂，分为三个基因区：</p>
+<ol>
+<li><strong>HLA Ⅰ 类基因区</strong>：
+<ol>
+<li><ins>经典 Ⅰ 类基因座（HLA Ⅰa）</ins>：A、B（等位基因数量最多）、C</li>
+<li>非经典 Ⅰ 类基因座（HLA Ⅰb）：Ε、F、G</li>
+</ol>
+</li>
+<li><strong>HLA Ⅱ 类基因区</strong>：<ins>经典的 DP、DQ、DR</ins> 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
+<li><strong>HLA Ⅲ 类基因区</strong>：补体基因 C2、B、C4 及参与炎症反应的 TNF、LTA、LTB、HSP 等。</li>
+</ol>
+<p>MHC 基因分两种类型：</p>
+<ul>
+<li>
+<p><strong>经典 HLA Ⅰ 类基因和经典 Ⅱ 类基因</strong>：产物具有<strong>抗原提呈作用</strong>，直接参与 T 细胞的激活和分化，参与<ins>调控适应性免疫应答作用</ins>，<ins>显示极为丰富的多态性</ins>；</p>
+</li>
+<li>
+<p><strong>免疫功能相关基因</strong>，包括传统的 Ⅲ 类基因及新近确定的多种基因：参与<ins>调控固有免疫应答或抗原加工</ins>，<ins>不显示或仅显示有限的多态性</ins>。</p>
+</li>
+<li>
+<p>HLA Ⅰ 类分子</p>
+<ul>
+<li>组成：重链（α 链）、β<sub>2</sub> 微球蛋白</li>
+<li>分布：所有有核细胞表面</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞（CTL）提呈内源性抗原肽</li>
+</ul>
+</li>
+<li>
+<p>HLA Ⅱ 类分子：</p>
+<ul>
+<li>组成：α 链、β 链</li>
+<li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞（Th）提呈外源性抗原肽</li>
+</ul>
+</li>
+</ul>
+<p>MHC 遗传特点</p>
+<ol>
+<li>MHC 多态性</li>
+<li></li>
+</ol>
+<ul>
+<li>抗原加工相关基因</li>
+<li>血清补体成分的编码基因</li>
+<li>非经典 Ⅰ 类基因</li>
+<li>炎症相关基因</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>医学免疫学</category>
+      </categories>
+      <tags>
+        <tag>医学免疫学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类发育与遗传学</title>
+    <url>/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</url>
+    <content><![CDATA[<blockquote>
+<p>人的发育是在一定的环境中依赖其特有的基因型而完成的，涉及<strong>细胞分化</strong>（cell
+differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>生长</strong>（growth）和<strong>繁殖</strong>（reproduction）。</p>
+</blockquote>
+<dl>
+<dt>遗传学（genetics）</dt>
+<dd>研究生物遗传物质及其变化规律的学科。</dd>
+<dt>医学遗传学（medical genetics）</dt>
+<dd>遗传学与医学结合产生的一门边缘学科。</dd>
+<dd>研究疾病发生和发展的遗传机制、遗传方式及其诊治和预防的策略和措施。</dd>
+</dl>
+<span id="more"></span>
+<details class="note info" open>
+<summary id='**table of content**'><p><strong>Table of Content</strong></p>
+</summary>
+<ol>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/">人类发育的细胞学和遗传学基础</a></li>
+<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E9%85%8D%E5%AD%90%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%8F%97%E7%B2%BE/">配子的发生与受精</a></li>
+<li><a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/">早期胚胎发育</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%99%A8%E5%AE%98%E3%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E7%94%9F%E4%B8%8E%E5%85%88%E5%A4%A9%E6%80%A7%E7%95%B8%E5%BD%A2/">器官、系统的发生与先天性畸形</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%94%9F%E6%AE%96%E5%86%85%E5%88%86%E6%B3%8C/">生殖内分泌</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/">染色体病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">单基因遗传病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/">分子病和先天性代谢病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E7%BE%A4%E4%BD%93%E9%81%97%E4%BC%A0%E5%AD%A6/">群体遗传学</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/">多基因遗传病</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤遗传学</a></li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E9%81%97%E4%BC%A0%E7%97%85%E7%9A%84%E8%AF%8A%E6%96%AD%E5%92%8C%E6%B2%BB%E7%96%97/">遗传病的诊断和治疗</a></li>
+</ol>
+<p>另见：<a href="/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/">胚胎学</a>。</p>
+</details>
+<h2 id="遗传病的基本特征和分类">遗传病的基本特征和分类 <a class="markdownIt-Anchor" href="#遗传病的基本特征和分类">#</a></h2>
+<dl>
+<dt>遗传病（genetic disease）</dt>
+<dd>以<strong>遗传物质</strong>变化为基本特征的疾病，其发病也不同程度的受<strong>环境因素</strong>的影响。</dd>
+</dl>
+<p>遗传因素作用的大小称为<strong>遗传度</strong>（见
+<a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#遗传度">多基因遗传病</a>）。</p>
+<p>理解遗传病应注意下述两种情况：</p>
+<ol>
+<li><strong>家族性疾病</strong>不都是遗传病，只是存在家族聚集现象；</li>
+<li><strong>先天性疾病</strong>（先天就表型出来的疾病）不都是遗传病，某些遗传病的致病基因是在生命过程中逐渐表达出来的。</li>
+</ol>
+<p><strong>遗传病的分类</strong>：</p>
+<ol>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/"><strong>染色体病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E6%9F%93%E8%89%B2%E4%BD%93%E7%97%85/#21-三体综合征">21 三体综合征</a>；</li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>单基因遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=白化病#氨基酸代谢病">白化病</a>；</li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#线粒体遗传病"><strong>线粒体遗传病</strong></a>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%8D%95%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/#常见线粒体遗传病">Leber 遗传性视神经病</a>；</li>
+<li><a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%A4%9A%E5%9F%BA%E5%9B%A0%E9%81%97%E4%BC%A0%E7%97%85/"><strong>多基因遗传病</strong></a>，如糖尿病、高血压；</li>
+<li><strong>体细胞遗传病</strong>，如 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E8%82%BF%E7%98%A4%E9%81%97%E4%BC%A0%E5%AD%A6/">肿瘤</a>。</li>
+</ol>
+<dl>
+<dt>体细胞遗传病</dt>
+<dd>体细胞中遗传物质改变引发的疾病，只在特定的体细胞中发生，一般不会遗传给后代。</dd>
+</dl>
+<h2 id="遗传学重要事件">遗传学重要事件 <a class="markdownIt-Anchor" href="#遗传学重要事件">#</a></h2>
+<ol>
+<li>1865 年，孟德尔通过豌豆杂交实验发现了遗传分离律和自由组合律，萸定了近代遗传学基础。</li>
+<li>1902 年，<strong>Garrod</strong> 通过对尿黑酯尿症的研究，提出 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>先天性代谢缺陷</strong></a> 的概念。</li>
+<li>1944 年，Avery 等通过肺炎双球菌转化实验证明了 DNA 是遗传物质。</li>
+<li>1949 年，<strong>Pauling</strong> 发现 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/?highlight=镰状细胞病#异常血红蛋白病类型">镰状细胞病</a> 的异常血红蛋白分子，并提出了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E5%88%86%E5%AD%90%E7%97%85%E5%92%8C%E5%85%88%E5%A4%A9%E6%80%A7%E4%BB%A3%E8%B0%A2%E7%97%85/#"><strong>分子病</strong></a> 的概念。</li>
+<li>1953 年，Watson 和 Crick 确立了 DNA 双螺旋结构，标志着分子遗传学的开端。</li>
+<li>1956 年，蒋有兴等证明人类染色体数目为 46 条，这是人类细胞遗传学的开端。</li>
+<li>1977 年，Sanger 建立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=双脱氧链终止法#dna-测序">双脱氧链终止法</a> 进行 DNA 测序。</li>
+<li>1985 年，Mullis 创立了 <a href="/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E7%9A%84%E7%BB%86%E8%83%9E%E5%AD%A6%E5%92%8C%E9%81%97%E4%BC%A0%E5%AD%A6%E5%9F%BA%E7%A1%80/?highlight=聚合酶链反应 PCR#PCR">聚合酶链反应（PCR）</a>进行体外 DNA 扩增。</li>
+<li>2003 年，<strong>人类基因组计划</strong>（human genome project，<abbr title="人类基因组计划">HGP</abbr>）公布了人类基因组“完成版”。</li>
+</ol>
+<p><abbr title="人类基因组计划">HGP</abbr> 的重要事件</p>
+<ul>
+<li><strong>1990 年</strong> 10 月 1 日，<abbr title="人类基因组计划">HGP</abbr> 正式开始；</li>
+<li>2000 年 6 月 26 日，六个参与国——美国、法国、德国、日本、中国的科学家共同宣布，人类基因组<strong>草图</strong>完成；</li>
+<li><strong>2003 年</strong> 4 月 14 日，六国政府首脑共同宣告人类基因组序列图完成。</li>
+<li><strong>2006 年</strong> 5 月，1 号染色体测序完成，<abbr title="人类基因组计划">HGP</abbr> 正式完成。</li>
+</ul>
+<details class="note info" open>
+<summary id='关于 hpg 的两次“完成”'><p>关于 HPG 的两次“完成”</p>
+</summary>
+<blockquote>
+<p>2004年，国际人类基因组测序联盟的研究者宣布，人类基因组中所含基因的预计数目从先前的30,000至40,000（在计划初期的预计数目则高达2,000,000）调整为20,000至25,000。预期还需要多年的时间来确定人类基因组中所含基因的精确数目。
+人类基因组的初步草图于2000年6月问世，到2001年2月完成并发表了工作草案，随后在2003年4月14日完成了人类基因组的最终测序。虽然有报导称，该方法覆盖了99%的全色人类基因组，准确率为99.99%，但2004年5月27日发表的一份对人类基因组序列的主要质量评估显示，超过92%的样本的准确率超过了99.99%，达到了预期目标。关于HGP的进一步分析和论文不断出现。2009年3月，基因组参考联盟(GRC)发布了一个更精确的人类基因组版本，但仍有300多个漏洞。截至2019年6月，GRC仍指出89个“未解决”的漏洞，其中大多数被标注为“暂停”或“正在调查/审查中”。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</blockquote>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLWhhbnMvJUU0JUJBJUJBJUU3JUIxJUJCJUU1JTlGJUJBJUU1JTlCJUEwJUU3JUJCJTg0JUU4JUFFJUExJUU1JTg4JTky">https://zh.wikipedia.org/zh-hans/人类基因组计划<i class="fa fa-external-link-alt"></i></span> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</details>
+<p><abbr title="人类基因组计划">HGP</abbr> 的目标：解读人类基因组中的全部基因，将人类基因组中的全部基因和 DNA 序列制成
+<strong>遗传图</strong>（genetic map）和<strong>物理图</strong>（physical map），并完成全部
+30 亿碱基的测序任务，制作核苷酸<strong>序列图</strong>（sequence map）。</p>
+<p>基因组测序方法：</p>
+<ul>
+<li>基因组公共研究中心：分级霰弹法</li>
+<li>Celera 公司：全基因组霰弹法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>人类发育与遗传学</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>人类发育与遗传学</tag>
       </tags>
   </entry>
   <entry>
@@ -2719,6 +2612,113 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success" open>
+<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -3668,8 +3668,8 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li>概念：免疫系统对特定抗原的“免疫无反应”状态</li>
 <li>机制：
 <ol>
-<li>胚胎期及新生期接触抗原所致的免疫耐受（先天性免疫耐受）：胚胎发育过程中，未成熟淋巴细胞接触抗原，出生后再次遇到相同抗原时，机体呈现无反应状态；</li>
-<li>后天接触抗原导致的免疫耐受（后天性免疫耐受）：某些自身反应性淋巴细胞克隆在输出到外周后，通过活化诱导的细胞凋亡、失能、Treg 细胞介导的免疫抑制等多种途径，丧失对抗原刺激的反应性。</li>
+<li>中枢免疫耐受：在中枢免疫器官发育过程中，T 细胞和 B 细胞经历阴性选择，以清除自身抗原反应性克隆（免疫清除）。</li>
+<li>外周免疫耐受：部分自身抗原反应性克隆未经充分选择输出到外周，机体另有多种途径抑制其针对自身抗原的应答：<span class="horizontal-list"><span class="horizontal-list-item">克隆清除、</span><span class="horizontal-list-item">免疫忽视、</span><span class="horizontal-list-item">克隆无能或失活、</span><span class="horizontal-list-item">免疫调节细胞的作用、</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">免疫豁免部位的抗原在生理状态下不致免疫应答</span></span>。</li>
 </ol>
 </li>
 </ul>
@@ -3679,7 +3679,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <ol>
 <li><strong>自身免疫病的概念和形成机制</strong>：
 <ul>
-<li>概念：在某些遗传因素和环境因素诱发下自身免疫耐受状态被打破或自身免疫性细胞调节异常，免疫系统对<ins>自身抗原</ins>产生<ins>持续迁延</ins>的免疫应答，造成了<ins>自身组织细胞损伤或功能异常</ins>Ⅱ导致的临床病症。</li>
+<li>概念：在某些遗传因素和环境因素诱发下自身免疫耐受状态被打破或自身免疫性细胞调节异常，免疫系统对<ins>自身抗原</ins>产生<ins>持续迁延</ins>的免疫应答，造成了<ins>自身组织细胞损伤或功能异常</ins>而导致的临床病症。</li>
 <li>形成机制：
 <ol>
 <li>自身抗原的改变：<span class="horizontal-list"><span class="horizontal-list-item">免疫隔离部位抗原的释放；</span><span class="horizontal-list-item">自身抗原的改变；</span><span class="horizontal-list-item">分子模拟；</span><span class="horizontal-list-item">表位扩展。</span></span></li>
@@ -3756,6 +3756,67 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       <tags>
         <tag>医学免疫学</tag>
         <tag>考试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>其他病毒</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<ul>
+<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
+<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
+<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
+<ul>
+<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
+</ul>
+<div class="note success"><dl>
+<dt><mark>内基小体</mark></dt>
+<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
+<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
+</dl>
+</div>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<ul>
+<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
+<li>传染源：狂犬、猫、蝙蝠</li>
+<li>传播途径：咬伤、眼结膜</li>
+<li>临床症状：
+<ul>
+<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
+<li>麻痹型：20% 不到，不出现典型症状，直接进入麻痹期</li>
+</ul>
+</li>
+</ul>
+<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
+<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
+<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
+<p>英文简称 <strong>HPV</strong>。</p>
+<ul>
+<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
+<li>致病性：
+<ul>
+<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
+<li>所致疾病：
+<ul>
+<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
+<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
+<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -3963,67 +4024,6 @@ Hb Bart’s 对氧的亲和力特别高，造成组织严重缺氧导致<strong>
       </categories>
       <tags>
         <tag>人类发育与遗传学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>其他病毒</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<ul>
-<li><a href="#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92">狂犬病病毒</a></li>
-<li><a href="#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92">人乳头瘤病毒</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="狂犬病病毒">狂犬病病毒 <a class="markdownIt-Anchor" href="#狂犬病病毒">#</a></h2>
-<h3 id="生物学性状">生物学性状 <a class="markdownIt-Anchor" href="#生物学性状">#</a></h3>
-<ul>
-<li>形态结构：<strong>RNA 有包膜病毒</strong>，呈“<mark>子弹头状</mark>”</li>
-</ul>
-<div class="note success"><dl>
-<dt><mark>内基小体</mark></dt>
-<dd>狂犬病病毒在神经细胞（主要是<em>大脑海马回的锥体细胞</em>）中增殖形成的嗜酸性<strong>包涵体</strong>。</dd>
-<dd>是狂犬病病毒感染的<strong>辅助诊断指标</strong>。</dd>
-</dl>
-</div>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<ul>
-<li>所致疾病：<strong>狂犬病</strong>，病毒感染后现在肌肉和结缔组织细胞内增殖（<strong>潜伏期</strong> 1~3 月，长者可达数年），而后侵入周围神经系统，上行至中枢神经系统，引起细胞功能紊乱和退型型病变，一旦发病，死亡率近乎 100%。</li>
-<li>传染源：狂犬、猫、蝙蝠</li>
-<li>传播途径：咬伤、眼结膜</li>
-<li>临床症状：
-<ul>
-<li>狂躁型：80% 以上，极度兴奋、狂躁不安、视水而生畏，3~5 天后转入麻痹、昏迷，最后呼吸困难、循环衰竭而死</li>
-<li>麻痹型：20% 不到，不出现典型症状，直接进入麻痹期</li>
-</ul>
-</li>
-</ul>
-<h3 id="防治原则">防治原则 <a class="markdownIt-Anchor" href="#防治原则">#</a></h3>
-<p>病毒潜伏期长，可进行疫苗接种获得被动免疫，预防疾病发生。</p>
-<h2 id="人乳头瘤病毒">人乳头瘤病毒 <a class="markdownIt-Anchor" href="#人乳头瘤病毒">#</a></h2>
-<p>英文简称 <strong>HPV</strong>。</p>
-<ul>
-<li>形态结构：<strong>DNA 无包膜病毒</strong></li>
-<li>致病性：
-<ul>
-<li><strong>传播途径</strong>：<span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">垂直传播</span><span class="horizontal-list-item">性传播</span></span></li>
-<li>所致疾病：
-<ul>
-<li>良性：<span class="horizontal-list"><span class="horizontal-list-item"><strong>跖疣</strong></span><span class="horizontal-list-item"><strong>寻常疣</strong></span><span class="horizontal-list-item"><strong>扁平疣</strong></span></span></li>
-<li>低危：<strong>尖锐湿疣</strong>，由 <strong>6</strong>、<strong>11</strong> 型引起，可通过性接触传播</li>
-<li>高危：与多种癌症，尤其是<strong>宫颈癌</strong>高度相关，常见的有 <strong>16</strong>、<strong>18</strong> 型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -7147,6 +7147,160 @@ CD4<sup>+</sup>T 细胞表位，活化 CD4<sup>+</sup>T 细胞。</p>
       </tags>
   </entry>
   <entry>
+    <title>放线菌</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
+    <content><![CDATA[<dl>
+<dt>放线菌（Actinomycetes）</dt>
+<dd>一群<strong>革兰氏阳性</strong>，<strong>呈菌丝状生长</strong>和<strong>以孢子繁殖</strong>（与真菌相似）的<strong>原核生物</strong>，因在固体培养基上菌落呈放线状生长而得名。</dd>
+</dl>
+<ul>
+<li>益处：生产<strong>抗生素</strong>（80% 的抗生素种类）、酶、维生素等</li>
+<li>害处：放线菌科下的 <a href="#%E6%94%BE%E7%BA%BF%E8%8F%8C%E5%B1%9E"><strong>放线菌属</strong></a> 和 <a href="#%E8%AF%BA%E5%8D%A1%E8%8F%8C%E5%B1%9E"><strong>诺卡菌属</strong></a> 可分别引起放线菌病和诺卡菌病</li>
+</ul>
+<span id="more"></span>
+<h2 id="放线菌属">放线菌属 <a class="markdownIt-Anchor" href="#放线菌属">#</a></h2>
+<p><strong>放线菌属</strong>（<em>Actinomyces</em>）属于人体正常菌群，主要引起<strong>内源性感染</strong>。人类放线菌感染中 90% 的病原体为 <mark>衣氏放线菌</mark>，其对人类致病性最强。</p>
+<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
+<ul>
+<li>形态与染色：有菌丝，菌丝末端膨大；与 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a> 相似——G<sup>+</sup>，无荚膜、无芽孢、无鞭毛</li>
+<li>培养特性和生化反应：<strong>专性厌氧</strong></li>
+</ul>
+<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
+<p>所致疾病：<strong>放线菌病</strong>（actinomycosis）</p>
+<ul>
+<li>致病特点：
+<ul>
+<li>属于人体常菌群，存在于口腔、上呼吸道、泌尿生殖道等与外界相通的腔道中</li>
+<li>毒力弱，利用创伤、手术等机会入侵，引起 <mark>内源性感染</mark></li>
+</ul>
+</li>
+<li>临床表现：<em>软组织慢性肉芽肿</em>及 <em>化脓性炎症</em>，可形成多发性脓肿、多发性瘘管</li>
+<li>好发部位：面颈、舌、下颌等部位多见；也可发生于腹、胸、盆腔、皮肤等处</li>
+</ul>
+<p>也可能与牙周炎的发生有关。</p>
+<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
+<p>脓液和痰液中可见 <mark>硫磺样颗粒</mark>（放线菌块），是放线菌在组织中形成的菌落，存在于病灶组织或脓性分泌物中，可作为临床辅助诊断放线菌病的指标。</p>
+<ul>
+<li>外观：直径 0.1~0.2mm，黄、硬</li>
+<li>直接镜检：压片或组织切片，可见放射状、<strong>形似菊花</strong>的菌丝
+<ul>
+<li>革兰染色：中心紫色（G<sup>+</sup>），边缘红色（G<sup>-</sup>）</li>
+<li>HE 染色：中心紫色，边缘红色</li>
+</ul>
+</li>
+</ul>
+<h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
+<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
+<ul>
+<li>形态与染色：G<sup>+</sup>，形态与放线菌属类似但菌丝末端不膨大</li>
+<li>培养特性：<strong>专性需氧</strong></li>
+</ul>
+<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
+<ul>
+<li>致病特点：主要为<strong>外源性感染</strong>，多发生在免疫功能低下或长期使用广谱抗生素的患者</li>
+<li>感染途径：
+<ul>
+<li><strong>呼吸道</strong>：原发性肺部化脓性感染，症状类似于 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#结核分枝杆菌">肺结核</a>；</li>
+<li><strong>皮肤伤口</strong>：以<ins>化脓和坏死</ins>为主要特征，引起慢性化脓性肉芽肿，好发于足、腿部，又称为<strong>足菌肿</strong>（mycetoma）或<strong>足分支菌病</strong>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
+<p>具有<strong>弱抗酸性</strong>，抗酸染色阳性。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数学建模大赛准备</title>
+    <url>/Projects/Contests/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
+    <content><![CDATA[<ul>
+<li>名称：高教社杯全国大学生数学建模竞赛</li>
+<li>时间：9.9（周四）18:00 - 9.12（周日）20:00</li>
+</ul>
+<span id="more"></span>
+<h2 id="事程">事程 <a class="markdownIt-Anchor" href="#事程">#</a></h2>
+<p>优先级由高到低：</p>
+<ul class="task-list">
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_0" disabled="true" /><label for="cbx_0"> SPSS/MatLab/R</label></div></li>
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_1" disabled="true" /><label for="cbx_1"> 《数学建模算法与应用》</label></div></li>
+<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_2" disabled="true" /><label for="cbx_2"> LaTeX</label></div></li>
+</ul>
+<h2 id="论文结构">论文结构 <a class="markdownIt-Anchor" href="#论文结构">#</a></h2>
+<ol>
+<li><a href="#%E6%91%98%E8%A6%81">摘要</a>（一页以内）</li>
+<li><a href="#%E9%97%AE%E9%A2%98%E9%87%8D%E8%BF%B0">问题重述</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">问题分析</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE">模型假设</a></li>
+<li><a href="#%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">符号说明</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B%E5%8F%8A%E6%B1%82%E8%A7%A3">模型建立及求解</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7">模型评价</a>（或加上模型推广 / 灵敏度分析 / 模型改进）</li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ol>
+<h3 id="摘要">摘要 <a class="markdownIt-Anchor" href="#摘要">#</a></h3>
+<p>摘要是一篇文章的核心，应非常重视，一篇好的摘要是取胜的关键！一个好的摘要应突出模型的闪光点，用了什么样的模型，有什么样的创新，应说明研究工作的目的、方法、结和最终结论。切勿不能超过一页（研究生竞赛除外）！！！！</p>
+<p>首先第一段为背景+结论</p>
+<p>针对问题一：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>针对问题二：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>针对问题三：采用了什么模型，创新点在哪，得到了什么结论。</p>
+<p>关键词（采用了什么模型，如插值、GM(1,1)、多元回归、主成分分析等等）</p>
+<h3 id="问题重述">问题重述 <a class="markdownIt-Anchor" href="#问题重述">#</a></h3>
+<p>阐明论文所研究的问题具有实际意义及建模的原题意思，列出所要研究的主要问题。不要直接把题目复制粘贴过来，另一方面也是降低查重率。</p>
+<h3 id="问题分析">问题分析 <a class="markdownIt-Anchor" href="#问题分析">#</a></h3>
+<p>分析问题，简述解决问题需要哪些条件和大体的解题思路，刨析问题的实质，确定解决问题的方法，为下面的模型假设、建立模型提供良好的基础。</p>
+<h3 id="模型假设">模型假设 <a class="markdownIt-Anchor" href="#模型假设">#</a></h3>
+<p>可以从题目和要求进行挖掘，运用模型的假设可以很好的对问题进行简化，但又不能建立太多假设，使求解与原意不符，应注意量与度。一般三到五条。</p>
+<h3 id="符号说明">符号说明 <a class="markdownIt-Anchor" href="#符号说明">#</a></h3>
+<p>文中出现的符号变量，便于读者阅读。</p>
+<h3 id="模型建立及求解">模型建立及求解 <a class="markdownIt-Anchor" href="#模型建立及求解">#</a></h3>
+<p>对问题的分析和模型的深入理解是建立一个好的模型的关键，比如该问题是一个预测问题，那么预测有很多模型，像前面所提到的插值、回归、GM(1,1)、GM（2，1）、时间序列、神经网络等等均可，那么采用什么样的模型取决于数据形式，如果数据量很少那么显然就不适合用神经网络，如果数据形式是单调的，那么推荐采用灰色预测模型，那么非单调的就不能用灰色预测模型。一个合适的模型是解决问题的关键，当然需要对我们的模型结果进行评估，比如R^2，RMSE等等来度量我们模型建立的优劣。引入一些创新点，比如将算法项结合可以得到一个更合适的模型和结果。</p>
+<h3 id="模型评价">模型评价 <a class="markdownIt-Anchor" href="#模型评价">#</a></h3>
+<p>（或加上模型推广 / 灵敏度分析 / 模型改进）</p>
+<p>模型评价就是模型的优点和缺点，优点比如采用了什么样的模型，得到了一个很好的结果，或者对数据进行了合理的预处理，为后续建模做了合理的铺垫，创新性的建立了什么模型，使得结果更为科学准确等等，缺点切勿写得太多，不要暴露文章的重大问题，大家都是聪明人就不用我再多说了。</p>
+<h3 id="参考文献">参考文献 <a class="markdownIt-Anchor" href="#参考文献">#</a></h3>
+<h4 id="专著-论文集-报告">专著、论文集、报告 <a class="markdownIt-Anchor" href="#专著-论文集-报告">#</a></h4>
+<p>[序号]主要责任者.文献题名[文献类型标识].出版地:出版者,出版年:起止页码(可选).</p>
+<p>例如：[1]刘国钧,陈绍业.图书目录[M].北京:高等教育出版社,1957:15-18.</p>
+<h4 id="期刊文章">期刊文章 <a class="markdownIt-Anchor" href="#期刊文章">#</a></h4>
+<p>[序号]主要责任者.文献题名[J].刊名,年,卷(期):起止页码.
+例如：[1]何龄修.读南明史[J].中国史研究,1998,(3):167-173.</p>
+<p>[2]OU J P,SOONG T T,et al.Recent advance in research on applications of passive energy dissipation systems[J].Earthquack Eng,1997,38(3):358-361.</p>
+<h4 id="论文集中的析出文献">论文集中的析出文献 <a class="markdownIt-Anchor" href="#论文集中的析出文献">#</a></h4>
+<p>[序号]析出文献主要责任者.析出文献题名[A].原文献主要责任者(可选)原文献题名[C].出版地:出版者,出版年:起止页码.</p>
+<p>例如：[7]钟文发.非线性规划在可燃毒物配置中的应用[A].赵炜.运筹学的理论与应用——中国运筹学会第五届大会论文集[C].西安:西安电子科技大学出版社,1996:468.</p>
+<h4 id="学位论文">学位论文 <a class="markdownIt-Anchor" href="#学位论文">#</a></h4>
+<p>[序号]主要责任者.文献题名[D].出版地:出版单位,出版年:起止页码(可选).</p>
+<p>例如：[4]赵天书.诺西肽分阶段补料分批发酵过程优化研究[D].沈阳:东北大学,2013.</p>
+<h4 id="报纸文章">报纸文章 <a class="markdownIt-Anchor" href="#报纸文章">#</a></h4>
+<p>[序号]主要责任者.文献题名[N].报纸名,出版日期(版次).</p>
+<p>例如：[8]谢希德.创造学习的新思路[N].人民日报,1998-12-25(10).</p>
+<h4 id="电子文献">电子文献 <a class="markdownIt-Anchor" href="#电子文献">#</a></h4>
+<p>[文献类型/载体类型标识]：[J/OL]网上期刊、[EB/OL]网上电子公告、
+[M/CD]光盘图书、[DB/OL]网上数据库、[DB/MT]磁带数据库
+[序号]主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出版或获得地址,发表更新日期/引用日期.
+例如：[12]王明亮.关于中国学术期刊标准化数据库系统工程的进展[EB/OL].1998-08-16/1998-10-01.
+[8]万锦.中国大学学报文摘(1983-1993).英文版[DB/CD].北京:中国大百科全书出版社,1996.</p>
+<h3 id="代码">代码 <a class="markdownIt-Anchor" href="#代码">#</a></h3>
+<p>美赛中不附代码，其余竞赛中必须附上。</p>
+]]></content>
+      <categories>
+        <category>Projects</category>
+        <category>Contests</category>
+      </categories>
+      <tags>
+        <tag>Index</tag>
+        <tag>数学建模</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>支原体</title>
     <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%94%AF%E5%8E%9F%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -7309,160 +7463,6 @@ CD4<sup>+</sup>T 细胞表位，活化 CD4<sup>+</sup>T 细胞。</p>
       </categories>
       <tags>
         <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>放线菌</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%94%BE%E7%BA%BF%E8%8F%8C/</url>
-    <content><![CDATA[<dl>
-<dt>放线菌（Actinomycetes）</dt>
-<dd>一群<strong>革兰氏阳性</strong>，<strong>呈菌丝状生长</strong>和<strong>以孢子繁殖</strong>（与真菌相似）的<strong>原核生物</strong>，因在固体培养基上菌落呈放线状生长而得名。</dd>
-</dl>
-<ul>
-<li>益处：生产<strong>抗生素</strong>（80% 的抗生素种类）、酶、维生素等</li>
-<li>害处：放线菌科下的 <a href="#%E6%94%BE%E7%BA%BF%E8%8F%8C%E5%B1%9E"><strong>放线菌属</strong></a> 和 <a href="#%E8%AF%BA%E5%8D%A1%E8%8F%8C%E5%B1%9E"><strong>诺卡菌属</strong></a> 可分别引起放线菌病和诺卡菌病</li>
-</ul>
-<span id="more"></span>
-<h2 id="放线菌属">放线菌属 <a class="markdownIt-Anchor" href="#放线菌属">#</a></h2>
-<p><strong>放线菌属</strong>（<em>Actinomyces</em>）属于人体正常菌群，主要引起<strong>内源性感染</strong>。人类放线菌感染中 90% 的病原体为 <mark>衣氏放线菌</mark>，其对人类致病性最强。</p>
-<h3 id="生物学特性">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性">#</a></h3>
-<ul>
-<li>形态与染色：有菌丝，菌丝末端膨大；与 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#白喉棒状杆菌">棒状杆菌</a> 相似——G<sup>+</sup>，无荚膜、无芽孢、无鞭毛</li>
-<li>培养特性和生化反应：<strong>专性厌氧</strong></li>
-</ul>
-<h3 id="致病性">致病性 <a class="markdownIt-Anchor" href="#致病性">#</a></h3>
-<p>所致疾病：<strong>放线菌病</strong>（actinomycosis）</p>
-<ul>
-<li>致病特点：
-<ul>
-<li>属于人体常菌群，存在于口腔、上呼吸道、泌尿生殖道等与外界相通的腔道中</li>
-<li>毒力弱，利用创伤、手术等机会入侵，引起 <mark>内源性感染</mark></li>
-</ul>
-</li>
-<li>临床表现：<em>软组织慢性肉芽肿</em>及 <em>化脓性炎症</em>，可形成多发性脓肿、多发性瘘管</li>
-<li>好发部位：面颈、舌、下颌等部位多见；也可发生于腹、胸、盆腔、皮肤等处</li>
-</ul>
-<p>也可能与牙周炎的发生有关。</p>
-<h3 id="微生物学检查">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查">#</a></h3>
-<p>脓液和痰液中可见 <mark>硫磺样颗粒</mark>（放线菌块），是放线菌在组织中形成的菌落，存在于病灶组织或脓性分泌物中，可作为临床辅助诊断放线菌病的指标。</p>
-<ul>
-<li>外观：直径 0.1~0.2mm，黄、硬</li>
-<li>直接镜检：压片或组织切片，可见放射状、<strong>形似菊花</strong>的菌丝
-<ul>
-<li>革兰染色：中心紫色（G<sup>+</sup>），边缘红色（G<sup>-</sup>）</li>
-<li>HE 染色：中心紫色，边缘红色</li>
-</ul>
-</li>
-</ul>
-<h2 id="诺卡菌属">诺卡菌属 <a class="markdownIt-Anchor" href="#诺卡菌属">#</a></h2>
-<h3 id="生物学特性-2">生物学特性 <a class="markdownIt-Anchor" href="#生物学特性-2">#</a></h3>
-<ul>
-<li>形态与染色：G<sup>+</sup>，形态与放线菌属类似但菌丝末端不膨大</li>
-<li>培养特性：<strong>专性需氧</strong></li>
-</ul>
-<h3 id="致病性-2">致病性 <a class="markdownIt-Anchor" href="#致病性-2">#</a></h3>
-<ul>
-<li>致病特点：主要为<strong>外源性感染</strong>，多发生在免疫功能低下或长期使用广谱抗生素的患者</li>
-<li>感染途径：
-<ul>
-<li><strong>呼吸道</strong>：原发性肺部化脓性感染，症状类似于 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#结核分枝杆菌">肺结核</a>；</li>
-<li><strong>皮肤伤口</strong>：以<ins>化脓和坏死</ins>为主要特征，引起慢性化脓性肉芽肿，好发于足、腿部，又称为<strong>足菌肿</strong>（mycetoma）或<strong>足分支菌病</strong>。</li>
-</ul>
-</li>
-</ul>
-<h3 id="微生物学检查-2">微生物学检查 <a class="markdownIt-Anchor" href="#微生物学检查-2">#</a></h3>
-<p>具有<strong>弱抗酸性</strong>，抗酸染色阳性。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数学建模大赛准备</title>
-    <url>/Projects/Contests/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B%E5%87%86%E5%A4%87/</url>
-    <content><![CDATA[<ul>
-<li>名称：高教社杯全国大学生数学建模竞赛</li>
-<li>时间：9.9（周四）18:00 - 9.12（周日）20:00</li>
-</ul>
-<span id="more"></span>
-<h2 id="事程">事程 <a class="markdownIt-Anchor" href="#事程">#</a></h2>
-<p>优先级由高到低：</p>
-<ul class="task-list">
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_0" disabled="true" /><label for="cbx_0"> SPSS/MatLab/R</label></div></li>
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_1" disabled="true" /><label for="cbx_1"> 《数学建模算法与应用》</label></div></li>
-<li class="task-list-item"><div class="checkbox" /><input type="checkbox" id="cbx_2" disabled="true" /><label for="cbx_2"> LaTeX</label></div></li>
-</ul>
-<h2 id="论文结构">论文结构 <a class="markdownIt-Anchor" href="#论文结构">#</a></h2>
-<ol>
-<li><a href="#%E6%91%98%E8%A6%81">摘要</a>（一页以内）</li>
-<li><a href="#%E9%97%AE%E9%A2%98%E9%87%8D%E8%BF%B0">问题重述</a></li>
-<li><a href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">问题分析</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E5%81%87%E8%AE%BE">模型假设</a></li>
-<li><a href="#%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E">符号说明</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B%E5%8F%8A%E6%B1%82%E8%A7%A3">模型建立及求解</a></li>
-<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7">模型评价</a>（或加上模型推广 / 灵敏度分析 / 模型改进）</li>
-<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
-</ol>
-<h3 id="摘要">摘要 <a class="markdownIt-Anchor" href="#摘要">#</a></h3>
-<p>摘要是一篇文章的核心，应非常重视，一篇好的摘要是取胜的关键！一个好的摘要应突出模型的闪光点，用了什么样的模型，有什么样的创新，应说明研究工作的目的、方法、结和最终结论。切勿不能超过一页（研究生竞赛除外）！！！！</p>
-<p>首先第一段为背景+结论</p>
-<p>针对问题一：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>针对问题二：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>针对问题三：采用了什么模型，创新点在哪，得到了什么结论。</p>
-<p>关键词（采用了什么模型，如插值、GM(1,1)、多元回归、主成分分析等等）</p>
-<h3 id="问题重述">问题重述 <a class="markdownIt-Anchor" href="#问题重述">#</a></h3>
-<p>阐明论文所研究的问题具有实际意义及建模的原题意思，列出所要研究的主要问题。不要直接把题目复制粘贴过来，另一方面也是降低查重率。</p>
-<h3 id="问题分析">问题分析 <a class="markdownIt-Anchor" href="#问题分析">#</a></h3>
-<p>分析问题，简述解决问题需要哪些条件和大体的解题思路，刨析问题的实质，确定解决问题的方法，为下面的模型假设、建立模型提供良好的基础。</p>
-<h3 id="模型假设">模型假设 <a class="markdownIt-Anchor" href="#模型假设">#</a></h3>
-<p>可以从题目和要求进行挖掘，运用模型的假设可以很好的对问题进行简化，但又不能建立太多假设，使求解与原意不符，应注意量与度。一般三到五条。</p>
-<h3 id="符号说明">符号说明 <a class="markdownIt-Anchor" href="#符号说明">#</a></h3>
-<p>文中出现的符号变量，便于读者阅读。</p>
-<h3 id="模型建立及求解">模型建立及求解 <a class="markdownIt-Anchor" href="#模型建立及求解">#</a></h3>
-<p>对问题的分析和模型的深入理解是建立一个好的模型的关键，比如该问题是一个预测问题，那么预测有很多模型，像前面所提到的插值、回归、GM(1,1)、GM（2，1）、时间序列、神经网络等等均可，那么采用什么样的模型取决于数据形式，如果数据量很少那么显然就不适合用神经网络，如果数据形式是单调的，那么推荐采用灰色预测模型，那么非单调的就不能用灰色预测模型。一个合适的模型是解决问题的关键，当然需要对我们的模型结果进行评估，比如R^2，RMSE等等来度量我们模型建立的优劣。引入一些创新点，比如将算法项结合可以得到一个更合适的模型和结果。</p>
-<h3 id="模型评价">模型评价 <a class="markdownIt-Anchor" href="#模型评价">#</a></h3>
-<p>（或加上模型推广 / 灵敏度分析 / 模型改进）</p>
-<p>模型评价就是模型的优点和缺点，优点比如采用了什么样的模型，得到了一个很好的结果，或者对数据进行了合理的预处理，为后续建模做了合理的铺垫，创新性的建立了什么模型，使得结果更为科学准确等等，缺点切勿写得太多，不要暴露文章的重大问题，大家都是聪明人就不用我再多说了。</p>
-<h3 id="参考文献">参考文献 <a class="markdownIt-Anchor" href="#参考文献">#</a></h3>
-<h4 id="专著-论文集-报告">专著、论文集、报告 <a class="markdownIt-Anchor" href="#专著-论文集-报告">#</a></h4>
-<p>[序号]主要责任者.文献题名[文献类型标识].出版地:出版者,出版年:起止页码(可选).</p>
-<p>例如：[1]刘国钧,陈绍业.图书目录[M].北京:高等教育出版社,1957:15-18.</p>
-<h4 id="期刊文章">期刊文章 <a class="markdownIt-Anchor" href="#期刊文章">#</a></h4>
-<p>[序号]主要责任者.文献题名[J].刊名,年,卷(期):起止页码.
-例如：[1]何龄修.读南明史[J].中国史研究,1998,(3):167-173.</p>
-<p>[2]OU J P,SOONG T T,et al.Recent advance in research on applications of passive energy dissipation systems[J].Earthquack Eng,1997,38(3):358-361.</p>
-<h4 id="论文集中的析出文献">论文集中的析出文献 <a class="markdownIt-Anchor" href="#论文集中的析出文献">#</a></h4>
-<p>[序号]析出文献主要责任者.析出文献题名[A].原文献主要责任者(可选)原文献题名[C].出版地:出版者,出版年:起止页码.</p>
-<p>例如：[7]钟文发.非线性规划在可燃毒物配置中的应用[A].赵炜.运筹学的理论与应用——中国运筹学会第五届大会论文集[C].西安:西安电子科技大学出版社,1996:468.</p>
-<h4 id="学位论文">学位论文 <a class="markdownIt-Anchor" href="#学位论文">#</a></h4>
-<p>[序号]主要责任者.文献题名[D].出版地:出版单位,出版年:起止页码(可选).</p>
-<p>例如：[4]赵天书.诺西肽分阶段补料分批发酵过程优化研究[D].沈阳:东北大学,2013.</p>
-<h4 id="报纸文章">报纸文章 <a class="markdownIt-Anchor" href="#报纸文章">#</a></h4>
-<p>[序号]主要责任者.文献题名[N].报纸名,出版日期(版次).</p>
-<p>例如：[8]谢希德.创造学习的新思路[N].人民日报,1998-12-25(10).</p>
-<h4 id="电子文献">电子文献 <a class="markdownIt-Anchor" href="#电子文献">#</a></h4>
-<p>[文献类型/载体类型标识]：[J/OL]网上期刊、[EB/OL]网上电子公告、
-[M/CD]光盘图书、[DB/OL]网上数据库、[DB/MT]磁带数据库
-[序号]主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出版或获得地址,发表更新日期/引用日期.
-例如：[12]王明亮.关于中国学术期刊标准化数据库系统工程的进展[EB/OL].1998-08-16/1998-10-01.
-[8]万锦.中国大学学报文摘(1983-1993).英文版[DB/CD].北京:中国大百科全书出版社,1996.</p>
-<h3 id="代码">代码 <a class="markdownIt-Anchor" href="#代码">#</a></h3>
-<p>美赛中不附代码，其余竞赛中必须附上。</p>
-]]></content>
-      <categories>
-        <category>Projects</category>
-        <category>Contests</category>
-      </categories>
-      <tags>
-        <tag>Index</tag>
-        <tag>数学建模</tag>
-        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -11873,8 +11873,8 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
         <category>Softwares</category>
       </categories>
       <tags>
-        <tag>Index</tag>
         <tag>Linux</tag>
+        <tag>Index</tag>
         <tag>TTY</tag>
       </tags>
   </entry>
