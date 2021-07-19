@@ -1,294 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CMake 学习记录</title>
-    <url>/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>GitHub repository: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3R0cm95NTAvY21ha2UtZXhhbXBsZXM=">https://github.com/ttroy50/cmake-examples<i class="fa fa-external-link-alt"></i></span></p>
-<p>CMake 是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个库。<br/>
-它用配置文件控制建构过程（build process）的方式和 Unix 的 make 相似，只是 CMake
-的配置文件取名为 CMakeLists.txt。<br/>
-CMake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile 或
-Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方式使用。</p>
-<span id="more"></span>
-<blockquote>
-<p>原文中将 CMake 命令称为“函数”。本文沿用了这种称法。</p>
-</blockquote>
-<h2 id="基础">基础 <a class="markdownIt-Anchor" href="#基础">#</a></h2>
-<p>最基本的 Hello World CMakeLists.txt 文件：</p>
-<figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
-<details class="note info" open>
-<summary id='note'><p>Note</p>
-</summary>
-<p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
-然后就可以像下面这样写：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，<a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
-</details>
-<h3 id="二进制目录">二进制目录 <a class="markdownIt-Anchor" href="#二进制目录">#</a></h3>
-<p>我们运行 <code>cmake</code>（可带参数）命令时所在的目录（即当前工作目录、<code>pwd</code> 显示的目录）被称为
-<code>CMAKE_BINARY_DIR</code>。这是你的生成的二进制文件所在的根目录（通常还会有一些其他文件）。</p>
-<p>CMake 支持两种生成二进制文件的方式——就地构建（in-place
-build）和源外构建（out-of-source build）。</p>
-<h4 id="就地构建">就地构建 <a class="markdownIt-Anchor" href="#就地构建">#</a></h4>
-<p>要以这种方式构建，只需在项目根目录（其实是 CMakeLists.txt 所在的目录）执行
-<code>cmake</code>（不指定项目根目录，见下）命令。这样做会使 CMake
-生成的临时文件和二进制文件和项目文件混在一起。</p>
-<h4 id="源外构建">源外构建 <a class="markdownIt-Anchor" href="#源外构建">#</a></h4>
-<p>要采用源外构建，在任一非项目根目录的目录中执行 <code>cmake &lt;project_root&gt;</code> 命令，其中
-<code>&lt;project_root&gt;</code> 为项目根目录。这种方式生成的临时文件和二进制文件等会被放在执行
-<code>cmake</code> 命令时所在的目录，而不会污染源目录（项目根目录），一般采用这种方式。</p>
-<p>习惯上这样做（假设当前目录已经为源目录）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir build &amp;&amp; cd build &amp;&amp; cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<h3 id="其他目录路径变量">其他目录路径变量 <a class="markdownIt-Anchor" href="#其他目录路径变量">#</a></h3>
-<p>完整变量列表见：<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvbWFudWFsL2NtYWtlLXZhcmlhYmxlcy43Lmh0bWw=">https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html<i class="fa fa-external-link-alt"></i></span></p>
-<p>一些术语：</p>
-<ul>
-<li><strong>源（码）树（source tree）<strong>和</strong>构建树（build tree）</strong>：分别指项目<em>源代码根目录</em>
-和<em>指定的生成二进制文件（等文件）的根目录</em>和各自的子目录形成的树状目录结构。</li>
-<li><strong>源（码）目录（source directory）<strong>和</strong>构建目录（build directory）</strong>：<em>源码树</em>和
-<em>构建树</em>中的位置，一般指顶层位置，但是可以移动，表示当前位置的变量一般含有 <code>CURRENT</code>。</li>
-<li>CMake 目录种类 TODO
-<ul>
-<li>顶层/根</li>
-<li>当前所处</li>
-<li>正在处理</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_SOURCE_DIR.html"><code>CMAKE_SOURCE_DIR</code></a></td>
-<td>源码树（source tree）顶层的路径</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_SOURCE_DIR.html"><code>CMAKE_CURRENT_SOURCE_DIR</code></a></td>
-<td>正在处理的源目录</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_SOURCE_DIR.html"><code>PROJECT_SOURCE_DIR</code></a></td>
-<td>当前项目的源目录</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_BINARY_DIR.html"><code>CMAKE_BINARY_DIR</code></a></td>
-<td>构建树（build tree）顶层的路径</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_BINARY_DIR.html"><code>CMAKE_CURRENT_BINARY_DIR</code></a></td>
-<td>当前所在的构建目录（build tree）</td>
-</tr>
-<tr>
-<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_BINARY_DIR.html"><code>PROJECT_BINARY_DIR</code></a></td>
-<td>项目的构建目录</td>
-</tr>
-</tbody>
-</table>
-<h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
-<p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
-</div>
-<p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="包含目录">包含目录 <a class="markdownIt-Anchor" href="#包含目录">#</a></h3>
-<p>使用 <a href="https://cmake.org/cmake/help/latest/command/target_include_directories.html"><code>target_include_directories()</code></a> 函数为目标（target）添加包含目录（include path），这样添加的目录会在生成目标时以 <code>-I</code> 选项传递给编译器。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(<span class="keyword">target</span></span><br><span class="line">    PRIVATE</span><br><span class="line">        <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p><code>INTERFACE</code>、<code>PUBLIC</code>、<code>PRIVATE</code> 关键字用来指定其后的参数的作用域（scope，也就是这三个关键字）</p>
-<ul>
-<li><code>PUBLIC</code>、<code>PRIVATE</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INCLUDE_DIRECTORIES.html#prop_tgt:INCLUDE_DIRECTORIES"><code>INCLUDE_DIRECTORIES</code></a> 属性（property）</li>
-<li><code>INTERFACE</code>、<code>PUBLIC</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.html#prop_tgt:INTERFACE_INCLUDE_DIRECTORIES"><code>INTERFACE_INCLUDE_DIRECTORIES</code></a> 属性</li>
-</ul>
-<p>详细解释见下面的<a href="#%E5%BA%93">库</a>。</p>
-<h3 id="库">库 <a class="markdownIt-Anchor" href="#库">#</a></h3>
-<h4 id="创建库">创建库 <a class="markdownIt-Anchor" href="#创建库">#</a></h4>
-<p><a href="">使用</a> <a href="https://cmake.org/cmake/help/latest/command/add_library.html"><code>add_library()</code></a> 函数以用指定源文件创建一个库文件。</p>
-<p>如要创建静态库，可以像这样写：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello_library STATIC</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>指定库的类型：</p>
-<ul>
-<li><code>STATIC</code>：静态库，编译时链接</li>
-<li><code>SHARED</code>：动态库，运行时链接</li>
-<li><code>MODULE</code>：不会链接到其他目标，但是可以在运行时通过 <em>dlopen-like</em> 功能
-（见 <span class="exturl" data-url="aHR0cHM6Ly9tYW43Lm9yZy9saW51eC9tYW4tcGFnZXMvbWFuMy9kbG9wZW4uMy5odG1s">man 3 dlopen<i class="fa fa-external-link-alt"></i></span>）手动加载</li>
-</ul>
-<blockquote>
-<p>像之前推荐的那样，这里直接在 <code>add_xxx()</code> 函数中写明了要使用的源文件。</p>
-</blockquote>
-<p><a href="#%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95">上一节</a>中作用域的含义：</p>
-<ul>
-<li><code>PRIVATE</code>：参数会被添加为<strong>目标</strong>的包含目录之一</li>
-<li><code>INTERFACE</code>：参数会被添加为<strong>与该库链接的所有的目标</strong>的包含目录之一</li>
-<li><code>PUBLIC</code>：相当于前两个作用域相加的效果</li>
-</ul>
-<h4 id="链接库和目标">链接库和目标 <a class="markdownIt-Anchor" href="#链接库和目标">#</a></h4>
-<p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<details class="note info" open>
-<summary id='目标别名'><p>目标别名</p>
-</summary>
-<p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
-<p>如为库创建别名：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>当然，也可以为可执行文件创建别名：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure></details>
-<h3 id="安装">安装 <a class="markdownIt-Anchor" href="#安装">#</a></h3>
-<p>CMake 提供了生成 <code>make install</code> 目标（是 Makefile 中的 target，而不是之前提到的
-CMake 中的 target）的功能。<br/>
-安装目录可以通过 <code>CMAKE_INSTALL_PREFIX</code> 指定，详见 <a href="#%E6%8C%87%E5%AE%9A%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">指定安装目录</a>。</p>
-<h4 id="install-函数">install 函数 <a class="markdownIt-Anchor" href="#install-函数">#</a></h4>
-<p>安装由 <a href="https://cmake.org/cmake/help/latest/command/install.html"><code>install()</code></a> 函数控制。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst_bin</span><br><span class="line">    DESTINATION bin)</span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib)</span><br></pre></td></tr></table></figure>
-<p>上面的代码会将 <code>cmake_examples_inst_bin</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下，将 <code>cmake_examples_inst</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下。</p>
-<div class="note warning"><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure></div>
-<p>使用 <code>DIRECTORY</code> 以安装目录：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/</span><br><span class="line">    DESTINATION <span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
-<p>使用 <code>FILES</code> 直接安装文件：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (FILES cmake-examples.conf</span><br><span class="line">    DESTINATION etc)</span><br></pre></td></tr></table></figure>
-<h4 id="install_manifesttxt">install_manifest.txt <a class="markdownIt-Anchor" href="#install_manifesttxt">#</a></h4>
-<p>运行完 <code>make install</code> 后，CMake 会生成一个名为 install_manifest.txt
-的文件，其中包含了所有安装文件的详细信息。</p>
-<p>如果以 root 运行 <code>make install</code>，install_manifest.txt 会为 root 所有。</p>
-<h4 id="指定安装目录">指定安装目录 <a class="markdownIt-Anchor" href="#指定安装目录">#</a></h4>
-<p><code>CMAKE_INSTALL_PREFIX</code> 的值默认为 <code>/usr/local/</code>，要改变其值，可以在添加
-<em>可执行文件和库文件</em>前在顶层（top level）CMakeLists.txt 中添加如下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )</span><br><span class="line">    <span class="keyword">message</span>(STATUS <span class="string">&quot;Setting default CMAKE_INSTALL_PREFIX path to $&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span>)</span><br><span class="line">    <span class="keyword">set</span>(CMAKE_INSTALL_PREFIX <span class="string">&quot;$&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;The path to use for make install&quot;</span> FORCE)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<p>也可以通过终端命令的参数（<code>-DCMAKE_INSTALL_PREFIX=/install/location</code>）设置该变量。</p>
-<hr />
-<p>还可以通过 make 的 <code>DESTDIR</code> 改变安装目录：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make install DESTDIR=/tmp/stage</span><br></pre></td></tr></table></figure>
-<p>这会创建 <code>$&#123;DESTDIR&#125;/$&#123;CMAKE_INSTALL_PREFIX&#125;</code> 作为安装目录。<br/>
-在这个例子中，安装目录为 <code>/tmp/stage/usr/local</code>。</p>
-<h4 id="卸载">卸载 <a class="markdownIt-Anchor" href="#卸载">#</a></h4>
-<p>CMake 默认不提供 <code>make uninstall</code> 对象。<br/>
-要添加 <code>make uninstall</code> 对象，可以参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRsYWIua2l0d2FyZS5jb20vY21ha2UvY29tbXVuaXR5Ly0vd2lraXMvRkFR">Can I do “make uninstall” with CMake?<i class="fa fa-external-link-alt"></i></span>。</p>
-<p>一个简单的做法是利用 install_manifest.txt 文件：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo xargs rm &lt; install_manifest.txt</span><br></pre></td></tr></table></figure>
-<h3 id="构建类型">构建类型 <a class="markdownIt-Anchor" href="#构建类型">#</a></h3>
-<p>CMake 内置了几种构建类型，其原理就是向编译器传递一些标志（flags）：</p>
-<table>
-<thead>
-<tr>
-<th>Levels</th>
-<th>Compiler Flags</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Release</td>
-<td><code>-O3 -DNDEBUG</code></td>
-</tr>
-<tr>
-<td>Debug</td>
-<td><code>-g</code></td>
-</tr>
-<tr>
-<td>MinSizeRel</td>
-<td><code>-Os -DNDEBUG</code></td>
-</tr>
-<tr>
-<td>RelWithDebInfo</td>
-<td><code>-O2 -g -DNDEBUG</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>可以通过图形界面设置构建类型：</li>
-</ul>
-<img data-src="/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Configuring-Using-Cmake-GUI.png" class="" title="Configuring Using Cmake GUI" alt="Configuring Using Cmake GUI">
-<ul>
-<li>也可以在终端命令中定义变量：  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>CMake 提供的默认的构建类型不包含任何相关的编译器标志，以优化程序。<br/>
-但是有时可能会需要设置默认构建类型，可以在顶层 CMakeList.txt 中添加如下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">NOT</span> CMAKE_BUILD_TYPE <span class="keyword">AND</span> <span class="keyword">NOT</span> CMAKE_CONFIGURATION_TYPES)</span><br><span class="line">  <span class="keyword">message</span>(<span class="string">&quot;Setting build type to &#x27;RelWithDebInfo&#x27; as none was specified.&quot;</span>)</span><br><span class="line">  <span class="keyword">set</span>(CMAKE_BUILD_TYPE RelWithDebInfo CACHE <span class="keyword">STRING</span> <span class="string">&quot;Choose the type of build.&quot;</span> FORCE)</span><br><span class="line">  <span class="comment"># Set the possible values of build type for cmake-gui</span></span><br><span class="line">  <span class="keyword">set_property</span>(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS <span class="string">&quot;Debug&quot;</span> <span class="string">&quot;Release&quot;</span></span><br><span class="line">    <span class="string">&quot;MinSizeRel&quot;</span> <span class="string">&quot;RelWithDebInfo&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<h3 id="编译器标志">编译器标志 <a class="markdownIt-Anchor" href="#编译器标志">#</a></h3>
-<p>CMake 支持用若干种方式设置编译器标志：</p>
-<ul>
-<li>使用函数 <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html"><code>target_compile_definitions()</code></a> 和 <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options()</code></a></li>
-<li>使用变量 <code>CMAKE_C_FLAGS</code> 和 <code>CMAKE_CXX_FLAGS</code>，见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a></li>
-</ul>
-<h4 id="为指定目标设置">为指定目标设置 <a class="markdownIt-Anchor" href="#为指定目标设置">#</a></h4>
-<p>在现代 CMake 中设置 C++ 标志的推荐方法是使用按对象标志（per-target flags），可以通过 <code>target_compile_definitions()</code> 函数将其填充到其他对象。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_compile_definitions</span>(cmake_examples_compile_flags</span><br><span class="line">     PRIVATE EX3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>这会使编译器在变异目标（<code>cmake_examples_compile_flags</code>）时添加 <code>-DEX3</code> 标志。</p>
-<p>使用该函数会填充<strong>库</strong>的 <a href="https://cmake.org/cmake/help/v3.0/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.html#prop_tgt:INTERFACE_COMPILE_DEFINITIONS"><code>INTERFACE_COMPILE_DEFINITIONS</code></a>
-变量，并会根据作用域（scope）将定义传递给链接的对象。<br/>
-如果目标是一个库并且选择的作用域是 <code>PUBLIC</code> 或 <code>INTERFACE</code>，那么定义还会被包含在链接到该库的所有对象中。</p>
-<h4 id="设置编译器标志">设置编译器标志 <a class="markdownIt-Anchor" href="#设置编译器标志">#</a></h4>
-<p><code>CMAKE_CXX_FLAGS</code> 要么为空，要么包含所选构建类型的对应标志。<br/>
-要设置<strong>额外</strong>的编译标志，可以在顶层 CMakeLists.txt 中添加如下内容：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -DEX2&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;Set C++ Compiler Flags&quot;</span> FORCE)</span><br></pre></td></tr></table></figure>
-<div class="note info"><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
-</div>
-<p>类似地，<code>CMAKE_C_FLAGS</code> 等变量也可以以同样的方式设置。其他变量见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a>。<br/>
-一旦设置了这些变量，CMake 会为此目录及其子目录下的所有目标设置编译器标志，因此更推荐使用 <code>target_compile_definitions</code> 函数。</p>
-<h4 id="设置链接器标志">设置链接器标志 <a class="markdownIt-Anchor" href="#设置链接器标志">#</a></h4>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTE3ODM5MzIvaG93LWRvLWktYWRkLWEtbGlua2VyLW9yLWNvbXBpbGUtZmxhZy1pbi1hLWNtYWtlLWZpbGU=">How do I add a linker or compile flag in a CMake file?<i class="fa fa-external-link-alt"></i></span></p>
-<p>先将标志储存为常量（现在不推荐这样做）：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_COMPILE_FLAGS <span class="string">&quot;-fprofile-arcs -ftest-coverage&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_LINK_FLAGS    <span class="string">&quot;-lgcov&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后可以通过几种方式添加它们：</p>
-<ol>
-<li>最简单的方式（not clean, but easy and convenient, and works only for compile flags, C &amp; C++ at once）： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_definitions</span>(<span class="variable">$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li>追加到现有的 CMake 变量： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS  <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; $&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(CMAKE_EXE_LINKER_FLAGS  <span class="string">&quot;$&#123;CMAKE_EXE_LINKER_FLAGS&#125; $&#123;GCC_COVERAGE_LINK_FLAGS&#125;&quot;</span>) </span><br></pre></td></tr></table></figure>
-</li>
-<li>使用目标属性（target properties）（需要指定目标名）<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvcHJvcF90Z3QvQ09NUElMRV9GTEFHUy5odG1s">COMPILE_FLAGS<i class="fa fa-external-link-alt"></i></span> <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get_target_property</span>(TEMP <span class="variable">$&#123;THE_TARGET&#125;</span> COMPILE_FLAGS)</span><br><span class="line"><span class="keyword">if</span>(TEMP <span class="keyword">STREQUAL</span> <span class="string">&quot;TEMP-NOTFOUND&quot;</span>)</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;&quot;</span>) <span class="comment"># Set to empty string</span></span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125; &quot;</span>) <span class="comment"># A space to cleanly separate from existing content</span></span><br><span class="line"><span class="keyword">endif</span>()</span><br><span class="line"><span class="comment"># Append our values</span></span><br><span class="line"><span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125;$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span> )</span><br><span class="line"><span class="keyword">set_target_properties</span>(<span class="variable">$&#123;THE_TARGET&#125;</span> PROPERTIES COMPILE_FLAGS <span class="variable">$&#123;TEMP&#125;</span> )</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="第三方库">第三方库 <a class="markdownIt-Anchor" href="#第三方库">#</a></h3>
-<p>CMake 提供了 <a href="https://cmake.org/cmake/help/latest/command/find_package.html"><code>find_package()</code></a> 函数来寻找第三方软件包文件所在路径。<br/>
-该函数会在 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_MODULE_PATH.html"><code>CMAKE_MODULE_PATH</code></a> 中的目录列表中的目录中寻找形似 “FindXXX.cmake” 的文件。Linux 中的默认搜索路径为 <code>/usr/share/cmake/Modules</code>（或者 <code>/usr/share/cmake-3.20/Modules</code>）。</p>
-<p>如要寻找 Boost：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(Boost <span class="number">1.46</span>.<span class="number">1</span> REQUIRED COMPONENTS filesystem system)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>Boost</code>：包名，这会使 <code>find_package()</code> 函数寻找 FindBoost.cmake</li>
-<li><code>1.46.1</code>：Boost 的最小版本</li>
-<li><code>REQUIRED</code>：指定为必须，如果没找到符合要求的包则构建失败</li>
-<li><code>COMPONENTS &lt;...&gt;</code>：库的组件列表</li>
-</ul>
-<h4 id="检查是否找到软件包">检查是否找到软件包 <a class="markdownIt-Anchor" href="#检查是否找到软件包">#</a></h4>
-<p>大多数软件包（的 FindXXX.cmake 文件）会设置 <code>XXX_FOUND</code> 变量，可以通过检查该变量判断软件包是否被找到。</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(Boost_FOUND)</span><br><span class="line">    <span class="keyword">message</span> (<span class="string">&quot;boost found&quot;</span>)</span><br><span class="line">    <span class="keyword">include_directories</span>(<span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">    <span class="keyword">message</span> (FATAL_ERROR <span class="string">&quot;Cannot find Boost&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<h4 id="暴露变量">暴露变量 <a class="markdownIt-Anchor" href="#暴露变量">#</a></h4>
-<p>找到指定的包（其实是加载了指定 FindXXX.cmake 文件）后，我们可以获得一些变量来帮助我们确定所需文件位置，如 <code>Boost_INCLUDE_DIRS</code> 就指明了 Boost 的包含文件所在目录。</p>
-<p>有时可以通过 ccmake 或 cmake-gui 查看环境变量以确定所需变量。</p>
-<h4 id="别名和导入目标">别名和导入目标 <a class="markdownIt-Anchor" href="#别名和导入目标">#</a></h4>
-<p>大多数 CMake 库，在其模块文件中导出别名目标。</p>
-<p>Boost 的所有导出目标以 <code>Boost::&lt;subsystem&gt;</code> 命名，如：</p>
-<ul>
-<li><code>Boost::boost</code>：仅头文件（header-only）的库</li>
-<li><code>Boost::system</code>：Boost system library</li>
-<li><code>Boost::filesystem</code>：文件系统相关的库</li>
-</ul>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">        Boost::filesystem</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>这些目标会包含了它们的依赖，链接 <code>Boost::filesystem</code> 会自动添加 <code>Boost::boost</code> 和 <code>Boost::system</code> 依赖。</p>
-<h4 id="非别名目标">非别名目标 <a class="markdownIt-Anchor" href="#非别名目标">#</a></h4>
-<p>有些第三方库没有使用可导入的目标，这时就必须使用以下两个变量：</p>
-<ul>
-<li><code>xxx_INCLUDE_DIRS</code>：include directory</li>
-<li><code>xxx_LIBRARY</code>：library path</li>
-</ul>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Include the boost headers</span></span><br><span class="line"><span class="keyword">target_include_directories</span>( third_party_include</span><br><span class="line">    PRIVATE <span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># link against the boost libraries</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>( third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">    <span class="variable">$&#123;Boost_SYSTEM_LIBRARY&#125;</span></span><br><span class="line">    <span class="variable">$&#123;Boost_FILESYSTEM_LIBRARY&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>C/C++</category>
-      </categories>
-      <tags>
-        <tag>CMake</tag>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Create Snippets for UltiSnips</title>
     <url>/Learning/Computer/Vim-NeoVim/Create-Snippets-for-Ultisnips/</url>
     <content><![CDATA[<p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
@@ -744,6 +456,294 @@ then insert new method invokation);</li>
       </tags>
   </entry>
   <entry>
+    <title>CMake 学习记录</title>
+    <url>/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>GitHub repository: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3R0cm95NTAvY21ha2UtZXhhbXBsZXM=">https://github.com/ttroy50/cmake-examples<i class="fa fa-external-link-alt"></i></span></p>
+<p>CMake 是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个库。<br/>
+它用配置文件控制建构过程（build process）的方式和 Unix 的 make 相似，只是 CMake
+的配置文件取名为 CMakeLists.txt。<br/>
+CMake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile 或
+Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方式使用。</p>
+<span id="more"></span>
+<blockquote>
+<p>原文中将 CMake 命令称为“函数”。本文沿用了这种称法。</p>
+</blockquote>
+<h2 id="基础">基础 <a class="markdownIt-Anchor" href="#基础">#</a></h2>
+<p>最基本的 Hello World CMakeLists.txt 文件：</p>
+<figure class="highlight cmake"><figcaption><span>CMakeLists.txt</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># （可选）指定 所支持的 CMake 的最低版本</span></span><br><span class="line"><span class="comment"># 可以通过以下命令查看 CMake 版本</span></span><br><span class="line"><span class="comment"># $ cmake --version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名，这样做会设置一些变量</span></span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个要生成的可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake main.cpp)</span><br></pre></td></tr></table></figure>
+<details class="note info" open>
+<summary id='note'><p>Note</p>
+</summary>
+<p>有些时候会使用一种简便方法——将项目名和可执行文件名设成同一个名字。
+然后就可以像下面这样写：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.6</span>)</span><br><span class="line"><span class="keyword">project</span>(hello_cmake)</span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> 函数将变量 <code>PROJECT_NAME</code> 设置为 <code>hello_cmake</code>，在 <a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable()</code></a> 函数中则使用了这个变量指定可执行文件名。</p>
+</details>
+<h3 id="二进制目录">二进制目录 <a class="markdownIt-Anchor" href="#二进制目录">#</a></h3>
+<p>我们运行 <code>cmake</code>（可带参数）命令时所在的目录（即当前工作目录、<code>pwd</code> 显示的目录）被称为
+<code>CMAKE_BINARY_DIR</code>。这是你的生成的二进制文件所在的根目录（通常还会有一些其他文件）。</p>
+<p>CMake 支持两种生成二进制文件的方式——就地构建（in-place
+build）和源外构建（out-of-source build）。</p>
+<h4 id="就地构建">就地构建 <a class="markdownIt-Anchor" href="#就地构建">#</a></h4>
+<p>要以这种方式构建，只需在项目根目录（其实是 CMakeLists.txt 所在的目录）执行
+<code>cmake</code>（不指定项目根目录，见下）命令。这样做会使 CMake
+生成的临时文件和二进制文件和项目文件混在一起。</p>
+<h4 id="源外构建">源外构建 <a class="markdownIt-Anchor" href="#源外构建">#</a></h4>
+<p>要采用源外构建，在任一非项目根目录的目录中执行 <code>cmake &lt;project_root&gt;</code> 命令，其中
+<code>&lt;project_root&gt;</code> 为项目根目录。这种方式生成的临时文件和二进制文件等会被放在执行
+<code>cmake</code> 命令时所在的目录，而不会污染源目录（项目根目录），一般采用这种方式。</p>
+<p>习惯上这样做（假设当前目录已经为源目录）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir build &amp;&amp; cd build &amp;&amp; cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<h3 id="其他目录路径变量">其他目录路径变量 <a class="markdownIt-Anchor" href="#其他目录路径变量">#</a></h3>
+<p>完整变量列表见：<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvbWFudWFsL2NtYWtlLXZhcmlhYmxlcy43Lmh0bWw=">https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html<i class="fa fa-external-link-alt"></i></span></p>
+<p>一些术语：</p>
+<ul>
+<li><strong>源（码）树（source tree）<strong>和</strong>构建树（build tree）</strong>：分别指项目<em>源代码根目录</em>
+和<em>指定的生成二进制文件（等文件）的根目录</em>和各自的子目录形成的树状目录结构。</li>
+<li><strong>源（码）目录（source directory）<strong>和</strong>构建目录（build directory）</strong>：<em>源码树</em>和
+<em>构建树</em>中的位置，一般指顶层位置，但是可以移动，表示当前位置的变量一般含有 <code>CURRENT</code>。</li>
+<li>CMake 目录种类 TODO
+<ul>
+<li>顶层/根</li>
+<li>当前所处</li>
+<li>正在处理</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_SOURCE_DIR.html"><code>CMAKE_SOURCE_DIR</code></a></td>
+<td>源码树（source tree）顶层的路径</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_SOURCE_DIR.html"><code>CMAKE_CURRENT_SOURCE_DIR</code></a></td>
+<td>正在处理的源目录</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_SOURCE_DIR.html"><code>PROJECT_SOURCE_DIR</code></a></td>
+<td>当前项目的源目录</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_BINARY_DIR.html"><code>CMAKE_BINARY_DIR</code></a></td>
+<td>构建树（build tree）顶层的路径</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CURRENT_BINARY_DIR.html"><code>CMAKE_CURRENT_BINARY_DIR</code></a></td>
+<td>当前所在的构建目录（build tree）</td>
+</tr>
+<tr>
+<td><a href="https://cmake.org/cmake/help/latest/variable/PROJECT_BINARY_DIR.html"><code>PROJECT_BINARY_DIR</code></a></td>
+<td>项目的构建目录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="源文件变量">源文件变量 <a class="markdownIt-Anchor" href="#源文件变量">#</a></h3>
+<p>可以声明一个变量保存要使用的源文件名，以便之后使用：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
+<div class="note warning"><p>这种方式已经不推荐，取而代之的是直接在 <code>add_xxx()</code> 函数中写明源文件。</p>
+</div>
+<p>也可以使用 <code>GOLB</code> 命令以用通配符寻找相符的文件：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB SOURCES <span class="string">&quot;src/*.cpp&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="包含目录">包含目录 <a class="markdownIt-Anchor" href="#包含目录">#</a></h3>
+<p>使用 <a href="https://cmake.org/cmake/help/latest/command/target_include_directories.html"><code>target_include_directories()</code></a> 函数为目标（target）添加包含目录（include path），这样添加的目录会在生成目标时以 <code>-I</code> 选项传递给编译器。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(<span class="keyword">target</span></span><br><span class="line">    PRIVATE</span><br><span class="line">        <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><code>INTERFACE</code>、<code>PUBLIC</code>、<code>PRIVATE</code> 关键字用来指定其后的参数的作用域（scope，也就是这三个关键字）</p>
+<ul>
+<li><code>PUBLIC</code>、<code>PRIVATE</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INCLUDE_DIRECTORIES.html#prop_tgt:INCLUDE_DIRECTORIES"><code>INCLUDE_DIRECTORIES</code></a> 属性（property）</li>
+<li><code>INTERFACE</code>、<code>PUBLIC</code>：参数会被用来填充目标的 <a href="https://cmake.org/cmake/help/latest/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.html#prop_tgt:INTERFACE_INCLUDE_DIRECTORIES"><code>INTERFACE_INCLUDE_DIRECTORIES</code></a> 属性</li>
+</ul>
+<p>详细解释见下面的<a href="#%E5%BA%93">库</a>。</p>
+<h3 id="库">库 <a class="markdownIt-Anchor" href="#库">#</a></h3>
+<h4 id="创建库">创建库 <a class="markdownIt-Anchor" href="#创建库">#</a></h4>
+<p><a href="">使用</a> <a href="https://cmake.org/cmake/help/latest/command/add_library.html"><code>add_library()</code></a> 函数以用指定源文件创建一个库文件。</p>
+<p>如要创建静态库，可以像这样写：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello_library STATIC</span><br><span class="line">    src/Hello.cpp</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>指定库的类型：</p>
+<ul>
+<li><code>STATIC</code>：静态库，编译时链接</li>
+<li><code>SHARED</code>：动态库，运行时链接</li>
+<li><code>MODULE</code>：不会链接到其他目标，但是可以在运行时通过 <em>dlopen-like</em> 功能
+（见 <span class="exturl" data-url="aHR0cHM6Ly9tYW43Lm9yZy9saW51eC9tYW4tcGFnZXMvbWFuMy9kbG9wZW4uMy5odG1s">man 3 dlopen<i class="fa fa-external-link-alt"></i></span>）手动加载</li>
+</ul>
+<blockquote>
+<p>像之前推荐的那样，这里直接在 <code>add_xxx()</code> 函数中写明了要使用的源文件。</p>
+</blockquote>
+<p><a href="#%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95">上一节</a>中作用域的含义：</p>
+<ul>
+<li><code>PRIVATE</code>：参数会被添加为<strong>目标</strong>的包含目录之一</li>
+<li><code>INTERFACE</code>：参数会被添加为<strong>与该库链接的所有的目标</strong>的包含目录之一</li>
+<li><code>PUBLIC</code>：相当于前两个作用域相加的效果</li>
+</ul>
+<h4 id="链接库和目标">链接库和目标 <a class="markdownIt-Anchor" href="#链接库和目标">#</a></h4>
+<p>要将指定目标与库链接，使用 <code>target_link_libraries()</code> 函数：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello_library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<details class="note info" open>
+<summary id='目标别名'><p>目标别名</p>
+</summary>
+<p>可以在 <code>add_xxx()</code> 函数中使用 <code>ALIAS</code> 为目标创建一个别名，也可以理解为创建了一个“伪目标”。</p>
+<p>如为库创建别名：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(hello::library ALIAS hello_library)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_binary</span><br><span class="line">    src/main.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(hello_binary</span><br><span class="line">    PRIVATE</span><br><span class="line">        hello::library</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>当然，也可以为可执行文件创建别名：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(main ALIAS hello_binary)</span><br></pre></td></tr></table></figure></details>
+<h3 id="安装">安装 <a class="markdownIt-Anchor" href="#安装">#</a></h3>
+<p>CMake 提供了生成 <code>make install</code> 目标（是 Makefile 中的 target，而不是之前提到的
+CMake 中的 target）的功能。<br/>
+安装目录可以通过 <code>CMAKE_INSTALL_PREFIX</code> 指定，详见 <a href="#%E6%8C%87%E5%AE%9A%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">指定安装目录</a>。</p>
+<h4 id="install-函数">install 函数 <a class="markdownIt-Anchor" href="#install-函数">#</a></h4>
+<p>安装由 <a href="https://cmake.org/cmake/help/latest/command/install.html"><code>install()</code></a> 函数控制。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst_bin</span><br><span class="line">    DESTINATION bin)</span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib)</span><br></pre></td></tr></table></figure>
+<p>上面的代码会将 <code>cmake_examples_inst_bin</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下，将 <code>cmake_examples_inst</code> 生成的二进制文件安装到 <code>$&#123;CMAKE_INSTALL_PREFIX&#125;/bin</code> 目录下。</p>
+<div class="note warning"><p>在有 DLL 目标的平台（如 Windows）需要添加以下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (TARGETS cmake_examples_inst</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure></div>
+<p>使用 <code>DIRECTORY</code> 以安装目录：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/</span><br><span class="line">    DESTINATION <span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
+<p>使用 <code>FILES</code> 直接安装文件：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">install</span> (FILES cmake-examples.conf</span><br><span class="line">    DESTINATION etc)</span><br></pre></td></tr></table></figure>
+<h4 id="install_manifesttxt">install_manifest.txt <a class="markdownIt-Anchor" href="#install_manifesttxt">#</a></h4>
+<p>运行完 <code>make install</code> 后，CMake 会生成一个名为 install_manifest.txt
+的文件，其中包含了所有安装文件的详细信息。</p>
+<p>如果以 root 运行 <code>make install</code>，install_manifest.txt 会为 root 所有。</p>
+<h4 id="指定安装目录">指定安装目录 <a class="markdownIt-Anchor" href="#指定安装目录">#</a></h4>
+<p><code>CMAKE_INSTALL_PREFIX</code> 的值默认为 <code>/usr/local/</code>，要改变其值，可以在添加
+<em>可执行文件和库文件</em>前在顶层（top level）CMakeLists.txt 中添加如下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )</span><br><span class="line">    <span class="keyword">message</span>(STATUS <span class="string">&quot;Setting default CMAKE_INSTALL_PREFIX path to $&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span>)</span><br><span class="line">    <span class="keyword">set</span>(CMAKE_INSTALL_PREFIX <span class="string">&quot;$&#123;CMAKE_BINARY_DIR&#125;/install&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;The path to use for make install&quot;</span> FORCE)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<p>也可以通过终端命令的参数（<code>-DCMAKE_INSTALL_PREFIX=/install/location</code>）设置该变量。</p>
+<hr />
+<p>还可以通过 make 的 <code>DESTDIR</code> 改变安装目录：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make install DESTDIR=/tmp/stage</span><br></pre></td></tr></table></figure>
+<p>这会创建 <code>$&#123;DESTDIR&#125;/$&#123;CMAKE_INSTALL_PREFIX&#125;</code> 作为安装目录。<br/>
+在这个例子中，安装目录为 <code>/tmp/stage/usr/local</code>。</p>
+<h4 id="卸载">卸载 <a class="markdownIt-Anchor" href="#卸载">#</a></h4>
+<p>CMake 默认不提供 <code>make uninstall</code> 对象。<br/>
+要添加 <code>make uninstall</code> 对象，可以参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRsYWIua2l0d2FyZS5jb20vY21ha2UvY29tbXVuaXR5Ly0vd2lraXMvRkFR">Can I do “make uninstall” with CMake?<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>一个简单的做法是利用 install_manifest.txt 文件：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo xargs rm &lt; install_manifest.txt</span><br></pre></td></tr></table></figure>
+<h3 id="构建类型">构建类型 <a class="markdownIt-Anchor" href="#构建类型">#</a></h3>
+<p>CMake 内置了几种构建类型，其原理就是向编译器传递一些标志（flags）：</p>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>Compiler Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Release</td>
+<td><code>-O3 -DNDEBUG</code></td>
+</tr>
+<tr>
+<td>Debug</td>
+<td><code>-g</code></td>
+</tr>
+<tr>
+<td>MinSizeRel</td>
+<td><code>-Os -DNDEBUG</code></td>
+</tr>
+<tr>
+<td>RelWithDebInfo</td>
+<td><code>-O2 -g -DNDEBUG</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>可以通过图形界面设置构建类型：</li>
+</ul>
+<img data-src="/Learning/Computer/C-C/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Configuring-Using-Cmake-GUI.png" class="" title="Configuring Using Cmake GUI" alt="Configuring Using Cmake GUI">
+<ul>
+<li>也可以在终端命令中定义变量：  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>CMake 提供的默认的构建类型不包含任何相关的编译器标志，以优化程序。<br/>
+但是有时可能会需要设置默认构建类型，可以在顶层 CMakeList.txt 中添加如下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">NOT</span> CMAKE_BUILD_TYPE <span class="keyword">AND</span> <span class="keyword">NOT</span> CMAKE_CONFIGURATION_TYPES)</span><br><span class="line">  <span class="keyword">message</span>(<span class="string">&quot;Setting build type to &#x27;RelWithDebInfo&#x27; as none was specified.&quot;</span>)</span><br><span class="line">  <span class="keyword">set</span>(CMAKE_BUILD_TYPE RelWithDebInfo CACHE <span class="keyword">STRING</span> <span class="string">&quot;Choose the type of build.&quot;</span> FORCE)</span><br><span class="line">  <span class="comment"># Set the possible values of build type for cmake-gui</span></span><br><span class="line">  <span class="keyword">set_property</span>(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS <span class="string">&quot;Debug&quot;</span> <span class="string">&quot;Release&quot;</span></span><br><span class="line">    <span class="string">&quot;MinSizeRel&quot;</span> <span class="string">&quot;RelWithDebInfo&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="编译器标志">编译器标志 <a class="markdownIt-Anchor" href="#编译器标志">#</a></h3>
+<p>CMake 支持用若干种方式设置编译器标志：</p>
+<ul>
+<li>使用函数 <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html"><code>target_compile_definitions()</code></a> 和 <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options()</code></a></li>
+<li>使用变量 <code>CMAKE_C_FLAGS</code> 和 <code>CMAKE_CXX_FLAGS</code>，见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a></li>
+</ul>
+<h4 id="为指定目标设置">为指定目标设置 <a class="markdownIt-Anchor" href="#为指定目标设置">#</a></h4>
+<p>在现代 CMake 中设置 C++ 标志的推荐方法是使用按对象标志（per-target flags），可以通过 <code>target_compile_definitions()</code> 函数将其填充到其他对象。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_compile_definitions</span>(cmake_examples_compile_flags</span><br><span class="line">     PRIVATE EX3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这会使编译器在变异目标（<code>cmake_examples_compile_flags</code>）时添加 <code>-DEX3</code> 标志。</p>
+<p>使用该函数会填充<strong>库</strong>的 <a href="https://cmake.org/cmake/help/v3.0/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.html#prop_tgt:INTERFACE_COMPILE_DEFINITIONS"><code>INTERFACE_COMPILE_DEFINITIONS</code></a>
+变量，并会根据作用域（scope）将定义传递给链接的对象。<br/>
+如果目标是一个库并且选择的作用域是 <code>PUBLIC</code> 或 <code>INTERFACE</code>，那么定义还会被包含在链接到该库的所有对象中。</p>
+<h4 id="设置编译器标志">设置编译器标志 <a class="markdownIt-Anchor" href="#设置编译器标志">#</a></h4>
+<p><code>CMAKE_CXX_FLAGS</code> 要么为空，要么包含所选构建类型的对应标志。<br/>
+要设置<strong>额外</strong>的编译标志，可以在顶层 CMakeLists.txt 中添加如下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -DEX2&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;Set C++ Compiler Flags&quot;</span> FORCE)</span><br></pre></td></tr></table></figure>
+<div class="note info"><p><code>CACHE STRING &quot;Set C++ Compiler Flags&quot; FORCE</code> 用来强制变量在 CMakeLists.txt 中被设置，详见 <a href="https://cmake.org/cmake/help/latest/command/set.html#set-cache-entry"><code>set</code>#设置缓存项</a>。</p>
+</div>
+<p>类似地，<code>CMAKE_C_FLAGS</code> 等变量也可以以同样的方式设置。其他变量见 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html"><code>CMAKE_&lt;LANG&gt;_FLAGS</code></a>。<br/>
+一旦设置了这些变量，CMake 会为此目录及其子目录下的所有目标设置编译器标志，因此更推荐使用 <code>target_compile_definitions</code> 函数。</p>
+<h4 id="设置链接器标志">设置链接器标志 <a class="markdownIt-Anchor" href="#设置链接器标志">#</a></h4>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTE3ODM5MzIvaG93LWRvLWktYWRkLWEtbGlua2VyLW9yLWNvbXBpbGUtZmxhZy1pbi1hLWNtYWtlLWZpbGU=">How do I add a linker or compile flag in a CMake file?<i class="fa fa-external-link-alt"></i></span></p>
+<p>先将标志储存为常量（现在不推荐这样做）：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_COMPILE_FLAGS <span class="string">&quot;-fprofile-arcs -ftest-coverage&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(GCC_COVERAGE_LINK_FLAGS    <span class="string">&quot;-lgcov&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后可以通过几种方式添加它们：</p>
+<ol>
+<li>最简单的方式（not clean, but easy and convenient, and works only for compile flags, C &amp; C++ at once）： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_definitions</span>(<span class="variable">$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li>追加到现有的 CMake 变量： <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS  <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; $&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span>)</span><br><span class="line"><span class="keyword">SET</span>(CMAKE_EXE_LINKER_FLAGS  <span class="string">&quot;$&#123;CMAKE_EXE_LINKER_FLAGS&#125; $&#123;GCC_COVERAGE_LINK_FLAGS&#125;&quot;</span>) </span><br></pre></td></tr></table></figure>
+</li>
+<li>使用目标属性（target properties）（需要指定目标名）<span class="exturl" data-url="aHR0cHM6Ly9jbWFrZS5vcmcvY21ha2UvaGVscC9sYXRlc3QvcHJvcF90Z3QvQ09NUElMRV9GTEFHUy5odG1s">COMPILE_FLAGS<i class="fa fa-external-link-alt"></i></span> <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get_target_property</span>(TEMP <span class="variable">$&#123;THE_TARGET&#125;</span> COMPILE_FLAGS)</span><br><span class="line"><span class="keyword">if</span>(TEMP <span class="keyword">STREQUAL</span> <span class="string">&quot;TEMP-NOTFOUND&quot;</span>)</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;&quot;</span>) <span class="comment"># Set to empty string</span></span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">  <span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125; &quot;</span>) <span class="comment"># A space to cleanly separate from existing content</span></span><br><span class="line"><span class="keyword">endif</span>()</span><br><span class="line"><span class="comment"># Append our values</span></span><br><span class="line"><span class="keyword">SET</span>(TEMP <span class="string">&quot;$&#123;TEMP&#125;$&#123;GCC_COVERAGE_COMPILE_FLAGS&#125;&quot;</span> )</span><br><span class="line"><span class="keyword">set_target_properties</span>(<span class="variable">$&#123;THE_TARGET&#125;</span> PROPERTIES COMPILE_FLAGS <span class="variable">$&#123;TEMP&#125;</span> )</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="第三方库">第三方库 <a class="markdownIt-Anchor" href="#第三方库">#</a></h3>
+<p>CMake 提供了 <a href="https://cmake.org/cmake/help/latest/command/find_package.html"><code>find_package()</code></a> 函数来寻找第三方软件包文件所在路径。<br/>
+该函数会在 <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_MODULE_PATH.html"><code>CMAKE_MODULE_PATH</code></a> 中的目录列表中的目录中寻找形似 “FindXXX.cmake” 的文件。Linux 中的默认搜索路径为 <code>/usr/share/cmake/Modules</code>（或者 <code>/usr/share/cmake-3.20/Modules</code>）。</p>
+<p>如要寻找 Boost：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(Boost <span class="number">1.46</span>.<span class="number">1</span> REQUIRED COMPONENTS filesystem system)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Boost</code>：包名，这会使 <code>find_package()</code> 函数寻找 FindBoost.cmake</li>
+<li><code>1.46.1</code>：Boost 的最小版本</li>
+<li><code>REQUIRED</code>：指定为必须，如果没找到符合要求的包则构建失败</li>
+<li><code>COMPONENTS &lt;...&gt;</code>：库的组件列表</li>
+</ul>
+<h4 id="检查是否找到软件包">检查是否找到软件包 <a class="markdownIt-Anchor" href="#检查是否找到软件包">#</a></h4>
+<p>大多数软件包（的 FindXXX.cmake 文件）会设置 <code>XXX_FOUND</code> 变量，可以通过检查该变量判断软件包是否被找到。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(Boost_FOUND)</span><br><span class="line">    <span class="keyword">message</span> (<span class="string">&quot;boost found&quot;</span>)</span><br><span class="line">    <span class="keyword">include_directories</span>(<span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">    <span class="keyword">message</span> (FATAL_ERROR <span class="string">&quot;Cannot find Boost&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<h4 id="暴露变量">暴露变量 <a class="markdownIt-Anchor" href="#暴露变量">#</a></h4>
+<p>找到指定的包（其实是加载了指定 FindXXX.cmake 文件）后，我们可以获得一些变量来帮助我们确定所需文件位置，如 <code>Boost_INCLUDE_DIRS</code> 就指明了 Boost 的包含文件所在目录。</p>
+<p>有时可以通过 ccmake 或 cmake-gui 查看环境变量以确定所需变量。</p>
+<h4 id="别名和导入目标">别名和导入目标 <a class="markdownIt-Anchor" href="#别名和导入目标">#</a></h4>
+<p>大多数 CMake 库，在其模块文件中导出别名目标。</p>
+<p>Boost 的所有导出目标以 <code>Boost::&lt;subsystem&gt;</code> 命名，如：</p>
+<ul>
+<li><code>Boost::boost</code>：仅头文件（header-only）的库</li>
+<li><code>Boost::system</code>：Boost system library</li>
+<li><code>Boost::filesystem</code>：文件系统相关的库</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">        Boost::filesystem</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这些目标会包含了它们的依赖，链接 <code>Boost::filesystem</code> 会自动添加 <code>Boost::boost</code> 和 <code>Boost::system</code> 依赖。</p>
+<h4 id="非别名目标">非别名目标 <a class="markdownIt-Anchor" href="#非别名目标">#</a></h4>
+<p>有些第三方库没有使用可导入的目标，这时就必须使用以下两个变量：</p>
+<ul>
+<li><code>xxx_INCLUDE_DIRS</code>：include directory</li>
+<li><code>xxx_LIBRARY</code>：library path</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Include the boost headers</span></span><br><span class="line"><span class="keyword">target_include_directories</span>( third_party_include</span><br><span class="line">    PRIVATE <span class="variable">$&#123;Boost_INCLUDE_DIRS&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># link against the boost libraries</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>( third_party_include</span><br><span class="line">    PRIVATE</span><br><span class="line">    <span class="variable">$&#123;Boost_SYSTEM_LIBRARY&#125;</span></span><br><span class="line">    <span class="variable">$&#123;Boost_FILESYSTEM_LIBRARY&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>CMake</tag>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Electron+Vue 开发笔记软件</title>
     <url>/Projects/Softwares/Electron-VueJs-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<ul>
@@ -789,6 +789,31 @@ then insert new method invokation);</li>
         <tag>Electron</tag>
         <tag>Vue</tag>
         <tag>Index</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 实战</title>
+    <url>/Learning/Computer/Git/Git-%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+<span id="more"></span>
+<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
+<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
+<p>查询当前远程的版本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+<p>查看版本差异：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
+<p>合并最新代码到本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1310,28 +1335,65 @@ if 指定镜像文件，of 指定要用的启动盘，一般为 U 盘，可使�
       </tags>
   </entry>
   <entry>
-    <title>Git 实战</title>
-    <url>/Learning/Computer/Git/Git-%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>实用 Git 操作技巧。</p>
+    <title>Lua 迭代器和泛型 for</title>
+    <url>/Learning/Computer/Lua/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
+    <content><![CDATA[<blockquote>
+<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
+本文也未刻意区分。</p>
+</blockquote>
 <span id="more"></span>
-<h2 id="从远程仓库获取最新代码合并到本地分支">从远程仓库获取最新代码合并到本地分支 <a class="markdownIt-Anchor" href="#从远程仓库获取最新代码合并到本地分支">#</a></h2>
-<p>原文地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmNoYW81MjcyL2FydGljbGUvZGV0YWlscy83OTE2MjEzMA==">https://blog.csdn.net/hanchao5272/article/details/79162130<i class="fa fa-external-link-alt"></i></span></p>
-<p>查询当前远程的版本：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>获取最新代码到本地（本地当前分支为 &lt;branch&gt;，获取的远端的分支为 &lt;remote&gt;/&lt;branch&gt;）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取远端 origin 的 master 分支，保存为本地 origin/master 分支</span></span><br><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
-<p>查看版本差异：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看 master 与 origin/master 的版本差异</span></span><br><span class="line">git log -p master..origin/master</span><br></pre></td></tr></table></figure>
-<p>合并最新代码到本地分支：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<dl>
+<dt>迭代器（iterator）</dt>
+<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
+<dt>闭包（closure）</dt>
+<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
+<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
+<dt>工厂（factory）</dt>
+<dd>用于创建闭包及其封装变量的函数。</dd>
+</dl>
+<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
+<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<p>泛型 for 的语法：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
+<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
+<ol>
+<li>迭代函数</li>
+<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
+<li>控制变量的初始值</li>
+</ol>
+<dl>
+<dt>控制变量（control variable）</dt>
+<dd>其值为 <code>nil</code> 时循环结束。</dd>
+</dl>
+<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
+其中只有最后一项能产生多个值。</p>
+<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
+<p>确切地说，形如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>与以下代码等价：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
+<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<dl>
+<dt>无状态迭代器（stateless iterator）</dt>
+<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
+</dl>
+<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
+生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
+<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Computer</category>
-        <category>Git</category>
+        <category>Lua</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
@@ -1505,68 +1567,6 @@ Lua 会根据库文件名在库文件中寻找入口函数，一般为 <code>lua
       </categories>
       <tags>
         <tag>C/C++</tag>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Lua 迭代器和泛型 for</title>
-    <url>/Learning/Computer/Lua/Lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%B3%9B%E5%9E%8B-for/</url>
-    <content><![CDATA[<blockquote>
-<p>《Lua 程序设计》的“迭代器”和“工厂”（返回迭代器及其他值的函数）经常混用。
-本文也未刻意区分。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
-<dl>
-<dt>迭代器（iterator）</dt>
-<dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
-<dt>闭包（closure）</dt>
-<dd>一个可以访问其自身环境中一个或多个局部变量的函数。</dd>
-<dd>通常这一概念还包含其可访问的外部局部变量。但也可将其简单理解为有状态（保存在外部局部变量中）的迭代器，与下文中的“无状态迭代器”相对。</dd>
-<dt>工厂（factory）</dt>
-<dd>用于创建闭包及其封装变量的函数。</dd>
-</dl>
-<p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
-<p>泛型 for 的语法：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
-<p>表达式列表 <code>&lt;exp-list&gt;</code> 应返回三个值<strong>供 <code>for</code> 保存</strong>：</p>
-<ol>
-<li>迭代函数</li>
-<li>不可变状态（invariant state）（<code>ipairs</code> 和 <code>pairs</code> 简单地将其参数作为不可变状态返回）</li>
-<li>控制变量的初始值</li>
-</ol>
-<dl>
-<dt>控制变量（control variable）</dt>
-<dd>其值为 <code>nil</code> 时循环结束。</dd>
-</dl>
-<p>表达式列表的结果最多有三个，多余的会被舍弃；而不足的则以 <code>nil</code> 补齐。
-其中只有最后一项能产生多个值。</p>
-<p><code>for</code> 做的第二件事是以不可变状态和控制变量为参数来调用选代函数，并将返回值赋给 <code>&lt;var-list&gt;</code>，如果第一个返回值为 <code>nil</code> 则结束循环，否则执行循环体并再次调用迭代函数，并不断重复此过程。</p>
-<p>确切地说，形如</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var_1, ..., var_n <span class="keyword">in</span> <span class="built_in">exp</span>-list <span class="keyword">do</span></span><br><span class="line">    block</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>与以下代码等价：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), …，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
-<dl>
-<dt>无状态迭代器（stateless iterator）</dt>
-<dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
-</dl>
-<p>无状态迭代器只根据不可变状态和控制变量（即其参数）的值来生成下一个元素。
-生成无状态迭代器的工厂函数不用为其提供局部变量，一般只需简单地返回迭代器和不可变状态即可。所以可以将无状态迭代器放在工厂外而不是工厂函数的 <code>return</code> 语句中。</p>
-<p><code>ipairs</code> 是一个典型的无状态迭代器，可以在 Lua 中这样实现：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">iter</span><span class="params">(t, i)</span></span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">local</span> v = t[i]</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> i, v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ipairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> iter, t, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 以下两个等效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2</span></span><br><span class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> iter,&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i,v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><code>pairs</code> 和 <code>ipairs</code> 类似，不过 <code>pairs</code> 返回的迭代函数是 Lua 中的一个基本函数 <code>next</code>：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairs</span><span class="params">(t)</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">next</span>, t, <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
         <tag>Lua</tag>
       </tags>
   </entry>
@@ -1957,11 +1957,11 @@ HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等
 <ol>
 <li><strong>HLA Ⅰ 类基因区</strong>：
 <ol>
-<li>经典 Ⅰ 类基因座（HLA Ⅰa）：A、B（等位基因数量最多）、C</li>
+<li><ins>经典 Ⅰ 类基因座（HLA Ⅰa）</ins>：A、B（等位基因数量最多）、C</li>
 <li>非经典 Ⅰ 类基因座（HLA Ⅰb）：Ε、F、G</li>
 </ol>
 </li>
-<li><strong>HLA Ⅱ 类基因区</strong>：经典的 DP、DQ、DR 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
+<li><strong>HLA Ⅱ 类基因区</strong>：<ins>经典的 DP、DQ、DR</ins> 和参与抗原加工提呈的 DM、TAP、PSMB 等；</li>
 <li><strong>HLA Ⅲ 类基因区</strong>：补体基因 C2、B、C4 及参与炎症反应的 TNF、LTA、LTB、HSP 等。</li>
 </ol>
 <p>MHC 基因分两种类型：</p>
@@ -1975,17 +1975,17 @@ HLA 基因复合体是人体多态性最丰富的基因系统，其中 HLA-B 等
 <li>
 <p>HLA Ⅰ 类分子</p>
 <ul>
-<li>组成：重链、β<sub>2</sub> 微球蛋白</li>
+<li>组成：重链（α 链）、β<sub>2</sub> 微球蛋白</li>
 <li>分布：所有有核细胞表面</li>
-<li>功能：主要向 CD8<sup>+</sup>T 细胞提呈内源性抗原肽</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞（CTL）提呈内源性抗原肽</li>
 </ul>
 </li>
 <li>
 <p>HLA Ⅱ 类分子：</p>
 <ul>
-<li>组成：a 链、b 链</li>
+<li>组成：α 链、β 链</li>
 <li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
-<li>功能：主要向 CD4<sup>+</sup>T 细胞提呈外源性抗原肽</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞（Th）提呈外源性抗原肽</li>
 </ul>
 </li>
 </ul>
@@ -2119,6 +2119,113 @@ differentiation）、<strong>形态发生</strong>（morphogenesis）、<strong>
       <tags>
         <tag>Index</tag>
         <tag>人类发育与遗传学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人类疱疹病毒</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
+<span id="more"></span>
+<details class="note success" open>
+<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
+</summary>
+<ol>
+<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
+<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
+<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
+<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
+</ol>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">病毒名称</th>
+<th style="text-align:center">英文缩写</th>
+<th>传播途径</th>
+<th>所致疾病</th>
+<th>潜伏部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
+<td style="text-align:center">HSV Ⅰ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
+<td>三叉神经节、颈上神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
+<td style="text-align:center">HSV Ⅱ</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
+<td>骶神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">水痘-带状疱疹病毒</td>
+<td style="text-align:center">VZV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
+<td>脊髓后根神经节、颅神经感觉神经节</td>
+</tr>
+<tr>
+<td style="text-align:center">巨细胞病毒（机会性感染）</td>
+<td style="text-align:center">CMV</td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
+<td><em>全身多种腺体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">EB 病毒（亲吻病毒）</td>
+<td style="text-align:center">EBV</td>
+<td>唾液、<em>血液</em></td>
+<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
+<td>B 淋巴细胞</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 6 型</td>
+<td style="text-align:center">HHV6</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 7 型</td>
+<td style="text-align:center">HHV7</td>
+<td>唾液</td>
+<td>婴幼儿玫瑰疹</td>
+<td>唾液腺</td>
+</tr>
+<tr>
+<td style="text-align:center">人疱疹病毒 8 型</td>
+<td style="text-align:center">HHV8</td>
+<td></td>
+<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
+<td>B 淋巴细胞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>水痘-带状疱疹病毒</strong>：</p>
+<ul>
+<li>传染源：
+<ol>
+<li>水痘患者：上呼吸道分泌物、水疱液</li>
+<li>带状疱疹病毒患者：水疱液</li>
+</ol>
+</li>
+<li>致病特点：复发年龄偏大，一生仅复发一次</li>
+<li>疫苗：VZV 减毒活疫苗</li>
+</ul>
+<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+        <tag>病毒学</tag>
       </tags>
   </entry>
   <entry>
@@ -2615,113 +2722,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
       </tags>
   </entry>
   <entry>
-    <title>人类疱疹病毒</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%96%B1%E7%96%B9%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<p><strong>疱疹病毒科</strong>（<em>Herpesviridae</em>）是一类中等大小，结构相似的 <strong>DNA 有包膜病毒</strong>。与人类感染有关的疱疹病毒称为<strong>人类疱疹病毒</strong>（human herpes virus，<strong>HHV</strong>）。</p>
-<span id="more"></span>
-<details class="note success" open>
-<summary id='举例说明 hhv 的感染类型'><p>举例说明 HHV 的感染类型</p>
-</summary>
-<ol>
-<li><strong>显性感染</strong>，如 VZV 原发感染可引起水痘；</li>
-<li><strong>潜伏感染</strong>，如 HSV Ⅱ 潜伏于骶神经节；</li>
-<li><strong>整合感染</strong>，EBV 感染机体后将其 DNA 整合到宿主细胞基因组中，与肿瘤发生有关；</li>
-<li><strong>先天性感染</strong>，如 CMV 可经产道感染婴儿。</li>
-</ol>
-</details>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">病毒名称</th>
-<th style="text-align:center">英文缩写</th>
-<th>传播途径</th>
-<th>所致疾病</th>
-<th>潜伏部位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅰ 型</td>
-<td style="text-align:center">HSV Ⅰ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item"><em>性接触</em></span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">龈口炎</span><span class="horizontal-list-item">角膜结膜炎</span><span class="horizontal-list-item">脑膜炎</span></span></td>
-<td>三叉神经节、颈上神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">单纯疱疹病毒 Ⅱ 型</td>
-<td style="text-align:center">HSV Ⅱ</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item"><em>直接接触</em></span><span class="horizontal-list-item">性接触</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">生殖器疱疹</span><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">新生儿疱疹</span></span></td>
-<td>骶神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">水痘-带状疱疹病毒</td>
-<td style="text-align:center">VZV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">直接接触</span><span class="horizontal-list-item">呼吸道</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水痘（原发）</span><span class="horizontal-list-item">带状疱疹（继发）</span></span></td>
-<td>脊髓后根神经节、颅神经感觉神经节</td>
-</tr>
-<tr>
-<td style="text-align:center">巨细胞病毒（机会性感染）</td>
-<td style="text-align:center">CMV</td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">水平传播</span><span class="horizontal-list-item">垂直传播</span></span></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">先天畸形</span><span class="horizontal-list-item">肿瘤</span><span class="horizontal-list-item"><em>感染部位炎症</em></span></span></td>
-<td><em>全身多种腺体</em></td>
-</tr>
-<tr>
-<td style="text-align:center">EB 病毒（亲吻病毒）</td>
-<td style="text-align:center">EBV</td>
-<td>唾液、<em>血液</em></td>
-<td><span class="horizontal-list"><span class="horizontal-list-item">传染性单核细胞增多症</span><span class="horizontal-list-item">非洲儿童恶性淋巴瘤</span><span class="horizontal-list-item">鼻咽癌</span></span></td>
-<td>B 淋巴细胞</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 6 型</td>
-<td style="text-align:center">HHV6</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺、<ins><em>淋巴组织</em></ins><span class="hide">书上是外周血单核细胞</span></td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 7 型</td>
-<td style="text-align:center">HHV7</td>
-<td>唾液</td>
-<td>婴幼儿玫瑰疹</td>
-<td>唾液腺</td>
-</tr>
-<tr>
-<td style="text-align:center">人疱疹病毒 8 型</td>
-<td style="text-align:center">HHV8</td>
-<td></td>
-<td>卡波济肉瘤（主要感染 AIDS 患者）</td>
-<td>B 淋巴细胞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>水痘-带状疱疹病毒</strong>：</p>
-<ul>
-<li>传染源：
-<ol>
-<li>水痘患者：上呼吸道分泌物、水疱液</li>
-<li>带状疱疹病毒患者：水疱液</li>
-</ol>
-</li>
-<li>致病特点：复发年龄偏大，一生仅复发一次</li>
-<li>疫苗：VZV 减毒活疫苗</li>
-</ul>
-<p><strong>单纯疱疹病毒</strong>和<strong>巨细胞病毒</strong>属于引起先天畸形的主要病原体（另见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%91%BC%E5%90%B8%E9%81%93%E6%84%9F%E6%9F%93%E7%97%85%E6%AF%92/?highlight=ToRCH#风疹病毒">ToRCH</a>），VZV 也可引起先天畸形。</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-        <tag>病毒学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人胚发生和早期发育</title>
     <url>/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</url>
     <content><![CDATA[<p>月经周期第 14 天（增生期 → 分泌期）排卵。</p>
@@ -3098,10 +3098,10 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </ul>
 <h4 id="淋巴结的功能">淋巴结的功能 <a class="markdownIt-Anchor" href="#淋巴结的功能">#</a></h4>
 <ol>
-<li>成熟 T 细胞（75%）、B 细胞（25%）定居的场所</li>
-<li>适应性免疫应答的主要场所</li>
-<li>过滤作用：过滤组织来源的抗原</li>
-<li>参与淋巴细胞再循环</li>
+<li>T 细胞（75%）、B 细胞（25%）定居的场所；</li>
+<li>免疫应答发生的场所：主要对引流淋巴液而来的抗原产生应答；</li>
+<li>过滤作用（淋巴液）；</li>
+<li>参与淋巴细胞再循环。</li>
 </ol>
 <h3 id="脾">脾 <a class="markdownIt-Anchor" href="#脾">#</a></h3>
 <h4 id="脾的结构">脾的结构 <a class="markdownIt-Anchor" href="#脾的结构">#</a></h4>
@@ -3111,10 +3111,10 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </ul>
 <h4 id="脾的功能">脾的功能 <a class="markdownIt-Anchor" href="#脾的功能">#</a></h4>
 <ol>
-<li>T 细胞（40%）和 B 细胞（60%）定居的场所</li>
-<li>免疫应答发生的场所</li>
-<li>生成生物活性物质，如补体、细胞因子</li>
-<li>过滤作用：清除血液来源的抗原</li>
+<li>T 细胞（40%）和 B 细胞（60%）定居的场所；</li>
+<li>免疫应答发生的场所：主要对血液源的抗原产生应答；</li>
+<li>过滤作用（血液）；</li>
+<li>生成生物活性物质，如补体、细胞因子。</li>
 </ol>
 <h3 id="黏膜相关淋巴组织">黏膜相关淋巴组织 <a class="markdownIt-Anchor" href="#黏膜相关淋巴组织">#</a></h3>
 <dl>
@@ -3163,7 +3163,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <ol>
 <li><strong>免疫系统的组成</strong>：
 <ol>
-<li>免疫器官：中枢免疫器官，包括胸腺、骨髓；外周免疫器官，包括脾脏、淋巴结和黏膜相关淋巴组织、<em>皮肤相关淋巴组织</em>；</li>
+<li>免疫器官（和组织）：<span class="horizontal-list"><span class="horizontal-list-item">中枢免疫器官，包括胸腺、骨髓；</span><span class="horizontal-list-item">外周免疫器官，包括脾脏、淋巴结和黏膜相关淋巴组织、<em>皮肤相关淋巴组织</em></span></span>；</li>
 <li>免疫分子：膜型分子、分泌型分子</li>
 <li>免疫细胞：T 细胞、B 细胞、吞噬细胞、DC、NK 细胞等</li>
 </ol>
@@ -3206,7 +3206,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </li>
 <li>外周免疫器官：
 <ol>
-<li>淋巴结：<span class="horizontal-list"><span class="horizontal-list-item">成熟 T 细胞（75%）、B 细胞（25%）定居的场所</span><span class="horizontal-list-item">适应性免疫应答的主要场所</span><span class="horizontal-list-item">过滤作用（淋巴液）</span><span class="horizontal-list-item">参与淋巴细胞再循环</span></span></li>
+<li>淋巴结：<span class="horizontal-list"><span class="horizontal-list-item">T 细胞（75%）、B 细胞（25%）定居的场所</span><span class="horizontal-list-item">免疫应答发生的场所</span><span class="horizontal-list-item">过滤作用（淋巴液）</span><span class="horizontal-list-item">参与淋巴细胞再循环</span></span></li>
 <li>脾脏：<span class="horizontal-list"><span class="horizontal-list-item">T 细胞（40%）和 B 细胞（60%）定居的场所</span><span class="horizontal-list-item">免疫应答发生的场所</span><span class="horizontal-list-item">过滤作用（血液）</span><span class="horizontal-list-item">生成生物活性物质，<em>如补体、细胞因子</em></span></span></li>
 <li>黏膜相关淋巴组织：<span class="horizontal-list"><span class="horizontal-list-item">行使黏膜局部免疫应答</span><span class="horizontal-list-item">产生分泌型 IgA（SIgA）</span></span></li>
 </ol>
@@ -3230,7 +3230,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li><strong>抗原表位的概念</strong>：抗原分子中决定抗原特异性的特殊化学基团；是抗原与 TCR/BCR 或者抗体特异性结合的<strong>最小结构和功能单位</strong>。</li>
 <li><strong>超抗原与佐剂的概念</strong>：
 <ul>
-<li>超抗原：某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T 细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆抑制剂</strong>。</li>
+<li>超抗原：某些只需极低浓度（1~10ng/ml）即可非特异性激活人体总 T 细胞库中 2%~20% 的 T 细胞克隆，产生极强的免疫应答的抗原物质，其实质为<strong>多克隆激活剂</strong>。</li>
 <li>佐剂：预先或与抗原同时注入体内，增强抗原特异性免疫应答或改变应答类型的非特异性免疫增强物质。</li>
 </ul>
 </li>
@@ -3321,16 +3321,16 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <ul>
 <li>HLA Ⅰ 类分子
 <ul>
-<li>组成：重链、β<sub>2</sub> 微球蛋白</li>
+<li>组成：重链（α 链）、β<sub>2</sub> 微球蛋白</li>
 <li>分布：所有有核细胞表面</li>
-<li>功能：主要向 CD8<sup>+</sup>T 细胞提呈内源性抗原肽</li>
+<li>功能：主要向 CD8<sup>+</sup>T 细胞（CTL）提呈内源性抗原肽</li>
 </ul>
 </li>
 <li>HLA Ⅱ 类分子：
 <ul>
-<li>组成：a 链、b 链</li>
+<li>组成：α 链、β 链</li>
 <li>分布：主要在专职抗原提呈细胞、活化的 T 细胞表面</li>
-<li>功能：主要向 CD4<sup>+</sup>T 细胞提呈外源性抗原肽</li>
+<li>功能：主要向 CD4<sup>+</sup>T 细胞（Th）提呈外源性抗原肽</li>
 </ul>
 </li>
 </ul>
@@ -3447,11 +3447,6 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <td>M Ⅱ C</td>
 </tr>
 <tr>
-<td>提呈抗原肽的 MHC</td>
-<td>MHC Ⅰ 类分子</td>
-<td>MHC Ⅱ 类分子</td>
-</tr>
-<tr>
 <td>伴侣分子与抗原肽转运分子</td>
 <td>钙联蛋白、TAP 等</td>
 <td>Ii 链、钙联蛋白等</td>
@@ -3460,6 +3455,11 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <td>加工与提呈抗原的细胞</td>
 <td>所有有核细胞</td>
 <td>专职性抗原提呈细胞</td>
+</tr>
+<tr>
+<td>提呈抗原肽的 MHC</td>
+<td>MHC Ⅰ 类分子</td>
+<td>MHC Ⅱ 类分子</td>
 </tr>
 <tr>
 <td>识别和应答细胞</td>
@@ -3509,37 +3509,31 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </thead>
 <tbody>
 <tr>
-<td>抗原</td>
-<td>LPS</td>
-<td>多糖等</td>
-<td>蛋白质</td>
-</tr>
-<tr>
-<td>APC 提呈</td>
-<td>不需要</td>
-<td>不需要</td>
-<td><strong>需要</strong></td>
-</tr>
-<tr>
-<td>抗原识别受体</td>
-<td><strong>丝裂原受体</strong></td>
-<td>BCR</td>
-<td>BCR</td>
-</tr>
-<tr>
 <td>活化 B 细胞</td>
 <td>B1</td>
 <td>B1</td>
 <td><strong>B2</strong></td>
 </tr>
 <tr>
-<td>类别转换</td>
-<td>无</td>
-<td>多数无</td>
-<td><strong>有</strong></td>
+<td>抗原</td>
+<td>LPS</td>
+<td>多糖等</td>
+<td>蛋白质</td>
 </tr>
 <tr>
-<td>T 细胞辅助</td>
+<td><strong>抗原识别受体</strong></td>
+<td><strong>丝裂原受体</strong></td>
+<td>BCR</td>
+<td>BCR</td>
+</tr>
+<tr>
+<td><strong>APC 提呈</strong></td>
+<td>不需要</td>
+<td>不需要</td>
+<td><strong>需要</strong></td>
+</tr>
+<tr>
+<td><strong>T 细胞辅助</strong></td>
 <td>不需要</td>
 <td>不需要</td>
 <td><strong>需要</strong></td>
@@ -3549,6 +3543,12 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <td>IgM</td>
 <td>IgM、少数有其他 Ig</td>
 <td>各类 Ig</td>
+</tr>
+<tr>
+<td><strong>类别转换</strong></td>
+<td>无</td>
+<td>多数无</td>
+<td><strong>有</strong></td>
 </tr>
 <tr>
 <td>记忆 B 细胞</td>
@@ -3593,7 +3593,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 <li><strong>模式识别受体和病原相关分子模式的概念</strong>：
 <ul>
 <li>模式识别受体（PRR）指广泛存在于<span class="horizontal-list"><span class="horizontal-list-item">固有免疫细胞表面、</span><span class="horizontal-list-item">胞内器室膜上、</span><span class="horizontal-list-item">胞浆</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">血液</span></span>中的一类能直接识别外来病原体及其产物或宿主畸变和衰老凋亡细胞某些共有特定模式分子结构的受体，可分为<span class="horizontal-list"><span class="horizontal-list-item">胞膜型 PRR、</span><span class="horizontal-list-item">内膜型 PRR、</span><span class="horizontal-list-item">胞浆型 PRR</span><span class="horizontal-list-conjunction">和</span><span class="horizontal-list-item">分泌型 PRR</span></span>。</li>
-<li>病原相关分子模式（PAMP）指某些病原体或其产物所共有的高度保守且对病原体生存和致病性不可或缺的特定分子结构。</li>
+<li>病原相关模式分子（PAMP）指某些病原体或其产物所共有的高度保守且对病原体生存和致病性不可或缺的特定分子结构。</li>
 </ul>
 </li>
 <li><strong>巨噬细胞表面主要的模式识别受体</strong>：<span class="horizontal-list"><span class="horizontal-list-item">甘露糖受体、</span><span class="horizontal-list-item">清道夫受体、</span><span class="horizontal-list-item">Toll 样受体</span></span>。</li>
@@ -3731,7 +3731,7 @@ DNA 序列，得到大量相同的 DNA 片段，即 <strong>PCR-DNA 克隆</stro
 </li>
 <li><strong>肿瘤免疫治疗的分类及举例</strong>：
 <ol>
-<li>肿瘤的主动免疫治疗：给荷瘤宿主注射具有免疫原性的疫苗，如<span class="horizontal-list"><span class="horizontal-list-item">灭活的瘤苗、</span><span class="horizontal-list-item">异构的瘤苗、</span><span class="horizontal-list-item">抗独特型抗体瘤苗</span></span>等；</li>
+<li>肿瘤的主动免疫治疗：给荷瘤宿主注射具有免疫原性的瘤苗，如<span class="horizontal-list"><span class="horizontal-list-item">灭活的瘤苗、</span><span class="horizontal-list-item">异构的瘤苗、</span><span class="horizontal-list-item">抗独特型抗体瘤苗</span></span>等；</li>
 <li>肿瘤的被动免疫治疗：<span class="horizontal-list"><span class="horizontal-list-item">抗体的靶向治疗；</span><span class="horizontal-list-item">细胞因子疗法；</span><span class="horizontal-list-item">细胞免疫疗法［嵌合抗原受体（CAR）修饰的 T 细胞（CAR-T）在白细胞治疗中取得成功］。</span></span></li>
 <li>肿瘤的免疫检查点治疗：如针对 CTLA-4 和 PD-1 或其配体 PD-L1 研制的系列抗体在临床治疗肿瘤中取得良好成果。</li>
 </ol>
@@ -10095,80 +10095,6 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
-    <title>立克次体</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>立克次体（<em>Rickettsia</em>）</dt>
-<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
-<dd>其生物学性状与细菌相似。</dd>
-</dl>
-<span id="more"></span>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">立克次体</th>
-<th style="text-align:center">传播途径</th>
-<th style="text-align:center">所致疾病</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>普氏立克次体</strong></td>
-<td style="text-align:center">体虱/人虱</td>
-<td style="text-align:center">流行性斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
-<td style="text-align:center">鼠蚤、鼠虱</td>
-<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
-<td style="text-align:center">恙螨</td>
-<td style="text-align:center">恙虫病</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
-<td style="text-align:center">蜱</td>
-<td style="text-align:center">Q 热</td>
-</tr>
-<tr>
-<td style="text-align:center"><em>汉赛巴通体</em></td>
-<td style="text-align:center">猫</td>
-<td style="text-align:center">猫抓病</td>
-</tr>
-</tbody>
-</table>
-<p>生物学特性：</p>
-<ul>
-<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
-<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
-<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
-<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
-</ul>
-<p><em>结构和组成</em>（由外到内）：</p>
-<ul>
-<li>黏液层：多糖</li>
-<li>微荚膜：脂多糖或多糖</li>
-<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
-<li>细胞膜：类脂双分子层</li>
-</ul>
-<p>临床诊断：<strong>外斐试验</strong></p>
-<div class="note info titled"><div class='note-title' id='外斐试验'
-onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
-外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
-</div>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线虫</title>
     <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BA%BF%E8%99%AB/</url>
     <content><![CDATA[<table>
@@ -10373,6 +10299,80 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       <tags>
         <tag>病原生物学</tag>
         <tag>医学蠕虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>立克次体</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%AB%8B%E5%85%8B%E6%AC%A1%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>立克次体（<em>Rickettsia</em>）</dt>
+<dd>一类<strong>严格细胞内寄生</strong>、以<strong>节肢动物</strong>为传播媒介、大小介于细菌和病毒之间的 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/#微生物">原核细胞型微生物</a>。</dd>
+<dd>其生物学性状与细菌相似。</dd>
+</dl>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">立克次体</th>
+<th style="text-align:center">传播途径</th>
+<th style="text-align:center">所致疾病</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>普氏立克次体</strong></td>
+<td style="text-align:center">体虱/人虱</td>
+<td style="text-align:center">流行性斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>莫氏立克次体</strong>/<strong>斑疹伤寒立克次体</strong></td>
+<td style="text-align:center">鼠蚤、鼠虱</td>
+<td style="text-align:center">地方性斑疹伤寒/鼠型斑疹伤寒</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>恙虫病立克次体</strong>/<strong>恙虫病东方体</strong></td>
+<td style="text-align:center">恙螨</td>
+<td style="text-align:center">恙虫病</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>贝纳柯克斯体</strong>/<strong>Q 热柯克斯体</strong></td>
+<td style="text-align:center">蜱</td>
+<td style="text-align:center">Q 热</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>汉赛巴通体</em></td>
+<td style="text-align:center">猫</td>
+<td style="text-align:center">猫抓病</td>
+</tr>
+</tbody>
+</table>
+<p>生物学特性：</p>
+<ul>
+<li>多形态、大小介于细菌与病毒之间，<ins>在宿主细胞内排列不规则</ins>（与病毒区分）</li>
+<li>与 <mark>节肢动物</mark> 关系密切，寄生在吸血节肢动物体内，或为寄生宿主、或为储存宿主、或同时为传播媒介</li>
+<li>类似病毒的特性：<span class="horizontal-list"><span class="horizontal-list-item"><mark>专性胞内寄生</mark></span><span class="horizontal-list-item">缺少酶系统，细胞器不完善</span><span class="horizontal-list-item">不能用人工培养基培养</span></span></li>
+<li>类似细菌的特点：<span class="horizontal-list"><span class="horizontal-list-item">二分裂繁殖</span><span class="horizontal-list-item">含两种核酸</span><span class="horizontal-list-item">对多种抗生素敏感</span><span class="horizontal-list-item"><ins>革兰氏染色阴性</ins></span></span></li>
+</ul>
+<p><em>结构和组成</em>（由外到内）：</p>
+<ul>
+<li>黏液层：多糖</li>
+<li>微荚膜：脂多糖或多糖</li>
+<li>细胞壁（与 G<sup>-</sup> 菌类似）：外膜、肽聚糖、蛋白质脂多糖</li>
+<li>细胞膜：类脂双分子层</li>
+</ul>
+<p>临床诊断：<strong>外斐试验</strong></p>
+<div class="note info titled"><div class='note-title' id='外斐试验'
+onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
+外斐试验</div><p>亦称变形杆菌凝集试验，用与立克次体有共同菌体抗原的<a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E6%B6%88%E5%8C%96%E9%81%93%E6%84%9F%E6%9F%93%E7%BB%86%E8%8F%8C/#变形杆菌"><strong>变形杆菌</strong></a> X19、X2、XK 菌体的 O 抗原和病人血清进行非特异性凝集反应，检测病人血清中有无立克次体抗体，用以诊断流行性斑疹伤寒、恙虫病等立克次体病。</p>
+</div>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
       </tags>
   </entry>
   <entry>
@@ -11995,119 +11995,6 @@ DNA 序列不稳定性主要表现为<strong>核苷酸切除修复（nucleotide 
       </tags>
   </entry>
   <entry>
-    <title>衣原体</title>
-    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%A1%A3%E5%8E%9F%E4%BD%93/</url>
-    <content><![CDATA[<dl>
-<dt>衣原体（chlamydia）</dt>
-<dd>一类严格细胞内寄生，有独特发育周期，能通过细胞滤器的 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/?highlight=原核细胞型微生物#微生物">原核细胞型微生物</a>。</dd>
-</dl>
-<span id="more"></span>
-<p>生物学特征：</p>
-<ul>
-<li>形态与染色：G<sup>-</sup>，圆形或椭圆形的小体，<strong>细胞壁</strong>组成与 G<sup>-</sup> 菌类似；</li>
-<li>繁殖方式：以二分裂方式繁殖，<strong>严格细胞内寄生</strong>，在宿主细胞内有<mark>独特的发育周期</mark>；</li>
-<li>有 DNA 和 RNA 两种核酸；</li>
-<li>有核糖体和较复杂的酶类，但缺乏共代谢所需的能量来源；</li>
-<li>对多种抗生素（<s>青霉素</s>、红霉素、罗红霉素）敏感。</li>
-</ul>
-<p>抗原结构：</p>
-<ul>
-<li>属特异性抗原：细胞壁<strong>脂多糖</strong>（<strong>LPS</strong>）</li>
-<li>种特异性抗原：<strong>主要外膜蛋白</strong>（major outer membrane protein，<strong>MOMP</strong>）</li>
-</ul>
-<p>衣原体的发育周期：</p>
-<ul>
-<li><strong>原体</strong>（elementary body，<strong>EB</strong>）：主要存在于<strong>细胞外</strong>，小而致密，具有<strong>感染性</strong>；</li>
-<li><strong>始体</strong>（initial body）/网状体（reticulate body，<strong>RB</strong>）：主要存在于<strong>细胞内</strong>，大而疏松，是衣原体的<strong>繁殖型</strong>，<em>无感染性</em>。</li>
-</ul>
-<p>支原体在细胞内增殖时会形成<strong>包涵体</strong>。</p>
-<dl>
-<dt>包涵体（inclusion body）</dt>
-<dd>易感细胞内含有繁殖型的<strong>始体</strong>和子代<strong>原体</strong>的空泡。</dd>
-<dd>某些病毒也能形成包涵体，见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E6%AF%92/?highlight=包涵体#病毒的致病机制">病毒的致病机制</a>。</dd>
-</dl>
-<h2 id="沙眼衣原体">沙眼衣原体 <a class="markdownIt-Anchor" href="#沙眼衣原体">#</a></h2>
-<ul>
-<li>形态与染色：
-<ul>
-<li>原体：圆形或卵圆形，直径 0.3μm，Giemsa 染色呈紫红色；</li>
-<li>网状体：形态不规则，直径 0.5~1μm，Giemsa 染色呈深蓝或暗紫色；</li>
-<li>包涵体：含糖原，可被<strong>碘液</strong>染成棕褐色。</li>
-</ul>
-</li>
-<li>抗原结构和分类：根据侵袭力和引起人类感染的部位，分为 3 个生物型；根据 MOMP 表位氨基酸的差异，又分为 19 个血清型（见下表）。</li>
-</ul>
-<p class="align-text-center table-caption ">
-      沙眼衣原体生物型及致病性
-    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">生物型</th>
-<th>血清型</th>
-<th>所致疾病</th>
-<th>感染方式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">沙眼生物型</td>
-<td>4：Α~C（Ba）</td>
-<td>沙眼、包涵体结膜炎（B、Ba）</td>
-<td>眼-眼、眼-手-眼</td>
-</tr>
-<tr>
-<td style="text-align:center">生殖生物型</td>
-<td>11：D~K（Da、Ia、Ja）</td>
-<td>包涵体结膜炎、泌尿生殖道感染、婴幼儿肺炎</td>
-<td>产道、性接触</td>
-</tr>
-<tr>
-<td style="text-align:center">LGV 生物型</td>
-<td>4：L1~L3（L2a）</td>
-<td>性病淋巴肉芽肿（LGV）</td>
-<td>性接触</td>
-</tr>
-</tbody>
-</table>
-<p>微生物学检查：</p>
-<ul>
-<li>直接涂片镜检：Giemsa 染色、<strong>碘液</strong>或荧光抗体染色，检查包涵体</li>
-<li>分离培养：接种鸡胚卵黄囊或传代细胞</li>
-<li>核酸检测</li>
-</ul>
-<h2 id="肺炎嗜衣原体">肺炎嗜衣原体 <a class="markdownIt-Anchor" href="#肺炎嗜衣原体">#</a></h2>
-<p>只有 <strong>TWAR</strong> 一个血清型。</p>
-<p>致病性：</p>
-<ul>
-<li>传染源：人（唯一自然宿主）</li>
-<li>传播途径：飞沫或呼吸道分泌物</li>
-<li>所致疾病：
-<ul>
-<li><strong>青少年急性呼吸道感染</strong>：肺炎、支气管炎、咽炎、鼻窦炎；</li>
-<li>可能与哮喘、冠心病、动脉粥样硬化、心包炎、心肌炎等<em>慢性病</em>的发病有关。</li>
-</ul>
-</li>
-</ul>
-<h2 id="鹦鹉热嗜衣原体">鹦鹉热嗜衣原体 <a class="markdownIt-Anchor" href="#鹦鹉热嗜衣原体">#</a></h2>
-<p>引起人类疾病的血清型只有 <strong>A 型</strong>。</p>
-<p>致病性：</p>
-<ul>
-<li>传染源：鸟类（包括禽类）</li>
-<li>传播途径：<span class="horizontal-list"><span class="horizontal-list-item"><ins>直接接触</ins>鸟类</span><span class="horizontal-list-conjunction">或</span><span class="horizontal-list-item"><ins>吸入鸟粪污染的尘埃</ins></span></span></li>
-<li>所致疾病：非典型性肺炎（<strong>鹦鹉热</strong>）或<em>大叶性肺炎</em></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Medicine</category>
-        <category>病原生物学</category>
-      </categories>
-      <tags>
-        <tag>病原生物学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>螺旋体</title>
     <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%9E%BA%E6%97%8B%E4%BD%93/</url>
     <content><![CDATA[<dl>
@@ -12319,6 +12206,119 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
       </tags>
   </entry>
   <entry>
+    <title>衣原体</title>
+    <url>/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%A1%A3%E5%8E%9F%E4%BD%93/</url>
+    <content><![CDATA[<dl>
+<dt>衣原体（chlamydia）</dt>
+<dd>一类严格细胞内寄生，有独特发育周期，能通过细胞滤器的 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/?highlight=原核细胞型微生物#微生物">原核细胞型微生物</a>。</dd>
+</dl>
+<span id="more"></span>
+<p>生物学特征：</p>
+<ul>
+<li>形态与染色：G<sup>-</sup>，圆形或椭圆形的小体，<strong>细胞壁</strong>组成与 G<sup>-</sup> 菌类似；</li>
+<li>繁殖方式：以二分裂方式繁殖，<strong>严格细胞内寄生</strong>，在宿主细胞内有<mark>独特的发育周期</mark>；</li>
+<li>有 DNA 和 RNA 两种核酸；</li>
+<li>有核糖体和较复杂的酶类，但缺乏共代谢所需的能量来源；</li>
+<li>对多种抗生素（<s>青霉素</s>、红霉素、罗红霉素）敏感。</li>
+</ul>
+<p>抗原结构：</p>
+<ul>
+<li>属特异性抗原：细胞壁<strong>脂多糖</strong>（<strong>LPS</strong>）</li>
+<li>种特异性抗原：<strong>主要外膜蛋白</strong>（major outer membrane protein，<strong>MOMP</strong>）</li>
+</ul>
+<p>衣原体的发育周期：</p>
+<ul>
+<li><strong>原体</strong>（elementary body，<strong>EB</strong>）：主要存在于<strong>细胞外</strong>，小而致密，具有<strong>感染性</strong>；</li>
+<li><strong>始体</strong>（initial body）/网状体（reticulate body，<strong>RB</strong>）：主要存在于<strong>细胞内</strong>，大而疏松，是衣原体的<strong>繁殖型</strong>，<em>无感染性</em>。</li>
+</ul>
+<p>支原体在细胞内增殖时会形成<strong>包涵体</strong>。</p>
+<dl>
+<dt>包涵体（inclusion body）</dt>
+<dd>易感细胞内含有繁殖型的<strong>始体</strong>和子代<strong>原体</strong>的空泡。</dd>
+<dd>某些病毒也能形成包涵体，见 <a href="/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%97%85%E6%AF%92/?highlight=包涵体#病毒的致病机制">病毒的致病机制</a>。</dd>
+</dl>
+<h2 id="沙眼衣原体">沙眼衣原体 <a class="markdownIt-Anchor" href="#沙眼衣原体">#</a></h2>
+<ul>
+<li>形态与染色：
+<ul>
+<li>原体：圆形或卵圆形，直径 0.3μm，Giemsa 染色呈紫红色；</li>
+<li>网状体：形态不规则，直径 0.5~1μm，Giemsa 染色呈深蓝或暗紫色；</li>
+<li>包涵体：含糖原，可被<strong>碘液</strong>染成棕褐色。</li>
+</ul>
+</li>
+<li>抗原结构和分类：根据侵袭力和引起人类感染的部位，分为 3 个生物型；根据 MOMP 表位氨基酸的差异，又分为 19 个血清型（见下表）。</li>
+</ul>
+<p class="align-text-center table-caption ">
+      沙眼衣原体生物型及致病性
+    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">生物型</th>
+<th>血清型</th>
+<th>所致疾病</th>
+<th>感染方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">沙眼生物型</td>
+<td>4：Α~C（Ba）</td>
+<td>沙眼、包涵体结膜炎（B、Ba）</td>
+<td>眼-眼、眼-手-眼</td>
+</tr>
+<tr>
+<td style="text-align:center">生殖生物型</td>
+<td>11：D~K（Da、Ia、Ja）</td>
+<td>包涵体结膜炎、泌尿生殖道感染、婴幼儿肺炎</td>
+<td>产道、性接触</td>
+</tr>
+<tr>
+<td style="text-align:center">LGV 生物型</td>
+<td>4：L1~L3（L2a）</td>
+<td>性病淋巴肉芽肿（LGV）</td>
+<td>性接触</td>
+</tr>
+</tbody>
+</table>
+<p>微生物学检查：</p>
+<ul>
+<li>直接涂片镜检：Giemsa 染色、<strong>碘液</strong>或荧光抗体染色，检查包涵体</li>
+<li>分离培养：接种鸡胚卵黄囊或传代细胞</li>
+<li>核酸检测</li>
+</ul>
+<h2 id="肺炎嗜衣原体">肺炎嗜衣原体 <a class="markdownIt-Anchor" href="#肺炎嗜衣原体">#</a></h2>
+<p>只有 <strong>TWAR</strong> 一个血清型。</p>
+<p>致病性：</p>
+<ul>
+<li>传染源：人（唯一自然宿主）</li>
+<li>传播途径：飞沫或呼吸道分泌物</li>
+<li>所致疾病：
+<ul>
+<li><strong>青少年急性呼吸道感染</strong>：肺炎、支气管炎、咽炎、鼻窦炎；</li>
+<li>可能与哮喘、冠心病、动脉粥样硬化、心包炎、心肌炎等<em>慢性病</em>的发病有关。</li>
+</ul>
+</li>
+</ul>
+<h2 id="鹦鹉热嗜衣原体">鹦鹉热嗜衣原体 <a class="markdownIt-Anchor" href="#鹦鹉热嗜衣原体">#</a></h2>
+<p>引起人类疾病的血清型只有 <strong>A 型</strong>。</p>
+<p>致病性：</p>
+<ul>
+<li>传染源：鸟类（包括禽类）</li>
+<li>传播途径：<span class="horizontal-list"><span class="horizontal-list-item"><ins>直接接触</ins>鸟类</span><span class="horizontal-list-conjunction">或</span><span class="horizontal-list-item"><ins>吸入鸟粪污染的尘埃</ins></span></span></li>
+<li>所致疾病：非典型性肺炎（<strong>鹦鹉热</strong>）或<em>大叶性肺炎</em></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Medicine</category>
+        <category>病原生物学</category>
+      </categories>
+      <tags>
+        <tag>病原生物学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>补体系统</title>
     <url>/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E8%A1%A5%E4%BD%93%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<dl>
@@ -12335,7 +12335,7 @@ onclick="if (window.getSelection() == '') { this.parentElement.open = false; }">
 <li>经典途径：C1q、C1r、C1s、C2、C4</li>
 <li>旁路途径：B 因子、D 因子、P 因子（properdin，备解素）、I 因子</li>
 <li>凝集素途径：<abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr>/<abbr title="纤维胶原素（ficolin）">FCN</abbr>、<abbr title="甘露醇结合凝集素（mannose-binging lectin）">MBL</abbr> 相关丝氨酸蛋白酶（<abbr title="MBL 相关丝氨酸蛋白酶">MASP</abbr>）</li>
-<li>共同成分：C3、C5、C6、C7、C8、C9</li>
+<li>补体活化的共同组分：C3、C5、C6、C7、C8、C9</li>
 </ol>
 </li>
 <li><strong>补体调节蛋白</strong>（complement regulatory protein）：存在于血浆和细胞膜表面、通过调节补体激活途径中关键酶而控制补体活化强度和范围的蛋白质，包括 C1 抑制剂、I 因子、H 因子、D 因子、C4 结合蛋白等；</li>
@@ -13066,6 +13066,11 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>About Me</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p class="center"><a href='https://zh.wikipedia.org/wiki/Aloha'>ALOHA!</a></p>
@@ -13106,11 +13111,6 @@ plate）。<br/>
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/lib/hoverdetail.js</url>
     <content><![CDATA[$('a').hover(function(){
@@ -13121,6 +13121,11 @@ plate）。<br/>
   <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -13149,11 +13154,6 @@ plate）。<br/>
 <h2 id="update">Update <a class="markdownIt-Anchor" href="#update">#</a></h2>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/<span class="built_in">source</span>/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
