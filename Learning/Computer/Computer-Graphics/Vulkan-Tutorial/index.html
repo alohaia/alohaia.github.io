@@ -34,7 +34,7 @@
 <meta property="og:description" content="Vulkan Tutorial 的学习记录。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-07-24T11:07:38.000Z">
-<meta property="article:modified_time" content="2021-07-25T09:57:58.777Z">
+<meta property="article:modified_time" content="2021-07-25T12:05:00.261Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="Index">
 <meta property="article:tag" content="Computer Graphics">
@@ -161,7 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#overview"><span class="nav-number">1.</span> <span class="nav-text">Overview </span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">搭建开发环境 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA-archlinux-%E7%94%A8%E6%88%B7%E5%87%86%E5%A4%87%E7%9A%84%E6%8C%87%E5%8D%97"><span class="nav-number">2.1.</span> <span class="nav-text">为 ArchLinux 用户准备的指南 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.2.</span> <span class="nav-text">测试项目 </span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -341,7 +341,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-25 17:57:58" itemprop="dateModified" datetime="2021-07-25T17:57:58+08:00">2021-07-25</time>
+        <time title="Modified: 2021-07-25 20:05:00" itemprop="dateModified" datetime="2021-07-25T20:05:00+08:00">2021-07-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -369,14 +369,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2k</span>
+      <span>3.5k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -395,7 +395,7 @@
 <li><span class="exturl" data-url="aHR0cHM6Ly9wYXJvai5naXRodWIuaW8vZ2x0dXQv">Learning Modern 3D Graphics Programming<i class="fa fa-external-link-alt"></i></span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JheVRyYWNpbmcvcmF5dHJhY2luZy5naXRodWIuaW8=">Ray Tracing in One Weekend Book Series<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
-<h2 id="overview">Overview <a class="markdownIt-Anchor" href="#overview">#</a></h2>
+<h2 id="概述">概述 <a class="markdownIt-Anchor" href="#概述">#</a></h2>
 <p>要绘制一个三角形，需要以下步骤：</p>
 <ol>
 <li>
@@ -405,7 +405,7 @@
 <p><strong>Logical device and queue families</strong>：选择合适的硬件设备后，需要创建一个逻辑设备 <code>VkDevice</code>。你可以使用它来通过 <code>VkPhysicalDeviceFeatures</code> 进行更详细的设置。Vulkan 执行的大多数操作，都是通过提交到一个 <code>VkQueue</code> 中异步执行的。队列（queue）是从队列族（queue family）中分配的，每个队列族在其队列中支持一组特定的操作。</p>
 </li>
 <li>
-<p><strong>Window surface and swap chain</strong>：要将渲染的图片显示到一个窗口，还需要一个窗口表面（window surface）<code>VkSurfaceKHR</code> 和一个交换链（swap chain）<code>VkSwapChainKHR</code>。后缀 <code>KHR</code> 意思是说这两个是 Vulkan 扩展的一部分。<code>VkSurfaceKHR</code> 是一个跨平台的窗口抽象，通常通过提供一个原生窗口句柄初始化。</p>
+<p><strong>Window surface and swap chain</strong>：要将渲染的图像显示到一个窗口，还需要一个窗口表面（window surface）<code>VkSurfaceKHR</code> 和一个交换链（swap chain）<code>VkSwapChainKHR</code>。后缀 <code>KHR</code> 意思是说这两个是 Vulkan 扩展的一部分。<code>VkSurfaceKHR</code> 是一个跨平台的窗口抽象，通常通过提供一个原生窗口句柄初始化。</p>
 <p>交换链是一系列最终会展示给用户的图像的集合，并负责管理图像交替用于渲染和显示。</p>
 <p>一些平台允许你通过 <code>VK_KHR_display_swapchain</code> 和 <code>VK_KHR_display</code> 扩展直接将渲染到显示器上而不与窗口管理器进行交互。你可以用这一特性编写自己的窗口管理器。</p>
 </li>
@@ -413,7 +413,7 @@
 <p><strong>Image views and framebuffers</strong>：要绘制从交换链获取的图像，我们需要将图像包装进 <code>VkImageView</code> 和 <code>VkFramebuffer</code>。Image view 引用要使用的图像的特定部分，framebuffer 则引用用于颜色、深度和模版目标（stencil target）的 image views。由于交换链中由许多不同的图像，所以我们会抢先为每个图像创建一个 image view 和 framebuffer。</p>
 </li>
 <li>
-<p><strong>Render passes</strong>：渲染通道描述了图片的类型（如用于透明度、法线的图片），而实际由 <code>VkFramebuffer</code> 将指定图片“插入对应的卡槽中”。</p>
+<p><strong>Render passes</strong>：Render pass 描述了渲染操作中所使用的图像的类型（如用于透明度、法线的图像）、图像将被如何使用以及图像的内容将被如何处理。渲染通道只描述了图像的类型，而实际由 <code>VkFramebuffer</code> 将指定图像“插入对应的卡槽中”。</p>
 </li>
 <li>
 <p><strong>Graphics pipeline</strong>：Vulkan 的 graphics pipeline 的创建是通过创建 <code>VkPipeline</code> 来完成的。它描述了显卡的可配置属性（configurable state），如视口大小、深度缓冲操作（depth buffer operation）以及使用 <code>VkShaderModule</code> 对象（object）的可编程属性（programmable state）。<code>VkShaderModule</code> 从着色器（shader）字节码（byte code）中创建。我们可以通过引用 render pass 来告知驱动程序哪个渲染对象将在管线中使用。</p>
@@ -428,12 +428,36 @@
 <li>绘制三个顶点（vertice）</li>
 <li>结束 render pass</li>
 </ol>
-<p>由于 framebuffer 中的图像取决于交换链给的是哪张图片，我们需要为每个可能的图像记录一个 command buffer，并在绘制时选择正确的 command buffer。另一种低效的替代方法是在每一帧再次记录 command buffer。</p>
+<p>由于 framebuffer 中的图像取决于交换链给的是哪张图像，我们需要为每个可能用到的图像记录一个 command buffer，并在绘制时选择正确的 command buffer。另一种低效的替代方法是在每一帧再次记录 command buffer。</p>
 </li>
 <li>
-<p><strong>Main loop</strong>：现在绘制命令都被包装到一个 command buffer 中，主循环就非常简单了。我们先用 <code>vkAcquireNextImageKHR</code> 从交换链中获取一张图片。然后我们可以为图像选择适当的 command buffer，并用 <code>vKQueueSubmit</code> 执行。最后，我们将图片返回到交换链并用 <code>vkQueuePresentKHR</code> 显示到屏幕上。</p>
+<p><strong>Main loop</strong>：现在绘制命令都被包装到一个 command buffer 中，主循环就非常简单了。我们先用 <code>vkAcquireNextImageKHR</code> 从交换链中获取一张图像。然后我们可以为图像选择适当的 command buffer，并用 <code>vKQueueSubmit</code> 执行。最后，我们将图像返回到交换链并用 <code>vkQueuePresentKHR</code> 显示到屏幕上。</p>
 </li>
 </ol>
+<p>简而言之，我们需要以下步骤来绘制一个三角形：</p>
+<ol>
+<li>创建一个 <code>VkInstance</code> 实例</li>
+<li>选择一个受支持的显卡（<code>VkPhysicalDevice</code>）</li>
+<li>创建 <code>VkDevice</code> 和 <code>VkQueue</code> 用来绘制和显示</li>
+<li>创建一个窗口、窗口表面（window surface）和交换链</li>
+<li>将交换链包装进 <code>VkImageView</code></li>
+<li>创建 render pass 来指定渲染对象及其用途</li>
+<li>为 render pass 创建 framebuffer</li>
+<li>设置（set up）graphics pipeline</li>
+<li>为交换链中每个可能用到的图像分配一个 command buffer 并用绘制命令将其填充</li>
+<li>绘制帧：从交换链中获取图像，提交正确的 command buffer，然后将图像返回到交换链中</li>
+</ol>
+<h2 id="搭建开发环境">搭建开发环境 <a class="markdownIt-Anchor" href="#搭建开发环境">#</a></h2>
+<p>按照 <span class="exturl" data-url="aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tL0RldmVsb3BtZW50X2Vudmlyb25tZW50I3BhZ2VfTGludXg=">Vulkan Tutorial 的说明<i class="fa fa-external-link-alt"></i></span> 安装即可。</p>
+<h3 id="为-archlinux-用户准备的指南">为 ArchLinux 用户准备的指南 <a class="markdownIt-Anchor" href="#为-archlinux-用户准备的指南">#</a></h3>
+<ul>
+<li>Vulkan：<code>sudo pacman -S vulkan-icd-loader vulkan-intel nvidia-utils</code>，详见 <span class="exturl" data-url="aHR0cHM6Ly93aWtpLmFyY2hsaW51eC5vcmcvdGl0bGUvVnVsa2Fu">Vulkan - ArchWiki<i class="fa fa-external-link-alt"></i></span></li>
+<li>GLFW：<code>sudo pacman -S glfw-x11</code> 或者 <code>sudo pacman -S glfw-wayland</code></li>
+<li>GLM: <code>sudo pacman -S glm</code></li>
+</ul>
+<h3 id="测试项目">测试项目 <a class="markdownIt-Anchor" href="#测试项目">#</a></h3>
+<figure class="highlight cpp"><figcaption><span>main.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GLFW_INCLUDE_VULKAN</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;GLFW/glfw3.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GLM_FORCE_RADIANS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GLM_FORCE_DEPTH_ZERO_TO_ONE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/vec4.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/mat4x4.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">glfwInit</span>();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">glfwWindowHint</span>(GLFW_CLIENT_API, GLFW_NO_API);</span><br><span class="line">    GLFWwindow* window = <span class="built_in">glfwCreateWindow</span>(<span class="number">800</span>, <span class="number">600</span>, <span class="string">&quot;Vulkan window&quot;</span>, <span class="literal">nullptr</span>, <span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">uint32_t</span> extensionCount = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">vkEnumerateInstanceExtensionProperties</span>(<span class="literal">nullptr</span>, &amp;extensionCount, <span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; extensionCount &lt;&lt; <span class="string">&quot; extensions supported\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    glm::mat4 matrix;</span><br><span class="line">    glm::vec4 vec;</span><br><span class="line">    <span class="keyword">auto</span> test = matrix * vec;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">glfwWindowShouldClose</span>(window)) &#123;</span><br><span class="line">        <span class="built_in">glfwPollEvents</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">glfwDestroyWindow</span>(window);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">glfwTerminate</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><figcaption><span>Makefile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CFLAGS = -std=c++17 -O2</span><br><span class="line">LDFLAGS = -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi</span><br><span class="line"></span><br><span class="line"><span class="section">VulkanTest: main.cpp</span></span><br><span class="line">	g++ <span class="variable">$(CFLAGS)</span> -o VulkanTest main.cpp <span class="variable">$(LDFLAGS)</span></span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: test clean</span></span><br><span class="line"></span><br><span class="line"><span class="section">test: VulkanTest</span></span><br><span class="line">	./VulkanTest</span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -f VulkanTest</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -507,14 +531,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">209k</span>
+    <span title="Symbols count total">210k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">3:10</span>
+    <span title="Reading time total">3:11</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>
