@@ -26,12 +26,12 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js" integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;www.aloha.org.cn&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:true,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;width&quot;:320},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:true,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;utterances&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:true,&quot;nav&quot;:{&quot;utterances&quot;:{&quot;text&quot;:&quot;Comment with utterances&quot;,&quot;order&quot;:1}},&quot;activeClass&quot;:&quot;utterances&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:-1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
-<meta name="description" content="Personal arrangement of UltiSnips’ official documentation. My snippets: https:&#x2F;&#x2F;github.com&#x2F;alohaia&#x2F;nvimcfg&#x2F;tree&#x2F;lua&#x2F;UltiSnips">
+<meta name="description" content="Personal arrangement of UltiSnips&#39; official documentation. My snippets: https:&#x2F;&#x2F;github.com&#x2F;alohaia&#x2F;nvimcfg&#x2F;tree&#x2F;lua&#x2F;UltiSnips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Create Snippets for UltiSnips">
 <meta property="og:url" content="https://www.aloha.org.cn/Learning/Computer/Vim-NeoVim/Create-Snippets-for-Ultisnips/">
 <meta property="og:site_name" content="Aloha&#39;s Blog">
-<meta property="og:description" content="Personal arrangement of UltiSnips’ official documentation. My snippets: https:&#x2F;&#x2F;github.com&#x2F;alohaia&#x2F;nvimcfg&#x2F;tree&#x2F;lua&#x2F;UltiSnips">
+<meta property="og:description" content="Personal arrangement of UltiSnips&#39; official documentation. My snippets: https:&#x2F;&#x2F;github.com&#x2F;alohaia&#x2F;nvimcfg&#x2F;tree&#x2F;lua&#x2F;UltiSnips">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-28T07:15:22.000Z">
 <meta property="article:modified_time" content="2021-07-25T09:41:14.824Z">
@@ -160,7 +160,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#include-other-snippet-files"><span class="nav-number">1.</span> <span class="nav-text">Include Other Snippet Files </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keywords"><span class="nav-number">2.</span> <span class="nav-text">Keywords </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snippets-format"><span class="nav-number">3.</span> <span class="nav-text">Snippets’ Format </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snippet-options"><span class="nav-number">4.</span> <span class="nav-text">Snippet Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#character-escaping"><span class="nav-number">5.</span> <span class="nav-text">Character Escaping </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plaintext-snippets"><span class="nav-number">6.</span> <span class="nav-text">Plaintext Snippets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tabstop-and-placeholders"><span class="nav-number">7.</span> <span class="nav-text">Tabstop and Placeholders </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-placeholder"><span class="nav-number">8.</span> <span class="nav-text">Visual Placeholder </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mirrors"><span class="nav-number">9.</span> <span class="nav-text">Mirrors </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interpolation"><span class="nav-number">10.</span> <span class="nav-text">Interpolation </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shellcode"><span class="nav-number">10.1.</span> <span class="nav-text">Shellcode </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vimscript"><span class="nav-number">10.2.</span> <span class="nav-text">Vimscript </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">10.3.</span> <span class="nav-text">Python </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#global-snippets"><span class="nav-number">11.</span> <span class="nav-text">Global Snippets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformations"><span class="nav-number">12.</span> <span class="nav-text">Transformations </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#regular-expression"><span class="nav-number">12.1.</span> <span class="nav-text">Regular Expression </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replacement-string"><span class="nav-number">12.2.</span> <span class="nav-text">Replacement String </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#options"><span class="nav-number">12.3.</span> <span class="nav-text">Options </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cleardisable-snippets"><span class="nav-number">13.</span> <span class="nav-text">Clear(Disable) Snippets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#context"><span class="nav-number">14.</span> <span class="nav-text">Context </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snippet-actions"><span class="nav-number">15.</span> <span class="nav-text">Snippet Actions </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pre-expand-and-post-expand-actions"><span class="nav-number">15.1.</span> <span class="nav-text">Pre-expand and Post-expand Actions </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-jump-actions"><span class="nav-number">15.2.</span> <span class="nav-text">Post-jump Actions </span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#include-other-snippet-files"><span class="nav-number">1.</span> <span class="nav-text">Include Other Snippet Files </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keywords"><span class="nav-number">2.</span> <span class="nav-text">Keywords </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snippets-format"><span class="nav-number">3.</span> <span class="nav-text">Snippets&#39; Format </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snippet-options"><span class="nav-number">4.</span> <span class="nav-text">Snippet Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#character-escaping"><span class="nav-number">5.</span> <span class="nav-text">Character Escaping </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plaintext-snippets"><span class="nav-number">6.</span> <span class="nav-text">Plaintext Snippets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tabstop-and-placeholders"><span class="nav-number">7.</span> <span class="nav-text">Tabstop and Placeholders </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-placeholder"><span class="nav-number">8.</span> <span class="nav-text">Visual Placeholder </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mirrors"><span class="nav-number">9.</span> <span class="nav-text">Mirrors </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interpolation"><span class="nav-number">10.</span> <span class="nav-text">Interpolation </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shellcode"><span class="nav-number">10.1.</span> <span class="nav-text">Shellcode </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vimscript"><span class="nav-number">10.2.</span> <span class="nav-text">Vimscript </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">10.3.</span> <span class="nav-text">Python </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#global-snippets"><span class="nav-number">11.</span> <span class="nav-text">Global Snippets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformations"><span class="nav-number">12.</span> <span class="nav-text">Transformations </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#regular-expression"><span class="nav-number">12.1.</span> <span class="nav-text">Regular Expression </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replacement-string"><span class="nav-number">12.2.</span> <span class="nav-text">Replacement String </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#options"><span class="nav-number">12.3.</span> <span class="nav-text">Options </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cleardisable-snippets"><span class="nav-number">13.</span> <span class="nav-text">Clear(Disable) Snippets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#context"><span class="nav-number">14.</span> <span class="nav-text">Context </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snippet-actions"><span class="nav-number">15.</span> <span class="nav-text">Snippet Actions </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pre-expand-and-post-expand-actions"><span class="nav-number">15.1.</span> <span class="nav-text">Pre-expand and Post-expand Actions </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-jump-actions"><span class="nav-number">15.2.</span> <span class="nav-text">Post-jump Actions </span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -386,7 +386,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
+        <p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>' official documentation.</p>
 <p>My snippets: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvbnZpbWNmZy90cmVlL2x1YS9VbHRpU25pcHM=">https://github.com/alohaia/nvimcfg/tree/lua/UltiSnips<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
 <h2 id="include-other-snippet-files">Include Other Snippet Files <a class="markdownIt-Anchor" href="#include-other-snippet-files">#</a></h2>
@@ -405,7 +405,7 @@
 <li><code>global</code> <code>endglobal</code>: Define a <a href="#global-snippets">global snippet</a>(only supports python currently).</li>
 <li><code>pre_expand</code> <code>post_expand</code> <code>post_jump</code>: Declare snippet actions.</li>
 </ol>
-<h2 id="snippets-format">Snippets’ Format <a class="markdownIt-Anchor" href="#snippets-format">#</a></h2>
+<h2 id="snippets-format">Snippets' Format <a class="markdownIt-Anchor" href="#snippets-format">#</a></h2>
 <pre><code>snippet trigger_word [ &quot;description&quot; [ options ] ]
 ...
 endsnippet
@@ -423,7 +423,7 @@ another character.<figure class="highlight plaintext"><table><tr><td class="gutt
 <li><code>b</code>: Beginning of line - A snippet with this option is expanded only if the tab trigger is the first word on the line. In other words, if only whitespace precedes the tab trigger, expand. The default is to expand snippets at any position regardless of the preceding non-whitespace characters.</li>
 <li><code>i</code>: In-word expansion - By default a snippet is expanded only if the tab trigger is the first word on the line or is preceded by one or more whitespace characters. A snippet with this option is expanded regardless of the preceding character. In other words, the snippet can be triggered in the middle of a word.</li>
 <li><code>w</code>: Word boundary - With this option, the snippet is expanded if the tab trigger start matches a word boundary and the tab trigger end matches a word boundary. In other words the tab trigger must be preceded and followed by non-word characters. Word characters are defined by the <code>iskeyword</code> setting. Use this option, for example, to permit expansion where the tab trigger follows punctuation without expanding suffixes of larger words.</li>
-<li><code>r</code>: Regular expression - With this option, the tab trigger is expected to be a python regular expression. The snippet is expanded if the recently typed characters match the regular expression. Note: The regular expression MUST be quoted (or surrounded with another character) like a multi-word tab trigger (see above) whether it has spaces or not. A resulting match is passed to any python code blocks in the snippet definition as the local variable “match”.</li>
+<li><code>r</code>: Regular expression - With this option, the tab trigger is expected to be a python regular expression. The snippet is expanded if the recently typed characters match the regular expression. Note: The regular expression MUST be quoted (or surrounded with another character) like a multi-word tab trigger (see above) whether it has spaces or not. A resulting match is passed to any python code blocks in the snippet definition as the local variable &quot;match&quot;.</li>
 <li><code>t</code>: Do not expand tabs - If a snippet definition includes leading tab characters, by default UltiSnips expands the tab characters honoring the Vim <code>shiftwidth</code>, <code>softtabstop</code>, <code>expandtab</code> and <code>tabstop</code> indentation settings. (For example, if <code>expandtab</code> is set, the tab is replaced with spaces.) If this option is set, UltiSnips will ignore the Vim settings and insert the tab characters as is. This option is useful for snippets involved with tab delimited formats.</li>
 <li><code>s</code>: Remove whitespace immediately before the cursor at the end of a line before jumping to the next tabstop.  This is useful if there is a tabstop with optional text at the end of a line.</li>
 <li><code>m</code>: Trim all whitespaces from right side of snippet lines. Useful when snippet contains empty lines which should remain empty after expanding. Without this option empty lines in snippets definition will have indentation too.</li>
@@ -481,7 +481,7 @@ tabstop is essentially deleted.</p>
 <li>With <code>/search/replace/option</code>, you can process the text like using <code>:s</code> command. See <a href="#transformations">Transformations</a>.</li>
 </ol>
 <h2 id="mirrors">Mirrors <a class="markdownIt-Anchor" href="#mirrors">#</a></h2>
-<p>Mirrors repeat the content of a <span class="exturl" data-url="aHR0cDovL3RhYnN0b3AuVG8=">tabstop.To<i class="fa fa-external-link-alt"></i></span> mirror a tabstop simply insert the tabstop again using the “dollar sign followed by a number” syntax, e.g., <code>$1</code>.</p>
+<p>Mirrors repeat the content of a <span class="exturl" data-url="aHR0cDovL3RhYnN0b3AuVG8=">tabstop.To<i class="fa fa-external-link-alt"></i></span> mirror a tabstop simply insert the tabstop again using the &quot;dollar sign followed by a number&quot; syntax, e.g., <code>$1</code>.</p>
 <pre><code>snippet ifndef
 #ifndef $&#123;1:SOME_DEFINE&#125;
 #define $1
@@ -493,7 +493,7 @@ endsnippet
 <h3 id="shellcode">Shellcode <a class="markdownIt-Anchor" href="#shellcode">#</a></h3>
 <p>An example may be the most helpful.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">snippet today</span><br><span class="line">Today is the `date +%d.%m.%y`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<p>The output of command <code>date +%d.%m%y</code> will replace the text wrapped by backticks. You`ll get something like “Today is the 19.08.20.”</p>
+<p>The output of command <code>date +%d.%m%y</code> will replace the text wrapped by backticks. You`ll get something like &quot;Today is the 19.08.20.&quot;</p>
 <h3 id="vimscript">Vimscript <a class="markdownIt-Anchor" href="#vimscript">#</a></h3>
 <p>Similar to shellcode, but begins with `v.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">snippet indent</span><br><span class="line">Indent is: `!v indent(&quot;.&quot;)`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
@@ -501,8 +501,8 @@ endsnippet
 <h3 id="python">Python <a class="markdownIt-Anchor" href="#python">#</a></h3>
 <p>There are two choices:</p>
 <ol>
-<li><strong>`#!/usr/bin/python …`</strong>: Normal python code.</li>
-<li><strong>`!p …`</strong>: Use python with some predefined objects and variables. The variables automatically defined in python code are:</li>
+<li><strong>`#!/usr/bin/python ...`</strong>: Normal python code.</li>
+<li><strong>`!p ...`</strong>: Use python with some predefined objects and variables. The variables automatically defined in python code are:</li>
 </ol>
 <table>
 <thead>
@@ -567,8 +567,8 @@ deprecates the <code>res</code> variable.</p>
 </li>
 <li>
 <p><code>snip.c</code>:
-The text currently in the python block<code>s position within the snippet. It is set to empty string as soon as interpolation is completed. Thus you can check</code>if <code>snip.c</code> is != “”` to make sure that the interpolation
-is only done once. This deprecates the “cur” variable.</p>
+The text currently in the python block<code>s position within the snippet. It is set to empty string as soon as interpolation is completed. Thus you can check</code>if <code>snip.c</code> is != &quot;&quot;` to make sure that the interpolation
+is only done once. This deprecates the &quot;cur&quot; variable.</p>
 </li>
 <li>
 <p><code>snip.v</code>:
@@ -607,7 +607,7 @@ Equivalent to <code>snip.shift(amount)</code></li>
 <li><code>snip &lt;&lt; amount</code>:
 Equivalent to <code>snip.unshift(amount)</code></li>
 <li><code>snip += line</code>:
-Equivalent to “<code>snip.rv +=</code>\n<code>+ snip.mkline(line)</code>”</li>
+Equivalent to &quot;<code>snip.rv +=</code>\n<code>+ snip.mkline(line)</code>&quot;</li>
 </ul>
 <blockquote>
 <p>Any variables defined in a python block can be used in other python blocks
@@ -655,8 +655,8 @@ pattern.</p>
 <li><code>\t</code>: A literal tab</li>
 </ul>
 <p>Finally, the <strong>replacement string</strong> can contain conditional replacements using the syntax (<strong>?no:text:other text</strong>). This reads as follows: if the group <code>$no</code> has
-matched, insert “text”, otherwise insert “other text”. “other text” is
-optional and if not provided defaults to the empty string, “”. This feature
+matched, insert &quot;text&quot;, otherwise insert &quot;other text&quot;. &quot;other text&quot; is
+optional and if not provided defaults to the empty string, &quot;&quot;. This feature
 is very powerful. It allows you to add optional text into snippets.</p>
 <h3 id="options">Options <a class="markdownIt-Anchor" href="#options">#</a></h3>
 <p>The <strong>options</strong> can be any combination of</p>
@@ -902,7 +902,7 @@ then insert new method invokation);</li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">210k</span>
+    <span title="Symbols count total">211k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

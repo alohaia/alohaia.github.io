@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #5cff20;
+  background: #cfffff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3807,8 +3807,18 @@ div.table-container::-webkit-scrollbar-thumb {
 
 .post-body a {
     --link-color: #FC642390;
-    --link-hover-color: #FC6423; 
+    --link-hover-color: #FC6423;
     border-bottom: none;
+}
+
+a>code {
+    border-bottom: 2px solid #ccc;
+}
+
+a>code:hover {
+    /* -webkit-transition: all .3s; */
+    color: #FC6423;
+    border-bottom: 1px solid #ccc;
 }
 
 /**************************************************************************************/
