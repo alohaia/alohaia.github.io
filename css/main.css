@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #94af8e;
+  background: #ff65df;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3510,10 +3510,14 @@ dd::before {
 
 /**************************************************************************************/
 
-p+ul,
-p+ol
-{
-    margin-top: -20px;
+p+ul:not(li>ul),
+p+ol:not(li>ol) {
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+li p {
+    margin-bottom: 0;
 }
 
 h1+p,
@@ -3525,8 +3529,7 @@ h6+p {
     margin-top: 20px;
 }
 
-dd>ul,
-dd>ol
+dd>ul, dd>ol
 {
     margin-top: 0px;
     margin-bottom: 0px;

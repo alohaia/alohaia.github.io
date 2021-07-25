@@ -34,7 +34,7 @@
 <meta property="og:description" content="Vulkan Tutorial 的学习记录。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-07-24T11:07:38.000Z">
-<meta property="article:modified_time" content="2021-07-25T08:48:25.107Z">
+<meta property="article:modified_time" content="2021-07-25T09:57:58.777Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="Index">
 <meta property="article:tag" content="Computer Graphics">
@@ -341,7 +341,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-25 16:48:25" itemprop="dateModified" datetime="2021-07-25T16:48:25+08:00">2021-07-25</time>
+        <time title="Modified: 2021-07-25 17:57:58" itemprop="dateModified" datetime="2021-07-25T17:57:58+08:00">2021-07-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -369,7 +369,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.7k</span>
+      <span>2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -398,23 +398,40 @@
 <h2 id="overview">Overview <a class="markdownIt-Anchor" href="#overview">#</a></h2>
 <p>要绘制一个三角形，需要以下步骤：</p>
 <ol>
-<li><strong>Instance and physical device selection</strong>：Vulkan 首先需要通过创建 <code>VkInstance</code> 来准备（set up）Vulkan API。创建好实例（instance）后，就可以查询 Vulkan 支持的设备并选择一个或多个 <code>VkPhysicalDevice</code> 用于后续操作。</li>
-<li><strong>Logical device and queue families</strong>：选择合适的硬件设备后，需要创建一个逻辑设备 <code>VkDevice</code>。你可以使用它来通过 <code>VkPhysicalDeviceFeatures</code> 进行更详细的设置。Vulkan 执行的大多数操作，都是通过提交到一个 <code>VkQueue</code> 中异步执行的。队列（queue）是从队列族（queue family）中分配的，每个队列族在其队列中支持一组特定的操作。</li>
-<li><strong>Window surface and swap chain</strong>：要将渲染的图片显示到一个窗口，还需要一个窗口表面（window surface）<code>VkSurfaceKHR</code> 和一个交换链（swap chain）<code>VkSwapChainKHR</code>。后缀 <code>KHR</code> 意思是说这两个是 Vulkan 扩展的一部分。<code>VkSurfaceKHR</code> 是一个跨平台的窗口抽象，通常通过提供一个原生窗口句柄初始化。<br/>
-交换链是一系列最终会展示给用户的图像的集合，并负责管理图像交替用于渲染和显示。<br/>
-一些平台允许你通过 <code>VK_KHR_display_swapchain</code> 和 <code>VK_KHR_display</code> 扩展直接将渲染到显示器上而不与窗口管理器进行交互。你可以用这一特性编写自己的窗口管理器。</li>
-<li><strong>Image views and framebuffers</strong>：要绘制从交换链获取的图像，我们需要将图像包装进 <code>VkImageView</code> 和 <code>VkFramebuffer</code>。Image view 引用要使用的图像的特定部分，framebuffer 则引用用于颜色、深度和模版目标（stencil target）的 image views。由于交换链中由许多不同的图像，所以我们会抢先为每个图像创建一个 image view 和 framebuffer。</li>
-<li><strong>Render passes</strong>：渲染通道描述了图片的类型（如用于透明度、法线的图片），而实际由 <code>VkFramebuffer</code> 将指定图片“插入对应的卡槽中”。</li>
-<li><strong>Graphics pipeline</strong>：Vulkan 的 graphics pipeline 的创建是通过创建 <code>VkPipeline</code> 来完成的。它描述了显卡的可配置属性（configurable state），如视口大小、深度缓冲操作（depth buffer operation）以及使用 <code>VkShaderModule</code> 对象（object）的可编程属性（programmable state）。<code>VkShaderModule</code> 从着色器（shader）字节码（byte code）中创建。我们可以通过引用 render pass 来告知驱动程序哪个渲染对象将在管线中使用。<br/>
-Vulkan 的与现存图形 APIs 不同的一大特点就是 graphics pipeline 的几乎所有配置（视口大小、clear color 等除外）都需要预先完成，如果你想对管线做任何修改，都必须重新创建整个管线。这意味着你需要预先创建许多 <code>VkPipeline</code> 对象。</li>
-<li><strong>Command pools and command buffers</strong>：在前面提到的将 Vulkan 操作提交到队列中前，需要先将操作记录到一个 <code>VkCommandBuffer</code> 对象中。Command buffer 从一个 <code>VkCommandPool</code> 中分配，<code>VkCommandPool</code> 与一个特定的队列族相关。<br/>
-要绘制一个简单的三角形，我们需要将以下操作记录到一个 command buffer 中：
+<li>
+<p><strong>Instance and physical device selection</strong>：Vulkan 首先需要通过创建 <code>VkInstance</code> 来准备（set up）Vulkan API。创建好实例（instance）后，就可以查询 Vulkan 支持的设备并选择一个或多个 <code>VkPhysicalDevice</code> 用于后续操作。</p>
+</li>
+<li>
+<p><strong>Logical device and queue families</strong>：选择合适的硬件设备后，需要创建一个逻辑设备 <code>VkDevice</code>。你可以使用它来通过 <code>VkPhysicalDeviceFeatures</code> 进行更详细的设置。Vulkan 执行的大多数操作，都是通过提交到一个 <code>VkQueue</code> 中异步执行的。队列（queue）是从队列族（queue family）中分配的，每个队列族在其队列中支持一组特定的操作。</p>
+</li>
+<li>
+<p><strong>Window surface and swap chain</strong>：要将渲染的图片显示到一个窗口，还需要一个窗口表面（window surface）<code>VkSurfaceKHR</code> 和一个交换链（swap chain）<code>VkSwapChainKHR</code>。后缀 <code>KHR</code> 意思是说这两个是 Vulkan 扩展的一部分。<code>VkSurfaceKHR</code> 是一个跨平台的窗口抽象，通常通过提供一个原生窗口句柄初始化。</p>
+<p>交换链是一系列最终会展示给用户的图像的集合，并负责管理图像交替用于渲染和显示。</p>
+<p>一些平台允许你通过 <code>VK_KHR_display_swapchain</code> 和 <code>VK_KHR_display</code> 扩展直接将渲染到显示器上而不与窗口管理器进行交互。你可以用这一特性编写自己的窗口管理器。</p>
+</li>
+<li>
+<p><strong>Image views and framebuffers</strong>：要绘制从交换链获取的图像，我们需要将图像包装进 <code>VkImageView</code> 和 <code>VkFramebuffer</code>。Image view 引用要使用的图像的特定部分，framebuffer 则引用用于颜色、深度和模版目标（stencil target）的 image views。由于交换链中由许多不同的图像，所以我们会抢先为每个图像创建一个 image view 和 framebuffer。</p>
+</li>
+<li>
+<p><strong>Render passes</strong>：渲染通道描述了图片的类型（如用于透明度、法线的图片），而实际由 <code>VkFramebuffer</code> 将指定图片“插入对应的卡槽中”。</p>
+</li>
+<li>
+<p><strong>Graphics pipeline</strong>：Vulkan 的 graphics pipeline 的创建是通过创建 <code>VkPipeline</code> 来完成的。它描述了显卡的可配置属性（configurable state），如视口大小、深度缓冲操作（depth buffer operation）以及使用 <code>VkShaderModule</code> 对象（object）的可编程属性（programmable state）。<code>VkShaderModule</code> 从着色器（shader）字节码（byte code）中创建。我们可以通过引用 render pass 来告知驱动程序哪个渲染对象将在管线中使用。</p>
+<p>Vulkan 的与现存图形 APIs 不同的一大特点就是 graphics pipeline 的几乎所有配置（视口大小、clear color 等除外）都需要预先完成，如果你想对管线做任何修改，都必须重新创建整个管线。这意味着你需要预先创建许多 <code>VkPipeline</code> 对象。</p>
+</li>
+<li>
+<p><strong>Command pools and command buffers</strong>：在前面提到的将 Vulkan 操作提交到队列中前，需要先将操作记录到一个 <code>VkCommandBuffer</code> 对象中。Command buffer 从一个 <code>VkCommandPool</code> 中分配，<code>VkCommandPool</code> 与一个特定的队列族相关。</p>
+<p>要绘制一个简单的三角形，我们需要将以下操作记录到一个 command buffer 中：</p>
 <ol>
-<li>开始 render pass；</li>
-<li>绑定 graphics pipeline；</li>
-<li>绘制三个顶点（vertice）；</li>
-<li>结束 render pass。</li>
+<li>开始 render pass</li>
+<li>绑定 graphics pipeline</li>
+<li>绘制三个顶点（vertice）</li>
+<li>结束 render pass</li>
 </ol>
+<p>由于 framebuffer 中的图像取决于交换链给的是哪张图片，我们需要为每个可能的图像记录一个 command buffer，并在绘制时选择正确的 command buffer。另一种低效的替代方法是在每一帧再次记录 command buffer。</p>
+</li>
+<li>
+<p><strong>Main loop</strong>：现在绘制命令都被包装到一个 command buffer 中，主循环就非常简单了。我们先用 <code>vkAcquireNextImageKHR</code> 从交换链中获取一张图片。然后我们可以为图像选择适当的 command buffer，并用 <code>vKQueueSubmit</code> 执行。最后，我们将图片返回到交换链并用 <code>vkQueuePresentKHR</code> 显示到屏幕上。</p>
 </li>
 </ol>
 
@@ -490,7 +507,7 @@ Vulkan 的与现存图形 APIs 不同的一大特点就是 graphics pipeline 的
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">208k</span>
+    <span title="Symbols count total">209k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
