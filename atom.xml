@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-07-20T02:30:47.262Z</updated>
+  <updated>2021-07-25T08:48:25.107Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -15,6 +15,83 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vulkan Tutorial</title>
+    <link href="https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/"/>
+    <id>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/</id>
+    <published>2021-07-24T11:07:38.000Z</published>
+    <updated>2021-07-25T08:48:25.107Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tLw==&quot;&gt;Vulkan Tutorial&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 的学习记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Computer" scheme="https://www.aloha.org.cn/categories/Learning/Computer/"/>
+    
+    <category term="Computer Graphics" scheme="https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/"/>
+    
+    
+    <category term="Index" scheme="https://www.aloha.org.cn/tags/Index/"/>
+    
+    <category term="Computer Graphics" scheme="https://www.aloha.org.cn/tags/Computer-Graphics/"/>
+    
+    <category term="Vulkan" scheme="https://www.aloha.org.cn/tags/Vulkan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vulkan</title>
+    <link href="https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/"/>
+    <id>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/</id>
+    <published>2021-07-24T10:46:41.000Z</published>
+    <updated>2021-07-24T11:07:34.863Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/&quot;&gt;Vulkan Tutorial&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Computer" scheme="https://www.aloha.org.cn/categories/Learning/Computer/"/>
+    
+    <category term="Computer Graphics" scheme="https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/"/>
+    
+    
+    <category term="Index" scheme="https://www.aloha.org.cn/tags/Index/"/>
+    
+    <category term="Computer Graphics" scheme="https://www.aloha.org.cn/tags/Computer-Graphics/"/>
+    
+    <category term="Vulkan" scheme="https://www.aloha.org.cn/tags/Vulkan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ 拾遗</title>
+    <link href="https://www.aloha.org.cn/Learning/Computer/C-C/C-%E6%8B%BE%E9%81%97/"/>
+    <id>https://www.aloha.org.cn/Learning/Computer/C-C/C-%E6%8B%BE%E9%81%97/</id>
+    <published>2021-07-24T03:55:27.000Z</published>
+    <updated>2021-07-25T02:31:02.210Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一些之前没注意或忘掉的 C++ 的语法或用法细节，C++ 的基本语法则不在此记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Computer" scheme="https://www.aloha.org.cn/categories/Learning/Computer/"/>
+    
+    <category term="C/C++" scheme="https://www.aloha.org.cn/categories/Learning/Computer/C-C/"/>
+    
+    
+    <category term="C/C++" scheme="https://www.aloha.org.cn/tags/C-C/"/>
+    
+  </entry>
   
   <entry>
     <title>免疫大题重点</title>
@@ -865,84 +942,6 @@
     
     
     <category term="医学免疫学" scheme="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>其他病毒</title>
-    <link href="https://www.aloha.org.cn/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/"/>
-    <id>https://www.aloha.org.cn/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%85%B6%E4%BB%96%E7%97%85%E6%AF%92/</id>
-    <published>2021-05-20T05:59:21.000Z</published>
-    <updated>2021-07-14T12:36:15.005Z</updated>
-    
-    
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E7%8B%82%E7%8A%AC%E7%97%85%E7%97%85%E6%AF%92&quot;&gt;狂犬病病毒&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E4%BA%BA%E4%B9%B3%E5%A4%B4%E7%98%A4%E7%97%85%E6%AF%92&quot;&gt;人乳头瘤病毒&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    <category term="病毒学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E6%AF%92%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>逆转录病毒</title>
-    <link href="https://www.aloha.org.cn/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/"/>
-    <id>https://www.aloha.org.cn/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/%E9%80%86%E8%BD%AC%E5%BD%95%E7%97%85%E6%AF%92/</id>
-    <published>2021-05-20T05:41:10.000Z</published>
-    <updated>2021-07-03T14:22:37.443Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;逆转录病毒&lt;/strong&gt;（retrovirus）是一类含有&lt;strong&gt;逆转录酶&lt;/strong&gt;（reverse transcriptase，RT）的&lt;strong&gt;单正链 RNA 病毒&lt;/strong&gt;。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    <category term="病毒学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E6%AF%92%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>细胞生物学</title>
-    <link href="https://www.aloha.org.cn/Learning/Medicine/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    <id>https://www.aloha.org.cn/Learning/Medicine/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/</id>
-    <published>2021-05-19T12:21:09.000Z</published>
-    <updated>2021-05-19T12:24:10.559Z</updated>
-    
-    
-    <summary type="html">&lt;p class=&quot;center&quot;&gt;Empty&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="细胞生物学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    
-    <category term="Index" scheme="https://www.aloha.org.cn/tags/Index/"/>
-    
-    <category term="细胞生物学" scheme="https://www.aloha.org.cn/tags/%E7%BB%86%E8%83%9E%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
     
   </entry>
   
