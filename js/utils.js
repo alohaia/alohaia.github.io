@@ -63,6 +63,12 @@ NexT.utils = {
         // Make sure img title tag will show correctly in fancybox
         $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
       }
+      const imageAltSplit = String($image.attr('alt')).split('@')
+      if (imageAltSplit[1]) {
+        $imageWrapLink.append(`<p class="image-description">${imageAltSplit[1]}</p>`);
+        $imageWrapLink.attr('alt', imageAltSplit[0]);
+      }
+
     });
 
     $.fancybox.defaults.hash = false;
