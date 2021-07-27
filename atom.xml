@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-07-26T09:04:50.901Z</updated>
+  <updated>2021-07-27T09:38:32.874Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CMake 学习记录</title>
+    <link href="https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/"/>
+    <id>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/</id>
+    <published>2021-07-27T09:38:32.000Z</published>
+    <updated>2021-07-27T09:38:32.874Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Empty...&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>英语拾遗</title>
@@ -65,41 +80,14 @@
   </entry>
   
   <entry>
-    <title>Vulkan Tutorial</title>
-    <link href="https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/"/>
-    <id>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/</id>
-    <published>2021-07-24T11:07:38.000Z</published>
-    <updated>2021-07-26T15:15:49.570Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tLw==&quot;&gt;Vulkan Tutorial&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 的学习记录。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Computer" scheme="https://www.aloha.org.cn/categories/Learning/Computer/"/>
-    
-    <category term="Computer Graphics" scheme="https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/"/>
-    
-    
-    <category term="Index" scheme="https://www.aloha.org.cn/tags/Index/"/>
-    
-    <category term="Computer Graphics" scheme="https://www.aloha.org.cn/tags/Computer-Graphics/"/>
-    
-    <category term="Vulkan" scheme="https://www.aloha.org.cn/tags/Vulkan/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Vulkan</title>
     <link href="https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/"/>
     <id>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/</id>
     <published>2021-07-24T10:46:41.000Z</published>
-    <updated>2021-07-24T11:07:34.863Z</updated>
+    <updated>2021-07-27T16:39:35.547Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/&quot;&gt;Vulkan Tutorial&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tLw==&quot;&gt;Vulkan Tutorial&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 的学习记录。&lt;/p&gt;</summary>
     
     
     
@@ -123,7 +111,7 @@
     <link href="https://www.aloha.org.cn/Learning/Computer/C-C/C-%E6%8B%BE%E9%81%97/"/>
     <id>https://www.aloha.org.cn/Learning/Computer/C-C/C-%E6%8B%BE%E9%81%97/</id>
     <published>2021-07-24T03:55:27.000Z</published>
-    <updated>2021-07-25T02:31:02.210Z</updated>
+    <updated>2021-07-27T15:20:55.938Z</updated>
     
     
     <summary type="html">&lt;p&gt;一些之前没注意或忘掉的 C++ 的语法或用法细节，C++ 的基本语法则不在此记录。&lt;/p&gt;</summary>

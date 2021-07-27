@@ -15,8 +15,25 @@
     <atom:link href="https://www.aloha.org.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>追寻罗素先生的脚步，渴望寻找到我想要的答案。</description>
-    <pubDate>Mon, 26 Jul 2021 09:04:50 GMT</pubDate>
+    <pubDate>Tue, 27 Jul 2021 09:38:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>CMake 学习记录</title>
+      <link>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/</link>
+      <guid>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/</guid>
+      <pubDate>Tue, 27 Jul 2021 09:38:32 GMT</pubDate>
+      
+      <description>&lt;p&gt;Empty...&lt;/p&gt;</description>
+      
+      
+      
+      
+      
+      
+      <comments>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>英语拾遗</title>
@@ -71,41 +88,12 @@
     </item>
     
     <item>
-      <title>Vulkan Tutorial</title>
-      <link>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/</link>
-      <guid>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/</guid>
-      <pubDate>Sat, 24 Jul 2021 11:07:38 GMT</pubDate>
-      
-      <description>&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tLw==&quot;&gt;Vulkan Tutorial&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 的学习记录。&lt;/p&gt;</description>
-      
-      
-      
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Computer/">Computer</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/">Computer Graphics</category>
-      
-      
-      <category domain="https://www.aloha.org.cn/tags/Index/">Index</category>
-      
-      <category domain="https://www.aloha.org.cn/tags/Computer-Graphics/">Computer Graphics</category>
-      
-      <category domain="https://www.aloha.org.cn/tags/Vulkan/">Vulkan</category>
-      
-      
-      <comments>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>Vulkan</title>
       <link>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/</link>
       <guid>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/</guid>
       <pubDate>Sat, 24 Jul 2021 10:46:41 GMT</pubDate>
       
-      <description>&lt;p&gt;&lt;a href=&quot;/Learning/Computer/Computer-Graphics/Vulkan-Tutorial/&quot;&gt;Vulkan Tutorial&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tLw==&quot;&gt;Vulkan Tutorial&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 的学习记录。&lt;/p&gt;</description>
       
       
       
