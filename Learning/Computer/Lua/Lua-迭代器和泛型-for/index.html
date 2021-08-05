@@ -102,7 +102,7 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">28</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">25</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">72</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">71</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -159,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">迭代器 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B-for"><span class="nav-number">2.</span> <span class="nav-text">泛型 for </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%8A%B6%E6%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">无状态迭代器 </span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B-for"><span class="nav-number">2.</span> <span class="nav-text">泛型 for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%8A%B6%E6%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">无状态迭代器</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +225,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -390,7 +390,7 @@
 本文也未刻意区分。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="迭代器">迭代器 <a class="markdownIt-Anchor" href="#迭代器">#</a></h2>
+<h2 id="迭代器">迭代器<a class="markdownIt-Anchor" href="#迭代器"></a></h2>
 <dl>
 <dt>迭代器（iterator）</dt>
 <dd>一种可以用来遍历一个集合中所有元素的代码结构（函数）。</dd>
@@ -401,7 +401,7 @@
 <dd>用于创建闭包及其封装变量的函数。</dd>
 </dl>
 <p>这里所说的闭包内可以访问局部变量称为”状态“。除了局部变量，宿主语言（如 C）中实现的迭代器还可以将状态保存在其自身的变量中（如 <code>io.read()</code> 将状态保存在 C 结构体中）。</p>
-<h2 id="泛型-for">泛型 for <a class="markdownIt-Anchor" href="#泛型-for">#</a></h2>
+<h2 id="泛型-for">泛型 for<a class="markdownIt-Anchor" href="#泛型-for"></a></h2>
 <p>泛型 for 的语法：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var-list&gt; <span class="keyword">in</span> &lt;<span class="built_in">exp</span>-list&gt; <span class="keyword">do</span></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p><code>for</code> 做的第一件事就是对 <code>&lt;exp-list&gt;</code> 求值。</p>
@@ -423,7 +423,7 @@
 <p>与以下代码等价：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> _f, _s, _var = <span class="built_in">exp</span>-list</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> var_1, ..., var_n = _f(_s, _var)</span><br><span class="line">        _var = var_1</span><br><span class="line">        <span class="keyword">if</span> var == <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        block</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>因此，假设迭代函数为 f，不可变状态为 s，控制变量初始值为 a<sub>0</sub>，那么在循环中控制变量的值依次为 a<sub>1</sub>=f(s,a<sub>0</sub>), a<sub>2</sub>=f(s,a<sub>1</sub>), ...，直到 a<sub>i</sub> 为 <code>nil</code>。如果 <code>&lt;var-list&gt;</code> 还有其他变量（var_1、var_2……），那么这些变量只是简单地在每次调用 f 后得到额外的返回值（可以在 <code>block</code> 中使用这些变量）。</p>
-<h2 id="无状态迭代器">无状态迭代器 <a class="markdownIt-Anchor" href="#无状态迭代器">#</a></h2>
+<h2 id="无状态迭代器">无状态迭代器<a class="markdownIt-Anchor" href="#无状态迭代器"></a></h2>
 <dl>
 <dt>无状态迭代器（stateless iterator）</dt>
 <dd>一种自身不保存任何状态（即闭包所访问的“局部变量”）的选代器。</dd>
@@ -531,6 +531,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+<script>
+$('a.markdownIt-Anchor').parent().mouseenter(function(){$(this).children('a.markdownIt-Anchor').css('visibility','visible')})
+$('a.markdownIt-Anchor').parent().mouseleave(function(){$(this).children('a.markdownIt-Anchor').css('visibility','hidden')})
+</script>
 
   
 <script src="/js/third-party/search/local-search.js"></script>

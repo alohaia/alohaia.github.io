@@ -3184,7 +3184,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #5cc1e8;
+  background: #3cb9ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3419,10 +3419,6 @@ h6 {
     counter-increment: h6Counter;
 }
 
-h2, h3, h4, h5, h6 {
-    text-decoration: underline;
-}
-
 h2:not(.collection-header):before {
     content: counter(h2Counter) ". ";
 }
@@ -3446,6 +3442,11 @@ h6:before {
 }
 
 a.markdownIt-Anchor {
+    margin-left: 0.2em;
+    visibility: hidden;
+}
+a.markdownIt-Anchor::before {
+    content: '§';
 }
 
 /**************************************************************************************/
@@ -3729,32 +3730,6 @@ blockquote {
 
 /**************************************************************************************/
 
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-body::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
-}
-
-div.sidebar-panel-container::-webkit-scrollbar {
-    width: 0;
-}
-
-div.sidebar-panel-container::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-  background: #bbbbbb;        /* color of the tracking area */
-  /* border-radius: 20px;       [> roundness of the scroll track <] */
-}
-
-div.sidebar-panel-container::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-  background-color: rgb(85, 85, 85);    /* color of the scroll thumb */
-  /* border-radius: 20px;       [> roundness of the scroll thumb <] */
-  /* border: 3px solid rgb(85, 85, 85);  [> creates padding around scroll thumb <] */
-}
-
 /**************************************************************************************/
 
 .katex-display {
@@ -3780,6 +3755,39 @@ body::-webkit-scrollbar-thumb {
 
 /**************************************************************************************/
 
+/* body */
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+div.sidebar-panel-container::-webkit-scrollbar {
+    width: 0;
+}
+
+body::-webkit-scrollbar-track {
+  background: #bbbbbb;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(85, 85, 85);
+}
+
+body::-webkit-scrollbar:hover {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  border-radius: 4px;
+}
+
+/* table-container */
+
 div.table-container {
     overflow: auto;
     margin-bottom: 1em;
@@ -3790,18 +3798,17 @@ table {
     white-space: nowrap;
 }
 
-div.table-container::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
+div.table-container::-webkit-scrollbar {
+  width: 5px;
   height: 5px;
 }
 
 div.table-container::-webkit-scrollbar-track {
-  background: #bbbbbb;        /* color of the tracking area */
+  background-color: #bbbbbb;
 }
 
 div.table-container::-webkit-scrollbar-thumb {
-  background-color: rgb(85, 85, 85);    /* color of the scroll thumb */
+  background-color: rgb(85, 85, 85);
 }
 
 /**************************************************************************************/

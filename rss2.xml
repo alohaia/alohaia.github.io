@@ -15,25 +15,8 @@
     <atom:link href="https://www.aloha.org.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>追寻罗素先生的脚步，渴望寻找到我想要的答案。</description>
-    <pubDate>Tue, 27 Jul 2021 09:38:32 GMT</pubDate>
+    <pubDate>Mon, 26 Jul 2021 09:04:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>CMake 学习记录</title>
-      <link>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/</link>
-      <guid>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/</guid>
-      <pubDate>Tue, 27 Jul 2021 09:38:32 GMT</pubDate>
-      
-      <description>&lt;p&gt;Empty...&lt;/p&gt;</description>
-      
-      
-      
-      
-      
-      
-      <comments>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>英语拾遗</title>
@@ -964,6 +947,35 @@
       
       
       <comments>https://www.aloha.org.cn/Learning/Computer/Git/Git-%E5%AE%9E%E6%88%98/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>主要组织相容性复合体</title>
+      <link>https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</link>
+      <guid>https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</guid>
+      <pubDate>Fri, 21 May 2021 03:28:00 GMT</pubDate>
+      
+      <description>&lt;dl&gt;
+&lt;dt&gt;主要组织相容性复合体（MHC）&lt;/dt&gt;
+&lt;dd&gt;一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;人类的 MHC 称为&lt;strong&gt;人类白细胞抗原&lt;/strong&gt;（HLA）&lt;strong&gt;基因复合体&lt;/strong&gt;，其编码产物称为 HLA 分子或 HLA 抗原。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/">Medicine</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/">医学免疫学</category>
+      
+      
+      <category domain="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/">医学免疫学</category>
+      
+      
+      <comments>https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/#disqus_thread</comments>
       
     </item>
     

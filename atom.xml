@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-07-27T09:38:32.874Z</updated>
+  <updated>2021-07-26T09:04:50.901Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -15,21 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>CMake 学习记录</title>
-    <link href="https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/"/>
-    <id>https://www.aloha.org.cn/uncategorized/CMake-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-1/</id>
-    <published>2021-07-27T09:38:32.000Z</published>
-    <updated>2021-07-27T09:38:32.874Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Empty...&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>英语拾遗</title>
@@ -59,7 +44,7 @@
     <link href="https://www.aloha.org.cn/Learning/Language/German/%E5%BE%B7%E8%AF%AD/"/>
     <id>https://www.aloha.org.cn/Learning/Language/German/%E5%BE%B7%E8%AF%AD/</id>
     <published>2021-07-26T01:31:18.000Z</published>
-    <updated>2021-07-26T08:23:50.838Z</updated>
+    <updated>2021-08-04T09:41:20.503Z</updated>
     
     
     <summary type="html">&lt;img data-src=&quot;/Learning/Language/German/%E5%BE%B7%E8%AF%AD/Vereinfachte_Ausgangsschrift.png&quot; class=&quot;&quot;&gt;</summary>
@@ -84,7 +69,7 @@
     <link href="https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/"/>
     <id>https://www.aloha.org.cn/Learning/Computer/Computer-Graphics/Vulkan/</id>
     <published>2021-07-24T10:46:41.000Z</published>
-    <updated>2021-07-27T16:39:35.547Z</updated>
+    <updated>2021-07-28T02:19:08.476Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly92dWxrYW4tdHV0b3JpYWwuY29tLw==&quot;&gt;Vulkan Tutorial&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 的学习记录。&lt;/p&gt;</summary>
@@ -797,7 +782,7 @@
     <link href="https://www.aloha.org.cn/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/"/>
     <id>https://www.aloha.org.cn/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/</id>
     <published>2021-05-27T13:54:06.000Z</published>
-    <updated>2021-06-29T09:22:25.373Z</updated>
+    <updated>2021-07-31T10:20:45.891Z</updated>
     
     
     <summary type="html">&lt;p&gt;第 4 周时，&lt;strong&gt;鳃弓&lt;/strong&gt;发生，它参与形成颜面和颈部的主要结构。&lt;br/&gt;
@@ -922,6 +907,33 @@
     
     
     <category term="Git" scheme="https://www.aloha.org.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主要组织相容性复合体</title>
+    <link href="https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/"/>
+    <id>https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</id>
+    <published>2021-05-21T03:28:00.000Z</published>
+    <updated>2021-07-19T07:01:46.986Z</updated>
+    
+    
+    <summary type="html">&lt;dl&gt;
+&lt;dt&gt;主要组织相容性复合体（MHC）&lt;/dt&gt;
+&lt;dd&gt;一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;人类的 MHC 称为&lt;strong&gt;人类白细胞抗原&lt;/strong&gt;（HLA）&lt;strong&gt;基因复合体&lt;/strong&gt;，其编码产物称为 HLA 分子或 HLA 抗原。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
+    
+    <category term="医学免疫学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
+    
+    
+    <category term="医学免疫学" scheme="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
     
   </entry>
   

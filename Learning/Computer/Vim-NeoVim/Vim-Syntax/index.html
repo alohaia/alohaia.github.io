@@ -102,7 +102,7 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">28</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">25</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">72</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">71</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -159,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">优先级 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.</span> <span class="nav-text">其他 </span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.</span> <span class="nav-text">其他</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +225,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -367,7 +367,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>217</span>
+      <span>215</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -389,13 +389,13 @@
 <p>写 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvdmltLWhleG93aWtp">NeoVim 插件<i class="fa fa-external-link-alt"></i></span>过程中，对 Vim 语法高亮的一些总结。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="优先级">优先级 <a class="markdownIt-Anchor" href="#优先级">#</a></h2>
+<h2 id="优先级">优先级<a class="markdownIt-Anchor" href="#优先级"></a></h2>
 <ol>
 <li>多个 Match 或 Region 的匹配项在相同位置起始时，最后定义的优先。</li>
 <li>Keyword 优先级高于 Match 和 Region。</li>
 <li>在更靠前的位置起始的匹配项优先。</li>
 </ol>
-<h2 id="其他">其他 <a class="markdownIt-Anchor" href="#其他">#</a></h2>
+<h2 id="其他">其他<a class="markdownIt-Anchor" href="#其他"></a></h2>
 <ul>
 <li>大小写：<code>:h syn-case</code></li>
 <li>折叠深度：<code>:h syn-foldlevel</code></li>
@@ -499,6 +499,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+<script>
+$('a.markdownIt-Anchor').parent().mouseenter(function(){$(this).children('a.markdownIt-Anchor').css('visibility','visible')})
+$('a.markdownIt-Anchor').parent().mouseleave(function(){$(this).children('a.markdownIt-Anchor').css('visibility','hidden')})
+</script>
 
   
 <script src="/js/third-party/search/local-search.js"></script>
