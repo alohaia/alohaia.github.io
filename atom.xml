@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-07-26T09:04:50.901Z</updated>
+  <updated>2021-08-14T10:32:50.047Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数学建模算法与应用</title>
+    <link href="https://www.aloha.org.cn/Learning/Mathematics/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+    <id>https://www.aloha.org.cn/Learning/Mathematics/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/</id>
+    <published>2021-08-07T09:51:06.000Z</published>
+    <updated>2021-08-14T10:32:50.047Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;《数学建模算法与应用（第二版）》学习记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Projects" scheme="https://www.aloha.org.cn/categories/Projects/"/>
+    
+    <category term="Contests" scheme="https://www.aloha.org.cn/categories/Projects/Contests/"/>
+    
+    <category term="Mathematics" scheme="https://www.aloha.org.cn/categories/Learning/Mathematics/"/>
+    
+    
+    <category term="数学建模" scheme="https://www.aloha.org.cn/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>英语拾遗</title>
@@ -814,7 +839,7 @@
     <link href="https://www.aloha.org.cn/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/"/>
     <id>https://www.aloha.org.cn/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/%E4%BA%BA%E8%83%9A%E5%8F%91%E7%94%9F%E5%92%8C%E6%97%A9%E6%9C%9F%E5%8F%91%E8%82%B2/</id>
     <published>2021-05-26T11:29:55.000Z</published>
-    <updated>2021-06-29T09:22:39.901Z</updated>
+    <updated>2021-08-10T10:33:01.464Z</updated>
     
     
     <summary type="html">&lt;p&gt;月经周期第 14 天（增生期 → 分泌期）排卵。&lt;/p&gt;
@@ -907,33 +932,6 @@
     
     
     <category term="Git" scheme="https://www.aloha.org.cn/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>主要组织相容性复合体</title>
-    <link href="https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/"/>
-    <id>https://www.aloha.org.cn/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/%E4%B8%BB%E8%A6%81%E7%BB%84%E7%BB%87%E7%9B%B8%E5%AE%B9%E6%80%A7%E5%A4%8D%E5%90%88%E4%BD%93/</id>
-    <published>2021-05-21T03:28:00.000Z</published>
-    <updated>2021-07-19T07:01:46.986Z</updated>
-    
-    
-    <summary type="html">&lt;dl&gt;
-&lt;dt&gt;主要组织相容性复合体（MHC）&lt;/dt&gt;
-&lt;dd&gt;一组与免疫应答密切相关、决定移植组织是否相容、紧密连锁的基因群。&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;人类的 MHC 称为&lt;strong&gt;人类白细胞抗原&lt;/strong&gt;（HLA）&lt;strong&gt;基因复合体&lt;/strong&gt;，其编码产物称为 HLA 分子或 HLA 抗原。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="医学免疫学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
-    
-    
-    <category term="医学免疫学" scheme="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/"/>
     
   </entry>
   
