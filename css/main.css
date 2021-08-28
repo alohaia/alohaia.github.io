@@ -1349,77 +1349,6 @@ pre code {
 .book-mark-link-fixed {
   top: -2px;
 }
-.github-corner :hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-.github-corner svg {
-  color: #fff;
-  fill: #222;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-}
-@media (max-width: 991px) {
-  .github-corner {
-    display: none;
-  }
-  .github-corner .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-}
-@media (max-width: 767px) {
-  .github-corner svg {
-    top: inherit;
-  }
-}
-@-moz-keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@-webkit-keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@-o-keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
 .sidebar-inner {
   color: #999;
   padding: 18px 10px;
@@ -2078,27 +2007,10 @@ pre code {
 .post-body h5 .headerlink,
 .post-body h6 .headerlink {
   border-bottom-style: none;
-  color: inherit;
-  float: right;
   font-size: 0.875em;
-  margin-left: 10px;
+  margin-left: 0.4ch;
   opacity: 0;
-}
-.post-body h1 .header-anchor::before,
-.post-body h2 .header-anchor::before,
-.post-body h3 .header-anchor::before,
-.post-body h4 .header-anchor::before,
-.post-body h5 .header-anchor::before,
-.post-body h6 .header-anchor::before,
-.post-body h1 .headerlink::before,
-.post-body h2 .headerlink::before,
-.post-body h3 .headerlink::before,
-.post-body h4 .headerlink::before,
-.post-body h5 .headerlink::before,
-.post-body h6 .headerlink::before {
-  content: '\f0c1';
   font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
 }
 .post-body h1:hover .header-anchor,
 .post-body h2:hover .header-anchor,
@@ -2112,7 +2024,7 @@ pre code {
 .post-body h4:hover .headerlink,
 .post-body h5:hover .headerlink,
 .post-body h6:hover .headerlink {
-  opacity: 0.5;
+  opacity: 1;
 }
 .post-body h1:hover .header-anchor:hover,
 .post-body h2:hover .header-anchor:hover,
@@ -2998,7 +2910,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #2d9593;
+  background: #40f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3257,17 +3169,17 @@ h6:before {
     content: counter(h6Counter, lower-alpha) ". ";
 }
 
-a.markdownIt-Anchor {
-    margin-left: 0.2em;
-    visibility: hidden;
-}
-a.markdownIt-Anchor::before {
-    content: '§';
-    /* display: inline-block; */
-    /* font-size: 0.85em; */
-    /* padding-bottom: 0.1em; */
-    /* box-sizing: border-box; */
-}
+/* a.markdownIt-Anchor { */
+/*     margin-left: 0.2em; */
+/*     visibility: hidden; */
+/* } */
+/* a.markdownIt-Anchor::after { */
+/*     content: '§'; */
+/*     [> display: inline-block; <] */
+/*     [> font-size: 0.85em; <] */
+/*     [> padding-bottom: 0.1em; <] */
+/*     [> box-sizing: border-box; <] */
+/* } */
 
 /**************************************************************************************/
 
