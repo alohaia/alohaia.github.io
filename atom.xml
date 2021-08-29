@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-08-28T11:04:23.665Z</updated>
+  <updated>2021-08-29T16:08:38.033Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.aloha.org.cn/2021/08/19/R-%E8%AF%AD%E8%A8%80/"/>
     <id>https://www.aloha.org.cn/2021/08/19/R-%E8%AF%AD%E8%A8%80/</id>
     <published>2021-08-19T10:26:37.000Z</published>
-    <updated>2021-08-28T11:04:23.665Z</updated>
+    <updated>2021-08-29T16:08:38.033Z</updated>
     
     
     <summary type="html">&lt;p&gt;主要参考李东风的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cubWF0aC5wa3UuZWR1LmNuL3RlYWNoZXJzL2xpZGYvZG9jcy9SYm9vay9odG1sL19SYm9vay8=&quot;&gt;《R 语言教程》&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;。&lt;/p&gt;</summary>
@@ -30,9 +30,9 @@
     
     <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
     
-    <category term="Projects" scheme="https://www.aloha.org.cn/categories/Projects/"/>
-    
     <category term="Computer" scheme="https://www.aloha.org.cn/categories/Learning/Computer/"/>
+    
+    <category term="Projects" scheme="https://www.aloha.org.cn/categories/Projects/"/>
     
     <category term="R" scheme="https://www.aloha.org.cn/categories/Learning/Computer/R/"/>
     
