@@ -2910,7 +2910,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #20ff73;
+  background: #ffd1c7;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3551,7 +3551,7 @@ a>code {
 
 a>code:hover {
     /* -webkit-transition: all .3s; */
-    color: #FC6423;
+    color: var(--link-hover-color);
     border-bottom: 1px solid #ccc;
 }
 
@@ -3565,5 +3565,11 @@ a>code:hover {
 
 abbr {
     cursor: pointer;
+}
+
+/**************************************************************************************/
+
+li:hover::marker {
+    color: #FC6423;
 }
 
