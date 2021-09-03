@@ -753,14 +753,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/Vulkan/</loc>
+    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E5%85%8D%E7%96%AB%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/tags/Vulkan/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -951,13 +951,6 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Front-end/</loc>
-    <lastmod>2021-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.aloha.org.cn/categories/Learning/Computer/uncategorized/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -965,7 +958,7 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Front-end/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -973,6 +966,13 @@
   
   <url>
     <loc>https://www.aloha.org.cn/categories/Learning/Medicine/</loc>
+    <lastmod>2021-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Computer/Computer-Graphics/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1000,13 +1000,6 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Mathematics/</loc>
-    <lastmod>2021-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.aloha.org.cn/categories/Projects/Programming/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -1014,7 +1007,14 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Mathematics/</loc>
+    <lastmod>2021-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1028,7 +1028,7 @@
   </url>
   
   <url>
-    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/</loc>
+    <loc>https://www.aloha.org.cn/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
