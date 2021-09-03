@@ -34,7 +34,7 @@
 <meta property="og:description" content="Personal arrangement of UltiSnips’ official documentation. My snippets: https:&#x2F;&#x2F;github.com&#x2F;alohaia&#x2F;nvimcfg&#x2F;tree&#x2F;lua&#x2F;UltiSnips">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-28T07:15:22.000Z">
-<meta property="article:modified_time" content="2021-08-11T10:08:04.842Z">
+<meta property="article:modified_time" content="2021-09-03T02:53:46.820Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Vim&#x2F;NeoVim">
@@ -101,9 +101,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">31</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">78</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">33</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">82</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -162,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Include-Other-Snippet-Files"><span class="nav-number">1.</span> <span class="nav-text">Include Other Snippet Files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keywords"><span class="nav-number">2.</span> <span class="nav-text">Keywords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snippets%E2%80%99-Format"><span class="nav-number">3.</span> <span class="nav-text">Snippets’ Format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snippet-Options"><span class="nav-number">4.</span> <span class="nav-text">Snippet Options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-Escaping"><span class="nav-number">5.</span> <span class="nav-text">Character Escaping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plaintext-Snippets"><span class="nav-number">6.</span> <span class="nav-text">Plaintext Snippets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tabstop-and-Placeholders"><span class="nav-number">7.</span> <span class="nav-text">Tabstop and Placeholders</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Placeholder"><span class="nav-number">8.</span> <span class="nav-text">Visual Placeholder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mirrors"><span class="nav-number">9.</span> <span class="nav-text">Mirrors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpolation"><span class="nav-number">10.</span> <span class="nav-text">Interpolation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shellcode"><span class="nav-number">10.1.</span> <span class="nav-text">Shellcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vimscript"><span class="nav-number">10.2.</span> <span class="nav-text">Vimscript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">10.3.</span> <span class="nav-text">Python</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Global-Snippets"><span class="nav-number">11.</span> <span class="nav-text">Global Snippets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformations"><span class="nav-number">12.</span> <span class="nav-text">Transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Expression"><span class="nav-number">12.1.</span> <span class="nav-text">Regular Expression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Replacement-String"><span class="nav-number">12.2.</span> <span class="nav-text">Replacement String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options"><span class="nav-number">12.3.</span> <span class="nav-text">Options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clear-Disable-Snippets"><span class="nav-number">13.</span> <span class="nav-text">Clear(Disable) Snippets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Context"><span class="nav-number">14.</span> <span class="nav-text">Context</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snippet-Actions"><span class="nav-number">15.</span> <span class="nav-text">Snippet Actions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-expand-and-Post-expand-Actions"><span class="nav-number">15.1.</span> <span class="nav-text">Pre-expand and Post-expand Actions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Post-jump-Actions"><span class="nav-number">15.2.</span> <span class="nav-text">Post-jump Actions</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Include-Other-Snippet-Files"><span class="nav-number">1.</span> <span class="nav-text">Include Other Snippet Files</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Keywords"><span class="nav-number">2.</span> <span class="nav-text">Keywords</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Snippets%E2%80%99-Format"><span class="nav-number">3.</span> <span class="nav-text">Snippets’ Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Snippet-Options"><span class="nav-number">4.</span> <span class="nav-text">Snippet Options</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Character-Escaping"><span class="nav-number">5.</span> <span class="nav-text">Character Escaping</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Plaintext-Snippets"><span class="nav-number">6.</span> <span class="nav-text">Plaintext Snippets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tabstop-and-Placeholders"><span class="nav-number">7.</span> <span class="nav-text">Tabstop and Placeholders</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Visual-Placeholder"><span class="nav-number">8.</span> <span class="nav-text">Visual Placeholder</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mirrors"><span class="nav-number">9.</span> <span class="nav-text">Mirrors</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interpolation"><span class="nav-number">10.</span> <span class="nav-text">Interpolation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shellcode"><span class="nav-number">10.1.</span> <span class="nav-text">Shellcode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vimscript"><span class="nav-number">10.2.</span> <span class="nav-text">Vimscript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">10.3.</span> <span class="nav-text">Python</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Global-Snippets"><span class="nav-number">11.</span> <span class="nav-text">Global Snippets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Transformations"><span class="nav-number">12.</span> <span class="nav-text">Transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-Expression"><span class="nav-number">12.1.</span> <span class="nav-text">Regular Expression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replacement-String"><span class="nav-number">12.2.</span> <span class="nav-text">Replacement String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Options"><span class="nav-number">12.3.</span> <span class="nav-text">Options</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Clear-Disable-Snippets"><span class="nav-number">13.</span> <span class="nav-text">Clear(Disable) Snippets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Context"><span class="nav-number">14.</span> <span class="nav-text">Context</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Snippet-Actions"><span class="nav-number">15.</span> <span class="nav-text">Snippet Actions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pre-expand-and-Post-expand-Actions"><span class="nav-number">15.1.</span> <span class="nav-text">Pre-expand and Post-expand Actions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post-jump-Actions"><span class="nav-number">15.2.</span> <span class="nav-text">Post-jump Actions</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,20 +228,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -340,7 +340,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-11 18:08:04" itemprop="dateModified" datetime="2021-08-11T18:08:04+08:00">2021-08-11</time>
+        <time title="Modified: 2021-09-03 10:53:46" itemprop="dateModified" datetime="2021-09-03T10:53:46+08:00">2021-09-03</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -390,7 +390,7 @@
         <p>Personal arrangement of <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1NpclZlci91bHRpc25pcHM=">UltiSnips<i class="fa fa-external-link-alt"></i></span>’ official documentation.</p>
 <p>My snippets: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fsb2hhaWEvbnZpbWNmZy90cmVlL2x1YS9VbHRpU25pcHM=">https://github.com/alohaia/nvimcfg/tree/lua/UltiSnips<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
-<h2 id="Include-Other-Snippet-Files">Include Other Snippet Files<a class="header-anchor" href="#Include-Other-Snippet-Files"></a></h2>
+<h1 id="Include-Other-Snippet-Files">Include Other Snippet Files<a class="header-anchor" href="#Include-Other-Snippet-Files"></a></h1>
 <p>Add c snippets for cpp files for example.</p>
 <ol>
 <li><code>UltiSnipsAddFiletypes</code>: <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">au</span> FileType cpp UltiSnipsAddFiletypes cpp.<span class="keyword">c</span></span><br></pre></td></tr></table></figure>
@@ -398,7 +398,7 @@
 <li><code>extends</code>: For example, in <code>cpp.snippets</code>, add: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extends c</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Keywords">Keywords<a class="header-anchor" href="#Keywords"></a></h2>
+<h1 id="Keywords">Keywords<a class="header-anchor" href="#Keywords"></a></h1>
 <ol>
 <li><code>extends</code>: See above.</li>
 <li><code>priority</code>: Set priority for all snippet defined in the current file.</li>
@@ -406,7 +406,7 @@
 <li><code>global</code> <code>endglobal</code>: Define a <a href="#global-snippets">global snippet</a>(only supports python currently).</li>
 <li><code>pre_expand</code> <code>post_expand</code> <code>post_jump</code>: Declare snippet actions.</li>
 </ol>
-<h2 id="Snippets’-Format">Snippets’ Format<a class="header-anchor" href="#Snippets’-Format"></a></h2>
+<h1 id="Snippets’-Format">Snippets’ Format<a class="header-anchor" href="#Snippets’-Format"></a></h1>
 <pre><code>snippet trigger_word [ &quot;description&quot; [ options ] ]
 ...
 endsnippet
@@ -419,7 +419,7 @@ another character.<figure class="highlight plaintext"><table><tr><td class="gutt
 <li><code>description</code>: A string describing the trigger.</li>
 <li><code>options</code>: See below.</li>
 </ul>
-<h2 id="Snippet-Options">Snippet Options<a class="header-anchor" href="#Snippet-Options"></a></h2>
+<h1 id="Snippet-Options">Snippet Options<a class="header-anchor" href="#Snippet-Options"></a></h1>
 <ul>
 <li><code>b</code>: Beginning of line - A snippet with this option is expanded only if the tab trigger is the first word on the line. In other words, if only whitespace precedes the tab trigger, expand. The default is to expand snippets at any position regardless of the preceding non-whitespace characters.</li>
 <li><code>i</code>: In-word expansion - By default a snippet is expanded only if the tab trigger is the first word on the line or is preceded by one or more whitespace characters. A snippet with this option is expanded regardless of the preceding character. In other words, the snippet can be triggered in the middle of a word.</li>
@@ -431,16 +431,16 @@ another character.<figure class="highlight plaintext"><table><tr><td class="gutt
 <li><code>e</code>: Custom context snippet - With this option expansion of snippet can be controlled not only by previous characters in line, but by any given python expression. This option can be specified along with other options, like <code>b</code>. See UltiSnips-custom-context-snippets for more info.</li>
 <li><code>A</code>: Snippet will be triggered automatically, when condition matches. See UltiSnips-autotrigger for more info.</li>
 </ul>
-<h2 id="Character-Escaping">Character Escaping<a class="header-anchor" href="#Character-Escaping"></a></h2>
+<h1 id="Character-Escaping">Character Escaping<a class="header-anchor" href="#Character-Escaping"></a></h1>
 <blockquote>
 <p>In snippet definitions, the characters <code>`</code>, <code>&#123;</code>, <code>$</code> and <code>\</code> have special<br />
 meaning. If you want to insert one of these characters literally, escape them<br />
 with a backslash, <code>\</code>.</p>
 </blockquote>
-<h2 id="Plaintext-Snippets">Plaintext Snippets<a class="header-anchor" href="#Plaintext-Snippets"></a></h2>
+<h1 id="Plaintext-Snippets">Plaintext Snippets<a class="header-anchor" href="#Plaintext-Snippets"></a></h1>
 <p>For example:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">snippet bye &quot;My mail signature&quot;</span><br><span class="line">Good bye, Sir. Hope to talk to you soon.</span><br><span class="line">- Arthur, King of Britain</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<h2 id="Tabstop-and-Placeholders">Tabstop and Placeholders<a class="header-anchor" href="#Tabstop-and-Placeholders"></a></h2>
+<h1 id="Tabstop-and-Placeholders">Tabstop and Placeholders<a class="header-anchor" href="#Tabstop-and-Placeholders"></a></h1>
 <p>A simplest tabstop looks like <code>$no</code>, <code>no</code> is a number starting from 1. <code>$0</code> is a special tabstop that is always the last tabstop no matter how many tabstops are defined.</p>
 <pre><code>snippet letter
 Dear $1,
@@ -468,7 +468,7 @@ endsnippet
 value, including the second tabstop, with the typed text. So the second<br />
 tabstop is essentially deleted.</p>
 </blockquote>
-<h2 id="Visual-Placeholder">Visual Placeholder<a class="header-anchor" href="#Visual-Placeholder"></a></h2>
+<h1 id="Visual-Placeholder">Visual Placeholder<a class="header-anchor" href="#Visual-Placeholder"></a></h1>
 <p>Format:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;VISUAL:default/search/replace/option&#125;</span><br></pre></td></tr></table></figure>
 <p>Usage:</p>
@@ -481,7 +481,7 @@ tabstop is essentially deleted.</p>
 <li>Snippets containing Visual Placeholder can be used in insert mod. In the way, the <code>default</code> will be used as default text.</li>
 <li>With <code>/search/replace/option</code>, you can process the text like using <code>:s</code> command. See <a href="#transformations">Transformations</a>.</li>
 </ol>
-<h2 id="Mirrors">Mirrors<a class="header-anchor" href="#Mirrors"></a></h2>
+<h1 id="Mirrors">Mirrors<a class="header-anchor" href="#Mirrors"></a></h1>
 <p>Mirrors repeat the content of a <span class="exturl" data-url="aHR0cDovL3RhYnN0b3AuVG8=">tabstop.To<i class="fa fa-external-link-alt"></i></span> mirror a tabstop simply insert the tabstop again using the “dollar sign followed by a number” syntax, e.g., <code>$1</code>.</p>
 <pre><code>snippet ifndef
 #ifndef $&#123;1:SOME_DEFINE&#125;
@@ -490,16 +490,16 @@ $0
 #endif /* $1 */
 endsnippet
 </code></pre>
-<h2 id="Interpolation">Interpolation<a class="header-anchor" href="#Interpolation"></a></h2>
-<h3 id="Shellcode">Shellcode<a class="header-anchor" href="#Shellcode"></a></h3>
+<h1 id="Interpolation">Interpolation<a class="header-anchor" href="#Interpolation"></a></h1>
+<h2 id="Shellcode">Shellcode<a class="header-anchor" href="#Shellcode"></a></h2>
 <p>An example may be the most helpful.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">snippet today</span><br><span class="line">Today is the `date +%d.%m.%y`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
 <p>The output of command <code>date +%d.%m%y</code> will replace the text wrapped by backticks. You`ll get something like “Today is the 19.08.20.”</p>
-<h3 id="Vimscript">Vimscript<a class="header-anchor" href="#Vimscript"></a></h3>
+<h2 id="Vimscript">Vimscript<a class="header-anchor" href="#Vimscript"></a></h2>
 <p>Similar to shellcode, but begins with `v.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">snippet indent</span><br><span class="line">Indent is: `!v indent(&quot;.&quot;)`.</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(note the 4 spaces in front): indent&lt;trigger_key&gt; -&gt;</span><br><span class="line">(note the 4 spaces in front): Indent is: 4.</span><br></pre></td></tr></table></figure>
-<h3 id="Python">Python<a class="header-anchor" href="#Python"></a></h3>
+<h2 id="Python">Python<a class="header-anchor" href="#Python"></a></h2>
 <p>There are two choices:</p>
 <ol>
 <li><strong>`#!/usr/bin/python …`</strong>: Normal python code.</li>
@@ -621,12 +621,12 @@ Other modules can be imported using the python <code>import</code> command.</p>
 snippet mirrors the first tabstop value on the same line but right aligned and<br />
 in uppercase.</p>
 </blockquote>
-<h2 id="Global-Snippets">Global Snippets<a class="header-anchor" href="#Global-Snippets"></a></h2>
+<h1 id="Global-Snippets">Global Snippets<a class="header-anchor" href="#Global-Snippets"></a></h1>
 <p>Use <code>global</code> and <code>endglobal</code> to define Global snippets.</p>
 <p>You can define functions or use import command inside.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">global !p</span><br><span class="line">def upper_right(inp):</span><br><span class="line">    return (75 - 2 * len(inp))*` ` + inp.upper()</span><br><span class="line">endglobal</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">global !p</span><br><span class="line">from my_snippet_helpers import *</span><br><span class="line">endglobal</span><br></pre></td></tr></table></figure>
-<h2 id="Transformations">Transformations<a class="header-anchor" href="#Transformations"></a></h2>
+<h1 id="Transformations">Transformations<a class="header-anchor" href="#Transformations"></a></h1>
 <blockquote>
 <p>Transformations are like mirrors but instead of just copying text from the<br />
 original tabstop verbatim, a regular expression is matched to the content of<br />
@@ -642,9 +642,9 @@ pattern.</p>
 <li><code>replacement</code>: The replacement string, explained in detail below</li>
 <li><code>options</code>: Options for the regular expression</li>
 </ul>
-<h3 id="Regular-Expression">Regular Expression<a class="header-anchor" href="#Regular-Expression"></a></h3>
+<h2 id="Regular-Expression">Regular Expression<a class="header-anchor" href="#Regular-Expression"></a></h2>
 <p>See <span class="exturl" data-url="aHR0cDovL2RvY3MucHl0aG9uLm9yZy9saWJyYXJ5L3JlLmh0bWw=">http://docs.python.org/library/re.html<i class="fa fa-external-link-alt"></i></span>.</p>
-<h3 id="Replacement-String">Replacement String<a class="header-anchor" href="#Replacement-String"></a></h3>
+<h2 id="Replacement-String">Replacement String<a class="header-anchor" href="#Replacement-String"></a></h2>
 <p>The <strong>replacement string</strong> can contain <code>$no</code> variables, e.g., <code>$1</code>, which reference matched groups in the regular expression. The <code>$0</code> variable is special and yields the whole match. The replacement string can also contain special escape sequences:</p>
 <ul>
 <li><code>\u</code>: Uppercase next letter</li>
@@ -659,7 +659,7 @@ pattern.</p>
 matched, insert “text”, otherwise insert “other text”. “other text” is<br />
 optional and if not provided defaults to the empty string, “”. This feature<br />
 is very powerful. It allows you to add optional text into snippets.</p>
-<h3 id="Options">Options<a class="header-anchor" href="#Options"></a></h3>
+<h2 id="Options">Options<a class="header-anchor" href="#Options"></a></h2>
 <p>The <strong>options</strong> can be any combination of</p>
 <ul>
 <li>
@@ -689,7 +689,7 @@ instead, for example <code>à</code> will become <code>a</code>.<br />
 This option required the python package <code>unidecode</code>.</p>
 </li>
 </ul>
-<h2 id="Clear-Disable-Snippets">Clear(Disable) Snippets<a class="header-anchor" href="#Clear-Disable-Snippets"></a></h2>
+<h1 id="Clear-Disable-Snippets">Clear(Disable) Snippets<a class="header-anchor" href="#Clear-Disable-Snippets"></a></h1>
 <p>Add <code>clearsnippets</code> to snippet files to disable some specified snippets.</p>
 <ol>
 <li>
@@ -703,7 +703,7 @@ This option required the python package <code>unidecode</code>.</p>
 <p>Disable snippets whose trigger word is <code>printf</code>, <code>title</code> or <code>box</code>. To do this, the priority of <code>clearsnippets</code> must not be smaller than other snippets`.</p>
 </li>
 </ol>
-<h2 id="Context">Context<a class="header-anchor" href="#Context"></a></h2>
+<h1 id="Context">Context<a class="header-anchor" href="#Context"></a></h1>
 <p>Custom context snippets can be enabled by using the <code>e</code> option in the snippet<br />
 definition.</p>
 <p>In that case snippet should be defined using this syntax:</p>
@@ -763,7 +763,7 @@ in that case UltiSnips will not be able to track changes to the buffer correctly
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">snippet i &quot;if err != nil&quot; &quot;re.match(`^\s+[^=]*err\s*:?=`, snip.buffer[snip.line-1])&quot; be</span><br><span class="line">if err != nil &#123;</span><br><span class="line">    $1</span><br><span class="line">&#125;</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">global !p</span><br><span class="line">import my_utils</span><br><span class="line">endglobal</span><br><span class="line"></span><br><span class="line">snippet , &quot;return ..., nil/err&quot; &quot;my_utils.is_return_argument(snip)&quot; ie</span><br><span class="line">, `!p if my_utils.is_in_err_condition():</span><br><span class="line">    snip.rv = &quot;err&quot;</span><br><span class="line">else:</span><br><span class="line">    snip.rv = &quot;nil&quot;`</span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
-<h2 id="Snippet-Actions">Snippet Actions<a class="header-anchor" href="#Snippet-Actions"></a></h2>
+<h1 id="Snippet-Actions">Snippet Actions<a class="header-anchor" href="#Snippet-Actions"></a></h1>
 <ul>
 <li>Pre-expand: invoked just after trigger condition was matched, but before snippet actually expanded;</li>
 <li>Post-expand: invoked after snippet was expanded and interpolations were applied for the first time, but before jump on the first placeholder.</li>
@@ -780,7 +780,7 @@ snippet &quot;nothing done here&quot;
 $&#123;VISUAL&#125;
 endsnippet
 </code></pre>
-<h3 id="Pre-expand-and-Post-expand-Actions">Pre-expand and Post-expand Actions<a class="header-anchor" href="#Pre-expand-and-Post-expand-Actions"></a></h3>
+<h2 id="Pre-expand-and-Post-expand-Actions">Pre-expand and Post-expand Actions<a class="header-anchor" href="#Pre-expand-and-Post-expand-Actions"></a></h2>
 <p>Buffer can be modified in pre-expand action code through variable called<br />
 <code>snip.buffer</code>, snippet expansion position will be automatically adjusted.</p>
 <pre><code>pre_expand &quot;snip.buffer[snip.line] = ` `*4; snip.cursor.set(snip.line, 4)&quot;
@@ -795,7 +795,7 @@ def $1():
     $2
 endsnippet
 </code></pre>
-<h3 id="Post-jump-Actions">Post-jump Actions<a class="header-anchor" href="#Post-jump-Actions"></a></h3>
+<h2 id="Post-jump-Actions">Post-jump Actions<a class="header-anchor" href="#Post-jump-Actions"></a></h2>
 <p>Post-jump actions can be used to trigger some code based on user input into the placeholders.</p>
 <p>Notable use <strong>cases</strong>:</p>
 <ul>
@@ -903,14 +903,14 @@ then insert new method invokation);</li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">246k</span>
+    <span title="Symbols count total">248k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">3:44</span>
+    <span title="Reading time total">3:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>

@@ -34,7 +34,7 @@
 <meta property="og:description" content="一些之前没注意或忘掉的 C++ 的语法或用法细节，C++ 的基本语法则不在此记录。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-07-24T03:55:27.000Z">
-<meta property="article:modified_time" content="2021-07-27T15:20:55.938Z">
+<meta property="article:modified_time" content="2021-09-03T02:53:46.250Z">
 <meta property="article:author" content="Qihuan Liu">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary">
@@ -100,9 +100,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">31</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">78</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">33</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">82</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -161,7 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8"><span class="nav-number">1.1.</span> <span class="nav-text">抛出异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%95%E6%8D%89%E5%92%8C%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8"><span class="nav-number">1.2.</span> <span class="nav-text">捕捉和处理异常</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8"><span class="nav-number">1.1.</span> <span class="nav-text">抛出异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%95%E6%8D%89%E5%92%8C%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8"><span class="nav-number">1.2.</span> <span class="nav-text">捕捉和处理异常</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -227,20 +227,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -339,7 +339,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-27 23:20:55" itemprop="dateModified" datetime="2021-07-27T23:20:55+08:00">2021-07-27</time>
+        <time title="Modified: 2021-09-03 10:53:46" itemprop="dateModified" datetime="2021-09-03T10:53:46+08:00">2021-09-03</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -388,7 +388,7 @@
     <div class="post-body" itemprop="articleBody">
         <p>一些之前没注意或忘掉的 C++ 的语法或用法细节，C++ 的基本语法则不在此记录。</p>
 <span id="more"></span>
-<h2 id="异常">异常<a class="header-anchor" href="#异常"></a></h2>
+<h1 id="异常">异常<a class="header-anchor" href="#异常"></a></h1>
 <p>C++ 的<strong>异常</strong>（exception）机制为处理函数非正常运行提供了另一种途径。在 C 中，函数多通过返回值来告知调用者函数发生了非预期的情况。然而若是返回值有其他用途，那么如何将正常返回值和用于提示的返回值相区分可能会是个问题：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">devide</span><span class="params">(<span class="keyword">double</span> lhs, <span class="keyword">double</span> rhs)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rhs == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 应该返回什么值？</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lhs/rhs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们想要通过一个特殊的值来提示调用者发生了“devide-by-zero”的情况，但是所有实数（当然是在 <code>double</code> 的范围内）都可以作为正常的返回值。</p>
@@ -397,14 +397,14 @@
 <blockquote>
 <p>C++ 中除以 0 不会引发异常或错误，而是会得到 <span class="exturl" data-url="aHR0cHM6Ly96aC5jcHByZWZlcmVuY2UuY29tL3cvY3BwL3R5cGVzL251bWVyaWNfbGltaXRzL2luZmluaXR5">infinity<i class="fa fa-external-link-alt"></i></span>。</p>
 </blockquote>
-<h3 id="抛出异常">抛出异常<a class="header-anchor" href="#抛出异常"></a></h3>
+<h2 id="抛出异常">抛出异常<a class="header-anchor" href="#抛出异常"></a></h2>
 <p><code>throw</code> 有两种语法<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：</p>
 <ol>
 <li><code>throw &lt;expression&gt;</code>：复制表达式结果（使用复制构造函数）然后抛出。</li>
 <li><code>throw</code>：重抛当前异常，中止当前 <code>catch</code> 块的执行并移动到下一个匹配的 <code>catch</code> 块。</li>
 </ol>
 <p>除了内置基本类型、用户自定义类型，C++ STL 还提供了 <span class="exturl" data-url="aHR0cHM6Ly96aC5jcHByZWZlcmVuY2UuY29tL3cvY3BwL2Vycm9yL2V4Y2VwdGlvbg==">std::exception<i class="fa fa-external-link-alt"></i></span> 及其派生类用于异常抛出。</p>
-<h3 id="捕捉和处理异常">捕捉和处理异常<a class="header-anchor" href="#捕捉和处理异常"></a></h3>
+<h2 id="捕捉和处理异常">捕捉和处理异常<a class="header-anchor" href="#捕捉和处理异常"></a></h2>
 <p>捕捉异常的原则与传递函数参数的原则类似：<span class="inline-list"><span class="inline-list-item">对于基本类型，按值传递比较有效率；</span><span class="inline-list-item">而对类则应该按引用传递以保证效率。</span></span></p>
 <hr class="footnotes-sep" />
 <section class="footnotes">
@@ -487,14 +487,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">246k</span>
+    <span title="Symbols count total">248k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">3:44</span>
+    <span title="Reading time total">3:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>

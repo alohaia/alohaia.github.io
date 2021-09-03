@@ -2910,7 +2910,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #815e75;
+  background: #82daff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3074,16 +3074,23 @@ div.img-wrap-center {
 
 /**************************************************************************************/
 
-h2 {
+h1:not(.post-title) {
     text-align: center;
     font-size: 32px;
+    counter-reset: H2Counter h3Counter h4Counter h5Counter h6Counter;
+    counter-increment: h1Counter;
+}
+
+h2:not(.post-title) {
+    text-align: left;
+    font-size: 26px;
     counter-reset: h3Counter h4Counter h5Counter h6Counter;
     counter-increment: h2Counter;
 }
 
 h3 {
     text-align: left;
-    font-size: 26px;
+    font-size: 24px;
     counter-reset: h4Counter h5Counter h6Counter;
     counter-increment: h3Counter;
 }
@@ -3108,25 +3115,37 @@ h6 {
     counter-increment: h6Counter;
 }
 
+h1:not(.post-title):not(.site-title):before {
+    content: counter(h1Counter) ". "
+}
+
+h2:not(.post-title):before {
+    content: counter(h1Counter) "." counter(h2Counter) ". ";
+}
+
+h2.post-title:before {
+    content: '§ '
+}
+
 h2:not(.collection-header, .post-title):before {
-    content: counter(h2Counter) ". ";
+    content: counter(h1Counter) "." counter(h2Counter) ". ";
 }
 
 h3:before {
-    content: counter(h2Counter) "." counter(h3Counter) ". ";
+    content: counter(h1Counter) "." counter(h2Counter) "." counter(h3Counter) ". ";
 }
 
 h4:before {
-    content: counter(h2Counter) "." counter(h3Counter) "." counter(h4Counter) ". ";
+    content: counter(h1Counter) "." counter(h2Counter) "." counter(h3Counter) "." counter(h4Counter) ". ";
 }
 
 h5:before {
-    /* content: counter(h2Counter) "." counter(h3Counter) "." counter(h4Counter) "." counter(h5Counter); */
+    /* content: counter(h1Counter) "." counter(h2Counter) "." counter(h3Counter) "." counter(h4Counter) "." counter(h5Counter); */
     content: counter(h5Counter, upper-roman) ". ";
 }
 
 h6:before {
-    /* content: counter(h2Counter) "." counter(h3Counter) "." counter(h4Counter) "." counter(h5Counter) "." counter(h6Counter); */
+    /* content: counter(h1Counter) "." counter(h2Counter) "." counter(h3Counter) "." counter(h4Counter) "." counter(h5Counter) "." counter(h6Counter); */
     content: counter(h6Counter, lower-alpha) ". ";
 }
 
