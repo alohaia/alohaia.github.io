@@ -100,7 +100,7 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">33</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">82</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">83</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -222,7 +222,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -302,7 +302,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/08/31/%E7%97%85%E7%90%86%E5%AD%A6/">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/04/15/Lua-%E5%92%8C-C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -315,7 +315,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/31/%E7%97%85%E7%90%86%E5%AD%A6/" class="post-title-link" itemprop="url">病理学</a>
+          <a href="/2021/04/15/Lua-%E5%92%8C-C/" class="post-title-link" itemprop="url">Lua 和 C</a>
         </h2>
 
         <div class="post-meta-container">
@@ -326,7 +326,134 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-08-31 09:16:40" itemprop="dateCreated datePublished" datetime="2021-08-31T09:16:40+08:00">2021-08-31</time>
+      <time title="Created: 2021-04-15 10:49:03" itemprop="dateCreated datePublished" datetime="2021-04-15T10:49:03+08:00">2021-04-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-09-03 10:53:44" itemprop="dateModified" datetime="2021-09-03T10:53:44+08:00">2021-09-03</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Computer/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
+        </span>
+    </span>
+
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>8.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>8 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Lua 是一种</p>
+<ul>
+<li><strong>嵌入式语言</strong>——C 语言拥有控制权，Lua 被当作库，C 代码称为<strong>应用代码</strong></li>
+<li><strong>可扩展的语言</strong>——Lua 拥有控制权，C 语言被用作库，C 代码称为<strong>库代码</strong></li>
+</ul>
+<p>应用代码和库代码都使用相同的 API 和 Lua 通信，这些 API 被称为 <mark>C API</mark>。</p>
+<div class="note info"><p>完整函数列表见：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9tYW51YWwvbHVhNTNkb2MvY29udGVudHMuaHRtbCNpbmRleA==">Lua 参考手册（Lua5.3 - 菜鸟教程）<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5sdWEub3JnL21hbnVhbC81LjQvI2luZGV4">Lua 参考手册（Lua5.4 - 官网）<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</div>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/15/Lua-%E5%92%8C-C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qihuan Liu">
+      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aloha's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/" class="post-title-link" itemprop="url">颜面、颈和四肢的发生</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-27 21:54:06" itemprop="dateCreated datePublished" datetime="2021-05-27T21:54:06+08:00">2021-05-27</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -349,7 +476,15 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E7%97%85%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病理学</span></a>
+          <a href="/categories/Learning/Medicine/%E4%BA%BA%E7%B1%BB%E5%8F%91%E8%82%B2%E4%B8%8E%E9%81%97%E4%BC%A0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">人类发育与遗传学</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">组织学与胚胎学</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Learning/Medicine/%E7%BB%84%E7%BB%87%E5%AD%A6%E4%B8%8E%E8%83%9A%E8%83%8E%E5%AD%A6/%E8%83%9A%E8%83%8E%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">胚胎学</span></a>
         </span>
     </span>
 
@@ -362,14 +497,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>27</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -380,10 +515,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Empty…</p>
+          <p>第 4 周时，<strong>鳃弓</strong>发生，它参与形成颜面和颈部的主要结构。<br />
+同时<strong>上肢芽</strong>与<strong>下肢芽</strong>发生，它们为四肢的原基。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/08/31/%E7%97%85%E7%90%86%E5%AD%A6/#more" rel="contents">
+              <a class="btn" href="/2021/05/27/%E9%A2%9C%E9%9D%A2%E3%80%81%E9%A2%88%E5%92%8C%E5%9B%9B%E8%82%A2%E7%9A%84%E5%8F%91%E7%94%9F/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1451,112 +1587,6 @@ Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方�
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.aloha.org.cn/2021/09/03/%E6%B0%B4%E3%80%81%E7%94%B5%E8%A7%A3%E8%B4%A8%E4%BB%A3%E8%B0%A2%E7%B4%8A%E4%B9%B1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qihuan Liu">
-      <meta itemprop="description" content="追寻罗素先生的脚步，渴望寻找到我想要的答案。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aloha's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/03/%E6%B0%B4%E3%80%81%E7%94%B5%E8%A7%A3%E8%B4%A8%E4%BB%A3%E8%B0%A2%E7%B4%8A%E4%B9%B1/" class="post-title-link" itemprop="url">水、电解质代谢紊乱</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-09-03 08:39:26 / Modified: 10:53:41" itemprop="dateCreated datePublished" datetime="2021-09-03T08:39:26+08:00">2021-09-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/" itemprop="url" rel="index"><span itemprop="name">Medicine</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Learning/Medicine/%E7%97%85%E7%90%86%E7%94%9F%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">病理生理学</span></a>
-        </span>
-    </span>
-
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>300</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Empty…</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/03/%E6%B0%B4%E3%80%81%E7%94%B5%E8%A7%A3%E8%B4%A8%E4%BB%A3%E8%B0%A2%E7%B4%8A%E4%B9%B1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1582,7 +1612,7 @@ Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方�
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols count total: </span>
-    <span title="Symbols count total">248k</span>
+    <span title="Symbols count total">249k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

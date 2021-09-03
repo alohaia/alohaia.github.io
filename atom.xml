@@ -6,7 +6,7 @@
   <link href="https://www.aloha.org.cn/atom.xml" rel="self"/>
   
   <link href="https://www.aloha.org.cn/"/>
-  <updated>2021-09-03T04:45:32.508Z</updated>
+  <updated>2021-09-03T11:13:38.854Z</updated>
   <id>https://www.aloha.org.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R Markdown</title>
+    <link href="https://www.aloha.org.cn/2021/09/03/R-Markdown/"/>
+    <id>https://www.aloha.org.cn/2021/09/03/R-Markdown/</id>
+    <published>2021-09-03T07:12:31.000Z</published>
+    <updated>2021-09-03T11:13:38.854Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;R Markdown 参考。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
+    
+    <category term="Computer" scheme="https://www.aloha.org.cn/categories/Learning/Computer/"/>
+    
+    <category term="R" scheme="https://www.aloha.org.cn/categories/Learning/Computer/R/"/>
+    
+    
+    <category term="R" scheme="https://www.aloha.org.cn/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>药物代谢动力学</title>
@@ -228,7 +251,7 @@
     <link href="https://www.aloha.org.cn/2021/09/02/R-%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"/>
     <id>https://www.aloha.org.cn/2021/09/02/R-%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/</id>
     <published>2021-09-02T11:12:20.000Z</published>
-    <updated>2021-09-03T02:53:43.503Z</updated>
+    <updated>2021-09-03T11:54:40.651Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://r4ds.had.co.nz/&quot;&gt;&lt;em&gt;R for Data Science&lt;/em&gt;&lt;/a&gt; 中译本《R 数据科学》的读书笔记。&lt;/p&gt;</summary>
@@ -289,7 +312,7 @@
     <link href="https://www.aloha.org.cn/2021/08/31/%E7%97%85%E7%90%86%E5%AD%A6/"/>
     <id>https://www.aloha.org.cn/2021/08/31/%E7%97%85%E7%90%86%E5%AD%A6/</id>
     <published>2021-08-31T01:16:40.000Z</published>
-    <updated>2021-09-03T02:53:43.453Z</updated>
+    <updated>2021-09-03T05:42:40.119Z</updated>
     
     
     <summary type="html">&lt;p&gt;Empty…&lt;/p&gt;</summary>
@@ -376,7 +399,7 @@
     <link href="https://www.aloha.org.cn/2021/08/19/R-%E8%AF%AD%E8%A8%80/"/>
     <id>https://www.aloha.org.cn/2021/08/19/R-%E8%AF%AD%E8%A8%80/</id>
     <published>2021-08-19T10:26:37.000Z</published>
-    <updated>2021-09-03T05:28:55.605Z</updated>
+    <updated>2021-09-03T09:22:56.816Z</updated>
     
     
     <summary type="html">&lt;p&gt;R 语言基础，主要参考李东风的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cubWF0aC5wa3UuZWR1LmNuL3RlYWNoZXJzL2xpZGYvZG9jcy9SYm9vay9odG1sL19SYm9vaw==&quot;&gt;《R 语言教程》&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;。数据科学相关见 &lt;a href=&quot;/2021/09/02/R-%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/&quot;&gt;R 数据科学&lt;/a&gt;&lt;/p&gt;</summary>
@@ -704,114 +727,6 @@
 &lt;td style=&quot;text-align:center&quot;&gt;外周血涂片染色法&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</summary>
-    
-    
-    
-    <category term="Learning" scheme="https://www.aloha.org.cn/categories/Learning/"/>
-    
-    <category term="Medicine" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/"/>
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    
-    <category term="病原生物学" scheme="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    
-    <category term="医学蠕虫" scheme="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>吸虫</title>
-    <link href="https://www.aloha.org.cn/2021/07/04/%E5%90%B8%E8%99%AB/"/>
-    <id>https://www.aloha.org.cn/2021/07/04/%E5%90%B8%E8%99%AB/</id>
-    <published>2021-07-04T07:25:49.000Z</published>
-    <updated>2021-09-03T02:53:35.810Z</updated>
-    
-    
-    <summary type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;华支睾吸虫（肝吸虫）&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;卫氏并殖吸虫（肺吸虫）&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;日本血吸虫&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;感染阶段&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;囊蚴&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;囊蚴&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;尾蚴&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;感染方式&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经皮&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;体内移行&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;+&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;+（童虫，血管）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;寄生部位&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肝胆管&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肺脏&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;门脉-肠系膜静脉系统&lt;br/&gt;异位寄生（脑、肺）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;离体途径&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵随便&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵随&lt;strong&gt;铁锈色痰液&lt;/strong&gt;&lt;br/&gt;卵随便&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵随脓血便排出&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;终宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;br/&gt;保虫宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;br/&gt;保虫宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;br/&gt;保虫宿主&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;第一中间宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;纹沼螺&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;川卷螺&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;钉螺&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;第二中间宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;淡水鱼、&lt;em&gt;虾&lt;/em&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;溪蟹、蝲蛄（&lt;em&gt;小龙虾&lt;/em&gt;）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;保虫宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;猫、狗、猪、鼠&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;犬、猫、狼、虎&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;水牛&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;转续宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;野猪&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;所致疾病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肝吸虫病（可致&lt;strong&gt;原发性胆管上皮细胞癌&lt;/strong&gt;）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肺吸虫病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;血吸虫病&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;检查方法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;粪便直接涂片法&lt;br/&gt;&lt;strong&gt;十二指肠引流法&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;直接涂片法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;脓血便涂片法（急性期）&lt;br/&gt;直肠镜镜检法（晚期）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</summary>

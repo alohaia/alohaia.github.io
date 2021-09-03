@@ -15,8 +15,33 @@
     <atom:link href="https://www.aloha.org.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>追寻罗素先生的脚步，渴望寻找到我想要的答案。</description>
-    <pubDate>Fri, 03 Sep 2021 04:45:32 GMT</pubDate>
+    <pubDate>Fri, 03 Sep 2021 11:13:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>https://www.aloha.org.cn/2021/09/03/R-Markdown/</link>
+      <guid>https://www.aloha.org.cn/2021/09/03/R-Markdown/</guid>
+      <pubDate>Fri, 03 Sep 2021 07:12:31 GMT</pubDate>
+      
+      <description>&lt;p&gt;R Markdown 参考。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Computer/">Computer</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Computer/R/">R</category>
+      
+      
+      <category domain="https://www.aloha.org.cn/tags/R/">R</category>
+      
+      
+      <comments>https://www.aloha.org.cn/2021/09/03/R-Markdown/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>药物代谢动力学</title>
@@ -760,116 +785,6 @@
       
       
       <comments>https://www.aloha.org.cn/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>吸虫</title>
-      <link>https://www.aloha.org.cn/2021/07/04/%E5%90%B8%E8%99%AB/</link>
-      <guid>https://www.aloha.org.cn/2021/07/04/%E5%90%B8%E8%99%AB/</guid>
-      <pubDate>Sun, 04 Jul 2021 07:25:49 GMT</pubDate>
-      
-      <description>&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;华支睾吸虫（肝吸虫）&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;卫氏并殖吸虫（肺吸虫）&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;日本血吸虫&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;感染阶段&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;囊蚴&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;囊蚴&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;尾蚴&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;感染方式&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经皮&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;体内移行&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;+&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;+（童虫，血管）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;寄生部位&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肝胆管&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肺脏&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;门脉-肠系膜静脉系统&lt;br/&gt;异位寄生（脑、肺）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;离体途径&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵随便&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵随&lt;strong&gt;铁锈色痰液&lt;/strong&gt;&lt;br/&gt;卵随便&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵随脓血便排出&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;终宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;br/&gt;保虫宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;br/&gt;保虫宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;br/&gt;保虫宿主&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;第一中间宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;纹沼螺&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;川卷螺&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;钉螺&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;第二中间宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;淡水鱼、&lt;em&gt;虾&lt;/em&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;溪蟹、蝲蛄（&lt;em&gt;小龙虾&lt;/em&gt;）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;保虫宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;猫、狗、猪、鼠&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;犬、猫、狼、虎&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;水牛&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;转续宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;野猪&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;所致疾病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肝吸虫病（可致&lt;strong&gt;原发性胆管上皮细胞癌&lt;/strong&gt;）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肺吸虫病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;血吸虫病&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;检查方法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;粪便直接涂片法&lt;br/&gt;&lt;strong&gt;十二指肠引流法&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;直接涂片法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;脓血便涂片法（急性期）&lt;br/&gt;直肠镜镜检法（晚期）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description>
-      
-      
-      
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/">Medicine</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/">病原生物学</category>
-      
-      
-      <category domain="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/">病原生物学</category>
-      
-      <category domain="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB/">医学蠕虫</category>
-      
-      
-      <comments>https://www.aloha.org.cn/2021/07/04/%E5%90%B8%E8%99%AB/#disqus_thread</comments>
       
     </item>
     
