@@ -424,7 +424,12 @@
       <guid>https://www.aloha.org.cn/2021/08/19/R-%E8%AF%AD%E8%A8%80/</guid>
       <pubDate>Thu, 19 Aug 2021 10:26:37 GMT</pubDate>
       
-      <description>&lt;p&gt;R 语言基础，主要参考李东风的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cubWF0aC5wa3UuZWR1LmNuL3RlYWNoZXJzL2xpZGYvZG9jcy9SYm9vay9odG1sL19SYm9vaw==&quot;&gt;《R 语言教程》&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;。数据科学相关见 &lt;a href=&quot;/2021/09/02/R-%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/&quot;&gt;R 数据科学&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;R 语言基础，主要参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;李东风 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cubWF0aC5wa3UuZWR1LmNuL3RlYWNoZXJzL2xpZGYvZG9jcy9SYm9vay9odG1sL19SYm9vaw==&quot;&gt;《R 语言教程》&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;菜鸟教程 - &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cucnVub29iLmNvbS9yL3ItdHV0b3JpYWwuaHRtbA==&quot;&gt;R 语言教程&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;数据科学相关见 &lt;a href=&quot;/2021/09/02/R-%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/&quot;&gt;R 数据科学&lt;/a&gt;。&lt;/p&gt;</description>
       
       
       

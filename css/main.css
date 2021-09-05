@@ -2910,7 +2910,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffff79;
+  background: #e750ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3073,11 +3073,10 @@ div.img-wrap-center {
 }
 
 /**************************************************************************************/
-
-h1:not(.post-title) {
+h1:not(.post-title):not(.site-title) {
     text-align: center;
     font-size: 32px;
-    counter-reset: H2Counter h3Counter h4Counter h5Counter h6Counter;
+    counter-reset: h2Counter h3Counter h4Counter h5Counter h6Counter;
     counter-increment: h1Counter;
 }
 
@@ -3125,10 +3124,6 @@ h2:not(.post-title):before {
 
 h2.post-title:before {
     content: '§ '
-}
-
-h2:not(.collection-header, .post-title):before {
-    content: counter(h1Counter) "." counter(h2Counter) ". ";
 }
 
 h3:before {
