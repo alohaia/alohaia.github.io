@@ -15,8 +15,73 @@
     <atom:link href="https://www.aloha.org.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>追寻罗素先生的脚步，渴望寻找到我想要的答案。</description>
-    <pubDate>Fri, 03 Sep 2021 11:13:38 GMT</pubDate>
+    <pubDate>Sun, 12 Sep 2021 02:03:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>基于 R 的数学建模</title>
+      <link>https://www.aloha.org.cn/2021/09/07/%E5%9F%BA%E4%BA%8E-R-%E7%9A%84%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</link>
+      <guid>https://www.aloha.org.cn/2021/09/07/%E5%9F%BA%E4%BA%8E-R-%E7%9A%84%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</guid>
+      <pubDate>Tue, 07 Sep 2021 09:08:09 GMT</pubDate>
+      
+      <description>&lt;p&gt;主要参考薛毅编著的《数学建模‧基于 R》。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Projects/">Projects</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Computer/">Computer</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Computer/R/">R</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Projects/Contests/">Contests</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Projects/Contests/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%B5%9B/">数学建模大赛</category>
+      
+      
+      <category domain="https://www.aloha.org.cn/tags/R/">R</category>
+      
+      <category domain="https://www.aloha.org.cn/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">数学建模</category>
+      
+      
+      <comments>https://www.aloha.org.cn/2021/09/07/%E5%9F%BA%E4%BA%8E-R-%E7%9A%84%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>神经元、神经胶质细胞与脑毛细血管内皮细胞和脑微环境</title>
+      <link>https://www.aloha.org.cn/2021/09/06/%E7%A5%9E%E7%BB%8F%E5%85%83%E3%80%81%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E%E4%B8%8E%E8%84%91%E6%AF%9B%E7%BB%86%E8%A1%80%E7%AE%A1%E5%86%85%E7%9A%AE%E7%BB%86%E8%83%9E%E5%92%8C%E8%84%91%E5%BE%AE%E7%8E%AF%E5%A2%83/</link>
+      <guid>https://www.aloha.org.cn/2021/09/06/%E7%A5%9E%E7%BB%8F%E5%85%83%E3%80%81%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E%E4%B8%8E%E8%84%91%E6%AF%9B%E7%BB%86%E8%A1%80%E7%AE%A1%E5%86%85%E7%9A%AE%E7%BB%86%E8%83%9E%E5%92%8C%E8%84%91%E5%BE%AE%E7%8E%AF%E5%A2%83/</guid>
+      <pubDate>Mon, 06 Sep 2021 07:58:57 GMT</pubDate>
+      
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%A5%9E%E7%BB%8F%E5%85%83%E5%92%8C%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E&quot;&gt;神经元和神经胶质细胞&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%A5%9E%E7%BB%8F%E5%85%83%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8&quot;&gt;神经元之间的相互作用——突触传递&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%A5%9E%E7%BB%8F%E7%BA%A4%E7%BB%B4&quot;&gt;神经纤维&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%A5%9E%E7%BB%8F%E6%9C%AB%E6%A2%A2&quot;&gt;神经末梢&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E&quot;&gt;神经胶质细胞&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E8%A1%80%E8%84%91%E5%B1%8F%E9%9A%9C&quot;&gt;血脑屏障&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+      
+      
+      
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/">Medicine</category>
+      
+      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/">神经科学</category>
+      
+      
+      <category domain="https://www.aloha.org.cn/tags/%E5%9F%BA%E7%A1%80%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/">基础神经科学</category>
+      
+      
+      <comments>https://www.aloha.org.cn/2021/09/06/%E7%A5%9E%E7%BB%8F%E5%85%83%E3%80%81%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E%E4%B8%8E%E8%84%91%E6%AF%9B%E7%BB%86%E8%A1%80%E7%AE%A1%E5%86%85%E7%9A%AE%E7%BB%86%E8%83%9E%E5%92%8C%E8%84%91%E5%BE%AE%E7%8E%AF%E5%A2%83/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>R Markdown</title>
@@ -353,39 +418,9 @@
     </item>
     
     <item>
-      <title>神经元和神经胶质细胞</title>
-      <link>https://www.aloha.org.cn/2021/08/30/%E7%A5%9E%E7%BB%8F%E5%85%83%E5%92%8C%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E/</link>
-      <guid>https://www.aloha.org.cn/2021/08/30/%E7%A5%9E%E7%BB%8F%E5%85%83%E5%92%8C%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E/</guid>
-      <pubDate>Mon, 30 Aug 2021 10:09:02 GMT</pubDate>
-      
-      <description>&lt;dl&gt;
-&lt;dt&gt;神经元 | 神经细胞&lt;/dt&gt;
-&lt;dd&gt;是神经组织的结构和功能单位。具有能感受刺激和迅速传导神经冲动产生反应的能力。&lt;/dd&gt;
-&lt;dt&gt;神经胶质细胞&lt;/dt&gt;
-&lt;dd&gt;对神经元起隔离、支持及营养周围神经元的作用。&lt;/dd&gt;
-&lt;/dl&gt;</description>
-      
-      
-      
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/">Medicine</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/">神经科学</category>
-      
-      
-      <category domain="https://www.aloha.org.cn/tags/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/">神经科学基础</category>
-      
-      
-      <comments>https://www.aloha.org.cn/2021/08/30/%E7%A5%9E%E7%BB%8F%E5%85%83%E5%92%8C%E7%A5%9E%E7%BB%8F%E8%83%B6%E8%B4%A8%E7%BB%86%E8%83%9E/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>神经科学基础</title>
-      <link>https://www.aloha.org.cn/2021/08/30/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
-      <guid>https://www.aloha.org.cn/2021/08/30/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
+      <title>基础神经科学</title>
+      <link>https://www.aloha.org.cn/2021/08/30/%E5%9F%BA%E7%A1%80%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/</link>
+      <guid>https://www.aloha.org.cn/2021/08/30/%E5%9F%BA%E7%A1%80%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/</guid>
       <pubDate>Mon, 30 Aug 2021 00:31:41 GMT</pubDate>
       
       <description>&lt;p&gt;课程内容：&lt;/p&gt;
@@ -411,10 +446,10 @@
       
       <category domain="https://www.aloha.org.cn/tags/Index/">Index</category>
       
-      <category domain="https://www.aloha.org.cn/tags/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/">神经科学基础</category>
+      <category domain="https://www.aloha.org.cn/tags/%E5%9F%BA%E7%A1%80%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/">基础神经科学</category>
       
       
-      <comments>https://www.aloha.org.cn/2021/08/30/%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/#disqus_thread</comments>
+      <comments>https://www.aloha.org.cn/2021/08/30/%E5%9F%BA%E7%A1%80%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6/#disqus_thread</comments>
       
     </item>
     
@@ -640,156 +675,6 @@
       
       
       <comments>https://www.aloha.org.cn/2021/07/16/%E8%B6%85%E6%95%8F%E5%8F%8D%E5%BA%94/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>医学原虫</title>
-      <link>https://www.aloha.org.cn/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/</link>
-      <guid>https://www.aloha.org.cn/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/</guid>
-      <pubDate>Mon, 05 Jul 2021 11:58:07 GMT</pubDate>
-      
-      <description>&lt;p&gt;&lt;strong&gt;原虫&lt;/strong&gt;（protozoa）为&lt;strong&gt;单细胞真核生物&lt;/strong&gt;，属原生动物界，分布极为广泛，大多营自由生活。寄生于人体和的动物的原虫有 40 余种，包括致病性原虫（&lt;strong&gt;医学原虫&lt;/strong&gt;）和非致病性原虫。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;溶组织内阿米巴&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;蓝氏贾第鞭毛虫&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;阴道毛滴虫&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;疟原虫&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;刚地弓形虫&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;隐孢子虫&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;感染阶段&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;成熟包囊/四核包囊&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;成熟包囊/四核包囊&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;滋养体&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;子孢子（雌性按蚊唾液腺）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵囊（含子孢子）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;卵囊&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;感染方式&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;直接（性接触）、间接接触&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;span class=&quot;inline-list&quot;&gt;&lt;span class=&quot;inline-list-item&quot;&gt;蚊媒叮咬&lt;/span&gt;&lt;span class=&quot;inline-list-item&quot;&gt;输血&lt;/span&gt;&lt;span class=&quot;inline-list-item&quot;&gt;垂直传播&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;多种水平传播及垂直传播&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;经口&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;s&gt;体内移行&lt;/s&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;寄生部位&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;大肠&lt;br/&gt;肝、肺、脑&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;小肠上段&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;男、女泌尿生殖道（&lt;strong&gt;阴道后穹隆&lt;/strong&gt;）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;红细胞&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;所有有核细胞（&lt;s&gt;红细胞&lt;/s&gt;）和组织内&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;离体途径&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;滋养体随患者脓血便&lt;br/&gt;包囊随带虫者成形便&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;滋养体随患者水样便&lt;br/&gt;包囊随带虫者成形便&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;泌尿生殖道分泌物&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;终宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人（人际传播型）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人（人际传播型）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人（人际传播型）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;按蚊&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;猫及其他猫科动物（肠上皮细胞）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;第一中间宿主&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;人和所有动物&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;s&gt;第二中间宿主&lt;/s&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;s&gt;保虫宿主&lt;/s&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;s&gt;转续宿主&lt;/s&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;所致疾病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;肠阿米巴病&lt;br/&gt;肠外阿米巴病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;脂肪痢&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;泌尿生殖道炎症（滴虫性阴道炎）&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;疟疾&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;先天性、获得性弓形虫病&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;机会致病：腹泻&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;检查方法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;碘液染色法（查包囊）&lt;br/&gt;脓血便直接涂片法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;碘液染色法（查包囊）&lt;br/&gt;水样便直接涂片法&lt;br/&gt;十二指肠引流法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;泌尿生殖道分泌物直接涂片法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;外周血涂片染色法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</description>
-      
-      
-      
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/">Learning</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/">Medicine</category>
-      
-      <category domain="https://www.aloha.org.cn/categories/Learning/Medicine/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/">病原生物学</category>
-      
-      
-      <category domain="https://www.aloha.org.cn/tags/%E7%97%85%E5%8E%9F%E7%94%9F%E7%89%A9%E5%AD%A6/">病原生物学</category>
-      
-      <category domain="https://www.aloha.org.cn/tags/%E5%8C%BB%E5%AD%A6%E8%A0%95%E8%99%AB/">医学蠕虫</category>
-      
-      
-      <comments>https://www.aloha.org.cn/2021/07/05/%E5%8C%BB%E5%AD%A6%E5%8E%9F%E8%99%AB/#disqus_thread</comments>
       
     </item>
     
